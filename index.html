@@ -91,8 +91,9 @@
 
 <body>
     <h2>Mario Sunshine Cheatfile Generator</h2>
-    <select id="gameID" class="selectionHeader" onchange="updateCodelist()">
-            <option value="GMSE01" selected="selected">GMSE01 (NTSC-U)</option>
+    <select id="gameID" class="selectionHeader" onchange="updateCodelist()" >
+            <option selected disabled hidden>Choose Version</option>
+            <option value="GMSE01">GMSE01 (NTSC-U)</option>
             <option value="GMSJ01">GMSJ01 (NTSC-J 1.0)</option>
             <option value="GMSP01">GMSP01 (PAL)</option>
         </select>
