@@ -1,0 +1,33 @@
+body {
+    margin: 50px 50px 0 50px;
+}
+
+html {
+    background-color: #262626;
+    color: #f1f1f1;
+    font-family: Calibri;
+}
+
+textarea {
+    background-color: rgba(0,0,0,0.3);
+    width: 100%;
+    color: #f1f1f1;
+}
+
+#gameID, #gctData {
+    margin: 10px 0 10px 0;
+}
+
+body div button {
+    width: 500px;
+    height: 100%;
+    float: center;
+    display: block;
+    margin: auto;
+    font-size: 100px;
+    color: #f1f1f1;
+    background-color: rgba(0,0,0,0.3);
+    border-style: dashed;
+    cursor: pointer;
+    margin-top: 10px;
+}
