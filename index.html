@@ -1,14 +1,12 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+<!DOCTYPE HTML>
 <html lang="en">
 
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="style/style.css">
-    <title>GCT Generator</title>
-
+    <title>SMS GCT Generator</title>
     <script language="javascript">
-        function getCodeNamesFromXML(name) {
+        function parseXML(name) {
             var xml = new XMLHttpRequest();
             var file = "codes/" + name + ".xml";
             xml.onload = function() {
@@ -20,10 +18,15 @@
                     for (var i = 0; i < xmlData.length; i++) {
                         var li = document.createElement("li");
                         var desc = xmlData[i].getElementsByTagName("title")[0].textContent;
-                        desc += " (v" + xmlData[i].getElementsByTagName("version")[0].textContent + ", " + xmlData[i].getElementsByTagName("date")[0].textContent + ")";
                         var t = document.createTextNode(desc);
                         li.appendChild(t);
-
+                        li.setAttribute("data-codeName", xmlData[i].getElementsByTagName("title")[0].textContent);
+                        li.setAttribute("data-codeAuthor", xmlData[i].getElementsByTagName("author")[0].textContent);
+                        li.setAttribute("data-codeDesc", xmlData[i].getElementsByTagName("description")[0].textContent);
+                        li.setAttribute("data-codeVersion", xmlData[i].getElementsByTagName("version")[0].textContent);
+                        li.setAttribute("data-codeDate", xmlData[i].getElementsByTagName("date")[0].textContent);
+                        li.setAttribute("data-codeSrc", xmlData[i].getElementsByTagName("source")[0].textContent.replace(/[\s\n\r\t]+/gm, ""));
+                        li.setAttribute("onmouseover", "updateDescription(this)");
                         document.getElementById("checkList").appendChild(li);
                     }
                 }
@@ -57,53 +60,69 @@
 
         function generateGCT() {
 
-            var xml = new XMLHttpRequest();
-            var file = "codes/" + document.getElementById("gameID").value + ".xml";
-            xml.onload = function() {
-                if (this.status == 200 && this.responseXML != null) {
-                    var data = "00D0C0DE00D0C0DE";
-                    var xmlData = xml.responseXML;
-                    xmlData = (new DOMParser()).parseFromString(xml.responseText, "text/xml");
-                    xmlData = xmlData.getElementsByTagName("code");
-                    var codeList = document.getElementById("checkList").getElementsByTagName("li");
-                    for (var i = 0; i < codeList.length; i++) {
-                        if (codeList[i].className === "checked")
-                            data += xmlData[i].getElementsByTagName("source")[0].textContent;
-                    }
-
-                    data = data.replace(/[\s\n\r\t]+/gm, "");
-                    data += "FF00000000000000";
-
-                    downloadGCT(data, document.getElementById("gameID").value + ".gct");
+            if (document.getElementById("gameID").value === "Choose Version") {
+                alert("Select the game version!");
+                return;
+            }
+            var data = "00D0C0DE00D0C0DE";
+            var codeList = document.getElementById("checkList").getElementsByTagName("li");
+            var valueSelected = false;
+            for (var i = 0; i < codeList.length; i++) {
+                if (codeList[i].className === "checked") {
+                    data += codeList[i].getAttribute("data-codeSrc");
+                    valueSelected = true;
                 }
             }
-            xml.open("GET", file);
-            xml.send();
+
+            if (valueSelected) {
+                //data = data.replace(/[\s\n\r\t]+/gm, "");
+                data += "FF00000000000000";
+
+                downloadGCT(data, document.getElementById("gameID").value + ".gct");
+            } else {
+                alert("No cheat(s) selected!");
+            }
         }
 
         function updateCodelist() {
+            document.getElementById("downloadButton").style.visibility = "visible";
             document.getElementById("checkList").innerHTML = "";
             var gameVersion = document.getElementById("gameID").value;
-            getCodeNamesFromXML(gameVersion);
+            parseXML(gameVersion);
+        }
+
+        function updateDescription($this) {
+            document.getElementById("descriptionBox").style.visibility = "visible";
+            var description = "<p><h2>" + $this.getAttribute("data-codeName") + "</h2></p><p><i>Author: " + $this.getAttribute("data-codeAuthor") + "<br />Version: " + $this.getAttribute("data-codeVersion") + " (" + $this.getAttribute("data-codeDate") + ")</i></p>" + "<p>Description:<br />" + $this.getAttribute("data-codeDesc") + "</p>";
+            document.getElementById("descriptionBox").innerHTML = description;
+        }
+
+        function hideDescription() {
+            document.getElementById("descriptionBox").style.visibility = "hidden";
         }
     </script>
 </head>
 
 <body>
-    <h2>Mario Sunshine Cheatfile Generator</h2>
-    <select id="gameID" class="selectionHeader" onchange="updateCodelist()" >
-            <option selected disabled hidden>Choose Version</option>
-            <option value="GMSE01">GMSE01 (NTSC-U)</option>
-            <option value="GMSJ01">GMSJ01 (NTSC-J 1.0)</option>
-            <option value="GMSP01">GMSP01 (PAL)</option>
-        </select>
-
-    <ul id="checkList">
-    </ul>
-
-    <button onclick="generateGCT()">Download</button>
+    <div style="width: 100%; overflow: hidden;">
+        <h2>Mario Sunshine Cheatfile Generator</h2>
+        <div style="width: 510px; float: left;">
+            <select id="gameID" class="selectionHeader" onchange="updateCodelist()">
+                <option selected disabled hidden>Choose Version</option>
+                <option value="GMSE01">GMSE01 (NTSC-U)</option>
+                <option value="GMSJ01">GMSJ01 (NTSC-J 1.0)</option>
+                <option value="GMSP01">GMSP01 (PAL)</option>
+            </select>
+            <ul id="checkList" onmouseleave="hideDescription()">
+            </ul>
+            <button id="downloadButton" onclick="generateGCT()" style="visibility:hidden;">Download</button>
+        </div>
+        <div style="margin-left: 530px;">
+            <div id="descriptionBox" class="framed" style="visibility:hidden;">
+            </div>
+        </div>
+    </div>
 </body>
-
 <script language="javascript">
     document.getElementById("checkList").addEventListener("click", function(ev) {
         if (ev.target && ev.target.nodeName == "LI") {
@@ -111,6 +130,5 @@
         }
     });
 </script>
-
 
 </html>

@@ -4,8 +4,8 @@
         <title lang="en">DPad Functions</title>
         <author>Psychonauter, Dan Salvato, Link Master, James0x57</author>
         <version>2.0</version>
-        <date>Aug 28, 2017</date>
-        <description></description>
+        <description><![CDATA[Allows various game modifications. Button combinations:<br/><table><tr><th align="left">Combination</th><th align="left">Result</th></tr><tr><td>D-Pad left</td><td>Save Mario sposition</td></tr><tr><td>D-Pad right</td><td>Load Marios Position</td></tr><tr><td>D-Pad up</td><td>Replace all dialog with a single "!!!" line</td></tr><tr><td>D-Pad down</td><td>Restore dialog boxes</td></tr><tr><td>B+D-Pad left</td><td>Lock rocket nozzle</td></tr><tr><td>B+D-Pad right</td><td>Lock turbo nozzle</td></tr><tr><td>B+D-Pad up</td><td>Lock hover nozzle</td></tr><tr><td>B+D-Pad down</td><td>Release nozzle lock</td></tr></table>]]></description>
+        <date>Jan 22, 2017</date>
         <source>
             2440E10C 80000000
             82200000 8040E10C
@@ -43,7 +43,7 @@
         <author>Psychonauter</author>
         <version>1.0</version>
         <date>Jan 20, 2017</date>
-        <description></description>
+        <description>Prevents the game from setting the blue coin flag, which makes them respawn after reentering the level</description>
         <source>
             0429A728 60000000
         </source>
@@ -53,7 +53,7 @@
         <author>Psychonauter</author>
         <version>1.0</version>
         <date>Jan 20, 2017</date>
-        <description></description>
+        <description>Allows skipping FMVs without having to watch them once first.</description>
         <source>
             042B5EF4 38600001  
             042B5E8C 38600001
@@ -64,7 +64,7 @@
         <author>Codejunkies</author>
         <version>1.0</version>
         <date>Jan 20, 2017</date>
-        <description></description>
+        <description>Locks life count at 99</description>
         <source>
             04578A04 00000063
         </source>
@@ -74,7 +74,7 @@
         <author>Psychonauter</author>
         <version>1.0</version>
         <date>Jan 28, 2017</date>
-        <description></description>
+        <description>Mutes background music, but keeps SFX on.</description>
         <source>
             04016A34 FC210828
         </source>
@@ -84,7 +84,7 @@
         <author>Psychonauter</author>
         <version>1.1</version>
         <date>Aug 28, 2017</date>
-        <description></description>
+        <description><![CDATA[Adds the ingame timer to every level. Includes modified level select for that purpose. See 'Level Select (Standalone)' for the button combinations.<br /><b>Do not use this in combination with the standalone level select code!</b>]]></description>
         <source>
             04348158 7C9E2378
             0434815C 7C1F0378
@@ -291,7 +291,7 @@
         <author>Psychonauter, Dan Salvato</author>
         <version>1.4</version>
         <date>Jan 22, 2017</date>
-        <description></description>
+        <description><![CDATA[Allows warping to other levels when starting a file or when exiting level by holding the combination until the screen turns black. Codes:<br /><br /><img src="img/levelselect.png" width="500px">]]></description>
         <source>
             C22A6710 00000074
             3C60803E 60639710
@@ -410,6 +410,136 @@
             2C040607 4082FF28
             39200004 4BFFFF20
             807F0020 00000000
+        </source>
+    </code>
+    <code>
+        <title lang="en">Fast Any%</title>
+        <author>Psychonauter</author>
+        <version>1.0</version>
+        <description>Loads stages in any% order.</description>
+        <date>Sep 25, 2017</date>
+        <source>
+			C22A6710 00000078
+			3C60803E 60639710
+			88830002 2C04000E
+			41820380 2C04000D
+			41820310 2C040001
+			41810394 3C608057
+			60638988 88830007
+			70850001 41A2000C
+			38803400 480002DC
+			88830006 70850080
+			41A2000C 38800906
+			480002C8 70850040
+			41A2000C 38800905
+			480002B8 70850020
+			41A2000C 38800904
+			480002A8 70850010
+			41A2000C 38800903
+			48000298 70850008
+			41A2000C 38800902
+			48000288 70850004
+			41A2000C 38800901
+			48000278 88830005
+			70850040 41A2000C
+			38800900 48000264
+			70850020 41A2000C
+			38800606 48000254
+			70850010 41A2000C
+			38800605 48000244
+			70850008 41A2000C
+			38800604 48000234
+			70850004 41A2000C
+			38800603 48000224
+			70850002 41A2000C
+			38800602 48000214
+			70850001 41A2000C
+			38800601 48000204
+			88830000 70850040
+			41A2000C 38800600
+			480001F0 70850020
+			41A2000C 38800206
+			480001E0 88830002
+			70850001 41A2000C
+			38800205 480001CC
+			88830001 70850080
+			41A2000C 38800306
+			480001B8 70850040
+			41A2000C 38800305
+			480001A8 70850020
+			41A2000C 38800304
+			48000198 70850010
+			41A2000C 38800303
+			48000188 70850008
+			41A2000C 38800302
+			48000178 70850004
+			41A2000C 38800301
+			48000168 88830004
+			70850010 41A2000C
+			38800300 48000154
+			70850008 41A2000C
+			38800506 48000144
+			70850002 41A2000C
+			38800502 48000134
+			70850001 41A2000C
+			38800503 48000124
+			88830003 70850080
+			41A2000C 38800502
+			48000110 70850040
+			41A2000C 38800501
+			48000100 88830008
+			70850004 41A2000C
+			38800500 480000EC
+			88830007 70850080
+			41A2000C 38800806
+			480000D8 88830008
+			70850001 41A2000C
+			38800805 480000C4
+			88830007 70850020
+			41A2000C 38800804
+			480000B0 70850040
+			41A2000C 38800803
+			480000A0 88830008
+			70850002 41A2000C
+			38800802 4800008C
+			88830007 70850010
+			41A2000C 38800801
+			48000078 88830003
+			70850004 41A2000C
+			38800800 48000064
+			70850008 41A2000C
+			38800406 48000054
+			88830000 70850010
+			41A2000C 38800400
+			48000040 70850008
+			41A2000C 38800204
+			48000030 70850004
+			41A2000C 38800203
+			48000020 70850002
+			41A2000C 38800202
+			48000010 38800200
+			48000008 7C884A14
+			3C60803E 60639710
+			90830000 48000090
+			39000D00 8083FFFC
+			2C040500 4082000C
+			39200000 4BFFFFD8
+			2C040502 4082000C
+			39200001 4BFFFFC8
+			2C040504 4082000C
+			39200002 4BFFFFB8
+			2C040505 4082000C
+			39200003 4BFFFFA8
+			2C040506 4082000C
+			39200004 4BFFFF98
+			2C040507 40A20030
+			39200005 4BFFFF88
+			3C608057 60638988
+			88830005 70850008
+			41A2000C 38800E01
+			4BFFFF70 38800E00
+			4BFFFF68 807F0020
+			60000000 00000000
         </source>
     </code>
 </codes>
