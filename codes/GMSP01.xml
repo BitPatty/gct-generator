@@ -4,8 +4,8 @@
         <title lang="en">DPad Functions</title>
         <author>Psychonauter, Dan Salvato, Link Master, James0x57</author>
         <version>2.0</version>
-        <date>Aug 28, 2017</date>
-        <description></description>
+        <date>Jan 22, 2017</date>
+        <description><![CDATA[Allows various game modifications. Button combinations:<br/><table><tr><th align="left">Combination</th><th align="left">Result</th></tr><tr><td>D-Pad left</td><td>Save Mario sposition</td></tr><tr><td>D-Pad right</td><td>Load Marios Position</td></tr><tr><td>D-Pad up</td><td>Replace all dialog with a single "!!!" line</td></tr><tr><td>D-Pad down</td><td>Restore dialog boxes</td></tr><tr><td>B+D-Pad left</td><td>Lock rocket nozzle</td></tr><tr><td>B+D-Pad right</td><td>Lock turbo nozzle</td></tr><tr><td>B+D-Pad up</td><td>Lock hover nozzle</td></tr><tr><td>B+D-Pad down</td><td>Release nozzle lock</td></tr></table>]]></description>
         <source>
             244057D4 80000000
             82200000 804057D4
@@ -53,7 +53,7 @@
         <author>Psychonauter</author>
         <version>1.0</version>
         <date>Jan 20, 2017</date>
-        <description></description>
+        <description>Prevents the game from setting the blue coin flag, which makes them respawn after reentering the level</description>
         <source>
             04292604 60000000
         </source>
@@ -63,7 +63,7 @@
         <author>Psychonauter</author>
         <version>1.0</version>
         <date>Jan 20, 2017</date>
-        <description></description>
+        <description>Allows skipping FMVs without having to watch them once first.</description>
         <source>
             042ADE20 38600001  
             042ADE88 38600001
@@ -74,7 +74,7 @@
         <author>Psychonauter</author>
         <version>1.0</version>
         <date>Jan 20, 2017</date>
-        <description></description>
+        <description>Locks life count at 99</description>
         <source>
             04570967 00000063
         </source>
@@ -84,7 +84,7 @@
         <author>Psychonauter</author>
         <version>1.0</version>
         <date>Jan 28, 2017</date>
-        <description></description>
+        <description>Mutes background music, but keeps SFX on.</description>
         <source>
             04016A90 FC210828
         </source>
@@ -94,7 +94,7 @@
         <author>Psychonauter</author>
         <version>1.0</version>
         <date>May 27, 2017</date>
-        <description></description>
+        <description><![CDATA[Adds the ingame timer to every level. Includes modified level select for that purpose. See 'Level Select (Standalone)' for the button combinations.<br /><b>Do not use this in combination with the standalone level select code!</b>]]></description>
         <source>
             043403B4 7C9E2378 
             043403B8 7C1F0378
@@ -287,7 +287,7 @@
         <author>Psychonauter, Dan Salvato</author>
         <version>1.4</version>
         <date>Jan 22, 2017</date>
-        <description></description>
+        <description><![CDATA[Allows warping to other levels when starting a file or when exiting level by holding the combination until the screen turns black. Codes:<br /><br /><img src="img/levelselect.png" width="500px">]]></description>
         <source>
             C229E668 00000074
             3C60803E 606310D0
