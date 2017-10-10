@@ -28,13 +28,13 @@ body button {
 img {
     border-radius: 4px;
 }
-ul:not(.nostyle) {
+ul {
     margin: 0;
     padding: 0;
     width: 500px;
     list-style-type: none;
 }
-ul li:not(.nostyle) {
+ul li {
     cursor: pointer;
     position: relative;
     padding: 12px 8px 12px 40px;
@@ -48,7 +48,7 @@ ul li:not(.nostyle) {
     user-select: none;
     outline: none;
 }
-ul li::before:not(.nostyle)  {
+ul li::before  {
     content: '';
     position: absolute;
     border-color: #a6a6a6;
@@ -60,10 +60,10 @@ ul li::before:not(.nostyle)  {
     height: 15px;
     width: 15px;
 }
-ul li:nth-child(odd):not(.nostyle)  {
+ul li:nth-child(odd)  {
     background: #fdfdfd;
 }
-ul li:hover:not(.nostyle)  {
+ul li:hover  {
     /*background: #ddd;*/
     
     background: #565656;
