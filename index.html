@@ -7,6 +7,14 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>SMS GCT Generator</title>
     <script language="javascript">
+        if(navigator.userAgent.toLowerCase().indexOf("firefox") > -1) {
+            HTMLElement.prototype.click = function() {
+            var evt = this.ownerDocument.createEvent("MouseEvents");
+            evt.initMouseEvent("click", true, true, this.ownerDocument.defaultView, 1, 0, 0, 0, 0, false, false, false, false, 0, null);
+            this.dispatchEvent(evt);
+            }
+        }
+
         function parseXML(name) {
             var xml = new XMLHttpRequest();
             var file = "codes/" + name + ".xml";
