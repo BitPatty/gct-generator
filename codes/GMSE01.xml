@@ -416,7 +416,7 @@
         <title lang="en">Fast Any%</title>
         <author>Psychonauter</author>
         <version>1.1</version>
-        <description>Loads stages in any% order, skips all save boxes and replaces all Dialog with "!!!" (except for the Pianta 5 secret).</description>
+        <description>Loads stages in any% order, skips all save boxes and replaces all Dialog with "!!!" (except for the Pianta 5 secret). This code is not compatible with any code containing a level select.</description>
         <date>Sep 30, 2017</date>
         <source>
             C22A6710 00000078
@@ -557,7 +557,7 @@
         <title lang="en">Stage Randomizer (Experimental)</title>
         <author>Noki Doki</author>
         <version>1.0</version>
-        <description>Loads stages in randomized order.</description>
+        <description>Loads stages in randomized order. This code is not compatible with any code containing a level select.</description>
         <date>Oct 11, 2017</date>
         <source>
             C22A6710 00000023
