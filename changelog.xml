@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updates>
+   <update>
+      <date>Oct 16, 2017</date>
+      <change>Updated descriptions for incompatible codes.</change>
+   </update>
+   <update>
+      <date>Oct 15, 2017</date>
+      <change>Fixed download for Firefox</change>
+   </update>
+   <update>
+      <date>Oct 14, 2017</date>
+      <change>Added Fast Any% for JP &amp; PAL</change>
+   </update>
+   <update>
+      <date>Oct 11, 2017</date>
+      <change>Added Stage Randomizer (Experimental) for NTSC-U</change>
+   </update>
+</updates>
