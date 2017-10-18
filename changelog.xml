@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Oct 18, 2017</date>
+      <change>Added RTA timer for NTSC-U (Experimental)</change>
+   </update>
+   <update>
       <date>Oct 16, 2017</date>
       <change>Updated descriptions for incompatible codes.</change>
    </update>
