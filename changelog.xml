@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Oct 24, 2017</date>
+      <change>Added Shine outfit.</change>
+   </update>
+   <update>
       <date>Oct 18, 2017</date>
-      <change>Added RTA timer for NTSC-U (Experimental)</change>
+      <change>Added RTA timer for NTSC-U (Experimental).</change>
    </update>
    <update>
       <date>Oct 16, 2017</date>
@@ -10,7 +14,7 @@
    </update>
    <update>
       <date>Oct 15, 2017</date>
-      <change>Fixed download for Firefox</change>
+      <change>Fixed download for Firefox.</change>
    </update>
    <update>
       <date>Oct 14, 2017</date>
@@ -18,6 +22,6 @@
    </update>
    <update>
       <date>Oct 11, 2017</date>
-      <change>Added Stage Randomizer (Experimental) for NTSC-U</change>
+      <change>Added Stage Randomizer for NTSC-U (Experimental).</change>
    </update>
 </updates>

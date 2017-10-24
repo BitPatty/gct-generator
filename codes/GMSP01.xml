@@ -559,4 +559,16 @@
             E2000001 00000000
         </source>
     </code>
+	<code>
+        <title lang="en">Shine Outfit</title>
+        <author>Ralf</author>
+        <version>1.0</version>
+        <date>Oct 23, 2017</date>
+        <description>Always wear shine outfit and sunglasses.</description>
+        <source>
+            04239C88 60000004
+            04239C8C B01D0004
+            04245268 60000000
+        </source>
+    </code>
 </codes>

@@ -542,4 +542,16 @@
             E2000001 00000000
         </source>
     </code>
+	<code>
+        <title lang="en">Shine Outfit</title>
+        <author>Ralf, Psychonauter</author>
+        <version>1.0</version>
+        <date>Oct 23, 2017</date>
+        <description>Always wear shine outfit and sunglasses.</description>
+        <source>
+            04120D1C 60000004
+            04120D20 B01D0004
+            0412C9B0 60000000
+        </source>
+    </code>
 </codes>
