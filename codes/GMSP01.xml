@@ -90,6 +90,16 @@
         </source>
     </code>
     <code>
+        <title lang="en">Enable Pause Mid-Air</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <date>Oct 26, 2017</date>
+        <description>Allows you to pause mid-air.</description>
+        <source>
+            C628F948 8028F954
+        </source>
+    </code>
+    <code>
         <title lang="en">Ingame Timer (with Level Select)</title>
         <author>Psychonauter</author>
         <version>1.0</version>
