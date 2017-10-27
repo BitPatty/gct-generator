@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Oct 27, 2017</date>
+      <change>Minor Fixes for Shine Get Timer (previously RTA timer).</change>
+   </update>
+   <update>
       <date>Oct 26, 2017</date>
       <change>Added Enable Pause Mid-Air.</change>
    </update>
