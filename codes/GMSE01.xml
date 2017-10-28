@@ -2,10 +2,10 @@
 <codes>
     <code>
         <title lang="en">DPad Functions</title>
-        <author>Psychonauter, Dan Salvato, Link Master, James0x57</author>
-        <version>2.0</version>
-        <description><![CDATA[Allows various game modifications. Button combinations:<br/><table><tr><th align="left">Combination</th><th align="left">Result</th></tr><tr><td>D-Pad left</td><td>Save Mario sposition</td></tr><tr><td>D-Pad right</td><td>Load Marios Position</td></tr><tr><td>D-Pad up</td><td>Replace all dialog with a single "!!!" line</td></tr><tr><td>D-Pad down</td><td>Restore dialog boxes</td></tr><tr><td>B+D-Pad left</td><td>Lock rocket nozzle</td></tr><tr><td>B+D-Pad right</td><td>Lock turbo nozzle</td></tr><tr><td>B+D-Pad up</td><td>Lock hover nozzle</td></tr><tr><td>B+D-Pad down</td><td>Release nozzle lock</td></tr></table>]]></description>
-        <date>Jan 22, 2017</date>
+        <author>Psychonauter, Noki Doki, Dan Salvato, Link Master, James0x57</author>
+        <version>2.1</version>
+        <description><![CDATA[Allows various game modifications. Button combinations:<br/><table><tr><th align="left">Combination</th><th align="left">Result</th></tr><tr><td>D-Pad left</td><td>Save Mario sposition</td></tr><tr><td>D-Pad right</td><td>Load Marios Position</td></tr><tr><td>D-Pad up</td><td>Replace all dialog with a single "!!!" line</td></tr><tr><td>D-Pad down</td><td>Restore dialog boxes</td></tr><tr><td>B+D-Pad left</td><td>Lock rocket nozzle</td></tr><tr><td>B+D-Pad right</td><td>Lock turbo nozzle</td></tr><tr><td>B+D-Pad up</td><td>Lock hover nozzle</td></tr><tr><td>B+D-Pad down</td><td>Release nozzle lock</td></tr><tr><td>X+D-Pad left</td><td>No FLUDD in secrets</td></tr><tr><td>X+D-Pad right</td><td>FLUDD in all secrets</td></tr><tr><td>X+D-Pad up</td><td>Unlock Yoshi</td></tr><tr><td>X+D-Pad down</td><td>FLUDD in completed secrets (default)</td></tr></table>]]></description>
+        <date>Oct 28, 2017</date>
         <source>
             2440E10C 80000000
             82200000 8040E10C
@@ -34,6 +34,19 @@
             04269F50 3BE00001
             28404455 00000202
             04269F50 3BE00005
+            E2000001 00000000
+            E0000000 00000000
+            28404454 00000401
+            041C0910 60000000
+            04298B88 60000000
+            28404455 00000402
+            C61C0910 801C0928
+            C6298B88 80298B9C
+            28404455 00000404
+            041C0910 40820018
+            04298B88 40820014
+            28404455 00000408
+            C61BBFB4 801BBFD0
             E2000001 00000000
             048D3A3C 21000000
         </source>
@@ -839,7 +852,7 @@
             38800080 00000000
         </source>
     </code>
-	<code>
+    <code>
         <title lang="en">Shine Outfit</title>
         <author>Ralf, Psychonauter</author>
         <version>1.0</version>
