@@ -103,7 +103,7 @@
         </source>
     </code>
     <code>
-        <title lang="en">Ingame Timer (with Level Select)</title>
+        <title lang="en">Ingame Timer</title>
         <author>Psychonauter</author>
         <version>1.1</version>
         <date>Aug 28, 2017</date>
@@ -312,11 +312,11 @@
     <code>
         <title lang="en">Shine Get Timer (Experimental)</title>
         <author>Psychonauter, Noki Doki</author>
-        <version>1.2</version>
+        <version>1.3</version>
         <description>Starts timer on last black frame during level load and ends it when the Shine Get animation starts. This code is experimental and currently not compatible with DPad Functions. This code is not compatible with any code containing a level select.</description>
-        <date>Oct 27, 2017</date>
+        <date>Oct 29, 2017</date>
         <source>
-            C22A6710 00000074
+            C22A6710 0000007E
             3C60803E 60639710
             3CA08040 60A54484
             3CC0817F 60C60100
@@ -431,7 +431,17 @@
             4082000C 39200004
             4BFFFF8C 2C040507
             40A2000C 39200005
-            4BFFFF7C 807F0020
+            4BFFFF7C 3C60803E
+            60639710 A0830002
+            2C041E00 41820030
+            2C040404 41820028
+            2C040801 41820020
+            2C040904 41820018
+            2C040605 41820010
+            2C040805 41820008
+            48000014 3C60817F
+            60630100 38800000
+            B0830000 807F0020
             60000000 00000000
             C2031F68 0000000F
             3CC0817F 60C60100
@@ -496,7 +506,7 @@
             C228E90C 0000000A
             3CA0803E 60A59710
             A0A50002 2C051E00
-            41820034 2C050401
+            41820034 2C050404
             4182002C 2C050801
             41820024 2C050904
             4182001C 2C050605
