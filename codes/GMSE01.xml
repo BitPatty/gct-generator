@@ -310,7 +310,7 @@
         </source>
     </code>
     <code>
-        <title lang="en">Shine Get Timer (Experimental)</title>
+        <title lang="en">Shine Get Timer</title>
         <author>Psychonauter, Noki Doki</author>
         <version>1.3</version>
         <description>Starts timer on last black frame during level load and ends it when the Shine Get animation starts. This code is experimental and currently not compatible with DPad Functions. This code is not compatible with any code containing a level select.</description>
