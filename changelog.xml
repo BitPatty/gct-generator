@@ -1,43 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Oct 30, 2017</date>
+      <change>Added 'Enable Exit Area Everywhere'.</change>
+   </update>
+   <update>
       <date>Oct 29, 2017</date>
-      <change>Released Shine Get Timer.</change>
+      <change>Added 'Shine Get Timer'.</change>
    </update>
    <update>
       <date>Oct 28, 2017</date>
-      <change>Added X+DPad combinations to DPad Functions.</change>
+      <change>Added X+DPad combinations to 'DPad Functions'.</change>
    </update>
+   <!--
    <update>
       <date>Oct 27, 2017</date>
       <change>Minor Fixes for Shine Get Timer (previously RTA timer).</change>
    </update>
+   -->
    <update>
       <date>Oct 26, 2017</date>
-      <change>Added Enable Pause Mid-Air.</change>
+      <change>Added 'Enable Pause Mid-Air'.</change>
    </update>
    <update>
       <date>Oct 24, 2017</date>
-      <change>Added Shine outfit.</change>
+      <change>Added 'Shine outfit'.</change>
    </update>
+   <!--
    <update>
       <date>Oct 18, 2017</date>
       <change>Added RTA timer for NTSC-U (Experimental).</change>
    </update>
+   -->
+   <!--
    <update>
       <date>Oct 16, 2017</date>
       <change>Updated descriptions for incompatible codes.</change>
    </update>
+   -->
    <update>
       <date>Oct 15, 2017</date>
       <change>Fixed download for Firefox.</change>
    </update>
    <update>
       <date>Oct 14, 2017</date>
-      <change>Added Fast Any% for JP &amp; PAL</change>
+      <change>Added 'Fast Any%' for JP &amp; PAL</change>
    </update>
    <update>
       <date>Oct 11, 2017</date>
-      <change>Added Stage Randomizer for NTSC-U (Experimental).</change>
+      <change>Added 'Stage Randomizer' for NTSC-U (Experimental).</change>
    </update>
 </updates>
