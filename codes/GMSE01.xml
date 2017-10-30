@@ -103,6 +103,16 @@
         </source>
     </code>
     <code>
+        <title lang="en">Enable 'Exit Area' Everywhere</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <date>Oct 30, 2017</date>
+        <description>Enables 'Exit Area' on Plaza and Airstrip.</description>
+        <source>
+            C6156B78 80156B84
+        </source>
+    </code>
+    <code>
         <title lang="en">Ingame Timer</title>
         <author>Psychonauter</author>
         <version>1.1</version>
