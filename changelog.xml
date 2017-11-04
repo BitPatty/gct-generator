@@ -2,7 +2,7 @@
 <updates>
    <update>
       <date>Nov 4, 2017</date>
-      <change>Fixed 'Shine Get Timer' ending in wrong cutscenes.</change>
+      <change>Fixed 'Shine Get Timer' stopping in wrong cutscenes.</change>
    </update>
    <update>
       <date>Oct 30, 2017</date>
