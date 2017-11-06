@@ -103,16 +103,16 @@ function generateGCT() {
 }
 
 function updateCodelist() {
-    resetDescription();
-    document.getElementById("gameID").disabled = true;
-    button = document.getElementById("downloadButton");
-    button.style.visibility = "visible";
-    button.style.transitionDuration = "0s";
-    button.style.opacity = "0";
+	resetDescription();
+	document.getElementById("gameID").disabled = true;
+	button = document.getElementById("downloadButton");
+	button.style.visibility = "visible";
+	button.style.transitionDuration = "0s";
+	button.style.opacity = "0";
 	button.disabled = true;
-    document.getElementById("checkList").innerHTML = "";
-    var gameVersion = document.getElementById("gameID").value;
-    parseXML(gameVersion);
+	document.getElementById("checkList").innerHTML = "";
+	var gameVersion = document.getElementById("gameID").value;
+	parseXML(gameVersion);
 }
 
 function updateDescription($this) {
@@ -137,9 +137,11 @@ function updateChangelog() {
             changelogData = (new DOMParser()).parseFromString(xml.responseText, "text/xml");
             changelogData = changelogData.getElementsByTagName("update");
 
-            for (var i = 0; i < changelogData.length; i++) {
+            for (var i = 0; i < changelogData.length && i < 5; i++) {
                 document.getElementById("changelog").innerHTML += "<i>" + changelogData[i].getElementsByTagName("date")[0].textContent + ":</i> " + changelogData[i].getElementsByTagName("change")[0].textContent + "<br />";
             }
+
+            document.getElementById("changelog").innerHTML += "<a target=\"_blank\" href=\"changelog.html\">more ...</a>";
         };
     }
     xml.open("GET", file);

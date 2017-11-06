@@ -1,44 +1,52 @@
 <!DOCTYPE HTML>
 <html lang="en">
-
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title>SMS GCT Generator</title>
-    <script language="javascript" src="gctGenerator.js"></script>
-</head>
-
-<body onload="updateChangelog()">
-    <div style="width: 100%; overflow: hidden;">
-        <div style="width: 400px; float: left;">
-            <select id="gameID" class="selectionHeader" onchange="updateCodelist()" autocomplete="off">
-                <option selected disabled hidden>Choose Version</option>
-                <option value="GMSE01">GMSE01 (NTSC-U)</option>
-                <option value="GMSJ01">GMSJ01 (NTSC-J 1.0)</option>
-                <option value="GMSP01">GMSP01 (PAL)</option>
-            </select>
-            <ul id="checkList">
-            </ul>
-            <button id="downloadButton" onclick="generateGCT()" style="visibility:hidden;">Download</button>
-        </div>
-        <div style="margin-left: 420px;">
+   <head>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+      <link rel="stylesheet" href="style/style.css">
+      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+      <title>SMS GCT Generator</title>
+      <script language="javascript" src="gctGenerator.js"></script>
+   </head>
+   <body onload="updateChangelog()">
+      <div style="width: 100%; overflow: hidden;">
+         <div style="width: 400px; float: left;">
+            <center>
+               <select id="gameID" class="selectionHeader" onchange="updateCodelist()" autocomplete="off">
+                  <option selected disabled hidden>Choose Version</option>
+                  <option value="GMSE01">GMSE01 (NTSC-U)</option>
+                  <option value="GMSJ01">GMSJ01 (NTSC-J 1.0)</option>
+                  <option value="GMSP01">GMSP01 (PAL)</option>
+               </select>
+               <ul id="checkList">
+               </ul>
+               <button id="downloadButton" onclick="generateGCT()" style="visibility:hidden;">Download</button>
+            </center>
+         </div>
+         <div style="margin-left: 420px;">
+            <table id="warningMessage">
+               <tr>
+                  <th><img src="img/warning.png" width="40px" height="40px"></img></th>
+                  <th>The 'Shine Get Timer' and 'Shine Touch Timer' now require the Level Select code to be active! See <a target="_blank" href="changelog.html#1711061">Changelog</a> for details.</th>
+                  <th><img src="img/warning.png" width="40px" height="40px"></img></th>
+               </tr>
+            </table>
             <div id="descriptionBox" class="framed">
-                <p><h2>Mario Sunshine Cheatfile Generator</h2></p>
-                <p><i>Authors: <a href="https://twitter.com/psychonauter">Psy</a> & <a href="https://twitter.com/srlmilk">Milk</a><br />Last Updated: Nov 4, 2017</i></p>
-                <p>Description:<br /> This is a cheatfile generator for SMS Speedrun practice. A guide on how to use the generator and cheatfiles on your Wii can be found here: <a href="guide.html">Guide</a></p>
-                <h4>Changelog:</h4>
-                <p id="changelog"></p>
+               <p>
+               <h2>Mario Sunshine Cheatfile Generator</h2>
+               </p>
+               <p><i>Authors: <a href="https://twitter.com/psychonauter">Psy</a> & <a href="https://twitter.com/srlmilk">Milk</a><br />Last Updated: Nov 6, 2017</i></p>
+               <p>Description:<br />This is a cheatfile generator for SMS Speedrun practice. A guide on how to use the generator and cheatfiles on your Wii can be found here: <a target="_blank" href="guide.html">Guide</a></p>
+               <h4>Changelog:</h4>
+               <p id="changelog"></p>
             </div>
-        </div>
-    </div>
-</body>
-<script language="javascript">
-    document.getElementById("checkList").addEventListener("click", function(ev) {
-        if (ev.target && ev.target.nodeName == "LI") {
-            ev.target.classList.toggle("checked");
-        }
-    });
-</script>
-
+         </div>
+      </div>
+   </body>
+   <script language="javascript">
+      document.getElementById("checkList").addEventListener("click", function(ev) {
+          if (ev.target && ev.target.nodeName == "LI") {
+              ev.target.classList.toggle("checked");
+          }
+      });
+   </script>
 </html>

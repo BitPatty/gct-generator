@@ -13,7 +13,6 @@ html {
 body button {
     width: 390px;
     padding: 10px 10px 10px 10px;
-    float: left;
     display: block;
     margin: auto;
     font-size: 18px;
@@ -49,6 +48,7 @@ ul li {
     background: #ffefef;
     color: #262626;
     font-size: 18px;
+    text-align: left;
     transition: 0.2s;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -107,6 +107,9 @@ ul li.checked::before {
     width: 14px;
     background-color: #d85e55;
 }
+th {
+    font-weight: normal;
+}
 .selectionHeader {
     background-color: #f44336;
     padding: 10px 10px 10px 10px;
@@ -135,11 +138,18 @@ ul li.checked::before {
     border-radius: 4px;
     width: 500px;
     min-height: 150px;
-    -webkit-animation: fadein 1s;
-    -moz-animation: fadein 1s;
-    -ms-animation: fadein 1s;
-    -o-animation: fadein 1s;
-    animation: fadein 1s;
+}
+#warningMessage {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    background-color: #111;
+    width: 526px;
+    padding: 5px 12px 5px 12px;
+    margin: 11px 0px 0px 0px;
 }
 #guide_content {
     clear: both;
@@ -158,7 +168,7 @@ ul li.checked::before {
     opacity: 0;
 }
 a {
-    color: pink;
+    color: #ff96a8;
 }
 @keyframes fadein {
     from {
