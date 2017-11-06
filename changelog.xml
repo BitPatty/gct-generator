@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Nov 6, 2017</date>
+      <change>Updated 'Level Select'. Added 'Shine Touch Timer'. Marked original IGT as deprecated. Replaced 'Exit Area Everywhere' and 'Pause Mid-Air' with 'Free Pause'.</change>
+   </update>
+   <update>
       <date>Nov 4, 2017</date>
       <change>Fixed 'Shine Get Timer' stopping in wrong cutscenes.</change>
    </update>
