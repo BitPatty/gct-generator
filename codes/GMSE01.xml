@@ -116,7 +116,7 @@
         <author>Psychonauter</author>
         <version>1.5</version>
         <date>Nov 06, 2017</date>
-        <description><![CDATA[Adds the ingame timer to every level, starting on the last black frame after the loading screen and ending when you touch a Shine.<br /><br /><b><font color ="pink">Requires the Level Select code to be active.</font></b>]]></description>
+        <description><![CDATA[Adds the ingame timer to every level, starting on the last black frame after the loading screen and ending when you touch a Shine.<br /><br /><b><font color ="#ff8297">Requires the Level Select code to be active.</font></b>]]></description>
         <source>
             C2031F68 0000000F
             3CC0817F 60C60100
@@ -206,7 +206,7 @@
         <title lang="en">Shine Get Timer</title>
         <author>Psychonauter</author>
         <version>1.5</version>
-        <description><![CDATA[Adds the ingame timer to every level, starting on the last black frame after the loading screen and ending as soon as the 'Shine Get' animation starts (Similiar to the x-cam timer of SM64). <br /><br /><b><font color ="pink">Requires the Level Select code to be active.</font></b>]]></description>
+        <description><![CDATA[Adds the ingame timer to every level, starting on the last black frame after the loading screen and ending as soon as the 'Shine Get' animation starts (Similiar to the x-cam timer of SM64). <br /><br /><b><font color ="#ff8297">Requires the Level Select code to be active.</font></b>]]></description>
         <date>Nov 06, 2017</date>
         <source>
             C2031F68 0000000F
