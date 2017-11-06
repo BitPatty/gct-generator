@@ -306,7 +306,7 @@
     </code>
     <code>
         <title lang="en">Level Select</title>
-        <author>Psychonauter, Dan Salvato, Noki Doki</author>
+        <author>Psychonauter, Dan Salvato, ParadoxKarl, Noki Doki</author>
         <version>1.5</version>
         <date>Nov 06, 2017</date>
         <description><![CDATA[Allows warping to other levels when starting a file or when exiting level by holding the combination until the screen turns black. Codes:<br /><br /><img src="img/levelselect.png" width="500px">]]></description>
