@@ -5,7 +5,6 @@
       <link rel="stylesheet" href="style/style.css">
       <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
       <title>SMS GCT Generator</title>
-      <script language="javascript" src="gctGenerator.js"></script>
    </head>
    <body onload="updateChangelog()">
       <div style="width: 100%; overflow: hidden;">
@@ -41,12 +40,6 @@
             </div>
          </div>
       </div>
+      <script language="javascript" src="gctGenerator.js"></script>
    </body>
-   <script language="javascript">
-      document.getElementById("checkList").addEventListener("click", function(ev) {
-          if (ev.target && ev.target.nodeName == "LI") {
-              ev.target.classList.toggle("checked");
-          }
-      });
-   </script>
 </html>
