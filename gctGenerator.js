@@ -6,48 +6,46 @@ if (navigator.userAgent.toLowerCase().indexOf("firefox") > -1) {
     }
 }
 
-var xmlData;
-function fillChecklist(i) {
-    if (i < xmlData.length) {
-        var li = document.createElement("li");
-        var desc = xmlData[i].getElementsByTagName("title")[0].textContent;
-        var t = document.createTextNode(desc);
-        li.appendChild(t);
-        li.setAttribute("data-codeName", xmlData[i].getElementsByTagName("title")[0].textContent);
-        li.setAttribute("data-codeAuthor", xmlData[i].getElementsByTagName("author")[0].textContent);
-        li.setAttribute("data-codeDesc", xmlData[i].getElementsByTagName("description")[0].textContent);
-        li.setAttribute("data-codeVersion", xmlData[i].getElementsByTagName("version")[0].textContent);
-        li.setAttribute("data-codeDate", xmlData[i].getElementsByTagName("date")[0].textContent);
-        li.setAttribute("data-codeSrc", xmlData[i].getElementsByTagName("source")[0].textContent.replace(/[\s\n\r\t]+/gm, ""));
-        li.setAttribute("onmouseover", "updateDescription(this)");
-        document.getElementById("checkList").appendChild(li);
-        i++;
-        setTimeout(function() {
-            fillChecklist(i)
-        }, 16);
-    } else {
-        setTimeout(function() {
-            button = document.getElementById("downloadButton");
-            button.style.transitionDuration = "1s";
-            button.style.opacity = "1";
-            button.disabled = false;
-            document.getElementById("gameID").disabled = false;
-        }, 24);
-    }
-}
+document.getElementById("checkList").addEventListener("click", function(ev) {
+  if (ev.target && ev.target.nodeName == "LI") {
+      ev.target.classList.toggle("checked");
+  }
+});
 
 function parseXML(name) {
     var xml = new XMLHttpRequest();
     var file = "codes/" + name + ".xml";
     xml.onload = function() {
         if (this.status == 200 && this.responseXML != null) {
-            xmlData = xml.responseXML;
+            var xmlData = xml.responseXML;
             xmlData = (new DOMParser()).parseFromString(xml.responseText, "text/xml");
             xmlData = xmlData.getElementsByTagName("code");
 
-            fillChecklist(0);
+            var i = 0;
+            for(;i < xmlData.length; i++) {
+                var li = document.createElement("li");
+                var desc = xmlData[i].getElementsByTagName("title")[0].textContent;
+                var t = document.createTextNode(desc);
+                li.appendChild(t);
+                li.setAttribute("data-codeName", xmlData[i].getElementsByTagName("title")[0].textContent);
+                li.setAttribute("data-codeAuthor", xmlData[i].getElementsByTagName("author")[0].textContent);
+                li.setAttribute("data-codeDesc", xmlData[i].getElementsByTagName("description")[0].textContent);
+                li.setAttribute("data-codeVersion", xmlData[i].getElementsByTagName("version")[0].textContent);
+                li.setAttribute("data-codeDate", xmlData[i].getElementsByTagName("date")[0].textContent);
+                li.setAttribute("data-codeSrc", xmlData[i].getElementsByTagName("source")[0].textContent.replace(/[\s\n\r\t]+/gm, ""));
+                li.setAttribute("onmouseover", "updateDescription(this)");
+                li.style.animationDuration = 0.4 + i*0.05 + "s";
+                document.getElementById("checkList").appendChild(li);
+            }
+
+            button = document.getElementById("downloadButton");
+            button.style.transitionDuration =  0.6 + i*0.05 + "s";
+            button.style.opacity = "1";
+            button.disabled = false;
+            document.getElementById("gameID").disabled = false;
         }
     };
+
     xml.open("GET", file);
     xml.send();
 }
@@ -103,16 +101,16 @@ function generateGCT() {
 }
 
 function updateCodelist() {
-	resetDescription();
-	document.getElementById("gameID").disabled = true;
-	button = document.getElementById("downloadButton");
-	button.style.visibility = "visible";
-	button.style.transitionDuration = "0s";
-	button.style.opacity = "0";
-	button.disabled = true;
-	document.getElementById("checkList").innerHTML = "";
-	var gameVersion = document.getElementById("gameID").value;
-	parseXML(gameVersion);
+    resetDescription();
+    document.getElementById("gameID").disabled = true;
+    button = document.getElementById("downloadButton");
+    button.style.visibility = "visible";
+    button.style.transitionDuration = "0s";
+    button.style.opacity = "0";
+    button.disabled = true;
+    document.getElementById("checkList").innerHTML = "";
+    var gameVersion = document.getElementById("gameID").value;
+    parseXML(gameVersion);
 }
 
 function updateDescription($this) {
