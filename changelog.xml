@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Nov 7, 2017</date>
+      <change>Seperated 'Free Pause' and 'Exit Area everywhere'.</change>
+   </update>
+   <update>
       <date>Nov 6, 2017</date>
       <change>Updated 'Level Select'. Added 'Shine Touch Timer'. Marked original IGT as deprecated. Replaced 'Exit Area Everywhere' and 'Pause Mid-Air' with 'Free Pause'.</change>
    </update>
