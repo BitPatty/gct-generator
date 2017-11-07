@@ -107,10 +107,9 @@
         <author>Noki Doki</author>
         <version>1.0</version>
         <date>Nov 5, 2017</date>
-        <description>Allows you to pause mid-air and during cutscenes. Additionally, it enables the 'Exit Area' option on Plaza.</description>
+        <description>Allows you to pause mid-air and during cutscenes.</description>
         <source>
             C628F948 8028F954
-            C614BB94 8014BBA0
             C228F870 00000007
             887F007C 2803000F
             41820028 807F0018
@@ -121,6 +120,17 @@
             3C60803A 00000000
         </source>
     </code>
+    <code>
+        <title lang="en">Enable Exit Area Everywhere</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <date>Okt 30, 2017</date>
+        <description>Enables 'Exit Area' on Plaza and Airstrip.</description>
+        <source>
+            C614BB94 8014BBA0
+        </source>
+    </code>
+    <code>
     <code>
         <title lang="en">Shine Touch Timer</title>
         <author>Psychonauter</author>

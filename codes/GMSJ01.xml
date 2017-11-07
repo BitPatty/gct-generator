@@ -99,10 +99,9 @@
         <author>Noki Doki</author>
         <version>1.0</version>
         <date>Nov 5, 2017</date>
-        <description>Allows you to pause mid-air and during cutscenes. Additionally, it enables the 'Exit Area' option on Plaza.</description>
+        <description>Allows you to pause mid-air and during cutscenes.</description>
         <source>
             C60EB06C 800EB078
-            C6218054 80218060
             C20EAF94 00000007
             887F007C 2803000F
             41820028 807F0018
@@ -111,6 +110,16 @@
             3C60800E 6063B038
             7C6803A6 4E800020
             3C608037 00000000
+        </source>
+    </code>
+    <code>
+        <title lang="en">Enable Exit Area Everywhere</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <date>Okt 30, 2017</date>
+        <description>Enables 'Exit Area' on Plaza and Airstrip.</description>
+        <source>
+            C6218054 80218060
         </source>
     </code>
     <code>
