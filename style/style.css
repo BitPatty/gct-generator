@@ -138,6 +138,13 @@ th {
     border-radius: 4px;
     width: 500px;
     min-height: 150px;
+    overflow-y:  auto;
+    overflow-x: hidden;
+    max-height: 100vh;
+    -ms-overflow-style: none;
+}
+.framed::-webkit-scrollbar {
+    display:none;
 }
 #warningMessage {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
