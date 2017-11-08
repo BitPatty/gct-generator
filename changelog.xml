@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Nov 8, 2017</date>
+      <change>Added 'Fast 79 Shines' for NTSC-U.</change>
+   </update>
+   <update>
       <date>Nov 7, 2017</date>
       <change>Seperated 'Free Pause' and 'Exit Area everywhere'.</change>
    </update>
