@@ -593,7 +593,7 @@
         <title lang="en">Fast 79 Shines</title>
         <author>Psychonauter</author>
         <version>1.0</version>
-        <description>Loads stages in 79 Shines (All Level Shines) order, skips all save boxes and replaces all Dialog with "!!!" (except for the Pianta 5 secret and Pinna 8). Note: 100c missions can be done in any stage. If it's not done after everything else is completed it will load the stage where you usually get the 100c shines in 79 Shines. The route can be found in the SMS guide: https://docs.google.com/spreadsheets/d/19wxG81nHkHlGVPRJZJKp8VcxSeGbRZnKmR9lN7jJSwM/pubhtml# . This code is not compatible with any other code containing a level select.</description>
+        <description>Loads stages in 79 Shines (All Level Shines) order, skips all save boxes and replaces all Dialog with "!!!" (except for the Pianta 5 secret and Pinna 8). Note: 100c missions can be done in any stage. If it's not done after everything else is completed it will load the stage where you usually get the 100c shines in 79 Shines. The route can be found in the SMS guide. This code is not compatible with any other code containing a level select.</description>
         <date>Nov 08, 2017</date>
         <source>
             C22A6710 000000BD
