@@ -129,7 +129,7 @@ function generateINI() {
         alert("Select the game version!");
         return;
     }
-    var data = "Copy the following on top of your games .ini file:\r\n[Gecko]\r\n";
+    var data = "Paste the following on top of your games .ini file:\r\n[Gecko]\r\n";
     var codeList = document.getElementById("checkList").getElementsByTagName("li");
     var valueSelected = false;
     for (var i = 0; i < codeList.length; i++) {
