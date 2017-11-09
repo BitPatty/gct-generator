@@ -42,6 +42,10 @@ function parseXML(name) {
             button.style.transitionDuration =  0.6 + i*0.05 + "s";
             button.style.opacity = "1";
             button.disabled = false;
+            button = document.getElementById("dolphinDownloadButton");
+            button.style.transitionDuration =  0.6 + i*0.05 + "s";
+            button.style.opacity = "1";
+            button.disabled = false;
             document.getElementById("gameID").disabled = false;
         }
     };
@@ -100,10 +104,59 @@ function generateGCT() {
     }
 }
 
+function downloadINI(data, filename) {
+    var file = new Blob([data], {
+        type: "application/octet-stream"
+    });
+
+    if (window.navigator.msSaveOrOpenBlob)
+        window.navigator.msSaveOrOpenBlob(file, filename);
+    else {
+        var a = document.createElement("a"),
+            url = window.URL.createObjectURL(file);
+        a.href = url;
+        a.download = filename;
+        a.click();
+        setTimeout(function() {
+            window.URL.revokeObjectURL(url);
+        }, 500);
+    }
+}
+
+function generateINI() {
+
+    if (document.getElementById("gameID").value === "Choose Version") {
+        alert("Select the game version!");
+        return;
+    }
+    var data = "Paste the following on top of your games .ini file:\r\n[Gecko]\r\n";
+    var codeList = document.getElementById("checkList").getElementsByTagName("li");
+    var valueSelected = false;
+    for (var i = 0; i < codeList.length; i++) {
+        if (codeList[i].className === "checked") {
+            data += "$" + codeList[i].getAttribute("data-codeName") + " (" + codeList[i].getAttribute("data-codeDate") + ") [" + codeList[i].getAttribute("data-codeAuthor") + "]\r\n";
+            data += (codeList[i].getAttribute("data-codeSrc").match(/.{8}/g).join(" ")).replace(/(.{17})./g,"$1 \r\n");
+            data += "\r\n";
+            valueSelected = true;
+        }
+    }
+
+    if (valueSelected) {
+        downloadINI(data, document.getElementById("gameID").value + ".txt");
+    } else {
+        alert("No cheat(s) selected!");
+    }
+}
+
 function updateCodelist() {
     resetDescription();
     document.getElementById("gameID").disabled = true;
     button = document.getElementById("downloadButton");
+    button.style.visibility = "visible";
+    button.style.transitionDuration = "0s";
+    button.style.opacity = "0";
+    button.disabled = true;
+    button = document.getElementById("dolphinDownloadButton");
     button.style.visibility = "visible";
     button.style.transitionDuration = "0s";
     button.style.opacity = "0";
