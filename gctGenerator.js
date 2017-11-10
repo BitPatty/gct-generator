@@ -135,7 +135,7 @@ function generateINI() {
     for (var i = 0; i < codeList.length; i++) {
         if (codeList[i].className === "checked") {
             data += "$" + codeList[i].getAttribute("data-codeName") + " (" + codeList[i].getAttribute("data-codeDate") + ") [" + codeList[i].getAttribute("data-codeAuthor") + "]\r\n";
-            data += (codeList[i].getAttribute("data-codeSrc").match(/.{8}/g).join(" ")).replace(/(.{17})./g,"$1 \r\n");
+            data += (codeList[i].getAttribute("data-codeSrc").match(/.{8}/g).join(" ")).replace(/(.{17})./g,"$1\r\n");
             data += "\r\n";
             valueSelected = true;
         }
