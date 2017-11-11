@@ -140,7 +140,7 @@ th {
     min-height: 150px;
     overflow-y:  auto;
     overflow-x: hidden;
-    max-height: 100vh;
+    max-height: 80vh;
     -ms-overflow-style: none;
 }
 .framed::-webkit-scrollbar {
