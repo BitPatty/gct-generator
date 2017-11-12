@@ -97,19 +97,19 @@
     <code>
         <title lang="en">Free Pause</title>
         <author>Noki Doki</author>
-        <version>1.0</version>
-        <date>Nov 5, 2017</date>
+        <version>1.1</version>
+        <date>Nov 12, 2017</date>
         <description>Allows you to pause mid-air and during cutscenes.</description>
         <source>
             C60EB06C 800EB078
-            C20EAF94 00000007
+            C20EAF90 00000007
             887F007C 2803000F
             41820028 807F0018
             80630000 806300D4
             546307FF 41820014
             3C60800E 6063B038
             7C6803A6 4E800020
-            3C608037 00000000
+            881F0124 00000000
         </source>
     </code>
     <code>
