@@ -1,12 +1,13 @@
 ﻿body {
-    margin: 50px 50px 0 50px;
-    width: 1200px;
+    display: inline-block;
+    margin: 30px 30px 30px 30px;
     text-align: justify;
 }
 html {
-    background-color: #262626;
+    background-color: #0D0D0D;
     color: #f1f1f1;
     font-family: Calibri;
+    text-align: center;
 }
 div {
     padding: 0;
@@ -34,12 +35,17 @@ ul li {
 }
 #guide_content {
     clear: both;
-    background-color: #111;
+    /*background-color: #111;*/
+    background: #232323;
     width: 100%;
     max-width: 960px;
     overflow: hidden;
     border: 1px solid #333;
-    margin: 30px 0px 10px 0px;
+    border-radius: 4px;
+    border-color: grey;
+    border-width: 1px;
+    border-style: dashed;
+    margin: 20px 20px 20px 20px;
     padding: 0px 30px 30px 30px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;

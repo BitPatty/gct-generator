@@ -12,29 +12,6 @@ document.getElementById("checkList").addEventListener("click", function(ev) {
   }
 });
 
-window.addEventListener("scroll", function(e) {
-    try {
-        document.getElementById("descriptionBox").style.left = (470 - window.pageXOffset) + "px";
-        if (document.getElementById("warningMessage").style.display != "none") {
-            if(window.pageYOffset > 120) {
-                document.getElementById("descriptionBox").style.top = "0px";
-            } else {
-                document.getElementById("descriptionBox").style.top = (120 - window.pageYOffset) + "px";
-            }
-        } else {
-            if(window.pageYOffset > 61) {
-                document.getElementById("descriptionBox").style.top = "0px";
-            } else {
-                document.getElementById("descriptionBox").style.top = (61 - window.pageYOffset - 11) + "px";
-            }            
-        }
-        
-    } catch (ex) {
-        console.log("error");
-    }
-});
-
-
 function parseXML(name) {
     var xml = new XMLHttpRequest();
     var file = "codes/" + name + ".xml";

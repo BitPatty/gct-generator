@@ -1,11 +1,16 @@
 ﻿body {
-    margin: 50px 50px 0 50px;
+    margin: 50px 50px 50px 50px;
     width: 980px;
+    min-height: 450px;
+    display: inline-block;
+    text-align:left;
 }
 html {
-    background-color: #262626;
+    /*background-color: #262626;*/
+    background-color: #0D0D0D;
     color: #f1f1f1;
     font-family: Calibri;
+    text-align: center;
 }
 #gameID {
     margin: 10px 0 5px 0;
@@ -125,10 +130,11 @@ th {
     outline: none;
 }
 .framed {
-    position: fixed;
+    position: relative;
     margin: 11px 0px 10px 0;
     padding: 0px 12px 12px 12px;
-    background-color: #111;
+    /*background-color: #111;*/
+    background: #232323;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 18px;
@@ -140,7 +146,6 @@ th {
     min-height: 150px;
     overflow-y:  auto;
     overflow-x: hidden;
-    max-height: 80vh;
     -ms-overflow-style: none;
 }
 .framed::-webkit-scrollbar {
@@ -153,7 +158,8 @@ th {
     border-style: solid;
     border-width: 1px;
     border-radius: 4px;
-    background-color: #111;
+    /*background-color: #111;*/
+    background: #232323;
     width: 526px;
     padding: 5px 12px 5px 12px;
     margin: 11px 0px 0px 0px;
