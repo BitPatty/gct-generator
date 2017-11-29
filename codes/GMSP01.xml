@@ -324,8 +324,8 @@
     <code>
         <title lang="en">Level Select</title>
         <author>Psychonauter, Dan Salvato, Noki Doki</author>
-        <version>1.5</version>
-        <date>Nov 06, 2017</date>
+        <version>1.5.1</version>
+        <date>Nov 29, 2017</date>
         <description><![CDATA[Allows warping to other levels when starting a file or when exiting level by holding the combination until the screen turns black. Codes:<br /><br /><img src="img/levelselect.png" width="500px">]]></description>
         <source>
             C229E668 0000007F
@@ -432,7 +432,7 @@
             91030000 806D9EC8
             5509063E 992300DF
             4800006C 39000D00
-            A083FFFC 2C040500
+            8083FFFC 2C040500
             4082000C 39200000
             4BFFFFCC 2C040502
             4082000C 39200001

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Nov 29, 2017</date>
+      <change>Fixed Pinna not resetting inside the park on PAL.</change>
+   </update>
+   <update>
       <date>Nov 12, 2017</date>
       <change>Fixed 'Free Pause' compatibility with 'Shine Get Timer'.</change>
    </update>
