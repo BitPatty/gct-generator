@@ -123,8 +123,8 @@
     <code>
         <title lang="en">Shine Touch Timer</title>
         <author>Psychonauter</author>
-        <version>1.5</version>
-        <date>Nov 06, 2017</date>
+        <version>1.6</version>
+        <date>Nov 29, 2017</date>
         <description><![CDATA[Adds the ingame timer to every level, starting on the last black frame after the loading screen and ending when you touch a Shine.<br /><br /><b><font color ="#ff8297">Requires the Level Select code to be active.</font></b>]]></description>
         <source>
             C2031F68 0000000F
@@ -193,6 +193,17 @@
             3C60817F 60630100
             38800101 B0830000
             807F025C 00000000
+            C2031F6C 0000000A
+            3C60803E 60639710
+            A083FFFE 2C043C00
+            40A20038 A0830002
+            2C040FFF 40A2002C
+            7C1E0378 7FE802A6
+            3C608056 6063DD00
+            3C808028 6084E604
+            7C8803A6 4E800021
+            7FE803A6 7FC0F378
+            83E1001C 00000000
             04348048 4E800020
             0414A99C 60000000
             0414D2E8 60000000
@@ -214,9 +225,9 @@
     <code>
         <title lang="en">Shine Get Timer</title>
         <author>Psychonauter</author>
-        <version>1.5</version>
+        <version>1.6</version>
         <description><![CDATA[Adds the ingame timer to every level, starting on the last black frame after the loading screen and ending as soon as the 'Shine Get' animation starts (Similiar to the x-cam timer of SM64). <br /><br /><b><font color ="#ff8297">Requires the Level Select code to be active.</font></b>]]></description>
-        <date>Nov 06, 2017</date>
+        <date>Nov 29, 2017</date>
         <source>
             C2031F68 0000000F
             3CC0817F 60C60100
@@ -293,6 +304,17 @@
             3C60817F 60630100
             38800101 B0830000
             807F025C 00000000
+            C2031F6C 0000000A
+            3C60803E 60639710
+            A083FFFE 2C043C00
+            40A20038 A0830002
+            2C040FFF 40A2002C
+            7C1E0378 7FE802A6
+            3C608056 6063DD00
+            3C808028 6084E604
+            7C8803A6 4E800021
+            7FE803A6 7FC0F378
+            83E1001C 00000000
             04348048 4E800020
             0414A99C 60000000
             0414D2E8 60000000
