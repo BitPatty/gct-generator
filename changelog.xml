@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Dec 05, 2017</date>
+      <change>Added 'Download for Gecko Cheat Manager' option.</change>
+   </update>
+   <update>
       <date>Nov 29, 2017</date>
-      <change>Made timers stop after the bowser fight and fixed Pinna not resetting inside the park on PAL</change>
+      <change>Made timers stop after the bowser fight and fixed Pinna not resetting inside the park on PAL.</change>
    </update>
    <update>
       <date>Nov 12, 2017</date>
