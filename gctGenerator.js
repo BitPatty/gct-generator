@@ -7,22 +7,22 @@ if (navigator.userAgent.toLowerCase().indexOf("firefox") > -1) {
 }
 
 document.getElementById("checkList").addEventListener("click", function(ev) {
-  if (ev.target && ev.target.nodeName == "LI") {
-      ev.target.classList.toggle("checked");
-  }
+    if (ev.target && ev.target.nodeName == "LI") {
+        ev.target.classList.toggle("checked");
+    }
 });
 
 function parseXML(name) {
     var xml = new XMLHttpRequest();
     var file = "codes/" + name + ".xml";
-    xml.onload = function() {
-        if (this.status == 200 && this.responseXML != null) {
+    xml.onreadystatechange = function() {
+        if (this.status == 200 && this.readyState == 4) {
             var xmlData = xml.responseXML;
             xmlData = (new DOMParser()).parseFromString(xml.responseText, "text/xml");
             xmlData = xmlData.getElementsByTagName("code");
 
             var i = 0;
-            for(;i < xmlData.length; i++) {
+            for (; i < xmlData.length; i++) {
                 var li = document.createElement("li");
                 var desc = xmlData[i].getElementsByTagName("title")[0].textContent;
                 var t = document.createTextNode(desc);
@@ -34,17 +34,17 @@ function parseXML(name) {
                 li.setAttribute("data-codeDate", xmlData[i].getElementsByTagName("date")[0].textContent);
                 li.setAttribute("data-codeSrc", xmlData[i].getElementsByTagName("source")[0].textContent.replace(/[\s\n\r\t]+/gm, ""));
                 li.setAttribute("onmouseover", "updateDescription(this)");
-                li.style.animationDuration = 0.4 + i*0.05 + "s";
                 document.getElementById("checkList").appendChild(li);
             }
 
             button = document.getElementById("downloadButton");
-            button.style.transitionDuration =  0.6 + i*0.05 + "s";
-            button.style.opacity = "1";
+            button.style.visibility = "visible";
             button.disabled = false;
             button = document.getElementById("dolphinDownloadButton");
-            button.style.transitionDuration =  0.6 + i*0.05 + "s";
-            button.style.opacity = "1";
+            button.style.visibility = "visible";
+            button.disabled = false;
+            button = document.getElementById("gcmDownloadButton");
+            button.style.visibility = "visible";
             button.disabled = false;
             document.getElementById("gameID").disabled = false;
         }
@@ -104,7 +104,7 @@ function generateGCT() {
     }
 }
 
-function downloadINI(data, filename) {
+function downloadTXT(data, filename) {
     var file = new Blob([data], {
         type: "application/octet-stream"
     });
@@ -123,26 +123,28 @@ function downloadINI(data, filename) {
     }
 }
 
-function generateINI() {
-
+function generateTXT(s) {
     if (document.getElementById("gameID").value === "Choose Version") {
         alert("Select the game version!");
         return;
     }
-    var data = "Paste the following on top of your games .ini file:\r\n[Gecko]\r\n";
+    if (s.id === "dolphinDownloadButton") var data = "Paste the following on top of your games .ini file:\r\n[Gecko]";
+    else var data = document.getElementById("gameID").value + "\r\nSuper Mario Sunshine";
     var codeList = document.getElementById("checkList").getElementsByTagName("li");
     var valueSelected = false;
     for (var i = 0; i < codeList.length; i++) {
         if (codeList[i].className === "checked") {
-            data += "$" + codeList[i].getAttribute("data-codeName") + " (" + codeList[i].getAttribute("data-codeDate") + ") [" + codeList[i].getAttribute("data-codeAuthor") + "]\r\n";
-            data += (codeList[i].getAttribute("data-codeSrc").match(/.{8}/g).join(" ")).replace(/(.{17})./g,"$1\r\n");
             data += "\r\n";
+            if (s.id === "gcmDownloadButton") data += "\r\n";
+            else data += "$";
+            data += codeList[i].getAttribute("data-codeName") + " (" + codeList[i].getAttribute("data-codeDate") + ") [" + codeList[i].getAttribute("data-codeAuthor") + "]\r\n";
+            data += (codeList[i].getAttribute("data-codeSrc").match(/.{8}/g).join(" ")).replace(/(.{17})./g, "$1\r\n");
             valueSelected = true;
         }
     }
 
     if (valueSelected) {
-        downloadINI(data, document.getElementById("gameID").value + ".txt");
+        downloadTXT(data, document.getElementById("gameID").value + ".txt");
     } else {
         alert("No cheat(s) selected!");
     }
@@ -152,27 +154,35 @@ function updateCodelist() {
     resetDescription();
     document.getElementById("gameID").disabled = true;
     button = document.getElementById("downloadButton");
-    button.style.visibility = "visible";
-    button.style.transitionDuration = "0s";
-    button.style.opacity = "0";
+    button.style.visibility = "hidden";
     button.disabled = true;
     button = document.getElementById("dolphinDownloadButton");
-    button.style.visibility = "visible";
-    button.style.transitionDuration = "0s";
-    button.style.opacity = "0";
+    button.style.visibility = "hidden";
+    button.disabled = true;
+    button = document.getElementById("gcmDownloadButton");
+    button.style.visibility = "hidden";
     button.disabled = true;
     document.getElementById("checkList").innerHTML = "";
     var gameVersion = document.getElementById("gameID").value;
     parseXML(gameVersion);
 }
 
-function updateDescription($this) {
+function updateDescription(s) {
     document.getElementById("descriptionBox").innerHTML = "<p><h2>" +
-        $this.getAttribute("data-codeName") + "</h2></p><p><i>Author(s): " +
-        $this.getAttribute("data-codeAuthor") + "<br />Version: " +
-        $this.getAttribute("data-codeVersion") + " (" +
-        $this.getAttribute("data-codeDate") + ")</i></p>" + "<p>Description:<br />" +
-        $this.getAttribute("data-codeDesc") + "</p>";
+        s.getAttribute("data-codeName") + "</h2></p><p><i>Author(s): " +
+        s.getAttribute("data-codeAuthor") + "<br />Version: " +
+        s.getAttribute("data-codeVersion") + " (" +
+        s.getAttribute("data-codeDate") + ")</i></p>" + "<p>Description:<br />" +
+        s.getAttribute("data-codeDesc") + "</p>";
+}
+
+function setButtonDescription(s) {
+    if (s.id === "downloadButton")
+        document.getElementById("descriptionBox").innerHTML = "<p><h2>Download GCT</h2></p><p>Download the cheats in the GCT format for use with Nintendont.</p>";
+    else if (s.id === "dolphinDownloadButton")
+        document.getElementById("descriptionBox").innerHTML = "<p><h2>Download for Dolphin</h2></p><p>Download a textfile containing the formatted codes for use with Dolphin. Copy the contents of the file on top of your games .ini file.</p>";
+    else
+        document.getElementById("descriptionBox").innerHTML = "<p><h2>Download for Gecko Cheat Manager</h2></p><p>Download the cheats in a textfile formatted for use with the <a href=\"http://wiibrew.org/wiki/CheatManager\">Gecko Cheat Manager</a>. Place the txt file in SD:/txtcodes/.</p><p>A zip archive containing pregenerated txt files with all available codes on this site can be downloaded <a href=\"files/GCMCodes.zip\">here</a>.";
 }
 
 function resetDescription() {

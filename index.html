@@ -19,8 +19,9 @@
                </select>
                <ul id="checkList">
                </ul>
-               <button id="downloadButton" onclick="generateGCT()" style="visibility:hidden;">Download GCT</button>
-               <button id="dolphinDownloadButton" onclick="generateINI()" style="visibility:hidden; background-color:#5c90aa; margin-bottom: 20px;">Download for Dolphin</button>
+               <button id="downloadButton" onclick="generateGCT()" onmouseover="setButtonDescription(this)" style="visibility:hidden;">Download .GCT</button>
+               <button id="dolphinDownloadButton" onclick="generateTXT(this)" onmouseover="setButtonDescription(this)"  style="visibility:hidden;">Dolphin INI</button>
+			   <button id="gcmDownloadButton" onclick="generateTXT(this)" onmouseover="setButtonDescription(this)" style="visibility:hidden;">GCM TXT</button>
             </center>
          </div>
          <div style="margin-left: 420px;">
@@ -35,7 +36,7 @@
                <p>
                <h2>Mario Sunshine Cheatfile Generator</h2>
                </p>
-               <p><i>Authors: <a href="https://twitter.com/psychonauter">Psy</a> & <a href="https://twitter.com/srlmilk">Milk</a><br />Last Updated: Nov 29, 2017</i></p>
+               <p><i>Authors: <a href="https://twitter.com/psychonauter">Psy</a> & <a href="https://twitter.com/srlmilk">Milk</a><br />Last Updated: Dec 05, 2017</i></p>
                <p>Description:<br />This is a cheatfile generator for SMS Speedrun practice. A guide on how to use the generator and practice codes on your Wii can be found here: <a target="_blank" href="guide.html">Guide</a></p>
                <h4>Changelog:</h4>
                <p id="changelog"></p>
