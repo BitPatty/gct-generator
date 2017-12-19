@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Dec 19, 2017</date>
+      <change>Added FMV Skips to 'Fast Any%' except for Pinna 1.</change>
+   </update>
+   <update>
       <date>Dec 05, 2017</date>
       <change>Added 'Download for Gecko Cheat Manager' option.</change>
    </update>
