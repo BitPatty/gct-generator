@@ -124,7 +124,7 @@
         <title lang="en">Enable Exit Area Everywhere</title>
         <author>Noki Doki</author>
         <version>1.0</version>
-        <date>Okt 30, 2017</date>
+        <date>Oct 30, 2017</date>
         <description>Enables 'Exit Area' on Plaza and Airstrip.</description>
         <source>
             C614BB94 8014BBA0
@@ -482,10 +482,10 @@
     </code>
     <code>
         <title lang="en">Fast Any%</title>
-        <author>Psychonauter</author>
-        <version>1.1</version>
-        <date>Oct 12, 2017</date>
-        <description>Loads stages in any% order, skips all save boxes and replaces all Dialog with "!!!" (except for the Pianta 5 secret). This code is not compatible with the Level Select code.</description>
+        <author>Psychonauter, Noki Doki</author>
+        <version>1.2</version>
+        <date>Dec 19, 2017</date>
+        <description>Loads stages in any% order, skips all save boxes, replaces all dialog with "!!!" (except for the Pianta 5 secret) and makes all FMVs skippable (except for the Pinna 1 cutscenes). This code is not compatible with the Level Select code.</description>
         <source>
             C229E668 00000078
             3C60803E 606310D0
@@ -629,6 +629,16 @@
             20570B7D 00000004
             0474EBDC 21210000
             E2000001 00000000
+            C22ADE1C 00000004
+            38840391 5480043C
+            2C000398 4182000C
+            3C800001 6084039A
+            60000000 00000000
+            C22ADE84 00000004
+            38840391 5480043C
+            2C000398 4182000C
+            3C800001 6084039A
+            60000000 00000000
         </source>
     </code>
     <code>
