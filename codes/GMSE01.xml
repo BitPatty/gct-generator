@@ -114,7 +114,7 @@
         <title lang="en">Enable Exit Area Everywhere</title>
         <author>Noki Doki</author>
         <version>1.0</version>
-        <date>Okt 30, 2017</date>
+        <date>Oct 30, 2017</date>
         <description>Enables 'Exit Area' on Plaza and Airstrip.</description>
         <source>
             C6156B78 80156B84
@@ -472,10 +472,10 @@
     </code>
     <code>
         <title lang="en">Fast Any%</title>
-        <author>Psychonauter</author>
-        <version>1.1</version>
-        <description>Loads stages in any% order, skips all save boxes and replaces all Dialog with "!!!" (except for the Pianta 5 secret). This code is not compatible with the Level Select or Stage Randomizer code.</description>
-        <date>Sep 30, 2017</date>
+        <author>Psychonauter, Noki Doki</author>
+        <version>1.2</version>
+        <description>Loads stages in any% order, skips all save boxes, replaces all dialog with "!!!" (except for the Pianta 5 secret) and makes all FMVs skippable (except for the Pinna 1 cutscenes). This code is not compatible with the Level Select or Stage Randomizer code.</description>
+        <date>Dec 19, 2017</date>
         <source>
             C22A6710 00000078
             3C60803E 60639710
@@ -609,6 +609,27 @@
             04153DA0 38000000
             0415317C 38005000
             E2000001 00000000
+            0416210C 4E800020
+            04157EF8 48000020
+            048D3A3C 21000000
+            283E9712 00002A00
+            04153DA0 801C0004
+            0415317C A81C0340
+            E2000001 00000000
+            2A3E9712 00002A00
+            04153DA0 38000000
+            0415317C 38005000
+            E2000001 00000000
+            C22B5EF0 00000004
+            38840391 5480043C
+            2C000398 4182000C
+            3C800001 6084039A
+            60000000 00000000
+            C22B5E88 00000004
+            38840391 5480043C
+            2C000398 4182000C
+            3C800001 6084039A
+            60000000 00000000
         </source>
     </code>
     <code>
