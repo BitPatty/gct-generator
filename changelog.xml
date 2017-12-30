@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Dec 30, 2017</date>
+      <change>Plaza Yoshi Unlock in 'D-Pad Functions'.</change>
+   </update>
+   <update>
       <date>Dec 19, 2017</date>
       <change>Added FMV Skips to 'Fast Any%' except for Pinna 1.</change>
    </update>
