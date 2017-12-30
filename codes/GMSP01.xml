@@ -3,9 +3,9 @@
     <code>
         <title lang="en">DPad Functions</title>
         <author>Psychonauter, Noki Doki, Dan Salvato, Link Master, James0x57</author>
-        <version>2.1</version>
+        <version>2.2</version>
         <description><![CDATA[Allows various game modifications. Button combinations:<br/><table><tr><th align="left">Combination</th><th align="left">Result</th></tr><tr><td>D-Pad left</td><td>Save Mario sposition</td></tr><tr><td>D-Pad right</td><td>Load Marios Position</td></tr><tr><td>D-Pad up</td><td>Replace all dialog with a single "!!!" line</td></tr><tr><td>D-Pad down</td><td>Restore dialog boxes</td></tr><tr><td>B+D-Pad left</td><td>Lock rocket nozzle</td></tr><tr><td>B+D-Pad right</td><td>Lock turbo nozzle</td></tr><tr><td>B+D-Pad up</td><td>Lock hover nozzle</td></tr><tr><td>B+D-Pad down</td><td>Release nozzle lock</td></tr><tr><td>X+D-Pad left</td><td>No FLUDD in secrets</td></tr><tr><td>X+D-Pad right</td><td>FLUDD in all secrets</td></tr><tr><td>X+D-Pad up</td><td>Unlock Yoshi</td></tr><tr><td>X+D-Pad down</td><td>FLUDD in completed secrets (default)</td></tr></table>]]></description>
-        <date>Oct 28, 2017</date>
+        <date>Dec 30, 2017</date>
         <source>
             244057D4 80000000
             82200000 804057D4
