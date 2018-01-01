@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Jan 1, 2018</date>
+      <change>Fixed 'D-Pad Functions' not removing dialogue properly.</change>
+   </update>
+   <update>
       <date>Dec 30, 2017</date>
       <change>Plaza Yoshi Unlock in 'D-Pad Functions'.</change>
    </update>
