@@ -51,6 +51,21 @@ ul li {
     font-size: 14px;
     line-height: 22px;
 }
+#iosinstall {
+    clear:both;
+    margin-top:100px;
+    text-align:center;
+}
+#iosinstall h2 {
+    text-align:left
+}
+#iosinstall div {
+    margin: 0px 30px 0px 30px;
+}
+#iosinstall div h3 {
+    margin: 10px;
+    text-align: left
+}
 a {
     color: #ff8297;
 }
