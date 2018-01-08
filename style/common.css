@@ -1,0 +1,24 @@
+html {
+   background-color:#0D0D0D;
+   color:#f1f1f1;
+   font-family:Calibri;
+   text-align:center
+}
+
+body {
+	display:inline-block;
+}
+
+img {
+   border-radius:4px
+}
+
+
+a {
+   color:#ff8297;
+   text-decoration:none;
+}
+
+a:hover {
+   color:#ffffff;
+}
