@@ -30,7 +30,7 @@ p {
     margin: 0px 60px 0px 60px;
 }
 ul li {
-    margin: 0px 0px 0px 60px;
+    margin: 0px 0px 10px 60px;
     width: 80%;
 }
 #guide_content {
