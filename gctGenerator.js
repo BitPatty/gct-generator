@@ -85,7 +85,7 @@ function generateGCT() {
   var valueSelected = false;
   for (var i = 0; i < codeList.length; i++) {
     if (codeList[i].className === "checked") {
-      data += codeList[i].getAttribute("data-codeSrc");
+      data += codeList[i].getAttribute("data-codesrc");
       valueSelected = true;
     }
   }
@@ -118,8 +118,8 @@ function generateTXT(s) {
       data += "\r\n";
       if (s.id === "gcmDownloadButton") data += "\r\n";
       else data += "$";
-      data += codeList[i].getAttribute("data-codeName") + " (" + codeList[i].getAttribute("data-codeDate") + ") [" + codeList[i].getAttribute("data-codeAuthor") + "]\r\n";
-      data += (codeList[i].getAttribute("data-codeSrc").match(/.{8}/g).join(" ")).replace(/(.{17})./g, "$1\r\n");
+      data += codeList[i].getAttribute("data-codename") + " (" + codeList[i].getAttribute("data-codedate") + ") [" + codeList[i].getAttribute("data-codeAuthor") + "]\r\n";
+      data += (codeList[i].getAttribute("data-codesrc").match(/.{8}/g).join(" ")).replace(/(.{17})./g, "$1\r\n");
       valueSelected = true;
     }
   }
@@ -150,18 +150,18 @@ function updateCodelist() {
 
 function updateDescription(s) {
   document.getElementById("descriptionBox").innerHTML = "<h2>" +
-    s.getAttribute("data-codeName") + "</h2><p style=\"margin:0\"><i>Author(s): " +
-    s.getAttribute("data-codeAuthor") + "</i></p><p style=\"margin:0\"><i>Version: " +
-    s.getAttribute("data-codeVersion") + " (" +
-    s.getAttribute("data-codeDate") + ")</i></p>" + "<h4>Description:</h4><p>" +
-    s.getAttribute("data-codeDesc") + "</p>";
+    s.getAttribute("data-codename") + "</h2><p style=\"margin:0\"><i>Author(s): " +
+    s.getAttribute("data-codeauthor") + "</i></p><p style=\"margin:0\"><i>Version: " +
+    s.getAttribute("data-codeversion") + " (" +
+    s.getAttribute("data-codedate") + ")</i></p>" + "<h4>Description:</h4><p>" +
+    s.getAttribute("data-codedesc") + "</p>";
 }
 
 function setButtonDescription(s) {
   if (s.id === "downloadButton")
     document.getElementById("descriptionBox").innerHTML = "<h2>Download GCT</h2><p>Download the cheats in the GCT format for use with Nintendont.</p>";
   else if (s.id === "dolphinDownloadButton")
-    document.getElementById("descriptionBox").innerHTML = "<h2>Download for Dolphin</h2><p>Download a textfile containing the formatted codes for use with Dolphin. Copy the contents of the file on top of your games .ini file.</p>";
+    document.getElementById("descriptionBox").innerHTML = "<h2>Download for Dolphin</h2><p>Download a textfile containing the formatted codes for use with Dolphin. Copy the contents of the file on top of your games .ini file.</p><p>You can open the .ini file by right clicking the game in Dolphin. In the context menu select \"<i>Properties</i>\" and then \"<i>Edit configuration</i>\".</p>";
   else
     document.getElementById("descriptionBox").innerHTML = "<h2>Download for Gecko Cheat Manager</h2><p>Download the cheats in a textfile formatted for use with the <a href=\"http://wiibrew.org/wiki/CheatManager\">Gecko Cheat Manager</a>. Place the txt file in SD:/txtcodes/.</p><p>A zip archive containing pregenerated txt files with all available codes on this site can be downloaded <a href=\"files/GCMCodes.zip\">here</a>.";
 }
