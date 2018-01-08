@@ -3,3 +3,7 @@
 *.html text
 *.css text
 *.xml text
+
+*.png binary
+*.zip binary
+*.jpg binary
