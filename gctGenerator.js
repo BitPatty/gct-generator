@@ -56,17 +56,19 @@ function parseXML(name) {
 
 function downloadFile(data, filename) {
 
+  var fname = filename.replace("GMSJ0A","GMSJ01");
+  
   var file = new Blob([data], {
     type: "application/octet-stream"
   });
 
   if (window.navigator.msSaveOrOpenBlob)
-    window.navigator.msSaveOrOpenBlob(file, filename);
+    window.navigator.msSaveOrOpenBlob(file, fname);
   else {
     var a = document.createElement("a"),
       url = window.URL.createObjectURL(file);
     a.href = url;
-    a.download = filename;
+    a.download = fname;
     a.click();
     setTimeout(function() {
       window.URL.revokeObjectURL(url);
@@ -110,7 +112,7 @@ function generateTXT(s) {
     return;
   }
   if (s.id === "dolphinDownloadButton") var data = "Paste the following on top of your games .ini file:\r\n[Gecko]";
-  else var data = document.getElementById("gameID").value + "\r\nSuper Mario Sunshine";
+  else var data = document.getElementById("gameID").value.replace("GMSJ0A","GMSJ01") + "\r\nSuper Mario Sunshine";
   var codeList = document.getElementById("checkList").getElementsByTagName("li");
   var valueSelected = false;
   for (var i = 0; i < codeList.length; i++) {
@@ -118,7 +120,7 @@ function generateTXT(s) {
       data += "\r\n";
       if (s.id === "gcmDownloadButton") data += "\r\n";
       else data += "$";
-      data += codeList[i].getAttribute("data-codename") + " (" + codeList[i].getAttribute("data-codedate") + ") [" + codeList[i].getAttribute("data-codeAuthor") + "]\r\n";
+      data += codeList[i].getAttribute("data-codename") + " (" + codeList[i].getAttribute("data-codedate") + ") [" + codeList[i].getAttribute("data-codeauthor") + "]\r\n";
       data += (codeList[i].getAttribute("data-codesrc").match(/.{8}/g).join(" ")).replace(/(.{17})./g, "$1\r\n");
       valueSelected = true;
     }
