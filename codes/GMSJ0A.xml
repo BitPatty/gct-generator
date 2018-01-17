@@ -51,7 +51,7 @@
     </code>
     <code>
         <title lang="en">Disable Blue Coin Flag</title>
-        <author>Psychonauter</author>
+        <author>Psychonauter, Noki Doki</author>
         <version>1.0</version>
         <date>Jan 17, 2018</date>
         <description>Prevents the game from setting the blue coin flag, which makes them respawn after reentering the level.</description>
@@ -61,7 +61,7 @@
     </code>
     <code>
         <title lang="en">FMV Skips</title>
-        <author>Psychonauter</author>
+        <author>Psychonauter, Noki Doki</author>
         <version>1.0</version>
         <date>Jan 17, 2018</date>
         <description>Allows skipping FMVs without having to watch them once first.</description>
@@ -72,7 +72,7 @@
     </code>
     <code>
         <title lang="en">Infinite Lives</title>
-        <author>Psychonauter</author>
+        <author>Noki Doki</author>
         <version>1.0</version>
         <date>Jan 17, 2018</date>
         <description>Locks life count at 99.</description>
@@ -82,7 +82,7 @@
     </code>
     <code>
         <title lang="en">Mute Background Music</title>
-        <author>Psychonauter</author>
+        <author>Psychonauter, Noki Doki</author>
         <version>1.0</version>
         <date>Jan 17, 2018</date>
         <description>Mutes background music, but keeps SFX on.</description>
@@ -120,7 +120,7 @@
     </code>
     <code>
         <title lang="en">Shine Touch Timer</title>
-        <author>Psychonauter</author>
+        <author>Psychonauter, Noki Doki</author>
         <version>1.6</version>
         <date>Jan 17, 2018</date>
         <description><![CDATA[Adds the ingame timer to every level, starting on the last black frame after the loading screen and ending when you touch a Shine. <br /><br /><b><font color ="#ff8297">Requires the Level Select code to be active.</font></b>]]></description>
@@ -222,7 +222,7 @@
     </code>
     <code>
         <title lang="en">Shine Get Timer</title>
-        <author>Psychonauter</author>
+        <author>Psychonauter, Noki Doki</author>
         <version>1.6</version>
         <description><![CDATA[Adds the ingame timer to every level, starting on the last black frame after the loading screen and ending as soon as the 'Shine Get' animation starts (Similiar to the x-cam timer of SM64).<br /><br /><b><font color ="#ff8297">Requires the Level Select code to be active.</font></b>]]></description>
         <date>Jan 17, 2018</date>
@@ -623,7 +623,7 @@
     </code>
     <code>
         <title lang="en">Shine Outfit</title>
-        <author>Ralf, Psychonauter</author>
+        <author>Ralf, Noki Doki</author>
         <version>1.0</version>
         <date>Jan 17, 2018</date>
         <description>Always wear shine outfit and sunglasses.</description>
