@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Jan 17, 2018</date>
+      <change>Added JP-A port.</change>
+   </update>
+   <update>
       <date>Jan 08, 2018</date>
       <change>Added guide for installing IOS58.</change>
    </update>
