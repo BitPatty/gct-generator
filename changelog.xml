@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Jan 18, 2018</date>
+      <change>Updated guides.</change>
+   </update>
+   <update>
       <date>Jan 17, 2018</date>
       <change>Added JP-A port.</change>
    </update>

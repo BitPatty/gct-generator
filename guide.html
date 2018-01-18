@@ -7,55 +7,67 @@
       <title>Guide</title>
    </head>
    <body>
-      <div style="width:50vw;min-width:600px;">
-         <div id="guide_content">
-            <h1 style="text-align:center;width:100%">How to install and use practice codes</h1>
-            <p style="margin:0;text-align:center;width:100%;">This page is a simple guide to explain the recommended way to install practice codes on your Nintendo Wii.</p>
-            <br />
-            <h2 id="1"><a href="#1">1. Preparing your Wii</a></h2>
-            <h3 id="1.1"><a href="#1.1">1.1 Install Homebrew</a></h3>
-            <p>First of all you're gonna have to install Homebrew on your Wii. <a target="_blank" href="https://sites.google.com/site/completesg/hacking-guide">Click this link</a> for a detailed guide on how to get Homebrew on your Wii. Make sure your SD card is <a target="_blank" href="https://gopro.com/help/articles/Solutions_Troubleshooting/SD-Card-Reformat-on-a-Windows-Computer">formatted to FAT32!</a></p>
-            <br />
-            <h3 id="1.2"><a href="#1.2">1.2 Install the necessary applications</a></h3>
-            <p>Using <a target="_blank" href="https://github.com/FIX94/Nintendont">Nintendont</a> is the recommended way to use practice codes. Codes available on this site have been tested with Nintendont v4.434, which you can download directly from this site by clicking <a target="_blank" href="files/Nintendont.zip">this link</a>. To get the most recent build click <a target="_blank" href="http://zint.ch/nintendont/dl/recent.php">this link</a>.</p>
-            <p>Unpack the archive and place the Nintendont folder with all of its contents in the "<i>apps</i>" folder of your SD card. If there is no "<i>apps</i>" folder create one in the root of your SD card.</p>
-            <br />
-            <h2 id="2"><a href="#2">2. Install and use the cheatfile</a></h2>
-            <h3 id="2.1"><a href="#2.1">2.1 Generate the file</a></h3>
-            <p>Visit the <a target="_blank" href="index.html">main site</a> and select your game version from the dropdown menu. Then select all the cheats you want to have enabled from the list and click "Download". The name of the file you downloaded should be "GMSX01.gct" with X being E, P or J depending on the version you selected.</p>
-            <br />
-            <h3 id="2.2"><a href="#2.2">2.2 Copy the file onto your SD card</a></h3>
-            <p>Create a <i>codes</i> folder in the root of your SD card if there is none. Then copy the GCT file you just downloaded into that folder.</p>
-            <br />
-            <h3 id="2.3"><a href="#2.3">2.3 Use the codes</a></h3>
-            <p>Open your Homebrew channel and from there launch Nintendont. Select SD and then press B on your Gamecube controller to see the settings. In your settings, make sure that "<i>Cheats</i>" are "<i>On</i>". You can switch it on/off by pressing A on your controller. (See image below)</p>
-            <p style="text-align:center"><a target="_blank" href="img/nintendont_cheats.jpg"><img src="img/nintendont_cheats.jpg"  style="width:50%;min-width:300px;margin:20px 0px" alt="Nintendont" /></a></p>
-            <p>Press B again to return to the game list and launch your game. And with that you're done already.</p>
-            <br />
-            <h2 id="3"><a href="#3">3. Troubleshooting</a></h2>
-            <h3 id="3.1"><a href="#3.1">3.1 The game doesn't launch / Stuck at black screen</a></h3>
-            <p>This is not a practice code related issue. Connecting your Wii to the internet before launching Nintendont apparently fixes this for a lot of people for some odd reason. Otherwise your best option is to reinstall homebrew.</p>
-            <h3 id="3.2"><a href="#3.2">3.2 Nintendont says IOS58 is missing</a></h3>
-            <p><a href="ios58.html">Here's a guide</a> on how to install IO58 for use with Nintendont.</p>
-            <h3 id="3.3"><a href="#3.3">3.3 The game launches but the codes don't work</a></h3>
-            <div style="float:right;margin:0px 0px 10px 0px;">
-               <p><i>Sample folder structure:</i></p>
-               <br />
-               <p style="text-align:center"><img src="img/folderstructure.png" alt="Folder Structure" /></p>
-            </div>
-            <p>This can have multiple reasons:</p>
-            <ul>
-               <li>You don't have cheats enabled: See <a href="#2.3">2.3</a> for details.</li>
-               <li>You're using an obsolete version of Nintendont. Make sure you use version 4.434 or newer.</li>
-               <li>Your cheatfile has the wrong name: Make sure the file is named "GMSE01.gct", "GMSJ01.gct" or "GMSP01.gct". It won't work with names like "GMSE01 (1).gct". Nintendont is very picky!</li>
-               <li>Your cheatfile is at the wrong location: Make sure the file is in the "codes" folder of your SD Card. Again, the folder has to be named "codes". If you have a "games" folder, make sure there's no file with the same name in it or its subfolders.</li>
-               <li>Your cheatfile is too big: Using too many codes at once can cause Nintendont to disable them since the used space in the game is limited. Make sure you don't have two incompatible codes selected when downloading the cheatfile (for example "Level Select" and "Ingame Timer" are not compatible). (Note: If using Nintendont 4.434 or newer you don't have to worry unless your file is bigger than 8KB).</li>
-               <li>If you have a USB drive connected and use disc, make sure you select the device that contains the cheats for your disc.</li>
-               <li>If you use an ISO your cheat file and ISO must be on the same device (both on the SD card or both on the USB drive).</li>
-            </ul>
-            <h3 id="3.4"><a href="#3.4">3.4 The site doesn't show codes or the download button</a></h3>
-            <p>The main site requires Javascript to work properly. Make sure you have Javascript enabled in your browser.</p>
-         </div>
-      </div>
+	 <div id="guide_content">
+		<h1 style="text-align:center;width:100%">How to install and use practice codes</h1>
+		<p style="margin:0;text-align:center;width:100%;">This page is a simple guide to explain the recommended way to install practice codes on your Nintendo Wii.</p>
+		<br />
+        <hr />
+		<h2 id="1"><a href="#1">1. Preparing your Wii</a></h2>
+		<h3 id="1.1"><a href="#1.1">1.1 Install Homebrew</a></h3>
+		<p>First of all you're gonna have to install Homebrew on your Wii. Make sure your SD card is <a target="_blank" href="https://gopro.com/help/articles/Solutions_Troubleshooting/SD-Card-Reformat-on-a-Windows-Computer">formatted to FAT32</a> and then <a target="_blank" href="https://sites.google.com/site/completesg/hacking-guide">click this link</a> for a detailed guide on how to get Homebrew on your Wii. Ignore the "<i>So, what's next?</i>" part.</p>
+		<br />
+		<h3 id="1.2"><a href="#1.2">1.2 Install the necessary applications</a></h3>
+		<p>Using <a target="_blank" href="https://github.com/FIX94/Nintendont">Nintendont</a> is the recommended way to use practice codes. To download the most recent build you can <a target="_blank" href="http://zint.ch/nintendont/dl/recent.php">click this link</a>.</p>
+		<p>Unpack the archive and place the Nintendont folder with all of its contents in the "<i>apps</i>" folder of your SD card. If there is no "<i>apps</i>" folder create one in the root of your SD card.</p>
+		<br />
+        <hr />
+		<h2 id="2"><a href="#2">2. Install and use the cheatfile</a></h2>
+		<h3 id="2.1"><a href="#2.1">2.1 Generate the file</a></h3>
+		<p>Visit the <a target="_blank" href="index.html">main site</a> and select your game version from the dropdown menu. Then select all the cheats you want to have enabled from the list and click "Download GCT". The name of the file you downloaded should be "GMSX01.gct" with X being E, P or J depending on the version you selected.</p>
+		<br />
+		<p><i>Note: JP 1.0 and JP 1.1 both use the same ID (GMSJ01).</i></p>
+		<br />
+		<h3 id="2.2"><a href="#2.2">2.2 Copy the file onto your SD card</a></h3>
+		<p>Create a "<i>codes</i>" folder in the root of your SD card if there is none and copy the GCT file you just downloaded into that folder.</p>
+		<br />
+		<h3 id="2.3"><a href="#2.3">2.3 Use the codes</a></h3>
+		<p>Open your Homebrew channel and from there launch Nintendont. Select SD and then press B on your Gamecube controller to see the settings. In your settings, make sure that "<i>Cheats</i>" are "<i>On</i>". You can switch it on/off by pressing A on your controller. (See image below)</p>
+		<p style="text-align:center"><a target="_blank" href="img/nintendont_cheats.jpg"><img src="img/nintendont_cheats.jpg"  style="width:50%;min-width:300px;margin:20px 0px" alt="Nintendont" /></a></p>
+		<p>Press B again to return to the game list and launch your game. And with that you're done already.</p>
+		<br />
+        <hr />
+		<h2 id="3"><a href="#3">3. Troubleshooting</a></h2>
+		<h3 id="3.1"><a href="#3.1">3.1 The game doesn't launch / Stuck at black screen</a></h3>
+		<p>This is not a practice code related issue. You have the following options if that happens to you:</p>
+		<ul>
+		   <li>Relaunch Nintendont until the game launches (mostly takes a few attempts).</li>
+		   <li>Connect your Wii to the internet before launching Nintendont.</li>
+		   <li>Wait around 30 seconds on the game selection screen before booting the disc.</li>
+		   <li>Reinstalling homebrew may fix this issue permanently.</li>
+		</ul>
+		<br />
+		<h3 id="3.2"><a href="#3.2">3.2 Nintendont says IOS58 is missing</a></h3>
+		<p><a href="ios58.html">Here's a guide</a> on how to install IO58 for use with Nintendont.</p>
+		<br />
+		<h3 id="3.3"><a href="#3.3">3.3 The game launches but the codes don't work</a></h3>
+		<div style="float:right;margin:0px 0px 10px 0px;">
+		   <p><i>Sample folder structure:</i></p>
+		   <br />
+		   <p style="text-align:center"><img src="img/folderstructure.png" alt="Folder Structure" /></p>
+		</div>
+		<p>This can have multiple reasons:</p>
+		<ul>
+		   <li>You don't have cheats enabled: See <a href="#2.3">2.3</a> for details.</li>
+		   <li>You're using an obsolete version of Nintendont. Make sure you use version 4.434 or newer.</li>
+		   <li>Your cheatfile has the wrong name: Make sure the file is named "GMSE01.gct", "GMSJ01.gct" or "GMSP01.gct". It won't work with names like "GMSE01 (1).gct". Nintendont is very picky!</li>
+		   <li>Your cheatfile is at the wrong location: Make sure the file is in the "codes" folder of your SD Card. Again, the folder has to be named "codes" (See sample folder structure on the right). If you have a "games" folder, make sure there's no file with the same name in it or its subfolders.</li>
+		   <li>Your cheatfile is too big: Using too many codes at once can cause Nintendont to disable them since the used space in the game is limited. Make sure you don't have two incompatible codes selected when downloading the cheatfile (for example "Level Select", "Fast Any%" and the timers are not compatible).<br /><br /><i><b>Note: If you're using Nintendont 4.434 or newer you don't have to worry unless your file is bigger than 8KB.</b></i></li>
+		   <li>If you have a USB drive connected and use disc, make sure you select the device that contains the cheats for your disc.</li>
+		   <li>If you use an ISO your cheat file and ISO must be on the same device (both on the SD card or both on the USB drive).</li>
+		</ul>
+		<br />
+		<h3 id="3.4"><a href="#3.4">3.4 The site doesn't show codes or the download button</a></h3>
+		<p>The main site requires Javascript to work properly. Make sure you have Javascript enabled in your browser.</p>
+	 </div>
    </body>
 </html>
