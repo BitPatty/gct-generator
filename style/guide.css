@@ -21,11 +21,11 @@ h2 {
 
 h3 {
    font-size:15px;
-   margin:20px 0px 5px 40px
+   margin:20px 0px 5px 20px
 }
 
 p {
-   margin:0px 60px;
+   margin:0px 40px;
 }
 
 ul li {
@@ -55,6 +55,12 @@ hr {
    font-size:14px;
    line-height:20px;
    text-align:justify
+}
+
+#indexlisting h2, #indexlisting  h3{
+   font-size:14px;
+   font-weight:normal;
+   margin:0
 }
 
 #iosinstall {
