@@ -3,6 +3,8 @@
    <update>
       <date>Jan 20, 2018</date>
       <change>Added 'Remove Save Boxes'.</change>
+	  <change>Fixed episode names in 'Fast Any%'.</change>
+	  <change>Made 'Fast Any%' compatible with the timers.</change>
    </update>
    <update>
       <date>Jan 18, 2018</date>
