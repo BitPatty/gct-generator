@@ -482,7 +482,7 @@
     <code>
         <title lang="en">Fast Any%</title>
         <author>Psychonauter, Noki Doki</author>
-        <version>1.3</version>
+        <version>1.3.1</version>
         <date>Jan 20, 2018</date>
         <description>Loads stages in any% order, skips all save boxes, replaces all dialog with "!!!" (except for the Pianta 5 secret) and makes all FMVs skippable (except for the Pinna 1 cutscenes). This code is not compatible with the Level Select code.</description>
         <source>
@@ -492,9 +492,9 @@
             38E00001 98E60001
             3C60803E 60636010
             88830002 2C04000E
-            41820380 2C04000D
-            41820310 2C040001
-            41810394 3C608057
+            41820388 2C04000D
+            41820318 2C040001
+            4181039C 3C608057
             606351A8 88830007
             70850001 41A2000C
             38803400 480002DC
@@ -594,22 +594,22 @@
             988300DF 48000090
             39000D00 A083FFFC
             2C040500 4082000C
-            39200000 4BFFFFD8
+            39200000 4BFFFFD0
             2C040502 4082000C
-            39200001 4BFFFFC8
+            39200001 4BFFFFC0
             2C040504 4082000C
-            39200002 4BFFFFB8
+            39200002 4BFFFFB0
             2C040505 4082000C
-            39200003 4BFFFFA8
+            39200003 4BFFFFA0
             2C040506 4082000C
-            39200004 4BFFFF98
+            39200004 4BFFFF90
             2C040507 40A20030
-            39200005 4BFFFF88
+            39200005 4BFFFF80
             3C608057 606351A8
             88830005 70850008
             41A2000C 38800E01
-            4BFFFF70 38800E00
-            4BFFFF68 807F0020
+            4BFFFF68 38800E00
+            4BFFFF60 807F0020
             60000000 00000000
             042193D8 48000020
             04223094 4E800020
