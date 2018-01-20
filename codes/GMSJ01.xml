@@ -91,6 +91,17 @@
         </source>
     </code>
     <code>
+        <title lang="en">Remove Save Boxes</title>
+        <author>Psychonauter</author>
+        <version>1.0</version>
+        <date>Oct 02, 2017</date>
+        <description>Removes all saveboxes.</description>
+        <source>
+            042193D8 48000020
+            04223094 4E800020
+        </source>
+    </code>  
+    <code>
         <title lang="en">Free Pause</title>
         <author>Noki Doki</author>
         <version>1.1</version>
