@@ -183,6 +183,15 @@ function setButtonDescription(s) {
       document.getElementById("descriptionbox").innerHTML = "<h2>Download for Gecko Cheat Manager</h2><p>Download the cheats in a textfile formatted for use with the <a href=\"http://wiibrew.org/wiki/CheatManager\">Gecko Cheat Manager</a>. Place the txt file in SD:/txtcodes/.</p><p>A zip archive containing pregenerated txt files with all available codes on this site can be downloaded <a href=\"files/GCMCodes.zip\">here</a>.";
 }
 
+function setDropdownDescription(s) {
+   if (s.id === "route_notext")
+      document.getElementById("descriptionbox").innerHTML = "<h2>Remove Dialogue</h2><p>Replaces all Dialogue with \"!!!\". 'Always' and 'Not in Pianta 5' will override the dialogue skip from the DPad Functions.</p>";
+   else if (s.id === "route_nofmvs")
+      document.getElementById("descriptionbox").innerHTML = "<h2>Skippable Cutscenes</h2><p>Makes FMVs Skippable. 'Always' has the same effect as the 'FMV Skips' code. Also, having 'FMV Skips' enabled will override 'Not in Pinna 1' - so don't use both simultaneously.</p>";
+   else if (s.id === "route_random")
+      document.getElementById("descriptionbox").innerHTML = "<h2>Random Level Order</h2><p>Randomizes what level is loaded next - it can be any from the levels you choose on the list. Even levels that you've finished already.</p>";
+}
+
 function resetDescription() {
    document.getElementById("descriptionbox").innerHTML = "<p><h3>Select your codes from the list...</h3></p>";
 }
@@ -274,7 +283,6 @@ document.querySelector("#route_clear").addEventListener("click", function () {
       }
       
       this.classList.add("dragover");
-      
       e.dataTransfer.dropEffect = "move";
       
       return false;
@@ -331,11 +339,9 @@ function getFastCode() {
    for (let i = 0; i < levelWords; ++i) {
       asm.push(levelCodes[2 * i] + (levelCodes[2 * i + 1] || "0000"));
    }
-   if (!randomize) {
-      asm.push("3C80817F"); // lis r4, 0x817F
-   }
-   
+
    //Timer compatibility
+   asm.push("3C80817F"); // lis r4, 0x817F
    asm.push("38000000"); // li r0, 0
    asm.push("9004010C"); // stw r0, 0x010C(r4)
    asm.push("38000001"); // li r0, 1

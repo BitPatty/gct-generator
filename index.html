@@ -58,10 +58,10 @@
                            <label for="route_notext">Remove Dialogue:</label>
                         </td>
                         <td>
-                           <select id="route_notext" style="width:100%">
+                           <select id="route_notext" style="width:100%" onmouseover="setDropdownDescription(this)">
                               <option value="yes">Always</option>
                               <option selected value="pv5">Not in Pianta 5</option>
-                              <option value="no">Never</option>
+                              <option value="no">Don't include</option>
                            </select>
                         </td>
                      </tr>
@@ -70,10 +70,10 @@
                            <label for="route_nofmvs">Skippable Cutscenes:</label>
                         </td>
                         <td>
-                           <select id="route_nofmvs" style="width:100%">
+                           <select id="route_nofmvs" style="width:100%" onmouseover="setDropdownDescription(this)">
                               <option value="yes">Always</option>
                               <option selected value="pp1">Not in Pinna 1</option>
-                              <option value="no">Never</option>
+                              <option value="no">Don't include</option>
                            </select>
                         </td>
                      </tr>
@@ -82,7 +82,7 @@
                           <label for="route_random">Random Level Order:</label>
                         </td>
                         <td>
-                           <select id="route_random" style="width:100%">
+                           <select id="route_random" style="width:100%" onmouseover="setDropdownDescription(this)">
                               <option value="yes">Yes</option>
                               <option selected value="no">No</option>
                            </select>
