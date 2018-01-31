@@ -3,56 +3,227 @@
    <head>
       <meta http-equiv="content-type" content="text/html; charset=utf-8">
       <meta name="description" content="Generates cheatfiles for Super Mario Sunshine speedrun practice.">
+      <meta name="viewport" content="width=480px, initial-scale=1.0">
       <link rel="stylesheet" href="style/style.css">
       <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-      <title>SMS GCT Generator</title>
+      <title>Super Mario Sunshine Practice Code Generator</title>
    </head>
    <body onload="updateChangelog()">
-      <div style="width:100%;overflow:hidden;">
-         <div style="width: 400px; float: left;">
-            <center>
-               <select id="gameID" class="selectionHeader" onchange="updateCodelist()" autocomplete="off">
-                  <option selected disabled hidden>Choose Version</option>
-                  <option value="GMSE01">GMSE01 (NTSC-U)</option>
-                  <option value="GMSP01">GMSP01 (PAL)</option>
-                  <option value="GMSJ01">GMSJ01 (NTSC-J 1.0)</option>
-                  <option value="GMSJ0A">GMSJ01 (NTSC-J 1.1/A)</option>
-               </select>
-               <ul id="checkList">
-               </ul>
-               <button id="downloadButton" onclick="generateGCT()" onmouseover="setButtonDescription(this)" style="visibility:hidden;">Download .GCT</button>
-               <button id="dolphinDownloadButton" onclick="generateTXT(this)" onmouseover="setButtonDescription(this)"  style="visibility:hidden;">Dolphin INI</button>
-               <button id="gcmDownloadButton" onclick="generateTXT(this)" onmouseover="setButtonDescription(this)" style="visibility:hidden;">GCM TXT</button>
-            </center>
+      <div id="mainContainer">
+         <div id="header">
+            <h1>Practice Code Generator (WIP)</h1>
          </div>
-         <div style="margin-left:420px;">
-            <table id="warningMessage">
-               <tr>
-                  <th><a target="_blank" href="http://smsunshine.challonge.com/any2018"><img src="img/challonge.png" alt="Challonge" align="left" /></a></th>
-                  <th style="text-align:center">
-                     <a target="_blank" href="http://smsunshine.challonge.com/any2018">2018 Super Mario Sunshine Any% Tournament</a><br />
-                     Signup deadline: February 14th
-                  </th>
-                  <th><a target="_blank" href="http://smsunshine.challonge.com/any2018"><img src="img/challonge.png" alt="Challonge" align="right" /></a></th>
-               </tr>
-            </table>
-            <div id="descriptionBox" class="framed">
-               <h2>Mario Sunshine Cheatfile Generator</h2>
-               <p style="margin:0"><i>Authors: <a target="_blank" href="https://twitter.com/psychonauter">Psy</a> &amp; <a target="_blank" href="https://twitter.com/srlmilk">Milk</a></i></p>
-               <p style="margin:0"><i>Last Updated: Jan 24, 2018</i></p>
-               <h4>Description:</h4>
-               <p>This is a cheatfile generator for Super Mario Sunshine speedrun practice. A guide on how to use the generator and practice codes on your Wii can be found here: <a target="_blank" href="guide.html">Guide</a>. Visit the <a target="_blank" href="guide.html#3">troubleshooting section</a> if you encounter any issues.</p>
-               <p><i>For creating a cheatfile that automatically loads levels in a custom order (similiar to 'Fast Any%') you can use this tool: <a target="_blank" href="https://qberoot.github.io/fastcodes/">Fastcodes by Noki Doki</a>.</i></p>
-               <h4>Changelog:</h4>
-               <p id="changelog"></p>
-               <hr style="border-color:grey;">
-               <div style="text-align:center;margin:18px 0px 7px 0px">
-                  <a target="_blank" href="https://discord.gg/0SoktBcRDw8B1NJB" title="Sunshine Community Discord"><img src="img/discord_bubble.png" style="margin:0px 7px;vertical-align:middle" alt="Sunshine Community Discord" /></a>
-                  <a target="_blank" href="https://speedrun.com/sms" title="Sunshine Leaderboards"><img src="img/src_bubble.png" style="margin:0px 7px;vertical-align:middle" alt="Sunshine Leaderboards" /></a>
-                  <h4 style="display:inline;vertical-align:middle;margin:0px 10px">Sunshine Community</h4>
-                  <a target="_blank" href="https://twitter.com/SMSCommunity" title="Sunshine Community Twitter"><img src="img/twitter_bubble.png" style="margin:0px 7px;vertical-align:middle" alt="Sunshine Community Twitter" /></a>
-                  <a target="_blank" href="https://www.twitch.tv/SunshineCommunity" title="Sunshine Community Twitch"><img src="img/twitch_bubble.png" style="margin:0px 7px;vertical-align:middle" alt="Sunshine Community Twitch" /></a>
+         <select id="gameversion" onchange="updateCodelist()" autocomplete="off">
+            <option selected disabled>Game Version</option>
+            <option value="GMSE01">GMSE01 (NTSC-U)</option>
+            <option value="GMSP01">GMSP01 (PAL)</option>
+            <option value="GMSJ01">GMSJ01 (NTSC-J 1.0)</option>
+            <option value="GMSJ0A">GMSJ01 (NTSC-J 1.1/A)</option>
+         </select>
+         <br />
+         <label for="usefastcode">Use custom fastcode:</label>
+         <input type="checkbox" id="usefastcode" />
+         <br />
+         <div id="home">
+            <p style="margin:0"><i>Last Updated: Jan 24, 2018</i></p>
+            <br />
+            <p>This is a cheatfile generator for Super Mario Sunshine speedrun practice. A guide on how to use the generator and practice codes on your Wii can be found here: <a target="_blank" href="guide.html">Guide</a>. Visit the <a target="_blank" href="guide.html#3">troubleshooting section</a> if you encounter any issues.</p>
+            <br />
+            <h4>Changelog:</h4>
+            <p id="changelog"></p>
+            <p style="margin:0;text-align:right"><i>Made by <a target="_blank" href="https://twitter.com/psychonauter">Psychonauter</a>, <a target="_blank" href="https://twitter.com/qbe_root">Noki Doki</a> &amp; <a target="_blank" href="https://twitter.com/srlmilk">Milk</a></i></p>
+            <hr style="border-color:grey;">
+            <div id="smscommunity">
+               <a target="_blank" href="https://discord.gg/0SoktBcRDw8B1NJB" title="Sunshine Community Discord"><img src="img/discord_bubble.png" alt="Sunshine Community Discord" /></a>
+               <a target="_blank" href="https://speedrun.com/sms" title="Sunshine Leaderboards"><img src="img/src_bubble.png" alt="Sunshine Leaderboards" /></a>
+               <h4 style="display:inline;vertical-align:middle;margin:0px 10px">Sunshine Community</h4>
+               <a target="_blank" href="https://twitter.com/SMSCommunity" title="Sunshine Community Twitter"><img src="img/twitter_bubble.png" alt="Sunshine Community Twitter" /></a>
+               <a target="_blank" href="https://www.twitch.tv/SunshineCommunity" title="Sunshine Community Twitch"><img src="img/twitch_bubble.png" alt="Sunshine Community Twitch" /></a>
+            </div>
+         </div>
+         <br />
+         <div id="left" class="section" style="visibility:hidden">
+            <div id="codes" class="framed">
+               <h2>Codes</h2>
+               <ul id="checklist"></ul>
+            </div>
+         </div>
+         <div id="center" class="section" style="visibility:hidden">
+            <div class="framed">
+               <h2>Route</h2>
+               <div>
+                  <table style="width:100%"><tbody>
+                     <tr>
+                        <td>
+                           <label for="route_notext">Remove Dialogue:</label>
+                        </td>
+                        <td>
+                           <select id="route_notext" style="width:100%">
+                              <option value="yes">Always</option>
+                              <option selected value="pv5">Not in Pianta 5</option>
+                              <option value="no">Never</option>
+                           </select>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <label for="route_nofmvs">Skippable Cutscenes:</label>
+                        </td>
+                        <td>
+                           <select id="route_nofmvs" style="width:100%">
+                              <option value="yes">Always</option>
+                              <option selected value="pp1">Not in Pinna 1</option>
+                              <option value="no">Never</option>
+                           </select>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                          <label for="route_random">Random Level Order:</label>
+                        </td>
+                        <td>
+                           <select id="route_random" style="width:100%">
+                              <option value="yes">Yes</option>
+                              <option selected value="no">No</option>
+                           </select>
+                        </td>
+                     </tr>
+                     </tbody></table>
                </div>
+               <div>
+                  <ol id="route_levels">
+                     <li>
+                        <select name="route_levels[]" style="width:70%">
+                           <option value="0F00" selected>Select a level…</option>
+                           <optgroup label="Delfino Plaza">
+                              <option value="1400">Airstrip (red coins)</option>
+                              <option value="1500">Slide</option>
+                              <option value="1600">Pachinko</option>
+                              <option value="1700">Grass pipe</option>
+                              <option value="1800">Lily Pad Ride</option>
+                              <option value="1D00">Jail secret</option>
+                              <option value="3400">Corona Mountain</option>
+                           </optgroup>
+                           <optgroup label="Bianco Hills">
+                              <option value="0200">Bianco 1</option>
+                              <option value="0201">Bianco 2</option>
+                              <option value="0202">Bianco 3</option>
+                              <option value="0203">Bianco 4</option>
+                              <option value="0204">Bianco 5</option>
+                              <option value="0205">Bianco 6</option>
+                              <option value="0206">Bianco 7</option>
+                              <option value="0207">Bianco 8</option>
+                           </optgroup>
+                           <optgroup label="Ricco Harbor">
+                              <option value="0300">Ricco 1</option>
+                              <option value="0301">Ricco 2</option>
+                              <option value="0302">Ricco 3</option>
+                              <option value="0303">Ricco 4</option>
+                              <option value="0304">Ricco 5</option>
+                              <option value="0305">Ricco 6</option>
+                              <option value="0306">Ricco 7</option>
+                              <option value="0307">Ricco 8</option>
+                           </optgroup>
+                           <optgroup label="Gelato Beach">
+                              <option value="0400">Gelato 1</option>
+                              <option value="0401">Gelato 2</option>
+                              <option value="0402">Gelato 3</option>
+                              <option value="0403">Gelato 4</option>
+                              <option value="0404">Gelato 5</option>
+                              <option value="0405">Gelato 6</option>
+                              <option value="0406">Gelato 7</option>
+                              <option value="0407">Gelato 8</option>
+                           </optgroup>
+                           <optgroup label="Pinna Park">
+                              <option value="0500">Pinna 1</option>
+                              <option value="0501">Pinna 2</option>
+                              <option value="0502">Pinna 3</option>
+                              <option value="0503">Pinna 4</option>
+                              <option value="0504">Pinna 5</option>
+                              <option value="0505">Pinna 6</option>
+                              <option value="0506">Pinna 7</option>
+                              <option value="0507">Pinna 8</option>
+                           </optgroup>
+                           <optgroup label="Sirena Beach">
+                              <option value="0600">Sirena 1</option>
+                              <option value="0601">Sirena 2</option>
+                              <option value="0602">Sirena 3</option>
+                              <option value="0603">Sirena 4</option>
+                              <option value="0604">Sirena 5</option>
+                              <option value="0605">Sirena 6</option>
+                              <option value="0606">Sirena 7</option>
+                              <option value="0607">Sirena 8</option>
+                           </optgroup>
+                           <optgroup label="Noki Bay">
+                              <option value="0900">Noki 1</option>
+                              <option value="0901">Noki 2</option>
+                              <option value="0902">Noki 3</option>
+                              <option value="0903">Noki 4</option>
+                              <option value="0904">Noki 5</option>
+                              <option value="0905">Noki 6</option>
+                              <option value="0906">Noki 7</option>
+                              <option value="0907">Noki 8</option>
+                           </optgroup>
+                           <optgroup label="Pianta Village">
+                              <option value="0800">Pianta 1</option>
+                              <option value="0801">Pianta 2</option>
+                              <option value="0802">Pianta 3</option>
+                              <option value="0803">Pianta 4</option>
+                              <option value="0804">Pianta 5</option>
+                              <option value="0805">Pianta 6</option>
+                              <option value="0806">Pianta 7</option>
+                              <option value="0807">Pianta 8</option>
+                           </optgroup>
+                           <optgroup label="Secret areas">
+                              <option value="2F00">Bianco 3 secret</option>
+                              <option value="2E00">Bianco 6 secret</option>
+                              <option value="3000">Ricco 4 secret</option>
+                              <option value="2000">Gelato 1 secret</option>
+                              <option value="3200">Pinna 2 secret</option>
+                              <option value="2900">Pinna 6 secret</option>
+                              <option value="3300">Sirena 2 secret</option>
+                              <option value="2800">Sirena 4 secret</option>
+                              <option value="1F00">Noki 6 secret</option>
+                              <option value="2A00">Pianta 5 secret</option>
+                           </optgroup>
+                           <optgroup label="Sublevels">
+                              <option value="3700">Windmill (Bianco 2)</option>
+                              <option value="1E00">Race course (Ricco 2)</option>
+                              <option value="2100">Sand bird (Gelato 4)</option>
+                              <option value="3A01">Mecha-Bowser fight (Pinna 1)</option>
+                              <option value="0E00">Casino Delfino (Sirena 4)</option>
+                              <option value="0E01">Casino Delfino (Sirena 5)</option>
+                              <option value="3900">Deep Sea of Mare (Noki 4)</option>
+                              <option value="3C00">Bowser fight (Corona)</option>
+                           </optgroup>
+                        </select>
+                        <button type="button" style="background-color:#ff0c0c">×</button>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <button id="route_clear" type="button">Clear list</button>
+                  <br />
+                  <select id="route_presets">
+                     <option value="" selected>Load a preset…</option>
+                     <option value="0200020202030204040004060800080108020803080408050806050005010502050305020506030003010302030303040305030602050206060006010602060306040605060609000901090209030904090509063400">Any% usual route</option>
+                     <option value="0200020202030204040004060800080108020803080408050806050005010502050305020506020502060600060106020603060406050606090009010902090309040905090603000301030203030304030503063400">Any% Ricco late</option>
+                     <option value="0200020202030204040004010402040304040405040605000501050205030504050505060300030103020303030403050306020502060600060106020603060406050606090009010902090309040905090608000801080208030804080508063400">Any% No Major Skips</option>
+                     <option value="020002010202020308000801080208030804080508060807050005010502050305040505050605070300030103020303030403050306030702040205020602070600060106020603060406050606060709000901090209030904090509060907040004010402040304040403040504063400">All Episodes</option>
+                     <option value="020002010202020208000801080208030804080408040805080608070807050005010501050205030504050405050505050605070300030103010302030303030304030503050306030702030204020502050205020602070600060106010602060306030603060406050606060709000901090109010902090309040905090509060907040004000400040104020403040504040403040204063400">All Level Shines</option>
+                  </select>
+               </div>
+            </div>
+         </div>
+         <div id="right" class="section" style="visibility:hidden">
+            <div id="downloadbox" class="framed">
+               Download:
+               <button onclick="generateGCT()" onmouseover="setButtonDescription(this)" id="downloadbutton">GCT</button>
+               <button onclick="generateTXT(this)" onmouseover="setButtonDescription(this)" id="dolphindownloadbutton">Dolphin</button>
+               <button onclick="generateTXT(this)" onmouseover="setButtonDescription(this)" id="gcmdownloadbutton">GCM</button>
+               <div id="warningmessage"></div>
+            </div>
+            <div id="descriptionbox" class="framed">
             </div>
          </div>
       </div>
