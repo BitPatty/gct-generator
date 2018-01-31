@@ -38,7 +38,7 @@ h3,h4 {
 }
 
 p {
-   margin: 10px 0px 0px 0px
+   margin:10px 0px 0px 0px
 }
 
 img {
@@ -173,7 +173,7 @@ input[type=checkbox] {
 }
 
 button {
-   padding:4px;
+   padding:6px;
    margin:auto;
    color:#f1f1f1;
    background-color:#ca0707;
@@ -184,7 +184,7 @@ button {
 }
 
 select {
-   margin:8px 0px;
+   margin:2px 0px;
    background-color:#ca0707;
    padding:5px;
    color:#fff;
@@ -239,4 +239,62 @@ ul li.checked {
    background:#434343;
    color:#fff;
    border-color:#262626
+}
+
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}
+
+#route_levels {
+   margin:10px 0px;
+}
+
+#route_levels li {
+   padding:0px 10px;
+   margin:0
+}
+
+#route_levels li.dragover {
+   padding-bottom:20px;
+   background-color:white
+}
+
+#route_levels li select {
+   margin:0;
+   color:black;
+   background-color:inherit
+}
+
+#route_levels li select:hover {
+   color:white
+}
+
+#route_levels li:hover select {
+   color:white
+}
+
+#route_levels li:last-child .route_remove {
+   display:none
+}
+
+.dragelement {
+   opacity:0.2
+}
+
+.route_remove {
+    background-color:#ff0c0c;
+    width:10px;
+    height:10px;
+    border-radius:0;
+    vertical-align:middle;
+    padding:0
+}
+
+.route_clear, .route_presets {
+   display:inline-block
 }

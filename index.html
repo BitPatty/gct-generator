@@ -91,9 +91,10 @@
                      </tbody></table>
                </div>
                <div>
-                  <ol id="route_levels">
-                     <li>
-                        <select name="route_levels[]" style="width:70%">
+                  <ul id="route_levels">
+                     <li draggable="false">
+                        <button type="button" class="route_remove"></button>
+                        <select style="width:70%">
                            <option value="0F00" selected>Select a level…</option>
                            <optgroup label="Delfino Plaza">
                               <option value="1400">Airstrip (red coins)</option>
@@ -197,13 +198,11 @@
                               <option value="3C00">Bowser fight (Corona)</option>
                            </optgroup>
                         </select>
-                        <button type="button" style="background-color:#ff0c0c">×</button>
                      </li>
-                  </ol>
+                  </ul>
                </div>
                <div>
                   <button id="route_clear" type="button">Clear list</button>
-                  <br />
                   <select id="route_presets">
                      <option value="" selected>Load a preset…</option>
                      <option value="0200020202030204040004060800080108020803080408050806050005010502050305020506030003010302030303040305030602050206060006010602060306040605060609000901090209030904090509063400">Any% usual route</option>
