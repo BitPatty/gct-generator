@@ -343,7 +343,7 @@ function getFastCode() {
 
    levelCodes.pop();
 
-   if (!(document.getElementById("usefastcode").checked) || levelCodes.length === 1) return false;
+   if (!(document.getElementById("usefastcode").checked) || levelCodes.length <= 1) return false;
 
    let game = JSON.parse(atob(document.getElementById("route_levels").getAttribute("data-json")));
    const randomize = (document.getElementById("route_random").value === "yes");
