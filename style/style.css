@@ -14,19 +14,15 @@ body {
 }
 
 h1,h2,h3,h4{
-   margin:0px 0px 10px 0px
+   margin:5px 0px
 }
 
-h1,h2,h3 {
+h2,h3 {
    text-align:center
 }
 
-h2,h3,h4 {
-   font-weight:normal
-}
-
 h1 {
-   font-size:1.7em
+   font-size:1.3em
 }
 
 h2 {
@@ -34,6 +30,7 @@ h2 {
 }
 
 h3,h4 {
+   margin-top:15px;
    font-size:1em
 }
 
@@ -52,7 +49,7 @@ a {
 }
 
 a:hover {
-   color:#dd14ff
+   color:#1185fd
 }
 
 input[type=checkbox] {
@@ -72,7 +69,7 @@ input[type=checkbox] {
 .section {
    display:inline-block;
    vertical-align:top;
-   margin:20px 10px;
+   margin:20px 8px;
    text-align:left
 }
 
@@ -82,20 +79,29 @@ input[type=checkbox] {
    border-style:solid;
    border-color:#000;
    border-width:1px;
-   border-radius:4px
+   border-radius:0px
 }
 
 .section .framed {
-   margin-top:10px
+   margin-top:16px
 }
+
 .section .framed:first-of-type {
    margin-top:0px
 }
 
-#header {
+#gameversion {
+   width:200px;
+   margin-top:0
+}
+
+#downloadbutton {
    width:100%;
-   margin-bottom:30px;
-   text-align:center
+   margin-top:2px
+}
+
+#generalsettings table {
+   width:100%
 }
 
 #home {
@@ -125,7 +131,7 @@ input[type=checkbox] {
 }
 
 #center {
-   display:none;
+   display:none
 }
 
 #right {
@@ -165,10 +171,14 @@ input[type=checkbox] {
 
 @media screen and (max-width:700px) {
 
-   #left,#center,#right,#usefastcode:checked ~ #left, #usefastcode:checked ~ #center,#usefastcode:checked ~ #right{
+   #left,#center,#usefastcode:checked ~ #left, #usefastcode:checked ~ #center{
       min-width:400px;
       max-width:90vw;
       width:90vw
+   }
+
+   #right,#usefastcode:checked ~ #right {
+      display:none
    }
 }
 
@@ -181,6 +191,10 @@ button {
    border-radius:4px;
    cursor:pointer;
    outline:none
+}
+
+button:hover {
+   background-color:#ff5151;
 }
 
 select {
@@ -196,6 +210,13 @@ select {
    -ms-user-select:none;
    user-select:none;
    outline:none
+}
+
+label {
+   -webkit-user-select:none;
+   -moz-user-select:none;
+   -ms-user-select:none;
+   user-select:none
 }
 
 ul {
@@ -247,7 +268,7 @@ ul li.checked {
   -webkit-user-select: none;
   user-select: none;
   -khtml-user-drag: element;
-  -webkit-user-drag: element;
+  -webkit-user-drag: element
 }
 
 #route_levels {
@@ -266,6 +287,8 @@ ul li.checked {
 
 #route_levels li select {
    margin:0;
+   width:calc(100% - 40px);
+   margin:0px 6px;
    color:black;
    background-color:inherit
 }
@@ -278,21 +301,40 @@ ul li.checked {
    color:white
 }
 
-#route_levels li:last-child .route_remove {
+#route_levels li:last-child {
+   padding-left:24px
+}
+
+#route_levels li:last-child .route_remove, #route_levels li:last-child .route_drag {
    display:none
 }
 
 .dragelement {
-   opacity:0.2
+   opacity:0.3
 }
 
 .route_remove {
-    background-color:#ff0c0c;
-    width:10px;
-    height:10px;
-    border-radius:0;
-    vertical-align:middle;
-    padding:0
+   background-color:inherit;
+   color:red;
+   font-weight:bold;
+   border-radius:0;
+   vertical-align:middle;
+   padding:0
+}
+
+.route_remove:hover {
+   background-color:inherit;
+   color:white
+}
+
+.route_drag {
+   display:inline;
+   background-color:inherit;
+   color:#aaa;
+   border-radius:0;
+   vertical-align:middle;
+   margin:0;
+   padding:0
 }
 
 .route_clear, .route_presets {

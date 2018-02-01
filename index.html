@@ -10,22 +10,19 @@
    </head>
    <body onload="updateChangelog()">
       <div id="mainContainer">
-         <div id="header">
-            <h1>Practice Code Generator (WIP)</h1>
-         </div>
-         <select id="gameversion" onchange="updateCodelist()" autocomplete="off">
-            <option selected disabled>Game Version</option>
-            <option value="GMSE01">GMSE01 (NTSC-U)</option>
-            <option value="GMSP01">GMSP01 (PAL)</option>
-            <option value="GMSJ01">GMSJ01 (NTSC-J 1.0)</option>
-            <option value="GMSJ0A">GMSJ01 (NTSC-J 1.1/A)</option>
-         </select>
-         <br />
-         <label for="usefastcode">Use custom fastcode:</label>
-         <input type="checkbox" id="usefastcode" />
-         <br />
          <div id="home">
-            <p style="margin:0"><i>Last Updated: Jan 24, 2018</i></p>
+            <h1>Super Mario Sunshine Practice Codes Generator v2</h1>
+            <p style="margin:0"><i id="lastupdate">This page requires Javascript to be enabled.</i></p>
+            <br />
+            <div style="text-align:center">
+               <select id="gameversion"  onmouseover="updateUIDescription(this)" onchange="switchPosition()" autocomplete="off" style="visibility:hidden">
+                  <option selected disabled>Choose Version</option>
+                  <option value="GMSE01">GMSE01 (NTSC-U)</option>
+                  <option value="GMSP01">GMSP01 (PAL)</option>
+                  <option value="GMSJ01">GMSJ01 (NTSC-J 1.0)</option>
+                  <option value="GMSJ0A">GMSJ01 (NTSC-J 1.1/A)</option>
+               </select>
+            </div>
             <br />
             <p>This is a cheatfile generator for Super Mario Sunshine speedrun practice. A guide on how to use the generator and practice codes on your Wii can be found here: <a target="_blank" href="guide.html">Guide</a>. Visit the <a target="_blank" href="guide.html#3">troubleshooting section</a> if you encounter any issues.</p>
             <br />
@@ -42,15 +39,58 @@
             </div>
          </div>
          <br />
+         <input type="checkbox" id="usefastcode" style="display:none" autocomplete="off" />
          <div id="left" class="section" style="visibility:hidden">
+            <div id="generalsettings">
+               <table><tbody>
+                  <tr>
+                     <td>
+                        Game Version:
+                     </td>
+                     <td id="ph_gameversion">
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        Stage Loader:
+                     </td>
+                     <td>
+                        <select id="stageloader" onmouseover="updateUIDescription(this)" onchange="document.getElementById('usefastcode').checked = (this.value === 'yes');" style="width:100%" autocomplete="off">
+                           <option value="yes">Yes</option>
+                           <option selected value="no">No</option>
+                        </select>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        File Format:
+                     </td>
+                     <td>
+                        <select id="downloadformat" onmouseover="updateUIDescription(this)" style="width:100%">
+                           <option selected value="gct">GCT</option>
+                           <option value="ini">Dolphin INI</option>
+                           <option value="gcm">Cheat Manager TXT</option>
+                        </select>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td></td>
+                     <td>
+                        <button onclick="downloadCodes()" id="downloadbutton">Download</button>
+                     </td>
+                  </tr>
+               </tbody></table>
+            </div>
             <div id="codes" class="framed">
                <h2>Codes</h2>
+               <p>Click a code to enable it.</p>
+               <br />
                <ul id="checklist"></ul>
             </div>
          </div>
          <div id="center" class="section" style="visibility:hidden">
             <div class="framed">
-               <h2>Route</h2>
+               <h2>Stage Loader</h2>
                <div>
                   <table style="width:100%"><tbody>
                      <tr>
@@ -58,7 +98,7 @@
                            <label for="route_notext">Remove Dialogue:</label>
                         </td>
                         <td>
-                           <select id="route_notext" style="width:100%" onmouseover="setDropdownDescription(this)">
+                           <select id="route_notext" style="width:100%" onmouseover="updateUIDescription(this)">
                               <option value="yes">Always</option>
                               <option selected value="pv5">Not in Pianta 5</option>
                               <option value="no">Don't include</option>
@@ -70,7 +110,7 @@
                            <label for="route_nofmvs">Skippable Cutscenes:</label>
                         </td>
                         <td>
-                           <select id="route_nofmvs" style="width:100%" onmouseover="setDropdownDescription(this)">
+                           <select id="route_nofmvs" style="width:100%" onmouseover="updateUIDescription(this)">
                               <option value="yes">Always</option>
                               <option selected value="pp1">Not in Pinna 1</option>
                               <option value="no">Don't include</option>
@@ -82,7 +122,7 @@
                           <label for="route_random">Random Level Order:</label>
                         </td>
                         <td>
-                           <select id="route_random" style="width:100%" onmouseover="setDropdownDescription(this)">
+                           <select id="route_random" style="width:100%" onmouseover="updateUIDescription(this)">
                               <option value="yes">Yes</option>
                               <option selected value="no">No</option>
                            </select>
@@ -93,8 +133,8 @@
                <div>
                   <ul id="route_levels">
                      <li draggable="false">
-                        <button type="button" class="route_remove"></button>
-                        <select style="width:70%">
+                        <div class="route_drag">&#8801;</div>
+                        <select>
                            <option value="0F00" selected>Select a level…</option>
                            <optgroup label="Delfino Plaza">
                               <option value="1400">Airstrip (red coins)</option>
@@ -198,10 +238,11 @@
                               <option value="3C00">Bowser fight (Corona)</option>
                            </optgroup>
                         </select>
+                        <button type="button" class="route_remove">&#215;</button>
                      </li>
                   </ul>
                </div>
-               <div>
+               <div style="text-align:center">
                   <button id="route_clear" type="button">Clear list</button>
                   <select id="route_presets">
                      <option value="" selected>Load a preset…</option>
@@ -215,13 +256,6 @@
             </div>
          </div>
          <div id="right" class="section" style="visibility:hidden">
-            <div id="downloadbox" class="framed">
-               Download:
-               <button onclick="generateGCT()" onmouseover="setButtonDescription(this)" id="downloadbutton">GCT</button>
-               <button onclick="generateTXT(this)" onmouseover="setButtonDescription(this)" id="dolphindownloadbutton">Dolphin</button>
-               <button onclick="generateTXT(this)" onmouseover="setButtonDescription(this)" id="gcmdownloadbutton">GCM</button>
-               <div id="warningmessage"></div>
-            </div>
             <div id="descriptionbox" class="framed">
             </div>
          </div>
