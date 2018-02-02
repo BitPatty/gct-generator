@@ -167,10 +167,10 @@ function updateCodelist() {
    var gameVersion = document.getElementById("gameversion").value;
    parseXML(gameVersion);
    updateFastCode(gameVersion);
-   document.getElementById("home").style.display = "none";
    document.getElementById("left").style.visibility = "visible";
-   document.getElementById("center").style.visibility = "visible";
-   document.getElementById("right").style.visibility = "visible";
+   while (document.getElementsByClassName("initialhidden").length > 0) {
+      document.getElementsByClassName("initialhidden")[0].classList.remove("initialhidden");
+   }
 }
 
 function updateDescription(s) {
@@ -193,19 +193,10 @@ function updateUIDescription(s) {
       document.getElementById("descriptionbox").innerHTML = "<h2>File Format</h2><p>You can choose between 3 file formats:</p><h4>GCT</h4><p>Download a GCT file for use with Nintendont</p><h4>Dolphin INI</h4><p>Download a textfile containing the formatted codes for use with Dolphin. Copy the contents of the file on top of your games .ini file.</p><p>You can open the .ini file by right clicking the game in Dolphin. In the context menu select 'Properties' and then 'Edit configuration'.</p><h4>Cheat Manager TXT</h4><p>Download the cheats in a textfile formatted for use with the <a target=\"_blank\" href=\"http://wiibrew.org/wiki/CheatManager\">Gecko Cheat Manager</a>. Place the txt file in SD:/txtcodes/.</p><p>A zip archive containing pregenerated txt files with all available codes on this site can be downloaded <a target=\"_blank\" href=\"files/GCMCodes.zip\">here</a>.</p>";
    else if (s.id === "stageloader")
       document.getElementById("descriptionbox").innerHTML = "<h2>Stage Loader</h2><p>Select yes if you want to use a custom stage loader, which automatically loads the levels you choose, similiar to 'Fast Any%'.</p>";
-   else if (s.id === "gameversion")
-      document.getElementById("descriptionbox").innerHTML = "<h2>Game Version</h2><p>Select your game version here. NTSC-U stands for the North American version of the game, PAL for the European and NTSC-J 1.0 and 1.1 for the two Japanese releases.</p>"
 }
 
 function resetDescription() {
    document.getElementById("descriptionbox").innerHTML = "<p><h3>Choose your codes from the list...</h3></p>";
-}
-
-function switchPosition() {
-   document.getElementById("ph_gameversion").appendChild(document.getElementById("gameversion"));
-   document.getElementById("gameversion").setAttribute("onchange","updateCodelist()");
-   document.getElementById("gameversion").style.width = "100%";
-   updateCodelist();
 }
 
 function updateChangelog() {

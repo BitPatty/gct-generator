@@ -10,62 +10,40 @@
    </head>
    <body onload="updateChangelog()">
       <div id="mainContainer">
-         <div id="home">
-            <h1>Super Mario Sunshine Practice Codes Generator v2</h1>
-            <p style="margin:0"><i id="lastupdate">This page requires Javascript to be enabled.</i></p>
-            <br />
-            <div style="text-align:center">
-               <select id="gameversion"  onmouseover="updateUIDescription(this)" onchange="switchPosition()" autocomplete="off" style="visibility:hidden">
-                  <option selected disabled>Choose Version</option>
-                  <option value="GMSE01">GMSE01 (NTSC-U)</option>
-                  <option value="GMSP01">GMSP01 (PAL)</option>
-                  <option value="GMSJ01">GMSJ01 (NTSC-J 1.0)</option>
-                  <option value="GMSJ0A">GMSJ01 (NTSC-J 1.1/A)</option>
-               </select>
-            </div>
-            <br />
-            <p>This is a cheatfile generator for Super Mario Sunshine speedrun practice. A guide on how to use the generator and practice codes on your Wii can be found here: <a target="_blank" href="guide.html">Guide</a>. Visit the <a target="_blank" href="guide.html#3">troubleshooting section</a> if you encounter any issues.</p>
-            <br />
-            <h4>Changelog:</h4>
-            <p id="changelog"></p>
-            <p style="margin:0;text-align:right"><i>Made by <a target="_blank" href="https://twitter.com/psychonauter">Psychonauter</a>, <a target="_blank" href="https://twitter.com/qbe_root">Noki Doki</a> &amp; <a target="_blank" href="https://twitter.com/srlmilk">Milk</a></i></p>
-            <hr style="border-color:grey;">
-            <div id="smscommunity">
-               <a target="_blank" href="https://discord.gg/0SoktBcRDw8B1NJB" title="Sunshine Community Discord"><img src="img/discord_bubble.png" alt="Sunshine Community Discord" /></a>
-               <a target="_blank" href="https://speedrun.com/sms" title="Sunshine Leaderboards"><img src="img/src_bubble.png" alt="Sunshine Leaderboards" /></a>
-               <h4 style="display:inline;vertical-align:middle;margin:0px 10px">Sunshine Community</h4>
-               <a target="_blank" href="https://twitter.com/SMSCommunity" title="Sunshine Community Twitter"><img src="img/twitter_bubble.png" alt="Sunshine Community Twitter" /></a>
-               <a target="_blank" href="https://www.twitch.tv/SunshineCommunity" title="Sunshine Community Twitch"><img src="img/twitch_bubble.png" alt="Sunshine Community Twitch" /></a>
-            </div>
-         </div>
-         <br />
          <input type="checkbox" id="usefastcode" style="display:none" autocomplete="off" />
-         <div id="left" class="section" style="visibility:hidden">
+         <div id="left" class="section">
             <div id="generalsettings">
                <table><tbody>
                   <tr>
-                     <td>
+                     <td nowrap>
                         Game Version:
                      </td>
-                     <td id="ph_gameversion">
+                     <td id="ph_gameversion" style="width:100%">
+                        <select id="gameversion" onchange="updateCodelist()" autocomplete="off" style="visibility:hidden">
+                           <option selected disabled>Choose Version</option>
+                           <option value="GMSE01">GMSE01 (NTSC-U)</option>
+                           <option value="GMSP01">GMSP01 (PAL)</option>
+                           <option value="GMSJ01">GMSJ01 (NTSC-J 1.0)</option>
+                           <option value="GMSJ0A">GMSJ01 (NTSC-J 1.1/A)</option>
+                        </select>
                      </td>
                   </tr>
-                  <tr>
-                     <td>
+                  <tr class="initialhidden">
+                     <td nowrap>
                         Stage Loader:
                      </td>
-                     <td>
+                     <td style="width:100%">
                         <select id="stageloader" onmouseover="updateUIDescription(this)" onchange="document.getElementById('usefastcode').checked = (this.value === 'yes');" style="width:100%" autocomplete="off">
                            <option value="yes">Yes</option>
                            <option selected value="no">No</option>
                         </select>
                      </td>
                   </tr>
-                  <tr>
-                     <td>
+                  <tr class="initialhidden">
+                     <td nowrap>
                         File Format:
                      </td>
-                     <td>
+                     <td style="width:100%">
                         <select id="downloadformat" onmouseover="updateUIDescription(this)" style="width:100%">
                            <option selected value="gct">GCT</option>
                            <option value="ini">Dolphin INI</option>
@@ -73,7 +51,7 @@
                         </select>
                      </td>
                   </tr>
-                  <tr>
+                  <tr class="initialhidden">
                      <td></td>
                      <td>
                         <button onclick="downloadCodes()" id="downloadbutton">Download</button>
@@ -81,23 +59,21 @@
                   </tr>
                </tbody></table>
             </div>
-            <div id="codes" class="framed">
-               <h2>Codes</h2>
-               <p>Click a code to enable it.</p>
-               <br />
+            <div id="codes" class="framed initialhidden">
+               
                <ul id="checklist"></ul>
             </div>
          </div>
-         <div id="center" class="section" style="visibility:hidden">
+         <div id="center" class="section initialhidden">
             <div class="framed">
                <h2>Stage Loader</h2>
                <div>
                   <table style="width:100%"><tbody>
                      <tr>
-                        <td>
+                        <td nowrap>
                            <label for="route_notext">Remove Dialogue:</label>
                         </td>
-                        <td>
+                        <td style="width:100%">
                            <select id="route_notext" style="width:100%" onmouseover="updateUIDescription(this)">
                               <option value="yes">Always</option>
                               <option selected value="pv5">Not in Pianta 5</option>
@@ -106,10 +82,10 @@
                         </td>
                      </tr>
                      <tr>
-                        <td>
+                        <td nowrap>
                            <label for="route_nofmvs">Skippable Cutscenes:</label>
                         </td>
-                        <td>
+                        <td style="width:100%">
                            <select id="route_nofmvs" style="width:100%" onmouseover="updateUIDescription(this)">
                               <option value="yes">Always</option>
                               <option selected value="pp1">Not in Pinna 1</option>
@@ -118,10 +94,10 @@
                         </td>
                      </tr>
                      <tr>
-                        <td>
+                        <td nowrap>
                           <label for="route_random">Random Level Order:</label>
                         </td>
-                        <td>
+                        <td style="width:100%">
                            <select id="route_random" style="width:100%" onmouseover="updateUIDescription(this)">
                               <option value="yes">Yes</option>
                               <option selected value="no">No</option>
@@ -135,7 +111,7 @@
                      <li draggable="false">
                         <div class="route_drag">&#8801;</div>
                         <select>
-                           <option value="0F00" selected>Select a level…</option>
+                           <option value="0F00" selected disabled>Select a level…</option>
                            <optgroup label="Delfino Plaza">
                               <option value="1400">Airstrip (red coins)</option>
                               <option value="1500">Slide</option>
@@ -255,8 +231,24 @@
                </div>
             </div>
          </div>
-         <div id="right" class="section" style="visibility:hidden">
+         <div id="right" class="section">
             <div id="descriptionbox" class="framed">
+               <h1>Super Mario Sunshine Practice Code Generator v2</h1>
+               <p style="margin:0"><i id="lastupdate"></i></p>
+               <br />
+               <p>This is a cheatfile generator for Super Mario Sunshine speedrun practice. A guide on how to use the generator and practice codes on your Wii can be found here: <a target="_blank" href="guide.html">Guide</a>. Visit the <a target="_blank" href="guide.html#3">troubleshooting section</a> if you encounter any issues.</p>
+               <br />
+               <h4>Changelog:</h4>
+               <p id="changelog"></p>
+               <p style="margin:0;text-align:right"><i>Made by <a target="_blank" href="https://twitter.com/psychonauter">Psychonauter</a>, <a target="_blank" href="https://twitter.com/qbe_root">Noki Doki</a> &amp; <a target="_blank" href="https://twitter.com/srlmilk">Milk</a></i></p>
+               <hr />
+               <div id="smscommunity">
+                  <a target="_blank" href="https://discord.gg/0SoktBcRDw8B1NJB" title="Sunshine Community Discord"><img src="img/discord_bubble.png" alt="Sunshine Community Discord" /></a>
+                  <a target="_blank" href="https://speedrun.com/sms" title="Sunshine Leaderboards"><img src="img/src_bubble.png" alt="Sunshine Leaderboards" /></a>
+                  <h4 style="display:inline;vertical-align:middle;margin:0px 10px">Sunshine Community</h4>
+                  <a target="_blank" href="https://twitter.com/SMSCommunity" title="Sunshine Community Twitter"><img src="img/twitter_bubble.png" alt="Sunshine Community Twitter" /></a>
+                  <a target="_blank" href="https://www.twitch.tv/SunshineCommunity" title="Sunshine Community Twitch"><img src="img/twitch_bubble.png" alt="Sunshine Community Twitch" /></a>
+               </div>
             </div>
          </div>
       </div>
