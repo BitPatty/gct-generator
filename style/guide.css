@@ -1,84 +1,79 @@
-﻿@import url('common.css');
-
-body {
-   margin:30px 0px;
+﻿html {
+   background-color:#f0f1f0;
+   color:#000;
+   font-family:Calibri;
    text-align:center
 }
 
-div {
-   padding:0;
+body {
+   display:inline-block;
+   margin:10px 0px;
+   min-height:450px;
+   font-size:1em;
+   text-align:left
+}
+
+h1,h2,h3,h4{
+   margin:10px 20px
 }
 
 h1 {
-   margin:50px 0px 20px 0px;
-   line-height:28px
+   font-size:1.3em
 }
 
 h2 {
-   font-size:16px;
-   margin:30px 0px 0px 0px
+   font-size:1.1em
 }
 
-h3 {
-   font-size:15px;
-   margin:20px 0px 5px 20px
+h3,h4 {
+   margin-top:15px;
+   font-size:1em
 }
 
 p {
+   margin:10px 0px 0px 0px
+}
+
+img {
    margin:0px 40px;
+   border-radius:4px;
+   max-width:100%
+}
+
+a {
+   color:#ff0029;
+   text-decoration:none
+}
+
+a:hover {
+   color:#1185fd
+}
+
+p {
+   margin:0px 30px
 }
 
 ul li {
-   margin:0px 0px 10px 60px;
-   width:80%
+   margin-top:7px
 }
 
-hr {
-   border-color:#ccc
+.framed {
+   padding:12px;
+   text-align:justify;
+   border-style:solid;
+   border-color:#000;
+   border-width:1px;
+   border-radius:0px
 }
 
 #guide_content {
-   display:inline-block;
-   background:#232323;
-   width:80%;
-   min-width:450px;
-   max-width:1200px;
-   overflow:hidden;
-   border:1px solid #333;
-   border-radius:4px;
-   border-color:#aaa;
-   border-width:1px;
-   border-style:solid;
-   margin:0;
-   padding:0px 30px 30px 30px;
-   font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
-   font-size:14px;
-   line-height:20px;
-   text-align:justify
-}
-
-#indexlisting h2, #indexlisting  h3{
-   font-size:14px;
-   font-weight:normal;
-   margin:0
+   max-width:1000px
 }
 
 #iosinstall {
-   clear:both;
-   margin-top:100px;
-   text-align:center
-}
-
-#iosinstall h2 {
-   text-align:left
+   text-align:center;
 }
 
 #iosinstall div {
-   margin:0px 30px 0px 30px;
-   display:inline-block
-}
-
-#iosinstall div h3 {
-   margin:10px;
-   text-align:left
+   display:inline-block;
 }
