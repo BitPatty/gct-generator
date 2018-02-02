@@ -132,7 +132,7 @@
         <author>Psychonauter</author>
         <version>1.6</version>
         <date>Nov 29, 2017</date>
-        <description><![CDATA[Adds the ingame timer to every level, starting on the last black frame after the loading screen and ending when you touch a Shine.<br /><br /><b><font color ="#ff8297">Requires the Level Select code or Fast Any% to be active.</font></b>]]></description>
+        <description><![CDATA[Adds the ingame timer to every level, starting on the last black frame after the loading screen and ending when you touch a Shine.<br /><br /><b><font color ="#0046da">Requires the Level Select code, Fast Any% or Stage Loader to be active.</font></b>]]></description>
         <source>
             C2031F68 0000000F
             3CC0817F 60C60100
@@ -233,7 +233,7 @@
         <title lang="en">Shine Get Timer</title>
         <author>Psychonauter</author>
         <version>1.6</version>
-        <description><![CDATA[Adds the ingame timer to every level, starting on the last black frame after the loading screen and ending as soon as the 'Shine Get' animation starts (Similiar to the x-cam timer of SM64). <br /><br /><b><font color ="#ff8297">Requires the Level Select code or Fast Any% to be active.</font></b>]]></description>
+        <description><![CDATA[Adds the ingame timer to every level, starting on the last black frame after the loading screen and ending as soon as the 'Shine Get' animation starts (Similiar to the x-cam timer of SM64). <br /><br /><b><font color ="#0046da">Requires the Level Select code, Fast Any% or Stage Loader to be active.</font></b>]]></description>
         <date>Nov 29, 2017</date>
         <source>
             C2031F68 0000000F
@@ -345,7 +345,7 @@
         <author>Psychonauter, Dan Salvato, Noki Doki</author>
         <version>1.5</version>
         <date>Nov 06, 2017</date>
-        <description><![CDATA[Allows warping to other levels when starting a file or when exiting level by holding the combination until the screen turns black. Codes:<br /><br /><img src="img/levelselect.png" width="500px">]]></description>
+        <description><![CDATA[Allows warping to other levels when starting a file or when exiting level by holding the combination until the screen turns black. This code is not compatible with the Fast Any%, Stage Loader or Stage Randomizer code. Codes:<br /><br /><div style="text-align:center"><img src="img/levelselect.png" width="500px"></div>]]></description>
         <source>
             C22A6710 0000007F
             3C60803E 60639710
@@ -481,7 +481,7 @@
         <title lang="en">Fast Any%</title>
         <author>Psychonauter, Noki Doki</author>
         <version>1.3.2</version>
-        <description>Loads stages in any% order, skips all save boxes, replaces all dialog with "!!!" (except for the Pianta 5 secret) and makes all FMVs skippable (except for the Pinna 1 cutscenes). This code is not compatible with the Level Select or Stage Randomizer code.</description>
+        <description>Loads stages in any% order, skips all save boxes, replaces all dialog with "!!!" (except for the Pianta 5 secret) and makes all FMVs skippable (except for the Pinna 1 cutscenes). This code is not compatible with the Level Select, Stage Loader or Stage Randomizer code.</description>
         <date>Jan 24, 2018</date>
         <source>
             C22A6710 00000077

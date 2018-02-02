@@ -1,77 +1,226 @@
-﻿@import url('common.css');
-
-body {
-   margin:50px;
-   width:980px;
-   min-height:450px;
+﻿html {
+   background-color:#f0f1f0;
+   color:#000;
+   font-family:Calibri;
    text-align:left
 }
 
-body button {
-   padding:10px;
+body {
+   display:inline-block;
+   margin:10px 0px;
+   min-height:450px;
+   font-size:1em;
+   text-align:left
+}
+
+h1,h2,h3,h4{
+   margin:5px 0px
+}
+
+h2,h3 {
+   text-align:center
+}
+
+h1 {
+   font-size:1.3em
+}
+
+h2 {
+   font-size:1.1em
+}
+
+h3,h4 {
+   margin-top:15px;
+   font-size:1em
+}
+
+p {
+   margin:10px 0px 0px 0px
+}
+
+img {
+   border-radius:4px;
+   max-width:100%
+}
+
+a {
+   color:#ff0029;
+   text-decoration:none
+}
+
+a:hover {
+   color:#1185fd
+}
+
+hr {
+   border-color:#f3f3f3
+}
+
+input[type=checkbox] {
+   vertical-align:middle;
+   width:15px;
+   height:15px;
+   margin:0;
+   -webkit-appearance: checkbox;
+   box-sizing: border-box
+}
+
+tr td:first-child {
+   padding-right:5px
+}
+
+td {
+   vertical-align:middle
+}
+
+#mainContainer {
+   width:100vw;
+   text-align:center
+}
+
+.initialhidden {
+   visibility:hidden;
+}
+
+.section {
+   display:inline-block;
+   vertical-align:top;
+   margin:20px 8px;
+   text-align:left
+}
+
+.framed {
+   padding:12px;
+   text-align:justify;
+   border-style:solid;
+   border-color:#000;
+   border-width:1px;
+   border-radius:0px
+}
+
+.section .framed {
+   margin-top:16px
+}
+
+.section .framed:first-of-type {
+   margin-top:0px
+}
+
+#gameversion {
+   width:100%;
+   margin-top:0
+}
+
+#downloadbutton {
+   width:100%;
+   margin-top:2px
+}
+
+#generalsettings table {
+   width:100%
+}
+
+#home {
+   display:inline-block;
+   min-width:400px;
+   width:50vw;
+   margin:10px 0px;
+   padding:4px;
+   text-align:justify
+}
+
+#smscommunity {
+   display:block;
+   text-align:center;
+   margin:18px 0px 7px 0px
+}
+
+#smscommunity img {
+   margin:0px 3px;
+   vertical-align:middle
+}
+
+#left {
+   width:30vw;
+   min-width:300px;
+   max-width:400px
+}
+
+#center {
+   display:none
+}
+
+#right {
+   width:50vw;
+   min-width:300px;
+   max-width:800px
+}
+
+#usefastcode:checked ~ #center {
+   display:inline-block;
+   width:20vw;
+   min-width:300px;
+   max-width:400px
+}
+
+#usefastcode:checked ~ #left {
+   width:20vw
+}
+
+#usefastcode:checked ~ #right {
+   width:35vw
+}
+
+@media screen and (max-width:1100px) {
+
+   #usefastcode:checked ~ #left, #usefastcode:checked ~ #center{
+      min-width:45vw;
+      max-width:45vw
+   }
+
+   #usefastcode:checked ~ #right {
+      min-width:90vw;
+      min-width:calc(90vw + 24px);
+      max-width:90vw
+   }
+}
+
+@media screen and (max-width:700px) {
+
+   #left,#center,#usefastcode:checked ~ #left, #usefastcode:checked ~ #center{
+      min-width:400px;
+      max-width:90vw;
+      width:90vw
+   }
+
+   #right,#usefastcode:checked ~ #right {
+      display:none
+   }
+}
+
+button {
+   padding:6px;
    margin:auto;
-   font-size:18px;
    color:#f1f1f1;
-   background-color:#f44336;
+   background-color:#ca0707;
    border-style:none;
    border-radius:4px;
    cursor:pointer;
-   margin-top:5px;
    outline:none
 }
 
-#downloadButton {
-   width:390px;
-   display:block
+button:hover {
+   background-color:#ff5151;
 }
 
-#downloadButton:hover {
-   background-color:#ea7d75
-}
-
-#dolphinDownloadButton {
-   width:193px;
-   display:inline-block;
-   background-color:#5c90aa
-}
-
-#dolphinDownloadButton:hover {
-   background-color:#9cb6c3
-}
-
-#gameID {
-   margin:10px 0 5px
-}
-
-#gcmDownloadButton {
-   width:193px;
-   display:inline-block;
-   background-color:#629045
-}
-
-#gcmDownloadButton:hover {
-   background-color:#8eb575
-}
-
-ul {
-   margin:0;
-   padding:0;
-   width:390px;
-   list-style-type:none
-}
-
-ul li {
-   cursor:pointer;
-   position:relative;
-   padding:8px 8px 8px 40px;
+select {
+   margin:2px 0px;
+   background-color:#ca0707;
+   padding:5px;
+   color:#fff;
+   width:200px;
+   border-style:none;
    border-radius:4px;
-   border-style:solid;
-   border-width:1px;
-   background:#ffefef;
-   color:#262626;
-   font-size:18px;
-   text-align:left;
-   transition:.2s;
    -webkit-user-select:none;
    -moz-user-select:none;
    -ms-user-select:none;
@@ -79,36 +228,55 @@ ul li {
    outline:none
 }
 
-ul li::before {
-   content:'';
-   position:absolute;
-   border-color:#a6a6a6;
-   border-style:solid;
-   border-width:1.5px;
-   border-radius:50%;
-   top:11px;
-   left:12px;
-   height:14px;
-   width:14px
+optgroup {
+   background:#ff5151
+}
+
+option {
+   background:#ca0707
+}
+
+label {
+   -webkit-user-select:none;
+   -moz-user-select:none;
+   -ms-user-select:none;
+   user-select:none
+}
+
+ul {
+   margin:0;
+   padding:0;
+   width:100%;
+   list-style-type:none
+}
+
+ul li {
+   margin-top:2px;
+   cursor:pointer;
+   position:relative;
+   padding:4px;
+   color:#262626;
+   text-align:left;
+   transition:.1s;
+   -webkit-user-select:none;
+   -moz-user-select:none;
+   -ms-user-select:none;
+   user-select:none;
+   outline:none
 }
 
 ul li:nth-child(odd) {
-   background:#fdfdfd
+   background:#e2e2e2
 }
 
 ul li:hover {
-   background:#d84035;
+   background:#ca0707;
    color:#fff;
    border-color:#000
 }
 
-ul li:hover::before {
-   border-color:#fff;
-   background-color:#ffc0cb
-}
-
 ul li.checked:hover {
-   background:#d84035;
+   background:#ca0707;
    color:#fff
 }
 
@@ -118,73 +286,113 @@ ul li.checked {
    border-color:#262626
 }
 
-ul li.checked::before {
-   content:'';
-   position:absolute;
-   border-color:#fff;
-   border-style:solid;
-   border-width:1.5px;
-   border-radius:50%;
-   top:11px;
-   left:12px;
-   height:14px;
-   width:14px;
-   background-color:#d85e55
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -khtml-user-drag: element;
+  -webkit-user-drag: element
 }
 
-th {
-   font-weight:400
+#route_levels {
+   margin:10px 0px;
 }
 
-.selectionHeader {
-   background-color:#f44336;
-   padding:10px;
-   color:#fff;
-   width:390px;
-   font-size:16px;
-   border-style:none;
-   border-radius:4px;
-   -webkit-user-select:none;
-   -moz-user-select:none;
-   -ms-user-select:none;
-   user-select:none;
-   outline:none
+#route_levels li {
+   padding:0px 10px;
+   margin:0
 }
 
-.framed {
-   position:relative;
-   margin:11px 0 10px;
-   padding:0 12px 12px;
-   background:#232323;
-   font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
-   font-size:14px;
-   text-align:justify;
-   line-height:18px;
-   border-color:#fff;
-   border-style:solid;
-   border-width:1px;
-   border-radius:4px;
-   width:500px;
-   min-height:150px;
-   overflow-y:auto;
-   overflow-x:hidden;
-   -ms-overflow-style:none
+#route_levels li.dragover {
+   padding-bottom:20px;
+   background-color:white
 }
 
-.framed::-webkit-scrollbar {
+#route_levels li select {
+   margin:0;
+   width:calc(100% - 40px);
+   margin:0px 6px;
+   color:black;
+   background-color:inherit
+}
+
+#route_levels li select:hover {
+   color:white
+}
+
+#route_levels li:hover select {
+   color:white
+}
+
+#route_levels li:last-child {
+   padding-left:24px
+}
+
+#route_levels li:last-child .route_remove, #route_levels li:last-child .route_drag {
    display:none
 }
 
-#warningMessage {
-   font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
-   font-size:14px;
-   line-height:18px;
-   border-color:#fff;
+#checklist li {
+   padding-left: 26px;
+}
+
+#checklist li::before {
+   content:'';
+   position:absolute;
+   border-color:#a6a6a6;
    border-style:solid;
-   border-width:1px;
-   border-radius:4px;
-   background:#232323;
-   width:526px;
-   padding:6px 12px;
-   margin:11px 0 0
+   border-width:2px;
+   border-radius:50%;
+   -webkit-transform: translateY(20%);
+   -moz-transform: translateY(20%);
+   -ms-transform: translateY(20%);
+   -o-transform: translateY(20%);
+   transform: translateY(20%);
+   transform: translateY(20%);
+   left:6px;
+   height:10px;
+   width:10px   
+}
+
+#checklist li:hover::before {
+   border-color:#fff;
+   background-color:#ffc0cb
+}
+
+#checklist li.checked::before {
+    border-color:#fff;
+    background-color:#d85e55
+}
+
+.dragelement {
+   opacity:0.3
+}
+
+.route_remove {
+   background:inherit;
+   color:red;
+   font-weight:bold;
+   border-radius:0;
+   vertical-align:middle;
+   padding:0
+}
+
+.route_remove:hover {
+   background:inherit;
+   color:white
+}
+
+.route_drag {
+   display:inline;
+   background-color:inherit;
+   color:#aaa;
+   border-radius:0;
+   vertical-align:middle;
+   margin:0;
+   padding:0
+}
+
+.route_clear, .route_presets {
+   display:inline-block
 }

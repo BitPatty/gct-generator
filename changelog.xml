@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Feb 02, 2018</date>
+      <change>Integrated Noki Dokis Stage Loader.</change>
+   </update>
+   <update>
       <date>Jan 24, 2018</date>
       <change>Optimized 'Fast Any%'.</change>
    </update>
