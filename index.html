@@ -95,12 +95,13 @@
                      </tr>
                      <tr>
                         <td nowrap>
-                          <label for="route_random">Random Level Order:</label>
+                          <label for="route_order">Level Order:</label>
                         </td>
                         <td style="width:100%">
-                           <select id="route_random" style="width:100%" onmouseover="updateUIDescription(this)">
-                              <option value="yes">Yes</option>
-                              <option selected value="no">No</option>
+                           <select id="route_order" style="width:100%" onmouseover="updateUIDescription(this)">
+                              <option selected value="list">As specified</option>
+                              <option value="shuffle">Random, no duplicates</option>
+                              <option value="random">Fully random</option>
                            </select>
                         </td>
                      </tr>
