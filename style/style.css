@@ -228,6 +228,11 @@ select {
    outline:none
 }
 
+select:disabled {
+   background:#e2e2e2;
+   color: grey
+}
+
 optgroup {
    background:#ff5151
 }
