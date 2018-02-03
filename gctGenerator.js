@@ -189,6 +189,8 @@ function updateUIDescription(s) {
       document.getElementById("descriptionbox").innerHTML = "<h2>Skippable Cutscenes</h2><p>Makes FMVs Skippable. 'Always' has the same effect as the 'FMV Skips' code. Also, having 'FMV Skips' enabled will override 'Not in Pinna 1' - so don't use both simultaneously.</p>";
    else if (s.id === "route_order")
       document.getElementById("descriptionbox").innerHTML = "<h2>Level Order</h2><p>The order in which levels are loaded:</p><h4>As specified</h4><p>The code loads levels in the order of the list.</p><h4>Random, no duplicates</h4><p>The code picks levels at random, excluding levels that you’ve finished already.</p><h4>Fully random</h4><p>The code picks levels at random, even levels that you’ve finished already.</p>";
+   else if (s.id === "route_ending")
+      document.getElementById("descriptionbox").innerHTML = "<h2>Route Ending</h2><p>What to do after you complete the final level on the list. This has no effect if the level order is set to Fully random.</p>";
    else if (s.id === "downloadformat")
       document.getElementById("descriptionbox").innerHTML = "<h2>File Format</h2><p>You can choose between 3 file formats:</p><h4>GCT</h4><p>Download a GCT file for use with Nintendont</p><h4>Dolphin INI</h4><p>Download a textfile containing the formatted codes for use with Dolphin. Copy the contents of the file on top of your games .ini file.</p><p>You can open the .ini file by right clicking the game in Dolphin. In the context menu select 'Properties' and then 'Edit configuration'.</p><h4>Cheat Manager TXT</h4><p>Download the cheats in a textfile formatted for use with the <a target=\"_blank\" href=\"http://wiibrew.org/wiki/CheatManager\">Gecko Cheat Manager</a>. Place the txt file in SD:/txtcodes/.</p><p>A zip archive containing pregenerated txt files with all available codes on this site can be downloaded <a target=\"_blank\" href=\"files/GCMCodes.zip\">here</a>.</p>";
    else if (s.id === "stageloader")
@@ -228,7 +230,6 @@ function updateChangelog() {
 *
 ****************************/
 
-'strict mode'
 const levels = document.querySelector("#route_levels");
 const template = levels.lastElementChild;
 template.ondragstart = function() { return false; };
@@ -258,13 +259,19 @@ levels.addEventListener("click", function ({target: t}) {
    if (t.tagName.toUpperCase() === "BUTTON") levels.removeChild(t.parentNode);
 })
 
+document.querySelector("#route_ending").disabled = document.querySelector("#route_order").value === "random";
+document.querySelector("#route_order").addEventListener("change", function ({currentTarget: t}) {
+   document.querySelector("#route_ending").disabled = t.value === "random";
+})
+
 document.querySelector("#route_presets").addEventListener("change", function ({currentTarget: t}) {
    if (levels.childElementCount <= 1 || confirm("Loading a preset will erase your current list. Continue?")) {
       clearLevels();
-      const preset = t.value;
+      const [preset, ending] = t.value.split(";");
       for (let i = 0; i <= preset.length - 4; i += 4) appendLevel(preset.substr(i, 4));
+      if (ending) document.querySelector("#route_ending").value = ending
    }
-   t.value = ""
+   t.value = "";
 })
 
 document.querySelector("#route_clear").addEventListener("click", function () {
@@ -338,8 +345,8 @@ function getFastCode() {
 
    let game = JSON.parse(atob(document.getElementById("route_levels").getAttribute("data-json")));
    const order = document.getElementById("route_order").value;
-   const levelWords = Math.ceil(levelCodes.length / 2);
-   const branchBase = 0x14 + 0x24 * (order !== 'list');
+   const ending = document.getElementById("route_ending").value;
+   const branchBase = 0x1C + 0x24 * (order !== 'list');
    const asm = [];
    asm.push("48" + ("00000" + (Math.ceil(levelCodes.length / 2) + 1 << 2 | 1).toString(16).toUpperCase()).slice(-6)); // bl to the code
    for (let i = levelCodes.length - 1; i >= 0; i -= 2) {
@@ -380,7 +387,9 @@ function getFastCode() {
    }
 
    asm.push("2C030000"); // cmpwi r3, 0
-   asm.push("4081" + ("000" + (branchBase + 4 * (order !== "random")).toString(16).toUpperCase()).slice(-4)); // ble- done
+   asm.push("4081000C"); // ble- 0x0C
+   asm.push("3860" + ending); // li r3, ending
+   asm.push("4800" + ("000" + (branchBase - 8 + 4 * (order !== "random")).toString(16).toUpperCase()).slice(-4)); // b done
 
    if (order !== "list") {
       asm.push("7CEC42E6"); // mftbl r7
