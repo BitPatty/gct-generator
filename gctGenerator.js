@@ -252,7 +252,7 @@ template.addEventListener("change", function () {
 })
 
 levels.addEventListener("change", function (ev) {
-   if (ev.target.value === "0F00" && ev.target.parentNode !== template) levels.removeChild(t.parentNode);
+   if (ev.target.value === "0F00" && ev.target.parentNode !== template) levels.removeChild(ev.target.parentNode);
 })
 
 levels.addEventListener("click", function (ev) {
