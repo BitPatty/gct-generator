@@ -2,6 +2,7 @@
 <html lang="en">
    <head>
       <meta http-equiv="content-type" content="text/html; charset=utf-8">
+      <meta name="description" content="A guide on how to install and use practice codes for Super Mario Sunshine.">
       <meta name="viewport" content="width=480px, initial-scale=1.0">
       <link rel="stylesheet" href="style/guide.css">
       <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -23,7 +24,7 @@
       <hr />
       <h2 id="1"><a href="#1">1. Preparing your Wii</a></h2>
       <h3 id="1.1"><a href="#1.1">1.1 Install Homebrew</a></h3>
-      <p>First of all you're gonna have to install Homebrew on your Wii. Make sure your SD card is <a target="_blank" href="https://gopro.com/help/articles/Solutions_Troubleshooting/SD-Card-Reformat-on-a-Windows-Computer">formatted to FAT32</a> and then <a target="_blank" href="https://sites.google.com/site/completesg/hacking-guide">click this link</a> for a detailed guide on how to get Homebrew on your Wii. Ignore the "<i>So, what's next?</i>" part.</p>
+      <p>First of all you're gonna have to install Homebrew on your Wii. Make sure your SD card is <a target="_blank" href="https://gopro.com/help/articles/Solutions_Troubleshooting/SD-Card-Reformat-on-a-Windows-Computer">formatted to FAT32</a> and then <a target="_blank" href="https://sites.google.com/site/completesg/hacking-guide">click this link</a> for a detailed guide on how to get Homebrew on your Wii. Ignore the "<i>So, what's next?</i>" section.</p>
       <br />
       <h3 id="1.2"><a href="#1.2">1.2 Install the necessary applications</a></h3>
       <p>Using <a target="_blank" href="https://github.com/FIX94/Nintendont">Nintendont</a> is the recommended way to use practice codes. To download the most recent build you can <a target="_blank" href="http://zint.ch/nintendont/dl/recent.php">click this link</a>.</p>
@@ -32,9 +33,9 @@
       <hr />
       <h2 id="2"><a href="#2">2. Install and use the cheatfile</a></h2>
       <h3 id="2.1"><a href="#2.1">2.1 Generate the file</a></h3>
-      <p>Visit the <a target="_blank" href="index.html">main site</a> and select your game version from the dropdown menu. Then select all the cheats you want to have enabled from the list and click "Download GCT". The name of the file you downloaded should be "GMSX01.gct" with X being E, P or J depending on the version you selected.</p>
+      <p>Visit the <a target="_blank" href="index.html">main site</a> and select your game version from the dropdown menu. Then select all the cheats you want to have enabled from the list, choose GCT as file format and hit "Download". The name of the file you downloaded should be "GMSX01.gct" with X being E, P or J depending on the version you selected.</p>
       <br />
-      <p><i>Note: JP 1.0 and JP 1.1 both use the same ID (GMSJ01).</i></p>
+      <p><i>Note: JP 1.0 and JP 1.1 both use the same ID (GMSJ01). To identify if you own JP 1.0 or 1.1 check the back of your disc. It'll read "DOL-GMSJ-0-00" for 1.0 and "DOL-GMSJ-0-01" for 1.1.</i></p>
       <br />
       <h3 id="2.2"><a href="#2.2">2.2 Copy the file onto your SD card</a></h3>
       <p>Create a "<i>codes</i>" folder in the root of your SD card if there is none and copy the GCT file you just downloaded into that folder.</p>
@@ -86,7 +87,7 @@
       <h3 id="4.1"><a href="#4.1">4.1 Setup</a></h3>
       <p>You can download the Cheat Manager from <a target="_blank" href="http://wiibrew.org/wiki/CheatManager" title="CheatManager - WiiBrew">WiiBrew</a>. Unzip the archive and copy the contents into the "<i>apps</i>" folder of your SD card.</p>
       <br />
-      <p>Using the generator on the <a target="_blank" href="index.html">main site</a>, select all the codes you want to have available on the cheat manager and click the green "<i>GCM TXT</i>" button instead of "<i>Download GCT</i>" to download a text file formatted for use with the cheat manager. Create a "<i>txtcodes</i>" folder in the root of your SD card if there is none and copy the generated text file into that folder. The name of the text file doesn't matter if you use this application, since the games ID is stored in the textfile.</p>
+      <p>Using the generator on the <a target="_blank" href="index.html">main site</a>, select all the codes you want to have available on the cheat manager and choose "<i>Cheat Manager TXT</i>" as file format instead of "<i>GCT</i>" to download a text file formatted for use with the cheat manager. Create a "<i>txtcodes</i>" folder in the root of your SD card if there is none and copy the generated text file into that folder. The name of the text file doesn't matter if you use this application, since the games ID is stored in the textfile.</p>
       <h3 id="4.2"><a href="#4.2">4.2 Using the Cheat Manager</a></h3>
       <p>Launch the cheat manager and grab your Wiimote. Navigate to your textfile using the DPad and select it with "<i>A</i>". On the following screen press "<i>+</i>" to activate and "<i>-</i>" to deactivate a cheat.</p>
       <br />
@@ -95,7 +96,7 @@
       <hr />
       <h2 id="5"><a href="#5">5. Appendix: Using the codes with Dolphin</a></h2>
       <h3 id="5.1"><a href="#5.1">5.1 Setup</a></h3>
-      <p>To use the codes with Dolphin click the blue "<i>Dolphin INI</i>" button instead of "<i>Download GCT</i>" to download the codes formatted for use with Dolphin. Then right click the game in Dolphin and click on "<i>Properties</i>" and on the bottom left corner of the property window click the "<i>Edit configuration</i>" button. Close the property window. Open the text file you downloaded and copy everything following the "<i>[Gecko]</i>" tag below the same tag in the configuration you just opened. If there is no "<i>[Gecko]</i>" tag (it should be the first tag), create one on top of your configuration file. Save and close the configuration file.</p>
+      <p>To use the codes with Dolphin choose "<i>Dolphin INI</i>" as file format instead of "<i>GCT</i>" to download the codes formatted for use with Dolphin. Then right click the game in Dolphin and click on "<i>Properties</i>" and on the bottom left corner of the property window click the "<i>Edit configuration</i>" button. Close the property window. Open the text file you downloaded and copy everything following the "<i>[Gecko]</i>" tag below the same tag in the configuration you just opened. If there is no "<i>[Gecko]</i>" tag (it should be the first tag), create one on top of your configuration file. Save and close the configuration file.</p>
       <br />
       <h3 id="5.2"><a href="#5.2">5.1 Using the codes</a></h3>
       <p>Reopen the property window, select the "<i>Gecko-Codes</i>" tab and check all the codes you want to be active. Most (but not all codes) will work with Dolphin. However, Dolphin has a code limit which is reached rather quickly. So if your game crashes right after it starts, you probably have too many codes active simultaneously.</p>
