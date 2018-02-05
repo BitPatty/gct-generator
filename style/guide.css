@@ -7,7 +7,6 @@
 
 body {
    display:inline-block;
-   margin:10px 0px;
    min-height:450px;
    font-size:1em;
    text-align:left
@@ -35,7 +34,7 @@ p {
 }
 
 img {
-   margin:0px 40px;
+   margin:0px 10px;
    border-radius:4px;
    max-width:100%
 }
@@ -54,7 +53,7 @@ p {
 }
 
 ul li {
-   margin-top:7px
+   margin:7px 10px
 }
 
 .framed {
@@ -68,6 +67,10 @@ ul li {
 
 #guide_content {
    max-width:1000px
+}
+
+#indexlisting h3 {
+   margin:2px 20px
 }
 
 #iosinstall {
