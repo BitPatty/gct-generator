@@ -251,27 +251,28 @@ template.addEventListener("change", function () {
    template.querySelector("select").value = "0F00";
 })
 
-levels.addEventListener("change", function ({target: t}) {
-   if (t.value === "0F00" && t.parentNode !== template) levels.removeChild(t.parentNode);
+levels.addEventListener("change", function (ev) {
+   if (ev.target.value === "0F00" && ev.target.parentNode !== template) levels.removeChild(t.parentNode);
 })
 
-levels.addEventListener("click", function ({target: t}) {
-   if (t.tagName.toUpperCase() === "BUTTON") levels.removeChild(t.parentNode);
+levels.addEventListener("click", function (ev) {
+   if (ev.target.tagName.toUpperCase() === "BUTTON") levels.removeChild(ev.target.parentNode);
 })
 
 document.querySelector("#route_ending").disabled = document.querySelector("#route_order").value === "random";
-document.querySelector("#route_order").addEventListener("change", function ({currentTarget: t}) {
-   document.querySelector("#route_ending").disabled = t.value === "random";
+document.querySelector("#route_order").addEventListener("change", function (ev) {
+   document.querySelector("#route_ending").disabled = ev.currentTarget.value === "random";
 })
 
-document.querySelector("#route_presets").addEventListener("change", function ({currentTarget: t}) {
+document.querySelector("#route_presets").addEventListener("change", function (ev) {
    if (levels.childElementCount <= 1 || confirm("Loading a preset will erase your current list. Continue?")) {
       clearLevels();
-      const [preset, ending] = t.value.split(";");
+      const preset = ev.currentTarget.value.split(";")[0];
+      const ending = ev.currentTarget.value.split(";")[1];
       for (let i = 0; i <= preset.length - 4; i += 4) appendLevel(preset.substr(i, 4));
       if (ending) document.querySelector("#route_ending").value = ending
    }
-   t.value = "";
+   ev.currentTarget.value = "";
 })
 
 document.querySelector("#route_clear").addEventListener("click", function () {
@@ -284,7 +285,7 @@ document.querySelector("#route_clear").addEventListener("click", function () {
    function selDragStart(e) {
       selection = this;
       e.dataTransfer.effectAllowed = "move";
-      e.dataTransfer.setData("text/html", this.querySelector("select").value);
+      e.dataTransfer.setData("html", this.querySelector("select").value);
 
       this.classList.add("dragelement");
    }
@@ -312,7 +313,7 @@ document.querySelector("#route_clear").addEventListener("click", function () {
       if (selection != this) {
          this.parentNode.removeChild(selection);
          this.insertAdjacentHTML("afterend", template.outerHTML);
-         this.nextSibling.querySelector("select").value = e.dataTransfer.getData('text/html');
+         this.nextSibling.querySelector("select").value = e.dataTransfer.getData('html');
          this.nextSibling.draggable = true;
          selSetHandlers(this.nextSibling);
       }
@@ -336,9 +337,10 @@ document.querySelector("#route_clear").addEventListener("click", function () {
 
 //Interface
 function getFastCode() {
-
-   const levelCodes = Array.prototype.map.call(levels.querySelectorAll("select"), s => s.value);
-
+   var levelCodes = [];
+   for (var c = levels.querySelectorAll("select"), i = 0; i < c.length; i++) {
+      levelCodes.push(c.value);
+   }
    levelCodes.pop();
 
    if (!(document.getElementById("usefastcode").checked) || levelCodes.length <= 1) return false;
