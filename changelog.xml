@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Feb 06, 2018</date>
+      <change>Fixed Level Select for JP 1.1.</change>
+   </update>
+   <update>
       <date>Feb 03, 2018</date>
       <change>Updated Stage Loader.</change>
    </update>
