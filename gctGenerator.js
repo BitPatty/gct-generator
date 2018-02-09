@@ -198,9 +198,9 @@ function updateUIDescription(s) {
 }
 
 function resetDescription() {
-   document.getElementById("descriptionbox").innerHTML = "<p><h3>Choose your codes from the list...</h3></p>";
+   document.getElementById("descriptionbox").innerHTML = "<p><h3>Choose your codes from the list...</h3></p>"; 
 }
-
+ 
 function updateChangelog() {
    document.getElementById("gameversion").style.visibility = "visible";
    var xml = new XMLHttpRequest();
@@ -211,12 +211,25 @@ function updateChangelog() {
          changelogData = (new DOMParser()).parseFromString(xml.responseText, "text/xml");
          changelogData = changelogData.getElementsByTagName("update");
 
-         document.getElementById("lastupdate").innerHTML = "Last Updated: " + changelogData[0].getElementsByTagName("date")[0].textContent;
-         for (var i = 0; i < changelogData.length && i < 5; i++) {
-            document.getElementById("changelog").innerHTML += "<p style=\"margin:0\"><i>" + changelogData[i].getElementsByTagName("date")[0].textContent + ":</i> " + changelogData[i].getElementsByTagName("change")[0].textContent + "</p>";
-         }
+         var recentchanges = "";
+         try {           
+            document.getElementById("lastupdate").innerHTML = "Last Updated: " + changelogData[0].getElementsByTagName("date")[0].textContent;
+            
+            for (var i = 0; i < changelogData.length && i < 3;i++) {
+               recentchanges += "<p style=\"margin:0\"><i>" + changelogData[i].getElementsByTagName("date")[0].textContent + ":</i> ";
+               
+               var changes = changelogData[i].getElementsByTagName("change");
+               for (var k = 0; k < changes.length && (i+k-1) < 3; k++) {
+                  recentchanges += changes[k].getElementsByTagName("head")[0].textContent;
+               }
+               
+               i += k-1;
+               
+               recentchanges += "</p>";
+            }
+         } catch (err) {}
 
-         document.getElementById("changelog").innerHTML += "<a target=\"_blank\" href=\"changelog.html\"><i>more ...</i></a>";
+         document.getElementById("changelog").innerHTML += recentchanges + "<a target=\"_blank\" href=\"changelog.html\"><i>more ...</i></a>";
       };
    }
 

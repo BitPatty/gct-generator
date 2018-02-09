@@ -2,136 +2,233 @@
 <updates>
    <update>
       <date>Feb 06, 2018</date>
-      <change>Fixed Level Select for JP 1.1.</change>
+      <change>
+         <head>Fixed Level Select for JP 1.1.</head>
+         <paragraph>Fixed the injection address.</paragraph>
+      </change>
    </update>
    <update>
       <date>Feb 03, 2018</date>
-      <change>Updated Stage Loader.</change>
+      <change>
+         <head>Updated Stage Loader.</head>
+         <paragraph>Exiting area or dying now reloads the current stage instead of moving on.</paragraph>
+         <paragraph>Added IW and ASIW presets.</paragraph>
+         <paragraph>Added options for what to do after the last level; removed Corona and Bowser from the regular level choices.</paragraph>
+      </change>
    </update>
    <update>
       <date>Feb 02, 2018</date>
-      <change>Integrated Noki Dokis Stage Loader.</change>
+      <change>
+         <head>Integrated Noki Dokis Stage Loader.</head>
+         <paragraph><![CDATA[Integrated <a href="https://qberoot.github.io/fastcodes/">Noki Doki’s Stage Loader</a> into the Generator.]]></paragraph>
+      </change>
    </update>
    <update>
       <date>Jan 24, 2018</date>
-      <change>Optimized 'Fast Any%'.</change>
+      <change>
+         <head>Optimized 'Fast Any%'.</head>
+         <paragraph>Shortened the code by a few lines.</paragraph>
+      </change>
    </update>
    <update>
       <date>Jan 20, 2018</date>
-      <change>Made 'Fast Any%' compatible with the timers.</change>
-   </update>
-   <update>
-      <date>Jan 20, 2018</date>
-      <change>Fixed episode names in 'Fast Any%'.</change>
-   </update>
-   <update>
-      <date>Jan 20, 2018</date>
-      <change>Added 'Remove Save Boxes'.</change>
+      <change>
+         <head>Fixed episode names in 'Fast Any%'.</head>
+         <paragraph>Makes the correct episode names appear in the demo cutscenes and the pause menu in Fast Any%.</paragraph>
+      </change>
+      <change>
+         <head>Added 'Remove Save Boxes'.</head>
+         <paragraph>Adds the option to have save boxes removed outside of 'Fast Any%'</paragraph>
+      </change>
+      <change>
+         <head>Made 'Fast Any%' compatible with the timers.</head>
+         <paragraph>Makes it possible to use the Shine Get and Shine Touch timer in combination with Fast Any%</paragraph>
+      </change>
    </update>
    <update>
       <date>Jan 18, 2018</date>
-      <change>Updated guides.</change>
+      <change>
+         <head>Updated guides.</head>
+         <paragraph>Added additional information based on questions asked on the Discord.</paragraph>
+      </change>
    </update>
    <update>
       <date>Jan 17, 2018</date>
-      <change>Added JP-A port.</change>
+      <change>
+         <head>Added JP-A port.</head>
+         <paragraph>Added JP-A port for all codes.</paragraph>
+      </change>
    </update>
    <update>
       <date>Jan 08, 2018</date>
-      <change>Added guide for installing IOS58.</change>
+      <change>
+         <head>Added guide for installing IOS58.</head>
+         <paragraph><![CDATA[Added <a href="ios58.html"> a guide on how to install IOS58.]]></paragraph>
+      </change>
    </update>
    <update>
       <date>Jan 01, 2018</date>
-      <change>Fixed 'D-Pad Functions' not removing dialogue properly.</change>
+      <change>
+         <head>Fixed 'D-Pad Functions' not removing dialogue properly.</head>
+         <paragraph></paragraph>
+      </change>
    </update>
    <update>
       <date>Dec 30, 2017</date>
-      <change>Plaza Yoshi Unlock in 'D-Pad Functions'.</change>
+      <change>
+         <head>Plaza Yoshi Unlock in 'D-Pad Functions'.</head>
+         <paragraph>Added Plaza Yoshi Unlock.</paragraph>
+      </change>
    </update>
    <update>
       <date>Dec 19, 2017</date>
-      <change>Added FMV Skips to 'Fast Any%' except for Pinna 1.</change>
+      <change>
+         <head>Added FMV Skips to 'Fast Any%' except for Pinna 1.</head>
+         <paragraph>Always enables FMV Skips outside Pinna 1.</paragraph>
+      </change>
    </update>
    <update>
       <date>Dec 05, 2017</date>
-      <change>Added 'Download for Gecko Cheat Manager' option.</change>
+      <change>
+         <head>Added 'Download for Gecko Cheat Manager' option.</head>
+         <paragraph>Added option to download codes formatted for the Gecko Cheat Manager.</paragraph>
+      </change>
    </update>
    <update>
       <date>Nov 29, 2017</date>
-      <change>Made timers stop after the bowser fight and fixed Pinna not resetting inside the park on PAL.</change>
+      <change>
+         <head>Made timers stop after the bowser fight.</head>
+         <paragraph>Timers now also allow to time Corona properly, by stopping them when hitting the last platform during the bowser fight.</paragraph>
+      </change>
+      <change>
+         <head>Fixed Pinna not resetting inside the park on PAL.</head>
+         <paragraph></paragraph>
+      </change>
    </update>
    <update>
       <date>Nov 12, 2017</date>
-      <change>Fixed 'Free Pause' compatibility with 'Shine Get Timer'.</change>
+      <change>
+         <head>Fixed 'Free Pause' compatibility with 'Shine Get Timer'.</head>
+         <paragraph>Fixed 'Free Pause' incompatibility with 'Shine Get Timer' caused by them injecting code in the same address.</paragraph>
+      </change>
    </update>
    <update>
       <date>Nov 09, 2017</date>
-      <change>Added 'Download for Dolphin' button.</change>
+      <change>
+         <head>Added 'Download for Dolphin' button.</head>
+         <paragraph>Added download button to get the codes formatted for Dolphin.</paragraph>
+      </change>
    </update>
    <update>
       <date>Nov 08, 2017</date>
-      <change>Added 'Fast 79 Shines' for NTSC-U.</change>
+      <change>
+         <head>Added 'Fast 79 Shines' for NTSC-U.</head>
+         <paragraph>Same concept as 'Fast Any%'.</paragraph>
+      </change>
    </update>
    <update>
       <date>Nov 07, 2017</date>
-      <change>Seperated 'Free Pause' and 'Exit Area everywhere'.</change>
+      <change>
+         <head>Seperated 'Free Pause' and 'Exit Area everywhere'.</head>
+         <paragraph>Seperated these two codes again since they don't depend on each other.</paragraph>
+      </change>
    </update>
    <update>
       <date>Nov 06, 2017</date>
-      <change>Updated 'Level Select'. Added 'Shine Touch Timer'. Marked original IGT as deprecated. Replaced 'Exit Area Everywhere' and 'Pause Mid-Air' with 'Free Pause'.</change>
+      <change>
+         <head>Updated 'Level Select'. Added 'Shine Touch Timer'. Marked original IGT as deprecated.</head>
+         <paragraph>The Original Ingame Timer has been marked as deprecated. You can still find it on the bottom of the codelist though if you still want to use it. Instead, there are now two other timers:</paragraph>
+         <paragraph><![CDATA[<ul><li>Shine Touch Timer: Starts on the last black frame of the loading screen and ends when you touch the shine.</li><li>Shine Get Timer: Starts on the last black frame of the loading screen and ends when the Shine Get animation starts (similiar to the x-cam timer of SM64).</li></ul>]]></paragraph>
+         <paragraph>Since the Shine Get timer contained a way better Level Select, the Level Select code has been replaced with the one from the timer. It includes the most recent fixes and also has some maintenance advantages.</paragraph>
+         <paragraph>Timer Changes:</paragraph>
+         <paragraph><![CDATA[<ul><li>Changed timing (see above).</li><li>Resets on death.</li><li>Resets when using Shine Select.</li><li>Only uses existing timers for Piantissimo, Sirena/Pianta 6 and Ricco 2 underground.</li><li>Fixed Pinna 8 HUD.</li></ul>]]></paragraph>
+         <paragraph>Known Bugs:</paragraph>
+         <paragraph><![CDATA[<ul><li>Can't reset Pinna 8 properly after finishing the rollercoaster. Use the cannon to reenter or reset the game instead.</li><li>Box game timer doesn't work properly.</li></ul>]]></paragraph>
+      </change>
+      <change>
+         <head>Updated Level Select</head>
+         <paragraph><![CDATA[<ul>
+            <li>Mashing A during loading screens doesn't affect your level selection anymore.</li>
+            <li>Pinna game resets have been fixed.</li>
+            <li>Level Names in the intro have been fixed (shoutouts to Noki Doki).</li>
+            <li>Sirena 5 now loads the right casino.</li>
+            <li>Reloading Sirena does no longer respawn you in the Hotel. Reason: You can move earlier than usual if you do that, making it too inaccurate for practice.</li>
+         </ul>]]></paragraph>
+      </change>
+      <change>
+         <head>Replaced 'Exit Area Everywhere' and 'Pause Mid-Air' with 'Free Pause'.</head>
+         <paragraph>Merged the two codes.</paragraph>
+      </change>
+   </update>
+   <update>
+      <change>
+      <date>Nov 06, 2017</date>
+         <head>Added 'Free Pause'</head>
+         <paragraph>'Free Pause' replaces 'Enable Pause Mid-Air' and 'Enable Exit Area Everywhere'. It now also allows you to pause during cutscenes.</paragraph>
+      </change>
    </update>
    <update>
       <date>Nov 04, 2017</date>
-      <change>Fixed 'Shine Get Timer' stopping in wrong cutscenes.</change>
+      <change>
+         <head>Fixed 'Shine Get Timer' stopping in wrong cutscenes.</head>
+         <paragraph>Fixed timer resetting during wrong cutscenes when using 'Exit Area' after touching a Shine.</paragraph>
+      </change>
    </update>
    <update>
       <date>Oct 30, 2017</date>
-      <change>Added 'Enable Exit Area Everywhere'.</change>
+      <change>
+         <head>Added 'Enable Exit Area Everywhere'.</head>
+         <paragraph></paragraph>
+      </change>
    </update>
    <update>
       <date>Oct 29, 2017</date>
-      <change>Added 'Shine Get Timer'.</change>
+      <change>
+         <head>Added 'Shine Get Timer'.</head>
+         <paragraph>Allows you to choose 'Exit Area' in the pause menu on Plaza.</paragraph>
+      </change>
    </update>
    <update>
       <date>Oct 28, 2017</date>
-      <change>Added X+DPad combinations to 'DPad Functions'.</change>
+      <change>
+         <head>Added X+DPad combinations to 'DPad Functions'.</head>
+         <paragraph>New functions have been added to the DPad Functions:</paragraph>
+         <paragraph><![CDATA[<ul><li>X+D-Pad left: No FLUDD in secrets</li><li>X+D-Pad right: Always FLUDD in secrets</li><li>X+D-Pad up: Unlock Yoshi in stages</li><li>X+D-Pad down: Defauld FLUDD behaviour for secrets</li></ul>]]></paragraph>
+      </change>
    </update>
-   <!--
-   <update>
-      <date>Oct 27, 2017</date>
-      <change>Minor Fixes for Shine Get Timer (previously RTA timer).</change>
-   </update>
-   -->
    <update>
       <date>Oct 26, 2017</date>
-      <change>Added 'Enable Pause Mid-Air'.</change>
+      <change>
+         <head>Added 'Enable Pause Mid-Air'.</head>
+         <paragraph>Allows you to pause mid-air.</paragraph>
+      </change>
    </update>
    <update>
       <date>Oct 24, 2017</date>
-      <change>Added 'Shine outfit'.</change>
+      <change>
+         <head>Added 'Shine outfit'.</head>
+         <paragraph>Always wear glasses and the shirt.</paragraph>
+      </change>
    </update>
-   <!--
-   <update>
-      <date>Oct 18, 2017</date>
-      <change>Added RTA timer for NTSC-U (Experimental).</change>
-   </update>
-   -->
-   <!--
-   <update>
-      <date>Oct 16, 2017</date>
-      <change>Updated descriptions for incompatible codes.</change>
-   </update>
-   -->
    <update>
       <date>Oct 15, 2017</date>
-      <change>Fixed download for Firefox.</change>
+      <change>
+         <head>Fixed download for Firefox.</head>
+         <paragraph>Fixed the download button not working for Firefox.</paragraph>
+      </change>
    </update>
    <update>
       <date>Oct 14, 2017</date>
-      <change>Added 'Fast Any%' for JP &amp; PAL</change>
+      <change>
+         <head>Added 'Fast Any%' for JP &amp; PAL</head>
+         <paragraph></paragraph>
+      </change>
    </update>
    <update>
       <date>Oct 11, 2017</date>
-      <change>Added 'Stage Randomizer' for NTSC-U (Experimental).</change>
+      <change>
+         <head>Added 'Stage Randomizer' for NTSC-U (Experimental).</head>
+         <paragraph>Loads a random stage after exiting of finishing a level.</paragraph>
+      </change>
    </update>
 </updates>
