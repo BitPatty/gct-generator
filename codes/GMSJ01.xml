@@ -4,7 +4,7 @@
         <title lang="en">DPad Functions</title>
         <author>Psychonauter, Noki Doki, Dan Salvato, Link Master, James0x57</author>
         <version>2.3</version>
-        <description><![CDATA[Allows various game modifications. Button combinations:<br/><table><tr><th align="left" style="width:120px">Combination</th><th align="left">Result</th></tr><tr><td>D-Pad left</td><td>Save Mario sposition</td></tr><tr><td>D-Pad right</td><td>Load Marios Position</td></tr><tr><td>D-Pad up</td><td>Replace all dialog with a single "!!!" line</td></tr><tr><td>D-Pad down</td><td>Restore dialog boxes</td></tr><tr><td>B+D-Pad left</td><td>Lock rocket nozzle</td></tr><tr><td>B+D-Pad right</td><td>Lock turbo nozzle</td></tr><tr><td>B+D-Pad up</td><td>Lock hover nozzle</td></tr><tr><td>B+D-Pad down</td><td>Release nozzle lock</td></tr><tr><td>X+D-Pad left</td><td>No FLUDD in secrets</td></tr><tr><td>X+D-Pad right</td><td>FLUDD in all secrets</td></tr><tr><td>X+D-Pad up</td><td>Unlock Yoshi</td></tr><tr><td>X+D-Pad down</td><td>FLUDD in completed secrets (default)</td></tr></table>]]></description>
+        <description><![CDATA[Allows various game modifications. Button combinations:<br/><table><tr><th align="left" style="width:120px">Combination</th><th align="left">Result</th></tr><tr><td>D-Pad left</td><td>Save Mario's position</td></tr><tr><td>D-Pad right</td><td>Load Mario's position</td></tr><tr><td>D-Pad up</td><td>Replace all dialog with a single "!!!" line</td></tr><tr><td>D-Pad down</td><td>Restore dialog boxes</td></tr><tr><td>B+D-Pad left</td><td>Lock rocket nozzle</td></tr><tr><td>B+D-Pad right</td><td>Lock turbo nozzle</td></tr><tr><td>B+D-Pad up</td><td>Lock hover nozzle</td></tr><tr><td>B+D-Pad down</td><td>Release nozzle lock</td></tr><tr><td>X+D-Pad left</td><td>No FLUDD in secrets</td></tr><tr><td>X+D-Pad right</td><td>FLUDD in all secrets</td></tr><tr><td>X+D-Pad up</td><td>Unlock Yoshi</td></tr><tr><td>X+D-Pad down</td><td>FLUDD in completed secrets (default)</td></tr></table>]]></description>
         <date>Jan 1, 2018</date>
         <source>
             2440A39C 80000000
@@ -66,8 +66,8 @@
         <date>Jan 20, 2017</date>
         <description>Allows skipping FMVs without having to watch them once first.</description>
         <source>
-            0410AF5C 38600001  
-            0410AFC0 38600001 
+            0410AF5C 38600001
+            0410AFC0 38600001
         </source>
     </code>
     <code>
@@ -100,7 +100,18 @@
             042193D8 48000020
             04223094 4E800020
         </source>
-    </code>  
+    </code>
+    <code>
+        <title lang="en">Unlock Yoshi</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <date>Feb 10, 2018</date>
+        <description>Unlocks Yoshi everywhere.</description>
+        <source>
+            C6193F58 80193F8C
+            C6193F9C 80193FB8
+        </source>
+    </code>
     <code>
         <title lang="en">Free Pause</title>
         <author>Noki Doki</author>
