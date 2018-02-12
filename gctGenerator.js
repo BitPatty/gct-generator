@@ -220,7 +220,7 @@ function updateChangelog() {
                
                var changes = changelogData[i].getElementsByTagName("change");
                for (var k = 0; k < changes.length && (i+k-1) < 3; k++) {
-                  recentchanges += changes[k].getElementsByTagName("head")[0].textContent;
+                  recentchanges += changes[k].getElementsByTagName("head")[0].textContent + " ";
                }
                
                i += k-1;
