@@ -395,16 +395,16 @@ function getFastCode() {
    asm.push("41820010"); // beq- 0x10
    asm.push("880500CC"); // lbz r0, 0xCC(r5)
    asm.push("54000673"); // rlwinm. r0, r0, 0, 25, 25
-   asm.push("4182" + ("000" + branchBase.toString(16).toUpperCase()).slice(-4)); // beq- loadStage
+   asm.push("4182" + ("000" + branchBase.toString(16).toUpperCase()).slice(-4)); // beq- loadIndex
 
    if (order === "random") {
       asm.push("38630002"); // addi r3, r3, 2
    }
 
    asm.push("2C030000"); // cmpwi r3, 0
-   asm.push("4081000C"); // ble- 0x0C
+   asm.push("4181000C"); // bgt- 0x0C
    asm.push("3860" + ending); // li r3, ending
-   asm.push("4800" + ("000" + (branchBase - 8 + 4 * (order !== "random")).toString(16).toUpperCase()).slice(-4)); // b done
+   asm.push("4800" + ("000" + (branchBase - 0x10 + 4 * (order !== "random")).toString(16).toUpperCase()).slice(-4)); // b loadStage
 
    if (order !== "list") {
       asm.push("7CEC42E6"); // mftbl r7
@@ -426,8 +426,10 @@ function getFastCode() {
       asm.push("7C861B2E"); // sthx r4, r6, r3
    }
    
-   // loadStage:
+   // loadIndex:
    asm.push("7C661A2E"); // lhzx r3, r6, r3
+   
+   // loadStage:
    asm.push("B07F0012"); // sth r3, 0x12(r31)
    asm.push("986500DF"); // stb r3, 0xDF(r5)
    
