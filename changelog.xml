@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Feb 12, 2018</date>
+      <change>
+         <head>Fixed Stage Loader.</head>
+         <paragraph>An error in the generator caused it to output malformed codes.</paragraph>
+      </change>
+      <change>
+         <head>Added Unlock Nozzles.</head>
+         <paragraph>Standalone code and extra feature for X+Up on the DPad Functions.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Feb 10, 2018</date>
       <change>
          <head>Added Unlock Yoshi.</head>

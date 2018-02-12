@@ -351,8 +351,8 @@ document.querySelector("#route_clear").addEventListener("click", function () {
 //Interface
 function getFastCode() {
    var levelCodes = [];
-   for (var c = levels.querySelectorAll("select"), i = 0; i < c.length; i++) {
-      levelCodes.push(c.value);
+   for (var c = levels.getElementsByTagName("select"), i = 0; i < c.length; i++) {
+      levelCodes.push(c[i].value);
    }
    levelCodes.pop();
 
