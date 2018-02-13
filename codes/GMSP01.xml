@@ -672,6 +672,20 @@
         </source>
     </code>
     <code>
+        <title lang="en">Replace Episode names with their ID</title>
+        <author>Psychonauter, Noki Doki</author>
+        <version>1.1</version>
+        <description>Replaces the Episode names with the episode number in the demo screen. (Useful for the stage loader.)</description>
+        <date>Feb 13, 2018</date>
+        <source>
+            C2168758 00000004
+            80AD9EC8 88A500DF
+            38A50031 54A5403E
+            B0A60000 38800080
+            60000000 00000000
+        </source>
+    </code>
+    <code>
         <title lang="en">Shine Outfit</title>
         <author>Ralf</author>
         <version>1.0</version>
