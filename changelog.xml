@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Feb 13, 2018</date>
+      <change>
+         <head>Added 'Replace Episode names with their ID' for all versions.</head>
+         <paragraph>Previously only available for NTSC-U.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Feb 12, 2018</date>
       <change>
          <head>Fixed Stage Loader.</head>
