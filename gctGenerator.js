@@ -375,16 +375,18 @@ function getFastCode() {
    asm.push("38000001"); // li r0, 1
    asm.push("98040101"); // stb r0, 0x0101(r4)
 
-   asm.push("881F0012"); // lbz r0, 0x12(r31)
+   asm.push("887F0012"); // lbz r3, 0x12(r31)
 
-   asm.push("2C00000F"); // cmpwi r0, 15
+   asm.push("2C03000F"); // cmpwi r3, 15
    asm.push("40820010"); // bne- 0x10
    asm.push("3800" + ("000" + ((levelCodes.length - (order === 'random')) * 2).toString(16).toUpperCase()).slice(-4)); // li r0, length
    asm.push("90040000"); // stw r0, 0(r4)
-   asm.push("4800" + ("000" + (branchBase + 0x38).toString(16).toUpperCase()).slice(-4)); // b done
+   asm.push("4800" + ("000" + (branchBase + 0x3C).toString(16).toUpperCase()).slice(-4)); // b done
 
-   asm.push("2C000001"); // cmpwi r0, 1
-   asm.push("4181" + ("000" + (branchBase + 0x30).toString(16).toUpperCase()).slice(-4)); // bgt- done
+   asm.push("2C030001"); // cmpwi r3, 1
+   asm.push("4181" + ("000" + (branchBase + 0x34).toString(16).toUpperCase()).slice(-4)); // bgt- done
+   
+   asm.push("98040100"); // stb r0, 0x0100(r4)
 
    asm.push("80AD" + game.fmOffset); // lwz r5, TFlagManager::smInstance
    asm.push("7CC802A6"); // mflr r6

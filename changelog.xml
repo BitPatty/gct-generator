@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Feb 16, 2018</date>
+      <change>
+         <head>Fixed timer compatibility in Fast Any% and Stage Loader.</head>
+         <paragraph>The timer didn’t reset in Corona.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Feb 13, 2018</date>
       <change>
          <head>Added 'Replace Episode names with their ID' for all versions.</head>
