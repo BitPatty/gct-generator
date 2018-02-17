@@ -183,11 +183,7 @@ function updateDescription(s) {
 }
 
 function updateUIDescription(s) {
-   if (s.id === "route_notext")
-      document.getElementById("descriptionbox").innerHTML = "<h2>Remove Dialogue</h2><p>Replaces all Dialogue with \"!!!\". 'Always' and 'Not in Pianta 5' will override the dialogue skip from the DPad Functions.</p>";
-   else if (s.id === "route_nofmvs")
-      document.getElementById("descriptionbox").innerHTML = "<h2>Skippable Cutscenes</h2><p>Makes FMVs Skippable. 'Always' has the same effect as the 'FMV Skips' code. Also, having 'FMV Skips' enabled will override 'Not in Pinna 1' - so don't use both simultaneously.</p>";
-   else if (s.id === "route_order")
+   if (s.id === "route_order")
       document.getElementById("descriptionbox").innerHTML = "<h2>Level Order</h2><p>The order in which levels are loaded:</p><h4>As specified</h4><p>The code loads levels in the order of the list.</p><h4>Random, no duplicates</h4><p>The code picks levels at random, excluding levels that you’ve finished already.</p><h4>Fully random</h4><p>The code picks levels at random, even levels that you’ve finished already.</p>";
    else if (s.id === "route_ending")
       document.getElementById("descriptionbox").innerHTML = "<h2>Route Ending</h2><p>What to do after you complete the final level on the list. This has no effect if the level order is set to Fully random.</p>";
@@ -442,16 +438,6 @@ function getFastCode() {
       asm.push("60000000"); // nop
    }
    asm.push("00000000");
-
-   const geckoLines = asm.length / 2;
-   let gecko = "C2" + game.injectAddr + " " + ("0000000" + geckoLines.toString(16).toUpperCase()).slice(-8) + "\r\n";
-   for (let i = 0; i < geckoLines; ++i) {
-      gecko += asm[2 * i] + " " + asm[2 * i + 1] + "\r\n";
-   }
-
-   let codes = gecko +
-      game.notext[document.getElementById("route_notext").value] +
-      game.nofmvs[document.getElementById("route_nofmvs").value];
-
-   return codes.replace(/[^0-9A-F]/g, '');
+   
+   return "C2" + game.injectAddr + ("0000000" + (asm.length / 2).toString(16).toUpperCase()).slice(-8) + asm.join('');
 }

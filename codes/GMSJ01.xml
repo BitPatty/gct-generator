@@ -73,6 +73,81 @@
         </source>
     </code>
     <code>
+        <title lang="en">FMV Skips (except in Pinna 1)</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <date>Feb 17, 2018</date>
+        <description>Allows skipping FMVs without having to watch them once first, except the Pinna 1 cutscenes because they can be skipped with glitches.</description>
+        <source>
+            C210AF58 00000004
+            38840391 5480043C
+            2C000398 4182000C
+            3C800001 6084039A
+            60000000 00000000
+            C210AFBC 00000004
+            38840391 5480043C
+            2C000398 4182000C
+            3C800001 6084039A
+            60000000 00000000
+        </source>
+    </code>
+    <code>
+        <title lang="en">Force FLUDD in secrets</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <date>Feb 17, 2018</date>
+        <description>Makes FLUDD and the red coin switch available in all secret areas, even the ones that haven't been completed yet.</description>
+        <source>
+            C6198784 8019879C
+            C60EC0F4 800EC108
+        </source>
+    </code>
+    <code>
+        <title lang="en">Disable FLUDD in secrets</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <date>Feb 17, 2018</date>
+        <description>Removes FLUDD and the red coin switch from all secret areas, even the ones that have already been completed.</description>
+        <source>
+            04198784 60000000
+            040EC0F4 60000000
+        </source>
+    </code>
+    <code>
+        <title lang="en">Remove Dialogue</title>
+        <author>Psychonauter</author>
+        <version>1.0</version>
+        <date>Feb 17, 2018</date>
+        <description>Replaces all dialogue with "!!!".</description>
+        <source>
+            04215290 38000000
+            04214610 38005000
+            048D8A7C D6008149
+            048D8A80 81498149
+            048D8A84 00000000
+        </source>
+    </code>
+    <code>
+        <title lang="en">Remove Dialogue (except in Pianta 5)</title>
+        <author>Psychonauter</author>
+        <version>1.0</version>
+        <date>Feb 17, 2018</date>
+        <description>Replaces all dialogue with "!!!", except in the Pianta 5 secret because skipping the chucksters' dialogue too fast can affect their throw angle.</description>
+        <source>
+            048D8A7C D6008149
+            048D8A80 81498149
+            048D8A84 00000000
+            283E6012 00002A00
+            04215290 801C0004
+            04214610 A81C0340
+            E2000001 00000000
+            2A3E6012 00002A00
+            04215290 38000000
+            04214610 38005000
+            E2000001 00000000
+        </source>
+    </code>
+    <code>
         <title lang="en">Infinite Lives</title>
         <author>Psychonauter</author>
         <version>1.0</version>

@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Feb 17, 2018</date>
+      <change>
+         <head>Site changes</head>
+         <paragraph>Removed options from the stage loader to make them available as individual codes.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Feb 16, 2018</date>
       <change>
          <head>Fixed timer compatibility in Fast Any% and Stage Loader.</head>
