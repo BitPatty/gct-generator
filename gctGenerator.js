@@ -361,13 +361,14 @@ function getFastCode() {
    let game = JSON.parse(atob(document.getElementById("route_levels").getAttribute("data-json")));
    const order = document.getElementById("route_order").value;
    const ending = document.getElementById("route_ending").value;
-   const branchBase = 0x1C + 0x24 * (order !== 'list');
+   const branchBase = 0x18 + 0x24 * (order !== 'list');
    const asm = [];
-   asm.push("48" + ("00000" + (Math.ceil(levelCodes.length / 2) + 1 << 2 | 1).toString(16).toUpperCase()).slice(-6)); // bl to the code
+   asm.push("48" + ("00000" + (Math.ceil(levelCodes.length / 2) + 1 << 2 | 1).toString(16).toUpperCase()).slice(-6)); // bl code
    for (let i = levelCodes.length - 1; i >= 0; i -= 2) {
       asm.push(levelCodes[i] + (levelCodes[i - 1] || "0000"));
    }
 
+   // code:
    //Timer compatibility
    asm.push("3C80817F"); // lis r4, 0x817F
    asm.push("38000000"); // li r0, 0
@@ -376,15 +377,8 @@ function getFastCode() {
    asm.push("98040101"); // stb r0, 0x0101(r4)
 
    asm.push("887F0012"); // lbz r3, 0x12(r31)
-
-   asm.push("2C03000F"); // cmpwi r3, 15
-   asm.push("40820010"); // bne- 0x10
-   asm.push("3800" + ("000" + ((levelCodes.length - (order === 'random')) * 2).toString(16).toUpperCase()).slice(-4)); // li r0, length
-   asm.push("90040000"); // stw r0, 0(r4)
-   asm.push("4800" + ("000" + (branchBase + 0x3C).toString(16).toUpperCase()).slice(-4)); // b done
-
    asm.push("2C030001"); // cmpwi r3, 1
-   asm.push("4181" + ("000" + (branchBase + 0x34).toString(16).toUpperCase()).slice(-4)); // bgt- done
+   asm.push("4181" + ("000" + (branchBase + 0x48).toString(16).toUpperCase()).slice(-4)); // bgt- done
    
    asm.push("98040100"); // stb r0, 0x0100(r4)
 
@@ -394,7 +388,12 @@ function getFastCode() {
    
    asm.push("881F000E"); // lbz r0, 0x0E(r31)
    asm.push("2C00000F"); // cmpwi r0, 15
-   asm.push("41820010"); // beq- 0x10
+   asm.push("40820010"); // bne- 0x10
+   asm.push("3860" + ("000" + ((levelCodes.length - (order === 'random')) * 2).toString(16).toUpperCase()).slice(-4)); // li r3, length
+   asm.push("90640000"); // stw r3, 0(r4)
+   asm.push("48000018"); // b 0x18
+   asm.push("2C030000"); // cmpwi r3, 0
+   asm.push("4180" + ("000" + (0x1C + 0x14 * (order !== "list")).toString(16).toUpperCase()).slice(-4)); // blt- loadEnding
    asm.push("880500CC"); // lbz r0, 0xCC(r5)
    asm.push("54000673"); // rlwinm. r0, r0, 0, 25, 25
    asm.push("4182" + ("000" + branchBase.toString(16).toUpperCase()).slice(-4)); // beq- loadIndex
@@ -402,11 +401,6 @@ function getFastCode() {
    if (order === "random") {
       asm.push("38630002"); // addi r3, r3, 2
    }
-
-   asm.push("2C030000"); // cmpwi r3, 0
-   asm.push("4181000C"); // bgt- 0x0C
-   asm.push("3860" + ending); // li r3, ending
-   asm.push("4800" + ("000" + (branchBase - 0x10 + 4 * (order !== "random")).toString(16).toUpperCase()).slice(-4)); // b loadStage
 
    if (order !== "list") {
       asm.push("7CEC42E6"); // mftbl r7
@@ -416,10 +410,16 @@ function getFastCode() {
       asm.push("54E7003C"); // rlwinm r7, r7, 0, 0, 30
    }
 
-   asm.push("3863FFFE"); // subi r3, r3, 2
+   asm.push("3463FFFE"); // subic. r3, r3, 2
    if (order !== "random") {
       asm.push("90640000"); // stw r3, 0(r4)
    }
+   
+   asm.push("4080000C"); // bge- 0xC
+   
+   // loadEnding:
+   asm.push("3860" + ending); // li r3, ending
+   asm.push("4800" + ("000" + (0x8 + 0x10 * (order !== "list")).toString(16).toUpperCase()).slice(-4)); // b loadStage
 
    if (order !== "list") {
       asm.push("7C061A2E"); // lhzx r0, r6, r3

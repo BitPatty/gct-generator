@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Feb 28, 2018</date>
+      <change>
+         <head>Fixed Stage Loader.</head>
+         <paragraph>The previous version didn’t reset properly after the first use if the route ending was the title screen, and reloaded the last level upon exiting area in Corona.</paragraph>
+      </change>
+      <change>
+         <head>Added new stages to the loader.</head>
+         <paragraph>You can now select the Gooper Blooper fight from Ricco 1, the rollercoaster ride from Pinna 8, the King Boo fight from Sirena 5, the bottle from Noki 3 and the underwater area from Noki 8.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Feb 16, 2018</date>
       <change>
          <head>Fixed timer compatibility in Fast Any% and Stage Loader.</head>
