@@ -920,6 +920,7 @@
             0424D4DC 60000000
         </source>
     </code>
+    <!--
     <code>
         <title lang="en"><![CDATA[Original Ingame Timer (Deprecated)]]></title>
         <author>Psychonauter</author>
@@ -1127,4 +1128,5 @@
             807F0020 00000000
         </source>
     </code>
+    -->
 </codes>

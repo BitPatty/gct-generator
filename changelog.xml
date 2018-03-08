@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Mar 08, 2018</date>
+      <change>
+         <head>Removed Original IGT (Deprecated)</head>
+         <paragraph>Use Shine Get/Touch timer instead.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Feb 28, 2018</date>
       <change>
          <head>Fixed Stage Loader.</head>
