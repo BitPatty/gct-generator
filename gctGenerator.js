@@ -175,8 +175,8 @@ function updateCodelist() {
 
 function updateDescription(s) {
    document.getElementById("descriptionbox").innerHTML = "<h2>" +
-      atob(s.getAttribute("data-codename")) + "</h2><p style=\"margin:0\"><i>Author(s): " +
-      atob(s.getAttribute("data-codeauthor")) + "</i></p><p style=\"margin:0\"><i>Version: " +
+      atob(s.getAttribute("data-codename")) + "</h2><p style=\"margin-top:0\"><i>Author(s): " +
+      atob(s.getAttribute("data-codeauthor")) + "</i></p><p style=\"margin-top:0\"><i>Version: " +
       atob(s.getAttribute("data-codeversion")) + " (" +
       atob(s.getAttribute("data-codedate")) + ")</i></p>" + "<br /><h4>Description:</h4><p>" +
       atob(s.getAttribute("data-codedesc")) + "</p>";
@@ -216,7 +216,7 @@ function updateChangelog() {
             document.getElementById("lastupdate").innerHTML = "Last Updated: " + changelogData[0].getElementsByTagName("date")[0].textContent;
             
             for (var i = 0; i < changelogData.length && i < 3;i++) {
-               recentchanges += "<p style=\"margin:0\"><i>" + changelogData[i].getElementsByTagName("date")[0].textContent + ":</i> ";
+               recentchanges += "<p style=\"margin-top:0\"><i>" + changelogData[i].getElementsByTagName("date")[0].textContent + ":</i>";
                
                var changes = changelogData[i].getElementsByTagName("change");
                for (var k = 0; k < changes.length && (i+k-1) < 3; k++) {
@@ -229,7 +229,7 @@ function updateChangelog() {
             }
          } catch (err) {}
 
-         document.getElementById("changelog").innerHTML += recentchanges + "<a target=\"_blank\" href=\"changelog.html\"><i>more ...</i></a>";
+         document.getElementById("changelog").innerHTML += recentchanges + "<p style=\"margin-top:0\"><a target=\"_blank\" href=\"changelog.html\"><i>more ...</i></a></p>";
       };
    }
 
