@@ -216,7 +216,7 @@ function updateChangelog() {
             document.getElementById("lastupdate").innerHTML = "Last Updated: " + changelogData[0].getElementsByTagName("date")[0].textContent;
             
             for (var i = 0; i < changelogData.length && i < 3;i++) {
-               recentchanges += "<p style=\"margin-top:0\"><i>" + changelogData[i].getElementsByTagName("date")[0].textContent + ":</i>";
+               recentchanges += "<p style=\"margin-top:0\"><i>" + changelogData[i].getElementsByTagName("date")[0].textContent + ": ";
                
                var changes = changelogData[i].getElementsByTagName("change");
                for (var k = 0; k < changes.length && (i+k-1) < 3; k++) {
@@ -225,7 +225,7 @@ function updateChangelog() {
                
                i += k-1;
                
-               recentchanges += "</p>";
+               recentchanges += "</i></p>";
             }
          } catch (err) {}
 
