@@ -5,6 +5,7 @@
       <change>
          <head>Added 'Codes Optimizer'</head>
          <paragraph>Prevents the codes that only need to run once from running every frame.</paragraph>
+      </change>
    </update>
    <update>
       <date>Mar 08, 2018</date>
