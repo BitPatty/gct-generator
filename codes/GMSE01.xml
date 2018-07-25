@@ -643,6 +643,20 @@
             60000000 00000000
         </source>
     </code>
+    <code>
+        <title lang="en">Persistent FMV Skips</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <date>Jul 26, 2018</date>
+        <description>Allows skipping FMVs without having to watch them once first, except Shadow Mario taking Peach to Pinna Island and the Mecha-Bowser cutscenes. This code activates when starting an empty file and its effects persist on that save file until it is deleted.</description>
+        <source>
+            C2923DD4 00000004
+            7FE3FB78 A0830072
+            6084FC58 B0830072
+            88830074 60840018
+            98830074 00000000
+        </source>
+    </code>
     <!--
     <code>
         <title lang="en">Fast 79 Shines</title>

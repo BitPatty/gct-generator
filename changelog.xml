@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Jul 26, 2018</date>
+      <change>
+         <head>Added 'Persistent FMV Skips'</head>
+         <paragraph>Makes FMVs skippable in newly created save files.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Jul 03, 2018</date>
       <change>
          <head>Added 'Codes Optimizer'</head>
          <paragraph>Prevents the codes that only need to run once from running every frame.</paragraph>
+      </change>
    </update>
    <update>
       <date>Mar 08, 2018</date>
