@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Aug 19, 2018</date>
+      <change>
+         <head>Removed 'Codes Optimizer'</head>
+         <paragraph>Its only noticeable effect was to break the timer codes.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Jul 26, 2018</date>
       <change>
          <head>Added 'Persistent FMV Skips'</head>
