@@ -6,6 +6,10 @@
          <head>Removed 'Codes Optimizer'</head>
          <paragraph>Its only noticeable effect was to break the timer codes.</paragraph>
       </change>
+      <change>
+         <head>Added 'Any Fruit Opens Yoshi Eggs'</head>
+         <paragraph>Yoshi still asks for a specific fruit but bringing him another one will open the egg anyway.</paragraph>
+      </change>
    </update>
    <update>
       <date>Jul 26, 2018</date>
