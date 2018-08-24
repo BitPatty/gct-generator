@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Aug 24, 2018</date>
+      <change>
+         <head>Updated 'DPad Functions' and Stage Loader</head>
+         <paragraph>Skipping Yes/No textboxes now acts as a Yes.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Aug 19, 2018</date>
       <change>
          <head>Removed 'Codes Optimizer'</head>
