@@ -186,7 +186,7 @@ function updateUIDescription(s) {
    if (s.id === "route_notext")
       document.getElementById("descriptionbox").innerHTML = "<h2>Remove Dialogue</h2><p>Replaces all Dialogue with \"!!!\". 'Always' and 'Not in Pianta 5' will override the dialogue skip from the DPad Functions.</p>";
    else if (s.id === "route_nofmvs")
-      document.getElementById("descriptionbox").innerHTML = "<h2>Skippable Cutscenes</h2><p>Makes FMVs Skippable. 'Always' has the same effect as the 'FMV Skips' code. Also, having 'FMV Skips' enabled will override 'Not in Pinna 1' - so don't use both simultaneously.</p>";
+      document.getElementById("descriptionbox").innerHTML = "<h2>Skippable Cutscenes</h2><p>Makes FMVs skippable. 'Always' has the same effect as the 'FMV Skips' code. Also, having 'FMV Skips' enabled will override 'Not in Pinna' - so don't use both simultaneously.</p>";
    else if (s.id === "route_order")
       document.getElementById("descriptionbox").innerHTML = "<h2>Level Order</h2><p>The order in which levels are loaded:</p><h4>As specified</h4><p>The code loads levels in the order of the list.</p><h4>Random, no duplicates</h4><p>The code picks levels at random, excluding levels that you’ve finished already.</p><h4>Fully random</h4><p>The code picks levels at random, even levels that you’ve finished already.</p>";
    else if (s.id === "route_ending")
@@ -361,97 +361,64 @@ function getFastCode() {
    let game = JSON.parse(atob(document.getElementById("route_levels").getAttribute("data-json")));
    const order = document.getElementById("route_order").value;
    const ending = document.getElementById("route_ending").value;
-   const branchBase = 0x18 + 0x24 * (order !== 'list');
-   const asm = [];
-   asm.push("48" + ("00000" + (Math.ceil(levelCodes.length / 2) + 1 << 2 | 1).toString(16).toUpperCase()).slice(-6)); // bl code
-   for (let i = levelCodes.length - 1; i >= 0; i -= 2) {
-      asm.push(levelCodes[i] + (levelCodes[i - 1] || "0000"));
-   }
-
-   // code:
-   //Timer compatibility
-   asm.push("3C80817F"); // lis r4, 0x817F
-   asm.push("38000000"); // li r0, 0
-   asm.push("9004010C"); // stw r0, 0x010C(r4)
-   asm.push("38000001"); // li r0, 1
-   asm.push("98040101"); // stb r0, 0x0101(r4)
-
-   asm.push("887F0012"); // lbz r3, 0x12(r31)
-   asm.push("2C030001"); // cmpwi r3, 1
-   asm.push("4181" + ("000" + (branchBase + 0x48).toString(16).toUpperCase()).slice(-4)); // bgt- done
+   const loadStageLength = {'list': 0x20, 'random': 0x2C, 'shuffle': 0x40}[order]
+   let codes = ''
    
-   asm.push("98040100"); // stb r0, 0x0100(r4)
+   // Reset counter on file select
+   codes += '0' + (0x04000000 + (game.fileSelect & 0x01FFFFFF)).toString(16) +
+      (0x48000001 + (game.system + 0x52C - game.fileSelect & 0x03FFFFFC)).toString(16)
 
-   asm.push("80AD" + game.fmOffset); // lwz r5, TFlagManager::smInstance
-   asm.push("7CC802A6"); // mflr r6
-   asm.push("80640000"); // lwz r3, 0(r4)
+   // Load next stage on Shine get
+   codes += '0' + (0x04000000 + (game.shineGet & 0x01FFFFFF)).toString(16) +
+      (0x48000001 + (game.system + 0x53C - game.shineGet & 0x03FFFFFC)).toString(16)
+
+   // Reload stage on exit area
+   codes += '0' + (0x04000000 + (game.system & 0x01FFFFFF)).toString(16) + '48000511'
    
-   asm.push("881F000E"); // lbz r0, 0x0E(r31)
-   asm.push("2C00000F"); // cmpwi r0, 15
-   asm.push("40820010"); // bne- 0x10
-   asm.push("3860" + ("000" + ((levelCodes.length - (order === 'random')) * 2).toString(16).toUpperCase()).slice(-4)); // li r3, length
-   asm.push("90640000"); // stw r3, 0(r4)
-   asm.push("48000018"); // b 0x18
-   asm.push("2C030000"); // cmpwi r3, 0
-   asm.push("4180" + ("000" + (0x1C + 0x14 * (order !== "list")).toString(16).toUpperCase()).slice(-4)); // blt- loadEnding
-   asm.push("880500CC"); // lbz r0, 0xCC(r5)
-   asm.push("54000673"); // rlwinm. r0, r0, 0, 25, 25
-   asm.push("4182" + ("000" + branchBase.toString(16).toUpperCase()).slice(-4)); // beq- loadIndex
+   // Set next stage on game over
+   codes += '0' + (0x06000000 + (game.system + 0xB4 & 0x01FFFFFF)).toString(16) + '000000084800048948000044'
+   
+   // Reset timer on secret death
+   codes += (0xC2000000 + (game.system + 0x208 & 0x01FFFFFF)).toString(16) + '000000033C60817F38000001980300FF881C00006000000000000000'
+   
+   // Overwrite decideNextStage(void) with useful routines
+   codes += '0' + (0x06000000 + (game.system + 0x510 & 0x01FFFFFF)).toString(16) +
+      ('0000000' + (loadStageLength + 0x5C).toString(16)).slice(-8) +
+      '3C60817F38000001980300FFA00300023C60' + game.gpAppHi + 'B003' + game.gpAppLo + '4E800020' + // reload current level
+      '3C60817F' + (0x38800000 + (levelCodes.length * 2 & 0x0000FFFF)).toString(16) + 'B08300004E800020' + // reset counter
+      '3C60817F38000001980300FFA00300002C00000038E0' + ending + // load next stage - the fun begins
+      (0x40810000 + (loadStageLength & 0x0000FFFC)).toString(16) + '7C8802A6600000007CC802A67C8803A6'
 
-   if (order === "random") {
-      asm.push("38630002"); // addi r3, r3, 2
-   }
-
-   if (order !== "list") {
-      asm.push("7CEC42E6"); // mftbl r7
-      asm.push("7C071B96"); // divwu r0, r7, r3
-      asm.push("7C0019D6"); // mullw r0, r0, r3
-      asm.push("7CE03850"); // sub r7, r7, r0
-      asm.push("54E7003C"); // rlwinm r7, r7, 0, 0, 30
-   }
-
-   asm.push("3463FFFE"); // subic. r3, r3, 2
-   if (order !== "random") {
-      asm.push("90640000"); // stw r3, 0(r4)
+   switch (order) {
+       case 'list':    codes += '3400FFFEB00300007CE6022E'; break
+       case 'random':  codes += '7C8C42E67CA403967CA501D67C8520505484003C7CE6222E'; break
+       case 'shuffle': codes += '7C8C42E67CA403967CA501D67C8520505484003C3400FFFEB00300007CE6222E7CA6022E7CA6232E7CE6032E'
    }
    
-   asm.push("4080000C"); // bge- 0xC
+   codes += 'B0E300023C60' + game.gpAppHi + 'B0E3' + game.gpAppLo + '806D' + game.fmOffset + '98E300DF4E800020' + (order === 'random' ? '' : '00000000')
    
-   // loadEnding:
-   asm.push("3860" + ending); // li r3, ending
-   asm.push("4800" + ("000" + (0x8 + 0x10 * (order !== "list")).toString(16).toUpperCase()).slice(-4)); // b loadStage
-
-   if (order !== "list") {
-      asm.push("7C061A2E"); // lhzx r0, r6, r3
-      asm.push("7C863A2E"); // lhzx r4, r6, r7
-      asm.push("7C063B2E"); // sthx r0, r6, r7
-      asm.push("7C861B2E"); // sthx r4, r6, r3
-   }
+   levelCodes.reverse()
    
-   // loadIndex:
-   asm.push("7C661A2E"); // lhzx r3, r6, r3
+   while (levelCodes.length % 4) levelCodes.push('0000')
    
-   // loadStage:
-   asm.push("B07F0012"); // sth r3, 0x12(r31)
-   asm.push("986500DF"); // stb r3, 0xDF(r5)
+   // Insert the list of levels into the loader
+   codes += (0xC2000000 + (game.system + 0x55C & 0x01FFFFFF)).toString(16) +
+      ('0000000' + (levelCodes.length / 4 + 1).toString(16)).slice(-8) +
+      (0x48000001 + (levelCodes.length * 2 + 4 & 0x03FFFFFC)).toString(16) +
+      levelCodes.join('') + '00000000'
+
+   // Load next stage on setNextStage into main level
+   codes += '0' + (0x06000000 + (game.system + 0x118C & 0x01FFFFFF)).toString(16) +
+      '00000028B07D00143C80817F38000000B00400FFA0010038B01D00122C1C00094181000C4BFFF391B0E10038'
+
+   // Setup timer
+   codes += (0xC2000000 + (game.proc & 0x01FFFFFF)).toString(16) +
+      '000000053CA0817F388000009085010C880500FF98050100988500FF38800001988501016000000000000000'
+
+   codes = codes.toUpperCase()
    
-   // done:
-   asm.push("807F0020"); // lwz r3, 0x20(r31)
-
-   if (asm.length % 2 === 0) {
-      asm.push("60000000"); // nop
-   }
-   asm.push("00000000");
-
-   const geckoLines = asm.length / 2;
-   let gecko = "C2" + game.injectAddr + " " + ("0000000" + geckoLines.toString(16).toUpperCase()).slice(-8) + "\r\n";
-   for (let i = 0; i < geckoLines; ++i) {
-      gecko += asm[2 * i] + " " + asm[2 * i + 1] + "\r\n";
-   }
-
-   let codes = gecko +
-      game.notext[document.getElementById("route_notext").value] +
+   codes += game.notext[document.getElementById("route_notext").value] +
       game.nofmvs[document.getElementById("route_nofmvs").value];
 
-   return codes.replace(/[^0-9A-F]/g, '');
+   return codes
 }

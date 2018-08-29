@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Aug 29, 2018</date>
+      <change>
+         <head>Updated Stage Loader</head>
+         <paragraph>The code is now able to load the airstrip and any version of the plaza. Added new presets with plaza movement, including 96 Shines and 120 Shines. Added new route endings. Changed the conditional FMV skips option from 'Not in Pinna 1' to 'Not in Pinna', no longer making the Pinna unlock cutscene skippable.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Aug 24, 2018</date>
       <change>
          <head>Updated 'DPad Functions' and Stage Loader</head>
