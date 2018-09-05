@@ -63,12 +63,16 @@
     </code>
     <code>
         <title lang="en">Disable Blue Coin Flag</title>
-        <author>Psychonauter</author>
-        <version>1.0</version>
-        <date>Jan 20, 2017</date>
+        <author>Psychonauter, Noki Doki</author>
+        <version>1.1</version>
+        <date>Sep 05, 2018</date>
         <description>Prevents the game from setting the blue coin flag, which makes them respawn after reentering the level.</description>
         <source>
-            0429A728 60000000
+            04294564 60000000
+            C22A6728 00000003
+            7CA00039 80AD9FA0
+            38800000 908500D4
+            60000000 00000000
         </source>
     </code>
     <code>

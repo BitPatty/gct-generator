@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Sep 05, 2018</date>
+      <change>
+         <head>Updated 'Disable Blue Coin Flag'</head>
+         <paragraph>The blue coin counter now increases as normal and gets reset on area transitions.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Aug 29, 2018</date>
       <change>
          <head>Updated Stage Loader</head>
