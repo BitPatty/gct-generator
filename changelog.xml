@@ -3,12 +3,12 @@
    <update>
       <date>Sep 09, 2018</date>
       <change>
-         <head>Updated Stage Loader</head>
-         <paragraph>Fixed some repeated/missing segments in the presets and 'Not in Pinna' FMV skips for JP A.</paragraph>
-      </change>
-      <change>
          <head>Updated 'Level Select'</head>
          <paragraph>Mashing through cutscenes with B no longer causes the game to reset.</paragraph>
+      </change>
+      <change>
+         <head>Updated Stage Loader</head>
+         <paragraph>Fixed some repeated/missing segments in the presets and 'Not in Pinna' FMV skips for JP A.</paragraph>
       </change>
    </update>
    <update>

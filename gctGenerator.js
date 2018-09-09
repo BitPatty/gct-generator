@@ -215,15 +215,14 @@ function updateChangelog() {
          try {           
             document.getElementById("lastupdate").innerHTML = "Last Updated: " + changelogData[0].getElementsByTagName("date")[0].textContent;
             
-            for (var i = 0; i < changelogData.length && i < 3;i++) {
+            for (var i = 0, changeCount = 0; i < changelogData.length && changeCount < 3;i++) {
                recentchanges += "<p style=\"margin-top:0\"><i>" + changelogData[i].getElementsByTagName("date")[0].textContent + ": ";
                
                var changes = changelogData[i].getElementsByTagName("change");
-               for (var k = 0; k < changes.length && (i+k-1) < 3; k++) {
+               for (var k = 0; k < changes.length && changeCount < 3; k++) {
                   recentchanges += changes[k].getElementsByTagName("head")[0].textContent + " ";
+				  ++changeCount;
                }
-               
-               i += k-1;
                
                recentchanges += "</i></p>";
             }
