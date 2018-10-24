@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Oct 25, 2018</date>
+      <change>
+         <head>Updated Stage Loader</head>
+         <paragraph>Fixed gpApplication address for US and JP A.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Sep 09, 2018</date>
       <change>
          <head>Updated 'Level Select'</head>
