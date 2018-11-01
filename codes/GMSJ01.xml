@@ -3,9 +3,9 @@
     <code>
         <title lang="en">DPad Functions</title>
         <author>Psychonauter, Noki Doki, Dan Salvato, Link Master, James0x57</author>
-        <version>2.3</version>
-        <description><![CDATA[Allows various game modifications. Button combinations:<br/><table><tr><th align="left" style="width:120px">Combination</th><th align="left">Result</th></tr><tr><td>D-Pad left</td><td>Save Mario's position</td></tr><tr><td>D-Pad right</td><td>Load Mario's position</td></tr><tr><td>D-Pad up</td><td>Replace all dialog with a single "!!!" line</td></tr><tr><td>D-Pad down</td><td>Restore dialog boxes</td></tr><tr><td>B+D-Pad left</td><td>Lock rocket nozzle</td></tr><tr><td>B+D-Pad right</td><td>Lock turbo nozzle</td></tr><tr><td>B+D-Pad up</td><td>Lock hover nozzle</td></tr><tr><td>B+D-Pad down</td><td>Release nozzle lock</td></tr><tr><td>X+D-Pad left</td><td>No FLUDD in secrets</td></tr><tr><td>X+D-Pad right</td><td>FLUDD in all secrets</td></tr><tr><td>X+D-Pad up</td><td>Unlock Yoshi and all nozzles</td></tr><tr><td>X+D-Pad down</td><td>FLUDD in completed secrets (default)</td></tr></table>]]></description>
-        <date>Jan 1, 2018</date>
+        <version>2.4</version>
+        <description><![CDATA[Allows various game modifications. Button combinations:<br/><table><tr><th align="left" style="width:120px">Combination</th><th align="left">Result</th></tr><tr><td>D-Pad left</td><td>Save Mario's position</td></tr><tr><td>D-Pad right</td><td>Load Mario's position</td></tr><tr><td>D-Pad up</td><td>Replace all dialog with a single "!!!" line</td></tr><tr><td>D-Pad down</td><td>Restore dialog boxes</td></tr><tr><td>B+D-Pad left</td><td>Lock rocket nozzle</td></tr><tr><td>B+D-Pad right</td><td>Lock turbo nozzle</td></tr><tr><td>B+D-Pad up</td><td>Lock hover nozzle</td></tr><tr><td>B+D-Pad down</td><td>Release nozzle lock</td></tr><tr><td>X+D-Pad left</td><td>No FLUDD in secrets</td></tr><tr><td>X+D-Pad right</td><td>FLUDD in all secrets</td></tr><tr><td>X+D-Pad up</td><td>Regrab last held object</td></tr><tr><td>X+D-Pad down</td><td>FLUDD in completed secrets (default)</td></tr></table>]]></description>
+        <date>Nov 1, 2018</date>
         <source>
             2440A39C 80000000
             82200000 8040A39C
@@ -43,14 +43,12 @@
             04198784 40820018
             040EC0F4 40820014
             28400D51 00000408
-            C6193F58 80193F8C
-            C6193F9C 80193FB8
-            040E79F8 38600001
-            040E79FC 4E800020
-            E2000001 00000000
-            048D8A7C D6008149
-            048D8A80 81498149
+            48000000 8040A398
+            1400007C 00000383
+            E0000000 00000000
+            028D8A7E 00028149
             048D8A84 00000000
+            0411EB10 60000000
         </source>
     </code>
     <code>

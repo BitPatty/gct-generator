@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Nov 1, 2018</date>
+      <change>
+         <head>Updated 'DPad Functions'</head>
+         <paragraph>Added a remote grab code in place of Yoshi/nozzles unlock (X + Up), which exists as standalone codes.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Oct 25, 2018</date>
       <change>
          <head>Updated Stage Loader</head>
