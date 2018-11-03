@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Nov 3, 2018</date>
+      <change>
+         <head>Added 'Fade-in Timer'</head>
+         <paragraph>A new variant of the in-game timer, starting on the last black frame before taking control of Mario rather than before the demo.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Nov 1, 2018</date>
       <change>
          <head>Updated 'DPad Functions'</head>
