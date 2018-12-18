@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Dec 18, 2018</date>
+      <change>
+         <head>Added 'Position/angle/speed display'</head>
+         <paragraph>Not available on JP A for now as it was made using the C kit.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Nov 3, 2018</date>
       <change>
          <head>Added 'Fade-in Timer'</head>

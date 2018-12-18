@@ -1049,6 +1049,82 @@
             0424D4DC 60000000
         </source>
     </code>
+    <code>
+        <title lang="en">Position/angle/speed display</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <date>Jun 05, 2018</date>
+        <description>Shows Mario’s position, angle and speed at any given time.</description>
+        <source>
+            062A6160 00000010
+            49553F21 60000000
+            60000000 60000000
+            042998B8 49560749
+            04143F14 496B6249
+            077FA000 000001E8
+            9421FF60 7C0802A6
+            900100A4 93E1009C
+            4AABD6E5 38E00200
+            38C00320 38A0FFD8
+            3880000A 38610088
+            4AAD01B9 814D9FC8
+            3FE08180 3BFFA1F0
+            39200000 39000002
+            38E2B498 80CA0048
+            38A10088 38800000
+            7FE3FB78 4AAD67F5
+            38810008 7FE3FB78
+            4AAD6C09 39200001
+            913F01B0 800100A4
+            7C0803A6 83E1009C
+            382100A0 4E800020
+            9421FFD8 7C0802A6
+            9001002C DBA10010
+            DBC10018 DBE10020
+            93C10008 93E1000C
+            7C7F1B78 81230000
+            83C90064 3D208180
+            8129A3A0 2F890000
+            409E0034 7FE3FB78
+            7FC903A6 4E800421
+            8001002C 7C0803A6
+            83C10008 83E1000C
+            CBA10010 CBC10018
+            CBE10020 38210028
+            4E800020 3D208040
+            6129E10C 81290000
+            C3E90000 C3C90004
+            C3A90008 3C608180
+            3863A1F0 4AAD6B55
+            3D208040 6129E120
+            81090000 39290004
+            81490000 3929FFF0
+            81290000 C0C80000
+            C0AA0004 C0890000
+            FC60E890 FC40F090
+            FC20F890 3CA08180
+            38A5A1A4 3880007F
+            4CC63242 4AB3F651
+            4BFFFF64 9421FFF0
+            7C0802A6 90010014
+            93E1000C 7C7F1B78
+            4AAF154D 38E00081
+            7FE6FB78 38A00000
+            38800000 3C608180
+            3863A1F0 4AAD5C1D
+            80010014 7C0803A6
+            83E1000C 38210010
+            4E800020 5820506F
+            7320252E 30660A59
+            20506F73 20252E30
+            660A5A20 506F7320
+            252E3066 0A416E67
+            6C652025 68750A48
+            20537064 20252E32
+            660A5620 53706420
+            252E3266 00000000
+        </source>
+    </code>
     <!--
     <code>
         <title lang="en"><![CDATA[Original Ingame Timer (Deprecated)]]></title>
