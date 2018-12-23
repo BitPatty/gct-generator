@@ -1052,8 +1052,8 @@
     <code>
         <title lang="en">Position/angle/speed display</title>
         <author>Noki Doki</author>
-        <version>1.0</version>
-        <date>Jun 05, 2018</date>
+        <version>1.1</version>
+        <date>Dec 23, 2018</date>
         <description>Shows Mario’s position, angle and speed at any given time.</description>
         <source>
             062A6160 00000010
@@ -1099,8 +1099,8 @@
             3D208040 6129E120
             81090000 39290004
             81490000 3929FFF0
-            81290000 C0C80000
-            C0AA0004 C0890000
+            81290000 C0A80000
+            C08A0004 A0C90000
             FC60E890 FC40F090
             FC20F890 3CA08180
             38A5A1A4 3880007F

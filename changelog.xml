@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Dec 23, 2018</date>
+      <change>
+         <head>Updated 'Position/angle/speed display'</head>
+         <paragraph>Fixed a error in the US and PAL codes that caused wrong output on Dolphin and a crash on console.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Dec 18, 2018</date>
       <change>
          <head>Added 'Position/angle/speed display'</head>
