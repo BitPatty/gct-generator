@@ -382,8 +382,8 @@
     <code>
         <title lang="en">Level Select</title>
         <author>Psychonauter, Dan Salvato, Noki Doki</author>
-        <version>1.7</version>
-        <date>Sep 09, 2018</date>
+        <version>1.8</version>
+        <date>Jan 23, 2019</date>
         <description><![CDATA[Allows warping to other levels when starting a file or when exiting level by holding the combination until the screen turns black. This code is not compatible with the Fast Any% or Stage Loader code. Codes:<br /><br /><div style="text-align:center"><img src="img/levelselect.png" width="500px"></div>]]></description>
         <source>
             C229E668 0000007F
@@ -514,6 +514,8 @@
             60630100 38800000
             B0830000 807F0020
             60000000 00000000
+            0628F54C 00000008
+            3C600003 38830005
         </source>
     </code>
     <code>

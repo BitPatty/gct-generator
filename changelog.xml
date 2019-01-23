@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Jan 23, 2019</date>
+      <change>
+         <head>Updated 'Level Select'</head>
+         <paragraph>Fixed Pinna 8 always skipping to the Shine after you beat it once.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Dec 23, 2018</date>
       <change>
          <head>Updated 'Position/angle/speed display'</head>
