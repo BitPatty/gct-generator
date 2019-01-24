@@ -168,12 +168,12 @@
     </code>
     <code>
         <title lang="en">Shine Touch Timer</title>
-        <author>Psychonauter</author>
-        <version>1.6</version>
-        <date>Nov 29, 2017</date>
-        <description><![CDATA[Adds the ingame timer to every level, starting on the last black frame after the loading screen and ending when you touch a Shine.<br /><br /><b><font color ="#0046da">Requires the Level Select code, Fast Any% or Stage Loader to be active.</font></b>]]></description>
+        <author>Psychonauter, Noki Doki</author>
+        <version>2.0</version>
+        <date>Jan 24, 2019</date>
+        <description><![CDATA[Adds the ingame timer to every level, starting on the last black frame before you gain control of Mario and ending when you touch a Shine.<br /><br /><b><font color ="#0046da">Requires the Level Select code, Fast Any% or Stage Loader to be active.</font></b>]]></description>
         <source>
-            C2032020 0000000F
+            C2290A38 0000000F
             3CC0817F 60C60100
             88860000 2C040001
             4182002C 88860001
@@ -187,7 +187,7 @@
             60A5CCE8 90650028
             90660004 9085002C
             90860008 38600000
-            98660000 80010024
+            98660000 800100B4
             60000000 00000000
             C21B5290 00000007
             7DE802A6 3C608056
@@ -239,17 +239,6 @@
             3C60817F 60630100
             38800101 B0830000
             807F084C 00000000
-            C2032024 0000000A
-            3C60803E 606310D0
-            A083FFFE 2C043C00
-            40A20038 A0830002
-            2C040FFF 40A2002C
-            7C1E0378 7FE802A6
-            3C608056 6063DF00
-            3C808028 60846390
-            7C8803A6 4E800021
-            7FE803A6 7FC0F378
-            83E1001C 00000000
             043402A4 4E800020
             0413F62C 60000000
             04141F78 60000000
@@ -709,6 +698,7 @@
             041B47B8 60000000
         </source>
     </code>
+    <!--
     <code>
         <title lang="en">Fade-in Timer</title>
         <author>Psychonauter, Noki Doki</author>
@@ -809,6 +799,7 @@
             0413F8A8 4800006C
         </source>
     </code>
+    -->
     <code>
         <title lang="en">Position/angle/speed display</title>
         <author>Noki Doki</author>

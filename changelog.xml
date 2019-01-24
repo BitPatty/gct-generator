@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Jan 24, 2019</date>
+      <change>
+         <head>Merged 'Fade-in Timer' into 'Shine Touch Timer'</head>
+         <paragraph>'Shine Touch Timer' now starts on the last black frame before taking control of Mario, matching the timing method for IL leaderboards on speedrun.com.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Jan 23, 2019</date>
       <change>
          <head>Updated 'Level Select'</head>
