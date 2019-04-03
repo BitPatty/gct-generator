@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Apr 3, 2019</date>
+      <change>
+         <head>Updated 'DPad Functions'</head>
+         <paragraph>Position codes now save camera angle.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Jan 24, 2019</date>
       <change>
          <head>Merged 'Fade-in Timer' into 'Shine Touch Timer'</head>

@@ -3,20 +3,24 @@
     <code>
         <title lang="en">DPad Functions</title>
         <author>Psychonauter, Noki Doki, Dan Salvato, Link Master, James0x57</author>
-        <version>2.4</version>
+        <version>2.5</version>
         <description><![CDATA[Allows various game modifications. Button combinations:<br/><table><tr><th align="left" style="width:120px">Combination</th><th align="left">Result</th></tr><tr><td>D-Pad left</td><td>Save Mario's position</td></tr><tr><td>D-Pad right</td><td>Load Mario's position</td></tr><tr><td>D-Pad up</td><td>Replace all dialog with a single "!!!" line</td></tr><tr><td>D-Pad down</td><td>Restore dialog boxes</td></tr><tr><td>B+D-Pad left</td><td>Lock rocket nozzle</td></tr><tr><td>B+D-Pad right</td><td>Lock turbo nozzle</td></tr><tr><td>B+D-Pad up</td><td>Lock hover nozzle</td></tr><tr><td>B+D-Pad down</td><td>Release nozzle lock</td></tr><tr><td>X+D-Pad left</td><td>No FLUDD in secrets</td></tr><tr><td>X+D-Pad right</td><td>FLUDD in all secrets</td></tr><tr><td>X+D-Pad up</td><td>Regrab last held object</td></tr><tr><td>X+D-Pad down</td><td>FLUDD in completed secrets (default)</td></tr></table>]]></description>
-        <date>Nov 1, 2018</date>
+        <date>Apr 3, 2019</date>
         <source>
             243FEFAC 80000000
             82200000 803FEFAC
             80000001 817F0008
             82200002 803FEFB4
+            82200003 803FFA38
+            86000003 000000A6
             283F5429 00000001
             8A000C01 00000000
-            8A000221 0000000D
+            8A000221 0000000C
+            8A000631 0000000E
             283F5429 00000002
             8A000C10 00000000
-            8C000212 0000000D
+            8C000212 0000000C
+            8C000613 0000000E
             283F5429 00000004
             041351C4 801C0004
             04134524 A81C0340
