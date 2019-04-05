@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Apr 5, 2019</date>
+      <change>
+         <head>Added 'Infinite Juice'</head>
+         <paragraph>Prevents Yoshi from running out of juice and despawning.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Apr 3, 2019</date>
       <change>
          <head>Updated 'DPad Functions'</head>
