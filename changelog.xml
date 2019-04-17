@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Apr 17, 2019</date>
+      <change>
+         <head>Updated 'Level Select'</head>
+         <paragraph>Z can now reload main levels that weren't initially entered using Level Select, and Hotel Delfino without letting Mario move earlier than normal. Reloading Casino Delfino with Z is no longer possible unless it was specifically loaded with C-down + X.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Apr 5, 2019</date>
       <change>
          <head>Added 'Infinite Juice'</head>
