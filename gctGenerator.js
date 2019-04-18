@@ -1,90 +1,95 @@
 if (navigator.userAgent.toLowerCase().indexOf("firefox") > -1) {
-   HTMLElement.prototype.click = function() {
+   HTMLElement.prototype.click = function () {
       var evt = this.ownerDocument.createEvent("MouseEvents");
       evt.initMouseEvent("click", true, true, this.ownerDocument.defaultView, 1, 0, 0, 0, 0, false, false, false, false, 0, null);
       this.dispatchEvent(evt);
-  }
+   }
 }
 
-document.getElementById("checklist").addEventListener("click", function(ev) {
-   if (ev.target && ev.target.nodeName == "LI") {
+document.getElementById("codelist").addEventListener("click", function (ev) {
+   if (ev.target && ev.target.nodeName.toUpperCase() === "LI")
       ev.target.classList.toggle("checked");
-  }
 });
 
 function parseXML(name) {
-  var xml = new XMLHttpRequest();
-  var file = "codes/" + name + ".xml";
-  xml.onreadystatechange = function() {
-    if (this.status == 200 && this.readyState == 4) {
-      var xmlData = xml.responseXML;
-      xmlData = (new DOMParser()).parseFromString(xml.responseText, "text/xml");
-      xmlData = xmlData.getElementsByTagName("code");
+   var xml = new XMLHttpRequest();
+   var file = "codes/" + name + ".xml";
+   xml.onreadystatechange = function () {
+      if (this.status == 200 && this.readyState == 4) {
+         var xmlData = xml.responseXML;
+         xmlData = (new DOMParser()).parseFromString(xml.responseText, "text/xml");
+         xmlData = xmlData.getElementsByTagName("code");
 
-      var i = 0;
-      for (; i < xmlData.length; i++) {
-        var li = document.createElement("li");
-        var desc = xmlData[i].getElementsByTagName("title")[0].textContent;
-        var t = document.createTextNode(desc);
-        li.appendChild(t);
-        li.setAttribute("data-codename", btoa(xmlData[i].getElementsByTagName("title")[0].textContent));
-        li.setAttribute("data-codeauthor", btoa(xmlData[i].getElementsByTagName("author")[0].textContent));
-        li.setAttribute("data-codedesc", btoa(xmlData[i].getElementsByTagName("description")[0].textContent));
-        li.setAttribute("data-codeversion", btoa(xmlData[i].getElementsByTagName("version")[0].textContent));
-        li.setAttribute("data-codedate", btoa(xmlData[i].getElementsByTagName("date")[0].textContent));
-        li.setAttribute("data-codesrc", btoa(xmlData[i].getElementsByTagName("source")[0].textContent.replace(/[\s\n\r\t]+/gm, "")));
-        li.setAttribute("onmouseover", "updateDescription(this)");
-        document.getElementById("checklist").appendChild(li);
+         var i = 0;
+         for (; i < xmlData.length; i++) {
+            var li = document.createElement("li");
+            var desc = xmlData[i].getElementsByTagName("title")[0].textContent;
+            var t = document.createTextNode(desc);
+            li.appendChild(t);
+            li.setAttribute("data-codename", btoa(xmlData[i].getElementsByTagName("title")[0].textContent));
+            li.setAttribute("data-codeauthor", btoa(xmlData[i].getElementsByTagName("author")[0].textContent));
+            li.setAttribute("data-codedesc", btoa(xmlData[i].getElementsByTagName("description")[0].textContent));
+            li.setAttribute("data-codeversion", btoa(xmlData[i].getElementsByTagName("version")[0].textContent));
+            li.setAttribute("data-codedate", btoa(xmlData[i].getElementsByTagName("date")[0].textContent));
+            li.setAttribute("data-codesrc", btoa(xmlData[i].getElementsByTagName("source")[0].textContent.replace(/[\s\n\r\t]+/gm, "")));
+            li.setAttribute("onmouseover", "updateCodeDescription(this)");
+            document.getElementById("codelist").appendChild(li);
+         }
+
+         var buttons = document.getElementsByTagName("button");
+         for (var i = 0; i < buttons.length; i++) buttons[i].disabled = false;
+
+         document.getElementById("sel-gamever").disabled = false;
       }
+   };
 
-      var buttons = document.getElementsByTagName("button");
-      for (var i = 0; i < buttons.length; i++) buttons[i].disabled = false;
+   xml.open("GET", file);
+   xml.send();
+}
 
-      document.getElementById("gameversion").disabled = false;
-    }
-  };
-
-  xml.open("GET", file);
-  xml.send();
+function toggleFastCode() {
+   document.getElementById("cc").classList.toggle("hidden");
 }
 
 function updateFastCode(name) {
    var xml = new XMLHttpRequest();
-   var file = "codes/fast/" + name + ".json";
-   xml.onreadystatechange = function() {
+
+   xml.onreadystatechange = function () {
       if (this.status == 200 && this.readyState == 4) {
          document.getElementById("route_levels").setAttribute("data-json", btoa(xml.responseText));
       }
    }
-   xml.open("GET",file);
+
+   xml.open("GET", "codes/fast/" + name + ".json");
    xml.send();
 }
 
 function downloadFile(data, filename) {
-
    var file = new Blob([data], {
-     type: "application/octet-stream"
+      type: "application/octet-stream"
    });
 
-   if (window.navigator.msSaveOrOpenBlob) window.navigator.msSaveOrOpenBlob(file, filename.replace("GMSJ0A","GMSJ01"));
+   if (window.navigator.msSaveOrOpenBlob) window.navigator.msSaveOrOpenBlob(file, filename.replace("GMSJ0A", "GMSJ01"));
    else {
       var a = document.createElement("a"),
-      url = window.URL.createObjectURL(file);
+         url = window.URL.createObjectURL(file);
       a.href = url;
-      a.download = filename.replace("GMSJ0A","GMSJ01");
+      a.download = filename.replace("GMSJ0A", "GMSJ01");
       a.click();
-      setTimeout(function() { window.URL.revokeObjectURL(url); }, 500);
-  }
+      setTimeout(function () {
+         window.URL.revokeObjectURL(url);
+      }, 500);
+   }
 }
 
 function generateGCT() {
 
-   if (document.getElementById("gameversion").value === "Choose Version") {
-     alert("Select the game version!");
-     return;
+   if (document.getElementById("sel-gamever").value === "Choose Version") {
+      alert("Select the game version!");
+      return;
    }
    var data = "00D0C0DE00D0C0DE";
-   var codeList = document.getElementById("checklist").getElementsByTagName("li");
+   var codeList = document.getElementById("codelist").getElementsByTagName("li");
    var valueSelected = false;
    for (var i = 0; i < codeList.length; i++) {
       if (codeList[i].className === "checked") {
@@ -95,7 +100,7 @@ function generateGCT() {
 
    var fastcode = getFastCode();
 
-   if(fastcode !== false) {
+   if (fastcode !== false) {
       data += fastcode;
       valueSelected = true;
    }
@@ -108,7 +113,7 @@ function generateGCT() {
          rawData[x] = parseInt(data.substr(x * 2, 2), 16);
       }
 
-      downloadFile(rawData, document.getElementById("gameversion").value + ".gct");
+      downloadFile(rawData, document.getElementById("sel-gamever").value + ".gct");
    } else {
       alert("No cheat(s) selected!");
    }
@@ -116,15 +121,15 @@ function generateGCT() {
 
 function generateTXT() {
 
-   var dolphin = (document.getElementById("downloadformat").value === "ini");
+   var dolphin = (document.getElementById("sel-format").value === "ini");
 
-   if (document.getElementById("gameversion").value === "Choose Version") {
+   if (document.getElementById("sel-gamever").value === "Choose Version") {
       alert("Select the game version!");
       return;
    }
    if (dolphin) var data = "Paste the following on top of your games .ini file:\r\n[Gecko]";
-   else var data = document.getElementById("gameversion").value.replace("GMSJ0A","GMSJ01") + "\r\nSuper Mario Sunshine";
-   var codeList = document.getElementById("checklist").getElementsByTagName("li");
+   else var data = document.getElementById("sel-gamever").value.replace("GMSJ0A", "GMSJ01") + "\r\nSuper Mario Sunshine";
+   var codeList = document.getElementById("codelist").getElementsByTagName("li");
    var valueSelected = false;
    for (var i = 0; i < codeList.length; i++) {
       if (codeList[i].className === "checked") {
@@ -139,7 +144,7 @@ function generateTXT() {
 
    var fastcode = getFastCode();
 
-   if(fastcode !== false) {
+   if (fastcode !== false) {
       data += "\r\n";
       if (dolphin) data += "$";
       else data += "\r\n";
@@ -149,31 +154,43 @@ function generateTXT() {
    }
 
    if (valueSelected)
-   downloadFile(data, document.getElementById("gameversion").value + ".txt");
+      downloadFile(data, document.getElementById("sel-gamever").value + ".txt");
    else alert("No cheat(s) selected!");
 }
 
 function downloadCodes() {
-   if (document.getElementById("downloadformat").value === "gct") generateGCT();
+   if (document.getElementById("sel-format").value === "gct") generateGCT();
    else generateTXT();
 }
 
 function updateCodelist() {
+   disableButtons();
+   document.getElementById("sel-gamever").disabled = true;
+
    resetDescription();
-   document.getElementById("gameversion").disabled = true;
-   var buttons = document.getElementsByTagName("button");
-   for (var i = 0; i < buttons.length; i++) buttons[i].disabled = true;
-   document.getElementById("checklist").innerHTML = "";
-   var gameVersion = document.getElementById("gameversion").value;
+   document.getElementById("codelist").innerHTML = "";
+
+   let gameVersion = document.getElementById("sel-gamever").value;
    parseXML(gameVersion);
    updateFastCode(gameVersion);
-   document.getElementById("left").style.visibility = "visible";
-   while (document.getElementsByClassName("initialhidden").length > 0) {
-      document.getElementsByClassName("initialhidden")[0].classList.remove("initialhidden");
+
+   toggleHiddenContainers();
+}
+
+function disableButtons() {
+   var buttons = document.getElementsByTagName("button");
+   for (var i = 0; i < buttons.length; i++) buttons[i].disabled = true;
+}
+
+function toggleHiddenContainers() {
+   let hiddenElements = document.querySelectorAll(".hidden");
+
+   for (let i = 0; i < hiddenElements.length; i++) {
+      if (hiddenElements[i].id !== "cc") hiddenElements[i].classList.remove("hidden");
    }
 }
 
-function updateDescription(s) {
+function updateCodeDescription(s) {
    document.getElementById("descriptionbox").innerHTML = "<h2>" +
       atob(s.getAttribute("data-codename")) + "</h2><p style=\"margin-top:0\"><i>Author(s): " +
       atob(s.getAttribute("data-codeauthor")) + "</i></p><p style=\"margin-top:0\"><i>Version: " +
@@ -183,68 +200,59 @@ function updateDescription(s) {
 }
 
 function updateUIDescription(s) {
-   if (s.id === "route_notext")
-      document.getElementById("descriptionbox").innerHTML = "<h2>Remove Dialogue</h2><p>Replaces all Dialogue with \"!!!\". 'Always' and 'Not in Pianta 5' will override the dialogue skip from the DPad Functions.</p>";
-   else if (s.id === "route_nofmvs")
-      document.getElementById("descriptionbox").innerHTML = "<h2>Skippable Cutscenes</h2><p>Makes FMVs skippable. 'Always' has the same effect as the 'FMV Skips' code. Also, having 'FMV Skips' enabled will override 'Not in Pinna' - so don't use both simultaneously.</p>";
-   else if (s.id === "route_order")
-      document.getElementById("descriptionbox").innerHTML = "<h2>Level Order</h2><p>The order in which levels are loaded:</p><h4>As specified</h4><p>The code loads levels in the order of the list.</p><h4>Random, no duplicates</h4><p>The code picks levels at random, excluding levels that you’ve finished already.</p><h4>Fully random</h4><p>The code picks levels at random, even levels that you’ve finished already.</p>";
-   else if (s.id === "route_ending")
-      document.getElementById("descriptionbox").innerHTML = "<h2>Route Ending</h2><p>What to do after you complete the final level on the list. This has no effect if the level order is set to Fully random.</p>";
-   else if (s.id === "downloadformat")
-      document.getElementById("descriptionbox").innerHTML = "<h2>File Format</h2><p>You can choose between 3 file formats:</p><h4>GCT</h4><p>Download a GCT file for use with Nintendont</p><h4>Dolphin INI</h4><p>Download a textfile containing the formatted codes for use with Dolphin. Copy the contents of the file on top of your games .ini file.</p><p>You can open the .ini file by right clicking the game in Dolphin. In the context menu select 'Properties' and then 'Edit configuration'.</p><h4>Cheat Manager TXT</h4><p>Download the cheats in a textfile formatted for use with the <a target=\"_blank\" href=\"http://wiibrew.org/wiki/CheatManager\">Gecko Cheat Manager</a>. Place the txt file in SD:/txtcodes/.</p><p>A zip archive containing pregenerated txt files with all available codes on this site can be downloaded <a target=\"_blank\" href=\"files/GCMCodes.zip\">here</a>.</p>";
-   else if (s.id === "stageloader")
-      document.getElementById("descriptionbox").innerHTML = "<h2>Stage Loader</h2><p>Select yes if you want to use a custom stage loader, which automatically loads the levels you choose, similiar to 'Fast Any%'.</p>";
+   if (s && s.getAttribute("data-description"))
+      document.getElementById("descriptionbox").innerHTML = s.getAttribute("data-description");
 }
 
 function resetDescription() {
-   document.getElementById("descriptionbox").innerHTML = "<p><h3>Choose your codes from the list...</h3></p>"; 
+   document.getElementById("descriptionbox").innerHTML = "<p><h3>Choose your codes from the list...</h3></p>";
 }
- 
+
 function updateChangelog() {
-   document.getElementById("gameversion").style.visibility = "visible";
+   document.getElementById("sel-gamever").style.visibility = "visible";
    var xml = new XMLHttpRequest();
-   var file = "changelog.xml";
-   xml.onload = function() {
+   xml.onload = function () {
       if (this.status == 200 && this.responseXML != null) {
          var changelogData = xml.responseXML;
          changelogData = (new DOMParser()).parseFromString(xml.responseText, "text/xml");
          changelogData = changelogData.getElementsByTagName("update");
 
          var recentchanges = "";
-         try {           
+         try {
             document.getElementById("lastupdate").innerHTML = "Last Updated: " + changelogData[0].getElementsByTagName("date")[0].textContent;
-            
-            for (var i = 0, changeCount = 0; i < changelogData.length && changeCount < 3;i++) {
-               recentchanges += "<p style=\"margin-top:0\"><i>" + changelogData[i].getElementsByTagName("date")[0].textContent + ": ";
-               
+
+            for (var i = 0, changeCount = 0; i < changelogData.length && changeCount < 3; i++) {
+               recentchanges += "<div class=\"change\"><div><i>" + changelogData[i].getElementsByTagName("date")[0].textContent + ": </i></div><div><i>";
+
                var changes = changelogData[i].getElementsByTagName("change");
                for (var k = 0; k < changes.length && changeCount < 3; k++) {
                   recentchanges += changes[k].getElementsByTagName("head")[0].textContent + " ";
-				  ++changeCount;
+                  ++changeCount;
                }
-               
-               recentchanges += "</i></p>";
+
+               recentchanges += "</i></div></div>";
             }
          } catch (err) {}
 
-         document.getElementById("changelog").innerHTML += recentchanges + "<p style=\"margin-top:0\"><a target=\"_blank\" href=\"changelog.html\"><i>more ...</i></a></p>";
+         document.getElementById("changelog").innerHTML += recentchanges + "<div class=\"change\"><a target=\"_blank\" href=\"changelog.html\"><i>more ...</i></a></div>";
       };
    }
 
-   xml.open("GET", file);
+   xml.open("GET", "changelog.xml");
    xml.send();
 }
 
 /****************************
-*
-*  Fastcode, https://github.com/QbeRoot/fastcodes/blob/master/script.js
-*
-****************************/
+ *
+ *  Fastcode, https://github.com/QbeRoot/fastcodes/blob/master/script.js
+ *
+ ****************************/
 
 const levels = document.querySelector("#route_levels");
 const template = levels.lastElementChild;
-template.ondragstart = function() { return false; };
+template.ondragstart = function () {
+   return false;
+};
 
 function appendLevel(code) {
    const clone = template.cloneNode(true);
@@ -355,14 +363,18 @@ function getFastCode() {
    }
    levelCodes.pop();
 
-   if (!(document.getElementById("usefastcode").checked) || levelCodes.length === 0) return false;
+   if (!document.getElementById("sel-stageloader").value === "yes" || levelCodes.length === 0) return false;
 
    let game = JSON.parse(atob(document.getElementById("route_levels").getAttribute("data-json")));
    const order = document.getElementById("route_order").value;
    const ending = document.getElementById("route_ending").value;
-   const loadStageLength = {'list': 0x20, 'random': 0x2C, 'shuffle': 0x40}[order]
+   const loadStageLength = {
+      'list': 0x20,
+      'random': 0x2C,
+      'shuffle': 0x40
+   } [order]
    let codes = ''
-   
+
    // Reset counter on file select
    codes += '0' + (0x04000000 + (game.fileSelect & 0x01FFFFFF)).toString(16) +
       (0x48000001 + (game.system + 0x52C - game.fileSelect & 0x03FFFFFC)).toString(16)
@@ -373,13 +385,13 @@ function getFastCode() {
 
    // Reload stage on exit area
    codes += '0' + (0x04000000 + (game.system & 0x01FFFFFF)).toString(16) + '48000511'
-   
+
    // Set next stage on game over
    codes += '0' + (0x06000000 + (game.system + 0xB4 & 0x01FFFFFF)).toString(16) + '000000084800048948000044'
-   
+
    // Reset timer on secret death
    codes += (0xC2000000 + (game.system + 0x208 & 0x01FFFFFF)).toString(16) + '000000033C60817F38000001980300FF881C00006000000000000000'
-   
+
    // Overwrite decideNextStage(void) with useful routines
    codes += '0' + (0x06000000 + (game.system + 0x510 & 0x01FFFFFF)).toString(16) +
       ('0000000' + (loadStageLength + 0x5C).toString(16)).slice(-8) +
@@ -389,17 +401,22 @@ function getFastCode() {
       (0x40810000 + (loadStageLength & 0x0000FFFC)).toString(16) + '7C8802A6600000007CC802A67C8803A6'
 
    switch (order) {
-       case 'list':    codes += '3400FFFEB00300007CE6022E'; break
-       case 'random':  codes += '7C8C42E67CA403967CA501D67C8520505484003C7CE6222E'; break
-       case 'shuffle': codes += '7C8C42E67CA403967CA501D67C8520505484003C3400FFFEB00300007CE6222E7CA6022E7CA6232E7CE6032E'
+      case 'list':
+         codes += '3400FFFEB00300007CE6022E';
+         break
+      case 'random':
+         codes += '7C8C42E67CA403967CA501D67C8520505484003C7CE6222E';
+         break
+      case 'shuffle':
+         codes += '7C8C42E67CA403967CA501D67C8520505484003C3400FFFEB00300007CE6222E7CA6022E7CA6232E7CE6032E'
    }
-   
+
    codes += 'B0E300023C60' + game.gpAppHi + 'B0E3' + game.gpAppLo + '806D' + game.fmOffset + '98E300DF4E800020' + (order === 'random' ? '' : '00000000')
-   
+
    levelCodes.reverse()
-   
+
    while (levelCodes.length % 4) levelCodes.push('0000')
-   
+
    // Insert the list of levels into the loader
    codes += (0xC2000000 + (game.system + 0x55C & 0x01FFFFFF)).toString(16) +
       ('0000000' + (levelCodes.length / 4 + 1).toString(16)).slice(-8) +
@@ -415,7 +432,7 @@ function getFastCode() {
       '000000053CA0817F388000009085010C880500FF98050100988500FF38800001988501016000000000000000'
 
    codes = codes.toUpperCase()
-   
+
    codes += game.notext[document.getElementById("route_notext").value] +
       game.nofmvs[document.getElementById("route_nofmvs").value];
 
