@@ -1,126 +1,132 @@
 <!DOCTYPE HTML>
 <html lang="en">
-   <head>
-      <meta http-equiv="content-type" content="text/html; charset=utf-8">
-      <meta name="description" content="Generates cheatfiles for Super Mario Sunshine speedrun practice.">
-      <meta name="viewport" content="width=480px, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <link rel="stylesheet" href="style/style.css">
-      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-      <title>Super Mario Sunshine Practice Code Generator</title>
-   </head>
-   <body onload="updateChangelog()">
-      <div id="mainContainer">
-         <input type="checkbox" id="usefastcode" style="display:none" autocomplete="off" />
-         <div id="left" class="section">
-            <div id="generalsettings">
-               <table><tbody>
-                  <tr>
-                     <td nowrap>
-                        Game Version:
-                     </td>
-                     <td id="ph_gameversion" style="width:100%">
-                        <select id="gameversion" onchange="updateCodelist()" autocomplete="off" style="visibility:hidden">
-                           <option selected disabled>Choose Version</option>
-                           <option value="GMSE01">GMSE01 (NTSC-U)</option>
-                           <option value="GMSP01">GMSP01 (PAL)</option>
-                           <option value="GMSJ01">GMSJ01 (NTSC-J 1.0)</option>
-                           <option value="GMSJ0A">GMSJ01 (NTSC-J 1.1/A)</option>
-                        </select>
-                     </td>
-                  </tr>
-                  <tr class="initialhidden">
-                     <td nowrap>
-                        Stage Loader:
-                     </td>
-                     <td style="width:100%">
-                        <select id="stageloader" onmouseover="updateUIDescription(this)" onchange="document.getElementById('usefastcode').checked = (this.value === 'yes');" style="width:100%" autocomplete="off">
-                           <option value="yes">Yes</option>
-                           <option selected value="no">No</option>
-                        </select>
-                     </td>
-                  </tr>
-                  <tr class="initialhidden">
-                     <td nowrap>
-                        File Format:
-                     </td>
-                     <td style="width:100%">
-                        <select id="downloadformat" onmouseover="updateUIDescription(this)" style="width:100%">
-                           <option selected value="gct">GCT</option>
-                           <option value="ini">Dolphin INI</option>
-                           <option value="gcm">Cheat Manager TXT</option>
-                        </select>
-                     </td>
-                  </tr>
-                  <tr class="initialhidden">
-                     <td></td>
-                     <td>
-                        <button onclick="downloadCodes()" id="downloadbutton">Download</button>
-                     </td>
-                  </tr>
-               </tbody></table>
-            </div>
-            <div id="codes" class="framed initialhidden">
-               
-               <ul id="checklist"></ul>
+
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8">
+   <meta name="description" content="Generates cheatfiles for Super Mario Sunshine speedrun practice.">
+   <meta name="viewport" content="width=480px, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <link rel="stylesheet" href="/style/style.css">
+   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+   <title>Super Mario Sunshine Practice Code Generator</title>
+</head>
+
+<body onload="updateChangelog()">
+   <main>
+      <div id="ml">
+         <div id="cl" class="section sl">
+            <div>
+               <div class="config row">
+                  <div>
+                     <label for="sel-gamever">Game Version:</label>
+                  </div>
+                  <div>
+                     <select id="sel-gamever" onchange="updateCodelist()" autocomplete="off">
+                        <option selected disabled>Choose Version</option>
+                        <option value="GMSE01">GMSE01 (NTSC-U)</option>
+                        <option value="GMSP01">GMSP01 (PAL)</option>
+                        <option value="GMSJ01">GMSJ01 (NTSC-J 1.0)</option>
+                        <option value="GMSJ0A">GMSJ01 (NTSC-J 1.1/A)</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="config row hidden">
+                  <div>
+                     <label for="sel-stageloader">Stage Loader:</label>
+                  </div>
+                  <div>
+                     <select id="sel-stageloader"
+                        data-description="&lt;h2&gt;Stage Loader&lt;/h2&gt;&lt;p&gt;Select yes if you want to use a custom stage loader, which automatically loads the levels you choose, similiar to &#39;Fast Any%&#39;.&lt;/p&gt;"
+                        onmouseover="updateUIDescription(this)" onchange="toggleFastCode()" autocomplete="off">
+                        <option value="yes">Yes</option>
+                        <option selected value="no">No</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="config row hidden">
+                  <div>
+                     <label for="sel-format">File Format:</label>
+                  </div>
+                  <div>
+                     <select id="sel-format"
+                        data-description="&lt;h2&gt;File Format&lt;/h2&gt;&lt;p&gt;You can choose between 3 file formats:&lt;/p&gt;&lt;h4&gt;GCT&lt;/h4&gt;&lt;p&gt;Download a GCT file for use with Nintendont&lt;/p&gt;&lt;h4&gt;Dolphin INI&lt;/h4&gt;&lt;p&gt;Download a textfile containing the formatted codes for use with Dolphin. Copy the contents of the file on top of your games .ini file.&lt;/p&gt;&lt;p&gt;You can open the .ini file by right clicking the game in Dolphin. In the context menu select &#39;Properties&#39; and then &#39;Edit configuration&#39;.&lt;/p&gt;&lt;h4&gt;Cheat Manager TXT&lt;/h4&gt;&lt;p&gt;Download the cheats in a textfile formatted for use with the &lt;a target=&quot;_blank&quot; href=&quot;http://wiibrew.org/wiki/CheatManager&quot;&gt;Gecko Cheat Manager&lt;/a&gt;. Place the txt file in SD:/txtcodes/.&lt;/p&gt;&lt;p&gt;A zip archive containing pregenerated txt files with all available codes on this site can be downloaded &lt;a target=&quot;_blank&quot; href=&quot;files/GCMCodes.zip&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;"
+                        onmouseover="updateUIDescription(this)" autocomplete="off">
+                        <option selected value="gct">GCT</option>
+                        <option value="ini">Dolphin INI</option>
+                        <option value="gcm">Cheat Manager TXT</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="config row hidden">
+                  <div></div>
+                  <div>
+                     <button onclick="downloadCodes()" id="downloadbutton">Download</button>
+                  </div>
+               </div>
+               <ul id="codelist" class="framed hidden">
+               </ul>
             </div>
          </div>
-         <div id="center" class="section initialhidden">
-            <div class="framed">
+         <div id="cc" class="section sc hidden">
+            <div id="stageloader" class="framed">
                <h2>Stage Loader</h2>
-               <div>
-                  <table style="width:100%"><tbody>
-                     <tr>
-                        <td nowrap>
-                           <label for="route_notext">Remove Dialogue:</label>
-                        </td>
-                        <td style="width:100%">
-                           <select id="route_notext" style="width:100%" onmouseover="updateUIDescription(this)">
-                              <option value="yes">Always</option>
-                              <option selected value="pv5">Not in Pianta 5</option>
-                              <option value="no">Don't include</option>
-                           </select>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td nowrap>
-                           <label for="route_nofmvs">Skippable Cutscenes:</label>
-                        </td>
-                        <td style="width:100%">
-                           <select id="route_nofmvs" style="width:100%" onmouseover="updateUIDescription(this)">
-                              <option value="yes">Always</option>
-                              <option selected value="pp">Not in Pinna</option>
-                              <option value="no">Don't include</option>
-                           </select>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td nowrap>
-                          <label for="route_order">Level Order:</label>
-                        </td>
-                        <td style="width:100%">
-                           <select id="route_order" style="width:100%" onmouseover="updateUIDescription(this)">
-                              <option selected value="list">As specified</option>
-                              <option value="shuffle">Random, no duplicates</option>
-                              <option value="random">Fully random</option>
-                           </select>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td nowrap>
-                          <label for="route_ending">After the last level:</label>
-                        </td>
-                        <td style="width:100%">
-                           <select id="route_ending" style="width:100%" onmouseover="updateUIDescription(this)">
-                              <option selected value="0F00">Return to the title screen</option>
-                              <option value="0109">Load the flooded plaza</option>
-                              <option value="0102">Load the post-Corona plaza</option>
-                              <option value="3400">Load Corona Mountain</option>
-                              <option value="3C00">Load the Bowser fight</option>
-                           </select>
-                        </td>
-                     </tr>
-                     </tbody></table>
+               <div class="config row">
+                  <div>
+                     <label for="route_notext">Remove Dialogue:</label>
+                  </div>
+                  <div>
+                     <select id="route_notext"
+                        data-description="&lt;h2&gt;Remove Dialogue&lt;/h2&gt;&lt;p&gt;Replaces all Dialogue with &quot;!!!&quot;. &#39;Always&#39; and &#39;Not in Pianta 5&#39; will override the dialogue skip from the DPad Functions.&lt;/p&gt;"
+                        onmouseover="updateUIDescription(this)">
+                        <option value="yes">Always</option>
+                        <option selected value="pv5">Not in Pianta 5</option>
+                        <option value="no">Don't include</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="config row">
+                  <div>
+                     <label for="route_nofmvs">Skippable FMVs:</label>
+                  </div>
+                  <div>
+                     <select id="route_nofmvs"
+                        data-description="&lt;h2&gt;Skippable Cutscenes&lt;/h2&gt;&lt;p&gt;Makes FMVs skippable. &#39;Always&#39; has the same effect as the &#39;FMV Skips&#39; code. Also, having &#39;FMV Skips&#39; enabled will override &#39;Not in Pinna&#39; - so don&#39;t use both simultaneously.&lt;/p&gt;"
+                        onmouseover="updateUIDescription(this)">
+                        <option value="yes">Always</option>
+                        <option selected value="pp">Not in Pinna</option>
+                        <option value="no">Don't include</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="config row">
+                  <div>
+                     <label for="route_order">Level Order:</label>
+                  </div>
+                  <div>
+                     <select id="route_order"
+                        data-description="&lt;h2&gt;Level Order&lt;/h2&gt;&lt;p&gt;The order in which levels are loaded:&lt;/p&gt;&lt;h4&gt;As specified&lt;/h4&gt;&lt;p&gt;The code loads levels in the order of the list.&lt;/p&gt;&lt;h4&gt;Random, no duplicates&lt;/h4&gt;&lt;p&gt;The code picks levels at random, excluding levels that you’ve finished already.&lt;/p&gt;&lt;h4&gt;Fully random&lt;/h4&gt;&lt;p&gt;The code picks levels at random, even levels that you’ve finished already.&lt;/p&gt;"
+                        onmouseover="updateUIDescription(this)">
+                        <option selected value="list">As specified</option>
+                        <option value="shuffle">Random, no duplicates</option>
+                        <option value="random">Fully random</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="config row">
+                  <div>
+                     <label for="route_ending">Post Game:</label>
+                  </div>
+                  <div>
+                     <select id="route_ending"
+                        data-description="&lt;h2&gt;Route Ending&lt;/h2&gt;&lt;p&gt;What to do after you complete the final level on the list. This has no effect if the level order is set to Fully random.&lt;/p&gt;"
+                        onmouseover="updateUIDescription(this)">
+                        <option selected value="0F00">Return to the title screen</option>
+                        <option value="0109">Load the flooded plaza</option>
+                        <option value="0102">Load the post-Corona plaza</option>
+                        <option value="3400">Load Corona Mountain</option>
+                        <option value="3C00">Load the Bowser fight</option>
+                     </select>
+                  </div>
                </div>
                <div>
                   <ul id="route_levels">
@@ -257,69 +263,119 @@
                      </li>
                   </ul>
                </div>
-               <div style="text-align:center">
-                  <button id="route_clear" type="button">Clear list</button>
-                  <select id="route_presets">
-                     <option value="" selected>Load a preset…</option>
-                     <optgroup label="Full-game categories, minimal plaza">
-                        <option value="020002020203020404000406080008010802080308040805080605000501050205030502050603000301030203030304030503060205020606000601060206030604060506060900090109020903090409050906;3400">Fast Any% usual route</option>
-                        <option value="020002020203020404000406080008010802080308040805080605000501050205030502050602050206060006010602060306040605060609000901090209030904090509060300030103020303030403050306;3400">Fast Any% Ricco late</option>
-                        <option value="020002020203020408000801080208030804080508060500050105020503050405050506030003010302030303040305030602050206060006010602060306040605060609000901090209030904090509060400040104020403040404050406;3400">Fast Any% No Major Skips</option>
-                        <option value="02000201020202030800080108020803080408050806080705000501050205030504050505060507030003010302030303040305030603070204020502060207060006010602060306040605060606070900090109020903090409050906090704000401040204030404040304050406;3400">Fast 58 Shines / All Episodes</option>
-                        <option value="02000201020202020800080108020803080408040804080508060807080705000501050105020503050405040505050505060507030003010301030203030303030403050305030603070203020402050205020502060207060006010601060206030603060306040605060606070900090109010901090209030904090509050906090704000400040004010402040304050404040304020406;3400">Fast 79 Shines / All Level Shines</option>
-                        <option value="020002020203020404000406080008010802080308040805080605000501050105020503050405050506030003010302030303040305030602050206060006010602060306040605060609000901090209030904090509060102160001021400010201021D00010201020102010201020102010204060405040404030402040204010400040015000207020502070205020003020307030303010507050705051700060706030603060109070905090109010807080708040804;3400">Fast 96 Shines / All Shines, No Blues</option>
-                     </optgroup>
-                     <optgroup label="Full-game categories">
-                        <option value="00000100020002020105020302040105040004060106080008010802080308040805080601070108050005010502050305020506010803000301030203030304030503060108020502060108060006010602060306040605060601080900090109020903090409050906;0109">Any% usual route</option>
-                        <option value="00000100020002020105020302040105080008010802080308040805080601070108050005010502050305040505050601080300030103020303030403050306010802050206010806000601060206030604060506060108090009010902090309040905090601080400040104020403040404050406;0109">Any% No Major Skips</option>
-                        <option value="0000010002000201010502020203010508000801080208030804080508060807010701080500050105020503050405050506050701080300030103020303030403050306030701080204020502060207010806000601060206030604060506060607010809000901090209030904090509060907010804000401040204030404040304050406;0109">58 Shines / All Episodes</option>
-                        <option value="0000010002000201010502020202010508000801080208030804080408040805080608070807010701080500050105010502050305040504050505050506050701080300030103010302030303030304030503050306030701080203020402050205020502060207010806000601060106020603060306030604060506060607010809000901090109010902090309040905090509060907010804000400040004010402040304050404040304020406;0109">79 Shines / All Level Shines</option>
-                        <option value="0000010002000202010502030204010504000406010608000801080208030804080508060107010805000501050105020503050405050506010803000301030203030304030503060108020502060108010806000601060206030604060506060108090009010902090309040905090601FF0102010201020102010201020102010201020102010201020102010204060405040404030402040204010400040001020102020702050207020502000102030203070303030101020507050705050102010206070603060306010102090709050901090101020807080708040804;0102">96 Shines / All Shines, No Blues</option>
-                        <option value="0000010002000202010502030204010504000406010608000801080208030804080508060107010805000501050105020503050405050506010803000301030203030304030503060108020502060108010806000601060206030604060506060108090009010902090309040905090601FF01020102010201020102010201020102010201020102010201020404040304020405040004000401040204050102010202000207020702070207010209010905090509070102080408040807080701020505050705070102010206010603060606070102010203010303030703070102;0102">120 Shines / All Shines, All Blues</option>
-                     </optgroup>
-                     <optgroup label="Individual Worlds">
-                        <option value="020002020203020402050206">Bianco Hills</option>
-                        <option value="0300030103020303030403050306">Ricco Harbor</option>
-                        <option value="0400040104020403040404050406">Gelato Beach</option>
-                        <option value="050005010502050305020506">Pinna Park</option>
-                        <option value="0600060106020603060406050606">Sirena Beach</option>
-                        <option value="0900090109020903090409050906">Noki Bay</option>
-                        <option value="0800080108020803080408050806">Pianta Village</option>
-                     </optgroup>
-                     <optgroup label="All Shines IWs">
-                        <option value="02000201020202020203020402050205020502060207">Bianco Hills</option>
-                        <option value="03000301030103020303030303040305030503060307">Ricco Harbor</option>
-                        <option value="04000406040404060401040504000400040204020403">Gelato Beach</option>
-                        <option value="05000501050105020503050405040505050505060507">Pinna Park</option>
-                        <option value="06000601060106020603060306030604060506060607">Sirena Beach</option>
-                        <option value="09000901090109020903090409050905090609060907">Noki Bay</option>
-                        <option value="08000801080208030804080408040805080608070807">Pianta Village</option>
-                     </optgroup>
-                  </select>
-               </div>
-            </div>
-         </div>
-         <div id="right" class="section">
-            <div id="descriptionbox" class="framed">
-               <h1>Super Mario Sunshine Practice Code Generator v2</h1>
-               <p style="margin-top:0"><i id="lastupdate"></i></p>
-               <br />
-               <p>This is a cheatfile generator for Super Mario Sunshine speedrun practice. A guide on how to use the generator and practice codes on your Wii can be found here: <a target="_blank" href="guide.html">Guide</a>. Visit the <a target="_blank" href="guide.html#3">troubleshooting section</a> if you encounter any issues.</p>
-               <br />
-               <h4>Changelog:</h4>
-               <div id="changelog"></div>
-               <p style="margin:0;text-align:right"><i>Made by <a target="_blank" href="https://twitter.com/psychonauter">Psychonauter</a>, <a target="_blank" href="https://twitter.com/qbe_root">Noki Doki</a> &amp; <a target="_blank" href="https://twitter.com/srlmilk">Milk</a></i></p>
-               <hr />
-               <div id="smscommunity">
-                  <a target="_blank" href="https://discord.gg/0SoktBcRDw8B1NJB" title="Sunshine Community Discord"><img src="img/discord_bubble.png" alt="Sunshine Community Discord" /></a>
-                  <a target="_blank" href="https://speedrun.com/sms" title="Sunshine Leaderboards"><img src="img/src_bubble.png" alt="Sunshine Leaderboards" /></a>
-                  <h4 style="display:inline;vertical-align:middle;margin:0px 10px">Sunshine Community</h4>
-                  <a target="_blank" href="https://twitter.com/SMSCommunity" title="Sunshine Community Twitter"><img src="img/twitter_bubble.png" alt="Sunshine Community Twitter" /></a>
-                  <a target="_blank" href="https://www.twitch.tv/SunshineCommunity" title="Sunshine Community Twitch"><img src="img/twitch_bubble.png" alt="Sunshine Community Twitch" /></a>
+               <div class="config row">
+                  <div>
+                     <button id="route_clear" type="button">Clear List</button>
+                  </div>
+                  <div>
+                     <select id="route_presets">
+                        <option value="" selected>Load a preset…</option>
+                        <optgroup label="Full-game categories, minimal plaza">
+                           <option
+                              value="020002020203020404000406080008010802080308040805080605000501050205030502050603000301030203030304030503060205020606000601060206030604060506060900090109020903090409050906;3400">
+                              Fast Any% usual route</option>
+                           <option
+                              value="020002020203020404000406080008010802080308040805080605000501050205030502050602050206060006010602060306040605060609000901090209030904090509060300030103020303030403050306;3400">
+                              Fast Any% Ricco late</option>
+                           <option
+                              value="020002020203020408000801080208030804080508060500050105020503050405050506030003010302030303040305030602050206060006010602060306040605060609000901090209030904090509060400040104020403040404050406;3400">
+                              Fast Any% No Major Skips</option>
+                           <option
+                              value="02000201020202030800080108020803080408050806080705000501050205030504050505060507030003010302030303040305030603070204020502060207060006010602060306040605060606070900090109020903090409050906090704000401040204030404040304050406;3400">
+                              Fast 58 Shines / All Episodes</option>
+                           <option
+                              value="02000201020202020800080108020803080408040804080508060807080705000501050105020503050405040505050505060507030003010301030203030303030403050305030603070203020402050205020502060207060006010601060206030603060306040605060606070900090109010901090209030904090509050906090704000400040004010402040304050404040304020406;3400">
+                              Fast 79 Shines / All Level Shines</option>
+                           <option
+                              value="020002020203020404000406080008010802080308040805080605000501050105020503050405050506030003010302030303040305030602050206060006010602060306040605060609000901090209030904090509060102160001021400010201021D00010201020102010201020102010204060405040404030402040204010400040015000207020502070205020003020307030303010507050705051700060706030603060109070905090109010807080708040804;3400">
+                              Fast 96 Shines / All Shines, No Blues</option>
+                        </optgroup>
+                        <optgroup label="Full-game categories">
+                           <option
+                              value="00000100020002020105020302040105040004060106080008010802080308040805080601070108050005010502050305020506010803000301030203030304030503060108020502060108060006010602060306040605060601080900090109020903090409050906;0109">
+                              Any% usual route</option>
+                           <option
+                              value="00000100020002020105020302040105080008010802080308040805080601070108050005010502050305040505050601080300030103020303030403050306010802050206010806000601060206030604060506060108090009010902090309040905090601080400040104020403040404050406;0109">
+                              Any% No Major Skips</option>
+                           <option
+                              value="0000010002000201010502020203010508000801080208030804080508060807010701080500050105020503050405050506050701080300030103020303030403050306030701080204020502060207010806000601060206030604060506060607010809000901090209030904090509060907010804000401040204030404040304050406;0109">
+                              58 Shines / All Episodes</option>
+                           <option
+                              value="0000010002000201010502020202010508000801080208030804080408040805080608070807010701080500050105010502050305040504050505050506050701080300030103010302030303030304030503050306030701080203020402050205020502060207010806000601060106020603060306030604060506060607010809000901090109010902090309040905090509060907010804000400040004010402040304050404040304020406;0109">
+                              79 Shines / All Level Shines</option>
+                           <option
+                              value="0000010002000202010502030204010504000406010608000801080208030804080508060107010805000501050105020503050405050506010803000301030203030304030503060108020502060108010806000601060206030604060506060108090009010902090309040905090601FF0102010201020102010201020102010201020102010201020102010204060405040404030402040204010400040001020102020702050207020502000102030203070303030101020507050705050102010206070603060306010102090709050901090101020807080708040804;0102">
+                              96 Shines / All Shines, No Blues</option>
+                           <option
+                              value="0000010002000202010502030204010504000406010608000801080208030804080508060107010805000501050105020503050405050506010803000301030203030304030503060108020502060108010806000601060206030604060506060108090009010902090309040905090601FF01020102010201020102010201020102010201020102010201020404040304020405040004000401040204050102010202000207020702070207010209010905090509070102080408040807080701020505050705070102010206010603060606070102010203010303030703070102;0102">
+                              120 Shines / All Shines, All Blues</option>
+                        </optgroup>
+                        <optgroup label="Individual Worlds">
+                           <option value="020002020203020402050206">Bianco Hills</option>
+                           <option value="0300030103020303030403050306">Ricco Harbor</option>
+                           <option value="0400040104020403040404050406">Gelato Beach</option>
+                           <option value="050005010502050305020506">Pinna Park</option>
+                           <option value="0600060106020603060406050606">Sirena Beach</option>
+                           <option value="0900090109020903090409050906">Noki Bay</option>
+                           <option value="0800080108020803080408050806">Pianta Village</option>
+                        </optgroup>
+                        <optgroup label="All Shines IWs">
+                           <option value="02000201020202020203020402050205020502060207">Bianco Hills</option>
+                           <option value="03000301030103020303030303040305030503060307">Ricco Harbor</option>
+                           <option value="04000406040404060401040504000400040204020403">Gelato Beach</option>
+                           <option value="05000501050105020503050405040505050505060507">Pinna Park</option>
+                           <option value="06000601060106020603060306030604060506060607">Sirena Beach</option>
+                           <option value="09000901090109020903090409050905090609060907">Noki Bay</option>
+                           <option value="08000801080208030804080408040805080608070807">Pianta Village</option>
+                        </optgroup>
+                     </select>
+                  </div>
                </div>
             </div>
          </div>
       </div>
-      <script language="javascript" src="gctGenerator.js"></script>
-   </body>
+      <div id="mr">
+         <div id="cr" class="section sr">
+            <div id="descriptionbox" class="framed">
+               <h1>SMS Practice File Generator</h1>
+               <p style="margin-top:0"><i id="lastupdate"></i></p>
+               <br />
+               <p>This is a cheatfile generator for Super Mario Sunshine speedrun practice. A guide on how to use the
+                  generator and practice codes on your Wii can be found here: <a target="_blank"
+                     href="guide.html">Guide</a>. Visit the <a target="_blank" href="guide.html#3">troubleshooting
+                     section</a> if you encounter any issues.
+               </p>
+               <br />
+               <h4>Changelog:</h4>
+               <div id="changelog"></div>
+               <p style="margin:0;text-align:right">
+                  <i>Made by
+                     <a target="_blank" href="https://twitter.com/psychonauter">Psychonauter</a>,
+                     <a target="_blank" href="https://twitter.com/qbe_root">Noki Doki</a> &amp;
+                     <a target="_blank" href="https://twitter.com/srlmilk">Milk</a>
+                  </i>
+               </p>
+               <hr />
+               <div id="smscommunity">
+                  <a target="_blank" href="https://discord.gg/0SoktBcRDw8B1NJB" title="Sunshine Community Discord">
+                     <img src="img/discord_bubble.png" alt="Sunshine Community Discord" />
+                  </a>
+                  <a target="_blank" href="https://speedrun.com/sms" title="Sunshine Leaderboards">
+                     <img src="img/src_bubble.png" alt="Sunshine Leaderboards" />
+                  </a>
+                  <h4 style="display:inline;vertical-align:middle;margin:0px 10px">Sunshine Community</h4>
+                  <a target="_blank" href="https://twitter.com/SMSCommunity" title="Sunshine Community Twitter">
+                     <img src="img/twitter_bubble.png" alt="Sunshine Community Twitter" />
+                  </a>
+                  <a target="_blank" href="https://www.twitch.tv/SunshineCommunity" title="Sunshine Community Twitch">
+                     <img src="img/twitch_bubble.png" alt="Sunshine Community Twitch" />
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </main>
+   <script language="javascript" src="gctGenerator.js"></script>
+</body>
+
 </html>
