@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Apr 19, 2019</date>
+      <change>
+         <head>Fixed 'Level Select'</head>
+         <paragraph>The shortcut for any episode 1 would reset the game and all shortcuts in the Secrets category would load Bianco 3.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Apr 17, 2019</date>
       <change>
          <head>Updated 'Level Select'</head>
