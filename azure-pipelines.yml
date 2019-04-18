@@ -1,0 +1,53 @@
+trigger:
+  branches:
+    include:
+      - azure-pipelines
+
+pool:
+  vmImage: 'win1803'
+
+steps:
+- powershell:
+    $ErrorActionPreference = "Stop"
+    New-Item -ItemType directory -Path "./gcmbuild"
+    Copy-Item "./codes/GMSE01.xml" "./gcmbuild/GMSE01.xml"
+    Copy-Item "./codes/GMSE01.xml" "./gcmbuild/GMSP01.xml"
+    Copy-Item "./codes/GMSE01.xml" "./gcmbuild/GMSJ01.xml"
+    Copy-Item "./codes/GMSE01.xml" "./gcmbuild/GMSJ0A.xml"
+    
+    cd "./gcmbuild"
+    
+    function XmlToGcm($source, $destination, $versionname) {
+    [xml]$xml = Get-Content $source
+
+    Add-Content $destination $versionname
+    Add-Content $destination "Super Mario Sunshine" -NoNewline
+
+    foreach($code in $xml.codes.code) {
+        Add-Content $destination  ""
+        Add-Content $destination  ""
+        Add-Content $destination  "$($code.title.'#text') ($($code.date)) [$($code.author)]"
+        $codeSource = $code.source -replace " +$", "" -replace "^? [^a-zA-Z0-9]", ""
+        Add-Content $destination  $codeSource.Trim() -NoNewline
+    }
+    }
+
+    XmlToGcm "GMSE01.xml" "GMSE01.txt" "GMSE01"
+    XmlToGcm "GMSP01.xml" "GMSP01.txt" "GMSP01"
+    XmlToGcm "GMSJ01.xml" "GMSJ01.txt" "GMSJ01"
+    XmlToGcm "GMSJ0A.xml" "GMSJ01 (A).txt" "GMSJ01"
+
+    Compress-Archive "./*.txt" "../files/GCMCodes.zip" -Force
+    cd ..
+    Remove-Item "./gcmbuild" -Recurse
+  displayName: 'Create GCM Archive'
+- powershell:
+    git config --local user.name "Azure Pipelines"
+    git config --local user.email "azuredevops@microsoft.com"
+    git add ./files/GCMCodes.zip
+    git commit -m "Update GCM Archive [skip ci]"
+  displayName: 'Commit Changes'
+- powershell:
+    git remote set-url --push origin $(GitHub_PAT)
+    git push origin HEAD:azure-pipelines
+  displayName: 'Push Changes'
