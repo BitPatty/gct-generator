@@ -63,7 +63,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: '    $ErrorActionPreference = "Stop";
-    git remote set-url --push origin $(GitHub_PAT);
+    git remote set-url origin $(GitHub_PAT);
     git push origin HEAD:azure-pipelines;'
     failOnStderr: true
     workingDirectory: '.'
