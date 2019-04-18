@@ -11,7 +11,7 @@ steps:
   displayName: 'Create GCM Archive'
   inputs:
     targetType: 'inline'
-    script: '    $ErrorActionPreference = "Stop";
+    script: '$ErrorActionPreference = "Stop";
     New-Item -ItemType directory -Path "./gcmbuild";
     Copy-Item "./codes/GMSE01.xml" "./gcmbuild/GMSE01.xml";
     Copy-Item "./codes/GMSE01.xml" "./gcmbuild/GMSP01.xml";
@@ -49,7 +49,7 @@ steps:
   displayName: 'Commit Changes'
   inputs:
     targetType: 'inline'
-    script: '    $ErrorActionPreference = "Stop";
+    script: '$ErrorActionPreference = "Stop";
     git config --local user.name "Azure Pipelines";
     git config --local user.email "azuredevops@microsoft.com";
     git add ./files/GCMCodes.zip;
@@ -62,8 +62,7 @@ steps:
     GitHub_PAT: $(GitHub_PAT)
   inputs:
     targetType: 'inline'
-    script: '    $ErrorActionPreference = "Stop";
-    git remote set-url origin $(GitHub_PAT);
-    git push origin HEAD:azure-pipelines;'
+    script: '$ErrorActionPreference = "Stop";
+    git push -q origin $(GitHub_PAT) azure-pipelines;'
     failOnStderr: true
     workingDirectory: '.'
