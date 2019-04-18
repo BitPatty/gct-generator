@@ -1,7 +1,7 @@
 trigger:
   branches:
     include:
-      - azure-pipelines
+      - master
 
 pool:
   vmImage: 'win1803'
@@ -50,8 +50,8 @@ steps:
   inputs:
     targetType: 'inline'
     script: '$ErrorActionPreference = "Stop";
-    git config --local user.name "Azure Pipelines";
-    git config --local user.email "azuredevops@microsoft.com";
+    git config --local user.name "Matteias Collet";
+    git config --local user.email "matteias.collet@bluewin.ch";
     git add ./files/GCMCodes.zip;
     git commit -m "Update GCM Archive [skip ci]";'
     failOnStderr: true
@@ -63,6 +63,6 @@ steps:
   inputs:
     targetType: 'inline'
     script: '$ErrorActionPreference = "Stop";
-    git push -q $(GitHub_PAT) HEAD:azure-pipelines;'
+    git push -q $(GitHub_PAT) HEAD:master;'
     failOnStderr: true
     workingDirectory: '.'
