@@ -63,6 +63,6 @@ steps:
   inputs:
     targetType: 'inline'
     script: '$ErrorActionPreference = "Stop";
-    git push -q origin $(GitHub_PAT) azure-pipelines;'
+    git push -q $(GitHub_PAT) HEAD:azure-pipelines;'
     failOnStderr: true
     workingDirectory: '.'
