@@ -7,8 +7,11 @@ pool:
   vmImage: 'win1803'
 
 steps:
-- powershell:
-    $ErrorActionPreference = "Stop"
+- task: PowerShell@2
+  displayName: 'Create GCM Archive'
+  inputs:
+    targetType: 'inline'
+    script: '    $ErrorActionPreference = "Stop"
     New-Item -ItemType directory -Path "./gcmbuild"
     Copy-Item "./codes/GMSE01.xml" "./gcmbuild/GMSE01.xml"
     Copy-Item "./codes/GMSE01.xml" "./gcmbuild/GMSP01.xml"
@@ -26,7 +29,7 @@ steps:
     foreach($code in $xml.codes.code) {
         Add-Content $destination  ""
         Add-Content $destination  ""
-        Add-Content $destination  "$($code.title.'#text') ($($code.date)) [$($code.author)]"
+        Add-Content $destination  "$($code.title.''#text'') ($($code.date)) [$($code.author)]"
         $codeSource = $code.source -replace " +$", "" -replace "^? [^a-zA-Z0-9]", ""
         Add-Content $destination  $codeSource.Trim() -NoNewline
     }
@@ -39,15 +42,26 @@ steps:
 
     Compress-Archive "./*.txt" "../files/GCMCodes.zip" -Force
     cd ..
-    Remove-Item "./gcmbuild" -Recurse
-  displayName: 'Create GCM Archive'
-- powershell:
+    Remove-Item "./gcmbuild" -Recurse'
+    failOnStderr: true
+    workingDirectory: '.' 
+- task: PowerShell@2
+  displayName: 'Commit Changes'
+  inputs:
+    targetType: 'inline'
+    script: '    $ErrorActionPreference = "Stop"
     git config --local user.name "Azure Pipelines"
     git config --local user.email "azuredevops@microsoft.com"
     git add ./files/GCMCodes.zip
-    git commit -m "Update GCM Archive [skip ci]"
-  displayName: 'Commit Changes'
-- powershell:
-    git remote set-url --push origin $(GitHub_PAT)
-    git push origin HEAD:azure-pipelines
+    git commit -m "Update GCM Archive [skip ci]"'
+    failOnStderr: true
+    workingDirectory: '.'
+- task: PowerShell@2
   displayName: 'Push Changes'
+  inputs:
+    targetType: 'inline'
+    script: '    $ErrorActionPreference = "Stop"
+    git remote set-url --push origin $(GitHub_PAT)
+    git push origin HEAD:azure-pipelines'
+    failOnStderr: true
+    workingDirectory: '.'
