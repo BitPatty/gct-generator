@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Apr 30, 2019</date>
+      <change>
+         <head>Updated 'Level Select'</head>
+         <paragraph>Resetting in Pinna 1 can no longer bring up the park owner's dialogue or the Shine spawn, resetting in Sirena 5 no longer loads Sirena 4, episode names fixed when resetting into the park or hotel.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Apr 19, 2019</date>
       <change>
          <head>Fixed 'Level Select'</head>
