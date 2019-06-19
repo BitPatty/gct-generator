@@ -861,6 +861,21 @@
             252E3266 00000000
         </source>
     </code>
+    <code>
+        <title lang="en">Intro skip</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <date>Jun 19, 2019</date>
+        <description>Removes the logos and cutscene that normally play before the title screen when loading or resetting the game.</description>
+        <source>
+            0428D4C4 48000264
+            0428D9B8 48000014
+            0629E51C 00000014
+            38600F00 38000000
+            B07F000E B01F0010
+            4BFFFE94 00000000
+        </source>
+    </code>
     <!--
     <code>
         <title lang="en"><![CDATA[Original Ingame Timer (Deprecated)]]></title>

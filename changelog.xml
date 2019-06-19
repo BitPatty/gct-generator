@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Jun 19, 2019</date>
+      <change>
+         <head>Added 'Intro skip'</head>
+         <paragraph>Allows to reach the title screen faster upon booting or resetting the game.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Apr 30, 2019</date>
       <change>
          <head>Updated 'Level Select'</head>

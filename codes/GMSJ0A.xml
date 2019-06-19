@@ -666,6 +666,21 @@
             0424E560 60000000
         </source>
     </code>
+    <code>
+        <title lang="en">Intro skip</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <date>Jun 19, 2019</date>
+        <description>Removes the logos and cutscene that normally play before the title screen when loading or resetting the game.</description>
+        <source>
+            04275374 4800027C
+            042757C8 48000014
+            0628643C 00000014
+            38600F00 38000000
+            B07F000E B01F0010
+            4BFFFEB0 00000000
+        </source>
+    </code>
     <!--
     <code>
         <title lang="en">Fade-in Timer</title>
