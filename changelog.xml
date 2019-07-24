@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Jul 24, 2019</date>
+      <change>
+         <head>Fixed 'Shine Get Timer' and 'Shine Touch Timer'</head>
+         <paragraph>The box game timer is no longer affected by the timer codes.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Jun 19, 2019</date>
       <change>
          <head>Added 'Intro skip'</head>

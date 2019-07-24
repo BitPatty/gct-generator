@@ -164,8 +164,8 @@
     <code>
         <title lang="en">Shine Touch Timer</title>
         <author>Psychonauter, Noki Doki</author>
-        <version>2.0</version>
-        <date>Jan 24, 2019</date>
+        <version>2.1</version>
+        <date>Jul 24, 2019</date>
         <description><![CDATA[Adds the ingame timer to every level, starting on the last black frame before you gain control of Mario and ending when you touch a Shine.<br /><br /><b><font color ="#0046da">Requires the Level Select code, Fast Any% or Stage Loader to be active.</font></b>]]></description>
         <source>
             C20EC10C 0000000F
@@ -200,36 +200,30 @@
             9A0F0000 906F0004
             908F0008 909F002C
             39E00000 00000000
-            C220A5A0 00000012
+            C220A5A0 00000013
             7C6F1B78 7FB0EB78
             3C60817F 60630100
             88830001 2C040001
-            40A20060 38800000
+            40A20064 38800000
             98830001 3C60803E
             60636010 A0630002
-            2C030805 41820044
-            2C030605 4182003C
-            2C031E00 41820034
+            2C030805 41820048
+            2C030605 41820040
+            2C031E00 41820038
             3C608074 60639F00
             3FA0800E 63BD1EE0
             7FA803A6 4E800021
             3C608074 60639F00
             3FA0800E 63BD1D74
-            7FA803A6 4E800021
-            7DE37B78 7E1D8378
-            39E00000 3A000000
-            800100CC 00000000
-            C20E1E54 0000000A
-            3CA0803E 60A56010
-            A0A50002 2C051E00
-            41820034 2C050404
-            4182002C 2C050801
-            41820024 2C050904
-            4182001C 2C050605
-            41820014 2C050805
-            4182000C 38800000
-            38600000 909E00CC
+            39800000 7FA803A6
+            4E800021 7DE37B78
+            7E1D8378 39E00000
+            3A000000 800100CC
             60000000 00000000
+            C2286698 00000003
+            558C0001 4082000C
+            38800000 38600000
+            909E00CC 00000000
             C2232024 00000003
             3C60817F 60630100
             38800101 B0830000
@@ -254,10 +248,10 @@
     </code>
     <code>
         <title lang="en">Shine Get Timer</title>
-        <author>Psychonauter</author>
-        <version>1.6</version>
+        <author>Psychonauter, Noki Doki</author>
+        <version>1.7</version>
         <description><![CDATA[Adds the ingame timer to every level, starting on the last black frame after the loading screen and ending as soon as the 'Shine Get' animation starts (Similiar to the x-cam timer of SM64).<br /><br /><b><font color ="#0046da">Requires the Level Select code, Fast Any% or Stage Loader to be active.</font></b>]]></description>
-        <date>Nov 29, 2017</date>
+        <date>Jul 24, 2019</date>
         <source>
             C23617C4 0000000F
             3CC0817F 60C60100
@@ -300,36 +294,30 @@
             9A0F0000 906F0004
             908F0008 909F002C
             39E00000 00000000
-            C220A5A0 00000012
+            C220A5A0 00000013
             7C6F1B78 7FB0EB78
             3C60817F 60630100
             88830001 2C040001
-            40A20060 38800000
+            40A20064 38800000
             98830001 3C60803E
             60636010 A0630002
-            2C030805 41820044
-            2C030605 4182003C
-            2C031E00 41820034
+            2C030805 41820048
+            2C030605 41820040
+            2C031E00 41820038
             3C608074 60639F00
             3FA0800E 63BD1EE0
             7FA803A6 4E800021
             3C608074 60639F00
             3FA0800E 63BD1D74
-            7FA803A6 4E800021
-            7DE37B78 7E1D8378
-            39E00000 3A000000
-            800100CC 00000000
-            C20E1E54 0000000A
-            3CA0803E 60A56010
-            A0A50002 2C051E00
-            41820034 2C050404
-            4182002C 2C050801
-            41820024 2C050904
-            4182001C 2C050605
-            41820014 2C050805
-            4182000C 38800000
-            38600000 909E00CC
+            39800000 7FA803A6
+            4E800021 7DE37B78
+            7E1D8378 39E00000
+            3A000000 800100CC
             60000000 00000000
+            C2286698 00000003
+            558C0001 4082000C
+            38800000 38600000
+            909E00CC 00000000
             C2232024 00000003
             3C60817F 60630100
             38800101 B0830000
