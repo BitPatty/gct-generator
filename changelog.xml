@@ -10,7 +10,7 @@
    <update>
       <date>Jul 24, 2019</date>
       <change>
-         <head>Fixed 'Shine Get Timer' and 'Shine Touch Timer'</head>
+         <head>Fixed Box Game timer in 'Shine Get Timer' and 'Shine Touch Timer'</head>
          <paragraph>The box game timer is no longer affected by the timer codes.</paragraph>
       </change>
    </update>
