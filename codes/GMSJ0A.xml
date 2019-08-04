@@ -164,8 +164,8 @@
     <code>
         <title lang="en">Shine Touch Timer</title>
         <author>Psychonauter, Noki Doki</author>
-        <version>2.1</version>
-        <date>Jul 24, 2019</date>
+        <version>2.2</version>
+        <date>Aug 4, 2019</date>
         <description><![CDATA[Adds the ingame timer to every level, starting on the last black frame before you gain control of Mario and ending when you touch a Shine.<br /><br /><b><font color ="#0046da">Requires the Level Select code, Fast Any% or Stage Loader to be active.</font></b>]]></description>
         <source>
             C2278848 0000000F
@@ -220,7 +220,7 @@
             7E1D8378 39E00000
             3A000000 800100CC
             60000000 00000000
-            C2286698 00000003
+            C226E65C 00000003
             558C0001 4082000C
             38800000 38600000
             909E00CC 00000000
@@ -249,9 +249,9 @@
     <code>
         <title lang="en">Shine Get Timer</title>
         <author>Psychonauter, Noki Doki</author>
-        <version>1.7</version>
+        <version>1.8</version>
         <description><![CDATA[Adds the ingame timer to every level, starting on the last black frame after the loading screen and ending as soon as the 'Shine Get' animation starts (Similiar to the x-cam timer of SM64).<br /><br /><b><font color ="#0046da">Requires the Level Select code, Fast Any% or Stage Loader to be active.</font></b>]]></description>
-        <date>Jul 24, 2019</date>
+        <date>Aug 4, 2019</date>
         <source>
             C2363E70 0000000F
             3CC0817F 60C60100
@@ -314,7 +314,7 @@
             7E1D8378 39E00000
             3A000000 800100CC
             60000000 00000000
-            C2286698 00000003
+            C226E65C 00000003
             558C0001 4082000C
             38800000 38600000
             909E00CC 00000000
