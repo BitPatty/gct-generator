@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Aug 19, 2019</date>
+      <change>
+         <head>Updated 'Shine Get Timer' and 'Shine Touch Timer'</head>
+         <paragraph>Improved compatibility with ISO hacks.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Aug 4, 2019</date>
       <change>
          <head>Fixed 'Shine Get Timer' and 'Shine Touch Timer'</head>
