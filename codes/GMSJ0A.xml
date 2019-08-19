@@ -669,6 +669,18 @@
             4BFFFEB0 00000000
         </source>
     </code>
+    <code>
+        <title lang="en">Respawn One-Time Shines</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <date>Aug 19, 2019</date>
+        <description>Allows Shines obtained by cleaning graffiti, the Shine Gate or the bells to respawn.</description>
+        <source>
+            041C76A4 48000050
+            021C7D74 00004800
+            021DF600 00004800
+        </source>
+    </code>
     <!--
     <code>
         <title lang="en">Fade-in Timer</title>

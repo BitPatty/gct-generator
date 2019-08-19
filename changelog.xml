@@ -3,6 +3,13 @@
    <update>
       <date>Aug 19, 2019</date>
       <change>
+         <head>Added 'Respawn One-Time Shines'</head>
+         <paragraph>Respawns Shines obtained from the bells, the Shine Gate and Shine graffitis.</paragraph>
+      </change>
+   </update>
+   <update>
+      <date>Aug 19, 2019</date>
+      <change>
          <head>Updated 'Shine Get Timer' and 'Shine Touch Timer'</head>
          <paragraph>Improved compatibility with ISO hacks.</paragraph>
       </change>
