@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Sep 21, 2019</date>
+      <change>
+         <head>Updated 'Level Select'</head>
+         <paragraph>Added a new reset shortcut, Y, which doesn’t reload into the park or the hotel.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Aug 19, 2019</date>
       <change>
          <head>Added 'Respawn One-Time Shines'</head>
