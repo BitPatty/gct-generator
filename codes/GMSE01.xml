@@ -163,8 +163,8 @@
     <code>
         <title lang="en">Shine Touch Timer</title>
         <author>Psychonauter, Noki Doki</author>
-        <version>2.3</version>
-        <date>Aug 19, 2019</date>
+        <version>3.0</version>
+        <date>Oct 11, 2019</date>
         <description><![CDATA[Adds the ingame timer to every level, starting on the last black frame before you gain control of Mario and ending when you touch a Shine.<br /><br /><b><font color ="#0046da">Requires the Level Select code, Fast Any% or Stage Loader to be active.</font></b>]]></description>
         <source>
             C2298BA0 0000000F
@@ -243,6 +243,19 @@
             0456DD2C 00000000
             0456DD30 000000B4
             0414AC18 4800006C
+            077F00C0 00000040
+            38000000 60000001
+            7D0D42E6 7D2C42E6
+            7C6D42E6 7C081800
+            4082FFF0 3D40817F
+            806A0108 7C634810
+            906A0108 806A0104
+            7C634110 906A0104
+            3860001C 4E800020
+            04296E7C 4955924D
+            042998BC 49556805
+            042B5B94 4953A531
+            042B7070 49539051
         </source>
     </code>
     <code>
