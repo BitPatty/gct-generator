@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Oct 11, 2019</date>
+      <change>
+         <head>Updated 'Shine Get Timer' and 'Shine Touch Timer'</head>
+         <paragraph>The timers now pause during load times.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Sep 21, 2019</date>
       <change>
          <head>Updated 'Level Select'</head>
