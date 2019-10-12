@@ -50,8 +50,8 @@ steps:
   inputs:
     targetType: 'inline'
     script: '$ErrorActionPreference = "Stop";
-    git config --local user.name "Matteias Collet";
-    git config --local user.email "matteias.collet@bluewin.ch";
+    git config --local user.name "BotPatty";
+    git config --local user.email "ci@zint.ch";
     git add ./files/GCMCodes.zip;
     git commit -m "Update GCM Archive [skip ci]";'
     failOnStderr: true
