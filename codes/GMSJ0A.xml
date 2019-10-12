@@ -263,7 +263,7 @@
         <title lang="en">Shine Get Timer</title>
         <author>Psychonauter, Noki Doki</author>
         <version>2.0</version>
-        <description><![CDATA[Adds the ingame timer to every level, starting on the last black frame after the loading screen and ending as soon as the 'Shine Get' animation starts (Similiar to the x-cam timer of SM64).<br /><br /><b><font color ="#0046da">Requires the Level Select code, Fast Any% or Stage Loader to be active.</font></b>]]></description>
+        <description><![CDATA[Adds the ingame timer to every level, starting on the last black frame after the loading screen and ending as soon as the 'Shine Get' animation starts (similar to the x-cam timer of SM64). The timer pauses during loading times.<br /><br /><b><font color ="#0046da">Requires the Level Select code, Fast Any% or Stage Loader to be active.</font></b>]]></description>
         <date>Oct 11, 2019</date>
         <source>
             C2363E70 0000000F
