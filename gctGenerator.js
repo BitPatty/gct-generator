@@ -392,6 +392,9 @@ function getFastCode() {
    // Reset timer on secret death
    codes += (0xC2000000 + (game.system + 0x208 & 0x01FFFFFF)).toString(16) + '000000033C60817F38000001980300FF881C00006000000000000000'
 
+   // Reset coin count on loading main world
+   codes += (0xC2000000 + (game.shineGet - 0x674 & 0x01FFFFFF)).toString(16) + '00000005887D00002C030002418000142C0300074182000C2C03000A418000087C0400406000000000000000'
+
    // Overwrite decideNextStage(void) with useful routines
    codes += '0' + (0x06000000 + (game.system + 0x510 & 0x01FFFFFF)).toString(16) +
       ('0000000' + (loadStageLength + 0x5C).toString(16)).slice(-8) +

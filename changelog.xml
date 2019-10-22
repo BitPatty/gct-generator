@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Oct 22, 2019</date>
+      <change>
+         <head>Updated Stage Loader</head>
+         <paragraph>The coin counter is now reset upon entering a main world.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Oct 11, 2019</date>
       <change>
          <head>Updated 'Shine Get Timer'</head>
