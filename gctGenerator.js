@@ -234,7 +234,7 @@ function updateChangelog() {
             }
          } catch (err) {}
 
-         document.getElementById("changelog").innerHTML += recentchanges + "<div class=\"change\"><a target=\"_blank\" href=\"changelog.html\"><i>more ...</i></a></div>";
+         document.getElementById("changelog").innerHTML += recentchanges + "<div class=\"change\"><a target=\"_blank\" href=\"changelog.html\"><i>See the full changelog</i></a></div>";
       };
    }
 
