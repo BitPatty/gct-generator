@@ -787,7 +787,7 @@
     <code>
         <title lang="en">Position/angle/speed display</title>
         <author>Noki Doki</author>
-        <version>1.2</version>
+        <version>1.3</version>
         <date>Oct 28, 2019</date>
         <description>Shows Mario's position, angle and speed at any given time.</description>
         <source>
@@ -858,6 +858,10 @@
             20202020 20202020
             20202020 20202020
             20202000 00000000
+            C20FA0F8 00000003
+            38600000 3D808180
+            906CA39C 807F0040
+            60000000 00000000
         </source>
     </code>
     <code>
