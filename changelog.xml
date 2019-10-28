@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Oct 28, 2019</date>
+      <change>
+         <head>Updated 'Position/angle/speed display'</head>
+         <paragraph>Fixed a buffer overflow which caused a crash upon starting the manta fight, and ported the code to JP 1.1.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Oct 22, 2019</date>
       <change>
          <head>Updated Stage Loader</head>
