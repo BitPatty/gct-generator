@@ -7,7 +7,7 @@
          <paragraph>Fixed a buffer overflow which caused a crash upon starting the manta fight, and ported the code to JP 1.1.</paragraph>
       </change>
       <change>
-         <head>Updated 'Position/angle/speed display'</head>
+         <head> twice</head>
          <paragraph>Fixed a timing issue which caused a crash when reloading the Sirena 8 hotel with Level Select.</paragraph>
       </change>
    </update>
