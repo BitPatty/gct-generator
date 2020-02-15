@@ -53,7 +53,11 @@
       <br />
       <h3 id="2.2"><a href="#2.2">2.2 Copy the file onto your SD card</a></h3>
       <p>Create a "<i>codes</i>" folder in the root of your SD card if there is none and copy the GCT file you just
-         downloaded into that folder.</p>
+         downloaded into that folder. This is what the resulting folder structure should look like on your SD card (the
+         .gct
+         files might be different depending on the version you chose):</p>
+      <br />
+      <p class="center"><img src="img/folderstructure.png" alt="Folder Structure" /></p>
       <br />
       <h3 id="2.3"><a href="#2.3">2.3 Use the codes</a></h3>
       <p>Open your Homebrew channel and from there launch Nintendont. Select SD and then press B on your Gamecube
@@ -79,11 +83,6 @@
       <p><a href="ios58.html">Here's a guide</a> on how to install IOS58 for use with Nintendont.</p>
       <br />
       <h3 id="3.3"><a href="#3.3">3.3 The game launches but the codes don't work</a></h3>
-      <div style="float:right;margin:0px 0px 10px 0px;">
-         <p><i>Sample folder structure:</i></p>
-         <br />
-         <p class="center"><img src="img/folderstructure.png" alt="Folder Structure" /></p>
-      </div>
       <p>This can have multiple reasons:</p>
       <ul>
          <li>You don't have cheats enabled: See <a href="#2.3">2.3</a> for details.</li>
@@ -91,7 +90,8 @@
          <li>Your cheatfile has the wrong name: Make sure the file is named "GMSE01.gct", "GMSJ01.gct" or "GMSP01.gct".
             It won't work with names like "GMSE01 (1).gct". Nintendont is very picky!</li>
          <li>Your cheatfile is at the wrong location: Make sure the file is in the "codes" folder of your SD Card.
-            Again, the folder has to be named "codes" (See sample folder structure on the right). If you have a "games"
+            Again, the folder has to be named "codes" (See sample folder structure in <a href="#2.2">section 2.2</a>).
+            If you have a "games"
             folder, make sure there's no file with the same name in it or its subfolders.</li>
          <li>Your cheatfile is too big: Using too many codes at once can cause Nintendont to disable them since the used
             space in the game is limited. Make sure you don't have two incompatible codes selected when downloading the
@@ -136,14 +136,28 @@
       <h2 id="5"><a href="#5">5. Appendix: Using the codes with Dolphin</a></h2>
       <h3 id="5.1"><a href="#5.1">5.1 Setup</a></h3>
       <p>To use the codes with Dolphin choose "<i>Dolphin INI</i>" as file format instead of "<i>GCT</i>" to download
-         the codes formatted for use with Dolphin. Then right click the game in Dolphin and click on "<i>Properties</i>"
-         and on the bottom left corner of the property window click the "<i>Edit configuration</i>" button. Close the
-         property window. Open the text file you downloaded and copy everything following the "<i>[Gecko]</i>" tag below
-         the same tag in the configuration you just opened. If there is no "<i>[Gecko]</i>" tag (it should be the first
-         tag), create one on top of your configuration file. Save and close the configuration file.</p>
+         the codes formatted for use with Dolphin.</p>
       <br />
+      <h4 id="5.1.1"><a href="#5.1.1">5.1.1 Configuration in Dolphin 5.0 or older</a></h4>
+      <p>
+         Right click the game in Dolphin and click on "<i>Properties</i>"
+         and on the bottom left corner of the property window click the "<i>Edit configuration</i>" button. Open the
+         text file you downloaded and copy everything following the "<i>[Gecko]</i>" tag below
+         the same tag in the configuration you just opened. If there is no "<i>[Gecko]</i>" tag (it should be the first
+         tag), create one on top of your configuration file. Save and close the configuration file.
+      </p>
+      <br />
+      <p class="center"><img src="img/dolphin_gecko_codes_v1.png" alt="Dolphin 5.0 preview" /></p>
+      <h4 id="5.1.2"><a href="#5.1.2">5.1.2 Configuration in Dolphin 5.0-11XXX or newer</a></h4>
+      <p>
+         Right click the game in Dolphin and click on "<i>Properties</i>". IN the "<i>Game Config</i>" section choose
+         the "<i>Editor</i>" tab and paste the contents of the text file you just downloaded into the "<i>User
+            Config</i>" editor.
+      </p>
+      <br />
+      <p class="center"><img src="img/dolphin_gecko_codes_v2.png" alt="Dolphin ^5.0-11XXX preview" /></p>
       <h3 id="5.2"><a href="#5.2">5.2 Using the codes</a></h3>
-      <p>Reopen the property window, select the "<i>Gecko-Codes</i>" tab and check all the codes you want to be active.
+      <p>Select the "<i>Gecko-Codes</i>" tab in the game properties and check all the codes you want to be active.
          Most (but not all codes) will work with Dolphin. However, Dolphin has a code limit which is reached rather
          quickly. So if your game crashes right after it starts, you probably have too many codes active simultaneously.
       </p>
