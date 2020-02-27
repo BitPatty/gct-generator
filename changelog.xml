@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Feb 28, 2020</date>
+      <change>
+         <head>Updated 'Infinite Lives'</head>
+         <paragraph>The code no longer sets the life count to 99, which would persist on save files.</paragraph>
+      </change>
+      <change>
+         <head>Removed 'Persistent FMV skips'</head>
+         <paragraph>Use FMV Skips instead.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Oct 28, 2019</date>
       <change>
          <head>Updated 'Position/angle/speed display'</head>

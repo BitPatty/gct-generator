@@ -57,12 +57,12 @@
     </code>
     <code>
         <title lang="en">Infinite Lives</title>
-        <author>Psychonauter</author>
-        <version>1.0</version>
-        <date>Jan 20, 2017</date>
-        <description>Locks life count at 99.</description>
+        <author>Noki Doki</author>
+        <version>2.0</version>
+        <date>Feb 28, 2020</date>
+        <description>Prevents the life counter from decreasing.</description>
         <source>
-            04575227 00000063
+            040EBD80 60000000
         </source>
     </code>
     <code>
@@ -648,7 +648,7 @@
             0412C9B0 60000000
         </source>
     </code>
-    <code>
+    <!--<code>
         <title lang="en">Persistent FMV Skips</title>
         <author>Noki Doki</author>
         <version>1.0</version>
@@ -661,7 +661,7 @@
             88830074 60840018
             98830074 00000000
         </source>
-    </code>
+    </code>-->
     <code>
         <title lang="en">Any Fruit Opens Yoshi Eggs</title>
         <author>Unknown, Noki Doki</author>
