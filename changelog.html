@@ -1,18 +1,22 @@
 <!DOCTYPE HTML>
 <html lang="en">
-   <head>
-      <meta http-equiv="content-type" content="text/html; charset=utf-8">
-      <meta name="viewport" content="width=480px, initial-scale=1.0">
-      <link rel="stylesheet" href="style/guide.css">
-      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-      <title>Changelog</title>
-   </head>
-   <body onload="updateChangelog()">
-      <div id="guide_content" class="framed">
+
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8">
+   <meta name="viewport" content="width=480px, initial-scale=1.0">
+   <link rel="stylesheet" href="style/guide.css">
+   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+   <title>Changelog</title>
+</head>
+
+<body onload="updateChangelog()">
+   <div id="guide_content" class="framed">
       <h1 style="text-align:center;width:100%;">Full Changelog</h1>
-      </div>   
+   </div>
    <script>
-      function updateChangelog(){var e=new XMLHttpRequest;e.onload=function(){if(200==this.status&&null!=this.responseXML){var t=e.responseXML;t=(t=(new DOMParser).parseFromString(e.responseText,"text/xml")).getElementsByTagName("update");try{for(var n=document.getElementById("guide_content"),a=0;a<t.length;a++){var g=t[a].getElementsByTagName("date")[0].textContent.match(/[a-zA-Z0-9]/g).join("");n.innerHTML+='<h2 id="'+g+'"><a href="#'+g+'">'+t[a].getElementsByTagName("date")[0].textContent+"</a></h2>";for(var r=t[a].getElementsByTagName("change"),o=0;o<r.length;o++){n.innerHTML+="<h3>"+r[o].getElementsByTagName("head")[0].textContent+"</h3>";for(var s=r[o].getElementsByTagName("paragraph"),m=0;m<s.length;m++)n.innerHTML+="<p>"+s[m].textContent+"</p>"}}}catch(e){}}},e.open("GET","changelog.xml"),e.send()}
+      function updateChangelog() { var e = new XMLHttpRequest; e.onload = function () { if (200 == this.status && null != this.responseXML) { var t = e.responseXML; t = (t = (new DOMParser).parseFromString(e.responseText, "text/xml")).getElementsByTagName("update"); try { for (var n = document.getElementById("guide_content"), a = 0; a < t.length; a++) { var g = t[a].getElementsByTagName("date")[0].textContent.match(/[a-zA-Z0-9]/g).join(""); n.innerHTML += '<h2 id="' + g + '"><a href="#' + g + '">' + t[a].getElementsByTagName("date")[0].textContent + "</a></h2>"; for (var r = t[a].getElementsByTagName("change"), o = 0; o < r.length; o++) { n.innerHTML += "<h3>" + r[o].getElementsByTagName("head")[0].textContent + "</h3>"; for (var s = r[o].getElementsByTagName("paragraph"), m = 0; m < s.length; m++)n.innerHTML += "<p>" + s[m].textContent + "</p>" } } } catch (e) { } } }, e.open("GET", "changelog.xml"), e.send() }
    </script>
-   </body>
+</body>
+<script src='/dna.js'></script>
+
 </html>
