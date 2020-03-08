@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Mar 8, 2020</date>
+      <change>
+         <head>Updated 'Level Select'</head>
+         <paragraph>You can now load different versions of the plaza using Y + C-stick, and the airstrip using X + L. The FLUDD cutscenes on the airstrip no longer reset the timer or accept level shortcuts.</paragraph>
+      </change>
+      <change>
+         <head>Added 'Force Plaza Events'</head>
+         <paragraph>Forces events to happen on certain versions of the plaza.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Feb 28, 2020</date>
       <change>
          <head>Updated 'Infinite Lives'</head>
