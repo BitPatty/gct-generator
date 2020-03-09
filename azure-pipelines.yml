@@ -18,7 +18,7 @@ steps:
     failOnStderr: true
     workingDirectory: '.'
 - task: PowerShell@2
-  displayName: 'Commit and push changes'
+  displayName: 'Commit changes'
   condition: and(succeeded(), eq(variables.pushChanges, 'Yes'))
   inputs:
     targetType: 'inline'
