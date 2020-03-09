@@ -61,5 +61,5 @@ Set-Location ..;
 Remove-Item "./.gcmbuild" -Recurse;
 Write-Host -ForegroundColor Green "Done";
 
-# Set Azure environment to commit and push changes
-Write-Host "##vso[task.setvariable variable=pushChanges;isOutput=true]Yes"
+# Set Azure variable to commit and push changes
+Write-Host "##vso[task.setvariable variable=pushChanges;]Yes"
