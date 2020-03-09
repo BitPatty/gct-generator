@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Mar 9, 2020</date>
+      <change>
+         <head>Updated 'Level Select'</head>
+         <paragraph>Added shortcuts for the Noki 3 bottle (C-down-left + X) and the Red Coin Fish subarea (Y + L).</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Mar 8, 2020</date>
       <change>
          <head>Updated 'Level Select'</head>
