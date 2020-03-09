@@ -11,10 +11,10 @@ variables:
 
 steps:
 - task: PowerShell@2
-  displayName: 'Update GCM Archive'
+  displayName: 'Update archives'
   inputs:
     targetType: 'filePath'
-    filePath: './update_gcm_archive.azure.ps1'
+    filePath: './update_archives.azure.ps1'
     failOnStderr: true
     workingDirectory: '.'
 - task: PowerShell@2
@@ -26,7 +26,8 @@ steps:
     git config --local user.name "BotPatty";
     git config --local user.email "ci@zint.ch";
     git add ./files/GCMCodes.zip;
-    git commit -m "Update GCM Archive [skip ci]";'
+    git add ./files/DolphinCodes.zip;
+    git commit -m "update archives [skip ci]";'
     failOnStderr: true
     workingDirectory: '.'
 - task: PowerShell@2
