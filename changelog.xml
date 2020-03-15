@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Mar 15, 2020</date>
+      <change>
+         <head>Added 'Fix Memory Card Encoding'</head>
+         <paragraph>Fixes a Nintendont issue with memory card encoding.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Mar 9, 2020</date>
       <change>
          <head>Updated 'Level Select'</head>
