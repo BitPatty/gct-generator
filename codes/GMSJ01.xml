@@ -161,7 +161,7 @@
             C6218054 80218060
         </source>
     </code>
-    <code>
+    <!--<code>
         <title lang="en">Shine Touch Timer</title>
         <author>Psychonauter, Noki Doki</author>
         <version>3.0</version>
@@ -258,7 +258,7 @@
             0410AD28 496E539D
             0410BFCC 496E40F5
         </source>
-    </code>
+    </code>-->
     <code>
         <title lang="en">Shine Get Timer</title>
         <author>Psychonauter, Noki Doki</author>

@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>Apr 9, 2020</date>
+      <change>
+         <head>Removed 'Shine Touch Timer'</head>
+         <paragraph>The community widely uses Shine Get Timer now, Shine Touch has become more confusing than actually useful.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Mar 15, 2020</date>
       <change>
          <head>Added 'Fix Memory Card Encoding'</head>
