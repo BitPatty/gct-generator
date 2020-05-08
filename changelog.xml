@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>May 8, 2020</date>
+      <change>
+         <head>Updated 'Level Select'</head>
+         <paragraph>You can now use Start instead of Z in any shortcut.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>Apr 9, 2020</date>
       <change>
          <head>Removed 'Shine Touch Timer'</head>
