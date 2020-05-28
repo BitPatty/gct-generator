@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
    <update>
+      <date>May 29, 2020</date>
+      <change>
+         <head>Updated Stage Loader</head>
+         <paragraph>Fixed a crash on NTSC-U when using Remove Dialogue: Always.</paragraph>
+      </change>
+   </update>
+   <update>
       <date>May 8, 2020</date>
       <change>
          <head>Updated 'Level Select'</head>
