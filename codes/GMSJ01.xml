@@ -931,11 +931,11 @@
     <code>
         <title lang="en">Fix Memory Card Encoding</title>
         <author>Noki Doki</author>
-        <version>1.0</version>
-        <date>Mar 15, 2020</date>
-        <description>Allows using memory cards from different regions in Nintendont. No effect on other loaders or emulators, or if your game and console are from the same region.</description>
+        <version>2.0</version>
+        <date>Jun 25, 2020</date>
+        <description>Enable this if your Nintendont saves do not work on your other loader (e.g. Gecko OS on a non-Japanese console).</description>
         <source>
-            02408D18 00000001
+            02408D18 00000000
         </source>
     </code>
     <!--
