@@ -175,7 +175,7 @@ export default {
       this.selectedFormat = e;
     },
     onStageLoaderChanged(e) {
-      this.useStageLoader = e;
+      this.useStageLoader = e === true || e === "true";
     },
     onCheatSelectionChanged(e) {
       this.selectedCheats = e;

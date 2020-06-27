@@ -1,0 +1,163 @@
+[
+  {
+    "label": "Delfino Plaza",
+    "options": [
+      { "value": "01FF", "label": "Plaza - Current" },
+      { "value": "0100", "label": "Plaza - Bianco unlock" },
+      { "value": "0101", "label": "Plaza - Peach chase" },
+      { "value": "0105", "label": "Plaza - Ricco/Gelato unlocks" },
+      { "value": "0106", "label": "Plaza - Peaceful" },
+      { "value": "0107", "label": "Plaza - Pinna unlock" },
+      { "value": "0108", "label": "Plaza - Yoshi/nozzles unlocks" },
+      { "value": "0109", "label": "Plaza - Flooded" },
+      { "value": "0102", "label": "Plaza - Post-Corona" }
+    ]
+  },
+  {
+    "label": "Delfino Plaza sublevels",
+    "options": [
+      { "value": "0000", "label": "Airstrip" },
+      { "value": "1400", "label": "Airstrip (red coins)" },
+      { "value": "1500", "label": "Slide" },
+      { "value": "1600", "label": "Pachinko" },
+      { "value": "1700", "label": "Grass pipe" },
+      { "value": "1800", "label": "Lily Pad Ride" },
+      { "value": "1D00", "label": "Jail secret" }
+    ]
+  },
+  {
+    "label": "Bianco Hills",
+    "options": [
+      { "value": "0200", "label": "Bianco 1" },
+      { "value": "0201", "label": "Bianco 2" },
+      { "value": "0202", "label": "Bianco 3" },
+      { "value": "0203", "label": "Bianco 4" },
+      { "value": "0204", "label": "Bianco 5" },
+      { "value": "0205", "label": "Bianco 6" },
+      { "value": "0206", "label": "Bianco 7" },
+      { "value": "0207", "label": "Bianco 8" }
+    ]
+  },
+  {
+    "label": "Ricco Harbor",
+    "options": [
+      { "value": "0300", "label": "Ricco 1" },
+      { "value": "0301", "label": "Ricco 2" },
+      { "value": "0302", "label": "Ricco 3" },
+      { "value": "0303", "label": "Ricco 4" },
+      { "value": "0304", "label": "Ricco 5" },
+      { "value": "0305", "label": "Ricco 6" },
+      { "value": "0306", "label": "Ricco 7" },
+      { "value": "0307", "label": "Ricco 8" }
+    ]
+  },
+  {
+    "label": "Gelato Beach",
+    "options": [
+      { "value": "0400", "label": "Gelato 1" },
+      { "value": "0401", "label": "Gelato 2" },
+      { "value": "0402", "label": "Gelato 3" },
+      { "value": "0403", "label": "Gelato 4" },
+      { "value": "0404", "label": "Gelato 5" },
+      { "value": "0405", "label": "Gelato 6" },
+      { "value": "0406", "label": "Gelato 7" },
+      { "value": "0407", "label": "Gelato 8" }
+    ]
+  },
+  {
+    "label": "Pinna Park",
+    "options": [
+      { "value": "0500", "label": "Pinna 1" },
+      { "value": "0501", "label": "Pinna 2" },
+      { "value": "0502", "label": "Pinna 3" },
+      { "value": "0503", "label": "Pinna 4" },
+      { "value": "0504", "label": "Pinna 5" },
+      { "value": "0505", "label": "Pinna 6" },
+      { "value": "0506", "label": "Pinna 7" },
+      { "value": "0507", "label": "Pinna 8" }
+    ]
+  },
+  {
+    "label": "Sirena Beach",
+    "options": [
+      { "value": "0600", "label": "Sirena 1" },
+      { "value": "0601", "label": "Sirena 2" },
+      { "value": "0602", "label": "Sirena 3" },
+      { "value": "0603", "label": "Sirena 4" },
+      { "value": "0604", "label": "Sirena 5" },
+      { "value": "0605", "label": "Sirena 6" },
+      { "value": "0606", "label": "Sirena 7" },
+      { "value": "0607", "label": "Sirena 8" }
+    ]
+  },
+  {
+    "label": "Noki Bay",
+    "options": [
+      { "value": "0900", "label": "Noki 1" },
+      { "value": "0901", "label": "Noki 2" },
+      { "value": "0902", "label": "Noki 3" },
+      { "value": "0903", "label": "Noki 4" },
+      { "value": "0904", "label": "Noki 5" },
+      { "value": "0905", "label": "Noki 6" },
+      { "value": "0906", "label": "Noki 7" },
+      { "value": "0907", "label": "Noki 8" }
+    ]
+  },
+  {
+    "label": "Pianta Village",
+    "options": [
+      { "value": "0800", "label": "Pianta 1" },
+      { "value": "0801", "label": "Pianta 2" },
+      { "value": "0802", "label": "Pianta 3" },
+      { "value": "0803", "label": "Pianta 4" },
+      { "value": "0804", "label": "Pianta 5" },
+      { "value": "0805", "label": "Pianta 6" },
+      { "value": "0806", "label": "Pianta 7" },
+      { "value": "0807", "label": "Pianta 8" }
+    ]
+  },
+  {
+    "label": "Secret areas",
+    "options": [
+      { "value": "2F00", "label": "Bianco 3 secret" },
+      { "value": "2E00", "label": "Bianco 6 secret" },
+      { "value": "3000", "label": "Ricco 4 secret" },
+      { "value": "2000", "label": "Gelato 1 secret" },
+      { "value": "3200", "label": "Pinna 2 secret" },
+      { "value": "2900", "label": "Pinna 6 secret" },
+      { "value": "3300", "label": "Sirena 2 secret" },
+      { "value": "2800", "label": "Sirena 4 secret" },
+      { "value": "1F00", "label": "Noki 6 secret" },
+      { "value": "2A00", "label": "Pianta 5 secret" }
+    ]
+  },
+  {
+    "label": "Sublevels",
+    "options": [
+      { "value": "3700", "label": "Petey Piranha fight (Bianco 2)" },
+      { "value": "3B00", "label": "Gooper Blooper fight (Ricco 1)" },
+      { "value": "1E00", "label": "Race course (Ricco 2)" },
+      { "value": "2100", "label": "Sand bird (Gelato 4)" },
+      { "value": "3A01", "label": "Mecha-Bowser fight (Pinna 1)" },
+      { "value": "3A00", "label": "Rollercoaster (Pinna 8)" },
+      { "value": "0E00", "label": "Casino Delfino (Sirena 4)" },
+      { "value": "0E01", "label": "Casino Delfino (Sirena 5)" },
+      { "value": "3800", "label": "King Boo fight (Sirena 5)" },
+      { "value": "2C00", "label": "Bottle (Noki 3)" },
+      { "value": "3900", "label": "Deep Sea of Mare (Noki 4)" },
+      { "value": "1000", "label": "Deep Sea of Mare (Noki 8)" }
+    ]
+  },
+  {
+    "label": "Miscellaneous",
+    "options": [
+      { "value": "02FF", "label": "Bianco episode selection" },
+      { "value": "03FF", "label": "Ricco episode selection" },
+      { "value": "04FF", "label": "Gelato episode selection" },
+      { "value": "05FF", "label": "Pinna episode selection" },
+      { "value": "06FF", "label": "Sirena episode selection" },
+      { "value": "09FF", "label": "Noki episode selection" },
+      { "value": "08FF", "label": "Pianta episode selection" }
+    ]
+  }
+]
