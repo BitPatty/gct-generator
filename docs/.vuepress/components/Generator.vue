@@ -36,7 +36,7 @@
       </div>
       <div v-if="codes && codes.length > 0 && useStageLoader">
         <h3>Stage Loader</h3>
-        <StageLoader />
+        <StageLoader :fastCodes="stageLoaderCodes" />
       </div>
 
       <div v-if="codes && codes.length > 0" class="help">
@@ -153,10 +153,12 @@ export default {
       isLoading: true,
       codes: [],
       selectedCheats: [],
+      selectedStageLoader: null,
       inspectingCode: null,
       selectedVersion: null,
       selectedFormat: null,
       useStageLoader: false,
+      stageLoaderCodes: [],
       useStageLoaderOptions: [
         { value: false, label: "No" },
         { value: true, label: "Yes" }
@@ -169,6 +171,9 @@ export default {
       this.selectedCheats = [];
       const storedCodes = JSON.parse(localStorage.getItem("codes"));
       this.codes = storedCodes.find(c => c.identifier === e).cheats;
+      this.stageLoaderCodes = storedCodes.find(
+        c => c.identifier === e
+      ).fastCodes;
       this.inspectingCode = null;
     },
     onFormatChanged(e) {

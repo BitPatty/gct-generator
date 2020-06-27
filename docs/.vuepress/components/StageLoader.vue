@@ -2,31 +2,54 @@
   <div>
     <div class="config">
       <span>Remove Dialogue:</span>
-      <SelectComponent :options="removeDialogueOptions" :onChange="onRemoveDialogueChanged" />
+      <SelectComponent
+        :options="removeDialogueOptions"
+        :onChange="onRemoveDialogueSelectionChanged"
+        :selectedValue="removeDialogSelection"
+      />
     </div>
     <div class="config">
       <span>Skippable FMVs:</span>
-      <SelectComponent :options="skippableFMVsOptions" :onChange="onSkippableFMVsChanged" />
+      <SelectComponent
+        :options="skippableFMVsOptions"
+        :onChange="onSkippableFMVsSelectionChanged"
+        :selectedValue="skippableFMVsSelection"
+      />
     </div>
     <div class="config">
       <span>Level Order:</span>
-      <SelectComponent :options="levelOrderOptions" :onChange="onLevelOrderChanged" />
+      <SelectComponent
+        :options="levelOrderOptions"
+        :onChange="onLevelOrderSelectionChanged"
+        :selectedValue="levelOrderSelection"
+      />
     </div>
     <div class="config">
       <span>Post Game:</span>
-      <SelectComponent :options="postGameOptions" :onChange="onPostGameSelectionChanged" />
+      <SelectComponent
+        :options="postGameOptions"
+        :onChange="onPostGameSelectionChanged"
+        :selectedValue="postGameSelection"
+      />
     </div>
-    <div>
-      <ul id="route_levels">
-        <li draggable="false">
-          <!-- <div class="route_drag">&#8801;</div> -->
+    <div class="config">
+      <span>Route:</span>
+      <ul class="level-select">
+        <li v-for="(level, index) in selectedRoute">
+          <div class="route-drag">&#8801;</div>
           <GroupSelectComponent
-            placeholder="Choose a level.."
+            :selectedValue="level.value"
             :optGroups="stageLoaderLevelOptions"
-            :onClick="onStageLoaderLevelSelected"
+            :onChange="e => onStageLoaderLevelChanged(index, e)"
           />
-          <!-- <button type="button" class="route_remove">&#215;</button> -->
+          <button @click="onLevelDeleted(index)" type="button" class="route-remove">&#215;</button>
         </li>
+        <GroupSelectComponent
+          placeholder="Choose a level.."
+          :optGroups="stageLoaderLevelOptions"
+          :onChange="onStageLoaderLevelSelected"
+          selectedValue="placeholder"
+        />
       </ul>
     </div>
     <div class="config">
@@ -37,6 +60,8 @@
         placeholder="Load a preset.."
         :optGroups="stageLoaderPresetOptions"
         :onChange="onStageLoaderPresetSelected"
+        :resetOnSelect="true"
+        selectedValue="placeholder"
       />
     </div>
   </div>
@@ -53,8 +78,12 @@ import stageLoaderLevels from "../data/stageLoaderLevels.json";
 import stageLoaderPresets from "../data/stageLoaderPresets.json";
 
 export default {
+  props: {
+    fastCodes: { type: Object }
+  },
   data() {
     return {
+      selectedRoute: [],
       stageLoaderLevelOptions: stageLoaderLevels,
       stageLoaderPresetOptions: stageLoaderPresets,
       removeDialogueOptions: [
@@ -85,26 +114,58 @@ export default {
     };
   },
   methods: {
-    onRemoveDialogueChanged(e) {
+    onRemoveDialogueSelectionChanged(e) {
       this.removeDialogSelection = e;
     },
-    onSkippableFMVsChanged(e) {
+    onSkippableFMVsSelectionChanged(e) {
       this.skippableFMVsSelection = e;
     },
-    onLevelOrderChanged(e) {
+    onLevelOrderSelectionChanged(e) {
       this.levelOrderSelection = e;
     },
     onPostGameSelectionChanged(e) {
       this.postGameSelection = e;
     },
     onStageLoaderLevelSelected(e) {
-      return;
+      this.selectedRoute.push({
+        value: e
+      });
+    },
+    onStageLoaderLevelChanged(index, e) {
+      this.selectedRoute[index] = {
+        value: e
+      };
+    },
+    onLevelDeleted(e) {
+      this.selectedRoute.splice(e, 1);
     },
     onStageLoaderPresetSelected(e) {
-      return;
+      if (
+        this.selectedRoute?.length > 0 &&
+        !confirm("Loading a preset will erase your current list. Continue?")
+      ) {
+        return;
+      }
+
+      const preset = e.split(";")[0];
+      const ending = e.split(";")[1];
+
+      const newRoute = [];
+
+      for (let i = 0; i <= preset.length - 4; i += 4)
+        newRoute.push({ value: preset.substr(i, 4) });
+
+      this.selectedRoute = newRoute;
+      this.postGameSelection = ending;
     },
     onClearList() {
-      return;
+      if (
+        this.selectedRoute?.length > 0 &&
+        !confirm("Do you really want to clear the list?")
+      )
+        return;
+
+      this.selectedRoute = [];
     }
   }
 };
@@ -117,7 +178,35 @@ export default {
   padding-left: 2px;
 }
 
+.config:not(:first-child) span {
+  margin-top: 10px;
+}
+
 .config select {
   width: 100%;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.route-drag {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.route-remove {
+  margin-left: 3px;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: red;
+  cursor: pointer;
 }
 </style>
