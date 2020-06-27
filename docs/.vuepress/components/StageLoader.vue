@@ -1,0 +1,293 @@
+<template>
+  <div>
+    <div class="config">
+      <span>Remove Dialogue:</span>
+      <SelectComponent :options="removeDialogueOptions" :onChange="onRemoveDialogueChanged" />
+    </div>
+    <div class="config">
+      <span>Skippable FMVs:</span>
+      <SelectComponent :options="skippableFMVsOptions" :onChange="onSkippableFMVsChanged" />
+    </div>
+    <div class="config">
+      <span>Level Order:</span>
+      <SelectComponent :options="levelOrderOptions" :onChange="onLevelOrderChanged" />
+    </div>
+    <div class="config">
+      <span>Post Game:</span>
+      <SelectComponent :options="postGameOptions" :onChange="onPostGameSelectionChanged" />
+    </div>
+    <div>
+      <ul id="route_levels">
+        <li draggable="false">
+          <div class="route_drag">&#8801;</div>
+          <select>
+            <option value="0F00" selected disabled>Select a level…</option>
+            <optgroup label="Delfino Plaza">
+              <option value="01FF">Plaza - Current</option>
+              <option value="0100">Plaza - Bianco unlock</option>
+              <option value="0101">Plaza - Peach chase</option>
+              <option value="0105">Plaza - Ricco/Gelato unlocks</option>
+              <option value="0106">Plaza - Peaceful</option>
+              <option value="0107">Plaza - Pinna unlock</option>
+              <option value="0108">Plaza - Yoshi/nozzles unlocks</option>
+              <option value="0109">Plaza - Flooded</option>
+              <option value="0102">Plaza - Post-Corona</option>
+            </optgroup>
+            <optgroup label="Delfino Plaza sublevels">
+              <option value="0000">Airstrip</option>
+              <option value="1400">Airstrip (red coins)</option>
+              <option value="1500">Slide</option>
+              <option value="1600">Pachinko</option>
+              <option value="1700">Grass pipe</option>
+              <option value="1800">Lily Pad Ride</option>
+              <option value="1D00">Jail secret</option>
+            </optgroup>
+            <optgroup label="Bianco Hills">
+              <option value="0200">Bianco 1</option>
+              <option value="0201">Bianco 2</option>
+              <option value="0202">Bianco 3</option>
+              <option value="0203">Bianco 4</option>
+              <option value="0204">Bianco 5</option>
+              <option value="0205">Bianco 6</option>
+              <option value="0206">Bianco 7</option>
+              <option value="0207">Bianco 8</option>
+            </optgroup>
+            <optgroup label="Ricco Harbor">
+              <option value="0300">Ricco 1</option>
+              <option value="0301">Ricco 2</option>
+              <option value="0302">Ricco 3</option>
+              <option value="0303">Ricco 4</option>
+              <option value="0304">Ricco 5</option>
+              <option value="0305">Ricco 6</option>
+              <option value="0306">Ricco 7</option>
+              <option value="0307">Ricco 8</option>
+            </optgroup>
+            <optgroup label="Gelato Beach">
+              <option value="0400">Gelato 1</option>
+              <option value="0401">Gelato 2</option>
+              <option value="0402">Gelato 3</option>
+              <option value="0403">Gelato 4</option>
+              <option value="0404">Gelato 5</option>
+              <option value="0405">Gelato 6</option>
+              <option value="0406">Gelato 7</option>
+              <option value="0407">Gelato 8</option>
+            </optgroup>
+            <optgroup label="Pinna Park">
+              <option value="0500">Pinna 1</option>
+              <option value="0501">Pinna 2</option>
+              <option value="0502">Pinna 3</option>
+              <option value="0503">Pinna 4</option>
+              <option value="0504">Pinna 5</option>
+              <option value="0505">Pinna 6</option>
+              <option value="0506">Pinna 7</option>
+              <option value="0507">Pinna 8</option>
+            </optgroup>
+            <optgroup label="Sirena Beach">
+              <option value="0600">Sirena 1</option>
+              <option value="0601">Sirena 2</option>
+              <option value="0602">Sirena 3</option>
+              <option value="0603">Sirena 4</option>
+              <option value="0604">Sirena 5</option>
+              <option value="0605">Sirena 6</option>
+              <option value="0606">Sirena 7</option>
+              <option value="0607">Sirena 8</option>
+            </optgroup>
+            <optgroup label="Noki Bay">
+              <option value="0900">Noki 1</option>
+              <option value="0901">Noki 2</option>
+              <option value="0902">Noki 3</option>
+              <option value="0903">Noki 4</option>
+              <option value="0904">Noki 5</option>
+              <option value="0905">Noki 6</option>
+              <option value="0906">Noki 7</option>
+              <option value="0907">Noki 8</option>
+            </optgroup>
+            <optgroup label="Pianta Village">
+              <option value="0800">Pianta 1</option>
+              <option value="0801">Pianta 2</option>
+              <option value="0802">Pianta 3</option>
+              <option value="0803">Pianta 4</option>
+              <option value="0804">Pianta 5</option>
+              <option value="0805">Pianta 6</option>
+              <option value="0806">Pianta 7</option>
+              <option value="0807">Pianta 8</option>
+            </optgroup>
+            <optgroup label="Secret areas">
+              <option value="2F00">Bianco 3 secret</option>
+              <option value="2E00">Bianco 6 secret</option>
+              <option value="3000">Ricco 4 secret</option>
+              <option value="2000">Gelato 1 secret</option>
+              <option value="3200">Pinna 2 secret</option>
+              <option value="2900">Pinna 6 secret</option>
+              <option value="3300">Sirena 2 secret</option>
+              <option value="2800">Sirena 4 secret</option>
+              <option value="1F00">Noki 6 secret</option>
+              <option value="2A00">Pianta 5 secret</option>
+            </optgroup>
+            <optgroup label="Sublevels">
+              <option value="3700">Petey Piranha fight (Bianco 2)</option>
+              <option value="3B00">Gooper Blooper fight (Ricco 1)</option>
+              <option value="1E00">Race course (Ricco 2)</option>
+              <option value="2100">Sand bird (Gelato 4)</option>
+              <option value="3A01">Mecha-Bowser fight (Pinna 1)</option>
+              <option value="3A00">Rollercoaster (Pinna 8)</option>
+              <option value="0E00">Casino Delfino (Sirena 4)</option>
+              <option value="0E01">Casino Delfino (Sirena 5)</option>
+              <option value="3800">King Boo fight (Sirena 5)</option>
+              <option value="2C00">Bottle (Noki 3)</option>
+              <option value="3900">Deep Sea of Mare (Noki 4)</option>
+              <option value="1000">Deep Sea of Mare (Noki 8)</option>
+            </optgroup>
+            <optgroup label="Miscellaneous">
+              <option value="02FF">Bianco episode selection</option>
+              <option value="03FF">Ricco episode selection</option>
+              <option value="04FF">Gelato episode selection</option>
+              <option value="05FF">Pinna episode selection</option>
+              <option value="06FF">Sirena episode selection</option>
+              <option value="09FF">Noki episode selection</option>
+              <option value="08FF">Pianta episode selection</option>
+            </optgroup>
+          </select>
+          <button type="button" class="route_remove">&#215;</button>
+        </li>
+      </ul>
+    </div>
+    <div class="config row">
+      <div class="config">
+        <ButtonComponent label="Clear List" :onClick="onClearList" />
+      </div>
+      <div>
+        <button id="route_clear" type="button">Clear List</button>
+      </div>
+      <div>
+        <select id="route_presets">
+          <option value selected>Load a preset…</option>
+          <optgroup label="Full-game categories, minimal plaza">
+            <option
+              value="020002020203020404000406080008010802080308040805080605000501050205030502050603000301030203030304030503060205020606000601060206030604060506060900090109020903090409050906;3400"
+            >Fast Any% usual route</option>
+            <option
+              value="020002020203020404000406080008010802080308040805080605000501050205030502050602050206060006010602060306040605060609000901090209030904090509060300030103020303030403050306;3400"
+            >Fast Any% Ricco late</option>
+            <option
+              value="020002020203020408000801080208030804080508060500050105020503050405050506030003010302030303040305030602050206060006010602060306040605060609000901090209030904090509060400040104020403040404050406;3400"
+            >Fast Any% No Major Skips</option>
+            <option
+              value="02000201020202030800080108020803080408050806080705000501050205030504050505060507030003010302030303040305030603070204020502060207060006010602060306040605060606070900090109020903090409050906090704000401040204030404040304050406;3400"
+            >Fast 58 Shines / All Episodes</option>
+            <option
+              value="02000201020202020800080108020803080408040804080508060807080705000501050105020503050405040505050505060507030003010301030203030303030403050305030603070203020402050205020502060207060006010601060206030603060306040605060606070900090109010901090209030904090509050906090704000400040004010402040304050404040304020406;3400"
+            >Fast 79 Shines / All Level Shines</option>
+            <option
+              value="020002020203020404000406080008010802080308040805080605000501050105020503050405050506030003010302030303040305030602050206060006010602060306040605060609000901090209030904090509060102160001021400010201021D00010201020102010201020102010204060405040404030402040204010400040015000207020502070205020003020307030303010507050705051700060706030603060109070905090109010807080708040804;3400"
+            >Fast 96 Shines / All Shines, No Blues</option>
+          </optgroup>
+          <optgroup label="Full-game categories">
+            <option
+              value="00000100020002020105020302040105040004060106080008010802080308040805080601070108050005010502050305020506010803000301030203030304030503060108020502060108060006010602060306040605060601080900090109020903090409050906;0109"
+            >Any% usual route</option>
+            <option
+              value="00000100020002020105020302040105080008010802080308040805080601070108050005010502050305040505050601080300030103020303030403050306010802050206010806000601060206030604060506060108090009010902090309040905090601080400040104020403040404050406;0109"
+            >Any% No Major Skips</option>
+            <option
+              value="0000010002000201010502020203010508000801080208030804080508060807010701080500050105020503050405050506050701080300030103020303030403050306030701080204020502060207010806000601060206030604060506060607010809000901090209030904090509060907010804000401040204030404040304050406;0109"
+            >58 Shines / All Episodes</option>
+            <option
+              value="0000010002000201010502020202010508000801080208030804080408040805080608070807010701080500050105010502050305040504050505050506050701080300030103010302030303030304030503050306030701080203020402050205020502060207010806000601060106020603060306030604060506060607010809000901090109010902090309040905090509060907010804000400040004010402040304050404040304020406;0109"
+            >79 Shines / All Level Shines</option>
+            <option
+              value="0000010002000202010502030204010504000406010608000801080208030804080508060107010805000501050105020503050405050506010803000301030203030304030503060108020502060108010806000601060206030604060506060108090009010902090309040905090601FF0102010201020102010201020102010201020102010201020102010204060405040404030402040204010400040001020102020702050207020502000102030203070303030101020507050705050102010206070603060306010102090709050901090101020807080708040804;0102"
+            >96 Shines / All Shines, No Blues</option>
+            <option
+              value="0000010002000202010502030204010504000406010608000801080208030804080508060107010805000501050105020503050405050506010803000301030203030304030503060108020502060108010806000601060206030604060506060108090009010902090309040905090601FF01020102010201020102010201020102010201020102010201020404040304020405040004000401040204050102010202000207020702070207010209010905090509070102080408040807080701020505050705070102010206010603060606070102010203010303030703070102;0102"
+            >120 Shines / All Shines, All Blues</option>
+          </optgroup>
+          <optgroup label="Individual Worlds">
+            <option value="020002020203020402050206">Bianco Hills</option>
+            <option value="0300030103020303030403050306">Ricco Harbor</option>
+            <option value="0400040104020403040404050406">Gelato Beach</option>
+            <option value="050005010502050305020506">Pinna Park</option>
+            <option value="0600060106020603060406050606">Sirena Beach</option>
+            <option value="0900090109020903090409050906">Noki Bay</option>
+            <option value="0800080108020803080408050806">Pianta Village</option>
+          </optgroup>
+          <optgroup label="All Shines IWs">
+            <option value="02000201020202020203020402050205020502060207">Bianco Hills</option>
+            <option value="03000301030103020303030303040305030503060307">Ricco Harbor</option>
+            <option value="04000406040404060401040504000400040204020403">Gelato Beach</option>
+            <option value="05000501050105020503050405040505050505060507">Pinna Park</option>
+            <option value="06000601060106020603060306030604060506060607">Sirena Beach</option>
+            <option value="09000901090109020903090409050905090609060907">Noki Bay</option>
+            <option value="08000801080208030804080408040805080608070807">Pianta Village</option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import SelectComponent from "./SelectComponent";
+import ButtonComponent from "./ButtonComponent";
+
+export default {
+  data() {
+    return {
+      removeDialogueOptions: [
+        { value: "yes", label: "Always" },
+        { value: "pv5", label: "Not in Pinna 5" },
+        { value: "no", label: "Don't include" }
+      ],
+      skippableFMVsOptions: [
+        { value: "yes", label: "Always" },
+        { value: "pp", label: "Not in Pinna" },
+        { value: "no", label: "Don't include" }
+      ],
+      levelOrderOptions: [
+        { value: "list", label: "As specified" },
+        { value: "shuffle", label: "Random, no duplicates" },
+        { value: "random", label: "Fully random" }
+      ],
+      postGameOptions: [
+        { value: "0F00", label: "Return to title screen" },
+        { value: "0109", label: "Load the flooded plaza" },
+        { value: "3400", label: "Load post-Corona plaza" },
+        { value: "3C00", label: "Load the Bowser fight" }
+      ],
+      removeDialogSelection: null,
+      skippableFMVsSelection: null,
+      levelOrderSelection: null,
+      postGameSelection: null
+    };
+  },
+  methods: {
+    onRemoveDialogueChanged(e) {
+      this.removeDialogSelection = e;
+    },
+    onSkippableFMVsChanged(e) {
+      this.skippableFMVsSelection = e;
+    },
+    onLevelOrderChanged(e) {
+      this.levelOrderSelection = e;
+    },
+    onPostGameSelectionChanged(e) {
+      this.postGameSelection = e;
+    },
+    onClearList() {
+      return;
+    }
+  }
+};
+</script>
+
+<style scoped>
+.config span {
+  display: block;
+  margin-bottom: 10px;
+  padding-left: 2px;
+}
+
+.config select {
+  width: 100%;
+}
+</style>
