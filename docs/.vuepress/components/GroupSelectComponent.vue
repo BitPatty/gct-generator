@@ -1,7 +1,7 @@
 <template>
   <div class="select-wrapper">
-    <select @change="(e) => this.onChange(e.target.value)" autocomplete="off">
-      <option v-if="placeholder != null" selected disabled>
+    <select @change="onValueChanged" autocomplete="off" v-model="selectedValue">
+      <option v-if="placeholder != null" value="placeholder" selected disabled>
         {{
         placeholder
         }}
@@ -10,7 +10,7 @@
         <option
           v-for="option in optGroup.options"
           :value="option.value"
-          :selected="selectedValue && option.value === selectedValue"
+          :selected="selectedValue && option.value === selectedValue && !resetOnSelect"
         >{{ option.label }}</option>
       </optgroup>
     </select>
@@ -26,7 +26,14 @@ export default {
     onChange: { type: Function }
   },
   data() {
-    return {};
+    return {
+      generation: 2
+    };
+  },
+  methods: {
+    onValueChanged(e) {
+      this.onChange(e.target.value);
+    }
   }
 };
 </script>
