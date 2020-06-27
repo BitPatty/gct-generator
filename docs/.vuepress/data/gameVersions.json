@@ -1,0 +1,22 @@
+[
+  {
+    "identifier": "GMSE01",
+    "name": "GMSE01 (NTSC-U)",
+    "version": "GMSE01"
+  },
+  {
+    "identifier": "GMSP01",
+    "name": "GMSP01 (PAL)",
+    "version": "GMSP01"
+  },
+  {
+    "identifier": "GMSJ01",
+    "name": "GMSJ01 (NTSC-J 1.0)",
+    "version": "GMSJ01"
+  },
+  {
+    "identifier": "GMSJ0A",
+    "name": "GMSJ01 (NTSC-J 1.1)",
+    "version": "GMSJ01"
+  }
+]
