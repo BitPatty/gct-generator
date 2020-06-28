@@ -30,38 +30,38 @@ Download WiiMod from [GBAtemp](https://gbatemp.net/threads/wii-mod.272321/) and 
 
 ## Install IOS58
 
-### Launch WiiMod and select "IOSs"
+**Launch WiiMod and select "IOSs"**
 
 ![Part 1](/img/wiimod_00.png)
 
-### Navigate to 58 and press A
+**Navigate to 58 and press A**
 
 ![Part 2](/img/wiimod_01.png)
 
-### Select "Install IOS"
+**Select "Install IOS"**
 
 ![Part 3](/img/wiimod_02.png)
 
-### Select "6176"
+**Select "6176"**
 
 ![Part 4](/img/wiimod_03.png)
 
-### Confirm that you want to install "IOS58 v6176"
+**Confirm that you want to install "IOS58 v6176"**
 
 ![Part 5](/img/wiimod_04.png)
 
-### Select revision 6176
+**Select revision 6176**
 
 ![Part 6](/img/wiimod_05.png)
 
-### Press A again to start the installation
+**Make sure all options are set to "No"**
 
 ![Part 7](/img/wiimod_06.png)
 
-### Launch WiiMod and select "IOSs"
+**Press A again to start the installation**
 
 ![Part 8](/img/wiimod_07.png)
 
-### That's it!
+**That's it!**
 
 ![Part 9](/img/wiimod_08.png)

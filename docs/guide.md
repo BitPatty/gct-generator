@@ -2,9 +2,9 @@
 sidebar: auto
 ---
 
-# Installation Guide
+# GCT Generator Cookbook
 
-A guide on how to use Super Mario Sunshine practice codes on your Nintendo Wii.
+A guide on how to install and use Super Mario Sunshine practice codes on Nintendont and Dolphin.
 
 [[toc]]
 
@@ -63,7 +63,7 @@ This issue is not related to the practice codes. You have the following options 
 
 - Restart Nintendont until the game launches (usually takes a few attempts).
 - Connect your Wii to the internet before launching Nintendont.
-- Wait around 30 seconds on the game selection screen before booting the disc.
+- Wait for ~30 seconds on the game selection screen before booting the disc.
 - Reinstalling homebrew may fix this issue permanently.
 
 ### Nintendont says IOS58 is missing
@@ -74,19 +74,19 @@ This issue is not related to the practice codes. You have the following options 
 
 This can have multiple reasons:
 
-- You don't have cheats enabled: See 2.3 for details.
+- You don't have cheats enabled: See ["Enable the codes" section](#enable-the-codes) for details.
 - You're using an obsolete version of Nintendont. Make sure you use version 4.434 or newer.
 - Your cheatfile has the wrong name: Make sure the file is named "GMSE01.gct", "GMSJ01.gct" or "GMSP01.gct". It won't work with names like "GMSE01 (1).gct". Nintendont is very picky!
-- Your cheatfile is at the wrong location: Make sure the file is in the "codes" folder of your SD Card. Again, the folder has to be named "codes" (See sample folder structure in section 2.2). If you have a "games" folder, make sure there's no file with the same name in it or its subfolders.
+- Your cheatfile is at the wrong location: Make sure the file is in the "codes" folder of your SD Card. Again, the folder has to be named "codes" (See sample folder structure in ["Copy the file onto your SD Card section"](#copy-the-file-onto-your-sd-card)). If you have a "games" folder, make sure there's no file with the same name in it or its subfolders.
 - Your cheatfile is too big: Using too many codes at once can cause Nintendont to disable them since the used space in the game is limited. Make sure you don't have two incompatible codes selected when downloading the cheatfile (for example "Level Select", "Fast Any%" and the Stage loader cannot be used simultaneously). If you're using Nintendont 4.434 or newer you don't have to worry about your file size unless it exceeds 8KB.
 - If you have a USB drive connected and use disc, make sure you select the device that contains the cheats for your disc.
 - If you use an ISO your cheat file and ISO must be on the same device (both on the SD card or both on the USB drive).
 
-### Help, it's still not working!
+### I'm lost :(
 
 You can ask for help on the [Super Mario Sunshine Discord](https://discord.gg/9dGJWEc).
 
-## Appendix: Cheat Manager (Homebrew)
+## Appendix: Cheat Manager
 
 The Cheat Manager is a homebrew application that allows you to generate GCTs on your Wii. This way you don't have to redownload your cheatfile everytime you want a different combination. However, you're gonna have to use a Wiimote to control the application.
 
@@ -96,7 +96,7 @@ You can download the Cheat Manager from [here](/files/Cheat_manager_v0_3.zip). U
 
 Using the generator on the main site, select all the codes you want to have available on the cheat manager and choose "Cheat Manager TXT" as file format instead of "GCT" to download a text file formatted for use with the cheat manager. Create a "txtcodes" folder in the root of your SD card if there is none and copy the generated text file into that folder. The name of the text file doesn't matter if you use this application, since the games ID is stored in the textfile.
 
-Alternatively, a zip archive containing all codes available on this site can be downloaded from [here](https://gct.zint.ch/files/GCMCodes.zip).
+Alternatively, a zip archive containing all codes available on this site can be downloaded from [here](/files/GCMCodes.zip).
 
 ### Using the Cheat Manager
 
@@ -108,15 +108,17 @@ After activating your desired codes press "1" to generate the GCT file. The chea
 
 ### Setup
 
-To use the codes with Dolphin choose "Dolphin INI" as file format instead of "GCT" to download the codes formatted for use with Dolphin.
+To use the codes with Dolphin choose "Dolphin INI" as file format instead of "GCT" to download the codes formatted for use with Dolphin. Alternatively, a zip archive containing all codes available on this site can be downloaded from [here](/files/DolphinCodes.zip).
 
-Alternatively, a zip archive containing all codes available on this site can be downloaded from [here](https://gct.zint.ch/files/DolphinCodes.zip).
+::: tip Code limits
+Dolphin doesn't use the same cheat loader as Nintendont. Its code limit is reached rather quickly and it won't tell you whether the codes you enabled exceed the internal limit. If your game crashes after enabling some codes, this might be the cause. Try to disable non-essential codes if that happens to you.
+:::
 
 ### Configuration
 
 #### Dolphin 5.0 or older
 
-Right click the game in Dolphin and click on "Properties" and on the bottom left corner of the property window click the "Edit configuration" button. Open the text file you downloaded and copy everything following the `[Gecko]` tag below the same tag in the configuration you just opened. If there is no `[Gecko]` tag (it should be the first tag), create one on top of your configuration file. Save and close the configuration file.
+Right-click the game in Dolphin and, then click on "Properties" and on the bottom left corner of the property window click the "Edit configuration" button. Open the text file you downloaded and copy everything following the `[Gecko]` tag below the same tag in the configuration you just opened. If there is no `[Gecko]` tag (it should be the first tag), create one on top of your configuration file. Save and close the configuration file.
 
 ![Dolphin Gecko Codes 5.0](/img/dolphin_gecko_codes_v1.png)
 
@@ -128,4 +130,4 @@ Right click the game in Dolphin and click on "Properties". In the "Game Config" 
 
 ### Using the codes
 
-Select the "Gecko-Codes" tab in the game properties and check all the codes you want to be active. Most (but not all codes) will work with Dolphin. However, Dolphin has a code limit which is reached rather quickly. So if your game crashes right after it starts, you probably have too many codes active simultaneously.
+Select the "Gecko-Codes" tab in the game properties and check all the codes you want to be active. Most (but not all codes) will work with Dolphin.

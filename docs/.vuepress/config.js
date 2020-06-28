@@ -18,14 +18,14 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   themeConfig: {
-    repo: "",
-    editLinks: false,
-    docsDir: "",
-    editLinkText: "",
+    repo: "BitPatty/gctGenerator",
+    editLinks: true,
+    docsDir: "docs",
+    editLinkText: "Edit this page on GitHub",
     lastUpdated: false,
     nav: [
       {
-        text: "Guide",
+        text: "Cookbook",
         link: "/guide.html",
       },
       {
@@ -33,8 +33,16 @@ module.exports = {
         link: "/changelog.html",
       },
       {
+        text: "Installing IOS58",
+        link: "/ios58.html",
+      },
+      {
         text: "Sunshine Discord",
         link: "https://discord.gg/9dGJWEc",
+      },
+      {
+        text: "GitHub",
+        link: "https://github.com/BitPatty/gctGenerator",
       },
     ],
   },
