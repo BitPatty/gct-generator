@@ -270,10 +270,12 @@ ul li {
   color: red;
   cursor: pointer;
 }
-</style>
 
-<style>
-.ghost select {
+.level-select >>> .select-wrapper {
+  background-color: #62809e;
+}
+
+.ghost >>> .select-wrapper {
   background-color: orange;
 }
 </style>
