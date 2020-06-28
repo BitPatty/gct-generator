@@ -1,9 +1,6 @@
 <template>
   <div>
     <section class="config">
-      <div v-if="isLoading" class="loading-overlay">
-        <div class="spinner"></div>
-      </div>
       <div>
         <span>Game Version:</span>
         <VersionSelect :onChange="onVersionChanged" :selectedValue="selectedVersion" />
@@ -28,6 +25,9 @@
           :versionIdentifier="selectedVersion"
           :format="selectedFormat"
         />
+      </div>
+      <div v-if="isLoading" class="loading-overlay">
+        <div class="spinner"></div>
       </div>
     </section>
     <br />
@@ -219,6 +219,7 @@ section > div:not(:first-child) {
   text-align: center;
   background: #ffffff44;
   background-color: rgba(255, 255, 255, 0.7);
+  margin-left: -1px;
 }
 
 .config span {
