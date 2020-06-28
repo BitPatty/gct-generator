@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  gct_generator:
+    container_name: gct_generator
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    network_mode: 'bridge'
+    ports:
+      - '8080:80'
