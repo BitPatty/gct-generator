@@ -35,7 +35,12 @@
     <div class="config">
       <span>Route:</span>
       <ul class="level-select">
-        <draggable v-model="selectedRoute" handle=".route-drag" ghost-class="ghost">
+        <draggable
+          v-model="selectedRoute"
+          handle=".route-drag"
+          ghost-class="ghost"
+          @end="onDrageEnd"
+        >
           <li v-for="(level, index) in selectedRoute">
             <div class="route-drag">&#8801;</div>
 
@@ -45,9 +50,7 @@
               :onChange="e => onStageLoaderLevelChanged(index, e)"
               :key="index"
             />
-            <button @click="onLevelDeleted(index)" type="button" class="route-remove">
-              &#215;
-            </button>
+            <button @click="onLevelDeleted(index)" type="button" class="route-remove">&#215;</button>
           </li>
         </draggable>
       </ul>
@@ -189,6 +192,9 @@ export default {
       this.selectedRoute = newRoute;
 
       if (ending) this.postGameSelection;
+      this.updateCode();
+    },
+    onDrageEnd() {
       this.updateCode();
     },
     onClearList() {
