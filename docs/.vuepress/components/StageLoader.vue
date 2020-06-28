@@ -51,6 +51,10 @@
             &#215;
           </button>
         </li>
+      </ul>
+    </div>
+    <div class="config">
+      <div class="sub">
         <GroupSelectComponent
           placeholder="Choose a level.."
           :optGroups="stageLoaderLevelOptions"
@@ -58,19 +62,19 @@
           selectedValue="placeholder"
           :key="generation"
         />
-      </ul>
-    </div>
-    <div class="config">
-      <ButtonComponent label="Clear List" :onClick="onClearList" />
-    </div>
-    <div>
-      <GroupSelectComponent
-        placeholder="Load a preset.."
-        :optGroups="stageLoaderPresetOptions"
-        :onChange="onStageLoaderPresetSelected"
-        selectedValue="placeholder"
-        :key="generation"
-      />
+      </div>
+      <div class="sub">
+        <ButtonComponent label="Clear List" :onClick="onClearList" />
+      </div>
+      <div class="sub">
+        <GroupSelectComponent
+          placeholder="Load a preset.."
+          :optGroups="stageLoaderPresetOptions"
+          :onChange="onStageLoaderPresetSelected"
+          selectedValue="placeholder"
+          :key="generation + 1"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -189,7 +193,7 @@ export default {
 <style scoped>
 .config span {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   padding-left: 2px;
 }
 
@@ -213,6 +217,10 @@ ul li {
 
 .route-drag {
   margin-right: 5px;
+}
+
+.sub {
+  margin-bottom: 15px;
 }
 
 .route-remove {
