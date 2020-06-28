@@ -94,6 +94,3 @@ Write-Host "Cleaning up..";
 Set-Location ..;
 Remove-Item "./.build" -Recurse;
 Write-Host -ForegroundColor Green "Done";
-
-# Set Azure variable to commit and push changes
-Write-Host "##vso[task.setvariable variable=pushChanges;]Yes"
