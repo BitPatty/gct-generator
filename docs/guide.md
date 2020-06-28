@@ -68,7 +68,7 @@ This issue is not related to the practice codes. You have the following options 
 
 ### Nintendont says IOS58 is missing
 
-Here's a guide on how to install IOS58 for use with Nintendont.
+[Here's](/ios58.html) a guide on how to install IOS58 for use with Nintendont.
 
 ### The game launches but the codes don't work
 
