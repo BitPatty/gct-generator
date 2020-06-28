@@ -105,6 +105,11 @@ export default {
   components: {
     draggable,
   },
+  watch: {
+    fastCodes: function() {
+      this.updateCode();
+    },
+  },
   data() {
     return {
       selectedRoute: [],
