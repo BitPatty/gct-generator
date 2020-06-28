@@ -14,7 +14,10 @@
       </div>
       <div>
         <span>Use Stage Loader:</span>
-        <SelectComponent :options="useStageLoaderOptions" :onChange="onStageLoaderChanged" />
+        <SelectComponent
+          :options="useStageLoaderOptions"
+          :onChange="onStageLoaderChanged"
+        />
       </div>
       <div>
         <span>Download:</span>
@@ -34,7 +37,10 @@
           :onInspect="inspect"
         />
       </div>
-      <div v-if="codes && codes.length > 0 && useStageLoader">
+      <div
+        class="prevent-shrink"
+        v-if="codes && codes.length > 0 && useStageLoader"
+      >
         <h3>Stage Loader</h3>
         <StageLoader :fastCodes="stageLoaderCodes" />
       </div>
@@ -51,14 +57,10 @@
             This is a cheatfile generator for Super Mario Sunshine speedrun
             practice. If this is your first time using the generator we highly
             recommend to check out the
-            <a
-              href="/guide.html"
-              target="_blank"
-            >guide</a> first. Visit the
-            <a
-              href="/guide.html#troubleshooting"
-              target="_blank"
-            >the troubleshooting section</a>
+            <a href="/guide.html" target="_blank">guide</a> first. Visit the
+            <a href="/guide.html#troubleshooting" target="_blank"
+              >the troubleshooting section</a
+            >
             if you encounter any issues.
           </p>
           <div>
@@ -66,42 +68,41 @@
             <ul>
               <li>
                 Discord:
-                <a
-                  href="https://discord.gg/9dGJWEc"
-                  target="_blank"
-                >https://discord.gg/9dGJWEc</a>
+                <a href="https://discord.gg/9dGJWEc" target="_blank"
+                  >https://discord.gg/9dGJWEc</a
+                >
               </li>
               <li>
                 Speedrun.com:
-                <a
-                  href="https://speedrun.com/sms"
-                  target="_blank"
-                >https://speedrun.com/sms</a>
+                <a href="https://speedrun.com/sms" target="_blank"
+                  >https://speedrun.com/sms</a
+                >
               </li>
               <li>
                 Twitter:
-                <a
-                  href="https://twitter.com/SMSCommunity"
-                  target="_blank"
-                >https://twitter.com/SMSCommunity</a>
+                <a href="https://twitter.com/SMSCommunity" target="_blank"
+                  >https://twitter.com/SMSCommunity</a
+                >
               </li>
               <li>
                 Twitch:
                 <a
                   href="https://www.twitch.tv/SunshineCommunity"
                   target="_blank"
-                >https://www.twitch.tv/SunshineCommunity</a>
+                  >https://www.twitch.tv/SunshineCommunity</a
+                >
               </li>
             </ul>
           </div>
           <div>
             <p>
               The generator is brought to you by
-              <a
-                href="https://twitter.com/psychonauter"
-                target="_blank"
-              >Psychonauter</a>,
-              <a href="https://twitter.com/Qbe_Root" target="_blank">Noki Doki</a>
+              <a href="https://twitter.com/psychonauter" target="_blank"
+                >Psychonauter</a
+              >,
+              <a href="https://twitter.com/Qbe_Root" target="_blank"
+                >Noki Doki</a
+              >
               and
               <a href="https://twitter.com/srlMilk" target="_blank">Milk</a>.
             </p>
@@ -134,17 +135,17 @@ import axios from "axios";
 export default {
   mounted() {
     Promise.all(
-      gameVersions.map(async v => ({
+      gameVersions.map(async (v) => ({
         identifier: v.identifier,
         cheats: parseXml((await axios.get(`/codes/${v.identifier}.xml`)).data),
-        fastCodes: (await axios.get(`/codes/fast/${v.identifier}.json`)).data
+        fastCodes: (await axios.get(`/codes/fast/${v.identifier}.json`)).data,
       }))
     )
-      .then(codes => {
+      .then((codes) => {
         localStorage.setItem("codes", JSON.stringify(codes));
         this.isLoading = false;
       })
-      .catch(err => {
+      .catch((err) => {
         if (localStorage.getItem("codes") != null) this.isLoading = false;
       });
   },
@@ -161,8 +162,8 @@ export default {
       stageLoaderCodes: [],
       useStageLoaderOptions: [
         { value: false, label: "No" },
-        { value: true, label: "Yes" }
-      ]
+        { value: true, label: "Yes" },
+      ],
     };
   },
   methods: {
@@ -170,9 +171,9 @@ export default {
       this.selectedVersion = e;
       this.selectedCheats = [];
       const storedCodes = JSON.parse(localStorage.getItem("codes"));
-      this.codes = storedCodes.find(c => c.identifier === e).cheats;
+      this.codes = storedCodes.find((c) => c.identifier === e).cheats;
       this.stageLoaderCodes = storedCodes.find(
-        c => c.identifier === e
+        (c) => c.identifier === e
       ).fastCodes;
       this.inspectingCode = null;
     },
@@ -187,14 +188,18 @@ export default {
     },
     inspect(code) {
       this.inspectingCode = code;
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>
 section {
   display: flex;
   flex-wrap: nowrap;
+}
+
+.prevent-shrink {
+  flex-shrink: 0;
 }
 
 section > div {

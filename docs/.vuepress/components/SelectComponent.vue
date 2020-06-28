@@ -34,6 +34,7 @@ export default {
   display: inline-block;
   max-width: 400px;
   min-width: 180px;
+  width: 100%;
   margin: 0 auto;
   background-color: #3eaf7c;
   z-index: 10;
