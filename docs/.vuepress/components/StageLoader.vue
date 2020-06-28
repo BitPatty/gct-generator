@@ -35,20 +35,30 @@
     <div class="config">
       <span>Route:</span>
       <ul class="level-select">
-        <li v-for="(level, index) in selectedRoute">
-          <div class="route-drag">&#8801;</div>
-          <GroupSelectComponent
-            :selectedValue="level.value"
-            :optGroups="stageLoaderLevelOptions"
-            :onChange="e => onStageLoaderLevelChanged(index, e)"
-          />
-          <button @click="onLevelDeleted(index)" type="button" class="route-remove">&#215;</button>
-        </li>
+        <draggable :list="selectedRoute" :move="checkMove">
+          <li v-for="(level, index) in selectedRoute">
+            <div class="route-drag">&#8801;</div>
+
+            <GroupSelectComponent
+              :selectedValue="level.value"
+              :optGroups="stageLoaderLevelOptions"
+              :onChange="(e) => onStageLoaderLevelChanged(index, e)"
+            />
+            <button
+              @click="onLevelDeleted(index)"
+              type="button"
+              class="route-remove"
+            >
+              &#215;
+            </button>
+          </li>
+        </draggable>
         <GroupSelectComponent
           placeholder="Choose a level.."
           :optGroups="stageLoaderLevelOptions"
           :onChange="onStageLoaderLevelSelected"
           selectedValue="placeholder"
+          :key="generation"
         />
       </ul>
     </div>
@@ -60,8 +70,8 @@
         placeholder="Load a preset.."
         :optGroups="stageLoaderPresetOptions"
         :onChange="onStageLoaderPresetSelected"
-        :resetOnSelect="true"
         selectedValue="placeholder"
+        :key="generation"
       />
     </div>
   </div>
@@ -77,9 +87,15 @@ import GroupSelectComponent from "./GroupSelectComponent";
 import stageLoaderLevels from "../data/stageLoaderLevels.json";
 import stageLoaderPresets from "../data/stageLoaderPresets.json";
 
+// Lib
+import draggable from "vuedraggable";
+
 export default {
   props: {
-    fastCodes: { type: Object }
+    fastCodes: { type: Object },
+  },
+  components: {
+    draggable,
   },
   data() {
     return {
@@ -89,28 +105,29 @@ export default {
       removeDialogueOptions: [
         { value: "yes", label: "Always" },
         { value: "pv5", label: "Not in Pinna 5" },
-        { value: "no", label: "Don't include" }
+        { value: "no", label: "Don't include" },
       ],
       skippableFMVsOptions: [
         { value: "yes", label: "Always" },
         { value: "pp", label: "Not in Pinna" },
-        { value: "no", label: "Don't include" }
+        { value: "no", label: "Don't include" },
       ],
       levelOrderOptions: [
         { value: "list", label: "As specified" },
         { value: "shuffle", label: "Random, no duplicates" },
-        { value: "random", label: "Fully random" }
+        { value: "random", label: "Fully random" },
       ],
       postGameOptions: [
         { value: "0F00", label: "Return to title screen" },
         { value: "0109", label: "Load the flooded plaza" },
         { value: "3400", label: "Load post-Corona plaza" },
-        { value: "3C00", label: "Load the Bowser fight" }
+        { value: "3C00", label: "Load the Bowser fight" },
       ],
       removeDialogSelection: null,
       skippableFMVsSelection: null,
       levelOrderSelection: null,
-      postGameSelection: null
+      postGameSelection: null,
+      generation: 0,
     };
   },
   methods: {
@@ -127,19 +144,22 @@ export default {
       this.postGameSelection = e;
     },
     onStageLoaderLevelSelected(e) {
+      this.generation++;
       this.selectedRoute.push({
-        value: e
+        value: e,
       });
     },
     onStageLoaderLevelChanged(index, e) {
       this.selectedRoute[index] = {
-        value: e
+        value: e,
       };
     },
     onLevelDeleted(e) {
       this.selectedRoute.splice(e, 1);
     },
     onStageLoaderPresetSelected(e) {
+      this.generation++;
+
       if (
         this.selectedRoute?.length > 0 &&
         !confirm("Loading a preset will erase your current list. Continue?")
@@ -166,8 +186,11 @@ export default {
         return;
 
       this.selectedRoute = [];
-    }
-  }
+    },
+    checkMove(e) {
+      window.console.log("Future index: " + e.draggedContext.futureIndex);
+    },
+  },
 };
 </script>
 
@@ -198,7 +221,6 @@ ul li {
 
 .route-drag {
   margin-right: 5px;
-  cursor: pointer;
 }
 
 .route-remove {
