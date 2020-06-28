@@ -35,25 +35,17 @@
     <div class="config">
       <span>Route:</span>
       <ul class="level-select">
-        <draggable
-          v-model="selectedRoute"
-          handle=".route-drag"
-          ghost-class="ghost"
-        >
+        <draggable v-model="selectedRoute" handle=".route-drag" ghost-class="ghost">
           <li v-for="(level, index) in selectedRoute">
             <div class="route-drag">&#8801;</div>
 
             <GroupSelectComponent
               :selectedValue="level.value"
               :optGroups="stageLoaderLevelOptions"
-              :onChange="(e) => onStageLoaderLevelChanged(index, e)"
+              :onChange="e => onStageLoaderLevelChanged(index, e)"
               :key="index"
             />
-            <button
-              @click="onLevelDeleted(index)"
-              type="button"
-              class="route-remove"
-            >
+            <button @click="onLevelDeleted(index)" type="button" class="route-remove">
               &#215;
             </button>
           </li>
@@ -88,19 +80,19 @@
 
 <script>
 // Components
-import SelectComponent from "./SelectComponent";
-import ButtonComponent from "./ButtonComponent";
-import GroupSelectComponent from "./GroupSelectComponent";
+import SelectComponent from './SelectComponent';
+import ButtonComponent from './ButtonComponent';
+import GroupSelectComponent from './GroupSelectComponent';
 
 // Data
-import stageLoaderLevels from "../data/stageLoaderLevels.json";
-import stageLoaderPresets from "../data/stageLoaderPresets.json";
+import stageLoaderLevels from '../data/stageLoaderLevels.json';
+import stageLoaderPresets from '../data/stageLoaderPresets.json';
 
 // Util
-import generateStageLoaderCode from "./scripts/generateStageLoadercode";
+import generateStageLoaderCode from './scripts/generateStageLoadercode';
 
 // Lib
-import draggable from "vuedraggable";
+import draggable from 'vuedraggable';
 
 export default {
   props: {
@@ -116,30 +108,30 @@ export default {
       stageLoaderLevelOptions: stageLoaderLevels,
       stageLoaderPresetOptions: stageLoaderPresets,
       removeDialogueOptions: [
-        { value: "yes", label: "Always" },
-        { value: "pv5", label: "Not in Pinna 5" },
-        { value: "no", label: "Don't include" },
+        { value: 'yes', label: 'Always' },
+        { value: 'pv5', label: 'Not in Pinna 5' },
+        { value: 'no', label: "Don't include" },
       ],
       skippableFMVsOptions: [
-        { value: "yes", label: "Always" },
-        { value: "pp", label: "Not in Pinna" },
-        { value: "no", label: "Don't include" },
+        { value: 'yes', label: 'Always' },
+        { value: 'pp', label: 'Not in Pinna' },
+        { value: 'no', label: "Don't include" },
       ],
       levelOrderOptions: [
-        { value: "list", label: "As specified" },
-        { value: "shuffle", label: "Random, no duplicates" },
-        { value: "random", label: "Fully random" },
+        { value: 'list', label: 'As specified' },
+        { value: 'shuffle', label: 'Random, no duplicates' },
+        { value: 'random', label: 'Fully random' },
       ],
       postGameOptions: [
-        { value: "0F00", label: "Return to title screen" },
-        { value: "0109", label: "Load the flooded plaza" },
-        { value: "3400", label: "Load post-Corona plaza" },
-        { value: "3C00", label: "Load the Bowser fight" },
+        { value: '0F00', label: 'Return to title screen' },
+        { value: '0109', label: 'Load the flooded plaza' },
+        { value: '3400', label: 'Load post-Corona plaza' },
+        { value: '3C00', label: 'Load the Bowser fight' },
       ],
-      removeDialogSelection: "yes",
-      skippableFMVsSelection: "yes",
-      levelOrderSelection: "list",
-      postGameSelection: "0F00",
+      removeDialogSelection: 'yes',
+      skippableFMVsSelection: 'yes',
+      levelOrderSelection: 'list',
+      postGameSelection: '0F00',
       generation: 0,
     };
   },
@@ -182,18 +174,17 @@ export default {
 
       if (
         this.selectedRoute?.length > 0 &&
-        !confirm("Loading a preset will erase your current list. Continue?")
+        !confirm('Loading a preset will erase your current list. Continue?')
       ) {
         return;
       }
 
-      const preset = e.split(";")[0];
-      const ending = e.split(";")[1];
+      const preset = e.split(';')[0];
+      const ending = e.split(';')[1];
 
       const newRoute = [];
 
-      for (let i = 0; i <= preset.length - 4; i += 4)
-        newRoute.push({ value: preset.substr(i, 4) });
+      for (let i = 0; i <= preset.length - 4; i += 4) newRoute.push({ value: preset.substr(i, 4) });
 
       this.selectedRoute = newRoute;
 
@@ -201,10 +192,7 @@ export default {
       this.updateCode();
     },
     onClearList() {
-      if (
-        this.selectedRoute?.length > 0 &&
-        !confirm("Do you really want to clear the list?")
-      )
+      if (this.selectedRoute?.length > 0 && !confirm('Do you really want to clear the list?'))
         return;
 
       this.selectedRoute = [];
@@ -222,16 +210,16 @@ export default {
         return;
       }
 
-      console.log("Generating new Stageloader-Code");
+      console.log('Generating new Stageloader-Code');
       this.onChange(
         generateStageLoaderCode(
           this.fastCodes,
-          this.selectedRoute.map((v) => v.value),
+          this.selectedRoute.map(v => v.value),
           this.levelOrderSelection,
           this.postGameSelection,
           this.skippableFMVsSelection,
-          this.removeDialogSelection
-        )
+          this.removeDialogSelection,
+        ),
       );
     },
   },

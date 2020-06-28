@@ -1,15 +1,16 @@
 <template>
   <div class="select-wrapper">
     <select @change="(e) => this.onChange(e.target.value)" autocomplete="off">
-      <option v-if="placeholder != null" selected disabled>{{
+      <option v-if="placeholder != null" selected disabled>
+        {{
         placeholder
-      }}</option>
+        }}
+      </option>
       <option
         v-for="option in options"
         :value="option.value"
         :selected="selectedValue && option.value === selectedValue"
-        >{{ option.label }}</option
-      >
+      >{{ option.label }}</option>
     </select>
   </div>
 </template>
@@ -20,11 +21,11 @@ export default {
     selectedValue: { type: String },
     placeholder: { type: String },
     options: { type: Array },
-    onChange: { type: Function },
+    onChange: { type: Function }
   },
   data() {
     return {};
-  },
+  }
 };
 </script>
 
@@ -60,6 +61,10 @@ select {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+select::-ms-expand {
+  display: none;
 }
 
 .select-wrapper:hover {

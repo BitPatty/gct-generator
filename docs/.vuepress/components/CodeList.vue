@@ -34,10 +34,10 @@ export default {
   methods: {
     toggle(code) {
       code.selected = !code.selected;
-      this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
+      this.onSelectionChanged(this.availableCodes.filter(c => c.selected));
     },
     populate() {
-      this.availableCodes = this.codes.map((c) => ({ ...c, selected: false }));
+      this.availableCodes = this.codes.map(c => ({ ...c, selected: false }));
     },
     inspect(code) {
       this.onInspect(code);
@@ -64,10 +64,11 @@ ul li {
   display: block;
   min-width: 280px;
   padding-right: 15px;
+  text-align: left;
 }
 
 ul li:nth-child(odd) {
-  background: #e2e2e2;
+  background: #e7e7e7;
 }
 
 ul li:hover {
@@ -91,7 +92,7 @@ li {
 }
 
 li::before {
-  content: "";
+  content: '';
   position: absolute;
   border-color: #a6a6a6;
   border-style: solid;
@@ -105,11 +106,17 @@ li::before {
 
 li:hover::before {
   border-color: #fff;
-  background-color: #ffc0cb;
+  background-color: #1fa76e;
 }
 
 li.checked::before {
   border-color: #fff;
   background-color: #d85e55;
+}
+
+@media screen and (max-width: 400px) {
+  ul li {
+    min-width: 180px;
+  }
 }
 </style>

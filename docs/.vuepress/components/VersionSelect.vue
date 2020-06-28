@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import SelectComponent from "./SelectComponent";
+import SelectComponent from './SelectComponent';
 
-import gameVersions from "../data/gameVersions.json";
+import gameVersions from '../data/gameVersions.json';
 
 export default {
   props: {
@@ -19,7 +19,7 @@ export default {
   },
   data() {
     return {
-      options: gameVersions.map((v) => ({
+      options: gameVersions.map(v => ({
         value: v.identifier,
         label: v.name,
       })),

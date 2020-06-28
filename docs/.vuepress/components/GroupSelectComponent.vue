@@ -1,16 +1,13 @@
 <template>
   <div class="select-wrapper">
     <select @change="onValueChanged" autocomplete="off">
-      <option v-if="placeholder != null" value="placeholder" selected disabled>
-        {{ placeholder }}
-      </option>
+      <option v-if="placeholder != null" value="placeholder" selected disabled>{{ placeholder }}</option>
       <optgroup v-for="optGroup in optGroups" :label="optGroup.label">
         <option
           v-for="option in optGroup.options"
           :value="option.value"
           :selected="selectedValue && option.value === selectedValue"
-          >{{ option.label }}</option
-        >
+        >{{ option.label }}</option>
       </optgroup>
     </select>
   </div>
@@ -22,19 +19,19 @@ export default {
     selectedValue: { type: String },
     placeholder: { type: String },
     optGroups: { type: Array },
-    onChange: { type: Function },
+    onChange: { type: Function }
   },
   computed: {},
   data() {
     return {
-      generation: 2,
+      generation: 2
     };
   },
   methods: {
     onValueChanged(e) {
       this.onChange(e.target.value);
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -70,6 +67,10 @@ select {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+select::-ms-expand {
+  display: none;
 }
 
 .select-wrapper:hover {

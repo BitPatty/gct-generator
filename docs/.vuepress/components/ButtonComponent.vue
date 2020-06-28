@@ -1,33 +1,28 @@
 <template>
-  <div :class="
-      disabled
-        ? 'button-wrapper disabled'
-        : 'button-wrapper'
-    ">
+  <div :class="disabled ? 'button-wrapper disabled' : 'button-wrapper'">
     <button @click="onClick" :disabled="disabled">{{ label }}</button>
   </div>
 </template>
 
 <script>
-import CodeFormatter from "./scripts/codeFormatter";
+import CodeFormatter from './scripts/codeFormatter';
 
 export default {
   props: {
     disabled: { type: Boolean },
     onClick: { type: Function },
-    label: { type: String }
-  }
+    label: { type: String },
+  },
 };
 </script>
 
 <style scoped>
 .button-wrapper {
   position: relative;
-  display: block;
+  display: inline-block;
   max-width: 400px;
   min-width: 180px;
-  margin: 0 auto;
-  text-align: center;
+  width: 100%;
 }
 
 .button-wrapper.disabled button {
@@ -51,6 +46,7 @@ button {
   color: white;
   font-weight: bold;
   cursor: pointer;
+  text-align: center;
 }
 
 button:hover {
