@@ -26,6 +26,10 @@ module.exports = {
         link: '/guide.html',
       },
       {
+        text: 'Code Reference',
+        link: '/code-reference/index.html',
+      },
+      {
         text: 'Changelog',
         link: '/changelog.html',
       },
