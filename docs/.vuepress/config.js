@@ -40,10 +40,6 @@ module.exports = {
         text: "Sunshine Discord",
         link: "https://discord.gg/9dGJWEc",
       },
-      {
-        text: "GitHub",
-        link: "https://github.com/BitPatty/gctGenerator",
-      },
     ],
   },
 
