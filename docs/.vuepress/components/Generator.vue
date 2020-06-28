@@ -57,8 +57,14 @@
           <p>
             This is a cheatfile generator for Super Mario Sunshine speedrun practice. If this is
             your first time using the generator we highly recommend to check out the
-            <a href="/guide.html" target="_blank">guide</a> first. Visit the
-            <a href="/guide.html#troubleshooting" target="_blank">the troubleshooting section</a>
+            <a
+              href="/guide.html"
+              target="_blank"
+            >guide</a> first. Visit the
+            <a
+              href="/guide.html#troubleshooting"
+              target="_blank"
+            >the troubleshooting section</a>
             if you encounter any issues.
           </p>
           <div>
@@ -68,35 +74,49 @@
                 <a href="https://discord.gg/9dGJWEc" target="_blank" rel="noopener">Discord</a>
               </li>
               <li>
-                <a href="https://speedrun.com/sms" target="_blank" rel="noopener"
-                  >Speedrun.com Leaderboards</a
-                >
+                <a
+                  href="https://speedrun.com/sms"
+                  target="_blank"
+                  rel="noopener"
+                >Speedrun.com Leaderboards</a>
               </li>
               <li>
-                <a href="https://twitter.com/SMSCommunity" target="_blank" rel="noopener"
-                  >Twitter: @SMSCommunity</a
-                >
+                <a
+                  href="https://twitter.com/SMSCommunity"
+                  target="_blank"
+                  rel="noopener"
+                >Twitter: @SMSCommunity</a>
               </li>
               <li>
-                <a href="https://www.twitch.tv/SunshineCommunity" target="_blank" rel="noopener"
-                  >Twitch: SunshineCommunity</a
-                >
+                <a
+                  href="https://www.twitch.tv/SunshineCommunity"
+                  target="_blank"
+                  rel="noopener"
+                >Twitch: SunshineCommunity</a>
               </li>
             </ul>
           </div>
           <div>
             <p>
               GCT Generator &copy; 2017 - {{ new Date().getFullYear() }}
-              <a href="https://twitter.com/psychonauter" target="_blank" rel="noopener"
-                >Psychonauter</a
-              >,
+              <a
+                href="https://twitter.com/psychonauter"
+                target="_blank"
+                rel="noopener"
+              >Psychonauter</a>,
               <a href="https://twitter.com/Qbe_Root" target="_blank" rel="noopener">Noki Doki</a>
               and
-              <a href="https://twitter.com/srlMilk" target="_blank" rel="noopener">Milk</a>. The
+              <a
+                href="https://twitter.com/srlMilk"
+                target="_blank"
+                rel="noopener"
+              >Milk</a>. The
               source code is available on
-              <a href="https://github.com/BitPatty/gctGenerator" target="_blank" rel="noopener"
-                >Github</a
-              >.
+              <a
+                href="https://github.com/BitPatty/gctGenerator"
+                target="_blank"
+                rel="noopener"
+              >Github</a>.
             </p>
           </div>
         </div>
@@ -215,7 +235,7 @@ section > div:not(:first-child) {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 999;
+  z-index: 15;
   text-align: center;
   background: #ffffff44;
   background-color: rgba(255, 255, 255, 0.7);
