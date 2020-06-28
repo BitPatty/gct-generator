@@ -1,19 +1,23 @@
 <template>
-  <SelectComponent :options="options" :onChange="onChange" />
+  <SelectComponent
+    placeholder="Choose Format"
+    :options="options"
+    :selectedValue="selectedValue"
+    :onChange="onChange"
+  />
 </template>
 
 <script>
+// Components
 import SelectComponent from "./SelectComponent";
 
+// Data
 import downloadFormats from "../data/downloadFormats.json";
 
 export default {
   props: {
     selectedValue: { type: String },
     onChange: { type: Function },
-  },
-  mounted() {
-    this.onChange(downloadFormats[0].target);
   },
   data() {
     return {

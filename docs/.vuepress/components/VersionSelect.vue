@@ -1,6 +1,7 @@
 <template>
   <SelectComponent
     placeholder="Choose Version.."
+    :selectedValue="selectedValue"
     :options="options"
     :onChange="onChange"
   />

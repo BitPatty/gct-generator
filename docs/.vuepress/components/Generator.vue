@@ -6,28 +6,38 @@
     <section class="config">
       <div>
         <span>Game Version:</span>
-        <VersionSelect :onChange="onVersionChanged" />
+        <VersionSelect
+          :onChange="onVersionChanged"
+          :selectedValue="selectedVersion"
+        />
       </div>
       <div>
         <span>Download Format:</span>
-        <FormatSelect :onChange="onFormatChanged" />
+        <FormatSelect
+          :onChange="onFormatChanged"
+          :selectedValue="selectedFormat"
+        />
       </div>
       <div>
         <span>Use Stage Loader:</span>
         <SelectComponent
           :options="useStageLoaderOptions"
           :onChange="onStageLoaderChanged"
+          :value="useStageLoader"
         />
       </div>
       <div>
         <span>Download:</span>
         <DownloadButton
           :codes="selectedCheats"
+          :stageLoaderCode="selectedStageLoader"
           :versionIdentifier="selectedVersion"
           :format="selectedFormat"
         />
       </div>
     </section>
+    <br />
+    <hr />
     <section>
       <div v-if="codes && codes.length > 0">
         <h3>Available Codes</h3>
@@ -42,7 +52,10 @@
         v-if="codes && codes.length > 0 && useStageLoader"
       >
         <h3>Stage Loader</h3>
-        <StageLoader :fastCodes="stageLoaderCodes" />
+        <StageLoader
+          :fastCodes="stageLoaderCodes"
+          :onChange="onStageLoaderCodeChanged"
+        />
       </div>
 
       <div v-if="codes && codes.length > 0" class="help">
@@ -126,7 +139,7 @@ import DownloadButton from "./DownloadButton";
 // Data
 import gameVersions from "../data/gameVersions.json";
 
-// Helpers
+// Util
 import parseXml from "./scripts/parseXml";
 
 // Libs
@@ -157,7 +170,7 @@ export default {
       selectedStageLoader: null,
       inspectingCode: null,
       selectedVersion: null,
-      selectedFormat: null,
+      selectedFormat: "gct",
       useStageLoader: false,
       stageLoaderCodes: [],
       useStageLoaderOptions: [
@@ -182,9 +195,13 @@ export default {
     },
     onStageLoaderChanged(e) {
       this.useStageLoader = e === true || e === "true";
+      if (!this.useStageLoader) this.selectedStageLoader = null;
     },
     onCheatSelectionChanged(e) {
       this.selectedCheats = e;
+    },
+    onStageLoaderCodeChanged(e) {
+      this.selectedStageLoader = e;
     },
     inspect(code) {
       this.inspectingCode = code;

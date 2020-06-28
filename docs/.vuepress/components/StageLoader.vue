@@ -96,12 +96,16 @@ import GroupSelectComponent from "./GroupSelectComponent";
 import stageLoaderLevels from "../data/stageLoaderLevels.json";
 import stageLoaderPresets from "../data/stageLoaderPresets.json";
 
+// Util
+import generateStageLoaderCode from "./scripts/generateStageLoadercode";
+
 // Lib
 import draggable from "vuedraggable";
 
 export default {
   props: {
     fastCodes: { type: Object },
+    onChange: { type: Function },
   },
   components: {
     draggable,
@@ -132,39 +136,46 @@ export default {
         { value: "3400", label: "Load post-Corona plaza" },
         { value: "3C00", label: "Load the Bowser fight" },
       ],
-      removeDialogSelection: null,
-      skippableFMVsSelection: null,
-      levelOrderSelection: null,
-      postGameSelection: null,
+      removeDialogSelection: "yes",
+      skippableFMVsSelection: "yes",
+      levelOrderSelection: "list",
+      postGameSelection: "0F00",
       generation: 0,
     };
   },
   methods: {
     onRemoveDialogueSelectionChanged(e) {
       this.removeDialogSelection = e;
+      this.updateCode();
     },
     onSkippableFMVsSelectionChanged(e) {
       this.skippableFMVsSelection = e;
+      this.updateCode();
     },
     onLevelOrderSelectionChanged(e) {
       this.levelOrderSelection = e;
+      this.updateCode();
     },
     onPostGameSelectionChanged(e) {
       this.postGameSelection = e;
+      this.updateCode();
     },
     onStageLoaderLevelSelected(e) {
       this.generation++;
       this.selectedRoute.push({
         value: e,
       });
+      this.updateCode();
     },
     onStageLoaderLevelChanged(index, e) {
       this.selectedRoute[index] = {
         value: e,
       };
+      this.updateCode();
     },
     onLevelDeleted(e) {
       this.selectedRoute.splice(e, 1);
+      this.updateCode();
     },
     onStageLoaderPresetSelected(e) {
       this.generation++;
@@ -185,7 +196,9 @@ export default {
         newRoute.push({ value: preset.substr(i, 4) });
 
       this.selectedRoute = newRoute;
-      this.postGameSelection = ending;
+
+      if (ending) this.postGameSelection;
+      this.updateCode();
     },
     onClearList() {
       if (
@@ -195,9 +208,31 @@ export default {
         return;
 
       this.selectedRoute = [];
+      this.updateCode();
     },
-    checkMove(e) {
-      window.console.log("Future index: " + e.draggedContext.futureIndex);
+    updateCode() {
+      if (
+        this.selectedRoute.length === 0 ||
+        this.levelOrderSelection == null ||
+        this.postGameSelection == null ||
+        this.skippableFMVsSelection == null ||
+        this.removeDialogSelection == null
+      ) {
+        this.onChange(null);
+        return;
+      }
+
+      console.log("Generating new Stageloader-Code");
+      this.onChange(
+        generateStageLoaderCode(
+          this.fastCodes,
+          this.selectedRoute.map((v) => v.value),
+          this.levelOrderSelection,
+          this.postGameSelection,
+          this.skippableFMVsSelection,
+          this.removeDialogSelection
+        )
+      );
     },
   },
 };
@@ -208,6 +243,7 @@ export default {
   display: block;
   margin-bottom: 5px;
   padding-left: 2px;
+  font-size: 0.9rem;
 }
 
 .config:not(:first-child) span {
