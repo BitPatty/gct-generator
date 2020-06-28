@@ -1,6 +1,10 @@
 <template>
   <div>
-    <h4>{{ code.title }}</h4>
+    <h3 v-if="anchor" :id="headerId">
+      <a :href="`#${headerId}`" class="header-anchor">#</a>
+      {{ code.title }}
+    </h3>
+    <h3 v-else>{{ code.title }}</h3>
     <div class="metadata">
       <span>Version: {{ code.version }} ({{ code.date }})</span>
       <span v-if="code.author.includes(',')">Authors: {{ code.author }}</span>
@@ -13,7 +17,13 @@
 <script>
 export default {
   props: {
+    anchor: { type: Boolean },
     code: { type: Object },
+  },
+  data() {
+    return {
+      headerId: this.code.title.toLowerCase().replace(/[^a-zA-Z0-9]/g, '-'),
+    };
   },
 };
 </script>
