@@ -1,22 +1,16 @@
 <template>
   <div>
-    <div>
-      <p v-if="isLoading">Loading...</p>
-    </div>
     <section class="config">
+      <div v-if="isLoading" class="loading-overlay">
+        <div class="spinner"></div>
+      </div>
       <div>
         <span>Game Version:</span>
-        <VersionSelect
-          :onChange="onVersionChanged"
-          :selectedValue="selectedVersion"
-        />
+        <VersionSelect :onChange="onVersionChanged" :selectedValue="selectedVersion" />
       </div>
       <div>
         <span>Download Format:</span>
-        <FormatSelect
-          :onChange="onFormatChanged"
-          :selectedValue="selectedFormat"
-        />
+        <FormatSelect :onChange="onFormatChanged" :selectedValue="selectedFormat" />
       </div>
       <div>
         <span>Use Stage Loader:</span>
@@ -47,15 +41,9 @@
           :onInspect="inspect"
         />
       </div>
-      <div
-        class="prevent-shrink"
-        v-if="codes && codes.length > 0 && useStageLoader"
-      >
+      <div class="prevent-shrink" v-if="codes && codes.length > 0 && useStageLoader">
         <h3>Stage Loader</h3>
-        <StageLoader
-          :fastCodes="stageLoaderCodes"
-          :onChange="onStageLoaderCodeChanged"
-        />
+        <StageLoader :fastCodes="stageLoaderCodes" :onChange="onStageLoaderCodeChanged" />
       </div>
 
       <div v-if="codes && codes.length > 0" class="help">
@@ -67,42 +55,31 @@
         <h3>Super Mario Sunshine Cheatfile Generator</h3>
         <div>
           <p>
-            This is a cheatfile generator for Super Mario Sunshine speedrun
-            practice. If this is your first time using the generator we highly
-            recommend to check out the
+            This is a cheatfile generator for Super Mario Sunshine speedrun practice. If this is
+            your first time using the generator we highly recommend to check out the
             <a href="/guide.html" target="_blank">guide</a> first. Visit the
-            <a href="/guide.html#troubleshooting" target="_blank"
-              >the troubleshooting section</a
-            >
+            <a href="/guide.html#troubleshooting" target="_blank">the troubleshooting section</a>
             if you encounter any issues.
           </p>
           <div>
             <h4>The SMS Speedrunning Community</h4>
             <ul>
               <li>
-                Discord:
-                <a href="https://discord.gg/9dGJWEc" target="_blank"
-                  >https://discord.gg/9dGJWEc</a
+                <a href="https://discord.gg/9dGJWEc" target="_blank" rel="noopener">Discord</a>
+              </li>
+              <li>
+                <a href="https://speedrun.com/sms" target="_blank" rel="noopener"
+                  >Speedrun.com Leaderboards</a
                 >
               </li>
               <li>
-                Speedrun.com:
-                <a href="https://speedrun.com/sms" target="_blank"
-                  >https://speedrun.com/sms</a
+                <a href="https://twitter.com/SMSCommunity" target="_blank" rel="noopener"
+                  >Twitter: @SMSCommunity</a
                 >
               </li>
               <li>
-                Twitter:
-                <a href="https://twitter.com/SMSCommunity" target="_blank"
-                  >https://twitter.com/SMSCommunity</a
-                >
-              </li>
-              <li>
-                Twitch:
-                <a
-                  href="https://www.twitch.tv/SunshineCommunity"
-                  target="_blank"
-                  >https://www.twitch.tv/SunshineCommunity</a
+                <a href="https://www.twitch.tv/SunshineCommunity" target="_blank" rel="noopener"
+                  >Twitch: SunshineCommunity</a
                 >
               </li>
             </ul>
@@ -110,16 +87,14 @@
           <div>
             <p>
               GCT Generator &copy; 2017 - {{ new Date().getFullYear() }}
-              <a href="https://twitter.com/psychonauter" target="_blank"
+              <a href="https://twitter.com/psychonauter" target="_blank" rel="noopener"
                 >Psychonauter</a
               >,
-              <a href="https://twitter.com/Qbe_Root" target="_blank"
-                >Noki Doki</a
-              >
+              <a href="https://twitter.com/Qbe_Root" target="_blank" rel="noopener">Noki Doki</a>
               and
-              <a href="https://twitter.com/srlMilk" target="_blank">Milk</a>.
-              The source code is available on
-              <a href="https://github.com/BitPatty/gctGenerator" target="_blank"
+              <a href="https://twitter.com/srlMilk" target="_blank" rel="noopener">Milk</a>. The
+              source code is available on
+              <a href="https://github.com/BitPatty/gctGenerator" target="_blank" rel="noopener"
                 >Github</a
               >.
             </p>
@@ -132,38 +107,38 @@
 
 <script>
 // Components
-import VersionSelect from "./VersionSelect";
-import FormatSelect from "./FormatSelect";
-import SelectComponent from "./SelectComponent";
-import StageLoader from "./StageLoader";
-import CodeInfo from "./CodeInfo";
-import CodeList from "./CodeList";
-import DownloadButton from "./DownloadButton";
+import VersionSelect from './VersionSelect';
+import FormatSelect from './FormatSelect';
+import SelectComponent from './SelectComponent';
+import StageLoader from './StageLoader';
+import CodeInfo from './CodeInfo';
+import CodeList from './CodeList';
+import DownloadButton from './DownloadButton';
 
 // Data
-import gameVersions from "../data/gameVersions.json";
+import gameVersions from '../data/gameVersions.json';
 
 // Util
-import parseXml from "./scripts/parseXml";
+import parseXml from './scripts/parseXml';
 
 // Libs
-import axios from "axios";
+import axios from 'axios';
 
 export default {
   mounted() {
     Promise.all(
-      gameVersions.map(async (v) => ({
+      gameVersions.map(async v => ({
         identifier: v.identifier,
         cheats: parseXml((await axios.get(`/codes/${v.identifier}.xml`)).data),
         fastCodes: (await axios.get(`/codes/fast/${v.identifier}.json`)).data,
-      }))
+      })),
     )
-      .then((codes) => {
-        localStorage.setItem("codes", JSON.stringify(codes));
+      .then(codes => {
+        localStorage.setItem('codes', JSON.stringify(codes));
         this.isLoading = false;
       })
-      .catch((err) => {
-        if (localStorage.getItem("codes") != null) this.isLoading = false;
+      .catch(err => {
+        if (localStorage.getItem('codes') != null) this.isLoading = false;
       });
   },
   data() {
@@ -174,12 +149,12 @@ export default {
       selectedStageLoader: null,
       inspectingCode: null,
       selectedVersion: null,
-      selectedFormat: "gct",
+      selectedFormat: 'gct',
       useStageLoader: false,
       stageLoaderCodes: [],
       useStageLoaderOptions: [
-        { value: false, label: "No" },
-        { value: true, label: "Yes" },
+        { value: false, label: 'No' },
+        { value: true, label: 'Yes' },
       ],
     };
   },
@@ -187,18 +162,16 @@ export default {
     onVersionChanged(e) {
       this.selectedVersion = e;
       this.selectedCheats = [];
-      const storedCodes = JSON.parse(localStorage.getItem("codes"));
-      this.codes = storedCodes.find((c) => c.identifier === e).cheats;
-      this.stageLoaderCodes = storedCodes.find(
-        (c) => c.identifier === e
-      ).fastCodes;
+      const storedCodes = JSON.parse(localStorage.getItem('codes'));
+      this.codes = storedCodes.find(c => c.identifier === e).cheats;
+      this.stageLoaderCodes = storedCodes.find(c => c.identifier === e).fastCodes;
       this.inspectingCode = null;
     },
     onFormatChanged(e) {
       this.selectedFormat = e;
     },
     onStageLoaderChanged(e) {
-      this.useStageLoader = e === true || e === "true";
+      this.useStageLoader = e === true || e === 'true';
       if (!this.useStageLoader) this.selectedStageLoader = null;
     },
     onCheatSelectionChanged(e) {
@@ -232,10 +205,76 @@ section > div:not(:first-child) {
   margin-left: 20px;
 }
 
+.config {
+  position: relative;
+}
+
+.config .loading-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  text-align: center;
+  background: #ffffff44;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
 .config span {
   display: block;
   margin-bottom: 10px;
   padding-left: 2px;
+}
+
+.help {
+  text-align: left;
+}
+
+.spinner {
+  display: inline-block;
+}
+
+.spinner:after {
+  content: ' ';
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #2eb9e2 transparent #2eb9e2 transparent;
+  animation: spinner 1.2s linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .config .loading-overlay {
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  section {
+    flex-wrap: wrap;
+    display: block;
+    margin-left: 0px;
+    text-align: center;
+  }
+
+  section > div,
+  section > div:not(:first-child) {
+    margin-left: 0px;
+    width: 100%;
+  }
 }
 </style>
 

@@ -1,8 +1,8 @@
 export default class CodeFormatter {
   static generateGCT(codes, version) {
-    let code = "00D0C0DE00D0C0DE";
-    codes.forEach((c) => (code += c.source));
-    code += "FF00000000000000";
+    let code = '00D0C0DE00D0C0DE';
+    codes.forEach(c => (code += c.source));
+    code += 'FF00000000000000';
 
     let rawData = new Uint8Array(code.length / 2);
 
@@ -14,14 +14,14 @@ export default class CodeFormatter {
   }
 
   static generateDolphinINI(codes, version) {
-    let data = "Paste the following on top of your games .ini file:\r\n[Gecko]";
+    let data = 'Paste the following on top of your games .ini file:\r\n[Gecko]';
 
-    codes.forEach((code) => {
+    codes.forEach(code => {
       data += `\r\n$${code.title} (${code.author}) [${code.date}]\r\n`;
       data += code.source
         .match(/.{8}/g)
-        .join(" ")
-        .replace(/(.{17})./g, "$1\r\n");
+        .join(' ')
+        .replace(/(.{17})./g, '$1\r\n');
     });
 
     this.downloadFile(data, `${version}.txt`);
@@ -30,12 +30,12 @@ export default class CodeFormatter {
   static generateCheatManagerTXT(codes, version) {
     let data = `${version}\r\nSuper Mario Sunshine`;
 
-    codes.forEach((code) => {
+    codes.forEach(code => {
       data += `\r\n\r\n${code.title} (${code.author}) [${code.date}]\r\n`;
       data += code.source
         .match(/.{8}/g)
-        .join(" ")
-        .replace(/(.{17})./g, "$1\r\n");
+        .join(' ')
+        .replace(/(.{17})./g, '$1\r\n');
     });
 
     this.downloadFile(data, `${version}.txt`);
@@ -43,13 +43,12 @@ export default class CodeFormatter {
 
   static downloadFile(data, filename) {
     var file = new Blob([data], {
-      type: "application/octet-stream",
+      type: 'application/octet-stream',
     });
 
-    if (window.navigator.msSaveOrOpenBlob)
-      window.navigator.msSaveOrOpenBlob(file, filename);
+    if (window.navigator.msSaveOrOpenBlob) window.navigator.msSaveOrOpenBlob(file, filename);
     else {
-      var a = document.createElement("a"),
+      var a = document.createElement('a'),
         url = window.URL.createObjectURL(file);
       a.href = url;
       a.download = filename;

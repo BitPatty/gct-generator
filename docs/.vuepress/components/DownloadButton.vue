@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import ButtonComponent from "./ButtonComponent";
-import CodeFormatter from "./scripts/codeFormatter";
+import ButtonComponent from './ButtonComponent';
+import CodeFormatter from './scripts/codeFormatter';
 
 export default {
   props: {
@@ -26,22 +26,22 @@ export default {
 
       if (this.stageLoaderCode)
         c.push({
-          title: "Stage List Loader",
-          author: "Noki Doki",
-          date: "-",
-          version: "",
+          title: 'Stage List Loader',
+          author: 'Noki Doki',
+          date: '-',
+          version: '',
           source: this.stageLoaderCode,
         });
 
       console.log(`Preparing download for ${this.format}`);
       switch (this.format) {
-        case "gct":
+        case 'gct':
           CodeFormatter.generateGCT(c, this.versionIdentifier);
           break;
-        case "dolphin":
+        case 'dolphin':
           CodeFormatter.generateDolphinINI(c, this.versionIdentifier);
           break;
-        case "gcm":
+        case 'gcm':
           CodeFormatter.generateCheatManagerTXT(c, this.versionIdentifier);
           break;
       }

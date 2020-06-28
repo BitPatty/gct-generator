@@ -1,6 +1,6 @@
 {
-  "name": "gctGenerator",
-  "version": "0.0.1",
+  "name": "gctgenerator",
+  "version": "3.0.1",
   "description": "Super Mario Sunshine Practice File Generator",
   "main": "index.js",
   "authors": {
