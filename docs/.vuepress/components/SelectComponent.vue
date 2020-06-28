@@ -56,6 +56,10 @@ select {
   color: white;
   font-weight: bold;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .select-wrapper:hover {
@@ -69,14 +73,14 @@ select option {
 
 .select-wrapper:after {
   position: absolute;
-  right: 2px;
-  top: 2px;
-  width: 50px;
+  right: 0px;
+  top: 3px;
+  width: 40px;
   height: 100%;
   content: "\25BC";
   text-align: center;
   color: white;
-  font-size: 18px;
+  font-size: 14px;
   z-index: -1;
 }
 </style>
