@@ -4,7 +4,7 @@
         ? 'button-wrapper disabled'
         : 'button-wrapper'
     ">
-    <button @click="onClick">{{ label }}</button>
+    <button @click="onClick" :disabled="disabled">{{ label }}</button>
   </div>
 </template>
 
