@@ -39,7 +39,7 @@
           v-model="selectedRoute"
           handle=".route-drag"
           ghost-class="ghost"
-          @end="onDrageEnd"
+          @end="onDragEnd"
         >
           <li v-for="(level, index) in selectedRoute">
             <div class="route-drag">&#8801;</div>
@@ -194,7 +194,7 @@ export default {
       if (ending) this.postGameSelection;
       this.updateCode();
     },
-    onDrageEnd() {
+    onDragEnd() {
       this.updateCode();
     },
     onClearList() {
