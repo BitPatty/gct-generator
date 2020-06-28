@@ -35,24 +35,22 @@
     <div class="config">
       <span>Route:</span>
       <ul class="level-select">
-        <draggable :list="selectedRoute" :move="checkMove">
-          <li v-for="(level, index) in selectedRoute">
-            <div class="route-drag">&#8801;</div>
+        <li v-for="(level, index) in selectedRoute">
+          <div class="route-drag">&#8801;</div>
 
-            <GroupSelectComponent
-              :selectedValue="level.value"
-              :optGroups="stageLoaderLevelOptions"
-              :onChange="(e) => onStageLoaderLevelChanged(index, e)"
-            />
-            <button
-              @click="onLevelDeleted(index)"
-              type="button"
-              class="route-remove"
-            >
-              &#215;
-            </button>
-          </li>
-        </draggable>
+          <GroupSelectComponent
+            :selectedValue="level.value"
+            :optGroups="stageLoaderLevelOptions"
+            :onChange="(e) => onStageLoaderLevelChanged(index, e)"
+          />
+          <button
+            @click="onLevelDeleted(index)"
+            type="button"
+            class="route-remove"
+          >
+            &#215;
+          </button>
+        </li>
         <GroupSelectComponent
           placeholder="Choose a level.."
           :optGroups="stageLoaderLevelOptions"
@@ -87,15 +85,9 @@ import GroupSelectComponent from "./GroupSelectComponent";
 import stageLoaderLevels from "../data/stageLoaderLevels.json";
 import stageLoaderPresets from "../data/stageLoaderPresets.json";
 
-// Lib
-import draggable from "vuedraggable";
-
 export default {
   props: {
     fastCodes: { type: Object },
-  },
-  components: {
-    draggable,
   },
   data() {
     return {
