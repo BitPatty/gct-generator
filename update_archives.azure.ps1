@@ -2,7 +2,7 @@ $ErrorActionPreference = "Stop";
 
 # Retrieve commit hash from latest archive update
 Write-Host -ForegroundColor Blue "Retrieving last update commit..";
-$LastGCMUpdate = (git log -1 --pretty=format:"%H" ./files/GCMCodes.zip);
+$LastGCMUpdate = (git log -1 --pretty=format:"%H" ./docs/.vuepress/public/files/GCMCodes.zip);
 
 if ([string]::IsNullOrWhiteSpace($LastGCMUpdate)) {            
   Write-Host -ForegroundColor Red "Failed to retrieve the latest update commit";
@@ -14,7 +14,7 @@ Write-Host -ForegroundColor Green "Last GCM Archive Update:" $LastGCMUpdate;
 # Check whether any one of the code files chnged
 Write-Host -ForegroundColor Blue "Scanning for code changes.."
 
-$CodeUpdates = (git diff --name-only $LastGCMUpdate HEAD -- './codes/*.xml')
+$CodeUpdates = (git diff --name-only $LastGCMUpdate HEAD -- './docs/.vuepress/public/codes/*.xml')
 
 if ([string]::IsNullOrWhiteSpace($CodeUpdates)) {            
   Write-Host -ForegroundColor Green "No code changes detected";
@@ -28,7 +28,7 @@ Write-Host -ForegroundColor Blue  "Packing new archive...";
 
 # Setup workspace
 New-Item -ItemType directory -Path "./.build";
-Copy-Item "./codes/*.xml" "./.build/";
+Copy-Item "./docs/.vuepress/public/codes/*.xml" "./.build/";
 Set-Location "./.build";
 
 # Helper function to convert the XML files to the GCM txt format
@@ -71,7 +71,7 @@ XmlToGcm "GMSJ0A.xml" "GMSJ01 (A).txt" "GMSJ01";
 
 # Replace zip file
 Write-Host "Compressing and replacing GCM archive..";
-Compress-Archive "./*.txt" "../files/GCMCodes.zip" -Force;
+Compress-Archive "./*.txt" "../docs/.vuepress/public/files/GCMCodes.zip" -Force;
 
 Write-Host -ForegroundColor Green "GCM Archive rebuilt";
 
@@ -85,7 +85,7 @@ XmlToIni "GMSJ01.xml" "GMSJ01.txt" "GMSJ01";
 XmlToIni "GMSJ0A.xml" "GMSJ01 (A).txt" "GMSJ01";
 
 Write-Host "Compressing and replacing Dolphin archive..";
-Compress-Archive "./*.txt" "../files/DolphinCodes.zip" -Force;
+Compress-Archive "./*.txt" "../docs/.vuepress/public/files/DolphinCodes.zip" -Force;
 
 Write-Host -ForegroundColor Green "Dolphin Archive rebuilt";
 
