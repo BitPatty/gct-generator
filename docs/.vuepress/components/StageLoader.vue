@@ -35,22 +35,29 @@
     <div class="config">
       <span>Route:</span>
       <ul class="level-select">
-        <li v-for="(level, index) in selectedRoute">
-          <div class="route-drag">&#8801;</div>
+        <draggable
+          v-model="selectedRoute"
+          handle=".route-drag"
+          ghost-class="ghost"
+        >
+          <li v-for="(level, index) in selectedRoute">
+            <div class="route-drag">&#8801;</div>
 
-          <GroupSelectComponent
-            :selectedValue="level.value"
-            :optGroups="stageLoaderLevelOptions"
-            :onChange="(e) => onStageLoaderLevelChanged(index, e)"
-          />
-          <button
-            @click="onLevelDeleted(index)"
-            type="button"
-            class="route-remove"
-          >
-            &#215;
-          </button>
-        </li>
+            <GroupSelectComponent
+              :selectedValue="level.value"
+              :optGroups="stageLoaderLevelOptions"
+              :onChange="(e) => onStageLoaderLevelChanged(index, e)"
+              :key="index"
+            />
+            <button
+              @click="onLevelDeleted(index)"
+              type="button"
+              class="route-remove"
+            >
+              &#215;
+            </button>
+          </li>
+        </draggable>
       </ul>
     </div>
     <div class="config">
@@ -89,9 +96,15 @@ import GroupSelectComponent from "./GroupSelectComponent";
 import stageLoaderLevels from "../data/stageLoaderLevels.json";
 import stageLoaderPresets from "../data/stageLoaderPresets.json";
 
+// Lib
+import draggable from "vuedraggable";
+
 export default {
   props: {
     fastCodes: { type: Object },
+  },
+  components: {
+    draggable,
   },
   data() {
     return {
@@ -213,9 +226,11 @@ ul {
 ul li {
   display: flex;
   flex-wrap: nowrap;
+  margin-bottom: 2px;
 }
 
 .route-drag {
+  cursor: move;
   margin-right: 5px;
 }
 
@@ -230,5 +245,11 @@ ul li {
   font-size: 1.2rem;
   color: red;
   cursor: pointer;
+}
+</style>
+
+<style>
+.ghost select {
+  background-color: orange;
 }
 </style>
