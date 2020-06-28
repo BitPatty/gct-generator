@@ -109,7 +109,7 @@
           </div>
           <div>
             <p>
-              The generator is brought to you by
+              GCT Generator &copy; 2017 - {{ new Date().getFullYear() }}
               <a href="https://twitter.com/psychonauter" target="_blank"
                 >Psychonauter</a
               >,
@@ -118,6 +118,10 @@
               >
               and
               <a href="https://twitter.com/srlMilk" target="_blank">Milk</a>.
+              The source code is available on
+              <a href="https://github.com/BitPatty/gctGenerator" target="_blank"
+                >Github</a
+              >.
             </p>
           </div>
         </div>
