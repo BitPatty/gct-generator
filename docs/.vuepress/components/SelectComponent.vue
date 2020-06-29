@@ -1,16 +1,15 @@
 <template>
-  <div class="select-wrapper">
-    <select @change="(e) => this.onChange(e.target.value)" autocomplete="off">
+  <div :class="disabled ? 'select-wrapper disabled' : 'select-wrapper'">
+    <select @change="e => this.onChange(e.target.value)" autocomplete="off" :disabled="disabled">
       <option v-if="placeholder != null" selected disabled>
-        {{
-        placeholder
-        }}
+        {{ placeholder }}
       </option>
       <option
         v-for="option in options"
         :value="option.value"
         :selected="selectedValue && option.value === selectedValue"
-      >{{ option.label }}</option>
+        >{{ option.label }}</option
+      >
     </select>
   </div>
 </template>
@@ -18,14 +17,15 @@
 <script>
 export default {
   props: {
+    disabled: { type: Boolean },
     selectedValue: { type: String },
     placeholder: { type: String },
     options: { type: Array },
-    onChange: { type: Function }
+    onChange: { type: Function },
   },
   data() {
     return {};
-  }
+  },
 };
 </script>
 
@@ -39,6 +39,12 @@ export default {
   margin: 0 auto;
   background-color: #3eaf7c;
   z-index: 10;
+}
+
+.select-wrapper.disabled,
+.select-wrapper.disabled select {
+  background-color: rgb(165, 165, 165);
+  cursor: not-allowed;
 }
 
 select {
@@ -82,7 +88,7 @@ select option {
   top: 3px;
   width: 40px;
   height: 100%;
-  content: "\25BC";
+  content: '\25BC';
   text-align: center;
   color: white;
   font-size: 14px;
