@@ -1,4 +1,4 @@
-ARG GITHUB_PAT
+ARG REPOSITORY_TOKEN
 
 FROM mcr.microsoft.com/powershell:latest AS prebuild
 WORKDIR /src
@@ -12,8 +12,8 @@ RUN yarn
 RUN yarn build
 
 FROM mcr.microsoft.com/powershell:latest AS final
-ARG GITHUB_PAT
-ENV GITHUB_PAT ${GITHUB_PAT}
+ARG REPOSITORY_TOKEN
+ENV REPOSITORY_TOKEN ${REPOSITORY_TOKEN}
 WORKDIR /src
 RUN apt-get update
 RUN apt install -y git

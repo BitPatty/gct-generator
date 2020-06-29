@@ -21,7 +21,7 @@ git commit -m "auto-deployment";
 try {
   # Force push to gh-pages
   Write-Host "Pushing to gh-pages branch";
-  git push -uqf $env:GITHUB_PAT HEAD:gh-pages 2>&1 | Out-Null;
+  git push -uqf $env:REPOSITORY_TOKEN HEAD:gh-pages 2>&1 | Out-Null;
 }
 catch {
   Write-Error "Push failed";
