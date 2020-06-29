@@ -13,8 +13,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Create a new build
+        shell: bash
         run: docker build -t publisher:latest -f ./dockerfiles/Deploy.Dockerfile .
       - name: Deploy to gh-pages branch
+        shell: bash
         env:
           REPOSITORY_TOKEN: ${{ secrets.REPOSITORY_TOKEN }}
           PUBLISHER_NAME: ${{ secrets.PUBLISHER_NAME }}
@@ -22,7 +24,7 @@ jobs:
         run: |
           docker run \
             --rm \
-            -e REPOSITORY_TOKEN="$env:REPOSITORY_TOKEN" \
-            -e PUBLISHER_NAME="$env:PUBLISHER_NAME" \
-            -e PUBLISHER_EMAIL="$env:PUBLISHER_EMAIL" \
+            -e REPOSITORY_TOKEN="$REPOSITORY_TOKEN" \
+            -e PUBLISHER_NAME="$PUBLISHER_NAME" \
+            -e PUBLISHER_EMAIL="$PUBLISHER_EMAIL" \
             publisher:latest
