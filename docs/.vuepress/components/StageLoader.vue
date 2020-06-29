@@ -116,13 +116,13 @@ export default {
       stageLoaderLevelOptions: stageLoaderLevels,
       stageLoaderPresetOptions: stageLoaderPresets,
       removeDialogueOptions: [
-        { value: 'yes', label: 'Always' },
         { value: 'pv5', label: 'Not in Pinna 5' },
+        { value: 'yes', label: 'Always' },
         { value: 'no', label: "Don't include" },
       ],
       skippableFMVsOptions: [
-        { value: 'yes', label: 'Always' },
         { value: 'pp', label: 'Not in Pinna' },
+        { value: 'yes', label: 'Always' },
         { value: 'no', label: "Don't include" },
       ],
       levelOrderOptions: [
@@ -131,9 +131,10 @@ export default {
         { value: 'random', label: 'Fully random' },
       ],
       postGameOptions: [
-        { value: '0F00', label: 'Return to title screen' },
+        { value: '0F00', label: 'Return to the title screen' },
         { value: '0109', label: 'Load the flooded plaza' },
-        { value: '3400', label: 'Load post-Corona plaza' },
+        { value: '0102', label: 'Load post-Corona plaza' },
+        { value: '3400', label: 'Load Corona Montain' },
         { value: '3C00', label: 'Load the Bowser fight' },
       ],
       removeDialogSelection: 'yes',
