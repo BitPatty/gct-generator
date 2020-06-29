@@ -288,6 +288,6 @@ section > div:not(:first-child) {
 
 <style>
 body {
-  overflow: scroll;
+  overflow-y: scroll;
 }
 </style>
