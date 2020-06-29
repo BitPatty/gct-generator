@@ -50,7 +50,9 @@
               :onChange="e => onStageLoaderLevelChanged(index, e)"
               :key="index"
             />
-            <button @click="onLevelDeleted(index)" type="button" class="route-remove">&#215;</button>
+            <button @click="onLevelDeleted(index)" type="button" class="route-remove">
+              &#215;
+            </button>
           </li>
         </draggable>
       </ul>
@@ -137,8 +139,8 @@ export default {
         { value: '3400', label: 'Load Corona Montain' },
         { value: '3C00', label: 'Load the Bowser fight' },
       ],
-      removeDialogSelection: 'yes',
-      skippableFMVsSelection: 'yes',
+      removeDialogSelection: 'pv5',
+      skippableFMVsSelection: 'pp',
       levelOrderSelection: 'list',
       postGameSelection: '0F00',
       generation: 0,
