@@ -52,7 +52,7 @@
         <div v-else>Select your codes from the list on the left.</div>
       </div>
       <div v-if="selectedVersion == null" class="help">
-        <h3>Super Mario Sunshine Cheatfile Generator</h3>
+        <h3>Super Mario Sunshine Practice File Generator</h3>
         <div>
           <p>
             This is a cheatfile generator for Super Mario Sunshine speedrun practice. If this is
