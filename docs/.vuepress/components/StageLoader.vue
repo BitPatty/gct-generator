@@ -145,7 +145,6 @@ export default {
       levelOrderSelection: 'list',
       postGameSelection: '0F00',
       generation: 0,
-      preferredEnding: 0,
     };
   },
   methods: {
@@ -159,11 +158,6 @@ export default {
     },
     onLevelOrderSelectionChanged(e) {
       this.levelOrderSelection = e;
-
-      if (e === 'random') {
-        this.postGameSelection = this.preferredEnding ?? '3400';
-      }
-
       this.updateCode();
     },
     onPostGameSelectionChanged(e) {
@@ -207,10 +201,7 @@ export default {
       this.selectedRoute = newRoute;
 
       if (ending) {
-        this.preferredEnding = ending;
         this.postGameSelection = ending;
-      } else {
-        this.preferredEnding = null;
       }
 
       this.updateCode();
