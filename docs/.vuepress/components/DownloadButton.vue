@@ -7,8 +7,12 @@
 </template>
 
 <script>
+// Components
 import ButtonComponent from './ButtonComponent';
 import CodeFormatter from './scripts/codeFormatter';
+
+// Data
+import gameVersions from '../data/gameVersions.json';
 
 export default {
   props: {
@@ -34,15 +38,17 @@ export default {
         });
 
       console.log(`Preparing download for ${this.format}`);
+      const fileName = gameVersions.find(v => v.identifier === this.versionIdentifier).version;
+
       switch (this.format) {
         case 'gct':
-          CodeFormatter.generateGCT(c, this.versionIdentifier);
+          CodeFormatter.generateGCT(c, fileName);
           break;
         case 'dolphin':
-          CodeFormatter.generateDolphinINI(c, this.versionIdentifier);
+          CodeFormatter.generateDolphinINI(c, fileName);
           break;
         case 'gcm':
-          CodeFormatter.generateCheatManagerTXT(c, this.versionIdentifier);
+          CodeFormatter.generateCheatManagerTXT(c, fileName);
           break;
       }
     },
