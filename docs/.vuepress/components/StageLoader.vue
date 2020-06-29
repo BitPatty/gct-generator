@@ -160,7 +160,7 @@ export default {
       this.levelOrderSelection = e;
 
       if (e === 'random') {
-        this.postGameSelection = '0109';
+        this.postGameSelection = '3400';
       }
 
       this.updateCode();
