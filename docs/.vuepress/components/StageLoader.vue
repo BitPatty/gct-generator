@@ -27,6 +27,7 @@
     <div class="config">
       <span>Post Game:</span>
       <SelectComponent
+        :disabled="levelOrderSelection === 'random'"
         :options="postGameOptions"
         :onChange="onPostGameSelectionChanged"
         :selectedValue="postGameSelection"
@@ -157,6 +158,11 @@ export default {
     },
     onLevelOrderSelectionChanged(e) {
       this.levelOrderSelection = e;
+
+      if (e === 'random') {
+        this.postGameSelection = '0109';
+      }
+
       this.updateCode();
     },
     onPostGameSelectionChanged(e) {
