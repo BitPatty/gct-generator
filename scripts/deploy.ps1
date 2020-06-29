@@ -9,6 +9,7 @@ Set-Location "./dist"
 
 # Set git email and username
 Write-Host "Configuring git"
+Write-Host "Using identity $env:PUBLISHER_NAME / $env:PUBLISHER_EMAIL"
 git init
 git config --local user.name "$env:PUBLISHER_NAME" | Out-Null;
 git config --local user.email "$env:PUBLISHER_EMAIL" | Out-Null;
