@@ -1,9 +1,22 @@
-# Auto detect text files and perform LF normalization
-* text eol=crlf
-*.html text
-*.css text
-*.xml text
+# Text files crlf
+*.html text eol=crlf
+*.json text eol=crlf
+*.js text eol=crlf
+*.lock text eol=crlf
+*.md text eol=crlf
+*.ps1 text eol=crlf
+*.styl text eol=crlf
+*.vue text eol=crlf
+*.xml text eol=crlf
+*.yml text eol=crlf
 
+# Special files
+.dockerignore text eol=crlf
+.prettierrc text eol=crlf
+Dockerfile text eol=crlf
+LICENSE text eol=crlf
+
+# Binary files
+*.jpg binary
 *.png binary
 *.zip binary
-*.jpg binary

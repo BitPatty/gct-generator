@@ -1,6 +1,11 @@
-FROM node:lts-buster AS build
+FROM mcr.microsoft.com/powershell:latest AS prebuild
 WORKDIR /src
 COPY . .
+RUN pwsh -File ./scripts/build_archives.ps1
+
+FROM node:lts-buster AS build
+WORKDIR /src
+COPY --from=prebuild /src .
 RUN yarn
 RUN yarn build
 
