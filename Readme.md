@@ -1,5 +1,8 @@
 # GCT Generator
 
+[![GitHub license](https://img.shields.io/github/license/bitpatty/gctGenerator?color=blue&label=License&style=plastic)](https://github.com/BitPatty/gctGenerator/blob/master/LICENSE)
+[![CD Pipeline](https://github.com/BitPatty/gctGenerator/workflows/CD%20Pipeline/badge.svg)](https://github.com/BitPatty/gctGenerator/actions?query=workflow%3A%22CD+Pipeline%22)
+
 This repository contains the code behind the Super Mario Sunshine Cheatfile Generator at https://gct.zint.ch/
 
 ---
