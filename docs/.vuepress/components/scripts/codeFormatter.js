@@ -17,7 +17,7 @@ export default class CodeFormatter {
     let data = 'Paste the following on top of your games .ini file:\r\n[Gecko]';
 
     codes.forEach(code => {
-      data += `\r\n$${code.title} (${code.author}) [${code.date}]\r\n`;
+      data += `\r\n$${code.title} (${code.date}) [${code.author}]\r\n`;
       data += code.source
         .match(/.{8}/g)
         .join(' ')
@@ -31,7 +31,7 @@ export default class CodeFormatter {
     let data = `${version}\r\nSuper Mario Sunshine`;
 
     codes.forEach(code => {
-      data += `\r\n\r\n${code.title} (${code.author}) [${code.date}]\r\n`;
+      data += `\r\n\r\n${code.title} (${code.date}) [${code.author}]\r\n`;
       data += code.source
         .match(/.{8}/g)
         .join(' ')
