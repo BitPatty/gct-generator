@@ -5,7 +5,7 @@ services:
     container_name: gct_generator
     build:
       context: ./
-      dockerfile: Dockerfile
+      dockerfile: ./dockerfiles/Serve.Dockerfile
     network_mode: 'bridge'
     ports:
       - '8080:80'

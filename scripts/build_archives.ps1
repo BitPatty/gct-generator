@@ -1,35 +1,16 @@
+# Stop on errors
 $ErrorActionPreference = "Stop";
 
-# Retrieve commit hash from latest archive update
-Write-Host -ForegroundColor Blue "Retrieving last update commit..";
-$LastGCMUpdate = (git log -1 --pretty=format:"%H" ./docs/.vuepress/public/files/GCMCodes.zip);
-
-if ([string]::IsNullOrWhiteSpace($LastGCMUpdate)) {            
-  Write-Host -ForegroundColor Red "Failed to retrieve the latest update commit";
-  exit -1;       
-}
-
-Write-Host -ForegroundColor Green "Last GCM Archive Update:" $LastGCMUpdate;
-
-# Check whether any one of the code files chnged
-Write-Host -ForegroundColor Blue "Scanning for code changes.."
-
-$CodeUpdates = (git diff --name-only $LastGCMUpdate HEAD -- './docs/.vuepress/public/codes/*.xml')
-
-if ([string]::IsNullOrWhiteSpace($CodeUpdates)) {            
-  Write-Host -ForegroundColor Green "No code changes detected";
-  exit 0;
-}
-
-Write-Host "Changed files since last archive Update:" $CodeUpdates;
+# Hide progress bars
+$global:ProgressPreference = 'SilentlyContinue'
 
 # Start build
-Write-Host -ForegroundColor Blue  "Packing new archive...";
+Write-Host "Packing archives...";
 
 # Setup workspace
-New-Item -ItemType directory -Path "./.build";
-Copy-Item "./docs/.vuepress/public/codes/*.xml" "./.build/";
-Set-Location "./.build";
+New-Item -ItemType directory -Path "./tmp" > $null;
+Copy-Item "./docs/.vuepress/public/codes/*.xml" "./tmp/";
+Set-Location "./tmp";
 
 # Helper function to convert the XML files to the GCM txt format
 function XmlToGcm($source, $destination, $versionname) {
@@ -70,10 +51,9 @@ XmlToGcm "GMSJ01.xml" "GMSJ01.txt" "GMSJ01";
 XmlToGcm "GMSJ0A.xml" "GMSJ01 (A).txt" "GMSJ01";
 
 # Replace zip file
-Write-Host "Compressing and replacing GCM archive..";
-Compress-Archive "./*.txt" "../docs/.vuepress/public/files/GCMCodes.zip" -Force;
-
-Write-Host -ForegroundColor Green "GCM Archive rebuilt";
+Write-Host "Compressing GCM archive..";
+Compress-Archive "./*.txt" "../docs/.vuepress/public/files/GCMCodes.zip";
+Write-Host "GCM Archive built";
 
 # Convert files to Dolphin format
 Remove-Item *.txt;
@@ -84,13 +64,13 @@ XmlToIni "GMSP01.xml" "GMSP01.txt" "GMSP01";
 XmlToIni "GMSJ01.xml" "GMSJ01.txt" "GMSJ01";
 XmlToIni "GMSJ0A.xml" "GMSJ01 (A).txt" "GMSJ01";
 
-Write-Host "Compressing and replacing Dolphin archive..";
-Compress-Archive "./*.txt" "../docs/.vuepress/public/files/DolphinCodes.zip" -Force;
+Write-Host "Compressing Dolphin archive..";
+Compress-Archive "./*.txt" "../docs/.vuepress/public/files/DolphinCodes.zip";
 
-Write-Host -ForegroundColor Green "Dolphin Archive rebuilt";
+Write-Host "Dolphin Archive built";
 
 # Cleanup
 Write-Host "Cleaning up..";
 Set-Location ..;
-Remove-Item "./.build" -Recurse;
-Write-Host -ForegroundColor Green "Done";
+Remove-Item "./tmp" -Recurse;
+Write-Host "Done";
