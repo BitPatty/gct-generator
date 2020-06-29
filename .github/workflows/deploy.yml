@@ -1,24 +1,20 @@
-name: CI/CD
+name: Build & Deploy
 
 on:
   push:
     branches:
-      - '*'
-      - '!gh-pages'
+      - 'master'
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Create a new build
-        run: docker build -t publisher:latest -f ./dockerfiles/Deploy.Dockerfile .
   deploy:
     runs-on: ubuntu-latest
     needs: build
     if: github.ref == 'refs/heads/master'
     steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Create a new build
+        run: docker build -t publisher:latest -f ./dockerfiles/Deploy.Dockerfile .
       - name: Deploy to gh-pages branch
         env:
           REPOSITORY_TOKEN: ${{ secrets.REPOSITORY_TOKEN }}
