@@ -145,6 +145,7 @@ export default {
       levelOrderSelection: 'list',
       postGameSelection: '0F00',
       generation: 0,
+      preferredEnding: 0,
     };
   },
   methods: {
@@ -160,7 +161,7 @@ export default {
       this.levelOrderSelection = e;
 
       if (e === 'random') {
-        this.postGameSelection = '3400';
+        this.postGameSelection = this.preferredEnding ?? '3400';
       }
 
       this.updateCode();
@@ -205,7 +206,13 @@ export default {
 
       this.selectedRoute = newRoute;
 
-      if (ending) this.postGameSelection;
+      if (ending) {
+        this.preferredEnding = ending;
+        this.postGameSelection = ending;
+      } else {
+        this.preferredEnding = null;
+      }
+
       this.updateCode();
     },
     onDragEnd() {
@@ -215,6 +222,7 @@ export default {
       if (this.selectedRoute?.length > 0 && !confirm('Do you really want to clear the list?'))
         return;
 
+      this.preferredEnding = null;
       this.selectedRoute = [];
       this.updateCode();
     },
