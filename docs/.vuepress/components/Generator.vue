@@ -52,7 +52,7 @@
         <div v-else>Select your codes from the list on the left.</div>
       </div>
       <div v-if="selectedVersion == null" class="help">
-        <h3>Super Mario Sunshine Practice File Generator</h3>
+        <h1>Super Mario Sunshine Practice File Generator</h1>
         <div>
           <p>
             This is a cheatfile generator for Super Mario Sunshine speedrun practice. If this is
@@ -62,7 +62,7 @@
             if you encounter any issues.
           </p>
           <div>
-            <h4>The SMS Speedrunning Community</h4>
+            <h3>The SMS Speedrunning Community</h3>
             <ul>
               <li>
                 <a href="https://discord.gg/9dGJWEc" target="_blank" rel="noopener">Discord</a>
