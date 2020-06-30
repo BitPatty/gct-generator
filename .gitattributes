@@ -20,3 +20,7 @@ LICENSE text eol=crlf
 *.jpg binary
 *.png binary
 *.zip binary
+
+# Linguist
+*/docs/** linguist-vendored=false
+*/docs/.vuepress/** linguist-vendored=false
