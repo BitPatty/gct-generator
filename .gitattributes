@@ -1,4 +1,5 @@
 # Text files crlf
+*.Dockerfile text eol=crlf
 *.html text eol=crlf
 *.json text eol=crlf
 *.js text eol=crlf
@@ -13,7 +14,6 @@
 # Special files
 .dockerignore text eol=crlf
 .prettierrc text eol=crlf
-Dockerfile text eol=crlf
 LICENSE text eol=crlf
 
 # Binary files
