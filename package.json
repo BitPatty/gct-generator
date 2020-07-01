@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "yarn codes:inject && vuepress dev site",
     "build": "yarn codes:inject && vuepress build site",
-    "format": "prettier --write ./site/**/*{.js,.json,.vue}",
+    "format": "prettier --write ./site/**/*{.md,.js,.json,.vue}",
     "codes:inject": "node ./scripts/inject_codes.js && yarn format"
   },
   "license": "Apache-2.0",
