@@ -37,6 +37,23 @@ export default {
           source: this.stageLoaderCode,
         });
 
+      try {
+        const _pag = window.__paq;
+        _paq.push([
+          'trackEvent',
+          'GCT Generator',
+          'Code Download',
+          JSON.stringify({
+            gameVersion: this.versionIdentifier,
+            format: this.format,
+            codes: c.map(code => ({
+              title: code.title,
+              version: code.version,
+            })),
+          }),
+        ]);
+      } catch {}
+
       console.log(`Preparing download for ${this.format}`);
       const fileName = gameVersions.find(v => v.identifier === this.versionIdentifier).version;
 
