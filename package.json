@@ -27,6 +27,6 @@
     "vuedraggable": "^2.23.2"
   },
   "pre-commit": [
-    "format"
+    "codes:inject"
   ]
 }
