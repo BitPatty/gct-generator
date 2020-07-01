@@ -26,9 +26,6 @@
           :format="selectedFormat"
         />
       </div>
-      <div v-if="isLoading" class="loading-overlay">
-        <div class="spinner"></div>
-      </div>
     </section>
     <br />
     <hr />
@@ -128,29 +125,9 @@ import gameVersions from '../data/gameVersions.json';
 // Util
 import parseXml from './scripts/parseXml';
 
-// Libs
-import axios from 'axios';
-
 export default {
-  mounted() {
-    Promise.all(
-      gameVersions.map(async v => ({
-        identifier: v.identifier,
-        cheats: parseXml((await axios.get(`/codes/${v.identifier}.xml`)).data),
-        fastCodes: (await axios.get(`/codes/fast/${v.identifier}.json`)).data,
-      })),
-    )
-      .then(codes => {
-        localStorage.setItem('codes', JSON.stringify(codes));
-        this.isLoading = false;
-      })
-      .catch(err => {
-        if (localStorage.getItem('codes') != null) this.isLoading = false;
-      });
-  },
   data() {
     return {
-      isLoading: true,
       codes: [],
       selectedCheats: [],
       selectedStageLoader: null,
@@ -169,9 +146,8 @@ export default {
     onVersionChanged(e) {
       this.selectedVersion = e;
       this.selectedCheats = [];
-      const storedCodes = JSON.parse(localStorage.getItem('codes'));
-      this.codes = storedCodes.find(c => c.identifier === e).cheats;
-      this.stageLoaderCodes = storedCodes.find(c => c.identifier === e).fastCodes;
+      this.codes = gameVersions.find(c => c.identifier === e).codes;
+      this.stageLoaderCodes = gameVersions.find(c => c.identifier === e).fastCode;
       this.inspectingCode = null;
     },
     onFormatChanged(e) {
@@ -216,19 +192,6 @@ section > div:not(:first-child) {
   position: relative;
 }
 
-.config .loading-overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 15;
-  text-align: center;
-  background: #ffffff44;
-  background-color: rgba(255, 255, 255, 0.7);
-  margin-left: -1px;
-}
-
 .config span {
   display: block;
   margin-bottom: 10px;
@@ -237,21 +200,6 @@ section > div:not(:first-child) {
 
 .help {
   text-align: left;
-}
-
-.spinner {
-  display: inline-block;
-}
-
-.spinner:after {
-  content: ' ';
-  display: block;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 6px solid #fff;
-  border-color: #2eb9e2 transparent #2eb9e2 transparent;
-  animation: spinner 1.2s linear infinite;
 }
 
 @keyframes spinner {

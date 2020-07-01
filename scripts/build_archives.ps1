@@ -9,7 +9,7 @@ Write-Host "Packing archives...";
 
 # Setup workspace
 New-Item -ItemType directory -Path "./tmp" > $null;
-Copy-Item "./docs/.vuepress/public/codes/*.xml" "./tmp/";
+Copy-Item "./site/.vuepress/public/codes/*.xml" "./tmp/";
 Set-Location "./tmp";
 
 # Helper function to convert the XML files to the GCM txt format
@@ -52,7 +52,7 @@ XmlToGcm "GMSJ0A.xml" "GMSJ01 (A).txt" "GMSJ01";
 
 # Replace zip file
 Write-Host "Compressing GCM archive..";
-Compress-Archive "./*.txt" "../docs/.vuepress/public/files/GCMCodes.zip";
+Compress-Archive "./*.txt" "../site/.vuepress/public/files/GCMCodes.zip";
 Write-Host "GCM Archive built";
 
 # Convert files to Dolphin format
@@ -65,7 +65,7 @@ XmlToIni "GMSJ01.xml" "GMSJ01.txt" "GMSJ01";
 XmlToIni "GMSJ0A.xml" "GMSJ01 (A).txt" "GMSJ01";
 
 Write-Host "Compressing Dolphin archive..";
-Compress-Archive "./*.txt" "../docs/.vuepress/public/files/DolphinCodes.zip";
+Compress-Archive "./*.txt" "../site/.vuepress/public/files/DolphinCodes.zip";
 
 Write-Host "Dolphin Archive built";
 
