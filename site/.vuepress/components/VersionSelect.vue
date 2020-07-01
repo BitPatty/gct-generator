@@ -19,7 +19,7 @@ export default {
   },
   data() {
     return {
-      options: gameVersions.map(v => ({
+      options: gameVersions.map((v) => ({
         value: v.identifier,
         label: v.name,
       })),

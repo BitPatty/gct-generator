@@ -22,7 +22,7 @@ export default {
     this.populate();
   },
   watch: {
-    codes: function() {
+    codes: function () {
       this.populate();
     },
   },
@@ -34,10 +34,10 @@ export default {
   methods: {
     toggle(code) {
       code.selected = !code.selected;
-      this.onSelectionChanged(this.availableCodes.filter(c => c.selected));
+      this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
     },
     populate() {
-      this.availableCodes = this.codes.map(c => ({ ...c, selected: false }));
+      this.availableCodes = this.codes.map((c) => ({ ...c, selected: false }));
     },
     inspect(code) {
       this.onInspect(code);

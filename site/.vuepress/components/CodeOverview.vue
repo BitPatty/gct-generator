@@ -1,7 +1,5 @@
 <template>
   <div>
-    <div v-if="codes.length === 0 && !hasError">Loading...</div>
-    <div v-if="codes.length === 0 && hasError">Failed to load codes.</div>
     <CodeInfo v-for="code in codes" :code="code" :anchor="true" />
   </div>
 </template>
@@ -13,37 +11,16 @@ import CodeInfo from './CodeInfo';
 // Data
 import gameVersions from '../data/gameVersions.json';
 
-// Util
-import parseXml from './scripts/parseXml';
-
-// Libs
-import axios from 'axios';
-
 export default {
   props: {
     gameVersion: { type: String },
   },
-  mounted() {
-    if (localStorage.getItem('codes') != null) {
-      try {
-        const data = JSON.parse(localStorage.getItem('codes')).find(
-          c => c.identifier === this.gameVersion,
-        );
-        if (data) {
-          this.codes = data.cheats.sort((a, b) => (a.title > b.title ? 1 : -1));
-          console.log(this.codes);
-          return;
-        }
-      } catch {}
-    }
-
-    axios
-      .get(`/codes/${this.gameVersion}.xml`)
-      .then(response => {
-        const xmlData = parseXml(response.data);
-        this.codes = xmlData.sort((a, b) => (a.title > b.title ? 1 : -1));
-      })
-      .catch(() => (this.hasError = true));
+  data() {
+    return {
+      codes: gameVersions
+        .find((v) => v.identifier === this.gameVersion)
+        .codes.sort((a, b) => (a.title > b.title ? 1 : -1)),
+    };
   },
   updated() {
     // Scroll to anchor
@@ -57,12 +34,6 @@ export default {
         });
       }
     }
-  },
-  data() {
-    return {
-      codes: [],
-      hasError: false,
-    };
   },
 };
 </script>

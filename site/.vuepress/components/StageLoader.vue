@@ -48,7 +48,7 @@
             <GroupSelectComponent
               :selectedValue="level.value"
               :optGroups="stageLoaderLevelOptions"
-              :onChange="e => onStageLoaderLevelChanged(index, e)"
+              :onChange="(e) => onStageLoaderLevelChanged(index, e)"
               :key="index"
             />
             <button @click="onLevelDeleted(index)" type="button" class="route-remove">
@@ -109,7 +109,7 @@ export default {
     draggable,
   },
   watch: {
-    fastCodes: function() {
+    fastCodes: function () {
       this.updateCode();
     },
   },
@@ -233,7 +233,7 @@ export default {
       this.onChange(
         generateStageLoaderCode(
           this.fastCodes,
-          this.selectedRoute.map(v => v.value),
+          this.selectedRoute.map((v) => v.value),
           this.levelOrderSelection,
           this.postGameSelection,
           this.skippableFMVsSelection,
