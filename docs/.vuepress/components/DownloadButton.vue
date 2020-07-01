@@ -38,8 +38,7 @@ export default {
         });
 
       try {
-        const _pag = window.__paq;
-        _paq.push([
+        window._paq.push([
           'trackEvent',
           'GCT Generator',
           'Code Download',
