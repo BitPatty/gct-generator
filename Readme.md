@@ -19,11 +19,11 @@ This repository contains the code behind the Super Mario Sunshine Cheatfile Gene
 
 ### Updating Practice Codes
 
-The codes are stored as XML files (one for each game version) in the [docs/.vuepress/public/codes](https://github.com/BitPatty/gctGenerator/tree/master/docs/.vuepress/public/codes) directory. If you want to add or change codes edit the corresponding XML file. Node that GMSJ0A refers to the NTSC-J 1.1 release of Super Mario Sunshine. (It's not actually called version A but that's what we've been calling it for years due to a misconception on what the A on the back of the box means).
+The codes are stored as XML files (one for each game version) in the [site/.vuepress/public/codes](https://github.com/BitPatty/gctGenerator/tree/master/site/.vuepress/public/codes) directory. If you want to add or change codes edit the corresponding XML file. Node that GMSJ0A refers to the NTSC-J 1.1 release of Super Mario Sunshine. (It's not actually called version A but that's what we've been calling it for years due to a misconception on what the A on the back of the box means).
 
 ### Updating Guides
 
-You can find the guides in the [docs](https://github.com/BitPatty/gctGenerator/tree/master/docs) folder. Simply edit the corresponding markdown file (.md).
+You can find the guides in the [site](https://github.com/BitPatty/gctGenerator/tree/master/site) folder. Simply edit the corresponding markdown file (.md).
 
 ### Site Development
 

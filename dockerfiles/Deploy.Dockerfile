@@ -14,5 +14,5 @@ WORKDIR /src
 RUN apt-get update
 RUN apt install -y git
 COPY ./scripts/deploy.ps1 ./deploy.ps1
-COPY --from=build /src/docs/.vuepress/dist ./dist
+COPY --from=build /src/site/.vuepress/dist ./dist
 CMD [ "pwsh", "deploy.ps1" ]

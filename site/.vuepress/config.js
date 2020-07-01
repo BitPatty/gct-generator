@@ -18,7 +18,7 @@ module.exports = {
   themeConfig: {
     repo: 'BitPatty/gctGenerator',
     editLinks: true,
-    docsDir: 'docs',
+    docsDir: 'site',
     editLinkText: 'Edit this page on GitHub',
     lastUpdated: false,
     nav: [
