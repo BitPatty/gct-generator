@@ -9,7 +9,7 @@ Write-Host "Packing archives...";
 
 # Setup workspace
 New-Item -ItemType directory -Path "./tmp" > $null;
-Copy-Item "./site/.vuepress/public/codes/*.xml" "./tmp/";
+Copy-Item "./codes/*.xml" "./tmp/";
 Set-Location "./tmp";
 
 # Helper function to convert the XML files to the GCM txt format
