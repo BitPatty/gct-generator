@@ -1,7 +1,7 @@
 export default class CodeFormatter {
   static generateGCT(codes, version) {
     let code = '00D0C0DE00D0C0DE';
-    codes.forEach(c => (code += c.source));
+    codes.forEach((c) => (code += c.source));
     code += 'FF00000000000000';
 
     let rawData = new Uint8Array(code.length / 2);
@@ -16,7 +16,7 @@ export default class CodeFormatter {
   static generateDolphinINI(codes, version) {
     let data = 'Paste the following on top of your games .ini file:\r\n[Gecko]';
 
-    codes.forEach(code => {
+    codes.forEach((code) => {
       data += `\r\n$${code.title} (${code.date}) [${code.author}]\r\n`;
       data += code.source
         .match(/.{8}/g)
@@ -30,7 +30,7 @@ export default class CodeFormatter {
   static generateCheatManagerTXT(codes, version) {
     let data = `${version}\r\nSuper Mario Sunshine`;
 
-    codes.forEach(code => {
+    codes.forEach((code) => {
       data += `\r\n\r\n${code.title} (${code.date}) [${code.author}]\r\n`;
       data += code.source
         .match(/.{8}/g)
@@ -53,7 +53,7 @@ export default class CodeFormatter {
       a.href = url;
       a.download = filename;
       a.click();
-      setTimeout(function() {
+      setTimeout(function () {
         window.URL.revokeObjectURL(url);
       }, 500);
     }

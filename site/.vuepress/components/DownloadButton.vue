@@ -45,7 +45,7 @@ export default {
           JSON.stringify({
             gameVersion: this.versionIdentifier,
             format: this.format,
-            codes: c.map(code => ({
+            codes: c.map((code) => ({
               title: code.title,
               version: code.version,
             })),
@@ -54,7 +54,7 @@ export default {
       } catch {}
 
       console.log(`Preparing download for ${this.format}`);
-      const fileName = gameVersions.find(v => v.identifier === this.versionIdentifier).version;
+      const fileName = gameVersions.find((v) => v.identifier === this.versionIdentifier).version;
 
       switch (this.format) {
         case 'gct':

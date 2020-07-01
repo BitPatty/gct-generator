@@ -122,9 +122,6 @@ import DownloadButton from './DownloadButton';
 // Data
 import gameVersions from '../data/gameVersions.json';
 
-// Util
-import parseXml from './scripts/parseXml';
-
 export default {
   data() {
     return {
@@ -146,8 +143,8 @@ export default {
     onVersionChanged(e) {
       this.selectedVersion = e;
       this.selectedCheats = [];
-      this.codes = gameVersions.find(c => c.identifier === e).codes;
-      this.stageLoaderCodes = gameVersions.find(c => c.identifier === e).fastCode;
+      this.codes = gameVersions.find((c) => c.identifier === e).codes;
+      this.stageLoaderCodes = gameVersions.find((c) => c.identifier === e).fastCode;
       this.inspectingCode = null;
     },
     onFormatChanged(e) {

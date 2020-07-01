@@ -3,7 +3,7 @@ _paq.push(['setRequestMethod', 'POST']);
 _paq.push(['disableCookies']);
 _paq.push(['trackPageView']);
 _paq.push(['enableLinkTracking']);
-(function() {
+(function () {
   var e = 'https://dna.zint.ch/';
   _paq.push(['setTrackerUrl', e + 'pdna']);
   _paq.push(['setSiteId', '2']);

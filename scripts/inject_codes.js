@@ -1,12 +1,12 @@
-import fs from 'fs';
+const fs = require('fs');
+const path = require('path');
+const jsdom = require('jsdom');
 
-const jsonFilePath = '../site/.vuepress/data/gameVersions.json';
+const jsonFilePath = path.join(__dirname, '../site/.vuepress/data/gameVersions.json');
 const codeVersions = ['GMSE01', 'GMSJ01', 'GMSP01', 'GMSJ0A'];
 
 const parseXml = xmlString => {
-  const codeCollection = new DOMParser()
-    .parseFromString(xmlString, 'text/xml')
-    .getElementsByTagName('code');
+  const codeCollection = new jsdom.JSDOM(xmlString).window.document.getElementsByTagName('code');
 
   const codes = [...codeCollection];
 
@@ -25,7 +25,7 @@ const parseTextNode = (node, identifier) => node.getElementsByTagName(identifier
 const codes = JSON.parse(fs.readFileSync(jsonFilePath));
 
 for (let i = 0; i < codeVersions.length; i++) {
-  const xml = fs.readFileSync(`../${codeVersions[i]}.xml`);
+  const xml = fs.readFileSync(path.join(__dirname, `../codes/${codeVersions[i]}.xml`));
   codes.find(c => c.identifier === codeVersions[i]).codes = parseXml(xml);
 }
 

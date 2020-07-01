@@ -21,7 +21,7 @@ export default {
   },
   data() {
     return {
-      options: downloadFormats.map(v => ({
+      options: downloadFormats.map((v) => ({
         value: v.target,
         label: v.name,
       })),

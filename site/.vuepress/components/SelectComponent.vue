@@ -1,6 +1,6 @@
 <template>
   <div :class="disabled ? 'select-wrapper disabled' : 'select-wrapper'">
-    <select @change="e => this.onChange(e.target.value)" autocomplete="off" :disabled="disabled">
+    <select @change="(e) => this.onChange(e.target.value)" autocomplete="off" :disabled="disabled">
       <option v-if="placeholder != null" selected disabled>
         {{ placeholder }}
       </option>
