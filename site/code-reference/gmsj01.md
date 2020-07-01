@@ -10,4 +10,4 @@ This site refers to version 1.0 of the NTSC-J release. For version 1.1 [click th
 
 ## List of available codes
 
-<CodeOverview gameVersion="GMSJ01" />
+<!-- injectionpoint -->

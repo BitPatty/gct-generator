@@ -6,4 +6,4 @@ editLink: false
 
 ## List of available codes
 
-<CodeOverview gameVersion="GMSE01" />
+<!-- injectionpoint -->
