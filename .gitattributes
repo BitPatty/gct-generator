@@ -1,14 +1,14 @@
 # Text files crlf
 *.Dockerfile text eol=crlf
 *.html text eol=crlf
-*.json text eol=crlf
+*.json text eol=crlf linguist-detectable
 *.js text eol=crlf
 *.lock text eol=crlf
 *.md text eol=crlf
 *.ps1 text eol=crlf
 *.styl text eol=crlf
 *.vue text eol=crlf
-*.xml text eol=crlf
+*.xml text eol=crlf linguist-detectable
 *.yml text eol=crlf
 
 # Special files
