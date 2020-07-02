@@ -8,8 +8,8 @@ const md = require('@vuepress/markdown')({
   plugins: ['attrs'],
 });
 
-const themePlugins = require('../site/.vuepress/data/themePlugins.json');
-const locales = require('../site/.vuepress/data/locales.json');
+const themePlugins = require(path.join(__dirname, '../site/.vuepress/data/themePlugins.json'));
+const locales = require(path.join(__dirname, '../site/.vuepress/data/locales.json'));
 
 // Constants
 const JSON_FILE_PATH = path.join(__dirname, '../site/.vuepress/data/gameVersions.json');
