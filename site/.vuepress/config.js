@@ -1,4 +1,5 @@
 const { description } = require('../../package');
+const customContainers = require('./data/customContainers.json');
 
 module.exports = {
   title: 'GCT Generator',
@@ -11,9 +12,16 @@ module.exports = {
   ],
 
   /**
-   * Theme configuration, here is the default theme configuration for VuePress.
-   *
-   * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
+   * Markdown Extensions
+   */
+  markdown: {
+    extendMarkdown: (md) => {
+      md.use(require('markdown-it-attrs'));
+    },
+  },
+
+  /**
+   * Theme Configuration
    */
   themeConfig: {
     repo: 'BitPatty/gctGenerator',
@@ -43,10 +51,11 @@ module.exports = {
         link: 'https://discord.gg/9dGJWEc',
       },
     ],
+    plugins: customContainers,
   },
 
   /**
-   * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
+   * VuePress Plugins
    */
   plugins: ['@vuepress/plugin-back-to-top', '@vuepress/plugin-medium-zoom'],
 };

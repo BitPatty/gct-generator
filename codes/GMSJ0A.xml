@@ -4,7 +4,24 @@
         <title lang="en">DPad Functions</title>
         <author>Psychonauter, Noki Doki, Dan Salvato, Link Master, James0x57</author>
         <version>2.5</version>
-        <description><![CDATA[Allows various game modifications. Button combinations:<br/><table><tr><th>Combination</th><th>Result</th></tr><tr><td>D-Pad left</td><td>Save Mario's position</td></tr><tr><td>D-Pad right</td><td>Load Mario's position</td></tr><tr><td>D-Pad up</td><td>Replace all dialog with a single "!!!" line</td></tr><tr><td>D-Pad down</td><td>Restore dialog boxes</td></tr><tr><td>B+D-Pad left</td><td>Lock rocket nozzle</td></tr><tr><td>B+D-Pad right</td><td>Lock turbo nozzle</td></tr><tr><td>B+D-Pad up</td><td>Lock hover nozzle</td></tr><tr><td>B+D-Pad down</td><td>Release nozzle lock</td></tr><tr><td>X+D-Pad left</td><td>No FLUDD in secrets</td></tr><tr><td>X+D-Pad right</td><td>FLUDD in all secrets</td></tr><tr><td>X+D-Pad up</td><td>Regrab last held object</td></tr><tr><td>X+D-Pad down</td><td>FLUDD in completed secrets (default)</td></tr></table>]]></description>
+        <description lang="en">
+            Allows various game modifications through a set of button combinations:
+            
+            | Combination     | Result                                      |
+            | --------------- | ------------------------------------------- |
+            | D-Pad Left      | Save Mario's current position               |
+            | D-Pad Right     | Load Mario's position                       |
+            | D-Pad Up        | Replace all dialog with a single "!!!" line |
+            | D-Pad Down      | Restore Dialog Boxes                        |
+            | B + D-Pad Left  | Lock Rocket Nozzle                          |
+            | B + D-Pad Right | Lock Turbo Nozzle                           |
+            | B + D-Pad Up    | Lock Hover Nozzle                           |
+            | B + D-Pad Down  | Release Nozzle Lock                         |
+            | X + D-Pad Left  | No FLUDD in secrets                         |
+            | X + D-Pad Right | FLUDD in all secrets                        |
+            | X + D-Pad Down  | FLUDD in completed secrets (default)        |
+            | X + D-Pad Up    | Regrab last held object                     |
+        </description>
         <date>Apr 3, 2019</date>
         <source>
             243FEFAC 80000000
@@ -60,7 +77,7 @@
         <author>Noki Doki</author>
         <version>2.0</version>
         <date>Feb 28, 2020</date>
-        <description>Prevents the life counter from decreasing.</description>
+        <description lang="en">Prevents the life counter from decreasing.</description>
         <source>
             042784BC 60000000
         </source>
@@ -70,7 +87,7 @@
         <author>Psychonauter, Noki Doki</author>
         <version>1.1</version>
         <date>Sep 05, 2018</date>
-        <description>Prevents the game from setting the blue coin flag, which makes them respawn after reentering the level.</description>
+        <description lang="en">Prevents the game from setting the blue coin flag, which makes them respawn after reentering the level.</description>
         <source>
             04274220 60000000
             C2286584 00000003
@@ -84,7 +101,7 @@
         <author>Psychonauter, Noki Doki</author>
         <version>1.0</version>
         <date>Jan 17, 2018</date>
-        <description>Allows skipping FMVs without having to watch them once first.</description>
+        <description lang="en">Allows skipping FMVs without having to watch them once first.</description>
         <source>
             04295AB4 38600001
             04295B18 38600001
@@ -95,7 +112,7 @@
         <author>Psychonauter, Noki Doki</author>
         <version>1.0</version>
         <date>Jan 17, 2018</date>
-        <description>Mutes background music, but keeps SFX on.</description>
+        <description lang="en">Mutes background music, but keeps SFX on.</description>
         <source>
             04016A90 FC210828
         </source>
@@ -105,7 +122,7 @@
         <author>Psychonauter, Noki Doki</author>
         <version>1.0</version>
         <date>Jan 18, 2018</date>
-        <description>Removes all saveboxes.</description>
+        <description lang="en">Removes all saveboxes.</description>
         <source>
             0413934C 48000020
             04143178 4E800020
@@ -116,7 +133,7 @@
         <author>Noki Doki</author>
         <version>1.0</version>
         <date>Feb 10, 2018</date>
-        <description>Unlocks Yoshi everywhere.</description>
+        <description lang="en">Unlocks Yoshi everywhere.</description>
         <source>
             C619BCF8 8019BD2C
             C619BD3C 8019BD58
@@ -127,7 +144,7 @@
         <author>Noki Doki</author>
         <version>1.0</version>
         <date>Feb 12, 2018</date>
-        <description>Unlocks all nozzle boxes.</description>
+        <description lang="en">Unlocks all nozzle boxes.</description>
         <source>
             042740F8 38600001
             042740FC 4E800020
@@ -138,7 +155,7 @@
         <author>Noki Doki</author>
         <version>1.1</version>
         <date>Jan 17, 2018</date>
-        <description>Allows you to pause mid-air and during cutscenes.</description>
+        <description lang="en">Allows you to pause mid-air and during cutscenes.</description>
         <source>
             C6277758 80277764
             C227767C 00000007
@@ -156,114 +173,24 @@
         <author>Noki Doki</author>
         <version>1.0</version>
         <date>Jan 17, 2018</date>
-        <description>Enables 'Exit Area' on Plaza and Airstrip.</description>
+        <description lang="en">Enables 'Exit Area' on Plaza and Airstrip.</description>
         <source>
             C6137F98 80137FA4
         </source>
     </code>
-    <!--<code>
-        <title lang="en">Shine Touch Timer</title>
-        <author>Psychonauter, Noki Doki</author>
-        <version>3.0</version>
-        <date>Oct 11, 2019</date>
-        <description><![CDATA[Adds the ingame timer to every level, starting on the last black frame before you gain control of Mario and ending when you touch a Shine.<br /><br /><b><font color ="#0046da">Requires the Level Select code, Fast Any% or Stage Loader to be active.</font></b>]]></description>
-        <source>
-            C2278848 0000000F
-            3CC0817F 60C60100
-            88860000 2C040001
-            4182002C 88860001
-            2C040001 40A20050
-            3CA0803D 60A5A8F0
-            88850002 2C040007
-            4182003C 2C040009
-            41810034 3C608032
-            60638DD8 7C6803A6
-            4E800021 80AD9E78
-            38A500E8 90650028
-            90660004 9085002C
-            90860008 38600000
-            98660000 800100B4
-            60000000 00000000
-            C219D160 00000007
-            7DE802A6 3C608056
-            6063DD00 7FB0EB78
-            3FA08026 63BDE354
-            7FA803A6 4E800021
-            7DE803A6 7E1D8378
-            39E00000 3A000000
-            4E800020 00000000
-            C232792C 00000007
-            3DE0817F 61EF0100
-            8A0F0000 2C100001
-            4182000C 806F0004
-            808F0008 3A000000
-            9A0F0000 906F0004
-            908F0008 909F002C
-            39E00000 00000000
-            C212A528 00000013
-            7C6F1B78 7FB0EB78
-            3C60817F 60630100
-            88830001 2C040001
-            40A20064 38800000
-            98830001 3C60803D
-            6063A8F0 A0630002
-            2C030805 41820048
-            2C030605 41820040
-            2C031E00 41820038
-            3C608056 6063DD00
-            3FA08026 63BDE6E8
-            7FA803A6 4E800021
-            3C608056 6063DD00
-            3FA08026 63BDE57C
-            39800000 7FA803A6
-            4E800021 7DE37B78
-            7E1D8378 39E00000
-            3A000000 800100CC
-            60000000 00000000
-            C226E65C 00000003
-            558C0001 4082000C
-            38800000 38600000
-            909E00CC 00000000
-            C21528FC 00000003
-            3C60817F 60630100
-            38800101 B0830000
-            807F0268 00000000
-            04327948 4E800020
-            0412BD90 60000000
-            0412E6F8 60000000
-            0426E718 60000000
-            0426E5A4 60000000
-            0426E374 60000000
-            0456DD00 00000000
-            0456DD04 00000000
-            0456DD18 00000003
-            0456DD1C 00000002
-            0456DD20 8056DD24
-            0456DD24 00000000
-            0456DD28 00000001
-            0456DD2C 00000000
-            0456DD30 000000B4
-            0412C00C 4800006C
-            077F00C0 00000040
-            38000000 60000001
-            7D0D42E6 7D2C42E6
-            7C6D42E6 7C081800
-            4082FFF0 3D40817F
-            806A0108 7C634810
-            906A0108 806A0104
-            7C634110 906A0104
-            3860001C 4E800020
-            04276B24 495795A5
-            0427956C 49576B55
-            04295880 4955A845
-            04296B24 4955959D
-        </source>
-    </code>-->
     <code>
         <title lang="en">Shine Get Timer</title>
         <author>Psychonauter, Noki Doki</author>
         <version>2.0</version>
-        <description><![CDATA[Adds the ingame timer to every level, starting on the last black frame after the loading screen and ending as soon as the 'Shine Get' animation starts (similar to the x-cam timer of SM64). The timer pauses during loading times.<br /><br /><b><font color ="#0046da">Requires the Level Select code, Fast Any% or Stage Loader to be active.</font></b>]]></description>
+        <description lang="en">
+        Adds the ingame timer to every level, starting on the last black frame after the loading screen and ending as soon as the 'Shine Get' animation starts (similar to the x-cam timer of SM64).
+        The timer pauses during loading times. 
+        
+        
+        ::: warning
+        Requires the Level Select code, Fast Any% or Stage Loader to be active.
+        :::
+        </description>
         <date>Oct 11, 2019</date>
         <source>
             C2363E70 0000000F
@@ -382,7 +309,14 @@
         <author>Psychonauter, Dan Salvato, ParadoxKarl, Noki Doki</author>
         <version>1.14</version>
         <date>May 8, 2020</date>
-        <description><![CDATA[Allows warping to other levels when starting a file or when exiting level by holding the combination until the screen turns black. This code is not compatible with the Fast Any% or Stage Loader code. Codes:<br /><br /><div><img src="/img/levelselect.png" width="500px"></div>]]></description>
+        <description lang="en">
+            Allows warping to other levels when starting a file or when exiting level by holding the combination until the screen turns black. 
+            This code is not compatible with the Fast Any%, Stage Loader or Stage Randomizer code. 
+            
+            Codes:
+            
+            ![Level Select Combinations](/img/levelselect.png){width=500}
+        </description>
         <source>
             C228656C 00000073
             3C60817F 3CA0803F
@@ -517,7 +451,7 @@
         <author>Psychonauter, Noki Doki</author>
         <version>1.4</version>
         <date>Feb 16, 2018</date>
-        <description>Loads stages in any% order, skips all save boxes, replaces all dialog with "!!!" (except for the Pianta 5 secret) and makes all FMVs skippable (except for the Pinna 1 cutscenes). This code is not compatible with the Level Select or Stage Loader code.</description>
+        <description lang="en">Loads stages in any% order, skips all save boxes, replaces all dialog with "!!!" (except for the Pianta 5 secret) and makes all FMVs skippable (except for the Pinna 1 cutscenes). This code is not compatible with the Level Select or Stage Loader code.</description>
         <source>
             C22865F4 00000064
             3C60817F 60630100
@@ -649,7 +583,7 @@
         <title lang="en">Replace Episode names with their ID</title>
         <author>Psychonauter, Noki Doki</author>
         <version>1.1</version>
-        <description>Replaces the Episode names with the episode number in the demo screen. (Useful for the stage loader.)</description>
+        <description lang="en">Replaces the Episode names with the episode number in the demo screen. (Useful for the stage loader.)</description>
         <date>Feb 13, 2018</date>
         <source>
             C2153548 00000004
@@ -664,33 +598,19 @@
         <author>Ralf, Noki Doki</author>
         <version>1.0</version>
         <date>Jan 17, 2018</date>
-        <description>Always wear shine outfit and sunglasses.</description>
+        <description lang="en">Always wear shine outfit and sunglasses.</description>
         <source>
             04221924 60000004
             04221928 B01D0004
             0422D22C 60000000
         </source>
     </code>
-    <!--<code>
-        <title lang="en">Persistent FMV Skips</title>
-        <author>Noki Doki</author>
-        <version>1.0</version>
-        <date>Jul 26, 2018</date>
-        <description>Allows skipping FMVs without having to watch them once first, except Shadow Mario taking Peach to Pinna Island and the Mecha-Bowser cutscenes. This code activates when starting an empty file and its effects persist on that save file until it is deleted.</description>
-        <source>
-            C2273A90 00000004
-            7FE3FB78 A0830072
-            6084FC58 B0830072
-            88830074 60840018
-            98830074 00000000
-        </source>
-    </code>-->
     <code>
         <title lang="en">Any Fruit Opens Yoshi Eggs</title>
         <author>Unknown, Noki Doki</author>
         <version>1.0</version>
         <date>Aug 19, 2018</date>
-        <description>Allows opening Yoshi eggs with a different fruit than the one depicted.</description>
+        <description lang="en">Allows opening Yoshi eggs with a different fruit than the one depicted.</description>
         <source>
             0419C688 60000000
         </source>
@@ -700,7 +620,7 @@
         <author>Noki Doki</author>
         <version>1.0</version>
         <date>Apr 5, 2019</date>
-        <description>Prevents Yoshi from despawning by running out of juice.</description>
+        <description lang="en">Prevents Yoshi from despawning by running out of juice.</description>
         <source>
             0424E560 60000000
         </source>
@@ -710,7 +630,7 @@
         <author>Noki Doki</author>
         <version>1.3</version>
         <date>Oct 28, 2019</date>
-        <description>Shows Mario's position, angle and speed at any given time.</description>
+        <description lang="en">Shows Mario's position, angle and speed at any given time.</description>
         <source>
             06285FBC 00000010
             495740BD 60000000
@@ -790,7 +710,7 @@
         <author>Noki Doki</author>
         <version>1.0</version>
         <date>Jun 19, 2019</date>
-        <description>Removes the logos and cutscene that normally play before the title screen when loading or resetting the game.</description>
+        <description lang="en">Removes the logos and cutscene that normally play before the title screen when loading or resetting the game.</description>
         <source>
             04275374 4800027C
             042757C8 48000014
@@ -805,7 +725,7 @@
         <author>Noki Doki</author>
         <version>1.0</version>
         <date>Aug 19, 2019</date>
-        <description>Allows Shines obtained by cleaning graffiti, the Shine Gate or the bells to respawn.</description>
+        <description lang="en">Allows Shines obtained by cleaning graffiti, the Shine Gate or the bells to respawn.</description>
         <source>
             041C76A4 48000050
             021C7D74 00004800
@@ -817,7 +737,7 @@
         <author>Noki Doki</author>
         <version>1.0</version>
         <date>Mar 8, 2020</date>
-        <description>Forces the unlock events for Ricco, Gelato and Yoshi to happen any time the correct version of the plaza is loaded. Nozzle unlock events take precedence over Yoshi's if their conditions are met.</description>
+        <description lang="en">Forces the unlock events for Ricco, Gelato and Yoshi to happen any time the correct version of the plaza is loaded. Nozzle unlock events take precedence over Yoshi's if their conditions are met.</description>
         <source>
             04297020 48000018
             0429706C 48000018
@@ -831,7 +751,7 @@
         <author>Noki Doki</author>
         <version>2.0</version>
         <date>Jun 25, 2020</date>
-        <description>Enable this if your Nintendont saves do not work on your other loader (e.g. Gecko OS on a non-Japanese console).</description>
+        <description lang="en">Enable this if your Nintendont saves do not work on your other loader (e.g. Gecko OS on a non-Japanese console).</description>
         <source>
             023FDDB0 00000000
         </source>
@@ -841,7 +761,7 @@
         <title lang="en">Fade-in Timer</title>
         <author>Psychonauter, Noki Doki</author>
         <version>1.0</version>
-        <description><![CDATA[Adds the ingame timer to every level, starting on the last black frame before taking control of Mario and ending as soon as the 'Shine Get' animation starts (Similiar to the x-cam timer of SM64).<br /><br /><b><font color ="#0046da">Requires the Level Select code, Fast Any% or Stage Loader to be active.</font></b>]]></description>
+        <description lang="en"><![CDATA[Adds the ingame timer to every level, starting on the last black frame before taking control of Mario and ending as soon as the 'Shine Get' animation starts (Similiar to the x-cam timer of SM64).<br /><br /><b><font color ="#0046da">Requires the Level Select code, Fast Any% or Stage Loader to be active.</font></b>]]></description>
         <date>Nov 3, 2018</date>
         <source>
             C2278848 0000000F
@@ -938,4 +858,116 @@
         </source>
     </code>
     -->
+    <!--<code>
+        <title lang="en">Shine Touch Timer</title>
+        <author>Psychonauter, Noki Doki</author>
+        <version>3.0</version>
+        <date>Oct 11, 2019</date>
+        <description lang="en"><![CDATA[Adds the ingame timer to every level, starting on the last black frame before you gain control of Mario and ending when you touch a Shine.<br /><br /><b><font color ="#0046da">Requires the Level Select code, Fast Any% or Stage Loader to be active.</font></b>]]></description>
+        <source>
+            C2278848 0000000F
+            3CC0817F 60C60100
+            88860000 2C040001
+            4182002C 88860001
+            2C040001 40A20050
+            3CA0803D 60A5A8F0
+            88850002 2C040007
+            4182003C 2C040009
+            41810034 3C608032
+            60638DD8 7C6803A6
+            4E800021 80AD9E78
+            38A500E8 90650028
+            90660004 9085002C
+            90860008 38600000
+            98660000 800100B4
+            60000000 00000000
+            C219D160 00000007
+            7DE802A6 3C608056
+            6063DD00 7FB0EB78
+            3FA08026 63BDE354
+            7FA803A6 4E800021
+            7DE803A6 7E1D8378
+            39E00000 3A000000
+            4E800020 00000000
+            C232792C 00000007
+            3DE0817F 61EF0100
+            8A0F0000 2C100001
+            4182000C 806F0004
+            808F0008 3A000000
+            9A0F0000 906F0004
+            908F0008 909F002C
+            39E00000 00000000
+            C212A528 00000013
+            7C6F1B78 7FB0EB78
+            3C60817F 60630100
+            88830001 2C040001
+            40A20064 38800000
+            98830001 3C60803D
+            6063A8F0 A0630002
+            2C030805 41820048
+            2C030605 41820040
+            2C031E00 41820038
+            3C608056 6063DD00
+            3FA08026 63BDE6E8
+            7FA803A6 4E800021
+            3C608056 6063DD00
+            3FA08026 63BDE57C
+            39800000 7FA803A6
+            4E800021 7DE37B78
+            7E1D8378 39E00000
+            3A000000 800100CC
+            60000000 00000000
+            C226E65C 00000003
+            558C0001 4082000C
+            38800000 38600000
+            909E00CC 00000000
+            C21528FC 00000003
+            3C60817F 60630100
+            38800101 B0830000
+            807F0268 00000000
+            04327948 4E800020
+            0412BD90 60000000
+            0412E6F8 60000000
+            0426E718 60000000
+            0426E5A4 60000000
+            0426E374 60000000
+            0456DD00 00000000
+            0456DD04 00000000
+            0456DD18 00000003
+            0456DD1C 00000002
+            0456DD20 8056DD24
+            0456DD24 00000000
+            0456DD28 00000001
+            0456DD2C 00000000
+            0456DD30 000000B4
+            0412C00C 4800006C
+            077F00C0 00000040
+            38000000 60000001
+            7D0D42E6 7D2C42E6
+            7C6D42E6 7C081800
+            4082FFF0 3D40817F
+            806A0108 7C634810
+            906A0108 806A0104
+            7C634110 906A0104
+            3860001C 4E800020
+            04276B24 495795A5
+            0427956C 49576B55
+            04295880 4955A845
+            04296B24 4955959D
+        </source>
+    </code>-->
+    <!--<code>
+        <title lang="en">Persistent FMV Skips</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <date>Jul 26, 2018</date>
+        <description lang="en">Allows skipping FMVs without having to watch them once first, except Shadow Mario taking Peach to Pinna Island and the Mecha-Bowser cutscenes. This code activates when starting an empty file and its effects persist on that save file until it is deleted.</description>
+        <source>
+            C2273A90 00000004
+            7FE3FB78 A0830072
+            6084FC58 B0830072
+            88830074 60840018
+            98830074 00000000
+        </source>
+    </code>-->
 </codes>

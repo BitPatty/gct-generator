@@ -2,7 +2,7 @@
 sidebar: auto
 ---
 
-# GCT Generator Cookbook
+# Cookbook
 
 A guide on how to install and use Super Mario Sunshine practice codes on Nintendont and Dolphin.
 

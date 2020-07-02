@@ -1,0 +1,32 @@
+[
+  [
+    "container",
+    {
+      "type": "tip",
+      "defaultTitle": {
+        "/": "TIP",
+        "/de/": "TIP"
+      }
+    }
+  ],
+  [
+    "container",
+    {
+      "type": "warning",
+      "defaultTitle": {
+        "/": "WARNING",
+        "/de/": "ACHTUNG"
+      }
+    }
+  ],
+  [
+    "container",
+    {
+      "type": "danger",
+      "defaultTitle": {
+        "/": "WARNING",
+        "/de/": "WARNUNG"
+      }
+    }
+  ]
+]
