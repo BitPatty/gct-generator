@@ -55,7 +55,7 @@ The XML codes will be written automatically to the json file and code reference 
 - Starting the development server with `yarn dev`
 - Building the site with `yarn build`
 
-If you want to inject the codes at any given point you can use `yarn codes:ineject`.
+If you want to inject the codes at any given point you can use `yarn codes:inject`.
 
 ### Build and preview the site (Docker)
 
