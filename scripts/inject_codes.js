@@ -8,45 +8,93 @@ const md = require('@vuepress/markdown')({
   plugins: ['attrs'],
 });
 
-const customContainers = require('../site/.vuepress/data/customContainers.json');
+const themePlugins = require('../site/.vuepress/data/themePlugins.json');
+const locales = require('../site/.vuepress/data/locales.json');
 
 // Constants
 const JSON_FILE_PATH = path.join(__dirname, '../site/.vuepress/data/gameVersions.json');
 const CODE_VERSIONS = ['GMSE01', 'GMSJ01', 'GMSP01', 'GMSJ0A'];
 const INJECTION_TAG = '<!-- injectionpoint -->';
 
-// Register theme container such as tip/warning/danger
-customContainers.forEach((p) => {
-  const container = Array.isArray(p) && p.length === 2 ? p[1] : null;
-  if (!container) throw new Error();
-  vuepressContainerPlugin(container).extendMarkdown(md);
-});
+/**
+ * Reads the (localized) child node
+ * @param {*} node The parent node
+ * @param {*} identifier The childs tag name
+ * @param {*} lang The target language
+ * @param {*} fallbackLang The fallback language
+ */
+const readTextNode = (node, identifier, lang = null, fallbackLang = null) => {
+  if (!lang) {
+    const element = node.querySelector(identifier);
+    if (!element) throw new Error(`${identifier} not found on ${node.textContent}`);
+    return element.textContent;
+  }
 
-// Converts the XML source to a JSON object
+  const localizedElement = node.querySelector(`${identifier}[lang='${lang}']`);
+  if (localizedElement) return localizedElement.textContent;
+
+  if (!fallbackLang) throw new Error(`No localized ${identifier} found on ${node.textContent}`);
+  const fallbackElement = node.querySelector(`${identifier}[lang='${fallbackLang}']`);
+  if (fallbackElement) return fallbackElement.textContent;
+  throw new Error(`No fallback ${identifier} found on ${node.textContent}`);
+};
+
+/**
+ * Creates an object of localized child nodes
+ * @param {*} node The parent node
+ * @param {*} identifier The childs tag name
+ */
+const localizeNode = (node, identifier) =>
+  Object.keys(locales).map((locale) => ({
+    lang: locales[locale].lang,
+    content: readTextNode(node, identifier, locales[locale].lang, 'en-US'),
+  }));
+
+/**
+ * Trims all lines in a multi-line string
+ * @param {*} str The multiline string
+ */
+const trimLines = (str) => str.replace(/^ +/gm, '').replace(/ +$/gm, '');
+
+const localizeMarkdown = (node, identifier) => {
+  const markdowns = localizeNode(node, identifier).map((markdown) => ({
+    ...markdown,
+    content: trimLines(markdown.content),
+  }));
+
+  return markdowns.map((markdown) => ({
+    ...markdown,
+    html: md.render(markdown.content).html,
+  }));
+};
+
+/**
+ * Converts the XML source files to a JSON object
+ * @param {*} xmlString The xml string
+ */
 const parseXml = (xmlString) => {
   const codeCollection = new JSDOM(xmlString, {
     contentType: 'text/xml',
   }).window.document.getElementsByTagName('code');
 
-  const parseTextNode = (node, identifier) => node.getElementsByTagName(identifier)[0].textContent;
-  const trimLines = (str) => str.replace(/^ +/gm, '').replace(/ +$/gm, '');
-
   const codes = [...codeCollection];
 
-  return codes.map((code) => {
-    const descriptionMarkdown = trimLines(parseTextNode(code, 'description'));
-
-    return {
-      author: parseTextNode(code, 'author'),
-      title: parseTextNode(code, 'title'),
-      description: md.render(descriptionMarkdown).html,
-      descriptionMarkdown,
-      version: parseTextNode(code, 'version'),
-      date: parseTextNode(code, 'date'),
-      source: parseTextNode(code, 'source').replace(/[\s\n\r\t]+/gm, ''),
-    };
-  });
+  return codes.map((code) => ({
+    author: readTextNode(code, 'author'),
+    title: localizeNode(code, 'title'),
+    description: localizeMarkdown(code, 'description'),
+    version: readTextNode(code, 'version'),
+    date: readTextNode(code, 'date'),
+    source: readTextNode(code, 'source').replace(/[\s\n\r\t]+/gm, ''),
+  }));
 };
+
+// Register themes containers such as tip/warning/danger
+themePlugins.forEach((p) => {
+  const container = Array.isArray(p) && p.length === 2 ? p[1] : null;
+  if (!container) throw new Error();
+  vuepressContainerPlugin(container).extendMarkdown(md);
+});
 
 // Read the current code list
 const codeJson = JSON.parse(fs.readFileSync(JSON_FILE_PATH));
@@ -60,36 +108,48 @@ for (let i = 0; i < CODE_VERSIONS.length; i++) {
 // Save the codeJSON with the updated codes
 fs.writeFileSync(JSON_FILE_PATH, JSON.stringify(codeJson));
 
-// Populate the code reference
-for (let i = 0; i < CODE_VERSIONS.length; i++) {
-  const filePath = path.join(
-    __dirname,
-    `../site/code-reference/${CODE_VERSIONS[i].toLowerCase()}.md`,
-  );
+Object.keys(locales).forEach((locale) => {
+  const localeKey = locales[locale].lang;
 
-  // Get the current reference
-  const reference = fs.readFileSync(filePath).toString();
+  // Populate the code reference
+  for (let i = 0; i < CODE_VERSIONS.length; i++) {
+    // Load the target reference file
+    const filePath = path.join(
+      __dirname,
+      `../site/${locale.trim('/')}/code-reference/${CODE_VERSIONS[i].toLowerCase()}.md`,
+    );
 
-  if (!reference.includes(INJECTION_TAG)) {
-    throw new Error(`No injection tag found in ${CODE_VERSIONS[i].toLowerCase()}.md`);
+    // Get the current reference
+    const reference = fs.readFileSync(filePath).toString();
+
+    if (!reference.includes(INJECTION_TAG)) {
+      throw new Error(`No injection tag found in ${CODE_VERSIONS[i].toLowerCase()}.md`);
+    }
+
+    // Everything after the injection tag is deleted from the file
+    let fileContent = reference.split(INJECTION_TAG)[0] + INJECTION_TAG;
+
+    // Order codes by their localized title
+    const codes = codeJson
+      .find((c) => c.identifier === CODE_VERSIONS[i])
+      .codes.sort((a, b) =>
+        a.title.find((t) => t.lang === localeKey).content >
+        b.title.find((t) => t.lang === localeKey).content
+          ? 1
+          : -1,
+      );
+
+    // Create a semi-markdown version for all codes
+    codes.forEach((code) => {
+      const title = `### ${code.title.find((t) => t.lang === localeKey).content}`;
+      const author = `*${code.author.includes(',') ? 'Authors:' : 'Author:'} ${code.author}*`;
+      const version = `*Version: ${code.version} (${code.date})*`;
+      const description = code.description.find((d) => d.lang === localeKey).content;
+
+      fileContent += `\n\n${title.trim()}\n\n${version.trim()}  \n${author.trim()}\n\n${description.trim()}\n\n`;
+    });
+
+    // Save the reference file
+    fs.writeFileSync(filePath, fileContent);
   }
-
-  // Everything afte rthe injection tag is deleted from the file
-  let fileContent = reference.split(INJECTION_TAG)[0] + INJECTION_TAG;
-  const codes = codeJson
-    .find((c) => c.identifier === CODE_VERSIONS[i])
-    .codes.sort((a, b) => (a.title > b.title ? 1 : -1));
-
-  // Create a semi-markdown version for all codes
-  codes.forEach((code) => {
-    const title = `### ${code.title}`;
-    const author = `*${code.author.includes(',') ? 'Authors:' : 'Author:'} ${code.author}*`;
-    const version = `*Version: ${code.version} (${code.date})*`;
-    const description = code.descriptionMarkdown;
-
-    fileContent += `\n\n${title.trim()}\n\n${version.trim()}  \n${author.trim()}\n\n${description.trim()}\n\n`;
-  });
-
-  // Save the reference file
-  fs.writeFileSync(filePath, fileContent);
-}
+});

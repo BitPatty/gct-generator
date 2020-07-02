@@ -3,7 +3,7 @@ sidebar: auto
 editLink: false
 ---
 
-# GMSE01 (PAL / Europe)
+# GMSE01 (NTSC-U / North America)
 
 ## List of available codes
 
@@ -12,31 +12,16 @@ editLink: false
 ### Any Fruit Opens Yoshi Eggs
 
 _Version: 1.0 (Aug 19, 2018)_  
-_Author: Unknown_
+_Authors: Unknown, Noki Doki_
 
 Allows opening Yoshi eggs with a different fruit than the one depicted.
 
-### DPad Functions
+### DPad Funktionen
 
 _Version: 2.5 (Apr 3, 2019)_  
 _Authors: Psychonauter, Noki Doki, Dan Salvato, Link Master, James0x57_
 
-Allows various game modifications through a set of button combinations:
-
-| Combination     | Result                                      |
-| --------------- | ------------------------------------------- |
-| D-Pad Left      | Save Mario's current position               |
-| D-Pad Right     | Load Mario's position                       |
-| D-Pad Up        | Replace all dialog with a single "!!!" line |
-| D-Pad Down      | Restore Dialog Boxes                        |
-| B + D-Pad Left  | Lock Rocket Nozzle                          |
-| B + D-Pad Right | Lock Turbo Nozzle                           |
-| B + D-Pad Up    | Lock Hover Nozzle                           |
-| B + D-Pad Down  | Release Nozzle Lock                         |
-| X + D-Pad Left  | No FLUDD in secrets                         |
-| X + D-Pad Right | FLUDD in all secrets                        |
-| X + D-Pad Down  | FLUDD in completed secrets (default)        |
-| X + D-Pad Up    | Regrab last held object                     |
+D-Pad Funktionen
 
 ### Disable Blue Coin Flag
 
@@ -64,7 +49,7 @@ Allows skipping FMVs without having to watch them once first.
 _Version: 1.4 (Feb 16, 2018)_  
 _Authors: Psychonauter, Noki Doki_
 
-Loads stages in any% order, skips all save boxes, replaces all dialog with "!!!" (except for the Pianta 5 secret) and makes all FMVs skippable (except for the Pinna 1 cutscenes). This code is not compatible with the Level Select or Stage Loader code.
+Loads stages in any% order, skips all save boxes, replaces all dialog with "!!!" (except for the Pianta 5 secret) and makes all FMVs skippable (except for the Pinna 1 cutscenes). This code is not compatible with the Level Select, Stage Loader or Stage Randomizer code.
 
 ### Fix Memory Card Encoding
 
@@ -146,7 +131,7 @@ Removes all saveboxes.
 _Version: 1.1 (Feb 13, 2018)_  
 _Authors: Psychonauter, Noki Doki_
 
-Replaces the Episode names with the episode number in the demo screen. (Useful for the stage loader.)
+Replaces the Episode names with the episode number in the demo screen. (Useful for the stage randomizer and the stage loader.)
 
 ### Respawn One-Time Shines
 
@@ -170,9 +155,16 @@ Requires the Level Select code, Fast Any% or Stage Loader to be active.
 ### Shine Outfit
 
 _Version: 1.0 (Oct 23, 2017)_  
-_Author: Ralf_
+_Authors: Ralf, Psychonauter_
 
 Always wear shine outfit and sunglasses.
+
+### Stage Randomizer (Experimental)
+
+_Version: 1.0 (Oct 11, 2017)_  
+_Author: Noki Doki_
+
+Loads stages in randomized order. This code is not compatible with the Level Select or Fast Any% code.
 
 ### Unlock Nozzles
 

@@ -1,5 +1,6 @@
 const { description } = require('../../package');
-const customContainers = require('./data/customContainers.json');
+const themePlugins = require('./data/themePlugins.json');
+const locales = require('./data/locales.json');
 
 module.exports = {
   title: 'GCT Generator',
@@ -21,6 +22,11 @@ module.exports = {
   },
 
   /**
+   * Locales
+   */
+  locales,
+
+  /**
    * Theme Configuration
    */
   themeConfig: {
@@ -29,29 +35,8 @@ module.exports = {
     docsDir: 'site',
     editLinkText: 'Edit this page on GitHub',
     lastUpdated: false,
-    nav: [
-      {
-        text: 'Cookbook',
-        link: '/guide.html',
-      },
-      {
-        text: 'Code Reference',
-        link: '/code-reference/index.html',
-      },
-      {
-        text: 'Changelog',
-        link: '/changelog.html',
-      },
-      {
-        text: 'Installing IOS58',
-        link: '/ios58.html',
-      },
-      {
-        text: 'Sunshine Discord',
-        link: 'https://discord.gg/9dGJWEc',
-      },
-    ],
-    plugins: customContainers,
+    locales,
+    plugins: themePlugins,
   },
 
   /**
