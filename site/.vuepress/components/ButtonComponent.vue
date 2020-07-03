@@ -5,8 +5,6 @@
 </template>
 
 <script>
-import CodeFormatter from './scripts/codeFormatter';
-
 export default {
   props: {
     disabled: { type: Boolean },

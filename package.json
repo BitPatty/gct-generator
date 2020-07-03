@@ -28,7 +28,5 @@
   "dependencies": {
     "vuedraggable": "^2.23.2"
   },
-  "pre-commit": [
-    "codes:clean"
-  ]
+  "pre-commit": []
 }
