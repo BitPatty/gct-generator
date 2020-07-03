@@ -5,7 +5,7 @@ const JSON_FILE_PATH = path.join(__dirname, '../site/.vuepress/data/gameVersions
 const CODE_VERSIONS = ['GMSE01', 'GMSJ01', 'GMSP01', 'GMSJ0A'];
 const INJECTION_TAG = '<!-- injectionpoint -->';
 
-const locales = require(path.join(__dirname, '../site/.vuepress/data/locales.json'));
+const locales = require(path.join(__dirname, '../site/.vuepress/i18n/locales.json'));
 
 // Load the current json configuration
 const codeJson = JSON.parse(fs.readFileSync(JSON_FILE_PATH));
