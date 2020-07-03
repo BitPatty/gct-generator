@@ -1,29 +1,44 @@
 <template>
   <div>
-    <h3 v-if="anchor" :id="headerId">
-      <a :href="`#${headerId}`" class="header-anchor">#</a>
-      {{ code.title }}
-    </h3>
-    <h3 v-else>{{ code.title }}</h3>
+    <h3>{{ translatedCode.title }}</h3>
     <div class="metadata">
-      <span>Version: {{ code.version }} ({{ code.date }})</span>
-      <span v-if="code.author.includes(',')">Authors: {{ code.author }}</span>
-      <span v-else>Author: {{ code.author }}</span>
+      <span
+        >{{ getLabel('codeinfo.version') }} {{ translatedCode.version }} ({{
+          translatedCode.date
+        }})</span
+      >
+      <span v-if="code.author.includes(',')"
+        >{{ getLabel('codeinfo.authors') }} {{ translatedCode.author }}</span
+      >
+      <span v-else>{{ getLabel('codeinfo.author') }} {{ translatedCode.author }}</span>
     </div>
-    <p class="description" v-html="code.description"></p>
+    <p class="description" v-html="translatedCode.description"></p>
   </div>
 </template>
 
 <script>
+import locales from '../i18n/locales.json';
+import { translate, translateCode } from '../i18n/localeHelper';
+
 export default {
   props: {
     anchor: { type: Boolean },
     code: { type: Object },
   },
+  watch: {
+    code: function () {
+      this.translatedCode = translateCode(this.code);
+    },
+  },
   data() {
     return {
-      headerId: this.code.title.toLowerCase().replace(/[^a-zA-Z0-9]/g, '-'),
+      translatedCode: {},
     };
+  },
+  methods: {
+    getLabel(key) {
+      return translate(key, this.$lang);
+    },
   },
 };
 </script>

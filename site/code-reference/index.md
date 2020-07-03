@@ -2,6 +2,6 @@
 editLink: false
 ---
 
-# Code Reference
+# Code Referenz
 
 <VersionCards />

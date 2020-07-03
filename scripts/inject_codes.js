@@ -9,7 +9,7 @@ const md = require('@vuepress/markdown')({
 });
 
 const themePlugins = require(path.join(__dirname, '../site/.vuepress/data/themePlugins.json'));
-const locales = require(path.join(__dirname, '../site/.vuepress/data/locales.json'));
+const locales = require(path.join(__dirname, '../site/.vuepress/i18n/locales.json'));
 
 // Constants
 const JSON_FILE_PATH = path.join(__dirname, '../site/.vuepress/data/gameVersions.json');

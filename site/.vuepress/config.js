@@ -1,6 +1,6 @@
 const { description } = require('../../package');
 const themePlugins = require('./data/themePlugins.json');
-const locales = require('./data/locales.json');
+const locales = require('./i18n/locales.json');
 
 module.exports = {
   title: 'GCT Generator',

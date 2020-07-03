@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="config">
-      <span>Remove Dialogue:</span>
+      <span>{{ getLabel('stageloader.removedialogue.label') }}</span>
       <SelectComponent
         :options="removeDialogueOptions"
         :onChange="onRemoveDialogueSelectionChanged"
@@ -9,7 +9,7 @@
       />
     </div>
     <div class="config">
-      <span>Skippable FMVs:</span>
+      <span>{{ getLabel('stageloader.skippablefmvs.label') }}</span>
       <SelectComponent
         :options="skippableFMVsOptions"
         :onChange="onSkippableFMVsSelectionChanged"
@@ -17,7 +17,7 @@
       />
     </div>
     <div class="config">
-      <span>Level Order:</span>
+      <span>{{ getLabel('stageloader.levelorder.label') }}</span>
       <SelectComponent
         :options="levelOrderOptions"
         :onChange="onLevelOrderSelectionChanged"
@@ -25,7 +25,7 @@
       />
     </div>
     <div class="config">
-      <span>Post Game:</span>
+      <span>{{ getLabel('stageloader.postgame.label') }}</span>
       <SelectComponent
         :disabled="levelOrderSelection === 'random'"
         :options="postGameOptions"
@@ -34,7 +34,7 @@
       />
     </div>
     <div class="config">
-      <span>Route:</span>
+      <span>{{ getLabel('stageloader.route') }}</span>
       <ul class="level-select">
         <draggable
           v-model="selectedRoute"
@@ -61,7 +61,7 @@
     <div class="config">
       <div class="sub">
         <GroupSelectComponent
-          placeholder="Choose a level.."
+          :placeholder="getLabel('stageloader.levelselectplaceholder')"
           :optGroups="stageLoaderLevelOptions"
           :onChange="onStageLoaderLevelSelected"
           selectedValue="placeholder"
@@ -69,11 +69,11 @@
         />
       </div>
       <div class="sub">
-        <ButtonComponent label="Clear List" :onClick="onClearList" />
+        <ButtonComponent :label="getLabel('stageloader.clear')" :onClick="onClearList" />
       </div>
       <div class="sub">
         <GroupSelectComponent
-          placeholder="Load a preset.."
+          :placeholder="getLabel('stageloader.loadpresetplaceholder')"
           :optGroups="stageLoaderPresetOptions"
           :onChange="onStageLoaderPresetSelected"
           selectedValue="placeholder"
@@ -96,6 +96,7 @@ import stageLoaderPresets from '../data/stageLoaderPresets.json';
 
 // Util
 import generateStageLoaderCode from './scripts/generateStageLoadercode';
+import { translate } from '../i18n/localeHelper';
 
 // Lib
 import draggable from 'vuedraggable';
@@ -148,6 +149,9 @@ export default {
     };
   },
   methods: {
+    getLabel(key) {
+      return translate(key, this.$lang);
+    },
     onRemoveDialogueSelectionChanged(e) {
       this.removeDialogSelection = e;
       this.updateCode();

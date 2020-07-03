@@ -6,12 +6,14 @@
       @click="toggle(code)"
       @mouseover="inspect(code)"
     >
-      {{ code.title }}
+      {{ getCodeTitle(code) }}
     </li>
   </ul>
 </template>
 
 <script>
+import { translateCode } from '../i18n/localeHelper';
+
 export default {
   props: {
     codes: { type: Array },
@@ -32,6 +34,9 @@ export default {
     };
   },
   methods: {
+    getCodeTitle(code) {
+      return translateCode(code, this.$lang).title;
+    },
     toggle(code) {
       code.selected = !code.selected;
       this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
