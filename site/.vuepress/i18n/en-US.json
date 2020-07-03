@@ -31,19 +31,37 @@
   "stageloader": {
     "levelorder": {
       "label": "Level Order",
-      "options": {}
+      "options": {
+        "list": "As specified",
+        "shuffle": "Random, no duplicates",
+        "random": "Fully random"
+      }
     },
     "removedialogue": {
       "label": "Remove Dialogue:",
-      "options": {}
+      "options": {
+        "pv5": "Not in Pinna 5",
+        "yes": "Always",
+        "no": "Don't include"
+      }
     },
     "skippablefmvs": {
       "label": "Skippable FMVs:",
-      "options": {}
+      "options": {
+        "pp": "Not in Pinna",
+        "yes": "Always",
+        "no": "Don't include"
+      }
     },
     "postgame": {
       "label": "Post-Game:",
-      "options": {}
+      "options": {
+        "0F00": "Return to the title screen",
+        "0109": "Load the flooded plaza",
+        "0102": "Load post-Corona plaza",
+        "3400": "Load Corona Montain",
+        "3C00": "Load the Bowser fight"
+      }
     },
     "levelselectplaceholder": "Choose a level..",
     "loadpresetplaceholder": "Load a preset..",

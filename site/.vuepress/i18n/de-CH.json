@@ -27,16 +27,20 @@
       "label": "Level Reihenfolge:",
       "options": {}
     },
+    "postgame": {
+      "label": "Nach der Route:",
+      "options": {}
+    },
     "removedialogue": {
       "label": "Dialoge entfernen:",
-      "options": {}
+      "options": {
+        "pv5": "Nicht in Pinna 5",
+        "yes": "Immer",
+        "no": "Nie"
+      }
     },
     "skippablefmvs": {
       "label": "Überspringbare FMVs:",
-      "options": {}
-    },
-    "postgame": {
-      "label": "Nach der Route:",
       "options": {}
     },
     "levelselectplaceholder": "Wähle ein Level..",

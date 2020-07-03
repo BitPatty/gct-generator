@@ -137,9 +137,6 @@ export default {
       ],
     };
   },
-  mounted() {
-    console.log('Hello', this.$lang);
-  },
   methods: {
     getLabel(key) {
       return translate(key, this.$lang);
