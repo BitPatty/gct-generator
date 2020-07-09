@@ -12,6 +12,7 @@
     "dev": "yarn codes:inject && vuepress dev site",
     "build": "yarn codes:inject && vuepress build site",
     "format": "prettier --write ./site/**/*{.md,.js,.json,.vue}",
+    "translations:compare": "node ./scripts/compare_translations.js",
     "codes:inject": "node ./scripts/inject_codes.js && yarn format",
     "codes:clean": "node ./scripts/clean_codes.js && yarn format"
   },
