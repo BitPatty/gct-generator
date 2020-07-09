@@ -8,8 +8,11 @@
     "GMSJ0A": "GMSJ01 (NTSC-J 1.1)",
     "GMSP01": "GMSP01 (PAL)"
   },
-  "help": "Hilfe",
-  "download": "Herunterladen",
+  "headers": {
+    "help": "Hilfe",
+    "codelist": "Verfügbare Codes",
+    "stageloader": "Stage Loader"
+  },
   "codeinfo": {
     "author": "Autor:",
     "authors": "Autoren:",
@@ -44,11 +47,21 @@
   "stageloader": {
     "levelorder": {
       "label": "Level Reihenfolge:",
-      "options": {}
+      "options": {
+        "list": "Wie angegeben",
+        "shuffle": "Mixen",
+        "random": "Zufällig"
+      }
     },
     "postgame": {
       "label": "Nach der Route:",
-      "options": {}
+      "options": {
+        "0F00": "Zurück zum Titelbildschirm",
+        "0109": "Lade die geflutete Plaza",
+        "0102": "Lade Post-Corona Plaza",
+        "3400": "Lade Corona",
+        "3C00": "Lade den Bowserkampf"
+      }
     },
     "removedialogue": {
       "label": "Dialoge entfernen:",
@@ -60,11 +73,18 @@
     },
     "skippablefmvs": {
       "label": "Überspringbare FMVs:",
-      "options": {}
+      "options": {
+        "pp": "Nicht in Pinna",
+        "yes": "Immer",
+        "no": "Nie"
+      }
     },
     "levelselectplaceholder": "Wähle ein Level..",
     "loadpresetplaceholder": "Lade eine Vorlage..",
     "route": "Route",
     "clear": "Liste leeren"
+  },
+  "misc": {
+    "defaulthelpmessage": "Wähle deine Codes von der Liste auf der linken Seite."
   }
 }

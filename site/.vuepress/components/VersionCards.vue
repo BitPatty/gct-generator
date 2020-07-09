@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div v-for="version in gameVersions" class="card" @click="onCardClick(version)">
-      <h3>{{ version.name }}</h3>
+      <h3>{{ getLabel(`common.${version.identifier}`) }}</h3>
     </div>
   </div>
 </template>
@@ -9,6 +9,10 @@
 <script>
 // Data
 import gameVersions from '../data/gameVersions.json';
+import locales from '../i18n/locales.json';
+
+// Util
+import { translate } from '../i18n/localeHelper';
 
 export default {
   data() {
@@ -18,7 +22,18 @@ export default {
   },
   methods: {
     onCardClick(v) {
-      window.location.href = `/code-reference/${v.identifier.toLowerCase()}.html`;
+      const localePaths = Object.keys(locales);
+
+      let localePath = '';
+
+      Object.keys(locales).forEach((l) => {
+        if (locales[l].lang === this.$lang) localePath = l.replace(/\/+$/, '');
+      });
+
+      window.location.href = `${localePath}/code-reference/${v.identifier.toLowerCase()}.html`;
+    },
+    getLabel(key) {
+      return translate(key, this.$lang);
     },
   },
 };
