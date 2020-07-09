@@ -2,14 +2,14 @@
   <div>
     <h3>{{ translatedCode.title }}</h3>
     <div class="metadata">
+      <span>
+        {{ getLabel('codeinfo.version') }} {{ translatedCode.version }} ({{
+        translatedCode.date
+        }})
+      </span>
       <span
-        >{{ getLabel('codeinfo.version') }} {{ translatedCode.version }} ({{
-          translatedCode.date
-        }})</span
-      >
-      <span v-if="code.author.includes(',')"
-        >{{ getLabel('codeinfo.authors') }} {{ translatedCode.author }}</span
-      >
+        v-if="code.author.includes(',')"
+      >{{ getLabel('codeinfo.authors') }} {{ translatedCode.author }}</span>
       <span v-else>{{ getLabel('codeinfo.author') }} {{ translatedCode.author }}</span>
     </div>
     <p class="description" v-html="translatedCode.description"></p>
@@ -25,15 +25,13 @@ export default {
     anchor: { type: Boolean },
     code: { type: Object },
   },
-  watch: {
-    code: function () {
-      this.translatedCode = translateCode(this.code);
-    },
+  computed: {
+    translatedCode: function() {
+      return translateCode(this.code)
+    }
   },
   data() {
-    return {
-      translatedCode: {},
-    };
+    return {};
   },
   methods: {
     getLabel(key) {

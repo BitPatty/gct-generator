@@ -2,11 +2,11 @@
   <div>
     <section class="config">
       <div>
-        <span>{{ getLabel('generatorconfig.gameversion') }}</span>
+        <span>{{ getLabel('generatorconfig.gameversion.label') }}</span>
         <VersionSelect :onChange="onVersionChanged" :selectedValue="selectedVersion" />
       </div>
       <div>
-        <span>{{ getLabel('generatorconfig.downloadformat') }}</span>
+        <span>{{ getLabel('generatorconfig.downloadformat.label') }}</span>
         <FormatSelect :onChange="onFormatChanged" :selectedValue="selectedFormat" />
       </div>
       <div>
@@ -56,47 +56,65 @@
             <h3>{{ getLabel('landingpage.community') }}</h3>
             <ul>
               <li>
-                <a href="https://discord.gg/9dGJWEc" target="_blank" rel="noopener">{{
+                <a href="https://discord.gg/9dGJWEc" target="_blank" rel="noopener">
+                  {{
                   getLabel('landingpage.links.discord')
-                }}</a>
+                  }}
+                </a>
               </li>
               <li>
-                <a href="https://speedrun.com/sms" target="_blank" rel="noopener">{{
+                <a href="https://speedrun.com/sms" target="_blank" rel="noopener">
+                  {{
                   getLabel('landingpage.links.src')
-                }}</a>
+                  }}
+                </a>
               </li>
               <li>
-                <a href="https://twitter.com/SMSCommunity" target="_blank" rel="noopener">{{
+                <a href="https://twitter.com/SMSCommunity" target="_blank" rel="noopener">
+                  {{
                   getLabel('landingpage.links.twitter')
-                }}</a>
+                  }}
+                </a>
               </li>
               <li>
-                <a href="https://www.twitch.tv/SunshineCommunity" target="_blank" rel="noopener">{{
+                <a href="https://www.twitch.tv/SunshineCommunity" target="_blank" rel="noopener">
+                  {{
                   getLabel('landingpage.links.twitch')
-                }}</a>
+                  }}
+                </a>
               </li>
             </ul>
           </div>
           <div>
             <p>
               GCT Generator &copy; 2017 - {{ new Date().getFullYear() }}
-              <a href="https://twitter.com/psychonauter" target="_blank" rel="noopener"
-                >Psychonauter</a
-              >,
+              <a
+                href="https://twitter.com/psychonauter"
+                target="_blank"
+                rel="noopener"
+              >Psychonauter</a>,
               <a href="https://twitter.com/Qbe_Root" target="_blank" rel="noopener">Noki Doki</a>
               and
-              <a href="https://twitter.com/srlMilk" target="_blank" rel="noopener">Milk</a>. The
+              <a
+                href="https://twitter.com/srlMilk"
+                target="_blank"
+                rel="noopener"
+              >Milk</a>. The
               source code is available on
-              <a href="https://github.com/BitPatty/gctGenerator" target="_blank" rel="noopener"
-                >Github</a
-              >.
+              <a
+                href="https://github.com/BitPatty/gctGenerator"
+                target="_blank"
+                rel="noopener"
+              >Github</a>.
             </p>
             <p>
               Found a bug? Post a message on the SMS Discord (#hacking) and tag psy#1363. During the
               transition the old site will still be available at
-              <a href="https://old.gct.zint.ch" target="_blank" rel="noopener"
-                >https://old.gct.zint.ch</a
-              >.
+              <a
+                href="https://old.gct.zint.ch"
+                target="_blank"
+                rel="noopener"
+              >https://old.gct.zint.ch</a>.
             </p>
           </div>
         </div>
@@ -118,6 +136,7 @@ import DownloadButton from './DownloadButton';
 // Data
 import gameVersions from '../data/gameVersions.json';
 
+// Util
 import { translate } from '../i18n/localeHelper';
 
 export default {
@@ -132,8 +151,8 @@ export default {
       useStageLoader: false,
       stageLoaderCodes: [],
       useStageLoaderOptions: [
-        { value: false, label: 'No' },
-        { value: true, label: 'Yes' },
+        { value: false, label: 'common.no' },
+        { value: true, label: 'common.yes' },
       ],
     };
   },

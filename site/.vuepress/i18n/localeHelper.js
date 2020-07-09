@@ -10,12 +10,8 @@ const getNestedProp = (obj, path) => {
   const props = path.split('.');
 
   try {
-    let currentProp = obj[props[0]];
-
-    for (let i = 1; i < props.length; i++) {
-      currentProp = currentProp[props[i]];
-    }
-
+    let currentProp = obj[props.shift()];
+    while (props.length > 0) currentProp = currentProp[props.shift()];
     return currentProp;
   } catch {
     return null;

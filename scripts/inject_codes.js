@@ -97,7 +97,7 @@ themePlugins.forEach((p) => {
 });
 
 // Read the current code list
-const codeJson = JSON.parse(fs.readFileSync(JSON_FILE_PATH));
+const codeJson = require(JSON_FILE_PATH);
 
 // Populate all code fields in the codeJSON
 for (let i = 0; i < CODE_VERSIONS.length; i++) {

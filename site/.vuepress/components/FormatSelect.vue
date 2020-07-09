@@ -1,10 +1,5 @@
 <template>
-  <SelectComponent
-    placeholder="Choose Format"
-    :options="options"
-    :selectedValue="selectedValue"
-    :onChange="onChange"
-  />
+  <SelectComponent :options="options" :selectedValue="selectedValue" :onChange="onChange" />
 </template>
 
 <script>
@@ -23,7 +18,7 @@ export default {
     return {
       options: downloadFormats.map((v) => ({
         value: v.target,
-        label: v.name,
+        label: v.i18nKey,
       })),
     };
   },

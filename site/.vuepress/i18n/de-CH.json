@@ -1,4 +1,13 @@
 {
+  "common": {
+    "download": "Herunterladen",
+    "yes": "Ja",
+    "no": "Nein",
+    "GMSE01": "GMSE01 (NTSC-U)",
+    "GMSJ01": "GMSJ01 (NTSC-J 1.0)",
+    "GMSJ0A": "GMSJ01 (NTSC-J 1.1)",
+    "GMSP01": "GMSP01 (PAL)"
+  },
   "help": "Hilfe",
   "download": "Herunterladen",
   "codeinfo": {
@@ -7,9 +16,19 @@
     "version": "Version:"
   },
   "generatorconfig": {
-    "gameversion": "Spiel-Version:",
-    "downloadformat": "Download Format:",
-    "usestageloader": "Stage Loader verwenden:"
+    "gameversion": {
+      "label": "Spiel Version:",
+      "placeholder": "Wähle Version.."
+    },
+    "usestageloader": "Stage Loader verwenden:",
+    "downloadformat": {
+      "label": "Download Format:",
+      "options": {
+        "gct": "GCT",
+        "dolphin": "Dolphin INI",
+        "gcm": "CheatManager TXT"
+      }
+    }
   },
   "landingpage": {
     "title": "Super Mario Sunshine Practice File Generator",

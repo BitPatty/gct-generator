@@ -2,6 +2,9 @@
   "/": {
     "lang": "en-US",
     "title": "GCT Generator",
+    "selectText": "Language",
+    "label": "English",
+    "ariaLabel": "Language",
     "nav": [
       {
         "text": "Cookbook",
