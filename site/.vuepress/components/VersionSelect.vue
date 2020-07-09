@@ -34,7 +34,7 @@ export default {
     getLabel(key) {
       return translate(key, this.$lang);
     },
-  }
+  },
 };
 </script>
 

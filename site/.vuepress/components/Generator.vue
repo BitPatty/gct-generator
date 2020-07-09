@@ -57,30 +57,22 @@
             <ul>
               <li>
                 <a href="https://discord.gg/9dGJWEc" target="_blank" rel="noopener">
-                  {{
-                  getLabel('landingpage.links.discord')
-                  }}
+                  {{ getLabel('landingpage.links.discord') }}
                 </a>
               </li>
               <li>
                 <a href="https://speedrun.com/sms" target="_blank" rel="noopener">
-                  {{
-                  getLabel('landingpage.links.src')
-                  }}
+                  {{ getLabel('landingpage.links.src') }}
                 </a>
               </li>
               <li>
                 <a href="https://twitter.com/SMSCommunity" target="_blank" rel="noopener">
-                  {{
-                  getLabel('landingpage.links.twitter')
-                  }}
+                  {{ getLabel('landingpage.links.twitter') }}
                 </a>
               </li>
               <li>
                 <a href="https://www.twitch.tv/SunshineCommunity" target="_blank" rel="noopener">
-                  {{
-                  getLabel('landingpage.links.twitch')
-                  }}
+                  {{ getLabel('landingpage.links.twitch') }}
                 </a>
               </li>
             </ul>
@@ -88,33 +80,23 @@
           <div>
             <p>
               GCT Generator &copy; 2017 - {{ new Date().getFullYear() }}
-              <a
-                href="https://twitter.com/psychonauter"
-                target="_blank"
-                rel="noopener"
-              >Psychonauter</a>,
+              <a href="https://twitter.com/psychonauter" target="_blank" rel="noopener"
+                >Psychonauter</a
+              >,
               <a href="https://twitter.com/Qbe_Root" target="_blank" rel="noopener">Noki Doki</a>
               and
-              <a
-                href="https://twitter.com/srlMilk"
-                target="_blank"
-                rel="noopener"
-              >Milk</a>. The
+              <a href="https://twitter.com/srlMilk" target="_blank" rel="noopener">Milk</a>. The
               source code is available on
-              <a
-                href="https://github.com/BitPatty/gctGenerator"
-                target="_blank"
-                rel="noopener"
-              >Github</a>.
+              <a href="https://github.com/BitPatty/gctGenerator" target="_blank" rel="noopener"
+                >Github</a
+              >.
             </p>
             <p>
               Found a bug? Post a message on the SMS Discord (#hacking) and tag psy#1363. During the
               transition the old site will still be available at
-              <a
-                href="https://old.gct.zint.ch"
-                target="_blank"
-                rel="noopener"
-              >https://old.gct.zint.ch</a>.
+              <a href="https://old.gct.zint.ch" target="_blank" rel="noopener"
+                >https://old.gct.zint.ch</a
+              >.
             </p>
           </div>
         </div>
