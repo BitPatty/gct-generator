@@ -9,7 +9,7 @@
   },
   "repository": "https://github.com/BitPatty/gctGenerator/gctGenerator",
   "scripts": {
-    "dev": "yarn codes:inject && vuepress dev site",
+    "dev": "yarn codes:inject && yarn translations:compare && vuepress dev site",
     "build": "yarn codes:inject && yarn translations:compare && vuepress build site",
     "format": "prettier --write ./site/**/*{.md,.js,.json,.vue}",
     "translations:compare": "node ./scripts/compare_translations.js",
