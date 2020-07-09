@@ -10,6 +10,7 @@ const md = require('@vuepress/markdown')({
 
 const themePlugins = require(path.join(__dirname, '../site/.vuepress/data/themePlugins.json'));
 const locales = require(path.join(__dirname, '../site/.vuepress/i18n/locales.json'));
+const sharedXML = fs.readFileSync(path.join(__dirname, `../codes/Common.xml`));
 
 // Constants
 const JSON_FILE_PATH = path.join(__dirname, '../site/.vuepress/data/gameVersions.json');
@@ -56,6 +57,11 @@ const localizeNode = (node, identifier) =>
  */
 const trimLines = (str) => str.replace(/^ +/gm, '').replace(/ +$/gm, '');
 
+/**
+ * Localize a markdown text
+ * @param {*} node  The parent node
+ * @param {*} identifier The childs tag name
+ */
 const localizeMarkdown = (node, identifier) => {
   const markdowns = localizeNode(node, identifier).map((markdown) => ({
     ...markdown,
@@ -69,24 +75,43 @@ const localizeMarkdown = (node, identifier) => {
 };
 
 /**
+ * Find a code by its version attribute (if specified)
+ * @param {*} node The parent node
+ * @param {*} identifier The childs tag name
+ * @param {*} gameVersion The game version
+ */
+const readCode = (node, identifier, gameVersion = null) => {
+  if (!gameVersion) {
+    const codeNode = node.querySelector(identifier);
+    return codeNode ? codeNode.textContent.replace(/[\s\n\r\t]+/gm, '') : null;
+  }
+
+  const codeNode = node.querySelector(`${identifier}[version='${gameVersion}']`);
+  return codeNode ? codeNode.textContent.replace(/[\s\n\r\t]+/gm, '') : null;
+};
+
+/**
  * Converts the XML source files to a JSON object
  * @param {*} xmlString The xml string
+ * @param {*} gameVersion The game version to filter the code on
  */
-const parseXml = (xmlString) => {
+const parseXml = (xmlString, gameVersion = null) => {
   const codeCollection = new JSDOM(xmlString, {
     contentType: 'text/xml',
   }).window.document.getElementsByTagName('code');
 
   const codes = [...codeCollection];
 
-  return codes.map((code) => ({
-    author: readTextNode(code, 'author'),
-    title: localizeNode(code, 'title'),
-    description: localizeMarkdown(code, 'description'),
-    version: readTextNode(code, 'version'),
-    date: readTextNode(code, 'date'),
-    source: readTextNode(code, 'source').replace(/[\s\n\r\t]+/gm, ''),
-  }));
+  return codes
+    .map((code) => ({
+      author: readTextNode(code, 'author'),
+      title: localizeNode(code, 'title'),
+      description: localizeMarkdown(code, 'description'),
+      version: readTextNode(code, 'version'),
+      date: readTextNode(code, 'date'),
+      source: readCode(code, 'source', gameVersion),
+    }))
+    .filter((code) => code.source != null);
 };
 
 // Register themes containers such as tip/warning/danger
@@ -102,7 +127,10 @@ const codeJson = require(JSON_FILE_PATH);
 // Populate all code fields in the codeJSON
 for (let i = 0; i < CODE_VERSIONS.length; i++) {
   const xml = fs.readFileSync(path.join(__dirname, `../codes/${CODE_VERSIONS[i]}.xml`));
-  codeJson.find((c) => c.identifier === CODE_VERSIONS[i]).codes = parseXml(xml);
+  codeJson.find((c) => c.identifier === CODE_VERSIONS[i]).codes = [
+    ...parseXml(xml),
+    ...parseXml(sharedXML, CODE_VERSIONS[i]),
+  ];
 }
 
 // Save the codeJSON with the updated codes
