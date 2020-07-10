@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { JSDOM } = require('jsdom');
 const vuepressContainerPlugin = require('vuepress-plugin-container');
+const { title } = require('process');
 
 // These plugins have to match the ones used as extensions in .vuepress/config.js
 const md = require('@vuepress/markdown')({
@@ -16,6 +17,127 @@ const xml = fs.readFileSync(path.join(__dirname, `../Codes.xml`));
 const JSON_FILE_PATH = path.join(__dirname, '../site/.vuepress/data/gameVersions.json');
 const CODE_VERSIONS = ['GMSE01', 'GMSJ01', 'GMSP01', 'GMSJ0A'];
 const INJECTION_TAG = '<!-- injectionpoint -->';
+
+/**
+ * Validates the xml contains usable data
+ * @param {*} xmlString The xml string
+ */
+const validateXML = (xmlString) => {
+  console.log('Validating XML file');
+
+  const codeCollection = new JSDOM(xmlString, {
+    contentType: 'text/xml',
+  }).window.document.getElementsByTagName('code');
+
+  const codes = [...codeCollection];
+  const localeIdentifiers = Object.keys(locales).map((l) => locales[l].lang);
+
+  for (let i = 0; i < codes.length; i++) {
+    // Fallback title exists
+    const codeTitle = codes[i].querySelector("title[lang='en-US']");
+    if (!codeTitle || !codeTitle.textContent)
+      throw new Error(`Missing Fallback Title (en-US) in code nr ${i}`);
+
+    // All lang attributes on all titles are valid
+    const codeTitles = codes[i].querySelectorAll('title');
+    for (let j = 0; j < codeTitles.length; j++) {
+      if (
+        !codeTitles[j].getAttribute('lang') ||
+        !localeIdentifiers.includes(codeTitles[j].getAttribute('lang'))
+      )
+        throw new Error(`Invalid lang attribute on title ${codeTitles[j].textContent}`);
+    }
+
+    // Fallback description exists
+    const codeDescription = codes[i].querySelector("description[lang='en-US']");
+    if (!codeDescription || !codeDescription.textContent)
+      throw new Error(`Missing Fallback Description (en-US) in code nr ${i}`);
+
+    // All lang attributes on all descriptions are valid
+    const codeDescriptions = codes[i].querySelectorAll('title');
+    for (let j = 0; j < codeDescriptions.length; j++) {
+      if (
+        !codeDescriptions[j].getAttribute('lang') ||
+        !localeIdentifiers.includes(codeDescriptions[j].getAttribute('lang'))
+      )
+        throw new Error(`Invalid lang attribute on description ${codeDescriptions[j].textContent}`);
+    }
+
+    // Version tag exists
+    if (codes[i].querySelectorAll('version').length !== 1)
+      throw new Error(`Missing or duplicate version in code '${codeTitle.textContent}'`);
+
+    // Author tag exists
+    if (codes[i].querySelectorAll('author').length !== 1)
+      throw new Error(`Missing author in code '${codeTitle.textContent}'`);
+
+    // At least one source exists
+    const codeSources = codes[i].querySelectorAll('source');
+    if (codeSources.length === 0) throw new Error(`No codes for ${codeTitle.textContent}`);
+
+    // All sources have a valid version attribute
+    for (let j = 0; j < codeSources.length; j++) {
+      if (
+        !codeSources[j].getAttribute('version') ||
+        !CODE_VERSIONS.includes(codeSources[j].getAttribute('version'))
+      )
+        throw new Error(`Invalid source version for code '${codeTitle.textContent}' at index ${j}`);
+    }
+
+    // Each source has a valid length
+    for (let j = 0; j < codeSources.length; j++) {
+      if (
+        codeSources[j].textContent.replace(/[\s\n\r\t]+/gm, '').length % 16 != 0 ||
+        codeSources[j].textContent.replace(/[\s\n\r\t]+/gm, '').length < 16
+      )
+        throw new Error(
+          `Invalid source length for code '${codeTitle.textContent}' and version ${
+            codeSources[j].getAttribute('version').textContent
+          }`,
+        );
+    }
+
+    // All titles and descriptions a unique valid lang attribute
+    for (let j = 0; j < localeIdentifiers.length; j++) {
+      if (codes[i].querySelectorAll(`title[lang='${localeIdentifiers[j]}']`).length === 0) {
+        console.warn(
+          `Missing title translation for code '${codeTitle.textContent}' and locale ${localeIdentifiers[j]}`,
+        );
+      }
+
+      if (codes[i].querySelectorAll(`title[lang='${localeIdentifiers[j]}']`).length > 1) {
+        throw new Error(
+          `Duplicate title translation for code '${codeTitle.textContent}' and locale ${localeIdentifiers[j]}`,
+        );
+      }
+
+      if (codes[i].querySelectorAll(`description[lang='${localeIdentifiers[j]}']`).length === 0) {
+        console.warn(
+          `Missing description translation for code '${codeTitle.textContent}' and locale ${localeIdentifiers[j]}`,
+        );
+      }
+
+      if (codes[i].querySelectorAll(`description[lang='${localeIdentifiers[j]}']`).length > 1) {
+        throw new Error(
+          `Duplicate description translation for code '${codeTitle.textContent}' and locale ${localeIdentifiers[j]}`,
+        );
+      }
+    }
+
+    // All sources have a unique valid version attribute
+    for (let j = 0; j < CODE_VERSIONS.length; j++) {
+      if (codes[i].querySelectorAll(`source[version='${CODE_VERSIONS[j]}']`).length === 0)
+        console.warn(
+          `Missing source on code '${codeTitle.textContent}' for version ${CODE_VERSIONS[j]}`,
+        );
+
+      if (codes[i].querySelectorAll(`source[version='${CODE_VERSIONS[j]}']`).length > 1)
+        throw new Error(
+          `Duplicate source on code '${codeTitle.textContent}' for version ${CODE_VERSIONS[j]}`,
+        );
+    }
+  }
+};
 
 /**
  * Reads the (localized) child node
@@ -33,6 +155,9 @@ const readTextNode = (node, identifier, lang = null, fallbackLang = null) => {
 
   const localizedElement = node.querySelector(`${identifier}[lang='${lang}']`);
   if (localizedElement) return localizedElement.textContent;
+
+  const codeTitle = node.querySelector(`title[lang='en-US']`);
+  console.warn(`No translation found for code '${codeTitle.textContent}' for locale ${lang}`);
 
   if (!fallbackLang) throw new Error(`No localized ${identifier} found on ${node.textContent}`);
   const fallbackElement = node.querySelector(`${identifier}[lang='${fallbackLang}']`);
@@ -113,6 +238,9 @@ const parseXml = (xmlString, gameVersion = null) => {
     }))
     .filter((code) => code.source != null);
 };
+
+// Run validation
+validateXML(xml);
 
 // Register themes containers such as tip/warning/danger
 themePlugins.forEach((p) => {
