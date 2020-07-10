@@ -13,6 +13,9 @@ import ButtonComponent from './ButtonComponent';
 // Data
 import gameVersions from '../data/gameVersions.json';
 
+// Util
+import { translateCode } from '../i18n/localeHelper';
+
 export default {
   props: {
     codes: { type: Array },
@@ -84,7 +87,10 @@ export default {
       let data = 'Paste the following on top of your games .ini file:\r\n[Gecko]';
 
       codes.forEach((code) => {
-        data += `\r\n$${code.title} (${code.date}) [${code.author}]\r\n`;
+        const codeTitle =
+          typeof code.title === 'string' ? code.title : translateCode(code, this.$lang).title;
+
+        data += `\r\n$${codeTitle} (${code.date}) [${code.author}]\r\n`;
         data += code.source
           .match(/.{8}/g)
           .join(' ')
@@ -97,7 +103,10 @@ export default {
       let data = `${version}\r\nSuper Mario Sunshine`;
 
       codes.forEach((code) => {
-        data += `\r\n\r\n${code.title} (${code.date}) [${code.author}]\r\n`;
+        const codeTitle =
+          typeof code.title === 'string' ? code.title : translateCode(code, this.$lang).title;
+
+        data += `\r\n\r\n${codeTitle} (${code.date}) [${code.author}]\r\n`;
         data += code.source
           .match(/.{8}/g)
           .join(' ')
