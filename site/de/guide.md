@@ -4,130 +4,128 @@ sidebar: auto
 
 # Cookbook
 
-A guide on how to install and use Super Mario Sunshine practice codes on Nintendont and Dolphin.
+Ein Leitfaden für die Installation und Anwendung von Super Mario Sunshine Practice Codes über Nintendont und Dolphin.
 
 [[toc]]
 
-## Preparing your Wii
+## Vorbereiten der Wii
 
-### Install Homebrew
+### Homebrew Installation
 
-First of all you're gonna have to install Homebrew on your Wii. Make sure your SD card is formatted to FAT32 and then visit [https://wii.guide/](https://wii.guide/) for a detailed guide on how to get Homebrew on your Wii.
+Zu Beginn musst du Homebrew auf deiner Wii installieren. Stelle sicher, dass deine SD-Karte zu FAT32 formattiert ist und besuche dann [https://wii.guide/](https://wii.guide/) (Englisch) für einen detaillierten Leitfaden für die installation von Homebrew.
 
-### Install the necessary applications
+### Installation der Applikationen
 
-Using Nintendont is the recommended way to use practice codes. You can download the latest build by [clicking this link](https://share.zint.ch/nintendont/latest/Nintendont.zip). Unpack the archive and place the Nintendont folder with all of its contents in the "apps" folder of your SD card. If there is no "apps" folder create one in the root of your SD card.
+Nintendont ist empohlene Weg für die Nutzung der Practice Codes. Du kannst die aktuellste Version über [diesen Link](https://share.zint.ch/nintendont/latest/Nintendont.zip) herunterladen. Entpacke das Archiv und platziere den Nintendont Ordner mit all seinen Inhalten in den 'apps' Ordner auf deiner SD-Karte. Falls es noch keinen 'apps' Ordner gibt, erstelle diesen erst.
 
-## Installing the cheat file
+## Installation der Cheat-Datei
 
-### Generate the cheat file
+### Generiere die Cheat-Datei
 
-First you need to know which version of the game you're using. The following table displays the supported versions as well as the respective game code:
+Zuerst musst du wissen, welche Version des Spiels du verwendest. Die folgende Tabelle zeigt die unterstützten Versionen und den entsprechenden Spiel-Code:
 
-| Version                | Game Code |
-| ---------------------- | --------- |
-| PAL (Europe)           | GMSP01    |
-| NTSC-U (North America) | GMSE01    |
-| NTSC-J (Japanese)      | GMSJ01    |
-| NTSC-K (Korean)        | GMSE01    |
+| Version               | Spiel-Code |
+| --------------------- | ---------- |
+| PAL (Europa)          | GMSP01     |
+| NTSC-U (Nord Amerika) | GMSE01     |
+| NTSC-J (Japan)        | GMSJ01     |
+| NTSC-K (Korea)        | GMSE01     |
 
-::: tip Note for NTSC-J players
-JP 1.0 and JP 1.1 both use the same ID (GMSJ01). To identify which version you have check the back of your disc. It will read "DOL-GMSJ-0-00" for 1.0 and "DOL-GMSJ-0-01" for 1.1.
+::: tip Tip für NTSC-J-Spieler
+JP 1.0 und JP 1.1 verwenden beide dieselbe ID (GMSJ01). Um festzustellen, welche Version du hast, überprüfe die Rückseite deiner Disc. Darauf steht "DOL-GMSJ-0-00" für Version 1.0 und "DOL-GMSJ-0-01" für Version 1.1.
 
-![](https://gct.zint.ch/img/jp_diff.png)
+![](/img/jp_diff.png)
 :::
 
-Visit the main site and select the appropriate game version from the dropdown menu. A list of available cheat codes will appear. Select all the cheats you want to have enabled from the list, choose GCT as file format and click "Download".
+Besuche anschliessend die [Hauptseite](./index.md) und wähle die entsprechende Version vom Dropdown-Menü. Eine Liste verfügbarer Codes wird angezeigt. Wähle anschliessend alle Cheats, die du verwenden möchtest von der Liste, wähle GCT als Dateiformat und klicke 'Herunterladen'.
 
-### Copy the file onto your SD card
+### Kopiere die Datei auf die SD-Karte
 
-Create a "codes" folder in the root of your SD card if there is none and copy the GCT file you just downloaded into that folder. This is what the resulting folder structure should look like on your SD card (the .gct files might be different depending on the version you chose):
+Erstelle einen 'codes'-Ordner auf deiner SD-Karte falls es noch keinen gibt und kopiere die eben heruntergeladene GCT-Datei in diesen Ordner. Die resultierende Ordnerstruktur sollte wie folgt aussehen (die .gct Dateien können anders sein, je nach Version die du verwendest);
 
-![Sample Folder Structure](/img/folderstructure.png)
+![Ordnerstruktur](/img/folderstructure.png)
 
-### Enable the codes
+### Aktiviere die Codes
 
-Open your Homebrew channel and from there launch Nintendont. Select SD and then press B on your Gamecube controller to see the settings. In your settings, make sure that "Cheats" are "On". You can switch it on/off by pressing A on your controller. (See image below)
+Öffne den Homebrew Kanal auf deiner Wii und starte von dort aus Nintendont. In Nintendont, wähle SD und dann drücke B auf deinem Gamecube Controller um die Einstellungen zu sehen. Stelle sicher, dass in deinen Einstellungen die Cheats eingeschaltet sind ('On'). Du kannst sie über die A-Taste aktivieren/deaktivieren.
 
-![Enabling Cheats in Nintendont](/img/nintendont_cheats.jpg)
+![Cheats in Nintendont aktivieren](/img/nintendont_cheats.jpg)
 
-<!-- image -->
+Drücke erneut B um zurück zur Spielliste zu gelangen und starte das Spiel. Die Cheats sollten nun aktiv sein.
 
-Press B again to return to the game list and launch your game. And with that you're done already.
+## Problembehebung
 
-## Troubleshooting
+### Das Spiel startet nicht / Schwarzer Bildschirm
 
-### The game doesn't launch / Stuck at black screen
+Dieses Problem hat nichts mit den Practice Codes zu tun. Du hast in diesem Fall die folgenden Optionen:
 
-This issue is not related to the practice codes. You have the following options if that happens to you:
+- Starte Nintendont erneut bis das game startet (benötigt teilweise mehrere Versuche)
+- Verbinde deine Wii mit dem Internet bevor du Nintendont startest
+- Warte für ungefähr 30 Sekunden auf der Spielliste bevor du die Disc startest
+- Eine Neuinstallation von Homebrew kann das Problem permanent beheben.
 
-- Restart Nintendont until the game launches (usually takes a few attempts).
-- Connect your Wii to the internet before launching Nintendont.
-- Wait for ~30 seconds on the game selection screen before booting the disc.
-- Reinstalling homebrew may fix this issue permanently.
+### Nintendont sagt 'IOS58 is missing'
 
-### Nintendont says IOS58 is missing
+[Hier](./ios58.md) ist ein Leitfaden für die Installation von IOS58 für die Verwendung mit Nintendont.
 
-[Here's](/ios58.html) a guide on how to install IOS58 for use with Nintendont.
+### Das Spiel startet aber die Codes funktionieren nicht
 
-### The game launches but the codes don't work
+Dies kann mehrere Ursachen haben:
 
-This can have multiple reasons:
+- Cheats sind nicht aktiviert: Siehe ["Aktiviere die Codes"](#aktiviere-die-codes).
+- Du verwendest eine alte Version von Nintendont. Stell sicher, dass du mindestens Version 4.434 oder neuer verwendest.
+- Deine Datei hat den falschen Namen: Stell sicher, dass die Datei 'GMSE01.gct', 'GMSJ01.gct' oder 'GMSP01.gct' heisst. Es funktioniert nicht mit Namen wie beispielsweise 'GMSP01 (1).gct'.
+- Deine Datei ist am falschen Ort: Stell sicher, dass die Datei im Ordner 'codes' ist. Achte hiebei wieder darauf, dass der Ordner auch genau so heisst. Falls du einen 'games'-Ordner hast, stelle sicher dass es keine Datei mit demselben Namen in dem Ordner oder einem Unterordner gibt.
+- Deine Datei ist zu gross: Zu viele Codes deaktivieren Nintendonts Cheat-Funktion. Stelle sicher, dass du nicht zwei inkompatible Codes aktiviert hast (Beispielsweise 'Level Select' und 'Fast Any%' sind nicht kompatibel).
+- Falls du ein USB-Laufwerk verwendest und über die Disc spielst, stelle sicher dass du bei Nintendont das Gerät auswählst, welches die Cheat Codes enthält.
+- Falls du eine ISO verwendest, müssen die Codes und die ISO auf demselben Gerät sein (beide auf der SD-Karte oder beide auf dem USB-Laufwerk)
 
-- You don't have cheats enabled: See ["Enable the codes" section](#enable-the-codes) for details.
-- You're using an obsolete version of Nintendont. Make sure you use version 4.434 or newer.
-- Your cheatfile has the wrong name: Make sure the file is named "GMSE01.gct", "GMSJ01.gct" or "GMSP01.gct". It won't work with names like "GMSE01 (1).gct". Nintendont is very picky!
-- Your cheatfile is at the wrong location: Make sure the file is in the "codes" folder of your SD Card. Again, the folder has to be named "codes" (See sample folder structure in ["Copy the file onto your SD Card section"](#copy-the-file-onto-your-sd-card)). If you have a "games" folder, make sure there's no file with the same name in it or its subfolders.
-- Your cheatfile is too big: Using too many codes at once can cause Nintendont to disable them since the used space in the game is limited. Make sure you don't have two incompatible codes selected when downloading the cheatfile (for example "Level Select", "Fast Any%" and the Stage loader cannot be used simultaneously). If you're using Nintendont 4.434 or newer you don't have to worry about your file size unless it exceeds 8KB.
-- If you have a USB drive connected and use disc, make sure you select the device that contains the cheats for your disc.
-- If you use an ISO your cheat file and ISO must be on the same device (both on the SD card or both on the USB drive).
+### Ich bin verloren :(
 
-### I'm lost :(
-
-You can ask for help on the [Super Mario Sunshine Discord](https://discord.gg/9dGJWEc).
+Du kannst auch im [Super Mario Sunshine Discord](https://discord.gg/9dGJWEc) unter dem #help Kanal nach Hilfe fragen.
 
 ## Appendix: Cheat Manager
 
-The Cheat Manager is a homebrew application that allows you to generate GCTs on your Wii. This way you don't have to redownload your cheatfile everytime you want a different combination. However, you're gonna have to use a Wiimote to control the application.
+Der Cheat Manager ist eine applikation für Homebrew (wie Nintendont), mit welcher du GCT's auf deiner Wii generieren kannst. Damit musst du nicht jedesmal ein neues Cheatfile herunterladen. Dieser Prozess benötigt allerdings eine Wiimote um die Applikation zu bedienen.
 
 ### Setup
 
-You can download the Cheat Manager from [here](/files/Cheat_manager_v0_3.zip). Unzip the archive and copy the contents into the "apps" folder of your SD card.
+Du kannst den Cheat Manager von [hier herunterladen](/files/Cheat_manager_v0_3.zip). Entpacke das Archive und kopiere den Inhalt in den 'apps'-Ordner auf deiner SD-Karte.
 
-Using the generator on the main site, select all the codes you want to have available on the cheat manager and choose "Cheat Manager TXT" as file format instead of "GCT" to download a text file formatted for use with the cheat manager. Create a "txtcodes" folder in the root of your SD card if there is none and copy the generated text file into that folder. The name of the text file doesn't matter if you use this application, since the games ID is stored in the textfile.
+Wähle mittels des Generators auf der [Hauptseite](./index.md) alle Codes, auf welche du Zugriff haben möchtest und wähle als Dateiformat 'Cheat Manager TXT' anstelle von 'GCT'. Erstelle anschliessend einen 'txtcodes'-Ordner auf deiner SD-Karte und kopiere die generierte Datei in den eben erstellten Ordner. Der Name der Datei spielt in diesem Fall im Gegensatz zur GCT-Datei keine grosse Rolle.
 
-Alternatively, a zip archive containing all codes available on this site can be downloaded from [here](/files/GCMCodes.zip).
+Alternativ kannst du ein Archiv mit allen verfügbaren Codes direkt von [hier herunterladen](/files/GCMCodes.zip).
 
-### Using the Cheat Manager
+### Den Cheat Manager verwenden
 
-Launch the cheat manager and grab your Wiimote. Navigate to your textfile using the DPad and select it with "A". On the following screen press "+" to activate and "-" to deactivate a cheat.
+Starte den Cheat Manager und wechsle zu deiner Wiimote. Navigiere zu deiner Textdatei mittels des DPad und wähle es mittels des 'A'-Knopfes. Verwende auf dem nächsten Screen '+' um einen Code zu aktivieren und '-' um ihn zu deaktivieren.
 
-After activating your desired codes press "1" to generate the GCT file. The cheatmanager then creates the GCT file in your "codes" folder, overwriting the old one if there's already a GCT with the same name. If you now launch the game with cheats active the new codes will be loaded.
+Nachdem du alle Codes, die du aktiviert haben möchtest, aktiviert hast, verwende den '1'-Knopf um die GCT-Datei zu generieren. Der Cheat Manager schreibt dabei eine GCT Datei in deinem 'codes'-Ordner und überschreibt allfällige alte Dateien mit demselben Namen. Wenn du nun Nintendont startest, werden die neuen Codes geladen.
 
 ## Appendix: Dolphin
 
 ### Setup
 
-To use the codes with Dolphin choose "Dolphin INI" as file format instead of "GCT" to download the codes formatted for use with Dolphin. Alternatively, a zip archive containing all codes available on this site can be downloaded from [here](/files/DolphinCodes.zip).
+Um die Codes mit Dolphin zu verwenden wähle 'Dolphin INI' als Dateiformat anstelle von 'GCT' bevor du die Codes herunterlädst. Alternativ kannst du ein ZIP-Archiv mit allen Codes von [hier herunterladen](/files/DolphinCodes.zip).
 
-::: tip Code limits
-Dolphin doesn't use the same cheat loader as Nintendont. Its code limit is reached rather quickly and it won't tell you whether the codes you enabled exceed the internal limit. If your game crashes after enabling some codes, this might be the cause. Try to disable non-essential codes if that happens to you.
+::: tip Code Limits
+Dolphin verwendet nicht dieselbe Technik für das Laden von Cheats wie Nintendont und erreicht das Code-Limit eher rasch. Falls dein Spiel nach dem Start crashed, liegt es vermutlich daran. Versuche alle nicht-essentiellen Codes zu deaktivieren falls das passiert.
 :::
 
-### Configuration
+### Konfiguration
 
-#### Dolphin 5.0 or older
+#### Dolphin 5.0 oder älter
 
-Right-click the game in Dolphin and, then click on "Properties" and on the bottom left corner of the property window click the "Edit configuration" button. Open the text file you downloaded and copy everything following the `[Gecko]` tag below the same tag in the configuration you just opened. If there is no `[Gecko]` tag (it should be the first tag), create one on top of your configuration file. Save and close the configuration file.
+Wechsle in die Eigenschaften des Spiels mittels Rechtsklick -> Eigenschaften. Klicke 'Konfiguration bearbeiten' im neuen Fenster und kopiere den gesamten Inhalt (nach dem `[Gecko]`-Tag) der heruntergeladenen Datei an die entsprechende Stelle in der Konfigurationsdatei. Falls es noch keinen `[Gecko]`-Tag gibt (es sollte der erste sein), erstelle erst einen am Anfang deiner Konfigurationsdatei. Speichere und schliesse die Datei.
 
 ![Dolphin Gecko Codes 5.0](/img/dolphin_gecko_codes_v1.png)
 
-#### Dolphin 5.0-11XXX or newer
+#### Dolphin 5.0-11XXX oder neuer
 
-Right click the game in Dolphin and click on "Properties". In the "Game Config" section choose the "Editor" tab and paste the contents of the text file you just downloaded into the "User Config" editor.
+Wechsle in die Eigenschaften des Spiels mittels Rechtsklick -> Eigenschaften. Im 'Konfigurations'-Abschnitt wähle den Editor Tab und kopiere den Inhalt der heruntergeladenen Datei in den Editor.
 
 ![Dolphin Gecko Codes 5.0-11XXX](/img/dolphin_gecko_codes_v2.png)
 
-### Using the codes
+### Aktivieren der Codes
 
-Select the "Gecko-Codes" tab in the game properties and check all the codes you want to be active. Most (but not all codes) will work with Dolphin.
+Wähle in den Eigenschaften des Spiels die Gecko-Registerkarte und setze ein Häkchen bei allen Cheats, die du aktiviert haben möchtest. Die meisten (aber nicht alle) Codes funktionieren mit Dolphin.

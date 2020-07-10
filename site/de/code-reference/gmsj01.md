@@ -6,9 +6,9 @@ editLink: false
 # GMSJ01 (NTSC-J / Japan)
 
 ::: tip
-This site refers to version 1.0 of the NTSC-J release. For version 1.1 [click this link](/code-reference/gmsj0a.html).
+Diese Seite bezieht sich auf NTSC-J Version 1.0. Für version 1.1 [klicke diesen link](/de/code-reference/gmsj0a.html)
 :::
 
-## List of available codes
+## Liste der verfügbaren Codes
 
 <!-- injectionpoint -->

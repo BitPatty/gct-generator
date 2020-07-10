@@ -2,66 +2,66 @@
 sidebar: auto
 ---
 
-# Installing IOS58
+# IOS58 Installation
 
-A guide on how to install IOS58 for use with Nintendont.
+Ein Leitfaden für die Installation von IOS58 für die Verwendung mit Nintendont.
 
 [[toc]]
 
-## Download the ressources
+## Ressourcen herunterladen
 
-### Get the NUS Downloader
+### NUS Downloader
 
-NUS Downloader is a Windows program which you can use to download official IOSs from Nintendo. you can download it from [Wiibrew](http://wiibrew.org/wiki/NUS_Downloader).
+Der NUS Downloader ist eine Windows-Applikation mit welcher du offizielle IOSs von Nintendo herunterladen kannst. Du findest den NUS Downloader auf [Wiibrew](http://wiibrew.org/wiki/NUS_Downloader).
 
-### Download IOS58
+### IOS58 Download
 
-Open NUSDownloader and select IOS58 from the database (see image). Make sure "Pack WAD" is checked. Uncheck "Keep Encrypted Contents" and hit "Start NUS Download!.
+Öffne den NUS Downloader und wähle IOS58 von der Datenbank (siehe Bild). Stelle sicher, dass 'Pack WAD' markiert ist und das Häkchen 'Keep Encrypted Contents' NICHT gesetzt ist. Starte den Download mittels 'Start NUS Download!'.
 
 ![NUS Downloader](/img/nusdownloader_00.png)
 
-### Copy the WAD
+### Kopieren der WAD
 
-The downloaded .wad will be located in `titles/000000010000003A/6176/` in your NUS Downloader directory. Copy the wad into the root of your SD card **without renaming** it.
+Die heruntergeladene .wad-Datei wird im `titles/000000010000003A/6176/`-Ordner in deinem NUS Downloader Verzeichnis hinterlegt. Kopiere sie auf deine SD Karte **ohne sie umzubenennen**.
 
-### Download WiiMod
+### WiiMod
 
-Download WiiMod from [GBAtemp](https://gbatemp.net/threads/wii-mod.272321/) and place the app into your apps folder. Put the SD card back into your Wii and open the homebrew channel.
+Lade WiiMod von [GBAtemp](https://gbatemp.net/threads/wii-mod.272321/) herunter und platziere sie im 'apps'-Ordner auf deiner SD-Karte. Lege die SD-Karte zurück in deine Wii und öffne den Homebrew Kanal.
 
-## Install IOS58
+## IOS58 Installation
 
-**Launch WiiMod and select "IOSs"**
+**Starte WiiMod und wähle "IOSs"**
 
 ![Part 1](/img/wiimod_00.png)
 
-**Navigate to 58 and press A**
+**Navigiere zu 58 und drücke A**
 
 ![Part 2](/img/wiimod_01.png)
 
-**Select "Install IOS"**
+**Wähle "Install IOS"**
 
 ![Part 3](/img/wiimod_02.png)
 
-**Select "6176"**
+**Wähle "6176"**
 
 ![Part 4](/img/wiimod_03.png)
 
-**Confirm that you want to install "IOS58 v6176"**
+**Bestätige, dass du "IOS58 v6176" installieren möchtest**
 
 ![Part 5](/img/wiimod_04.png)
 
-**Select revision 6176**
+**Wähle Revision 6176**
 
 ![Part 6](/img/wiimod_05.png)
 
-**Make sure all options are set to "No"**
+**Stelle sicher, dass alle Optionen auf 'No' sind.**
 
 ![Part 7](/img/wiimod_06.png)
 
-**Press A again to start the installation**
+**Drücke erneut A um die Installation zu starten.**
 
 ![Part 8](/img/wiimod_07.png)
 
-**That's it!**
+**Das war's!**
 
 ![Part 9](/img/wiimod_08.png)
