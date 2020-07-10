@@ -27,8 +27,6 @@ You can find the guides in the [site](https://github.com/BitPatty/gctGenerator/t
 
 Note that in the code reference files everything following the `<!-- injectionpoint -->` tag will be removed during the next build.
 
-Before opening a PR make sure you run `yarn codes:clean` to remove the injected codes.
-
 ### Site Development
 
 If you intend to change site code you need [NodeJS](https://nodejs.org/en/) version 12.18.1 or greater installed on your local.
@@ -54,6 +52,8 @@ The XML codes will be written automatically to the json file and code reference 
 - Building the site with `yarn build`
 
 If you want to inject the codes at any given point you can use `yarn codes:inject`.
+
+Before opening a PR make sure you run `yarn codes:clean` to remove the injected codes.
 
 ### Build and preview the site (Docker)
 
