@@ -25,7 +25,7 @@ export default {
   },
   computed: {
     translatedCode: function () {
-      return translateCode(this.code);
+      return translateCode(this.code, this.$lang);
     },
   },
   data() {

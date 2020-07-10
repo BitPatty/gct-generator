@@ -10,7 +10,7 @@ const md = require('@vuepress/markdown')({
 
 const themePlugins = require(path.join(__dirname, '../site/.vuepress/data/themePlugins.json'));
 const locales = require(path.join(__dirname, '../site/.vuepress/i18n/locales.json'));
-const sharedXML = fs.readFileSync(path.join(__dirname, `../codes/Common.xml`));
+const xml = fs.readFileSync(path.join(__dirname, `../Codes.xml`));
 
 // Constants
 const JSON_FILE_PATH = path.join(__dirname, '../site/.vuepress/data/gameVersions.json');
@@ -126,11 +126,7 @@ const codeJson = require(JSON_FILE_PATH);
 
 // Populate all code fields in the codeJSON
 for (let i = 0; i < CODE_VERSIONS.length; i++) {
-  const xml = fs.readFileSync(path.join(__dirname, `../codes/${CODE_VERSIONS[i]}.xml`));
-  codeJson.find((c) => c.identifier === CODE_VERSIONS[i]).codes = [
-    ...parseXml(xml),
-    ...parseXml(sharedXML, CODE_VERSIONS[i]),
-  ];
+  codeJson.find((c) => c.identifier === CODE_VERSIONS[i]).codes = parseXml(xml, CODE_VERSIONS[i]);
 }
 
 // Save the codeJSON with the updated codes

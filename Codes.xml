@@ -1,0 +1,2657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codes>
+    <code>
+        <title lang="en-US">DPad Functions</title>
+        <title lang="de-CH">DPad Funktionen</title>
+        <author>Psychonauter, Noki Doki, Dan Salvato, Link Master, James0x57</author>
+        <version>2.5</version>
+        <description lang="en-US">
+            Allows various game modifications through a set of button combinations:
+            
+            | Combination     | Result                                      |
+            | --------------- | ------------------------------------------- |
+            | D-Pad Left      | Save Mario's current position               |
+            | D-Pad Right     | Load Mario's position                       |
+            | D-Pad Up        | Replace all dialog with a single "!!!" line |
+            | D-Pad Down      | Restore Dialog Boxes                        |
+            | B + D-Pad Left  | Lock Rocket Nozzle                          |
+            | B + D-Pad Right | Lock Turbo Nozzle                           |
+            | B + D-Pad Up    | Lock Hover Nozzle                           |
+            | B + D-Pad Down  | Release Nozzle Lock                         |
+            | X + D-Pad Left  | No FLUDD in secrets                         |
+            | X + D-Pad Right | FLUDD in all secrets                        |
+            | X + D-Pad Down  | FLUDD in completed secrets (default)        |
+            | X + D-Pad Up    | Regrab last held object                     |
+        </description>
+        <description lang="de-CH">
+            Erlaubt verschiedene Spiel-Modifikationen über das Drücken einer Tastenkombination:
+            
+            | Kombination     | Effekt                                      |
+            | --------------- | ------------------------------------------- |
+            | D-Pad Left      | Speichere Mario's aktuelle Position         |
+            | D-Pad Right     | Lade Mario's Position                       |
+            | D-Pad Up        | Ersetze alle Dialoge mit einer "!!!" Linie  |
+            | D-Pad Down      | Stelle alle Dialoge wieder her              |
+            | B + D-Pad Left  | Sperre Raketendüse                          |
+            | B + D-Pad Right | Sperre Turbodüse                            |
+            | B + D-Pad Up    | Sperre Schwebedüse                          |
+            | B + D-Pad Down  | Düsensperre freigeben                       |
+            | X + D-Pad Left  | Kein Dreckweg in geheimen Leveln            |
+            | X + D-Pad Right | Dreckweg in allen geheimen Leveln           |
+            | X + D-Pad Down  | Dreckweg in komplettierten geheimen Leveln  |
+            | X + D-Pad Up    | Hole das zuletzt gefasste Objekt zurück     |
+        </description>
+        <date>Apr 3, 2019</date>
+        <source version="GMSE01">
+            2440E10C 80000000
+            82200000 8040E10C
+            80000001 817F0008
+            82200002 8040E114
+            82200003 8040D0A8
+            86000003 000000A6
+            28404455 00000001
+            8A000C01 00000000
+            8A000221 0000000C
+            8A000631 0000000E
+            28404455 00000002
+            8A000C10 00000000
+            8C000212 0000000C
+            8C000613 0000000E
+            28404455 00000004
+            04153DA0 801C0004
+            0415317C A81C0340
+            04291340 88030214
+            28404455 00000008
+            04153DA0 38000000
+            0415317C 38005000
+            04291340 60000000
+            28404455 00000208
+            04269F50 3BE00004
+            28404455 00000204
+            04269F50 8BFE1C85
+            28404455 00000201
+            04269F50 3BE00001
+            28404455 00000202
+            04269F50 3BE00005
+            28404455 00000401
+            041C0910 60000000
+            04298B88 60000000
+            28404455 00000402
+            C61C0910 801C0928
+            C6298B88 80298B9C
+            28404455 00000404
+            041C0910 40820018
+            04298B88 40820014
+            28404455 00000408
+            48000000 8040E108
+            1400007C 00000383
+            E0000000 00000000
+            048D3A3C 21000000
+            0423F9D4 60000000
+        </source>
+        <source version="GMSJ01">
+            2440A39C 80000000
+            82200000 8040A39C
+            80000001 817F0008
+            82200002 8040A3A4
+            82200003 8040B370
+            86000003 000000A6
+            28400D51 00000001
+            8A000C01 00000000
+            8A000221 0000000C
+            8A000631 0000000E
+            28400D51 00000002
+            8A000C10 00000000
+            8C000212 0000000C
+            8C000613 0000000E
+            28400D51 00000004
+            04215290 801C0004
+            04214610 A81C0340
+            040E4888 88030214
+            28400D51 00000008
+            04215290 38000000
+            04214610 38005000
+            040E4888 60000000
+            28400D51 00000208
+            041494D4 3BE00004
+            28400D51 00000204
+            041494D4 8BFE1C85
+            28400D51 00000201
+            041494D4 3BE00001
+            28400D51 00000202
+            041494D4 3BE00005
+            28400D51 00000401
+            04198784 60000000
+            040EC0F4 60000000
+            28400D51 00000402
+            C6198784 8019879C
+            C60EC0F4 800EC108
+            28400D51 00000404
+            04198784 40820018
+            040EC0F4 40820014
+            28400D51 00000408
+            48000000 8040A398
+            1400007C 00000383
+            E0000000 00000000
+            028D8A7E 00028149
+            048D8A84 00000000
+            0411EB10 60000000
+        </source>
+        <source version="GMSJ0A">
+            243FEFAC 80000000
+            82200000 803FEFAC
+            80000001 817F0008
+            82200002 803FEFB4
+            82200003 803FFA38
+            86000003 000000A6
+            283F5429 00000001
+            8A000C01 00000000
+            8A000221 0000000C
+            8A000631 0000000E
+            283F5429 00000002
+            8A000C10 00000000
+            8C000212 0000000C
+            8C000613 0000000E
+            283F5429 00000004
+            041351C4 801C0004
+            04134524 A81C0340
+            04271090 88030214
+            283F5429 00000008
+            041351C4 38000000
+            04134524 38005000
+            04271090 88030214
+            283F5429 00000208
+            04249CA0 3BE00004
+            283F5429 00000204
+            04249CA0 8BFE1C85
+            283F5429 00000201
+            04249CA0 3BE00001
+            283F5429 00000202
+            04249CA0 3BE00005
+            283F5429 00000401
+            041A0698 60000000
+            04278830 60000000
+            283F5429 00000402
+            C61A0698 801A06B0
+            C6278830 80278844
+            283F5429 00000404
+            041A0698 40820018
+            04278830 40820014
+            283F5429 00000408
+            48000000 803FEFA8
+            1400007C 00000383
+            E0000000 00000000
+            028CD55E 00028149
+            048CD564 00000000
+            0421F71C 60000000
+        </source>
+        <source version="GMSP01">
+            244057D4 80000000
+            82200000 804057D4
+            80000001 817F0008
+            82200002 804057DC
+            82200003 80404808
+            86000003 000000A6
+            283FBBF5 00000001
+            8A000C01 00000000
+            8A000221 0000000C
+            8A000631 0000000E
+            283FBBF5 00000002
+            8A000C10 00000000
+            8C000212 0000000C
+            8C000613 0000000E
+            283FBBF5 00000004
+            04148D20 801C0004
+            04147F98 A81C0340
+            042890CC 88030214
+            283FBBF5 00000008
+            04148D20 38000000
+            04147F98 38005000
+            042890CC 60000000
+            283FBBF5 00000208
+            04261CDC 3BE00004
+            283FBBF5 00000204
+            04261CDC 8BFE1C85
+            283FBBF5 00000201
+            04261CDC 3BE00001
+            283FBBF5 00000202
+            04261CDC 3BE00005
+            283FBBF5 00000401
+            041B87C8 60000000
+            04290A20 60000000
+            283FBBF5 00000402
+            C61B87C8 801B87E0
+            C6290A20 80290A34
+            283FBBF5 00000404
+            041B87C8 40820018
+            04290A20 40820014
+            283FBBF5 00000408
+            48000000 804057D0
+            1400007C 00000383
+            E0000000 00000000
+            20570B7C 00000000
+            0474E87C 21000000
+            20570B7D 00000001
+            0474E9F4 21210000
+            20570B7D 00000002
+            0474ED38 00000000
+            20570B7D 00000003
+            0474EE04 A1000000
+            20570B7D 00000004
+            0474EBDC 21210000
+            E2000001 00000000
+            04237760 60000000
+        </source>
+    </code>
+    <code>
+        <title lang="en-US">Infinite Lives</title>
+        <title lang="de-CH">Unendlich Leben</title>
+        <author>Noki Doki</author>
+        <version>2.0</version>
+        <date>Feb 28, 2020</date>
+        <description lang="en-US">Prevents the life counter from decreasing.</description>
+        <description lang="de-CH">Verhindert, dass sich die Anzahl Leben verringert</description>
+        <source version="GMSE01">
+            04298814 60000000
+        </source>
+         <source version="GMSJ01">
+            040EBD80 60000000
+        </source>
+        <source version="GMSJ0A">
+            042784BC 60000000
+        </source>
+        <source version="GMSP01">
+            042906AC 60000000
+        </source>
+    </code>
+    <code>
+        <title lang="en-US">Disable Blue Coin Flag</title>
+        <title lang="de-CH">Deaktiviere Blaue-Münzen-Kennung</title>
+        <author>Psychonauter, Noki Doki</author>
+        <version>1.1</version>
+        <date>Sep 05, 2018</date>
+        <description lang="en-US">Prevents the game from setting the blue coin flag, which makes them respawn after reentering the level.</description>
+        <description lang="de-CH">Verhindert, dass das Spiel die Blaue-Münzen-Kennung setzt, wodurch sie beim Neueintritt in das Level wieder erscheinen.</description>
+        <source version="GMSE01">
+            04294564 60000000
+            C22A6728 00000003
+            7CA00039 80AD9FA0
+            38800000 908500D4
+            60000000 00000000
+        </source>
+        <source version="GMSJ01">
+            040E7B20 60000000
+            C20FA12C 00000003
+            7CA00039 80AD97D0
+            38800000 908500D4
+            60000000 00000000
+        </source>
+        <source version="GMSJ0A">
+            04274220 60000000
+            C2286584 00000003
+            7CA00039 80AD9E60
+            38800000 908500D4
+            60000000 00000000
+        </source>
+        <source version="GMSP01">
+            0428C37C 60000000
+            C229E680 00000003
+            7CA00039 80AD9EC8
+            38800000 908500D4
+            60000000 00000000
+        </source>
+    </code>
+    <code>
+        <title lang="en-US">FMV Skips</title>
+        <title lang="de-CH">FMV Skips</title>
+        <author>Psychonauter</author>
+        <version>1.0</version>
+        <date>Jan 20, 2017</date>
+        <description lang="en-US">Allows skipping FMVs without having to watch them once first.</description>
+        <description lang="de-CH">Erlaubt das Überspringen von FMVs ohne sie erst anschauen zu müssen.</description>
+        <source version="GMSE01">
+            042B5EF4 38600001
+            042B5E8C 38600001
+        </source>
+        <source version="GMSJ01">
+            0410AF5C 38600001
+            0410AFC0 38600001
+        </source>
+        <source version="GMSJ0A">
+            04295AB4 38600001
+            04295B18 38600001
+        </source>
+        <source version="GMSP01">
+            042ADE20 38600001
+            042ADE88 38600001
+        </source>
+    </code>
+    <code>
+        <title lang="en-US">Mute Background Music</title>
+        <title lang="de-CH">Hintergrundmusik stummschalten</title>
+        <author>Psychonauter</author>
+        <version>1.0</version>
+        <date>Jan 28, 2017</date>
+        <description lang="en-US">Mutes background music, but keeps SFX on.</description>
+        <description lang="de-CH">Stellt die Hintergrundmusik stumm, aber behält SFX an.</description>
+        <source version="GMSE01">
+            04016A34 FC210828
+        </source>
+        <source version="GMSJ01">
+            0417FF58 FC210828
+        </source>
+        <source version="GMSJ0A">
+            04016A90 FC210828
+        </source>
+        <source version="GMSP01">
+            04016A90 FC210828
+        </source>
+    </code>
+    <code>
+        <title lang="en-US">Remove Save Boxes</title>
+        <title lang="de-CH">Speicher-Schaltfläche entfernen</title>
+        <author>Psychonauter</author>
+        <version>1.0</version>
+        <date>Oct 02, 2017</date>
+        <description lang="en-US">Removes all saveboxes.</description>
+        <description lang="de-CH">Entfernt alle Speicherschaltflächen.</description>
+        <source version="GMSE01">
+            0416210C 4E800020
+            04157EF8 48000020
+        </source>
+        <source version="GMSJ01">
+            042193D8 48000020
+            04223094 4E800020
+        </source>
+        <source version="GMSJ0A">
+            0413934C 48000020
+            04143178 4E800020
+        </source>
+        <source version="GMSP01">
+            0414CF44 48000020
+            04157158 4E800020
+        </source>
+    </code>
+    <code>
+        <title lang="en-US">Unlock Yoshi</title>
+        <title lang="de-CH">Yoshi Freischalten</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <date>Feb 10, 2018</date>
+        <description lang="en-US">Unlocks Yoshi everywhere.</description>
+        <description lang="de-CH">Schaltet Yoshi überall frei.</description>
+        <source version="GMSE01">
+            C61BBF70 801BBFA4
+            C61BBFB4 801BBFD0
+        </source>
+        <source version="GMSJ01">
+            C6193F58 80193F8C
+            C6193F9C 80193FB8
+        </source>
+        <source version="GMSJ0A">
+            C619BCF8 8019BD2C
+            C619BD3C 8019BD58
+        </source>
+        <source version="GMSP01">
+            C61B3E28 801B3E5C
+            C61B3E6C 801B3E88
+        </source>
+    </code>
+    <code>
+        <title lang="en-US">Unlock Nozzles</title>
+        <title lang="de-CH">Düsen freischalten</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <date>Feb 12, 2018</date>
+        <description lang="en-US">Unlocks all nozzle boxes.</description>
+        <description lang="de-CH">Schaltet alle Düsen frei.</description>
+        <source version="GMSE01">
+            0429443C 38600001
+            04294440 4E800020
+        </source>
+        <source version="GMSJ01">
+            040E79F8 38600001
+            040E79FC 4E800020
+        </source>
+        <source version="GMSJ0A">
+            042740F8 38600001
+            042740FC 4E800020
+        </source>
+        <source version="GMSP01">
+            0428C254 38600001
+            0428C258 4E800020
+        </source>
+    </code>
+    <code>
+        <title lang="en-US">Free Pause</title>
+        <title lang="de-CH">Freies Pausieren</title>
+        <author>Noki Doki</author>
+        <version>1.1</version>
+        <date>Nov 12, 2017</date>
+        <description lang="en-US">Allows you to pause mid-air and during cutscenes.</description>
+        <description lang="de-CH">Ermöglicht das Pausieren in der Luft und während Cutscenes.</description>
+        <source version="GMSE01">
+            C6297AB0 80297ABC
+            C22979D4 00000007
+            887F007C 2803000F
+            41820028 807F0018
+            80630000 806300D4
+            546307FF 41820014
+            3C608029 60637A7C
+            7C6803A6 4E800020
+            881F0124 00000000
+        </source>
+        <source version="GMSJ01">
+            C60EB06C 800EB078
+            C20EAF90 00000007
+            887F007C 2803000F
+            41820028 807F0018
+            80630000 806300D4
+            546307FF 41820014
+            3C60800E 6063B038
+            7C6803A6 4E800020
+            881F0124 00000000
+        </source>
+        <source version="GMSJ0A">
+            C6277758 80277764
+            C227767C 00000007
+            887F007C 2803000F
+            41820028 807F0018
+            80630000 806300D4
+            546307FF 41820014
+            3C608027 60637724
+            7C6803A6 4E800020
+            881F0124 00000000
+        </source>
+        <source version="GMSP01">
+            C628F948 8028F954
+            C228F86C 00000007
+            887F007C 2803000F
+            41820028 807F0018
+            80630000 806300D4
+            546307FF 41820014
+            3C608028 6063F914
+            7C6803A6 4E800020
+            881F0124 00000000
+        </source>
+    </code>
+    <code>
+        <title lang="en-US">Enable Exit Area Everywhere</title>
+        <title lang="de-CH">'Level Verlassen' überall aktivieren</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <date>Oct 30, 2017</date>
+        <description lang="en-US">Enables 'Exit Area' on Plaza and Airstrip.</description>
+        <description lang="de-CH">Aktiviert 'Level Verlassen' auf der Plaza und dem Flugplatz.</description>
+        <source version="GMSE01">
+            C6156B78 80156B84
+        </source>
+        <source version="GMSJ01">
+            C6218054 80218060
+        </source>
+        <source version="GMSJ0A">
+            C6137F98 80137FA4
+        </source>
+        <source version="GMSP01">
+            C614BB94 8014BBA0
+        </source>
+    </code>
+    <code>
+        <title lang="en-US">Shine Get Timer</title>
+        <title lang="de-CH">Shine Get Timer</title>
+        <author>Psychonauter, Noki Doki</author>
+        <version>2.0</version>
+        <description lang="en-US">
+        Adds the ingame timer to every level, starting on the last black frame after the loading screen and ending as soon as the 'Shine Get' animation starts (similar to the x-cam timer of SM64).
+        
+        ::: warning
+        The timer pauses during loading times. 
+        :::
+        
+        ::: danger
+        Requires the Level Select code, Fast Any% or Stage Loader to be active.
+        :::
+        </description>
+        <description lang="de-CH">
+        Fügt den In-Game-Timer in jedem Level hinzu. Er startet nach dem letzten schwarzen Frame nach dem Ladebildschirm und endet sobald die 'Shine Get' Animation startet (ähnlich dem X-Cam-Tier aus Super Mario 64).
+        
+        ::: warning
+        Der Timer pausiert während Ladebildschirmen. 
+        :::
+        
+        ::: danger
+        Requires the Level Select code, Fast Any% or Stage Loader to be active.
+        :::
+        </description>
+        <date>Oct 11, 2019</date>
+        <source version="GMSE01">
+            C2031F68 0000000F
+            3CC0817F 60C60100
+            88860000 2C040001
+            4182002C 88860001
+            2C040001 40A20050
+            3CA0803E 60A59710
+            88850002 2C040007
+            4182003C 2C040009
+            41810034 3C608034
+            606394D8 7C6803A6
+            4E800021 80AD9FB8
+            38A500E8 90650028
+            90660004 9085002C
+            90860008 38600000
+            98660000 80010024
+            60000000 00000000
+            C21BD3D8 00000003
+            3C60817F 60630100
+            38800001 9083000C
+            4E800020 00000000
+            C22979D8 0000000C
+            2C000003 40A20050
+            3C60817F 60630100
+            8083000C 2C040000
+            41A2003C 38800000
+            9083000C 7DE802A6
+            3C608056 6063DD00
+            7FB0EB78 3FA08028
+            63BDE604 7FA803A6
+            4E800021 7DE803A6
+            7E1D8378 39E00000
+            3A000000 3C60803A
+            60000000 00000000
+            C234802C 00000007
+            3DE0817F 61EF0100
+            8A0F0000 2C100001
+            4182000C 806F0004
+            808F0008 3A000000
+            9A0F0000 906F0004
+            908F0008 909F002C
+            39E00000 00000000
+            C2149148 00000013
+            7C6F1B78 7FB0EB78
+            3C60817F 60630100
+            88830001 2C040001
+            40A20064 38800000
+            98830001 3C60803E
+            60639710 A0630002
+            2C030805 41820048
+            2C030605 41820040
+            2C031E00 41820038
+            3C608056 6063DD00
+            3FA08028 63BDE998
+            7FA803A6 4E800021
+            3C608056 6063DD00
+            3FA08028 63BDE82C
+            39800000 7FA803A6
+            4E800021 7DE37B78
+            7E1D8378 39E00000
+            3A000000 800100CC
+            60000000 00000000
+            C228E90C 00000003
+            558C0001 4082000C
+            38800000 38600000
+            909E00CC 00000000
+            C2171B6C 00000003
+            3C60817F 60630100
+            38800101 B0830000
+            807F025C 00000000
+            C2031F6C 0000000A
+            3C60803E 60639710
+            A083FFFE 2C043C00
+            40A20038 A0830002
+            2C040FFF 40A2002C
+            7C1E0378 7FE802A6
+            3C608056 6063DD00
+            3C808028 6084E604
+            7C8803A6 4E800021
+            7FE803A6 7FC0F378
+            83E1001C 00000000
+            04348048 4E800020
+            0414A99C 60000000
+            0414D2E8 60000000
+            0428E9C8 60000000
+            0428E854 60000000
+            0428E624 60000000
+            0456DD00 00000000
+            0456DD04 00000000
+            0456DD18 00000003
+            0456DD1C 00000002
+            0456DD20 8056DD24
+            0456DD24 00000000
+            0456DD28 00000001
+            0456DD2C 00000000
+            0456DD30 000000B4
+            0414AC18 4800006C
+            077F00C0 00000040
+            38000000 60000001
+            7D0D42E6 7D2C42E6
+            7C6D42E6 7C081800
+            4082FFF0 3D40817F
+            806A0108 7C634810
+            906A0108 806A0104
+            7C634110 906A0104
+            3860001C 4E800020
+            04296E7C 4955924D
+            042998BC 49556805
+            042B5B94 4953A531
+            042B7070 49539051
+        </source>
+        <source version="GMSJ01">
+            C23617C4 0000000F
+            3CC0817F 60C60100
+            88860000 2C040001
+            4182002C 88860001
+            2C040001 40A20050
+            3CA0803E 60A56010
+            88850002 2C040007
+            4182003C 2C040009
+            41810034 3C608009
+            60633DF8 7C6803A6
+            4E800021 80AD97E8
+            38A500E8 90650028
+            90660004 9085002C
+            90860008 38600000
+            98660000 80010024
+            60000000 00000000
+            C21953A8 00000003
+            3C60817F 60630100
+            38800001 9083000C
+            4E800020 00000000
+            C20EAF94 0000000C
+            2C000003 40A20050
+            3C60817F 60630100
+            8083000C 2C040000
+            41A2003C 38800000
+            9083000C 7DE802A6
+            3C608074 60639F00
+            7FB0EB78 3FA0800E
+            63BD1B4C 7FA803A6
+            4E800021 7DE803A6
+            7E1D8378 39E00000
+            3A000000 3C608037
+            60000000 00000000
+            C209294C 00000007
+            3DE0817F 61EF0100
+            8A0F0000 2C100001
+            4182000C 806F0004
+            808F0008 3A000000
+            9A0F0000 906F0004
+            908F0008 909F002C
+            39E00000 00000000
+            C220A5A0 00000013
+            7C6F1B78 7FB0EB78
+            3C60817F 60630100
+            88830001 2C040001
+            40A20064 38800000
+            98830001 3C60803E
+            60636010 A0630002
+            2C030805 41820048
+            2C030605 41820040
+            2C031E00 41820038
+            3C608074 60639F00
+            3FA0800E 63BD1EE0
+            7FA803A6 4E800021
+            3C608074 60639F00
+            3FA0800E 63BD1D74
+            39800000 7FA803A6
+            4E800021 7DE37B78
+            7E1D8378 39E00000
+            3A000000 800100CC
+            60000000 00000000
+            C20E1E54 00000003
+            558C0001 4082000C
+            38800000 38600000
+            909E00CC 00000000
+            C2232024 00000003
+            3C60817F 60630100
+            38800101 B0830000
+            807F0268 00000000
+            C23617C8 0000000A
+            3C60803E 60636010
+            A083FFFE 2C043C00
+            40A20038 A0830002
+            2C040FFF 40A2002C
+            7C1E0378 7FE802A6
+            3C608056 60639F00
+            3C80800E 60841B4C
+            7C8803A6 4E800021
+            7FE803A6 7FC0F378
+            83E1001C 00000000
+            04092968 4E800020
+            0420BDF8 60000000
+            0420E8A4 60000000
+            040E1F10 60000000
+            040E1D9C 60000000
+            040E1B6C 60000000
+            04749F00 00000000
+            04749F04 00000000
+            04749F18 00000003
+            04749F1C 00000002
+            04749F20 80749F24
+            04749F24 00000000
+            04749F28 00000001
+            04749F2C 00000000
+            04749F30 000000B4
+            0420C074 4800006C
+            077F00C0 00000040
+            38000000 60000001
+            7D0D42E6 7D2C42E6
+            7C6D42E6 7C081800
+            4082FFF0 3D40817F
+            806A0108 7C634810
+            906A0108 806A0104
+            7C634110 906A0104
+            3860001C 4E800020
+            040EA438 49705C91
+            040ECE40 49703281
+            0410AD28 496E539D
+            0410BFCC 496E40F5
+        </source>
+        <source version="GMSJ0A">
+            C2363E70 0000000F
+            3CC0817F 60C60100
+            88860000 2C040001
+            4182002C 88860001
+            2C040001 40A20050
+            3CA0803D 60A5A8F0
+            88850002 2C040007
+            4182003C 2C040009
+            41810034 3C608032
+            60638DD8 7C6803A6
+            4E800021 80AD9E78
+            38A500E8 90650028
+            90660004 9085002C
+            90860008 38600000
+            98660000 80010024
+            60000000 00000000
+            C219D160 00000003
+            3C60817F 60630100
+            38800001 9083000C
+            4E800020 00000000
+            C2277680 0000000C
+            2C000003 40A20050
+            3C60817F 60630100
+            8083000C 2C040000
+            41A2003C 38800000
+            9083000C 7DE802A6
+            3C608056 6063DD00
+            7FB0EB78 3FA08026
+            63BDE354 7FA803A6
+            4E800021 7DE803A6
+            7E1D8378 39E00000
+            3A000000 3C608039
+            60000000 00000000
+            C232792C 00000007
+            3DE0817F 61EF0100
+            8A0F0000 2C100001
+            4182000C 806F0004
+            808F0008 3A000000
+            9A0F0000 906F0004
+            908F0008 909F002C
+            39E00000 00000000
+            C212A528 00000013
+            7C6F1B78 7FB0EB78
+            3C60817F 60630100
+            88830001 2C040001
+            40A20064 38800000
+            98830001 3C60803D
+            6063A8F0 A0630002
+            2C030805 41820048
+            2C030605 41820040
+            2C031E00 41820038
+            3C608056 6063DD00
+            3FA08026 63BDE6E8
+            7FA803A6 4E800021
+            3C608056 6063DD00
+            3FA08026 63BDE57C
+            39800000 7FA803A6
+            4E800021 7DE37B78
+            7E1D8378 39E00000
+            3A000000 800100CC
+            60000000 00000000
+            C226E65C 00000003
+            558C0001 4082000C
+            38800000 38600000
+            909E00CC 00000000
+            C21528FC 00000003
+            3C60817F 60630100
+            38800101 B0830000
+            807F0268 00000000
+            C2363E74 0000000A
+            3C60803D 6063A8F0
+            A083FFFE 2C043C00
+            40A20038 A0830002
+            2C040FFF 40A2002C
+            7C1E0378 7FE802A6
+            3C608056 6063DD00
+            3C808026 6084E354
+            7C8803A6 4E800021
+            7FE803A6 7FC0F378
+            83E1001C 00000000
+            04327948 4E800020
+            0412BD90 60000000
+            0412E6F8 60000000
+            0426E718 60000000
+            0426E5A4 60000000
+            0426E374 60000000
+            0456DD00 00000000
+            0456DD04 00000000
+            0456DD18 00000003
+            0456DD1C 00000002
+            0456DD20 8056DD24
+            0456DD24 00000000
+            0456DD28 00000001
+            0456DD2C 00000000
+            0456DD30 000000B4
+            0412C00C 4800006C
+            077F00C0 00000040
+            38000000 60000001
+            7D0D42E6 7D2C42E6
+            7C6D42E6 7C081800
+            4082FFF0 3D40817F
+            806A0108 7C634810
+            906A0108 806A0104
+            7C634110 906A0104
+            3860001C 4E800020
+            04276B24 495795A5
+            0427956C 49576B55
+            04295880 4955A845
+            04296B24 4955959D
+        </source>
+        <source version="GMSP01">
+            C2032020 0000000F
+            3CC0817F 60C60100
+            88860000 2C040001
+            4182002C 88860001
+            2C040001 40A20050
+            3CA0803E 60A510D0
+            88850002 2C040007
+            4182003C 2C040009
+            41810034 3C608034
+            60631734 7C6803A6
+            4E800021 80AD9EE0
+            38A500E8 90650028
+            90660004 9085002C
+            90860008 38600000
+            98660000 80010024
+            60000000 00000000
+            C21B5290 00000003
+            3C60817F 60630100
+            38800001 9083000C
+            4E800020 00000000
+            C228F870 0000000C
+            2C000003 40A20050
+            3C60817F 60630100
+            8083000C 2C040000
+            41A2003C 38800000
+            9083000C 7DE802A6
+            3C608056 6063DF00
+            7FB0EB78 3FA08028
+            63BD6390 7FA803A6
+            4E800021 7DE803A6
+            7E1D8378 39E00000
+            3A000000 3C60803A
+            60000000 00000000
+            C2340288 00000007
+            3DE0817F 61EF0100
+            8A0F0000 2C100001
+            4182000C 806F0004
+            808F0008 3A000000
+            9A0F0000 906F0004
+            908F0008 909F002C
+            39E00000 00000000
+            C213DDD8 00000013
+            7C6F1B78 7FB0EB78
+            3C60817F 60630100
+            88830001 2C040001
+            40A20064 38800000
+            98830001 3C60803E
+            606310D0 A0630002
+            2C030805 41820048
+            2C030605 41820040
+            2C031E00 41820038
+            3C608056 6063DF00
+            3FA08028 63BD6724
+            7FA803A6 4E800021
+            3C608056 6063DF00
+            3FA08028 63BD65B8
+            39800000 7FA803A6
+            4E800021 7DE37B78
+            7E1D8378 39E00000
+            3A000000 800100CC
+            60000000 00000000
+            C2286698 00000003
+            558C0001 4082000C
+            38800000 38600000
+            909E00CC 00000000
+            C2167984 00000003
+            3C60817F 60630100
+            38800101 B0830000
+            807F084C 00000000
+            C2032024 0000000A
+            3C60803E 606310D0
+            A083FFFE 2C043C00
+            40A20038 A0830002
+            2C040FFF 40A2002C
+            7C1E0378 7FE802A6
+            3C608056 6063DF00
+            3C808028 60846390
+            7C8803A6 4E800021
+            7FE803A6 7FC0F378
+            83E1001C 00000000
+            043402A4 4E800020
+            0413F62C 60000000
+            04141F78 60000000
+            04286754 60000000
+            042865E0 60000000
+            042863B0 60000000
+            0456DF00 00000000
+            0456DF04 00000000
+            0456DF18 00000003
+            0456DF1C 00000002
+            0456DF20 8056DF24
+            0456DF24 00000000
+            0456DF28 00000001
+            0456DF2C 00000000
+            0456DF30 000000B4
+            0413F8A8 4800006C
+            077F00C0 00000040
+            38000000 60000001
+            7D0D42E6 7D2C42E6
+            7C6D42E6 7C081800
+            4082FFF0 3D40817F
+            806A0108 7C634810
+            906A0108 806A0104
+            7C634110 906A0104
+            3860001C 4E800020
+            0428ED14 495613B5
+            04291754 4955E96D
+            042ADB18 495425AD
+            042AF040 49541081
+        </source>
+    </code>
+    <code>
+        <title lang="en-US">Level Select</title>
+        <title lang="de-CH">Level Select</title>
+        <author>Psychonauter, Dan Salvato, Noki Doki</author>
+        <version>1.14</version>
+        <date>May 8, 2020</date>
+        <description lang="en-US">
+            Allows warping to other levels when starting a file or when exiting level by holding the combination until the screen turns black. 
+            
+            ::: warning
+            This code is not compatible with the Fast Any%, Stage Loader or Stage Randomizer code. 
+            :::
+
+            Codes:
+            
+            ![Level Select Combinations](/img/levelselect.png){width=500}
+        </description>
+        <description lang="de-CH">
+            Erlaubt das Warpen in andere Level mittels einer Tastenkombination beim Starten des Spiels oder beim Verlassen eines Levels.
+            Die Tastenkombination muss gedrückt gehalten werden bis der Bildschirm schwarz wird.
+
+            ::: warning WARNUNG
+            Dieser Code ist nicht Kompatibel mit dem Fast Any%, Stage Loader oder Stage Randomizer code.
+            :::
+
+            Tastenkombinationen:
+            
+            ![Level Select Combinations](/img/levelselect.png){width=500}
+        </description>
+        <source version="GMSE01">
+            C22A6710 00000073
+            3C60817F 3CA08040
+            60A54484 38E00000
+            90E3010C 38E00001
+            98E30101 A09F0012
+            2C040D05 41810318
+            2C040109 41810308
+            2C040001 41820308
+            38E00001 98E30100
+            A0E50002 54E6C6F6
+            7CC73B78 70E70C70
+            88C50001 2C860000
+            40860024 418202E0
+            2C070800 A1030000
+            418202BC 2C070010
+            408201D4 A1030002
+            480002B8 2C060009
+            418201C4 2C060008
+            4082000C 39000200
+            48000060 2C06000A
+            4082000C 39000300
+            48000050 2C060002
+            4082000C 39000400
+            48000040 2C060006
+            4082000C 39000500
+            48000030 2C060004
+            4082000C 39000600
+            48000020 2C060005
+            4082000C 39000800
+            48000010 2C060001
+            40820254 39000900
+            2C070000 41820230
+            2C070040 4082000C
+            39080001 48000220
+            2C070020 4082000C
+            39080002 48000210
+            2C070060 4082000C
+            39080003 48000200
+            2C070010 4082000C
+            39080004 480001F0
+            2C070050 4082000C
+            39080005 480001E0
+            2C070030 4082000C
+            39080006 480001D0
+            2C070070 4082000C
+            39080007 480001C0
+            2C070400 40820068
+            2C060004 4082000C
+            39000E01 480001B0
+            2C06000A 4082000C
+            39001E00 480001A0
+            2C060002 4082000C
+            39002100 48000190
+            2C060001 4082000C
+            39003900 48000180
+            2C060008 4082000C
+            39003700 48000170
+            2C060005 39003A00
+            40820164 39002C00
+            4800015C 2C070800
+            40820164 2C060008
+            4082000C 39000100
+            48000144 2C06000A
+            4082000C 39000101
+            48000134 2C060002
+            4082000C 39000105
+            48000124 2C060006
+            4082000C 39000107
+            48000114 2C060004
+            4082000C 39000108
+            48000104 2C060005
+            4082000C 39000109
+            480000F4 39000102
+            480000EC 2C070040
+            40820010 39001400
+            39202E00 480000C4
+            2C070020 40820010
+            39001500 39203000
+            480000B0 2C070060
+            40820010 39001600
+            39202000 4800009C
+            2C070050 40820010
+            39001700 39202900
+            48000088 2C070030
+            40820010 39001800
+            39203300 48000074
+            2C070070 40820010
+            39001D00 39202800
+            48000060 2C070400
+            40820010 39003400
+            39202A00 4800004C
+            2C070440 40820010
+            39000000 39201F00
+            48000038 2C070800
+            4082000C 39203A01
+            48000028 2C070840
+            40820010 39001000
+            39203C00 48000014
+            2C070010 39203200
+            41820008 39202F00
+            2C060009 40A20010
+            7D284B78 80AD9FA0
+            990500DF B1030000
+            B11F0012 A09F0012
+            B0830002 2C041E00
+            4182002C 2C040404
+            41820024 2C040801
+            4182001C 2C040904
+            41820014 2C040605
+            4182000C 2C040805
+            40A2000C 38800000
+            B0830100 807F0020
+            889F0012 2C040007
+            4182000C 2C04000E
+            40A2000C 3880003B
+            B08300E4 00000000
+            062976B4 00000008
+            3C600003 38830005
+            C22B98E0 00000003
+            5460063F 41820010
+            881D000F 2C000007
+            60000000 00000000
+            C22B9A34 00000003
+            806D9FA0 880300CC
+            54000734 980300CC
+            4E800020 00000000
+        </source>
+        <source version="GMSJ01">
+            C20FA114 00000073
+            3C60817F 3CA08040
+            60A50D80 38E00000
+            90E3010C 38E00001
+            98E30101 A09F0012
+            2C040D05 41810318
+            2C040109 41810308
+            2C040001 41820308
+            38E00001 98E30100
+            A0E50002 54E6C6F6
+            7CC73B78 70E70C70
+            88C50001 2C860000
+            40860024 418202E0
+            2C070800 A1030000
+            418202BC 2C070010
+            408201D4 A1030002
+            480002B8 2C060009
+            418201C4 2C060008
+            4082000C 39000200
+            48000060 2C06000A
+            4082000C 39000300
+            48000050 2C060002
+            4082000C 39000400
+            48000040 2C060006
+            4082000C 39000500
+            48000030 2C060004
+            4082000C 39000600
+            48000020 2C060005
+            4082000C 39000800
+            48000010 2C060001
+            40820254 39000900
+            2C070000 41820230
+            2C070040 4082000C
+            39080001 48000220
+            2C070020 4082000C
+            39080002 48000210
+            2C070060 4082000C
+            39080003 48000200
+            2C070010 4082000C
+            39080004 480001F0
+            2C070050 4082000C
+            39080005 480001E0
+            2C070030 4082000C
+            39080006 480001D0
+            2C070070 4082000C
+            39080007 480001C0
+            2C070400 40820068
+            2C060004 4082000C
+            39000E01 480001B0
+            2C06000A 4082000C
+            39001E00 480001A0
+            2C060002 4082000C
+            39002100 48000190
+            2C060001 4082000C
+            39003900 48000180
+            2C060008 4082000C
+            39003700 48000170
+            2C060005 39003A00
+            40820164 39002C00
+            4800015C 2C070800
+            40820164 2C060008
+            4082000C 39000100
+            48000144 2C06000A
+            4082000C 39000101
+            48000134 2C060002
+            4082000C 39000105
+            48000124 2C060006
+            4082000C 39000107
+            48000114 2C060004
+            4082000C 39000108
+            48000104 2C060005
+            4082000C 39000109
+            480000F4 39000102
+            480000EC 2C070040
+            40820010 39001400
+            39202E00 480000C4
+            2C070020 40820010
+            39001500 39203000
+            480000B0 2C070060
+            40820010 39001600
+            39202000 4800009C
+            2C070050 40820010
+            39001700 39202900
+            48000088 2C070030
+            40820010 39001800
+            39203300 48000074
+            2C070070 40820010
+            39001D00 39202800
+            48000060 2C070400
+            40820010 39003400
+            39202A00 4800004C
+            2C070440 40820010
+            39000000 39201F00
+            48000038 2C070800
+            4082000C 39203A01
+            48000028 2C070840
+            40820010 39001000
+            39203C00 48000014
+            2C070010 39203200
+            41820008 39202F00
+            2C060009 40A20010
+            7D284B78 80AD97D0
+            990500DF B1030000
+            B11F0012 A09F0012
+            B0830002 2C041E00
+            4182002C 2C040404
+            41820024 2C040801
+            4182001C 2C040904
+            41820014 2C040605
+            4182000C 2C040805
+            40A2000C 38800000
+            B0830100 807F0020
+            889F0012 2C040007
+            4182000C 2C04000E
+            40A2000C 3880003B
+            B08300E4 00000000
+            060EAC70 00000008
+            3C600003 38830005
+            C210E598 00000003
+            5460063F 41820010
+            881D000F 2C000007
+            60000000 00000000
+            C210E6EC 00000003
+            806D97D0 880300CC
+            54000734 980300CC
+            4E800020 00000000
+        </source>
+        <source version="GMSJ0A">
+            C228656C 00000073
+            3C60817F 3CA0803F
+            60A55458 38E00000
+            90E3010C 38E00001
+            98E30101 A09F0012
+            2C040D05 41810318
+            2C040109 41810308
+            2C040001 41820308
+            38E00001 98E30100
+            A0E50002 54E6C6F6
+            7CC73B78 70E70C70
+            88C50001 2C860000
+            40860024 418202E0
+            2C070800 A1030000
+            418202BC 2C070010
+            408201D4 A1030002
+            480002B8 2C060009
+            418201C4 2C060008
+            4082000C 39000200
+            48000060 2C06000A
+            4082000C 39000300
+            48000050 2C060002
+            4082000C 39000400
+            48000040 2C060006
+            4082000C 39000500
+            48000030 2C060004
+            4082000C 39000600
+            48000020 2C060005
+            4082000C 39000800
+            48000010 2C060001
+            40820254 39000900
+            2C070000 41820230
+            2C070040 4082000C
+            39080001 48000220
+            2C070020 4082000C
+            39080002 48000210
+            2C070060 4082000C
+            39080003 48000200
+            2C070010 4082000C
+            39080004 480001F0
+            2C070050 4082000C
+            39080005 480001E0
+            2C070030 4082000C
+            39080006 480001D0
+            2C070070 4082000C
+            39080007 480001C0
+            2C070400 40820068
+            2C060004 4082000C
+            39000E01 480001B0
+            2C06000A 4082000C
+            39001E00 480001A0
+            2C060002 4082000C
+            39002100 48000190
+            2C060001 4082000C
+            39003900 48000180
+            2C060008 4082000C
+            39003700 48000170
+            2C060005 39003A00
+            40820164 39002C00
+            4800015C 2C070800
+            40820164 2C060008
+            4082000C 39000100
+            48000144 2C06000A
+            4082000C 39000101
+            48000134 2C060002
+            4082000C 39000105
+            48000124 2C060006
+            4082000C 39000107
+            48000114 2C060004
+            4082000C 39000108
+            48000104 2C060005
+            4082000C 39000109
+            480000F4 39000102
+            480000EC 2C070040
+            40820010 39001400
+            39202E00 480000C4
+            2C070020 40820010
+            39001500 39203000
+            480000B0 2C070060
+            40820010 39001600
+            39202000 4800009C
+            2C070050 40820010
+            39001700 39202900
+            48000088 2C070030
+            40820010 39001800
+            39203300 48000074
+            2C070070 40820010
+            39001D00 39202800
+            48000060 2C070400
+            40820010 39003400
+            39202A00 4800004C
+            2C070440 40820010
+            39000000 39201F00
+            48000038 2C070800
+            4082000C 39203A01
+            48000028 2C070840
+            40820010 39001000
+            39203C00 48000014
+            2C070010 39203200
+            41820008 39202F00
+            2C060009 40A20010
+            7D284B78 80AD9E60
+            990500DF B1030000
+            B11F0012 A09F0012
+            B0830002 2C041E00
+            4182002C 2C040404
+            41820024 2C040801
+            4182001C 2C040904
+            41820014 2C040605
+            4182000C 2C040805
+            40A2000C 38800000
+            B0830100 807F0020
+            889F0012 2C040007
+            4182000C 2C04000E
+            40A2000C 3880003B
+            B08300E4 00000000
+            0627735C 00000008
+            3C600003 38830005
+            C22990F0 00000003
+            5460063F 41820010
+            881D000F 2C000007
+            60000000 00000000
+            C2299244 00000003
+            806D9E60 880300CC
+            54000734 980300CC
+            4E800020 00000000
+        </source>
+        <source version="GMSP01">
+            C229E668 00000073
+            3C60817F 3CA0803F
+            60A5BC24 38E00000
+            90E3010C 38E00001
+            98E30101 A09F0012
+            2C040D05 41810318
+            2C040109 41810308
+            2C040001 41820308
+            38E00001 98E30100
+            A0E50002 54E6C6F6
+            7CC73B78 70E70C70
+            88C50001 2C860000
+            40860024 418202E0
+            2C070800 A1030000
+            418202BC 2C070010
+            408201D4 A1030002
+            480002B8 2C060009
+            418201C4 2C060008
+            4082000C 39000200
+            48000060 2C06000A
+            4082000C 39000300
+            48000050 2C060002
+            4082000C 39000400
+            48000040 2C060006
+            4082000C 39000500
+            48000030 2C060004
+            4082000C 39000600
+            48000020 2C060005
+            4082000C 39000800
+            48000010 2C060001
+            40820254 39000900
+            2C070000 41820230
+            2C070040 4082000C
+            39080001 48000220
+            2C070020 4082000C
+            39080002 48000210
+            2C070060 4082000C
+            39080003 48000200
+            2C070010 4082000C
+            39080004 480001F0
+            2C070050 4082000C
+            39080005 480001E0
+            2C070030 4082000C
+            39080006 480001D0
+            2C070070 4082000C
+            39080007 480001C0
+            2C070400 40820068
+            2C060004 4082000C
+            39000E01 480001B0
+            2C06000A 4082000C
+            39001E00 480001A0
+            2C060002 4082000C
+            39002100 48000190
+            2C060001 4082000C
+            39003900 48000180
+            2C060008 4082000C
+            39003700 48000170
+            2C060005 39003A00
+            40820164 39002C00
+            4800015C 2C070800
+            40820164 2C060008
+            4082000C 39000100
+            48000144 2C06000A
+            4082000C 39000101
+            48000134 2C060002
+            4082000C 39000105
+            48000124 2C060006
+            4082000C 39000107
+            48000114 2C060004
+            4082000C 39000108
+            48000104 2C060005
+            4082000C 39000109
+            480000F4 39000102
+            480000EC 2C070040
+            40820010 39001400
+            39202E00 480000C4
+            2C070020 40820010
+            39001500 39203000
+            480000B0 2C070060
+            40820010 39001600
+            39202000 4800009C
+            2C070050 40820010
+            39001700 39202900
+            48000088 2C070030
+            40820010 39001800
+            39203300 48000074
+            2C070070 40820010
+            39001D00 39202800
+            48000060 2C070400
+            40820010 39003400
+            39202A00 4800004C
+            2C070440 40820010
+            39000000 39201F00
+            48000038 2C070800
+            4082000C 39203A01
+            48000028 2C070840
+            40820010 39001000
+            39203C00 48000014
+            2C070010 39203200
+            41820008 39202F00
+            2C060009 40A20010
+            7D284B78 80AD9EC8
+            990500DF B1030000
+            B11F0012 A09F0012
+            B0830002 2C041E00
+            4182002C 2C040404
+            41820024 2C040801
+            4182001C 2C040904
+            41820014 2C040605
+            4182000C 2C040805
+            40A2000C 38800000
+            B0830100 807F0020
+            889F0012 2C040007
+            4182000C 2C04000E
+            40A2000C 3880003B
+            B08300E4 00000000
+            0628F54C 00000008
+            3C600003 38830005
+            C22B18B0 00000003
+            5460063F 41820010
+            881D000F 2C000007
+            60000000 00000000
+            C22B1A04 00000003
+            806D9EC8 880300CC
+            54000734 980300CC
+            4E800020 00000000
+        </source>
+    </code>
+    <code>
+        <title lang="en-US">Fast Any%</title>
+        <title lang="de-CH">Fast Any%</title>
+        <author>Psychonauter, Noki Doki</author>
+        <version>1.4</version>
+        <description lang="en-US">
+        Loads stages in any% order, skips all save boxes, replaces all dialog with "!!!" (except for the Pianta 5 secret) and makes all FMVs skippable (except for the Pinna 1 cutscenes).
+        
+        ::: warning
+        This code is not compatible with the Level Select, Stage Loader or Stage Randomizer code.
+        :::
+        </description>
+        <description lang="de-CH">
+        Ladet die Level in derselben Reihenfolge wie Any%, überpring alle Speicherschaltflächen, ersetzt alle Dialoge mit "!!!" (Abgesehen von Pinna 5) und ermöglicht das Überspringen aller FMVs (ausser in Pinna 1). 
+        
+        ::: warning WARNUNG
+        Dieser Code ist nicht kompatibel mit dem Level Select, Stage Loader oder Stage Randomizer Code.
+        :::
+        </description>
+        <date>Feb 16, 2018</date>
+        <source version="GMSE01">
+            C22A6710 00000064
+            3C60817F 60630100
+            38000000 9003000C
+            38000001 98030001
+            80AD9FA0 889F0012
+            2C040001 418102F4
+            98030000 88850007
+            70800001 41A2000C
+            38803400 480002D4
+            88850006 70800080
+            41A2000C 38800906
+            480002C0 70800040
+            41A2000C 38800905
+            480002B0 70800020
+            41A2000C 38800904
+            480002A0 70800010
+            41A2000C 38800903
+            48000290 70800008
+            41A2000C 38800902
+            48000280 70800004
+            41A2000C 38800901
+            48000270 88850005
+            70800040 41A2000C
+            38800900 4800025C
+            70800020 41A2000C
+            38800606 4800024C
+            70800010 41A2000C
+            38800605 4800023C
+            70800008 41A2000C
+            38800604 4800022C
+            70800004 41A2000C
+            38800603 4800021C
+            70800002 41A2000C
+            38800602 4800020C
+            70800001 41A2000C
+            38800601 480001FC
+            88850000 70800040
+            41A2000C 38800600
+            480001E8 70800020
+            41A2000C 38800206
+            480001D8 88850002
+            70800001 41A2000C
+            38800205 480001C4
+            88850001 70800080
+            41A2000C 38800306
+            480001B0 70800040
+            41A2000C 38800305
+            480001A0 70800020
+            41A2000C 38800304
+            48000190 70800010
+            41A2000C 38800303
+            48000180 70800008
+            41A2000C 38800302
+            48000170 70800004
+            41A2000C 38800301
+            48000160 88850004
+            70800010 41A2000C
+            38800300 4800014C
+            70800008 41A2000C
+            38800506 4800013C
+            70800002 41A2000C
+            38800502 4800012C
+            70800001 41A2000C
+            38800503 4800011C
+            88850003 70800080
+            41A2000C 38800502
+            48000108 70800040
+            41A2000C 38800501
+            480000F8 88850008
+            70800004 41A2000C
+            38800500 480000E4
+            88850007 70800080
+            41A2000C 38800806
+            480000D0 88850008
+            70800001 41A2000C
+            38800805 480000BC
+            88850007 70800020
+            41A2000C 38800804
+            480000A8 70800040
+            41A2000C 38800803
+            48000098 88850008
+            70800002 41A2000C
+            38800802 48000084
+            88850007 70800010
+            41A2000C 38800801
+            48000070 88850003
+            70800004 41A2000C
+            38800800 4800005C
+            70800008 41A2000C
+            38800406 4800004C
+            88850000 70800010
+            41A2000C 38800400
+            48000038 70800008
+            41A2000C 38800204
+            48000028 70800004
+            41A2000C 38800203
+            48000018 70800002
+            41A2000C 38800202
+            48000008 38800200
+            B09F0012 988500DF
+            807F0020 00000000
+            0416210C 4E800020
+            04157EF8 48000020
+            048D3A3C 21000000
+            283E9712 00002A00
+            04153DA0 801C0004
+            0415317C A81C0340
+            E2000001 00000000
+            2A3E9712 00002A00
+            04153DA0 38000000
+            0415317C 38005000
+            E2000001 00000000
+            C22B5EF0 00000004
+            38840391 5480043C
+            2C000398 4182000C
+            3C800001 6084039A
+            60000000 00000000
+            C22B5E88 00000004
+            38840391 5480043C
+            2C000398 4182000C
+            3C800001 6084039A
+            60000000 00000000
+        </source>
+        <source version="GMSJ01">
+            C20FA19C 00000064
+            3C60817F 60630100
+            38000000 9003000C
+            38000001 98030001
+            80AD97D0 889F0012
+            2C040001 418102F4
+            98030000 88850007
+            70800001 41A2000C
+            38803400 480002D4
+            88850006 70800080
+            41A2000C 38800906
+            480002C0 70800040
+            41A2000C 38800905
+            480002B0 70800020
+            41A2000C 38800904
+            480002A0 70800010
+            41A2000C 38800903
+            48000290 70800008
+            41A2000C 38800902
+            48000280 70800004
+            41A2000C 38800901
+            48000270 88850005
+            70800040 41A2000C
+            38800900 4800025C
+            70800020 41A2000C
+            38800606 4800024C
+            70800010 41A2000C
+            38800605 4800023C
+            70800008 41A2000C
+            38800604 4800022C
+            70800004 41A2000C
+            38800603 4800021C
+            70800002 41A2000C
+            38800602 4800020C
+            70800001 41A2000C
+            38800601 480001FC
+            88850000 70800040
+            41A2000C 38800600
+            480001E8 70800020
+            41A2000C 38800206
+            480001D8 88850002
+            70800001 41A2000C
+            38800205 480001C4
+            88850001 70800080
+            41A2000C 38800306
+            480001B0 70800040
+            41A2000C 38800305
+            480001A0 70800020
+            41A2000C 38800304
+            48000190 70800010
+            41A2000C 38800303
+            48000180 70800008
+            41A2000C 38800302
+            48000170 70800004
+            41A2000C 38800301
+            48000160 88850004
+            70800010 41A2000C
+            38800300 4800014C
+            70800008 41A2000C
+            38800506 4800013C
+            70800002 41A2000C
+            38800502 4800012C
+            70800001 41A2000C
+            38800503 4800011C
+            88850003 70800080
+            41A2000C 38800502
+            48000108 70800040
+            41A2000C 38800501
+            480000F8 88850008
+            70800004 41A2000C
+            38800500 480000E4
+            88850007 70800080
+            41A2000C 38800806
+            480000D0 88850008
+            70800001 41A2000C
+            38800805 480000BC
+            88850007 70800020
+            41A2000C 38800804
+            480000A8 70800040
+            41A2000C 38800803
+            48000098 88850008
+            70800002 41A2000C
+            38800802 48000084
+            88850007 70800010
+            41A2000C 38800801
+            48000070 88850003
+            70800004 41A2000C
+            38800800 4800005C
+            70800008 41A2000C
+            38800406 4800004C
+            88850000 70800010
+            41A2000C 38800400
+            48000038 70800008
+            41A2000C 38800204
+            48000028 70800004
+            41A2000C 38800203
+            48000018 70800002
+            41A2000C 38800202
+            48000008 38800200
+            B09F0012 988500DF
+            807F0020 00000000
+            042193D8 48000020
+            04223094 4E800020
+            048D8A7C D6008149
+            048D8A80 81498149
+            048D8A84 00000000
+            283E6012 00002A00
+            04215290 801C0004
+            04214610 A81C0340
+            E2000001 00000000
+            2A3E6012 00002A00
+            04215290 38000000
+            04214610 38005000
+            E2000001 00000000
+            C210AF58 00000004
+            38840391 5480043C
+            2C000398 4182000C
+            3C800001 6084039A
+            60000000 00000000
+            C210AFBC 00000004
+            38840391 5480043C
+            2C000398 4182000C
+            3C800001 6084039A
+            60000000 00000000
+        </source>
+        <source version="GMSJ0A">
+            C22865F4 00000064
+            3C60817F 60630100
+            38000000 9003000C
+            38000001 98030001
+            80AD9E60 889F0012
+            2C040001 418102F4
+            98030000 88850007
+            70800001 41A2000C
+            38803400 480002D4
+            88850006 70800080
+            41A2000C 38800906
+            480002C0 70800040
+            41A2000C 38800905
+            480002B0 70800020
+            41A2000C 38800904
+            480002A0 70800010
+            41A2000C 38800903
+            48000290 70800008
+            41A2000C 38800902
+            48000280 70800004
+            41A2000C 38800901
+            48000270 88850005
+            70800040 41A2000C
+            38800900 4800025C
+            70800020 41A2000C
+            38800606 4800024C
+            70800010 41A2000C
+            38800605 4800023C
+            70800008 41A2000C
+            38800604 4800022C
+            70800004 41A2000C
+            38800603 4800021C
+            70800002 41A2000C
+            38800602 4800020C
+            70800001 41A2000C
+            38800601 480001FC
+            88850000 70800040
+            41A2000C 38800600
+            480001E8 70800020
+            41A2000C 38800206
+            480001D8 88850002
+            70800001 41A2000C
+            38800205 480001C4
+            88850001 70800080
+            41A2000C 38800306
+            480001B0 70800040
+            41A2000C 38800305
+            480001A0 70800020
+            41A2000C 38800304
+            48000190 70800010
+            41A2000C 38800303
+            48000180 70800008
+            41A2000C 38800302
+            48000170 70800004
+            41A2000C 38800301
+            48000160 88850004
+            70800010 41A2000C
+            38800300 4800014C
+            70800008 41A2000C
+            38800506 4800013C
+            70800002 41A2000C
+            38800502 4800012C
+            70800001 41A2000C
+            38800503 4800011C
+            88850003 70800080
+            41A2000C 38800502
+            48000108 70800040
+            41A2000C 38800501
+            480000F8 88850008
+            70800004 41A2000C
+            38800500 480000E4
+            88850007 70800080
+            41A2000C 38800806
+            480000D0 88850008
+            70800001 41A2000C
+            38800805 480000BC
+            88850007 70800020
+            41A2000C 38800804
+            480000A8 70800040
+            41A2000C 38800803
+            48000098 88850008
+            70800002 41A2000C
+            38800802 48000084
+            88850007 70800010
+            41A2000C 38800801
+            48000070 88850003
+            70800004 41A2000C
+            38800800 4800005C
+            70800008 41A2000C
+            38800406 4800004C
+            88850000 70800010
+            41A2000C 38800400
+            48000038 70800008
+            41A2000C 38800204
+            48000028 70800004
+            41A2000C 38800203
+            48000018 70800002
+            41A2000C 38800202
+            48000008 38800200
+            B09F0012 988500DF
+            807F0020 00000000
+            0413934C 48000020
+            04143178 4E800020
+            048CD55C D6008149
+            048CD560 81498149
+            048CD564 00000000
+            283DA8F2 00002A00
+            041351C4 801C0004
+            04134524 A81C0340
+            E2000001 00000000
+            2A3DA8F2 00002A00
+            041351C4 38000000
+            04134524 38005000
+            E2000001 00000000
+            C2295AB0 00000004
+            38840391 5480043C
+            2C000398 4182000C
+            3C800001 6084039A
+            60000000 00000000
+            C2295B14 00000004
+            38840391 5480043C
+            2C000398 4182000C
+            3C800001 6084039A
+            60000000 00000000
+        </source>
+        <source version="GMSP01">
+            C229E668 00000064
+            3C60817F 60630100
+            38000000 9003000C
+            38000001 98030001
+            80AD9EC8 889F0012
+            2C040001 418102F4
+            98030000 88850007
+            70800001 41A2000C
+            38803400 480002D4
+            88850006 70800080
+            41A2000C 38800906
+            480002C0 70800040
+            41A2000C 38800905
+            480002B0 70800020
+            41A2000C 38800904
+            480002A0 70800010
+            41A2000C 38800903
+            48000290 70800008
+            41A2000C 38800902
+            48000280 70800004
+            41A2000C 38800901
+            48000270 88850005
+            70800040 41A2000C
+            38800900 4800025C
+            70800020 41A2000C
+            38800606 4800024C
+            70800010 41A2000C
+            38800605 4800023C
+            70800008 41A2000C
+            38800604 4800022C
+            70800004 41A2000C
+            38800603 4800021C
+            70800002 41A2000C
+            38800602 4800020C
+            70800001 41A2000C
+            38800601 480001FC
+            88850000 70800040
+            41A2000C 38800600
+            480001E8 70800020
+            41A2000C 38800206
+            480001D8 88850002
+            70800001 41A2000C
+            38800205 480001C4
+            88850001 70800080
+            41A2000C 38800306
+            480001B0 70800040
+            41A2000C 38800305
+            480001A0 70800020
+            41A2000C 38800304
+            48000190 70800010
+            41A2000C 38800303
+            48000180 70800008
+            41A2000C 38800302
+            48000170 70800004
+            41A2000C 38800301
+            48000160 88850004
+            70800010 41A2000C
+            38800300 4800014C
+            70800008 41A2000C
+            38800506 4800013C
+            70800002 41A2000C
+            38800502 4800012C
+            70800001 41A2000C
+            38800503 4800011C
+            88850003 70800080
+            41A2000C 38800502
+            48000108 70800040
+            41A2000C 38800501
+            480000F8 88850008
+            70800004 41A2000C
+            38800500 480000E4
+            88850007 70800080
+            41A2000C 38800806
+            480000D0 88850008
+            70800001 41A2000C
+            38800805 480000BC
+            88850007 70800020
+            41A2000C 38800804
+            480000A8 70800040
+            41A2000C 38800803
+            48000098 88850008
+            70800002 41A2000C
+            38800802 48000084
+            88850007 70800010
+            41A2000C 38800801
+            48000070 88850003
+            70800004 41A2000C
+            38800800 4800005C
+            70800008 41A2000C
+            38800406 4800004C
+            88850000 70800010
+            41A2000C 38800400
+            48000038 70800008
+            41A2000C 38800204
+            48000028 70800004
+            41A2000C 38800203
+            48000018 70800002
+            41A2000C 38800202
+            48000008 38800200
+            B09F0012 988500DF
+            807F0020 00000000
+            0414CF44 48000020
+            04157158 4E800020
+            283E10D2 00002A00
+            04148D20 801C0004
+            04147F98 A81C0340
+            E2000001 00000000
+            2A3E10D2 00002A00
+            04148D20 38000000
+            04147F98 38005000
+            E2000001 00000000
+            20570B7C 00000000
+            0474E87C 21000000
+            20570B7D 00000001
+            0474E9F4 21210000
+            20570B7D 00000002
+            0474ED38 00000000
+            20570B7D 00000003
+            0474EE04 A1000000
+            20570B7D 00000004
+            0474EBDC 21210000
+            E2000001 00000000
+            C22ADE1C 00000004
+            38840391 5480043C
+            2C000398 4182000C
+            3C800001 6084039A
+            60000000 00000000
+            C22ADE84 00000004
+            38840391 5480043C
+            2C000398 4182000C
+            3C800001 6084039A
+            60000000 00000000
+        </source>
+    </code>
+    <code>
+        <title lang="en-US">Any Fruit Opens Yoshi Eggs</title>
+        <title lang="de-CH">Jede Frucht öffnet Yoshi-Eier</title>
+        <author>Unknown, Noki Doki</author>
+        <version>1.0</version>
+        <date>Aug 19, 2018</date>
+        <description lang="en-US">Allows opening Yoshi eggs with a different fruit than the one depicted.</description>
+        <description lang="de-CH">Ermöglicht das öffnen von Yoshi-Eiern mit jeglicher Frucht.</description>
+        <source version="GMSE01">
+            041BC900 60000000
+        </source>
+        <source version="GMSJ01">
+            041948E8 60000000
+        </source>
+        <source version="GMSJ0A">
+            0419C688 60000000
+        </source>
+        <source version="GMSP01">
+            041B47B8 60000000
+        </source>
+    </code>
+    <code>
+        <title lang="en-US">Infinite Juice</title>
+        <title lang="de-CH">Unendlich Saft</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <date>Apr 5, 2019</date>
+        <description lang="en-US">Prevents Yoshi from despawning due to running out of juice.</description>
+        <description lang="de-CH">Verhindert, dass Yoshi aufgrund von Saftmangel verschwindet.</description>
+        <source version="GMSE01">
+            0426E810 60000000
+        </source>
+        <source version="GMSJ01">
+            0414DB88 60000000
+        </source>
+        <source version="GMSJ0A">
+            0424E560 60000000
+        </source>
+        <source version="GMSP01">
+            0426659C 60000000
+        </source>
+    </code>
+    <code>
+        <title lang="en-US">Stage Randomizer (Experimental)</title>
+        <title lang="de-CH">Stage Randomizer (Experimentell)</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <description lang="en-US">
+            Loads stages in randomized order.
+            
+            ::: warning
+            This code is not compatible with the Level Select or Fast Any% code.
+            :::
+        </description>
+        <description lang="de-CH">
+            Ladet die Level in einer zufälligen Reihenfolge.
+            
+            ::: warning WARNUNG
+            Dieser Code ist nicht kompatibel mit dem Level Select, Stage Loader oder Fast Any% code.
+            :::
+        </description>
+        <date>Oct 11, 2017</date>
+        <source version="GMSE01">
+            C22A6710 00000023
+            3C60803E 60639710
+            88830002 2C04000E
+            418200D8 2C04000D
+            41820068 2C040001
+            418100EC 7C6C42E6
+            5464EF7E 70650007
+            38840002 2C040007
+            40A20028 38800014
+            2C050006 40A20008
+            68840003 2C050007
+            40A20008 54A5083C
+            7C842A14 38A00000
+            5484402E 7C842A78
+            48000008 7C884A14
+            3C60803E 60639710
+            90830000 48000090
+            39000D00 8083FFFC
+            2C040500 4082000C
+            39200000 4BFFFFD8
+            2C040502 4082000C
+            39200001 4BFFFFC8
+            2C040504 4082000C
+            39200002 4BFFFFB8
+            2C040505 4082000C
+            39200003 4BFFFFA8
+            2C040506 4082000C
+            39200004 4BFFFF98
+            2C040507 40A20030
+            39200005 4BFFFF88
+            3C60803E 60639710
+            8883FFF4 70850008
+            41A2000C 38800E01
+            4BFFFF70 38800E00
+            4BFFFF68 807F0020
+            60000000 00000000
+        </source>
+    </code>
+    <code>
+        <title lang="en-US">Replace Episode names with their ID</title>
+        <title lang="de-CH">Ersetze Episodennamen mit ihrer ID</title>
+        <author>Psychonauter, Noki Doki</author>
+        <version>1.1</version>
+        <description lang="en-US">
+            Replaces the Episode names with the episode number in the demo screen.
+            (Useful for the stage randomizer and the stage loader.)
+        </description>
+        <description lang="de-CH">
+            Ersetzt alle Episodennamen mit ihrer Nummer (in der Vorschauszene).
+            Praktisch für den Stage Randomizer oder Stage Loader.
+        </description>
+        <date>Feb 13, 2018</date>
+        <source version="GMSE01">
+            C21727B8 00000004
+            80AD9FA0 88A500DF
+            38A50031 54A5403E
+            B0A60000 38800080
+            60000000 00000000
+        </source>
+        <source version="GMSJ01">
+            C2232C70 00000004
+            80AD97D0 88A500DF
+            38A50031 54A5403E
+            B0A60000 38800080
+            60000000 00000000
+        </source>
+        <source version="GMSJ0A">
+            C2153548 00000004
+            80AD9E60 88A500DF
+            38A50031 54A5403E
+            B0A60000 38800080
+            60000000 00000000
+        </source>
+        <source version="GMSP01">
+            C2168758 00000004
+            80AD9EC8 88A500DF
+            38A50031 54A5403E
+            B0A60000 38800080
+            60000000 00000000
+        </source>
+    </code>
+    <code>
+        <title lang="en-US">Shine Outfit</title>
+        <title lang="de-CH">Shine Outfit</title>
+        <author>Ralf, Psychonauter</author>
+        <version>1.0</version>
+        <date>Oct 23, 2017</date>
+        <description lang="en-US">Always wear shine outfit and sunglasses.</description>
+        <description lang="de-CH">Mario trägt immer das Shine Outfit und die Sonnenbrille.</description>
+        <source version="GMSE01">
+            04241FD4 60000004
+            04241FD8 B01D0004
+            0424D4DC 60000000
+        </source>
+        <source version="GMSJ01">
+            04120D1C 60000004
+            04120D20 B01D0004
+            0412C9B0 60000000
+        </source>
+        <source version="GMSJ0A">
+            04221924 60000004
+            04221928 B01D0004
+            0422D22C 60000000
+        </source>
+        <source version="GMSP01">
+            04239C88 60000004
+            04239C8C B01D0004
+            04245268 60000000
+        </source>
+    </code>
+    <code>
+        <title lang="en-US">Position/angle/speed display</title>
+        <title lang="de-CH">Position/Winkel/Geschw. Display</title>
+        <author>Noki Doki</author>
+        <version>1.3</version>
+        <date>Oct 28, 2019</date>
+        <description lang="en-US">Shows Mario's position, angle and speed at any given time.</description>
+        <description lang="de-CH">Zeigt Mario's Position, Winkel und Geschwindigkeit jederzeit auf dem Bildschirm an.</description>
+        <source version="GMSE01">
+            062A6160 00000010
+            49553F19 60000000
+            60000000 60000000
+            042998B8 49560749
+            04143F14 496B6209
+            077FA000 000001E8
+            9421FFE0 7C0802A6
+            90010024 93E1001C
+            4AABD6E5 38E00200
+            38C00320 38A0FFD8
+            3880000A 38610008
+            4AAD01B9 814D9FC8
+            3FE08180 3BFFA1EC
+            39200000 39000002
+            3CE08180 38E7A164
+            80CA0048 38A10008
+            38800000 7FE3FB78
+            4AAD67F1 39200001
+            913F01B0 80010024
+            7C0803A6 83E1001C
+            38210020 4E800020
+            9421FFE8 7C0802A6
+            9001001C 93A1000C
+            93C10010 93E10014
+            7C7F1B78 81230000
+            83A90064 3D208180
+            8129A39C 2F890000
+            409E002C 7FE3FB78
+            7FA903A6 4E800421
+            8001001C 7C0803A6
+            83A1000C 83C10010
+            83E10014 38210018
+            4E800020 3D208040
+            6129E0E8 83C90000
+            3C608180 3863A1EC
+            4AAD6B79 C0BE00A8
+            C09E00B0 A0DE0096
+            C07E0018 C05E0014
+            C03E0010 3CA08180
+            38A5A164 38800080
+            4CC63242 4AB3F691
+            4BFFFF94 9421FFF0
+            7C0802A6 90010014
+            93E1000C 7C7F1B78
+            4AAF158D 38E00081
+            7FE6FB78 38A00000
+            38800000 3C608180
+            3863A1EC 4AAD5C5D
+            80010014 7C0803A6
+            83E1000C 38210010
+            4E800020 5820506F
+            7320252E 30660A59
+            20506F73 20252E30
+            660A5A20 506F7320
+            252E3066 0A416E67
+            6C652025 68750A48
+            20537064 20252E32
+            660A5620 53706420
+            252E3266 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202000 00000000
+            C22A66F4 00000003
+            38600000 3D808180
+            906CA39C 807F0040
+            60000000 00000000
+        </source>
+        <source version="GMSJ01">
+            060F9B64 00000010
+            49700515 60000000
+            60000000 60000000
+            040ECE3C 4970D1C5
+            04206734 495F39E9
+            077FA000 000001E8
+            9421FFE0 7C0802A6
+            90010024 93E1001C
+            4A91239D 38E00200
+            38C00320 38A0FFD8
+            3880000A 38610008
+            4A8191F5 814D97F8
+            3FE08180 3BFFA1EC
+            39200000 39000002
+            3CE08180 38E7A164
+            80CA0048 38A10008
+            38800000 7FE3FB78
+            4A81F8AD 39200001
+            913F01B0 80010024
+            7C0803A6 83E1001C
+            38210020 4E800020
+            9421FFE8 7C0802A6
+            9001001C 93A1000C
+            93C10010 93E10014
+            7C7F1B78 81230000
+            83A90064 3D208180
+            8129A39C 2F890000
+            409E002C 7FE3FB78
+            7FA903A6 4E800421
+            8001001C 7C0803A6
+            83A1000C 83C10010
+            83E10014 38210018
+            4E800020 3D208040
+            6129A378 83C90000
+            3C608180 3863A1EC
+            4A81FC35 C0BE00A8
+            C09E00B0 A0DE0096
+            C07E0018 C05E0014
+            C03E0010 3CA08180
+            38A5A164 38800080
+            4CC63242 4A889FB1
+            4BFFFF94 9421FFF0
+            7C0802A6 90010014
+            93E1000C 7C7F1B78
+            4A83B0F9 38E00081
+            7FE6FB78 38A00000
+            38800000 3C608180
+            3863A1EC 4A81ED19
+            80010014 7C0803A6
+            83E1000C 38210010
+            4E800020 5820506F
+            7320252E 30660A59
+            20506F73 20252E30
+            660A5A20 506F7320
+            252E3066 0A416E67
+            6C652025 68750A48
+            20537064 20252E32
+            660A5620 53706420
+            252E3266 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202000 00000000
+            C20FA0F8 00000003
+            38600000 3D808180
+            906CA39C 807F0040
+            60000000 00000000
+        </source>
+        <source version="GMSJ0A">
+            06285FBC 00000010
+            495740BD 60000000
+            60000000 60000000
+            04279568 49580A99
+            041252A0 496D4E7D
+            077FA000 000001E8
+            9421FFE0 7C0802A6
+            90010024 93E1001C
+            4AA9CEF5 38E00200
+            38C00320 38A0FFD8
+            3880000A 38610008
+            4AAAF9C9 814D9E88
+            3FE08180 3BFFA1EC
+            39200000 39000002
+            3CE08180 38E7A164
+            80CA0048 38A10008
+            38800000 7FE3FB78
+            4AAB6001 39200001
+            913F01B0 80010024
+            7C0803A6 83E1001C
+            38210020 4E800020
+            9421FFE8 7C0802A6
+            9001001C 93A1000C
+            93C10010 93E10014
+            7C7F1B78 81230000
+            83A90064 3D208180
+            8129A39C 2F890000
+            409E002C 7FE3FB78
+            7FA903A6 4E800421
+            8001001C 7C0803A6
+            83A1000C 83C10010
+            83E10014 38210018
+            4E800020 3D20803F
+            6129EF88 83C90000
+            3C608180 3863A1EC
+            4AAB6389 C0BE00A8
+            C09E00B0 A0DE0096
+            C07E0018 C05E0014
+            C03E0010 3CA08180
+            38A5A164 38800080
+            4CC63242 4AB1EF91
+            4BFFFF94 9421FFF0
+            7C0802A6 90010014
+            93E1000C 7C7F1B78
+            4AAD0D9D 38E00081
+            7FE6FB78 38A00000
+            38800000 3C608180
+            3863A1EC 4AAB546D
+            80010014 7C0803A6
+            83E1000C 38210010
+            4E800020 5820506F
+            7320252E 30660A59
+            20506F73 20252E30
+            660A5A20 506F7320
+            252E3066 0A416E67
+            6C652025 68750A48
+            20537064 20252E32
+            660A5620 53706420
+            252E3266 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202000 00000000
+            C2286550 00000003
+            38600000 3D808180
+            906CA39C 807F0040
+            60000000 00000000
+        </source>
+        <source version="GMSP01">
+            0629E070 00000010
+            4955C009 60000000
+            60000000 60000000
+            04291750 495688B1
+            04138B50 496C15CD
+            077FA000 000001E8
+            9421FFE0 7C0802A6
+            90010024 93E1001C
+            4AAB56B5 38E00200
+            38C00320 38A0FFD8
+            3880000A 38610008
+            4AAC824D 814D9EF0
+            3FE08180 3BFFA1EC
+            39200000 39000002
+            3CE08180 38E7A164
+            80CA0048 38A10008
+            38800000 7FE3FB78
+            4AACE999 39200001
+            913F01B0 80010024
+            7C0803A6 83E1001C
+            38210020 4E800020
+            9421FFE8 7C0802A6
+            9001001C 93A1000C
+            93C10010 93E10014
+            7C7F1B78 81230000
+            83A90064 3D208180
+            8129A39C 2F890000
+            409E002C 7FE3FB78
+            7FA903A6 4E800421
+            8001001C 7C0803A6
+            83A1000C 83C10010
+            83E10014 38210018
+            4E800020 3D208040
+            612957B0 83C90000
+            3C608180 3863A1EC
+            4AACED21 C0BE00A8
+            C09E00B0 A0DE0096
+            C07E0018 C05E0014
+            C03E0010 3CA08180
+            38A5A164 38800080
+            4CC63242 4AB37811
+            4BFFFF94 9421FFF0
+            7C0802A6 90010014
+            93E1000C 7C7F1B78
+            4AAE9735 38E00081
+            7FE6FB78 38A00000
+            38800000 3C608180
+            3863A1EC 4AACDE05
+            80010014 7C0803A6
+            83E1000C 38210010
+            4E800020 5820506F
+            7320252E 30660A59
+            20506F73 20252E30
+            660A5A20 506F7320
+            252E3066 0A416E67
+            6C652025 68750A48
+            20537064 20252E32
+            660A5620 53706420
+            252E3266 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202000 00000000
+            C229E64C 00000003
+            38600000 3D808180
+            906CA39C 807F0040
+            60000000 00000000
+        </source>
+    </code>
+    <code>
+        <title lang="en-US">Intro Skip</title>
+        <title lang="de-CH">Überspringbare Intros</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <date>Jun 19, 2019</date>
+        <description lang="en-US">
+          Removes the logos and cutscene that normally play before the title screen when loading or resetting the game.
+        </description>
+        <description lang="de-CH">
+          Entfernt die Logis und Cutscenes welche beim Laden oder Zurücksetzen des Spiels abgespielt werden.
+        </description>
+        <source version="GMSE01">
+            042956AC 480002C4
+            04295B20 48000014
+            062A65E0 00000014
+            38600F00 38000000
+            B07F000E B01F0010
+            4BFFFEB0 00000000
+        </source>
+        <source version="GMSJ01">
+            040E8C68 480002C4
+            040E90DC 48000014
+            060F9FE4 00000014
+            38600F00 38000000
+            B07F000E B01F0010
+            4BFFFEB0 00000000
+        </source>
+        <source version="GMSJ0A">
+            04275374 4800027C
+            042757C8 48000014
+            0628643C 00000014
+            38600F00 38000000
+            B07F000E B01F0010
+            4BFFFEB0 00000000
+        </source>
+        <source version="GMSP01">
+            0428D4C4 48000264
+            0428D9B8 48000014
+            0629E51C 00000014
+            38600F00 38000000
+            B07F000E B01F0010
+            4BFFFE94 00000000
+        </source>
+    </code>
+    <code>
+        <title lang="en-US">Respawn One-Time Shines</title>
+        <title lang="de-CH">Einmalige Shines Respawnen</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <date>Aug 19, 2019</date>
+        <description lang="en-US">Allows Shines obtained by cleaning graffiti, the Shine Gate or the bells to respawn.</description>
+        <description lang="de-CH">Ermöglicht das mehrmalige Einsammeln von Shines welche beispielsweise durch Reinigen von Graffiti oder Glocken freigeschaltet werden.</description>
+        <source version="GMSE01">
+            041E792C 48000050
+            021E7FFC 00004800
+            021FF85C 00004800
+        </source>
+        <source version="GMSJ01">
+            041BF378 48000050
+            021BFA48 00004800
+            021D72E8 00004800
+        </source>
+        <source version="GMSJ0A">
+            041C76A4 48000050
+            021C7D74 00004800
+            021DF600 00004800
+        </source>
+        <source version="GMSP01">
+            041DF804 48000050
+            021DFED4 00004800
+            021F7740 00004800
+        </source>
+    </code>
+    <code>
+        <title lang="en-US">Force Plaza Events</title>
+        <title lang="de-CH">Erzwungene Plaza Events</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <date>Mar 8, 2020</date>
+        <description lang="en-US">
+          Forces the unlock events for Ricco, Gelato and Yoshi to happen any time the correct version of the plaza is loaded.
+          Nozzle unlock events take precedence over Yoshi's if their conditions are met.
+        </description>
+        <description lang="de-CH">
+          Erzwingt die Durchführung der Ricco-, Gelato- und Yoshi- Freischaltungen sofern die korrekte Version der Plaza geladen ist. 
+          Düsenfreischaltungen haben gegenüber Yoshi's Freischaltung Vorrang.
+        </description>
+        <source version="GMSE01">
+            042B7810 48000018
+            042B785C 48000018
+            042B78C4 48000018
+            042B78F0 60000000
+            042B7940 60000000
+        </source>
+        <source version="GMSJ01">
+            0410C4C8 48000018
+            0410C514 48000018
+            0410C57C 48000018
+            0410C5A8 60000000
+            0410C5F8 60000000
+        </source>
+        <source version="GMSJ0A">
+            04297020 48000018
+            0429706C 48000018
+            042970D4 48000018
+            04297100 60000000
+            04297150 60000000
+        </source>
+        <source version="GMSP01">
+            042AF7E0 48000018
+            042AF82C 48000018
+            042AF894 48000018
+            042AF8C0 60000000
+            042AF910 60000000
+        </source>
+    </code>
+    <code>
+        <title lang="en-US">Fix Memory Card Encoding</title>
+        <title lang="de-CH">Repariere Speicherkarten-Kodierung</title>
+        <author>Noki Doki</author>
+        <version>2.0</version>
+        <date>Jun 25, 2020</date>
+        <description lang="en-US">Enable this if your Nintendont saves do not work on your other loader (e.g. Gecko OS on a Japanese console).</description>
+        <description lang="de-CH">Aktiviere dies, falls deine Nintendont nicht in anderen Loadern funktionieren (beispielsweise Gecko OS auf einer japanischen Konsole).</description>
+        <source version="GMSE01">
+            0240CE58 00000001
+        </source>
+        <source version="GMSJ01">
+            02408D18 00000000
+        </source>
+        <source version="GMSJ0A">
+            023FDDB0 00000000
+        </source>
+        <source version="GMSP01">
+            024045B8 00000001
+        </source>
+    </code>
+</codes>
