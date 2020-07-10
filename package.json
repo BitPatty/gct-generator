@@ -14,7 +14,8 @@
     "format": "prettier --write ./site/**/*{.md,.js,.json,.vue}",
     "translations:compare": "node ./scripts/compare_translations.js",
     "codes:inject": "node ./scripts/inject_codes.js && yarn format",
-    "codes:clean": "node ./scripts/clean_codes.js && yarn format"
+    "codes:clean": "node ./scripts/clean_codes.js && yarn format",
+    "precommit": "yarn codes:clean && git add ."
   },
   "license": "Apache-2.0",
   "devDependencies": {
@@ -29,5 +30,5 @@
   "dependencies": {
     "vuedraggable": "^2.23.2"
   },
-  "pre-commit": []
+  "pre-commit": ["precommit"]
 }
