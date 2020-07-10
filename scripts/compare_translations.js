@@ -2,7 +2,7 @@ const path = require('path');
 const locales = require(path.join(__dirname, '../site/.vuepress/i18n/locales.json'));
 
 /**
- * Gets all leave nodes from the specified object
+ * Gets all leaf nodes from the specified object
  * @param {*} node The root node
  * @param {*} path The already visited path
  */
@@ -39,7 +39,7 @@ const translations = Object.keys(locales).map((locale) => ({
 const defaultTranslation = translations.find((t) => t.lang === locales['/'].lang);
 console.log(`Default translation set to ${defaultTranslation.lang}`);
 
-// Holds the paths to all leave nodes of the default translation
+// Holds the paths to all leaf nodes of the default translation
 const leavePaths = [];
 getLeaves(defaultTranslation.values);
 console.log('Detected translations: ', leavePaths);
