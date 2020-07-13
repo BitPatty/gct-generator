@@ -114,6 +114,12 @@ Dolphin verwendet nicht dieselbe Technik für das Laden von Cheats wie Nintendon
 
 ### Konfiguration
 
+#### Cheats aktivieren
+
+Öffne Dolphin und öffne die Einstellungen über `Optionen` -> `Konfiguration`. Stelle im Einstellungsfenster sicher, dass das Häkchen bei `Cheats aktivieren` gesetzt ist:
+
+![Enable Cheats in Dolphin](/img/dolphin_cheats.png)
+
 #### Dolphin 5.0 oder älter
 
 Wechsle in die Eigenschaften des Spiels mittels Rechtsklick -> Eigenschaften. Klicke 'Konfiguration bearbeiten' im neuen Fenster und kopiere den gesamten Inhalt (nach dem `[Gecko]`-Tag) der heruntergeladenen Datei an die entsprechende Stelle in der Konfigurationsdatei. Falls es noch keinen `[Gecko]`-Tag gibt (es sollte der erste sein), erstelle erst einen am Anfang deiner Konfigurationsdatei. Speichere und schliesse die Datei.

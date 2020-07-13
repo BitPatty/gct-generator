@@ -515,12 +515,12 @@
         <description lang="de-CH">
         Fügt den In-Game-Timer in jedem Level hinzu. Er startet nach dem letzten schwarzen Frame nach dem Ladebildschirm und endet sobald die 'Shine Get' Animation startet (ähnlich dem X-Cam-Tier aus Super Mario 64).
         
-        ::: warning
+        ::: warning WARNUNG
         Der Timer pausiert während Ladebildschirmen. 
         :::
         
-        ::: danger
-        Requires the Level Select code, Fast Any% or Stage Loader to be active.
+        ::: danger ACHTUNG
+        Benötigt den Level Select Code, Fast Any% oder Stage Loader!
         :::
         </description>
         <date>Oct 11, 2019</date>

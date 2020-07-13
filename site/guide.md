@@ -118,7 +118,7 @@ Dolphin doesn't use the same cheat loader as Nintendont. Its code limit is reach
 
 #### Enabling Cheats
 
-Open Dolphin and navigate to the settings menu through Options -> Configuration. Make sure the checkbox labeled 'Enable Cheats' is checked:
+Open Dolphin and navigate to the settings menu through `Options` -> `Configuration`. Make sure the checkbox labeled `Enable Cheats` is checked:
 
 ![Enable Cheats in Dolphin](/img/dolphin_cheats.png)
 
