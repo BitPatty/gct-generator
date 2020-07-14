@@ -16,16 +16,16 @@
         "link": "/code-reference/index.html"
       },
       {
-        "text": "Changelog",
-        "link": "/changelog.html"
-      },
-      {
         "text": "Installing IOS58",
         "link": "/ios58.html"
       },
       {
         "text": "Sunshine Discord",
         "link": "https://discord.gg/9dGJWEc"
+      },
+      {
+        "text": "Changelog",
+        "link": "https://github.com/BitPatty/gctGenerator/blob/master/changelog.md"
       }
     ]
   },
@@ -36,6 +36,7 @@
     "label": "Deutsch",
     "ariaLabel": "Sprache",
     "editLinkText": "Bearbeite diese Seite auf GitHub",
+    "activeHeaderLinks": false,
     "nav": [
       {
         "text": "Cookbook",
@@ -45,10 +46,7 @@
         "text": "Code Referenz",
         "link": "/de/code-reference/index.html"
       },
-      {
-        "text": "Changelog (Englisch)",
-        "link": "/changelog.html"
-      },
+
       {
         "text": "IOS58 Installation",
         "link": "/de/ios58.html"
@@ -56,6 +54,10 @@
       {
         "text": "Sunshine Discord",
         "link": "https://discord.gg/9dGJWEc"
+      },
+      {
+        "text": "Changelog",
+        "link": "https://github.com/BitPatty/gctGenerator/blob/master/changelog.md"
       }
     ]
   }
