@@ -87,13 +87,6 @@
               &amp;
               <a href="https://twitter.com/srlMilk" target="_blank" rel="noopener">Milk</a>.
             </p>
-            <p>
-              Found a bug? Post a message on the SMS Discord (#hacking) and tag psy#1363. During the
-              transition the old site will still be available at
-              <a href="https://old.gct.zint.ch" target="_blank" rel="noopener"
-                >https://old.gct.zint.ch</a
-              >.
-            </p>
           </div>
         </div>
       </div>

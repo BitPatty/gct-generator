@@ -5,6 +5,7 @@
     "selectText": "Language",
     "label": "English",
     "ariaLabel": "Language",
+    "editLinkText": "Edit this page on GitHub",
     "nav": [
       {
         "text": "Cookbook",
@@ -34,6 +35,7 @@
     "selectText": "Sprache",
     "label": "Deutsch",
     "ariaLabel": "Sprache",
+    "editLinkText": "Bearbeite diese Seite auf GitHub",
     "nav": [
       {
         "text": "Cookbook",

@@ -33,7 +33,6 @@ module.exports = {
     repo: 'BitPatty/gctGenerator',
     editLinks: true,
     docsDir: 'site',
-    editLinkText: 'Edit this page on GitHub',
     lastUpdated: false,
     locales,
     plugins: themePlugins,
