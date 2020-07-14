@@ -29,7 +29,7 @@ Note that in the code reference files everything following the `<!-- injectionpo
 
 ### Site Development
 
-If you intend to change site code you need [NodeJS](https://nodejs.org/en/) version 12.18.1 or greater installed on your local.
+If you intend to change site code you need [NodeJS](https://nodejs.org/en/) version 12.18.1 or any later 12.x LTS version installed on your local.
 
 ```sh
 # Install yarn
@@ -53,7 +53,7 @@ The XML codes will be written automatically to the json file and code reference 
 
 If you want to inject the codes at any given point you can use `yarn codes:inject`.
 
-Before opening a PR make sure you run `yarn codes:clean` to remove the injected codes.
+**!!! Note that if yarn was used, `yarn codes:clean` is ran automatically as a pre-commit hook, removing all injected codes and staging ALL changes.** If you want to commit changes without cleaning codes first you have to commit through `git commit --no-verify`.
 
 ### Build and preview the site (Docker)
 
