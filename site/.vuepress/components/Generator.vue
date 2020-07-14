@@ -88,6 +88,7 @@
               <a href="https://twitter.com/srlMilk" target="_blank" rel="noopener">Milk</a>.
             </p>
           </div>
+          <div class="centered"><a href="/">English</a> | <a href="/de">Deutsch</a></div>
         </div>
       </div>
     </section>
@@ -188,6 +189,11 @@ section > div:not(:first-child) {
 
 .help {
   text-align: left;
+}
+
+.centered {
+  width: 100%;
+  text-align: center;
 }
 
 @keyframes spinner {
