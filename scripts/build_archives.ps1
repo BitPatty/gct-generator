@@ -4,12 +4,16 @@ $ErrorActionPreference = "Stop";
 # Hide progress bars
 $global:ProgressPreference = 'SilentlyContinue'
 
+# Move to script directory
+$rootDirectory = (Get-Item $PSScriptRoot).Parent.FullName
+Set-Location $rootDirectory;
+
 # Start build
 Write-Host "Packing archives...";
 
 # Setup workspace
 New-Item -ItemType directory -Path "./tmp" > $null;
-Copy-Item "./codes/*.xml" "./tmp/";
+Copy-Item "Codes.xml" "./tmp/";
 Set-Location "./tmp";
 
 # Helper function to convert the XML files to the GCM txt format
@@ -20,10 +24,21 @@ function XmlToGcm($source, $destination, $versionname) {
   Add-Content $destination "Super Mario Sunshine" -NoNewline;
 
   foreach ($code in $xml.codes.code) {
+    $codeTitle = ($code.title | Where-Object { $_.lang -eq 'en-US' }).'#text';
+    $codeSource = ($code.source | Where-Object { $_.version -eq $versionname }).'#text';
+
+    Write-Host "$versionname`: $codeTitle";
+    Write-Host $codeSource;
+
+    if (!$codeSource || [string]::IsNullOrWhiteSpace($codeSource.'#text')) {
+      Write-Host "No source found, skipping";
+      continue;
+    }
+
     Add-Content $destination  "";
     Add-Content $destination  "";
-    Add-Content $destination  "$($code.title."#text") ($($code.date)) [$($code.author)]";
-    $codeSource = $code.source -replace " +$", "" -replace "^? [^a-zA-Z0-9]", "";
+    Add-Content $destination  "$codeTitle ($($code.date)) [$($code.author)]";
+    $codeSource = $codeSource -replace " +$", "" -replace "^? [^a-zA-Z0-9]", "";
     Add-Content $destination  $codeSource.Trim() -NoNewline;
   };
 };
@@ -36,19 +51,30 @@ function XmlToIni($source, $destination, $versionname) {
   Add-Content $destination "[Gecko]" -NoNewline
 
   foreach ($code in $xml.codes.code) {
+    $codeTitle = ($code.title | Where-Object { $_.lang -eq 'en-US' }).'#text';
+    $codeSource = ($code.source | Where-Object { $_.version -eq $versionname }).'#text';
+
+    Write-Host "$versionname`: $codeTitle";
+    Write-Host $codeSource;
+
+    if (!$codeSource || [string]::IsNullOrWhiteSpace($codeSource.'#text')) {
+      Write-Host "No source found, skipping";
+      continue;
+    }
+
     Add-Content $destination  "";
-    Add-Content $destination  "`$$($code.title."#text") ($($code.date)) [$($code.author)]";
-    $codeSource = $code.source -replace " +$", "" -replace "^? [^a-zA-Z0-9]", "";
+    Add-Content $destination  "`$$codeTitle ($($code.date)) [$($code.author)]";
+    $codeSource = $codeSource -replace " +$", "" -replace "^? [^a-zA-Z0-9]", "";
     Add-Content $destination  $codeSource.Trim() -NoNewline;
   };
 }
 
 # Convert files to GCM format
 Write-Host "Converting XML files to GCM format..";
-XmlToGcm "GMSE01.xml" "GMSE01.txt" "GMSE01";
-XmlToGcm "GMSP01.xml" "GMSP01.txt" "GMSP01";
-XmlToGcm "GMSJ01.xml" "GMSJ01.txt" "GMSJ01";
-XmlToGcm "GMSJ0A.xml" "GMSJ01 (A).txt" "GMSJ01";
+XmlToGcm "Codes.xml" "GMSE01.txt" "GMSE01";
+XmlToGcm "Codes.xml" "GMSP01.txt" "GMSP01";
+XmlToGcm "Codes.xml" "GMSJ01.txt" "GMSJ01";
+XmlToGcm "Codes.xml" "GMSJ01 (A).txt" "GMSJ01";
 
 # Replace zip file
 Write-Host "Compressing GCM archive..";
@@ -59,10 +85,10 @@ Write-Host "GCM Archive built";
 Remove-Item *.txt;
 
 Write-Host "Converting XML files to Dolphin INI format..";
-XmlToIni "GMSE01.xml" "GMSE01.txt" "GMSE01";
-XmlToIni "GMSP01.xml" "GMSP01.txt" "GMSP01";
-XmlToIni "GMSJ01.xml" "GMSJ01.txt" "GMSJ01";
-XmlToIni "GMSJ0A.xml" "GMSJ01 (A).txt" "GMSJ01";
+XmlToIni "Codes.xml" "GMSE01.txt" "GMSE01";
+XmlToIni "Codes.xml" "GMSP01.txt" "GMSP01";
+XmlToIni "Codes.xml" "GMSJ01.txt" "GMSJ01";
+XmlToIni "Codes.xml" "GMSJ01 (A).txt" "GMSJ01";
 
 Write-Host "Compressing Dolphin archive..";
 Compress-Archive "./*.txt" "../site/.vuepress/public/files/DolphinCodes.zip";

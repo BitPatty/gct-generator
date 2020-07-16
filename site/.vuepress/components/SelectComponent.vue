@@ -8,13 +8,15 @@
         v-for="option in options"
         :value="option.value"
         :selected="selectedValue && option.value === selectedValue"
-        >{{ option.label }}</option
+        >{{ getLabel(option.label) }}</option
       >
     </select>
   </div>
 </template>
 
 <script>
+import { translate } from '../i18n/localeHelper';
+
 export default {
   props: {
     disabled: { type: Boolean },
@@ -25,6 +27,11 @@ export default {
   },
   data() {
     return {};
+  },
+  methods: {
+    getLabel(key) {
+      return translate(key, this.$lang);
+    },
   },
 };
 </script>

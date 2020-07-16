@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="config">
-      <span>Remove Dialogue:</span>
+      <span>{{ getLabel('stageloader.removedialogue.label') }}</span>
       <SelectComponent
         :options="removeDialogueOptions"
         :onChange="onRemoveDialogueSelectionChanged"
@@ -9,7 +9,7 @@
       />
     </div>
     <div class="config">
-      <span>Skippable FMVs:</span>
+      <span>{{ getLabel('stageloader.skippablefmvs.label') }}</span>
       <SelectComponent
         :options="skippableFMVsOptions"
         :onChange="onSkippableFMVsSelectionChanged"
@@ -17,7 +17,7 @@
       />
     </div>
     <div class="config">
-      <span>Level Order:</span>
+      <span>{{ getLabel('stageloader.levelorder.label') }}</span>
       <SelectComponent
         :options="levelOrderOptions"
         :onChange="onLevelOrderSelectionChanged"
@@ -25,7 +25,7 @@
       />
     </div>
     <div class="config">
-      <span>Post Game:</span>
+      <span>{{ getLabel('stageloader.postgame.label') }}</span>
       <SelectComponent
         :disabled="levelOrderSelection === 'random'"
         :options="postGameOptions"
@@ -34,7 +34,7 @@
       />
     </div>
     <div class="config">
-      <span>Route:</span>
+      <span>{{ getLabel('stageloader.route') }}</span>
       <ul class="level-select">
         <draggable
           v-model="selectedRoute"
@@ -61,7 +61,7 @@
     <div class="config">
       <div class="sub">
         <GroupSelectComponent
-          placeholder="Choose a level.."
+          :placeholder="getLabel('stageloader.levelselectplaceholder')"
           :optGroups="stageLoaderLevelOptions"
           :onChange="onStageLoaderLevelSelected"
           selectedValue="placeholder"
@@ -69,11 +69,11 @@
         />
       </div>
       <div class="sub">
-        <ButtonComponent label="Clear List" :onClick="onClearList" />
+        <ButtonComponent :label="getLabel('stageloader.clear')" :onClick="onClearList" />
       </div>
       <div class="sub">
         <GroupSelectComponent
-          placeholder="Load a preset.."
+          :placeholder="getLabel('stageloader.loadpresetplaceholder')"
           :optGroups="stageLoaderPresetOptions"
           :onChange="onStageLoaderPresetSelected"
           selectedValue="placeholder"
@@ -96,6 +96,7 @@ import stageLoaderPresets from '../data/stageLoaderPresets.json';
 
 // Util
 import generateStageLoaderCode from './scripts/generateStageLoadercode';
+import { translate } from '../i18n/localeHelper';
 
 // Lib
 import draggable from 'vuedraggable';
@@ -119,26 +120,26 @@ export default {
       stageLoaderLevelOptions: stageLoaderLevels,
       stageLoaderPresetOptions: stageLoaderPresets,
       removeDialogueOptions: [
-        { value: 'pv5', label: 'Not in Pinna 5' },
-        { value: 'yes', label: 'Always' },
-        { value: 'no', label: "Don't include" },
+        { value: 'pv5', label: 'stageloader.removedialogue.options.pv5' },
+        { value: 'yes', label: 'stageloader.removedialogue.options.yes' },
+        { value: 'no', label: 'stageloader.removedialogue.options.no' },
       ],
       skippableFMVsOptions: [
-        { value: 'pp', label: 'Not in Pinna' },
-        { value: 'yes', label: 'Always' },
-        { value: 'no', label: "Don't include" },
+        { value: 'pp', label: 'stageloader.skippablefmvs.options.pp' },
+        { value: 'yes', label: 'stageloader.skippablefmvs.options.yes' },
+        { value: 'no', label: 'stageloader.skippablefmvs.options.no' },
       ],
       levelOrderOptions: [
-        { value: 'list', label: 'As specified' },
-        { value: 'shuffle', label: 'Random, no duplicates' },
-        { value: 'random', label: 'Fully random' },
+        { value: 'list', label: 'stageloader.levelorder.options.list' },
+        { value: 'shuffle', label: 'stageloader.levelorder.options.shuffle' },
+        { value: 'random', label: 'stageloader.levelorder.options.random' },
       ],
       postGameOptions: [
-        { value: '0F00', label: 'Return to the title screen' },
-        { value: '0109', label: 'Load the flooded plaza' },
-        { value: '0102', label: 'Load post-Corona plaza' },
-        { value: '3400', label: 'Load Corona Montain' },
-        { value: '3C00', label: 'Load the Bowser fight' },
+        { value: '0F00', label: 'stageloader.postgame.options.0F00' },
+        { value: '0109', label: 'stageloader.postgame.options.0109' },
+        { value: '0102', label: 'stageloader.postgame.options.0102' },
+        { value: '3400', label: 'stageloader.postgame.options.3400' },
+        { value: '3C00', label: 'stageloader.postgame.options.3C00' },
       ],
       removeDialogSelection: 'pv5',
       skippableFMVsSelection: 'pp',
@@ -148,6 +149,9 @@ export default {
     };
   },
   methods: {
+    getLabel(key) {
+      return translate(key, this.$lang);
+    },
     onRemoveDialogueSelectionChanged(e) {
       this.removeDialogSelection = e;
       this.updateCode();
@@ -194,11 +198,10 @@ export default {
       const preset = e.split(';')[0];
       const ending = e.split(';')[1];
 
-      const newRoute = [];
+      this.selectedRoute = [];
 
-      for (let i = 0; i <= preset.length - 4; i += 4) newRoute.push({ value: preset.substr(i, 4) });
-
-      this.selectedRoute = newRoute;
+      for (let i = 0; i <= preset.length - 4; i += 4)
+        this.selectedRoute.push({ value: preset.substr(i, 4) });
 
       if (ending) {
         this.postGameSelection = ending;

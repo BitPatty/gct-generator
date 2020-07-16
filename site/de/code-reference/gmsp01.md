@@ -3,8 +3,8 @@ sidebar: auto
 editLink: false
 ---
 
-# GMSE01 (NTSC-U / North America)
+# GMSE01 (PAL / Europa)
 
-## List of available codes
+## Liste der verfügbaren Codes
 
 <!-- injectionpoint -->

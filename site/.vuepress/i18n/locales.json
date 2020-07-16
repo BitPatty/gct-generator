@@ -1,0 +1,64 @@
+{
+  "/": {
+    "lang": "en-US",
+    "title": "GCT Generator",
+    "selectText": "Language",
+    "label": "English",
+    "ariaLabel": "Language",
+    "editLinkText": "Edit this page on GitHub",
+    "nav": [
+      {
+        "text": "Cookbook",
+        "link": "/guide.html"
+      },
+      {
+        "text": "Code Reference",
+        "link": "/code-reference/index.html"
+      },
+      {
+        "text": "Installing IOS58",
+        "link": "/ios58.html"
+      },
+      {
+        "text": "Sunshine Discord",
+        "link": "https://discord.gg/9dGJWEc"
+      },
+      {
+        "text": "Changelog",
+        "link": "https://github.com/BitPatty/gctGenerator/blob/master/changelog.md"
+      }
+    ]
+  },
+  "/de/": {
+    "lang": "de-CH",
+    "title": "GCT Generator",
+    "selectText": "Sprache",
+    "label": "Deutsch",
+    "ariaLabel": "Sprache",
+    "editLinkText": "Bearbeite diese Seite auf GitHub",
+    "activeHeaderLinks": false,
+    "nav": [
+      {
+        "text": "Cookbook",
+        "link": "/de/guide.html"
+      },
+      {
+        "text": "Code Referenz",
+        "link": "/de/code-reference/index.html"
+      },
+
+      {
+        "text": "IOS58 Installation",
+        "link": "/de/ios58.html"
+      },
+      {
+        "text": "Sunshine Discord",
+        "link": "https://discord.gg/9dGJWEc"
+      },
+      {
+        "text": "Changelog",
+        "link": "https://github.com/BitPatty/gctGenerator/blob/master/changelog.md"
+      }
+    ]
+  }
+}

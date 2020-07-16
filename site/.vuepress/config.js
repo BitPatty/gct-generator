@@ -1,4 +1,6 @@
 const { description } = require('../../package');
+const themePlugins = require('./data/themePlugins.json');
+const locales = require('./i18n/locales.json');
 
 module.exports = {
   title: 'GCT Generator',
@@ -11,42 +13,34 @@ module.exports = {
   ],
 
   /**
-   * Theme configuration, here is the default theme configuration for VuePress.
-   *
-   * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
+   * Markdown Extensions
+   */
+  markdown: {
+    extendMarkdown: (md) => {
+      md.use(require('markdown-it-attrs'));
+    },
+  },
+
+  /**
+   * Locales
+   */
+  locales,
+
+  /**
+   * Theme Configuration
    */
   themeConfig: {
     repo: 'BitPatty/gctGenerator',
     editLinks: true,
     docsDir: 'site',
-    editLinkText: 'Edit this page on GitHub',
+    docsBranch: 'master',
     lastUpdated: false,
-    nav: [
-      {
-        text: 'Cookbook',
-        link: '/guide.html',
-      },
-      {
-        text: 'Code Reference',
-        link: '/code-reference/index.html',
-      },
-      {
-        text: 'Changelog',
-        link: '/changelog.html',
-      },
-      {
-        text: 'Installing IOS58',
-        link: '/ios58.html',
-      },
-      {
-        text: 'Sunshine Discord',
-        link: 'https://discord.gg/9dGJWEc',
-      },
-    ],
+    locales,
+    plugins: themePlugins,
   },
 
   /**
-   * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
+   * VuePress Plugins
    */
   plugins: ['@vuepress/plugin-back-to-top', '@vuepress/plugin-medium-zoom'],
 };

@@ -1,14 +1,14 @@
 [
   {
     "target": "gct",
-    "name": "GCT"
+    "i18nKey": "generatorconfig.downloadformat.options.gct"
   },
   {
     "target": "dolphin",
-    "name": "Dolphin INI"
+    "i18nKey": "generatorconfig.downloadformat.options.dolphin"
   },
   {
     "target": "gcm",
-    "name": "CheatManager TXT"
+    "i18nKey": "generatorconfig.downloadformat.options.gcm"
   }
 ]

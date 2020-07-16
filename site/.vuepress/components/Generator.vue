@@ -2,15 +2,15 @@
   <div>
     <section class="config">
       <div>
-        <span>Game Version:</span>
+        <span>{{ getLabel('generatorconfig.gameversion.label') }}</span>
         <VersionSelect :onChange="onVersionChanged" :selectedValue="selectedVersion" />
       </div>
       <div>
-        <span>Download Format:</span>
+        <span>{{ getLabel('generatorconfig.downloadformat.label') }}</span>
         <FormatSelect :onChange="onFormatChanged" :selectedValue="selectedFormat" />
       </div>
       <div>
-        <span>Use Stage Loader:</span>
+        <span>{{ getLabel('generatorconfig.usestageloader') }}</span>
         <SelectComponent
           :options="useStageLoaderOptions"
           :onChange="onStageLoaderChanged"
@@ -18,7 +18,7 @@
         />
       </div>
       <div>
-        <span>Download:</span>
+        <span>{{ getLabel('common.download') }}</span>
         <DownloadButton
           :codes="selectedCheats"
           :stageLoaderCode="selectedStageLoader"
@@ -31,7 +31,7 @@
     <hr />
     <section>
       <div v-if="codes && codes.length > 0">
-        <h3>Available Codes</h3>
+        <h3>{{ getLabel('headers.codelist') }}</h3>
         <CodeList
           :codes="codes"
           :onSelectionChanged="onCheatSelectionChanged"
@@ -39,45 +39,41 @@
         />
       </div>
       <div class="prevent-shrink" v-if="codes && codes.length > 0 && useStageLoader">
-        <h3>Stage Loader</h3>
+        <h3>{{ getLabel('headers.stageloader') }}</h3>
         <StageLoader :fastCodes="stageLoaderCodes" :onChange="onStageLoaderCodeChanged" />
       </div>
 
       <div v-if="codes && codes.length > 0" class="help">
-        <h3>Help</h3>
+        <h3>{{ getLabel('headers.help') }}</h3>
         <CodeInfo v-if="!!inspectingCode" :code="inspectingCode" />
-        <div v-else>Select your codes from the list on the left.</div>
+        <div v-else>{{ getLabel('misc.defaulthelpmessage') }}</div>
       </div>
       <div v-if="selectedVersion == null" class="help">
-        <h1>Super Mario Sunshine Practice File Generator</h1>
+        <h1>{{ getLabel('landingpage.title') }}</h1>
         <div>
-          <p>
-            This is a cheatfile generator for Super Mario Sunshine speedrun practice. If this is
-            your first time using the generator we highly recommend to check out the
-            <a href="/guide.html" target="_blank">guide</a> first. Visit the
-            <a href="/guide.html#troubleshooting" target="_blank">the troubleshooting section</a>
-            if you encounter any issues.
-          </p>
+          <p v-html="getLabel('landingpage.summary')" />
           <div>
-            <h3>The SMS Speedrunning Community</h3>
+            <h3>{{ getLabel('landingpage.community') }}</h3>
             <ul>
               <li>
-                <a href="https://discord.gg/9dGJWEc" target="_blank" rel="noopener">Discord</a>
+                <a href="https://discord.gg/9dGJWEc" target="_blank" rel="noopener">
+                  {{ getLabel('landingpage.links.discord') }}
+                </a>
               </li>
               <li>
-                <a href="https://speedrun.com/sms" target="_blank" rel="noopener"
-                  >Speedrun.com Leaderboards</a
-                >
+                <a href="https://speedrun.com/sms" target="_blank" rel="noopener">
+                  {{ getLabel('landingpage.links.src') }}
+                </a>
               </li>
               <li>
-                <a href="https://twitter.com/SMSCommunity" target="_blank" rel="noopener"
-                  >Twitter: @SMSCommunity</a
-                >
+                <a href="https://twitter.com/SMSCommunity" target="_blank" rel="noopener">
+                  {{ getLabel('landingpage.links.twitter') }}
+                </a>
               </li>
               <li>
-                <a href="https://www.twitch.tv/SunshineCommunity" target="_blank" rel="noopener"
-                  >Twitch: SunshineCommunity</a
-                >
+                <a href="https://www.twitch.tv/SunshineCommunity" target="_blank" rel="noopener">
+                  {{ getLabel('landingpage.links.twitch') }}
+                </a>
               </li>
             </ul>
           </div>
@@ -88,21 +84,11 @@
                 >Psychonauter</a
               >,
               <a href="https://twitter.com/Qbe_Root" target="_blank" rel="noopener">Noki Doki</a>
-              and
-              <a href="https://twitter.com/srlMilk" target="_blank" rel="noopener">Milk</a>. The
-              source code is available on
-              <a href="https://github.com/BitPatty/gctGenerator" target="_blank" rel="noopener"
-                >Github</a
-              >.
-            </p>
-            <p>
-              Found a bug? Post a message on the SMS Discord (#hacking) and tag psy#1363. During the
-              transition the old site will still be available at
-              <a href="https://old.gct.zint.ch" target="_blank" rel="noopener"
-                >https://old.gct.zint.ch</a
-              >.
+              &amp;
+              <a href="https://twitter.com/srlMilk" target="_blank" rel="noopener">Milk</a>.
             </p>
           </div>
+          <div class="centered"><a href="/">English</a> | <a href="/de">Deutsch</a></div>
         </div>
       </div>
     </section>
@@ -122,6 +108,9 @@ import DownloadButton from './DownloadButton';
 // Data
 import gameVersions from '../data/gameVersions.json';
 
+// Util
+import { translate } from '../i18n/localeHelper';
+
 export default {
   data() {
     return {
@@ -134,12 +123,15 @@ export default {
       useStageLoader: false,
       stageLoaderCodes: [],
       useStageLoaderOptions: [
-        { value: false, label: 'No' },
-        { value: true, label: 'Yes' },
+        { value: false, label: 'common.no' },
+        { value: true, label: 'common.yes' },
       ],
     };
   },
   methods: {
+    getLabel(key) {
+      return translate(key, this.$lang);
+    },
     onVersionChanged(e) {
       this.selectedVersion = e;
       this.selectedCheats = [];
@@ -197,6 +189,11 @@ section > div:not(:first-child) {
 
 .help {
   text-align: left;
+}
+
+.centered {
+  width: 100%;
+  text-align: center;
 }
 
 @keyframes spinner {

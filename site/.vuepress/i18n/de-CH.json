@@ -1,0 +1,90 @@
+{
+  "common": {
+    "download": "Herunterladen",
+    "yes": "Ja",
+    "no": "Nein",
+    "GMSE01": "GMSE01 (NTSC-U)",
+    "GMSJ01": "GMSJ01 (NTSC-J 1.0)",
+    "GMSJ0A": "GMSJ01 (NTSC-J 1.1)",
+    "GMSP01": "GMSP01 (PAL)"
+  },
+  "headers": {
+    "help": "Hilfe",
+    "codelist": "Verfügbare Codes",
+    "stageloader": "Stage Loader"
+  },
+  "codeinfo": {
+    "author": "Autor:",
+    "authors": "Autoren:",
+    "version": "Version:"
+  },
+  "generatorconfig": {
+    "gameversion": {
+      "label": "Spiel Version:",
+      "placeholder": "Wähle Version.."
+    },
+    "usestageloader": "Stage Loader verwenden:",
+    "downloadformat": {
+      "label": "Download Format:",
+      "options": {
+        "gct": "GCT",
+        "dolphin": "Dolphin INI",
+        "gcm": "CheatManager TXT"
+      }
+    }
+  },
+  "landingpage": {
+    "title": "Super Mario Sunshine Practice File Generator",
+    "summary": "Ein Cheat-Datei-Generator für Super Mario Sunshine Speedruns. Falls du den Generator bisher nie verwendet hast, empfehlen wir dir erst den <a href='/de/guide.html' target='_blank'>Guide</a> durchzulesen. Falls etwas nicht funktioniert findest du im Abschnitt 'Problembehebung' einige Infos.",
+    "community": "Die SMS Speedrunning Community",
+    "links": {
+      "discord": "Discord",
+      "twitter": "Twitter: @SMSCommunity",
+      "twitch": "Twitch: SunshineCommunity",
+      "src": "Speedrun.com Ranglisten"
+    }
+  },
+  "stageloader": {
+    "levelorder": {
+      "label": "Level Reihenfolge:",
+      "options": {
+        "list": "Wie angegeben",
+        "shuffle": "Mixen",
+        "random": "Zufällig"
+      }
+    },
+    "postgame": {
+      "label": "Nach der Route:",
+      "options": {
+        "0F00": "Zurück zum Titelbildschirm",
+        "0109": "Lade die geflutete Plaza",
+        "0102": "Lade Post-Corona Plaza",
+        "3400": "Lade Corona",
+        "3C00": "Lade den Bowserkampf"
+      }
+    },
+    "removedialogue": {
+      "label": "Dialoge entfernen:",
+      "options": {
+        "pv5": "Nicht in Pinna 5",
+        "yes": "Immer",
+        "no": "Nie"
+      }
+    },
+    "skippablefmvs": {
+      "label": "Überspringbare FMVs:",
+      "options": {
+        "pp": "Nicht in Pinna",
+        "yes": "Immer",
+        "no": "Nie"
+      }
+    },
+    "levelselectplaceholder": "Wähle ein Level..",
+    "loadpresetplaceholder": "Lade eine Vorlage..",
+    "route": "Route",
+    "clear": "Liste leeren"
+  },
+  "misc": {
+    "defaulthelpmessage": "Wähle deine Codes von der Liste auf der linken Seite."
+  }
+}

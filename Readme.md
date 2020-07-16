@@ -19,11 +19,7 @@ This repository contains the code behind the Super Mario Sunshine Cheatfile Gene
 
 ### Updating Practice Codes
 
-The codes are stored as XML files (one for each game version) in the [/codes](https://github.com/BitPatty/gctGenerator/tree/master/codes) directory. If you want to add or change codes edit the corresponding XML file. Note that GMSJ0A refers to the NTSC-J 1.1 release of Super Mario Sunshine. (It's not actually called version A but that's what we've been calling it for years due to a misconception on what the A on the back of the box means).
-
-#### Code Removal
-
-Codes are generally not deleted. If you want to remove a code, please comment it out in the corresponding XML file.
+The codes are stored in the `Codes.xml` file. If you want to add or change codes edit the XML file. Note that GMSJ0A refers to the NTSC-J 1.1 release of Super Mario Sunshine. (It's not actually called version A but that's what we've been calling it for years due to a misconception on what the A on the back of the box means).
 
 ### Updating Guides
 
@@ -33,7 +29,7 @@ Note that in the code reference files everything following the `<!-- injectionpo
 
 ### Site Development
 
-If you intend to change site code you need [NodeJS](https://nodejs.org/en/) version 12.18.1 or greater installed on your local.
+If you intend to change site code you need [NodeJS](https://nodejs.org/en/) version 12.18.1 or any later 12.x LTS version installed on your local.
 
 ```sh
 # Install yarn
@@ -56,6 +52,8 @@ The XML codes will be written automatically to the json file and code reference 
 - Building the site with `yarn build`
 
 If you want to inject the codes at any given point you can use `yarn codes:inject`.
+
+**!!! Note that if yarn was used, `yarn codes:clean` is ran automatically as a pre-commit hook, removing all injected codes and staging ALL changes.** If you want to commit changes without cleaning codes first you have to commit through `git commit --no-verify`.
 
 ### Build and preview the site (Docker)
 
