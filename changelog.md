@@ -1,7 +1,3 @@
----
-sidebar: auto
----
-
 # Changelog
 
 ## Jun 25, 2020
