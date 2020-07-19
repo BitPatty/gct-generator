@@ -12,7 +12,7 @@ Ein Leitfaden für die Installation und Anwendung von Super Mario Sunshine Pract
 
 ### Homebrew Installation
 
-Zu Beginn musst du Homebrew auf deiner Wii installieren. Stelle sicher, dass deine SD-Karte zu FAT32 formattiert ist und besuche dann [https://wii.guide/](https://wii.guide/) (Englisch) für einen detaillierten Leitfaden für die installation von Homebrew.
+Zu Beginn musst du Homebrew auf deiner Wii installieren. Stelle sicher, dass deine SD-Karte zu FAT32 formattiert ist und besuche dann [https://wii.guide/de_DE/](https://wii.guide/de_DE/) für einen detaillierten Leitfaden für die installation von Homebrew.
 
 ### Installation der Applikationen
 
