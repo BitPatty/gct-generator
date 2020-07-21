@@ -21,6 +21,8 @@ This repository contains the code behind the Super Mario Sunshine Cheatfile Gene
 
 The codes are stored in the `Codes.xml` file. If you want to add or change codes edit the XML file. Note that GMSJ0A refers to the NTSC-J 1.1 release of Super Mario Sunshine. (It's not actually called version A but that's what we've been calling it for years due to a misconception on what the A on the back of the box means).
 
+When adding new codes keep in mind that the English title/description are mandatory.
+
 ### Updating Guides
 
 You can find the guides in the [site](https://github.com/BitPatty/gctGenerator/tree/master/site) folder. Simply edit the corresponding markdown file (.md).
