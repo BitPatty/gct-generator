@@ -58,9 +58,188 @@
       "options": {
         "0F00": "Zurück zum Titelbildschirm",
         "0109": "Lade die geflutete Plaza",
-        "0102": "Lade Post-Corona Plaza",
-        "3400": "Lade Corona",
+        "0102": "Lade Post-Korona Plaza",
+        "3400": "Lade Korona",
         "3C00": "Lade den Bowserkampf"
+      }
+    },
+    "levels": {
+      "delfinoplaza": {
+        "header": "Isla Delfino",
+        "current": "Delfino - Aktuell",
+        "biancounlock": "Delfino - Bianco Freischaltung",
+        "peachchase": "Delfino - Peach Jagd",
+        "riccounlock": "Delfino - Porto d'Oro / Playa del Sol Freischaltung",
+        "peaceful": "Delfino - Friedlich",
+        "pinnaunlock": "Delfino - Isla Fortuna Unlock",
+        "yoshiunlock": "Delfino - Yoshi / Düsen Freischaltung",
+        "flooded": "Delfino - Geflutet",
+        "postcorona": "Delfino - Post-Korona"
+      },
+      "delfinosublevels": {
+        "header": "Delfino Unterlevel",
+        "airstrip": "Flugplatz",
+        "airstripreds": "Flugplatz (Rote Münzen)",
+        "slide": "Rutsche",
+        "pachinko": "Pachinko",
+        "grasspipe": "Gras-Röhre",
+        "lilypad": "Seerosen-Wildwasserfahrt",
+        "jail": "Gefängnis"
+      },
+      "secrets": {
+        "header": "Geheime Level",
+        "bianco3": "Monte Bianco 3 Geheimnis",
+        "bianco6": "Monte Bianco 6 Geheimnis",
+        "ricco4": "Porto d'Oro 4 Geheimnis",
+        "gelato1": "Playa del Sol 1 Geheimnis",
+        "pinna2": "Isla Fortuna 2 Geheimnis",
+        "pinna6": "Isla Fortuna 6 Geheimnis",
+        "sirena2": "Lido Sirena 2 Geheimnis",
+        "sirena4": "Lido Sirena 4 Geheimnis",
+        "noki6": "Baia Paradiso 6 Geheimnis",
+        "pianta5": "Baia Paradiso 5 Geheimnis"
+      },
+      "sublevels": {
+        "header": "Unterlevel",
+        "petey": "Mutant-Tyranha Kampf (Monte Bianco 2)",
+        "gooperblooper": "Riesen-Blooper Kampf (Porto d'Oro 1)",
+        "sewers": "Blooper-Rennen (Porto d'Oro 2)",
+        "sandbird": "Sandvogel (Playa del Sol 4)",
+        "mecha": "Mecha-Bowser Kampf (Isla Fortuna 1)",
+        "rollercoaster": "Achterbahn (Isla Fortuna 8)",
+        "casino1": "Casino Delfino (Lido Sirena 4)",
+        "casino2": "Casino Delfino (Lido Sirena 5)",
+        "kingboo": "König Buu Huu Kampf (Lido Sirena 5)",
+        "bottle": "Flasche (Baia Paradiso 3)",
+        "eel": "Riesen-Aal (Baia Paradiso 4)",
+        "nokireds": "Baia Paradiso Rote Münzen (Baia Paradiso 8)"
+      },
+      "misc": {
+        "header": "Verschiedenes",
+        "biancoepisodeselect": "Monte Bianco Episodenwahl",
+        "riccoepisodeselect": "Porto d'Oro Episodenwahl",
+        "gelatoepisodeselect": "Playa del Sol Episodenwahl",
+        "pinnaepisodeselect": "Isla Fortuna Episodenwahl",
+        "sirenaepisodeselect": "Lido Sirena Episodenwahl",
+        "nokiepisodeselect": "Baia Paradiso Episodenwahl",
+        "piantaepisodeselect": "Plaza della Palma Episodenwahl"
+      },
+      "bianco": {
+        "header": "Monte Bianco",
+        "1": "Monte Bianco 1",
+        "2": "Monte Bianco 2",
+        "3": "Monte Bianco 3",
+        "4": "Monte Bianco 4",
+        "5": "Monte Bianco 5",
+        "6": "Monte Bianco 6",
+        "7": "Monte Bianco 7",
+        "8": "Monte Bianco 8"
+      },
+      "ricco": {
+        "header": "Porto d'Oro",
+        "1": "Porto d'Oro 1",
+        "2": "Porto d'Oro 2",
+        "3": "Porto d'Oro 3",
+        "4": "Porto d'Oro 4",
+        "5": "Porto d'Oro 5",
+        "6": "Porto d'Oro 6",
+        "7": "Porto d'Oro 7",
+        "8": "Porto d'Oro 8"
+      },
+      "gelato": {
+        "header": "Playa del Sol",
+        "1": "Playa del Sol 1",
+        "2": "Playa del Sol 2",
+        "3": "Playa del Sol 3",
+        "4": "Playa del Sol 4",
+        "5": "Playa del Sol 5",
+        "6": "Playa del Sol 6",
+        "7": "Playa del Sol 7",
+        "8": "Playa del Sol 8"
+      },
+      "pinna": {
+        "header": "Isla Fortuna",
+        "1": "Isla Fortuna 1",
+        "2": "Isla Fortuna 2",
+        "3": "Isla Fortuna 3",
+        "4": "Isla Fortuna 4",
+        "5": "Isla Fortuna 5",
+        "6": "Isla Fortuna 6",
+        "7": "Isla Fortuna 7",
+        "8": "Isla Fortuna 8"
+      },
+      "sirena": {
+        "header": "Lido Sirena",
+        "1": "Lido Sirena 1",
+        "2": "Lido Sirena 2",
+        "3": "Lido Sirena 3",
+        "4": "Lido Sirena 4",
+        "5": "Lido Sirena 5",
+        "6": "Lido Sirena 6",
+        "7": "Lido Sirena 7",
+        "8": "Lido Sirena 8"
+      },
+      "noki": {
+        "header": "Baia Paradiso",
+        "1": "Baia Paradiso 1",
+        "2": "Baia Paradiso 2",
+        "3": "Baia Paradiso 3",
+        "4": "Baia Paradiso 4",
+        "5": "Baia Paradiso 5",
+        "6": "Baia Paradiso 6",
+        "7": "Baia Paradiso 7",
+        "8": "Baia Paradiso 8"
+      },
+      "pianta": {
+        "header": "Plaza della Palma",
+        "1": "Plaza della Palma 1",
+        "2": "Plaza della Palma 2",
+        "3": "Plaza della Palma 3",
+        "4": "Plaza della Palma 4",
+        "5": "Plaza della Palma 5",
+        "6": "Plaza della Palma 6",
+        "7": "Plaza della Palma 7",
+        "8": "Plaza della Palma 8"
+      }
+    },
+    "presets": {
+      "fullgameminimalplaza": {
+        "header": "Komplett-Spiel-Kategorien, ohne Delfino",
+        "fapnormal": "Fast Any% normale Route",
+        "fapriccolate": "Fast Any% Ricco spät",
+        "fap49": "Fast Any% No Major Skips",
+        "fap58": "Fast 58 Shines / All Episodes",
+        "fap79": "Fast 79 Shines / All Level Shines",
+        "fap96": "Fast 96 Shines / All Shines, No Blues"
+      },
+      "fullgamecategories": {
+        "header": "Komplett-Spiel-Kategorien",
+        "anyp": "Any% normale Route",
+        "49": "Any% No Major Skips",
+        "58": "58 Shines / All Episodes",
+        "79": "79 Shines / All Level Shines",
+        "96": "96 Shines / All Shines, No Blues",
+        "120": "120 Shines / All Shines, All Blues"
+      },
+      "iw": {
+        "header": "Individuelle Welten",
+        "bianco": "Monte Bianco",
+        "ricco": "Porto d'Oro",
+        "gelato": "Playa del Sol",
+        "pinna": "Isla Fortuna",
+        "sirena": "Lido Sirena",
+        "noki": "Baia Paradiso",
+        "pianta": "Plaza della Palma"
+      },
+      "iwallshines": {
+        "header": "Individuelle Welten (alle Insignien)",
+        "bianco": "Monte Bianco",
+        "ricco": "Porto d'Oro",
+        "gelato": "Playa del Sol",
+        "pinna": "Isla Fortuna",
+        "sirena": "Lido Sirena",
+        "noki": "Baia Paradiso",
+        "pianta": "Plaza della Palma"
       }
     },
     "removedialogue": {
