@@ -1,163 +1,163 @@
 [
   {
-    "label": "Delfino Plaza",
+    "label": "stageloader.levels.delfinoplaza.header",
     "options": [
-      { "value": "01FF", "label": "Plaza - Current" },
-      { "value": "0100", "label": "Plaza - Bianco unlock" },
-      { "value": "0101", "label": "Plaza - Peach chase" },
-      { "value": "0105", "label": "Plaza - Ricco/Gelato unlocks" },
-      { "value": "0106", "label": "Plaza - Peaceful" },
-      { "value": "0107", "label": "Plaza - Pinna unlock" },
-      { "value": "0108", "label": "Plaza - Yoshi/nozzles unlocks" },
-      { "value": "0109", "label": "Plaza - Flooded" },
-      { "value": "0102", "label": "Plaza - Post-Corona" }
+      { "value": "01FF", "label": "stageloader.levels.delfinoplaza.current" },
+      { "value": "0100", "label": "stageloader.levels.delfinoplaza.biancounlock" },
+      { "value": "0101", "label": "stageloader.levels.delfinoplaza.peachchase" },
+      { "value": "0105", "label": "stageloader.levels.delfinoplaza.riccounlock" },
+      { "value": "0106", "label": "stageloader.levels.delfinoplaza.peaceful" },
+      { "value": "0107", "label": "stageloader.levels.delfinoplaza.pinnaunlock" },
+      { "value": "0108", "label": "stageloader.levels.delfinoplaza.yoshiunlock" },
+      { "value": "0109", "label": "stageloader.levels.delfinoplaza.flooded" },
+      { "value": "0102", "label": "stageloader.levels.delfinoplaza.postcorona" }
     ]
   },
   {
-    "label": "Delfino Plaza sublevels",
+    "label": "stageloader.levels.delfinosublevels.header",
     "options": [
-      { "value": "0000", "label": "Airstrip" },
-      { "value": "1400", "label": "Airstrip (red coins)" },
-      { "value": "1500", "label": "Slide" },
-      { "value": "1600", "label": "Pachinko" },
-      { "value": "1700", "label": "Grass pipe" },
-      { "value": "1800", "label": "Lily Pad Ride" },
-      { "value": "1D00", "label": "Jail secret" }
+      { "value": "0000", "label": "stageloader.levels.delfinosublevels.airstrip" },
+      { "value": "1400", "label": "stageloader.levels.delfinosublevels.airstripreds" },
+      { "value": "1500", "label": "stageloader.levels.delfinosublevels.slide" },
+      { "value": "1600", "label": "stageloader.levels.delfinosublevels.pachinko" },
+      { "value": "1700", "label": "stageloader.levels.delfinosublevels.grasspipe" },
+      { "value": "1800", "label": "stageloader.levels.delfinosublevels.lilypad" },
+      { "value": "1D00", "label": "stageloader.levels.delfinosublevels.jail" }
     ]
   },
   {
-    "label": "Bianco Hills",
+    "label": "stageloader.levels.bianco.header",
     "options": [
-      { "value": "0200", "label": "Bianco 1" },
-      { "value": "0201", "label": "Bianco 2" },
-      { "value": "0202", "label": "Bianco 3" },
-      { "value": "0203", "label": "Bianco 4" },
-      { "value": "0204", "label": "Bianco 5" },
-      { "value": "0205", "label": "Bianco 6" },
-      { "value": "0206", "label": "Bianco 7" },
-      { "value": "0207", "label": "Bianco 8" }
+      { "value": "0200", "label": "stageloader.levels.bianco.1" },
+      { "value": "0201", "label": "stageloader.levels.bianco.2" },
+      { "value": "0202", "label": "stageloader.levels.bianco.3" },
+      { "value": "0203", "label": "stageloader.levels.bianco.4" },
+      { "value": "0204", "label": "stageloader.levels.bianco.5" },
+      { "value": "0205", "label": "stageloader.levels.bianco.6" },
+      { "value": "0206", "label": "stageloader.levels.bianco.7" },
+      { "value": "0207", "label": "stageloader.levels.bianco.8" }
     ]
   },
   {
-    "label": "Ricco Harbor",
+    "label": "stageloader.levels.ricco.header",
     "options": [
-      { "value": "0300", "label": "Ricco 1" },
-      { "value": "0301", "label": "Ricco 2" },
-      { "value": "0302", "label": "Ricco 3" },
-      { "value": "0303", "label": "Ricco 4" },
-      { "value": "0304", "label": "Ricco 5" },
-      { "value": "0305", "label": "Ricco 6" },
-      { "value": "0306", "label": "Ricco 7" },
-      { "value": "0307", "label": "Ricco 8" }
+      { "value": "0300", "label": "stageloader.levels.ricco.1" },
+      { "value": "0301", "label": "stageloader.levels.ricco.2" },
+      { "value": "0302", "label": "stageloader.levels.ricco.3" },
+      { "value": "0303", "label": "stageloader.levels.ricco.4" },
+      { "value": "0304", "label": "stageloader.levels.ricco.5" },
+      { "value": "0305", "label": "stageloader.levels.ricco.6" },
+      { "value": "0306", "label": "stageloader.levels.ricco.7" },
+      { "value": "0307", "label": "stageloader.levels.ricco.8" }
     ]
   },
   {
-    "label": "Gelato Beach",
+    "label": "stageloader.levels.gelato.header",
     "options": [
-      { "value": "0400", "label": "Gelato 1" },
-      { "value": "0401", "label": "Gelato 2" },
-      { "value": "0402", "label": "Gelato 3" },
-      { "value": "0403", "label": "Gelato 4" },
-      { "value": "0404", "label": "Gelato 5" },
-      { "value": "0405", "label": "Gelato 6" },
-      { "value": "0406", "label": "Gelato 7" },
-      { "value": "0407", "label": "Gelato 8" }
+      { "value": "0400", "label": "stageloader.levels.gelato.1" },
+      { "value": "0401", "label": "stageloader.levels.gelato.2" },
+      { "value": "0402", "label": "stageloader.levels.gelato.3" },
+      { "value": "0403", "label": "stageloader.levels.gelato.4" },
+      { "value": "0404", "label": "stageloader.levels.gelato.5" },
+      { "value": "0405", "label": "stageloader.levels.gelato.6" },
+      { "value": "0406", "label": "stageloader.levels.gelato.7" },
+      { "value": "0407", "label": "stageloader.levels.gelato.8" }
     ]
   },
   {
-    "label": "Pinna Park",
+    "label": "stageloader.levels.pinna.header",
     "options": [
-      { "value": "0500", "label": "Pinna 1" },
-      { "value": "0501", "label": "Pinna 2" },
-      { "value": "0502", "label": "Pinna 3" },
-      { "value": "0503", "label": "Pinna 4" },
-      { "value": "0504", "label": "Pinna 5" },
-      { "value": "0505", "label": "Pinna 6" },
-      { "value": "0506", "label": "Pinna 7" },
-      { "value": "0507", "label": "Pinna 8" }
+      { "value": "0500", "label": "stageloader.levels.pinna.1" },
+      { "value": "0501", "label": "stageloader.levels.pinna.2" },
+      { "value": "0502", "label": "stageloader.levels.pinna.3" },
+      { "value": "0503", "label": "stageloader.levels.pinna.4" },
+      { "value": "0504", "label": "stageloader.levels.pinna.5" },
+      { "value": "0505", "label": "stageloader.levels.pinna.6" },
+      { "value": "0506", "label": "stageloader.levels.pinna.7" },
+      { "value": "0507", "label": "stageloader.levels.pinna.8" }
     ]
   },
   {
-    "label": "Sirena Beach",
+    "label": "stageloader.levels.sirena.header",
     "options": [
-      { "value": "0600", "label": "Sirena 1" },
-      { "value": "0601", "label": "Sirena 2" },
-      { "value": "0602", "label": "Sirena 3" },
-      { "value": "0603", "label": "Sirena 4" },
-      { "value": "0604", "label": "Sirena 5" },
-      { "value": "0605", "label": "Sirena 6" },
-      { "value": "0606", "label": "Sirena 7" },
-      { "value": "0607", "label": "Sirena 8" }
+      { "value": "0600", "label": "stageloader.levels.sirena.1" },
+      { "value": "0601", "label": "stageloader.levels.sirena.2" },
+      { "value": "0602", "label": "stageloader.levels.sirena.3" },
+      { "value": "0603", "label": "stageloader.levels.sirena.4" },
+      { "value": "0604", "label": "stageloader.levels.sirena.5" },
+      { "value": "0605", "label": "stageloader.levels.sirena.6" },
+      { "value": "0606", "label": "stageloader.levels.sirena.7" },
+      { "value": "0607", "label": "stageloader.levels.sirena.8" }
     ]
   },
   {
-    "label": "Noki Bay",
+    "label": "stageloader.levels.noki.header",
     "options": [
-      { "value": "0900", "label": "Noki 1" },
-      { "value": "0901", "label": "Noki 2" },
-      { "value": "0902", "label": "Noki 3" },
-      { "value": "0903", "label": "Noki 4" },
-      { "value": "0904", "label": "Noki 5" },
-      { "value": "0905", "label": "Noki 6" },
-      { "value": "0906", "label": "Noki 7" },
-      { "value": "0907", "label": "Noki 8" }
+      { "value": "0900", "label": "stageloader.levels.noki.1" },
+      { "value": "0901", "label": "stageloader.levels.noki.2" },
+      { "value": "0902", "label": "stageloader.levels.noki.3" },
+      { "value": "0903", "label": "stageloader.levels.noki.4" },
+      { "value": "0904", "label": "stageloader.levels.noki.5" },
+      { "value": "0905", "label": "stageloader.levels.noki.6" },
+      { "value": "0906", "label": "stageloader.levels.noki.7" },
+      { "value": "0907", "label": "stageloader.levels.noki.8" }
     ]
   },
   {
-    "label": "Pianta Village",
+    "label": "stageloader.levels.pianta.header",
     "options": [
-      { "value": "0800", "label": "Pianta 1" },
-      { "value": "0801", "label": "Pianta 2" },
-      { "value": "0802", "label": "Pianta 3" },
-      { "value": "0803", "label": "Pianta 4" },
-      { "value": "0804", "label": "Pianta 5" },
-      { "value": "0805", "label": "Pianta 6" },
-      { "value": "0806", "label": "Pianta 7" },
-      { "value": "0807", "label": "Pianta 8" }
+      { "value": "0800", "label": "stageloader.levels.pianta.1" },
+      { "value": "0801", "label": "stageloader.levels.pianta.2" },
+      { "value": "0802", "label": "stageloader.levels.pianta.3" },
+      { "value": "0803", "label": "stageloader.levels.pianta.4" },
+      { "value": "0804", "label": "stageloader.levels.pianta.5" },
+      { "value": "0805", "label": "stageloader.levels.pianta.6" },
+      { "value": "0806", "label": "stageloader.levels.pianta.7" },
+      { "value": "0807", "label": "stageloader.levels.pianta.8" }
     ]
   },
   {
-    "label": "Secret areas",
+    "label": "stageloader.levels.secrets.header",
     "options": [
-      { "value": "2F00", "label": "Bianco 3 secret" },
-      { "value": "2E00", "label": "Bianco 6 secret" },
-      { "value": "3000", "label": "Ricco 4 secret" },
-      { "value": "2000", "label": "Gelato 1 secret" },
-      { "value": "3200", "label": "Pinna 2 secret" },
-      { "value": "2900", "label": "Pinna 6 secret" },
-      { "value": "3300", "label": "Sirena 2 secret" },
-      { "value": "2800", "label": "Sirena 4 secret" },
-      { "value": "1F00", "label": "Noki 6 secret" },
-      { "value": "2A00", "label": "Pianta 5 secret" }
+      { "value": "2F00", "label": "stageloader.levels.secrets.bianco3" },
+      { "value": "2E00", "label": "stageloader.levels.secrets.bianco6" },
+      { "value": "3000", "label": "stageloader.levels.secrets.ricco4" },
+      { "value": "2000", "label": "stageloader.levels.secrets.gelato1" },
+      { "value": "3200", "label": "stageloader.levels.secrets.pinna2" },
+      { "value": "2900", "label": "stageloader.levels.secrets.pinna6" },
+      { "value": "3300", "label": "stageloader.levels.secrets.sirena2" },
+      { "value": "2800", "label": "stageloader.levels.secrets.sirena4" },
+      { "value": "1F00", "label": "stageloader.levels.secrets.noki6" },
+      { "value": "2A00", "label": "stageloader.levels.secrets.pianta5" }
     ]
   },
   {
-    "label": "Sublevels",
+    "label": "stageloader.levels.sublevels.header",
     "options": [
-      { "value": "3700", "label": "Petey Piranha fight (Bianco 2)" },
-      { "value": "3B00", "label": "Gooper Blooper fight (Ricco 1)" },
-      { "value": "1E00", "label": "Race course (Ricco 2)" },
-      { "value": "2100", "label": "Sand bird (Gelato 4)" },
-      { "value": "3A01", "label": "Mecha-Bowser fight (Pinna 1)" },
-      { "value": "3A00", "label": "Rollercoaster (Pinna 8)" },
-      { "value": "0E00", "label": "Casino Delfino (Sirena 4)" },
-      { "value": "0E01", "label": "Casino Delfino (Sirena 5)" },
-      { "value": "3800", "label": "King Boo fight (Sirena 5)" },
-      { "value": "2C00", "label": "Bottle (Noki 3)" },
-      { "value": "3900", "label": "Deep Sea of Mare (Noki 4)" },
-      { "value": "1000", "label": "Deep Sea of Mare (Noki 8)" }
+      { "value": "3700", "label": "stageloader.levels.sublevels.petey" },
+      { "value": "3B00", "label": "stageloader.levels.sublevels.gooperblooper" },
+      { "value": "1E00", "label": "stageloader.levels.sublevels.sewers" },
+      { "value": "2100", "label": "stageloader.levels.sublevels.sandbird" },
+      { "value": "3A01", "label": "stageloader.levels.sublevels.mecha" },
+      { "value": "3A00", "label": "stageloader.levels.sublevels.rollercoaster" },
+      { "value": "0E00", "label": "stageloader.levels.sublevels.casino1" },
+      { "value": "0E01", "label": "stageloader.levels.sublevels.casino2" },
+      { "value": "3800", "label": "stageloader.levels.sublevels.kingboo" },
+      { "value": "2C00", "label": "stageloader.levels.sublevels.bottle" },
+      { "value": "3900", "label": "stageloader.levels.sublevels.eel" },
+      { "value": "1000", "label": "stageloader.levels.sublevels.nokireds" }
     ]
   },
   {
-    "label": "Miscellaneous",
+    "label": "stageloader.levels.misc.header",
     "options": [
-      { "value": "02FF", "label": "Bianco episode selection" },
-      { "value": "03FF", "label": "Ricco episode selection" },
-      { "value": "04FF", "label": "Gelato episode selection" },
-      { "value": "05FF", "label": "Pinna episode selection" },
-      { "value": "06FF", "label": "Sirena episode selection" },
-      { "value": "09FF", "label": "Noki episode selection" },
-      { "value": "08FF", "label": "Pianta episode selection" }
+      { "value": "02FF", "label": "stageloader.levels.misc.biancoepisodeselect" },
+      { "value": "03FF", "label": "stageloader.levels.misc.riccoepisodeselect" },
+      { "value": "04FF", "label": "stageloader.levels.misc.gelatoepisodeselect" },
+      { "value": "05FF", "label": "stageloader.levels.misc.pinnaepisodeselect" },
+      { "value": "06FF", "label": "stageloader.levels.misc.sirenaepisodeselect" },
+      { "value": "09FF", "label": "stageloader.levels.misc.nokiepisodeselect" },
+      { "value": "08FF", "label": "stageloader.levels.misc.piantaepisodeselect" }
     ]
   }
 ]

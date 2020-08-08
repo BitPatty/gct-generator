@@ -1,15 +1,15 @@
 <template>
   <div class="select-wrapper">
     <select @change="onValueChanged" autocomplete="off">
-      <option v-if="placeholder != null" value="placeholder" selected disabled>{{
-        placeholder
-      }}</option>
-      <optgroup v-for="optGroup in optGroups" :label="optGroup.label">
+      <option v-if="placeholder != null" value="placeholder" selected disabled>
+        {{ placeholder }}
+      </option>
+      <optgroup v-for="optGroup in optGroups" :label="getLabel(optGroup.label)">
         <option
           v-for="option in optGroup.options"
           :value="option.value"
           :selected="selectedValue && option.value === selectedValue"
-          >{{ option.label }}</option
+          >{{ getLabel(option.label) }}</option
         >
       </optgroup>
     </select>
@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import { translate } from '../i18n/localeHelper';
+
 export default {
   props: {
     selectedValue: { type: String },
@@ -31,6 +33,9 @@ export default {
     };
   },
   methods: {
+    getLabel(key) {
+      return translate(key, this.$lang);
+    },
     onValueChanged(e) {
       this.onChange(e.target.value);
     },
