@@ -52,8 +52,8 @@ translations.forEach((t) => {
     const value = getNestedProperty(t.values, p);
     if (value == null || typeof value !== 'string') {
       console.warn(`${t.lang} is missing a translation at '${p}'`);
-      console.warn(
-        `::warning file=compare_translations.js,line=55,col=6::${t.lang} is missing a translation at '${p}'`,
+      console.log(
+        `::warning file=compare_translations.js::${t.lang} is missing a translation at '${p}'`,
       );
     }
   });

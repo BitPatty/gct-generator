@@ -103,8 +103,8 @@ const validateXML = (xmlString) => {
         console.warn(
           `Missing title translation for code '${codeTitle.textContent}' and locale ${localeIdentifiers[j]}`,
         );
-        console.warn(
-          `::warning file=inject_codes.js,line=107,col=10::Missing title translation for code '${codeTitle.textContent}' and locale ${localeIdentifiers[j]}`,
+        console.log(
+          `::warning file=inject_codes.js::Missing title translation for code '${codeTitle.textContent}' and locale ${localeIdentifiers[j]}`,
         );
       }
 
@@ -118,8 +118,8 @@ const validateXML = (xmlString) => {
         console.warn(
           `Missing description translation for code '${codeTitle.textContent}' and locale ${localeIdentifiers[j]}`,
         );
-        console.warn(
-          `::warning file=inject_codes.js,line=122,col=10::Missing description translation for code '${codeTitle.textContent}' and locale ${localeIdentifiers[j]}`,
+        console.log(
+          `::warning file=inject_codes.js::Missing description translation for code '${codeTitle.textContent}' and locale ${localeIdentifiers[j]}`,
         );
       }
 
@@ -136,8 +136,8 @@ const validateXML = (xmlString) => {
         console.warn(
           `Missing source on code '${codeTitle.textContent}' for version ${CODE_VERSIONS[j]}`,
         );
-        console.warn(
-          `::warning file=inject_codes.js,line=140,col=10::Missing source on code '${codeTitle.textContent}' for version ${CODE_VERSIONS[j]}`,
+        console.log(
+          `::warning file=inject_codes.js::Missing source on code '${codeTitle.textContent}' for version ${CODE_VERSIONS[j]}`,
         );
       }
 
@@ -168,8 +168,8 @@ const readTextNode = (node, identifier, lang = null, fallbackLang = null) => {
 
   const codeTitle = node.querySelector(`title[lang='en-US']`);
   console.warn(`No translation found for code '${codeTitle.textContent}' for locale ${lang}`);
-  console.warn(
-    `::warning file=inject_codes.js,line=172,col=6::No translation found for code '${codeTitle.textContent}' for locale ${lang}`,
+  console.log(
+    `::warning file=inject_codes.js::No translation found for code '${codeTitle.textContent}' for locale ${lang}`,
   );
 
   if (!fallbackLang) throw new Error(`No localized ${identifier} found on ${node.textContent}`);
