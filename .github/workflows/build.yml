@@ -1,0 +1,16 @@
+name: Pull Request
+
+on:
+  push:
+    branches:
+      - '*'
+      - '!master'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Create a new build
+        run: docker build -t publisher:latest -f ./dockerfiles/Deploy.Dockerfile .
