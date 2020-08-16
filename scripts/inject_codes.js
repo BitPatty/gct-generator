@@ -103,6 +103,9 @@ const validateXML = (xmlString) => {
         console.warn(
           `Missing title translation for code '${codeTitle.textContent}' and locale ${localeIdentifiers[j]}`,
         );
+        console.warn(
+          `::warning file=inject_codes.js,line=107,col=10::Missing title translation for code '${codeTitle.textContent}' and locale ${localeIdentifiers[j]}`,
+        );
       }
 
       if (codes[i].querySelectorAll(`title[lang='${localeIdentifiers[j]}']`).length > 1) {
@@ -115,6 +118,9 @@ const validateXML = (xmlString) => {
         console.warn(
           `Missing description translation for code '${codeTitle.textContent}' and locale ${localeIdentifiers[j]}`,
         );
+        console.warn(
+          `::warning file=inject_codes.js,line=122,col=10::Missing description translation for code '${codeTitle.textContent}' and locale ${localeIdentifiers[j]}`,
+        );
       }
 
       if (codes[i].querySelectorAll(`description[lang='${localeIdentifiers[j]}']`).length > 1) {
@@ -126,10 +132,14 @@ const validateXML = (xmlString) => {
 
     // All sources have a unique valid version attribute
     for (let j = 0; j < CODE_VERSIONS.length; j++) {
-      if (codes[i].querySelectorAll(`source[version='${CODE_VERSIONS[j]}']`).length === 0)
+      if (codes[i].querySelectorAll(`source[version='${CODE_VERSIONS[j]}']`).length === 0) {
         console.warn(
           `Missing source on code '${codeTitle.textContent}' for version ${CODE_VERSIONS[j]}`,
         );
+        console.warn(
+          `::warning file=inject_codes.js,line=140,col=10::Missing source on code '${codeTitle.textContent}' for version ${CODE_VERSIONS[j]}`,
+        );
+      }
 
       if (codes[i].querySelectorAll(`source[version='${CODE_VERSIONS[j]}']`).length > 1)
         throw new Error(
@@ -158,6 +168,9 @@ const readTextNode = (node, identifier, lang = null, fallbackLang = null) => {
 
   const codeTitle = node.querySelector(`title[lang='en-US']`);
   console.warn(`No translation found for code '${codeTitle.textContent}' for locale ${lang}`);
+  console.warn(
+    `::warning file=inject_codes.js,line=172,col=6::No translation found for code '${codeTitle.textContent}' for locale ${lang}`,
+  );
 
   if (!fallbackLang) throw new Error(`No localized ${identifier} found on ${node.textContent}`);
   const fallbackElement = node.querySelector(`${identifier}[lang='${fallbackLang}']`);
