@@ -976,7 +976,7 @@
         <version>1.14</version>
         <date>May 8, 2020</date>
         <description lang="en-US">
-            Allows warping to other levels when starting a file or when exiting level by holding the combination until the screen turns black. 
+            Allows warping to other levels when starting a file or when exiting a level by holding the combination until the screen turns black. 
             
             ::: warning
             This code is not compatible with the Fast Any%, Stage Loader or Stage Randomizer code. 
