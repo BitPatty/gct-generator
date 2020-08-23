@@ -23,6 +23,15 @@ The codes are stored in the `Codes.xml` file. If you want to add or change codes
 
 When adding new codes keep in mind that the English title/description are mandatory.
 
+### Adding translations
+
+1. Create a new file `<lang>.json` in `site/.vuepress/i18n`, where `<lang>` is the language code you want to add. Copy the contents of `en-US.json` into your file and translate each entry in the JSON file.
+2. Create a new folder with your language code in `site` (such as `site/de` for German). Create a new markdown file for each existing page (`guide.md`, `index.md`, `ios58.md`, ...) and translate its contents from the English version.
+3. Create a new entry in `site/.vuepress/i18n/locales.json` with the site metadata and navigation items for your language.
+4. Open `Codes.xml` and add a translation for each code (`<title>` and `<description>`).
+
+##### Guide translations
+
 ### Updating Guides
 
 You can find the guides in the [site](https://github.com/BitPatty/gctGenerator/tree/master/site) folder. Simply edit the corresponding markdown file (.md).
