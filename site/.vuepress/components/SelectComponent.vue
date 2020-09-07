@@ -8,8 +8,9 @@
         v-for="option in options"
         :value="option.value"
         :selected="selectedValue && option.value === selectedValue"
-        >{{ getLabel(option.label) }}</option
       >
+        {{ getLabel(option.label) }}
+      </option>
     </select>
   </div>
 </template>
