@@ -51,8 +51,6 @@ Open your Homebrew channel and from there launch Nintendont. Select SD and then 
 
 ![Enabling Cheats in Nintendont](/img/nintendont_cheats.jpg)
 
-<!-- image -->
-
 Press B again to return to the game list and launch your game. And with that you're done already.
 
 ## Troubleshooting
