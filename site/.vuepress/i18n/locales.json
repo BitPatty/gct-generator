@@ -2,7 +2,7 @@
   "/": {
     "lang": "en-US",
     "title": "GCT Generator",
-    "selectText": "Language",
+    "selectText": "🌐 Language",
     "label": "English",
     "ariaLabel": "Language",
     "editLinkText": "Edit this page on GitHub",
@@ -32,7 +32,7 @@
   "/de/": {
     "lang": "de-CH",
     "title": "GCT Generator",
-    "selectText": "Sprache",
+    "selectText": "🌐 Sprache",
     "label": "Deutsch",
     "ariaLabel": "Sprache",
     "editLinkText": "Bearbeite diese Seite auf GitHub",
@@ -64,7 +64,7 @@
   "/ja/": {
     "lang": "ja-JP",
     "title": "GCT Generator",
-    "selectText": "他言語版",
+    "selectText": "🌐 他言語版",
     "label": "聖座",
     "ariaLabel": "他言語版",
     "editLinkText": "ギットハブでこのページを編集",
