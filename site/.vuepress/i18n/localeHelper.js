@@ -1,9 +1,11 @@
 import enUS from './en-US.json';
 import deCH from './de-CH.json';
+import jaJP from './ja-JP.json';
 
 const translations = {
   enUS,
   deCH,
+  jaJP,
 };
 
 const getNestedProp = (obj, path) => {
