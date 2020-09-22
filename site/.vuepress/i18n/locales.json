@@ -60,5 +60,37 @@
         "link": "https://github.com/BitPatty/gctGenerator/blob/master/changelog.md"
       }
     ]
+  },
+  "/ja/": {
+    "lang": "ja-JP",
+    "title": "GCT Generator",
+    "selectText": "他言語版",
+    "label": "聖座",
+    "ariaLabel": "他言語版",
+    "editLinkText": "ギットハブでこのページを編集",
+    "activeHeaderLinks": false,
+    "nav": [
+      {
+        "text": "クックブック",
+        "link": "/ja/guide.html"
+      },
+      {
+        "text": "コードリファレンス",
+        "link": "/ja/code-reference/index.html"
+      },
+
+      {
+        "text": "インストールすIOS58",
+        "link": "/ja/ios58.html"
+      },
+      {
+        "text": "Discord",
+        "link": "https://discord.gg/9dGJWEc"
+      },
+      {
+        "text": "変更ログ",
+        "link": "https://github.com/BitPatty/gctGenerator/blob/master/changelog.md"
+      }
+    ]
   }
 }
