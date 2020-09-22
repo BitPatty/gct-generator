@@ -1,0 +1,269 @@
+{
+  "common": {
+    "download": "ダウンロード",
+    "yes": "Yes",
+    "no": "No",
+    "GMSE01": "GMSE01 (NTSC-U)",
+    "GMSJ01": "GMSJ01 (NTSC-J 1.0)",
+    "GMSJ0A": "GMSJ01 (NTSC-J 1.1)",
+    "GMSP01": "GMSP01 (PAL)"
+  },
+  "headers": {
+    "codelist": "利用可能なコード",
+    "help": "説明",
+    "stageloader": "Stage Loader"
+  },
+  "codeinfo": {
+    "author": "Author:",
+    "authors": "Authors:",
+    "version": "Version:"
+  },
+  "generatorconfig": {
+    "gameversion": {
+      "label": "ゲームバージョン",
+      "placeholder": "バージョンを選択…"
+    },
+    "usestageloader": "ステージローダーを使用する",
+    "downloadformat": {
+      "label": "ダウンロードフォーマット",
+      "options": {
+        "gct": "GCT",
+        "dolphin": "Dolphin INI",
+        "gcm": "CheatManager TXT"
+      }
+    }
+  },
+  "landingpage": {
+    "title": "スーパーマリオサンシャイン練習ファイルジェネレータ",
+    "summary": "これはスーパーマリオサンシャインスピードランの練習のためのチートファイルジェネレーターです。 これは発電機を使用して、あなたの最初の時間であれば我々は非常に最初のガイドをチェックアウトすることをお勧めします。問題が発生した場合は<a href='/ja/guide.html#ゲームの発売が、コードは仕事をしないでください' target='_blank'>トラブルシューティングセクション</a>にアクセスしてください。",
+    "community": "The SMS Speedrunning Community",
+    "links": {
+      "discord": "Discord",
+      "twitter": "ツイッター：@SMSCommunity",
+      "twitch": "Twitch：SunshineCommunity",
+      "src": "Speedrun.comリーダーボード"
+    }
+  },
+  "stageloader": {
+    "levelorder": {
+      "label": "レベル順",
+      "options": {
+        "list": "指定どおり",
+        "shuffle": "ランダム、重複なし",
+        "random": "完全ランダム"
+      }
+    },
+    "removedialogue": {
+      "label": "ダイアログを削除",
+      "options": {
+        "pv5": "にはありませんピンナ5",
+        "yes": "いつも",
+        "no": "しない含めます"
+      }
+    },
+    "skippablefmvs": {
+      "label": "スキップ フルモーションビデオ",
+      "options": {
+        "pp": "にはありませんピンナ",
+        "yes": "いつも",
+        "no": "しない含めます"
+      }
+    },
+    "postgame": {
+      "label": "ポストゲーム",
+      "options": {
+        "0F00": "タイトル画面に戻る",
+        "0109": "浸水プラザをロード",
+        "0102": "負荷ポストコロナプラザ",
+        "3400": "Load Corona Montain",
+        "3C00": "負荷ポストコロナプラザ"
+      }
+    },
+    "levels": {
+      "delfinoplaza": {
+        "header": "Delfino Plaza",
+        "current": "Plaza - Current",
+        "biancounlock": "Plaza - Bianco Unlock",
+        "peachchase": "Plaza - Peach Chase",
+        "riccounlock": "Plaza - Ricco / Gelato unlocks",
+        "peaceful": "Plaza - Peaceful",
+        "pinnaunlock": "Plaza - Pinna Unlock",
+        "yoshiunlock": "Plaza - Yoshi / nozzles unlocks",
+        "flooded": "Plaza - Flooded",
+        "postcorona": "Plaza - Post-Corona"
+      },
+      "delfinosublevels": {
+        "header": "Delfino Plaza Sublevels",
+        "airstrip": "Airstrip",
+        "airstripreds": "Airstrip (red coins)",
+        "slide": "Slide",
+        "pachinko": "Pachinko",
+        "grasspipe": "Grass pipe",
+        "lilypad": "Lily Pad Ride",
+        "jail": "Jail Secret"
+      },
+      "secrets": {
+        "header": "Secret Areas",
+        "bianco3": "Bianco 3 Secret",
+        "bianco6": "Bianco 6 Secret",
+        "ricco4": "Ricco 4 Secret",
+        "gelato1": "Gelato 1 Secret",
+        "pinna2": "Pinna 2 Secret",
+        "pinna6": "Pinna 6 Secret",
+        "sirena2": "Sirena 2 Secret",
+        "sirena4": "Sirena 4 Secret",
+        "noki6": "Noki 6 Secret",
+        "pianta5": "Pianta 5 Secret"
+      },
+      "sublevels": {
+        "header": "Sublevels",
+        "petey": "Petey Piranha fight (Bianco 2)",
+        "gooperblooper": "Gooper Blooper fight (Ricco 1)",
+        "sewers": "Race course (Ricco 2)",
+        "sandbird": "Sand bird (Gelato 4)",
+        "mecha": "Mecha-Bowser fight (Pinna 1)",
+        "rollercoaster": "Rollercoaster (Pinna 8)",
+        "casino1": "Casino Delfino (Sirena 4)",
+        "casino2": "Casino Delfino (Sirena 5)",
+        "kingboo": "King Boo fight (Sirena 5)",
+        "bottle": "Bottle (Noki 3)",
+        "eel": "Deep Sea of Mare (Noki 4)",
+        "nokireds": "Deep Sea of Mare (Noki 8)"
+      },
+      "misc": {
+        "header": "Miscelleaneous",
+        "biancoepisodeselect": "Bianco episode selection",
+        "riccoepisodeselect": "Ricco episode selection",
+        "gelatoepisodeselect": "Gelato episode selection",
+        "pinnaepisodeselect": "Pinna episode selection",
+        "sirenaepisodeselect": "Sirena episode selection",
+        "nokiepisodeselect": "Noki episode selection",
+        "piantaepisodeselect": "Pianta episode selection"
+      },
+      "bianco": {
+        "header": "Bianco Hills",
+        "1": "Bianco 1",
+        "2": "Bianco 2",
+        "3": "Bianco 3",
+        "4": "Bianco 4",
+        "5": "Bianco 5",
+        "6": "Bianco 6",
+        "7": "Bianco 7",
+        "8": "Bianco 8"
+      },
+      "ricco": {
+        "header": "Ricco Harbor",
+        "1": "Ricco 1",
+        "2": "Ricco 2",
+        "3": "Ricco 3",
+        "4": "Ricco 4",
+        "5": "Ricco 5",
+        "6": "Ricco 6",
+        "7": "Ricco 7",
+        "8": "Ricco 8"
+      },
+      "gelato": {
+        "header": "Gelato Beach",
+        "1": "Gelato 1",
+        "2": "Gelato 2",
+        "3": "Gelato 3",
+        "4": "Gelato 4",
+        "5": "Gelato 5",
+        "6": "Gelato 6",
+        "7": "Gelato 7",
+        "8": "Gelato 8"
+      },
+      "pinna": {
+        "header": "Pinna Park",
+        "1": "Pinna 1",
+        "2": "Pinna 2",
+        "3": "Pinna 3",
+        "4": "Pinna 4",
+        "5": "Pinna 5",
+        "6": "Pinna 6",
+        "7": "Pinna 7",
+        "8": "Pinna 8"
+      },
+      "sirena": {
+        "header": "Sirena Beach",
+        "1": "Sirena 1",
+        "2": "Sirena 2",
+        "3": "Sirena 3",
+        "4": "Sirena 4",
+        "5": "Sirena 5",
+        "6": "Sirena 6",
+        "7": "Sirena 7",
+        "8": "Sirena 8"
+      },
+      "noki": {
+        "header": "Noki Bay",
+        "1": "Noki 1",
+        "2": "Noki 2",
+        "3": "Noki 3",
+        "4": "Noki 4",
+        "5": "Noki 5",
+        "6": "Noki 6",
+        "7": "Noki 7",
+        "8": "Noki 8"
+      },
+      "pianta": {
+        "header": "Pianta Village",
+        "1": "Pianta 1",
+        "2": "Pianta 2",
+        "3": "Pianta 3",
+        "4": "Pianta 4",
+        "5": "Pianta 5",
+        "6": "Pianta 6",
+        "7": "Pianta 7",
+        "8": "Pianta 8"
+      }
+    },
+    "presets": {
+      "fullgameminimalplaza": {
+        "header": "Full-game categories, minimal plaza",
+        "fapnormal": "Fast Any% usual route",
+        "fapriccolate": "Fast Any% Ricco late",
+        "fap49": "Fast Any% No Major Skips",
+        "fap58": "Fast 58 Shines / All Episodes",
+        "fap79": "Fast 79 Shines / All Level Shines",
+        "fap96": "Fast 96 Shines / All Shines, No Blues"
+      },
+      "fullgamecategories": {
+        "header": "Full-game categories",
+        "anyp": "Any% usual route",
+        "49": "Any% No Major Skips",
+        "58": "58 Shines / All Episodes",
+        "79": "79 Shines / All Level Shines",
+        "96": "96 Shines / All Shines, No Blues",
+        "120": "120 Shines / All Shines, All Blues"
+      },
+      "iw": {
+        "header": "Individual Worlds",
+        "bianco": "Bianco Hills",
+        "ricco": "Ricco Harbor",
+        "gelato": "Gelato Beach",
+        "pinna": "Pinna Park",
+        "sirena": "Sirena Beach",
+        "noki": "Noki Bay",
+        "pianta": "Pianta Village"
+      },
+      "iwallshines": {
+        "header": "Individual Worlds (all Shines)",
+        "bianco": "Bianco Hills",
+        "ricco": "Ricco Harbor",
+        "gelato": "Gelato Beach",
+        "pinna": "Pinna Park",
+        "sirena": "Sirena Beach",
+        "noki": "Noki Bay",
+        "pianta": "Pianta Village"
+      }
+    },
+    "levelselectplaceholder": "レベルを選択します。..",
+    "loadpresetplaceholder": "プレゼントをロードします。..",
+    "route": "経路",
+    "clear": "リストをクリア"
+  },
+  "misc": {
+    "defaulthelpmessage": "Select your codes from the list on the left."
+  }
+}
