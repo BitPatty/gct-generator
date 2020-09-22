@@ -14,9 +14,9 @@
     "stageloader": "Stage Loader"
   },
   "codeinfo": {
-    "author": "Author:",
-    "authors": "Authors:",
-    "version": "Version:"
+    "author": "作者:",
+    "authors": "作者:",
+    "version": "バージョン:"
   },
   "generatorconfig": {
     "gameversion": {
