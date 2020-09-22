@@ -88,7 +88,9 @@
               <a href="https://twitter.com/srlMilk" target="_blank" rel="noopener">Milk</a>.
             </p>
           </div>
-          <div class="centered"><a href="/">English</a> | <a href="/de">Deutsch</a></div>
+          <div class="centered">
+            <a href="/">English</a> | <a href="/ja">聖座</a> | <a href="/de">Deutsch</a>
+          </div>
         </div>
       </div>
     </section>
