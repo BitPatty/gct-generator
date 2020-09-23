@@ -64,23 +64,23 @@
   "/ja/": {
     "lang": "ja-JP",
     "title": "GCT Generator",
-    "selectText": "🌐 他言語版",
-    "label": "聖座",
-    "ariaLabel": "他言語版",
-    "editLinkText": "ギットハブでこのページを編集",
+    "selectText": "🌐 言語設定",
+    "label": "日本語",
+    "ariaLabel": "言語設定",
+    "editLinkText": "GitHubでこのページを編集",
     "activeHeaderLinks": false,
     "nav": [
       {
-        "text": "クックブック",
+        "text": "導入ガイド",
         "link": "/ja/guide.html"
       },
       {
-        "text": "コードリファレンス",
+        "text": "チートコード一覧",
         "link": "/ja/code-reference/index.html"
       },
 
       {
-        "text": "インストールすIOS58",
+        "text": "IOS58のインストール",
         "link": "/ja/ios58.html"
       },
       {
