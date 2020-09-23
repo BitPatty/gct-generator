@@ -35,7 +35,7 @@
   },
   "landingpage": {
     "title": "スーパーマリオサンシャイン練習用ファイルジェネレータ",
-    "summary": "スーパーマリオサンシャインRTAの練習用のチートファイルジェネレータです。初めてジェネレータを使う場合は、<a href='ja/guide.html' target='_blank'>ガイド</a>の参照を強くオススメします。問題が発生した場合は<a href='ja/guide.html#トラブルシューティング' target='_blank'>トラブルシューティング</a>を参照してください。",
+    "summary": "スーパーマリオサンシャインRTAの練習用のチートファイルジェネレータです。初めてジェネレータを使う場合は、<a href='guide.html' target='_blank'>ガイド</a>の参照を推奨します。問題が発生した場合は<a href='guide.html#トラブルシューティング' target='_blank'>トラブルシューティング</a>を参照してください。",
     "community": "The SMS Speedrunning Community",
     "links": {
       "discord": "Discord",
