@@ -2,66 +2,66 @@
 sidebar: auto
 ---
 
-# インストールす IOS58
+# IOS58 のインストール
 
-ニンテンドンで使用するために IOS58 をインストールする方法についてのガイド。
+Nintendont と一緒に使うための IOS58 のインストール方法のガイドです。※全て自己責任で行ってください。
 
 [[toc]]
 
-## リソースをダウンロード
+## 必要なソフトウェアのダウンロード
 
-### NUS ダウンローダを取得
+### NUS Downloader のダウンロード
 
-NUS ダウンローダーがあなたが任天堂から公式 IOSs をダウンロードするために使用できるウィンドウズプログラムです。 あなたは [Wiibrew](http://wiibrew.org/wiki/NUS_Downloader) からそれをダウンロードすることができます。
+NUS Downloader は公式 IOSs をダウンロードするための Windows のソフトウェアです。[Wiibrew](http://wiibrew.org/wiki/NUS_Downloader) からダウンロードできます。
 
-### ダウンロード IOS58
+### IOS58 のダウンロード
 
-オープン NUS ダウンローダー、データベースから IOS58 を選択します（画像参照）。「パック WAD」がチェックされていることを確認します。 チェックを外し、「暗号化コンテンツを保持」と「スタート NUS ダウンロードをヒット！.
+NUS Downloader を起動し、Database から「IOS58」を選択します（画像参照）。「Pack WAD」にチェックを入れた後、「Keep Encrypted Contents」からチェックを外します。その後、「Start NUS Download!」をクリックしましょう。
 
 ![NUS Downloader](/img/nusdownloader_00.png)
 
-### WAD をコピーします
+### WAD のコピー
 
-ダウンロードした.wad は、NUS ダウンローダーディレクトリのタイトル/ 000000010000003A / 6176 /にあります。 名前を変更することなく、あなたの SD カードのルートに札束をコピーします。
+ダウンロードした wad ファイルは、NUS Downloader のディレクトリの`titles/000000010000003A/6176/`にあります。この wad ファイルを**名前を変更せずに**SD カードの最上位層へコピーしてください。
 
-### ダウンロード WiiModr
+### WiiMod のダウンロード
 
-[GBAtemp](https://gbatemp.net/threads/wii-mod.272321/)から WiiMod をダウンロードし、アプリをアプリフォルダーに配置します。 あなたの Wii に SD カードのバックを入れて、自作のチャネルを開きます。
+[GBAtemp](https://gbatemp.net/threads/wii-mod.272321/)から WiiMod をダウンロードします。ファイルを解凍し、"app"内の"wiimod"フォルダを SD カードの"apps"フォルダ内にコピーします。以上の準備を終えたら、SD カードを Wii に挿して、Homebrew チャンネルを開いてください。
 
-## インストール IOS58
+## IOS58 のインストール
 
-**起動 WiiMod そしてセレクト "IOSs"**
+**WiiMod を起動し、「IOSs」を選択します。**
 
 ![Part 1](/img/wiimod_00.png)
 
-**58 に移動そしてプレス A**
+**「58」へ移動し、A を押します。**
 
 ![Part 2](/img/wiimod_01.png)
 
-**セレクト "インストール IOS"**
+**「Install IOS」を選択します。**
 
 ![Part 3](/img/wiimod_02.png)
 
-**セレクト "6176"**
+**「6176」を選択します。**
 
 ![Part 4](/img/wiimod_03.png)
 
-**インストールすることを確認します"IOS58 v6176"**
+**「IOS58 v6176 をインストールするか」の確認が出るので、「(A) Yes」を選択します。**
 
 ![Part 5](/img/wiimod_04.png)
 
-**セレクトリビジョン 6176**
+**IOS Revision は「6176」を選択します。**
 
 ![Part 6](/img/wiimod_05.png)
 
-**すべてのオプションがに設定されていることを確認します「いいえ」**
+**全てのオプションが「No」に設定されていることを確認します。**
 
 ![Part 7](/img/wiimod_06.png)
 
-**もう一度 A を押してインストールを開始します**
+**A を押してインストールを開始します。**
 
 ![Part 8](/img/wiimod_07.png)
 
-**それはそれです！**
+**以下の画像のようになったらインストール完了になります。**
 
 ![Part 9](/img/wiimod_08.png)

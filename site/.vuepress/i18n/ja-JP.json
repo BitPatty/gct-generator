@@ -35,7 +35,7 @@
   },
   "landingpage": {
     "title": "スーパーマリオサンシャイン練習用ファイルジェネレータ",
-    "summary": "スーパーマリオサンシャインRTAの練習用のチートファイルジェネレータです。初めてジェネレータを使う場合は、<a href='guide.html' target='_blank'>ガイド</a>の参照を推奨します。問題が発生した場合は<a href='guide.html#トラブルシューティング' target='_blank'>トラブルシューティング</a>を参照してください。",
+    "summary": "スーパーマリオサンシャインRTAの練習用のチートファイルジェネレータです。初めてジェネレータを使う場合は、<a href='guide.html' target='_blank'>ガイド</a>の参照を推奨します。問題が発生した場合は、ガイド内にあるトラブルシューティングを参照してください。",
     "community": "The SMS Speedrunning Community",
     "links": {
       "discord": "Discord",
@@ -258,8 +258,8 @@
         "pianta": "Pianta Village"
       }
     },
-    "levelselectplaceholder": "レベルを選択します。..",
-    "loadpresetplaceholder": "プリセットをロードします。..",
+    "levelselectplaceholder": "レベルを選択します..",
+    "loadpresetplaceholder": "プリセットをロードします..",
     "route": "経路",
     "clear": "リストをクリア"
   },
