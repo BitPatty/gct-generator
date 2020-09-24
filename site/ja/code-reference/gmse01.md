@@ -3,8 +3,8 @@ sidebar: auto
 editLink: false
 ---
 
-# GMSE01 (NTSC-U / ノースアメリカ)
+# GMSE01 (NTSC-U / 北アメリカ)
 
-## 利用可能なコードのリスト
+## チートコードリスト
 
 <!-- injectionpoint -->

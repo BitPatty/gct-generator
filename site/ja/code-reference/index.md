@@ -2,6 +2,6 @@
 editLink: false
 ---
 
-# コードリファレンス
+# チートコード一覧
 
 <VersionCards />
