@@ -56,7 +56,7 @@
             <h3>{{ getLabel('landingpage.community') }}</h3>
             <ul>
               <li>
-                <a href="https://discord.gg/9dGJWEc" target="_blank" rel="noopener">
+                <a :href="getLabel('landingpage.links.discordlink')" target="_blank" rel="noopener">
                   {{ getLabel('landingpage.links.discord') }}
                 </a>
               </li>
