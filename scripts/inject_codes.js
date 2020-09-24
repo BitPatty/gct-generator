@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const { JSDOM } = require('jsdom');
 const vuepressContainerPlugin = require('vuepress-plugin-container');
-const { title } = require('process');
 
 // These plugins have to match the ones used as extensions in .vuepress/config.js
 const md = require('@vuepress/markdown')({
@@ -275,6 +274,7 @@ fs.writeFileSync(JSON_FILE_PATH, JSON.stringify(codeJson));
 
 Object.keys(locales).forEach((locale) => {
   const localeKey = locales[locale].lang;
+  const localeLabels = require(`../site/.vuepress/i18n/${localeKey}.json`);
 
   // Populate the code reference
   for (let i = 0; i < CODE_VERSIONS.length; i++) {
@@ -307,8 +307,10 @@ Object.keys(locales).forEach((locale) => {
     // Create a semi-markdown version for all codes
     codes.forEach((code) => {
       const title = `### ${code.title.find((t) => t.lang === localeKey).content}`;
-      const author = `*${code.author.includes(',') ? 'Authors:' : 'Author:'} ${code.author}*`;
-      const version = `*Version: ${code.version} (${code.date})*`;
+      const author = `*${
+        code.author.includes(',') ? localeLabels.codeinfo.authors : localeLabels.codeinfo.author
+      } ${code.author}*`;
+      const version = `*${localeLabels.codeinfo.version} ${code.version} (${code.date})*`;
       const description = code.description.find((d) => d.lang === localeKey).content;
 
       fileContent += `\n\n${title.trim()}\n\n${version.trim()}  \n${author.trim()}\n\n${description.trim()}\n\n`;
