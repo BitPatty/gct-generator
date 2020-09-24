@@ -68,6 +68,7 @@ ul li {
   outline: none;
   display: block;
   min-width: 280px;
+  white-space: nowrap;
   padding-right: 15px;
   text-align: left;
 }
