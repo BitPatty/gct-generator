@@ -333,7 +333,7 @@
         <date>Jan 20, 2017</date>
         <description lang="en-US">Allows skipping FMVs without having to watch them once first.</description>
         <description lang="de-CH">Erlaubt das Überspringen von FMVs ohne sie erst anschauen zu müssen.</description>
-        <description lang="ja-JP">FMVを見なくても、FMVをスキップできます。</description>
+        <description lang="ja-JP">初めて見るムービーをスキップできます。</description>
         <source version="GMSE01">
             042B5EF4 38600001
             042B5E8C 38600001
@@ -513,13 +513,13 @@
     <code>
         <title lang="en-US">Enable Exit Area Everywhere</title>
         <title lang="de-CH">'Level Verlassen' überall aktivieren</title>
-        <title lang="ja-JP">出口エリアの有効化</title>
+        <title lang="ja-JP">任意の場所でコースから出られる</title>
         <author>Noki Doki</author>
         <version>1.0</version>
         <date>Oct 30, 2017</date>
         <description lang="en-US">Enables 'Exit Area' on Plaza and Airstrip.</description>
         <description lang="de-CH">Aktiviert 'Level Verlassen' auf der Plaza und dem Flugplatz.</description>
-        <description lang="ja-JP">PlazaとAirstripの「出口エリア」を有効にします。</description>
+        <description lang="ja-JP">ドルピックタウンやエアポートでも「コースから出る」を選択できるようになります。</description>
         <source version="GMSE01">
             C6156B78 80156B84
         </source>
@@ -2114,13 +2114,13 @@
     <code>
         <title lang="en-US">Any Fruit Opens Yoshi Eggs</title>
         <title lang="de-CH">Jede Frucht öffnet Yoshi-Eier</title>
-        <title lang="ja-JP">任意のフルーツでヨッシーの卵を開ける</title>
+        <title lang="ja-JP">任意のフルーツでヨッシーをタマゴから解放</title>
         <author>Unknown, Noki Doki</author>
         <version>1.0</version>
         <date>Aug 19, 2018</date>
         <description lang="en-US">Allows opening Yoshi eggs with a different fruit than the one depicted.</description>
         <description lang="de-CH">Ermöglicht das öffnen von Yoshi-Eiern mit jeglicher Frucht.</description>
-        <description lang="ja-JP">描画されたものとはフルーツでもヨッシーの卵を開けられるようになります。</description>
+        <description lang="ja-JP">どのフルーツでもヨッシーをタマゴから解放できるようになります。</description>
         <source version="GMSE01">
             041BC900 60000000
         </source>
@@ -2275,13 +2275,13 @@
     <code>
         <title lang="en-US">Shine Outfit</title>
         <title lang="de-CH">Shine Outfit</title>
-        <title lang="ja-JP">シャイン服装</title>
+        <title lang="ja-JP">アロハシャツ</title>
         <author>Ralf, Psychonauter</author>
         <version>1.0</version>
         <date>Oct 23, 2017</date>
         <description lang="en-US">Always wear shine outfit and sunglasses.</description>
         <description lang="de-CH">Mario trägt immer das Shine Outfit und die Sonnenbrille.</description>
-        <description lang="ja-JP">常に光沢のある服装とサングラスを着用します。</description>
+        <description lang="ja-JP">アロハシャツとサングラスを着用します。</description>
         <source version="GMSE01">
             04241FD4 60000004
             04241FD8 B01D0004
@@ -2689,7 +2689,7 @@
     <code>
         <title lang="en-US">Force Plaza Events</title>
         <title lang="de-CH">Erzwungene Plaza Events</title>
-        <title lang="ja-JP">広場のイベントの強制再生</title>
+        <title lang="ja-JP">ドルピックタウンイベントの強制再生</title>
         <author>Noki Doki</author>
         <version>1.0</version>
         <date>Mar 8, 2020</date>
@@ -2702,7 +2702,7 @@
           Düsenfreischaltungen haben gegenüber Yoshi's Freischaltung Vorrang.
         </description>
         <description lang="ja-JP">
-          強制的に次のイベントを再生します: 「リコの解除イベント」「Gelatoの解除イベント」「正しいバージョンの広場がロードされるたびに出現するヨッシー」
+          強制的に次のイベントを再生します: 「リコの解除イベント」「Gelatoの解除イベント」「正しいバージョンのドルピックタウンがロードされるたびに出現するヨッシー」
           「ノズルロック解除イベント」は、条件が満たされている場合、ヨッシーのイベントよりも優先されます。
         </description>
         <source version="GMSE01">

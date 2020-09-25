@@ -2,66 +2,70 @@
 sidebar: auto
 ---
 
-# IOS58 Installation
+<!-- prettier-ignore-start -->
+# IOS58のインストール
 
-Ein Leitfaden für die Installation von IOS58 für die Verwendung mit Nintendont.
+Nintendontと一緒に使うためのIOS58のインストール方法のガイドです。※全て自己責任で行ってください。
 
 [[toc]]
 
-## Ressourcen herunterladen
+## 必要なソフトウェアのダウンロード
 
-### NUS Downloader
+### NUS Downloaderのダウンロード
 
-Der NUS Downloader ist eine Windows-Applikation mit welcher du offizielle IOSs von Nintendo herunterladen kannst. Du findest den NUS Downloader auf [Wiibrew](http://wiibrew.org/wiki/NUS_Downloader).
+NUS Downloaderは公式IOSsをダウンロードするためのWindowsのソフトウェアです。[Wiibrew](http://wiibrew.org/wiki/NUS_Downloader) からダウンロードできます。
 
-### IOS58 Download
+### IOS58のダウンロード
 
-Öffne den NUS Downloader und wähle IOS58 von der Datenbank (siehe Bild). Stelle sicher, dass 'Pack WAD' markiert ist und das Häkchen 'Keep Encrypted Contents' NICHT gesetzt ist. Starte den Download mittels 'Start NUS Download!'.
+NUS Downloaderを起動し、Databaseから「IOS58」を選択します（画像参照）。「Pack WAD」にチェックを入れた後、「Keep Encrypted Contents」のチェックを外します。ここまで終えたら、最後に「Start NUS Download!」をクリックしましょう。
 
 ![NUS Downloader](/img/nusdownloader_00.png)
 
-### Kopieren der WAD
+### WADのコピー
 
-Die heruntergeladene .wad-Datei wird im `titles/000000010000003A/6176/`-Ordner in deinem NUS Downloader Verzeichnis hinterlegt. Kopiere sie auf deine SD Karte **ohne sie umzubenennen**.
+ダウンロードしたwadファイルは、NUS Downloaderのディレクトリの`titles/000000010000003A/6176/`にあります。このwadファイルを**名前を変更せずに**SDカードの最上位層へコピーしてください。
 
-### WiiMod
+### WiiModのダウンロード
 
-Lade WiiMod von [GBAtemp](https://gbatemp.net/threads/wii-mod.272321/) herunter und platziere sie im 'apps'-Ordner auf deiner SD-Karte. Lege die SD-Karte zurück in deine Wii und öffne den Homebrew Kanal.
+[GBAtemp](https://gbatemp.net/threads/wii-mod.272321/)からWiiModをダウンロードします。ファイルを解凍し、"app"内の"wiimod"フォルダをSDカードの"apps"フォルダ内にコピーします。
 
-## IOS58 Installation
+以上で必要なソフトウェアのダウンロードはお終いです。SDカードをWiiに挿して、Homebrewチャンネルを開いてください。
 
-**Starte WiiMod und wähle "IOSs"**
+## IOS58のインストール
+
+**WiiModを起動し、「IOSs」を選択します。**
 
 ![Part 1](/img/wiimod_00.png)
 
-**Navigiere zu 58 und drücke A**
+**「58」へ移動し、Aを押します。**
 
 ![Part 2](/img/wiimod_01.png)
 
-**Wähle "Install IOS"**
+**「Install IOS」を選択します。**
 
 ![Part 3](/img/wiimod_02.png)
 
-**Wähle "6176"**
+**「6176」を選択します。**
 
 ![Part 4](/img/wiimod_03.png)
 
-**Bestätige, dass du "IOS58 v6176" installieren möchtest**
+**「IOS58 v6176をインストールするか」の確認が出るので、「(A) Yes」を選択します。**
 
 ![Part 5](/img/wiimod_04.png)
 
-**Wähle Revision 6176**
+**IOS Revisionは「6176」を選択します。**
 
 ![Part 6](/img/wiimod_05.png)
 
-**Stelle sicher, dass alle Optionen auf 'No' sind.**
+**全てのオプションが「No」に設定されていることを確認します。**
 
 ![Part 7](/img/wiimod_06.png)
 
-**Drücke erneut A um die Installation zu starten.**
+**Aを押してインストールを開始します。**
 
 ![Part 8](/img/wiimod_07.png)
 
-**Das war's!**
+**以下の画像のようになったらインストール完了になります。**
 
 ![Part 9](/img/wiimod_08.png)
+<!-- prettier-ignore-end -->
