@@ -37,6 +37,7 @@ module.exports = {
     lastUpdated: false,
     locales,
     plugins: themePlugins,
+    activeHeaderLinks: false,
   },
 
   /**

@@ -10,5 +10,16 @@ export default ({
   router, // the router instance for the app
   siteData, // site metadata
 }) => {
-  // ...apply enhancements for the site.
+  if (typeof document === 'undefined') return;
+  document.onreadystatechange = () => {
+    if (document.readyState === 'complete') {
+      const { hash } = location;
+      const decoded = decodeURIComponent(hash);
+      const targetAnchor = document.querySelector(decoded) ?? document.querySelector(hash);
+
+      if (targetAnchor && targetAnchor.offsetTop) {
+        window.scrollTo({ top: targetAnchor.offsetTop, behavior: 'smooth' });
+      }
+    }
+  };
 };
