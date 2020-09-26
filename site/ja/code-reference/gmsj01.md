@@ -5,10 +5,13 @@ editLink: false
 
 # GMSJ01 (NTSC-J / 日本語)
 
+<!-- prettier-ignore-start -->
 ::: tip
-This site refers to version 1.0 of the NTSC-J release. For version 1.1 [click this link](/code-reference/gmsj0a.html).
+このページはJP1.0（NTSC-J 1.0）のチートコードリストです。[JP1.1はこちら](/ja/code-reference/gmsj0a.html)
 :::
 
 ## チートコードリスト
+
+<!-- prettier-ignore-end -->
 
 <!-- injectionpoint -->
