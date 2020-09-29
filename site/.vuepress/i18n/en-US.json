@@ -57,7 +57,7 @@
     "removedialogue": {
       "label": "Remove Dialogue:",
       "options": {
-        "pv5": "Not in Pinna 5",
+        "pv5": "Not in Pianta 5",
         "yes": "Always",
         "no": "Don't include"
       }
