@@ -2702,7 +2702,7 @@
           Düsenfreischaltungen haben gegenüber Yoshi's Freischaltung Vorrang.
         </description>
         <description lang="ja-JP">
-          強制的に次のイベントを再生します: 「リコの解除イベント」「Gelatoの解除イベント」「正しいバージョンのドルピックタウンがロードされるたびに出現するヨッシー」
+          強制的に次のイベントを再生します: 「リコの解除イベント」「マンマの解除イベント」「正しいバージョンのドルピックタウンがロードされるたびに出現するヨッシー」
           「ノズルロック解除イベント」は、条件が満たされている場合、ヨッシーのイベントよりも優先されます。
         </description>
         <source version="GMSE01">

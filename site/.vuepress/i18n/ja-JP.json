@@ -39,7 +39,6 @@
     "community": "The SMS Speedrunning Community",
     "links": {
       "discord": "Discord",
-      "discordlink": "https://discord.gg/c5xffvr",
       "twitter": "Twitter：@SMSCommunity",
       "twitch": "Twitch：SunshineCommunity",
       "src": "Speedrun.comリーダーボード"
@@ -55,29 +54,29 @@
       }
     },
     "removedialogue": {
-      "label": "ダイアログを削除",
+      "label": "会話を削除するか",
       "options": {
-        "pv5": "にはありませんピンナ5",
-        "yes": "いつも",
-        "no": "しない含めます"
+        "pv5": "モンテ5を除いて削除",
+        "yes": "常に削除",
+        "no": "削除しない"
       }
     },
     "skippablefmvs": {
-      "label": "スキップ フルモーションビデオ",
+      "label": "FMVをスキップするか",
       "options": {
-        "pp": "にはありませんピンナ",
-        "yes": "いつも",
-        "no": "しない含めます"
+        "pp": "メカクッパ以外をスキップ",
+        "yes": "常にスキップ",
+        "no": "スキップしない"
       }
     },
     "postgame": {
-      "label": "ポストゲーム",
+      "label": "最後のステージ終了後は？",
       "options": {
         "0F00": "タイトル画面に戻る",
-        "0109": "浸水プラザをロード",
-        "0102": "負荷ポストコロナプラザ",
-        "3400": "Load Corona Montain",
-        "3C00": "負荷ポストコロナプラザ"
+        "0109": "洪水状態のドルピックタウン",
+        "0102": "コロナマウンテン突入後のドルピックタウン",
+        "3400": "コロナマウンテン内部",
+        "3C00": "クッパ戦"
       }
     },
     "levels": {
@@ -104,134 +103,134 @@
         "jail": "Jail Secret"
       },
       "secrets": {
-        "header": "Secret Areas",
-        "bianco3": "Bianco 3 Secret",
-        "bianco6": "Bianco 6 Secret",
-        "ricco4": "Ricco 4 Secret",
-        "gelato1": "Gelato 1 Secret",
-        "pinna2": "Pinna 2 Secret",
-        "pinna6": "Pinna 6 Secret",
-        "sirena2": "Sirena 2 Secret",
-        "sirena4": "Sirena 4 Secret",
-        "noki6": "Noki 6 Secret",
-        "pianta5": "Pianta 5 Secret"
+        "header": "ヒミツステージ",
+        "bianco3": "ビアンコ 3 ヒミツ",
+        "bianco6": "ビアンコ 6 ヒミツ",
+        "ricco4": "リコ 4 ヒミツ",
+        "gelato1": "マンマ 1 ヒミツ",
+        "pinna2": "ピンナ 2 ヒミツ",
+        "pinna6": "ピンナ 6 ヒミツ",
+        "sirena2": "シレナ 2 ヒミツ",
+        "sirena4": "シレナ 4 ヒミツ",
+        "noki6": "マーレ 6 ヒミツ",
+        "pianta5": "モンテ 5 ヒミツ"
       },
       "sublevels": {
-        "header": "Sublevels",
-        "petey": "Petey Piranha fight (Bianco 2)",
-        "gooperblooper": "Gooper Blooper fight (Ricco 1)",
-        "sewers": "Race course (Ricco 2)",
-        "sandbird": "Sand bird (Gelato 4)",
-        "mecha": "Mecha-Bowser fight (Pinna 1)",
-        "rollercoaster": "Rollercoaster (Pinna 8)",
-        "casino1": "Casino Delfino (Sirena 4)",
-        "casino2": "Casino Delfino (Sirena 5)",
-        "kingboo": "King Boo fight (Sirena 5)",
-        "bottle": "Bottle (Noki 3)",
-        "eel": "Deep Sea of Mare (Noki 4)",
-        "nokireds": "Deep Sea of Mare (Noki 8)"
+        "header": "サブレベル",
+        "petey": "ボスパックンとの戦い (ビアンコ 2)",
+        "gooperblooper": "ボスゲッソーとの戦い (リコ 1)",
+        "sewers": "イカサーフィン (リコ 2)",
+        "sandbird": "おおすなどり (マンマ 4)",
+        "mecha": "メカクッパとの戦い (ピンナ 1)",
+        "rollercoaster": "ジェットコースター (ピンナ 8)",
+        "casino1": "カジノ・デルフィーノ (シレナ 4)",
+        "casino2": "カジノ・デルフィーノ (シレナ 5)",
+        "kingboo": "ボステレサとの闘い (シレナ 5)",
+        "bottle": "ビンのなか (マーレ 3)",
+        "eel": "きょだいウナギ (マーレ 4)",
+        "nokireds": "コインフィッシュ (マーレ 8)"
       },
       "misc": {
-        "header": "Miscelleaneous",
-        "biancoepisodeselect": "Bianco episode selection",
-        "riccoepisodeselect": "Ricco episode selection",
-        "gelatoepisodeselect": "Gelato episode selection",
-        "pinnaepisodeselect": "Pinna episode selection",
-        "sirenaepisodeselect": "Sirena episode selection",
-        "nokiepisodeselect": "Noki episode selection",
-        "piantaepisodeselect": "Pianta episode selection"
+        "header": "その他",
+        "biancoepisodeselect": "ビアンコのエピソード選択画面",
+        "riccoepisodeselect": "リコのエピソード選択画面",
+        "gelatoepisodeselect": "マンマのエピソード選択画面",
+        "pinnaepisodeselect": "ピンナのエピソード選択画面",
+        "sirenaepisodeselect": "シレナのエピソード選択画面",
+        "nokiepisodeselect": "マーレのエピソード選択画面",
+        "piantaepisodeselect": "モンテのエピソード選択画面"
       },
       "bianco": {
-        "header": "Bianco Hills",
-        "1": "Bianco 1",
-        "2": "Bianco 2",
-        "3": "Bianco 3",
-        "4": "Bianco 4",
-        "5": "Bianco 5",
-        "6": "Bianco 6",
-        "7": "Bianco 7",
-        "8": "Bianco 8"
+        "header": "ビアンコヒルズ",
+        "1": "ビアンコ 1",
+        "2": "ビアンコ 2",
+        "3": "ビアンコ 3",
+        "4": "ビアンコ 4",
+        "5": "ビアンコ 5",
+        "6": "ビアンコ 6",
+        "7": "ビアンコ 7",
+        "8": "ビアンコ 8"
       },
       "ricco": {
-        "header": "Ricco Harbor",
-        "1": "Ricco 1",
-        "2": "Ricco 2",
-        "3": "Ricco 3",
-        "4": "Ricco 4",
-        "5": "Ricco 5",
-        "6": "Ricco 6",
-        "7": "Ricco 7",
-        "8": "Ricco 8"
+        "header": "リコハーバー",
+        "1": "リコ 1",
+        "2": "リコ 2",
+        "3": "リコ 3",
+        "4": "リコ 4",
+        "5": "リコ 5",
+        "6": "リコ 6",
+        "7": "リコ 7",
+        "8": "リコ 8"
       },
       "gelato": {
-        "header": "Gelato Beach",
-        "1": "Gelato 1",
-        "2": "Gelato 2",
-        "3": "Gelato 3",
-        "4": "Gelato 4",
-        "5": "Gelato 5",
-        "6": "Gelato 6",
-        "7": "Gelato 7",
-        "8": "Gelato 8"
+        "header": "マンマビーチ",
+        "1": "マンマ 1",
+        "2": "マンマ 2",
+        "3": "マンマ 3",
+        "4": "マンマ 4",
+        "5": "マンマ 5",
+        "6": "マンマ 6",
+        "7": "マンマ 7",
+        "8": "マンマ 8"
       },
       "pinna": {
-        "header": "Pinna Park",
-        "1": "Pinna 1",
-        "2": "Pinna 2",
-        "3": "Pinna 3",
-        "4": "Pinna 4",
-        "5": "Pinna 5",
-        "6": "Pinna 6",
-        "7": "Pinna 7",
-        "8": "Pinna 8"
+        "header": "ピンナパーク",
+        "1": "ピンナ 1",
+        "2": "ピンナ 2",
+        "3": "ピンナ 3",
+        "4": "ピンナ 4",
+        "5": "ピンナ 5",
+        "6": "ピンナ 6",
+        "7": "ピンナ 7",
+        "8": "ピンナ 8"
       },
       "sirena": {
-        "header": "Sirena Beach",
-        "1": "Sirena 1",
-        "2": "Sirena 2",
-        "3": "Sirena 3",
-        "4": "Sirena 4",
-        "5": "Sirena 5",
-        "6": "Sirena 6",
-        "7": "Sirena 7",
-        "8": "Sirena 8"
+        "header": "シレナビーチ",
+        "1": "シレナ 1",
+        "2": "シレナ 2",
+        "3": "シレナ 3",
+        "4": "シレナ 4",
+        "5": "シレナ 5",
+        "6": "シレナ 6",
+        "7": "シレナ 7",
+        "8": "シレナ 8"
       },
       "noki": {
-        "header": "Noki Bay",
-        "1": "Noki 1",
-        "2": "Noki 2",
-        "3": "Noki 3",
-        "4": "Noki 4",
-        "5": "Noki 5",
-        "6": "Noki 6",
-        "7": "Noki 7",
-        "8": "Noki 8"
+        "header": "マーレのいりえ",
+        "1": "マーレ 1",
+        "2": "マーレ 2",
+        "3": "マーレ 3",
+        "4": "マーレ 4",
+        "5": "マーレ 5",
+        "6": "マーレ 6",
+        "7": "マーレ 7",
+        "8": "マーレ 8"
       },
       "pianta": {
-        "header": "Pianta Village",
-        "1": "Pianta 1",
-        "2": "Pianta 2",
-        "3": "Pianta 3",
-        "4": "Pianta 4",
-        "5": "Pianta 5",
-        "6": "Pianta 6",
-        "7": "Pianta 7",
-        "8": "Pianta 8"
+        "header": "モンテのむら",
+        "1": "モンテ 1",
+        "2": "モンテ 2",
+        "3": "モンテ 3",
+        "4": "モンテ 4",
+        "5": "モンテ 5",
+        "6": "モンテ 6",
+        "7": "モンテ 7",
+        "8": "モンテ 8"
       }
     },
     "presets": {
       "fullgameminimalplaza": {
-        "header": "Full-game categories, minimal plaza",
-        "fapnormal": "Fast Any% usual route",
-        "fapriccolate": "Fast Any% Ricco late",
+        "header": "フルゲームのカテゴリ、最小限のドルピックタウン",
+        "fapnormal": "Fast Any% 通常ルート",
+        "fapriccolate": "Fast Any% リコ後",
         "fap49": "Fast Any% No Major Skips",
         "fap58": "Fast 58 Shines / All Episodes",
         "fap79": "Fast 79 Shines / All Level Shines",
         "fap96": "Fast 96 Shines / All Shines, No Blues"
       },
       "fullgamecategories": {
-        "header": "Full-game categories",
-        "anyp": "Any% usual route",
+        "header": "フルゲームのカテゴリ",
+        "anyp": "Any% 通常ルート",
         "49": "Any% No Major Skips",
         "58": "58 Shines / All Episodes",
         "79": "79 Shines / All Level Shines",
@@ -239,32 +238,32 @@
         "120": "120 Shines / All Shines, All Blues"
       },
       "iw": {
-        "header": "Individual Worlds",
-        "bianco": "Bianco Hills",
-        "ricco": "Ricco Harbor",
-        "gelato": "Gelato Beach",
-        "pinna": "Pinna Park",
-        "sirena": "Sirena Beach",
-        "noki": "Noki Bay",
-        "pianta": "Pianta Village"
+        "header": "個別ステージ",
+        "bianco": "ビアンコヒルズ",
+        "ricco": "リコハーバー",
+        "gelato": "マンマビーチ",
+        "pinna": "ピンナパーク",
+        "sirena": "シレナビーチ",
+        "noki": "マーレのいりえ",
+        "pianta": "モンテのむら"
       },
       "iwallshines": {
-        "header": "Individual Worlds (all Shines)",
-        "bianco": "Bianco Hills",
-        "ricco": "Ricco Harbor",
-        "gelato": "Gelato Beach",
-        "pinna": "Pinna Park",
-        "sirena": "Sirena Beach",
-        "noki": "Noki Bay",
-        "pianta": "Pianta Village"
+        "header": "個別ステージ (全シャイン)",
+        "bianco": "ビアンコヒルズ",
+        "ricco": "リコハーバー",
+        "gelato": "マンマビーチ",
+        "pinna": "ピンナパーク",
+        "sirena": "シレナビーチ",
+        "noki": "マーレのいりえ",
+        "pianta": "モンテのむら"
       }
     },
     "levelselectplaceholder": "レベルを選択します..",
     "loadpresetplaceholder": "プリセットをロードします..",
-    "route": "経路",
+    "route": "ルート",
     "clear": "リストをクリア"
   },
   "misc": {
-    "defaulthelpmessage": "Select your codes from the list on the left."
+    "defaulthelpmessage": "左にあるリストからコードを選択します"
   }
 }
