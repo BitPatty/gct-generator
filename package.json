@@ -28,7 +28,7 @@
     "vuepress": "1.7.0"
   },
   "dependencies": {
-    "vuedraggable": "^2.23.2"
+    "vuedraggable": "^2.24.2"
   },
   "pre-commit": [
     "precommit"
