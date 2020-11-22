@@ -30,8 +30,6 @@ When adding new codes keep in mind that the English title/description are mandat
 3. Create a new entry in `site/.vuepress/i18n/locales.json` with the site metadata and navigation items for your language.
 4. Open `Codes.xml` and add a translation for each code (`<title>` and `<description>`).
 
-##### Guide translations
-
 ### Updating Guides
 
 You can find the guides in the [site](https://github.com/BitPatty/gctGenerator/tree/master/site) folder. Simply edit the corresponding markdown file (.md).
