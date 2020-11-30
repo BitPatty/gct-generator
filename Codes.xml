@@ -3,6 +3,7 @@
     <code>
         <title lang="en-US">DPad Functions</title>
         <title lang="de-CH">DPad Funktionen</title>
+        <title lang="fr-FR">Fonctions de la croix directionnelle</title>
         <title lang="ja-JP">十字ボタン(Dパッド)機能</title>
         <author>Psychonauter, Noki Doki, Dan Salvato, Link Master, James0x57</author>
         <version>2.5</version>
@@ -41,6 +42,24 @@
             | X + D-Pad Right | Dreckweg in allen geheimen Leveln           |
             | X + D-Pad Down  | Dreckweg in komplettierten geheimen Leveln  |
             | X + D-Pad Up    | Hole das zuletzt gefasste Objekt zurück     |
+        </description>
+        <description lang="fr-FR">
+            Permet diverses modifications du jeu à travers un ensemble de combinaisons de boutons :
+            
+            | Combinaison      | Résultat                                 |
+            | ---------------- | ---------------------------------------- |
+            | D-Pad gauche     | Sauvegarder la position de Mario         |
+            | D-Pad droite     | Restaurer la position de Mario           |
+            | D-Pad haut       | Remplacer tous les dialogues par « !!! » |
+            | D-Pad bas        | Rétablir les dialogues                   |
+            | B + D-Pad gauche | Verrouiller la catabuse                  |
+            | B + D-Pad droite | Verrouiller la turbobuse                 |
+            | B + D-Pad haut   | Verrouiller l'aérobuse                   |
+            | B + D-Pad bas    | Annuler le verrouillage de buse          |
+            | X + D-Pad gauche | Pas de JET dans les secrets              |
+            | X + D-Pad droite | JET dans tous les secrets                |
+            | X + D-Pad bas    | JET dans les secrets complétés (défaut)  |
+            | X + D-Pad haut   | Récupérer le dernier objet tenu          |
         </description>
         <description lang="ja-JP">
             ボタンの組合せでゲーム内の状態などを変更します:
@@ -265,12 +284,14 @@
     <code>
         <title lang="en-US">Infinite Lives</title>
         <title lang="de-CH">Unendlich Leben</title>
+        <title lang="fr-FR">Vies infinies</title>
         <title lang="ja-JP">残機無限</title>
         <author>Noki Doki</author>
         <version>2.0</version>
         <date>Feb 28, 2020</date>
         <description lang="en-US">Prevents the life counter from decreasing.</description>
         <description lang="de-CH">Verhindert, dass sich die Anzahl Leben verringert</description>
+        <description lang="fr-FR">Empêche le compteur de vies de diminuer.</description>
         <description lang="ja-JP">残機カウンターが減らなくなります。</description>
         <source version="GMSE01">
             04298814 60000000
@@ -288,12 +309,14 @@
     <code>
         <title lang="en-US">Disable Blue Coin Flag</title>
         <title lang="de-CH">Deaktiviere Blaue-Münzen-Kennung</title>
+        <title lang="fr-FR">Désactiver la sauvegarde des pièces bleues</title>
         <title lang="ja-JP">青コインのフラグの無効化</title>
         <author>Psychonauter, Noki Doki</author>
         <version>1.1</version>
         <date>Sep 05, 2018</date>
         <description lang="en-US">Prevents the game from setting the blue coin flag, which makes them respawn after reentering the level.</description>
         <description lang="de-CH">Verhindert, dass das Spiel die Blaue-Münzen-Kennung setzt, wodurch sie beim Neueintritt in das Level wieder erscheinen.</description>
+        <description lang="fr-FR">Empêche le jeu d'enregistrer les pièces bleues ramassées, ce qui les fait réapparaître à la prochaine visite du niveau.</description>
         <description lang="ja-JP">青コインのフラグが立たないようにします。このコードを使うと、ステージ再入場後に青コインが再出現します。</description>
         <source version="GMSE01">
             04294564 60000000
@@ -327,12 +350,14 @@
     <code>
         <title lang="en-US">FMV Skips</title>
         <title lang="de-CH">FMV Skips</title>
+        <title lang="fr-FR">Passer les FMV</title>
         <title lang="ja-JP">FMVスキップ</title>
         <author>Psychonauter</author>
         <version>1.0</version>
         <date>Jan 20, 2017</date>
         <description lang="en-US">Allows skipping FMVs without having to watch them once first.</description>
         <description lang="de-CH">Erlaubt das Überspringen von FMVs ohne sie erst anschauen zu müssen.</description>
+        <description lang="fr-FR">Permet de passer les FMV sans avoir à les regarder en entier d'abord.</description>
         <description lang="ja-JP">初めて見るムービーをスキップできます。</description>
         <source version="GMSE01">
             042B5EF4 38600001
@@ -354,12 +379,14 @@
     <code>
         <title lang="en-US">Mute Background Music</title>
         <title lang="de-CH">Hintergrundmusik stummschalten</title>
+        <title lang="fr-FR">Supprimer la musique de fond</title>
         <title lang="ja-JP">BGMミュート</title>
         <author>Psychonauter</author>
         <version>1.0</version>
         <date>Jan 28, 2017</date>
         <description lang="en-US">Mutes background music, but keeps SFX on.</description>
         <description lang="de-CH">Stellt die Hintergrundmusik stumm, aber behält SFX an.</description>
+        <description lang="fr-FR">Supprime la musique de fond, mais conserve les effets sonores.</description>
         <description lang="ja-JP">BGMをミュートにします。（効果音はオンのままです）</description>
         <source version="GMSE01">
             04016A34 FC210828
@@ -377,12 +404,14 @@
     <code>
         <title lang="en-US">Remove Save Boxes</title>
         <title lang="de-CH">Speicher-Schaltfläche entfernen</title>
+        <title lang="fr-FR">Supprimer les boîtes de sauvegarde</title>
         <title lang="ja-JP">セーブ画面の削除</title>
         <author>Psychonauter</author>
         <version>1.0</version>
         <date>Oct 02, 2017</date>
         <description lang="en-US">Removes all saveboxes.</description>
         <description lang="de-CH">Entfernt alle Speicherschaltflächen.</description>
+        <description lang="fr-FR">Supprime toutes les boîtes de sauvegarde.</description>
         <description lang="ja-JP">全てのセーブ画面を削除します。</description>
         <source version="GMSE01">
             0416210C 4E800020
@@ -404,12 +433,14 @@
     <code>
         <title lang="en-US">Unlock Yoshi</title>
         <title lang="de-CH">Yoshi Freischalten</title>
+        <title lang="fr-FR">Débloquer Yoshi</title>
         <title lang="ja-JP">ヨッシーの解放</title>
         <author>Noki Doki</author>
         <version>1.0</version>
         <date>Feb 10, 2018</date>
         <description lang="en-US">Unlocks Yoshi everywhere.</description>
         <description lang="de-CH">Schaltet Yoshi überall frei.</description>
+        <description lang="fr-FR">Débloque Yoshi dans tout le jeu.</description>
         <description lang="ja-JP">全てのヨッシーを解放します。</description>
         <source version="GMSE01">
             C61BBF70 801BBFA4
@@ -431,12 +462,14 @@
     <code>
         <title lang="en-US">Unlock Nozzles</title>
         <title lang="de-CH">Düsen freischalten</title>
+        <title lang="fr-FR">Débloquer les buses</title>
         <title lang="ja-JP">ノズルボックスの解放</title>
         <author>Noki Doki</author>
         <version>1.0</version>
         <date>Feb 12, 2018</date>
         <description lang="en-US">Unlocks all nozzle boxes.</description>
         <description lang="de-CH">Schaltet alle Düsen frei.</description>
+        <description lang="fr-FR">Débloque toutes les buses.</description>
         <description lang="ja-JP">全てのノズルボックスを解放します。</description>
         <source version="GMSE01">
             0429443C 38600001
@@ -458,12 +491,14 @@
     <code>
         <title lang="en-US">Free Pause</title>
         <title lang="de-CH">Freies Pausieren</title>
+        <title lang="fr-FR">Pause libre</title>
         <title lang="ja-JP">任意の箇所でポーズ</title>
         <author>Noki Doki</author>
         <version>1.1</version>
         <date>Nov 12, 2017</date>
         <description lang="en-US">Allows you to pause mid-air and during cutscenes.</description>
         <description lang="de-CH">Ermöglicht das Pausieren in der Luft und während Cutscenes.</description>
+        <description lang="fr-FR">Permet de mettre le jeu en pause pendant les cutscenes et quand Mario est dans les airs.</description>
         <description lang="ja-JP">空中やアニメーション中にポーズすることができるようになります。</description>
         <source version="GMSE01">
             C6297AB0 80297ABC
@@ -513,12 +548,14 @@
     <code>
         <title lang="en-US">Enable Exit Area Everywhere</title>
         <title lang="de-CH">'Level Verlassen' überall aktivieren</title>
+        <title lang="fr-FR">Activer « Sortir de la zone » partout</title>
         <title lang="ja-JP">任意の場所でコースから出られる</title>
         <author>Noki Doki</author>
         <version>1.0</version>
         <date>Oct 30, 2017</date>
         <description lang="en-US">Enables 'Exit Area' on Plaza and Airstrip.</description>
         <description lang="de-CH">Aktiviert 'Level Verlassen' auf der Plaza und dem Flugplatz.</description>
+        <description lang="fr-FR">Active « Sortir de la zone » sur la place Delfino et à l'aéroport.</description>
         <description lang="ja-JP">ドルピックタウンやエアポートでも「コースから出る」を選択できるようになります。</description>
         <source version="GMSE01">
             C6156B78 80156B84
@@ -536,6 +573,7 @@
     <code>
         <title lang="en-US">Shine Get Timer</title>
         <title lang="de-CH">Shine Get Timer</title>
+        <title lang="fr-FR">Chronomètre Shine Get</title>
         <title lang="ja-JP">シャインゲットタイマー</title>
         <author>Psychonauter, Noki Doki</author>
         <version>2.0</version>
@@ -559,6 +597,17 @@
         
         ::: danger ACHTUNG
         Benötigt den Level Select Code, Fast Any% oder Stage Loader!
+        :::
+        </description>
+        <description lang="fr-FR">
+        Ajoute un chronomètre à chaque niveau, démarrant à la dernière frame noire après le temps de chargement, et s'arrêtant dès que l'animation « Shine Get » commence (comme le chronomètre X-Cam de SM64).
+
+        ::: warning Avertissement
+        Le chronomètre se met en pause pendant les temps de chargement.
+        :::
+
+        ::: danger Attention
+        Nécessite l'activation du Sélecteur de niveau, de Fast Any% ou du Chargeur de liste.
         :::
         </description>
         <description lang="ja-JP">
@@ -1021,6 +1070,7 @@
     <code>
         <title lang="en-US">Level Select</title>
         <title lang="de-CH">Level Select</title>
+        <title lang="fr-FR">Sélecteur de niveau</title>
         <title lang="ja-JP">レベルセレクト</title>
         <author>Psychonauter, Dan Salvato, Noki Doki</author>
         <version>1.14</version>
@@ -1047,6 +1097,17 @@
             Tastenkombinationen:
             
             ![Level Select Combinations](/img/levelselect.png){width=500}
+        </description>
+        <description lang="fr-FR">
+            Permet de charger d'autres niveaux en démarrant un fichier ou en quittant un niveau en maintenant la combinaison appropriée jusqu'à ce que l'écran devienne noir.
+
+            ::: warning Attention
+            Ce code n'est pas compatible avec Fast Any%, Chargeur de liste ou Randomiseur de niveaux.
+            :::
+
+            Combinaisons :
+
+            ![Combinaisons du sélecteur de niveau](/img/levelselect.png){width=500}
         </description>
         <description lang="ja-JP">
             「ファイル開始時」もしくは「ステージ退場時（画面が黒くなるまで）に組合せ入力する」と、他のステージにワープできます。
@@ -1575,25 +1636,33 @@
     <code>
         <title lang="en-US">Fast Any%</title>
         <title lang="de-CH">Fast Any%</title>
+        <title lang="fr-FR">Fast Any%</title>
         <title lang="ja-JP">Fast Any%</title>
         <author>Psychonauter, Noki Doki</author>
         <version>1.4</version>
         <description lang="en-US">
-        Loads stages in any% order, skips all save boxes, replaces all dialog with "!!!" (except for the Pinna 5 secret) and makes all FMVs skippable (except for the Pinna 1 cutscenes).
+        Loads stages in any% order, skips all save boxes, replaces all dialog with "!!!" (except for the Pianta 5 secret) and makes all FMVs skippable (except for the Pinna 1 cutscenes).
         
         ::: warning
         This code is not compatible with the Level Select, Stage Loader or Stage Randomizer code.
         :::
         </description>
         <description lang="de-CH">
-        Ladet die Level in derselben Reihenfolge wie Any%, überpring alle Speicherschaltflächen, ersetzt alle Dialoge mit "!!!" (Abgesehen von Pinna 5) und ermöglicht das Überspringen aller FMVs (ausser in Pinna 1). 
+        Ladet die Level in derselben Reihenfolge wie Any%, überpring alle Speicherschaltflächen, ersetzt alle Dialoge mit "!!!" (Abgesehen von Pianta 5) und ermöglicht das Überspringen aller FMVs (ausser in Pinna 1). 
         
         ::: warning WARNUNG
         Dieser Code ist nicht kompatibel mit dem Level Select, Stage Loader oder Stage Randomizer Code.
         :::
         </description>
+        <description lang="fr-FR">
+        Charge les niveaux dans l'ordre any%, retire toutes les boîtes de sauvegarde, remplace tous les dialogues par « !!! » (sauf dans Pianta 5) et rend toutes les FMV passables (sauf celles de Pinna 1).
+
+        ::: warning Attention
+        Ce code n'est pas compatible avec le Sélecteur de niveau, le Chargeur de liste ou le Randomiseur de niveaux.
+        :::
+        </description>
         <description lang="ja-JP">
-        次の4つの機能を実現します: 「Any%順でステージを読み込む」「全てのセーブ画面をスキップ」「全ての会話を「!!!」に置き換え（ピンナ5のシークレットを除く）」「全てのFMVをスキップ可能にする（ピンナ1のFMVを除く）」
+        次の4つの機能を実現します: 「Any%順でステージを読み込む」「全てのセーブ画面をスキップ」「全ての会話を「!!!」に置き換え（モンテ5のシークレットを除く）」「全てのFMVをスキップ可能にする（ピンナ1のFMVを除く）」
 
         ::: warning 注意
         このコードは「Fast Any%」「ステージローダー」「ステージランダマイザーモード」とは互換性がありません。
@@ -2114,12 +2183,14 @@
     <code>
         <title lang="en-US">Any Fruit Opens Yoshi Eggs</title>
         <title lang="de-CH">Jede Frucht öffnet Yoshi-Eier</title>
+        <title lang="fr-FR">Tous les fruits ouvrent les œufs de Yoshi</title>
         <title lang="ja-JP">任意のフルーツでヨッシーをタマゴから解放</title>
         <author>Unknown, Noki Doki</author>
         <version>1.0</version>
         <date>Aug 19, 2018</date>
         <description lang="en-US">Allows opening Yoshi eggs with a different fruit than the one depicted.</description>
         <description lang="de-CH">Ermöglicht das öffnen von Yoshi-Eiern mit jeglicher Frucht.</description>
+        <description lang="fr-FR">Permet de faire éclore les œufs de Yoshi avec un autre fruit que celui demandé.</description>
         <description lang="ja-JP">どのフルーツでもヨッシーをタマゴから解放できるようになります。</description>
         <source version="GMSE01">
             041BC900 60000000
@@ -2137,12 +2208,14 @@
     <code>
         <title lang="en-US">Infinite Juice</title>
         <title lang="de-CH">Unendlich Saft</title>
+        <title lang="fr-FR">Jus infini</title>
         <title lang="ja-JP">無限ジュース</title>
         <author>Noki Doki</author>
         <version>1.0</version>
         <date>Apr 5, 2019</date>
         <description lang="en-US">Prevents Yoshi from despawning due to running out of juice.</description>
         <description lang="de-CH">Verhindert, dass Yoshi aufgrund von Saftmangel verschwindet.</description>
+        <description lang="fr-FR">Empêche Yoshi de disparaître en n'ayant plus de jus.</description>
         <description lang="ja-JP">ジュースが切れてもヨッシーが消えなくなります。</description>
         <source version="GMSE01">
             0426E810 60000000
@@ -2160,6 +2233,7 @@
     <code>
         <title lang="en-US">Stage Randomizer (Experimental)</title>
         <title lang="de-CH">Stage Randomizer (Experimentell)</title>
+        <title lang="fr-FR">Randomiseur de niveaux (expérimental)</title>
         <title lang="ja-JP">ステージランダマイザー（実験段階）</title>
         <author>Noki Doki</author>
         <version>1.0</version>
@@ -2175,6 +2249,13 @@
             
             ::: warning WARNUNG
             Dieser Code ist nicht kompatibel mit dem Level Select, Stage Loader oder Fast Any% code.
+            :::
+        </description>
+        <description lang="fr-FR">
+            Charge des niveaux dans un ordre aléatoire.
+
+            ::: warning Attention
+            Ce code n'est pas compatible avec le Sélecteur de niveaux, le Chargeur de liste ou Fast Any%.
             :::
         </description>
         <description lang="ja-JP">
@@ -2227,7 +2308,8 @@
     <code>
         <title lang="en-US">Replace Episode names with their ID</title>
         <title lang="de-CH">Ersetze Episodennamen mit ihrer ID</title>
-        <title lang="ja-JP">エピソード名をIDに置き換え</title>
+        <title lang="fr-FR">Remplacer les noms d'épisodes par leur numéro</title>
+        <title lang="ja-JP">ストーリー名をIDに置き換え</title>
         <author>Psychonauter, Noki Doki</author>
         <version>1.1</version>
         <description lang="en-US">
@@ -2238,8 +2320,12 @@
             Ersetzt alle Episodennamen mit ihrer Nummer (in der Vorschauszene).
             Praktisch für den Stage Randomizer oder Stage Loader.
         </description>
+        <description lang="fr-FR">
+            Remplace les noms des épisodes par leurs numéros dans la séquence de démo.
+            (Utile pour le Randomiseur de niveaux et le Chargeur de liste.)
+        </description>
         <description lang="ja-JP">
-            デモ画面でエピソード名をエピソード番号に置き換えます。 
+            デモ画面でストーリー名をストーリー番号に置き換えます。 
             （「ステージランダマイザー」と「ステージローダー」に役立ちます。）
         </description>
         <date>Feb 13, 2018</date>
@@ -2275,12 +2361,14 @@
     <code>
         <title lang="en-US">Shine Outfit</title>
         <title lang="de-CH">Shine Outfit</title>
+        <title lang="fr-FR">Tenue Shine</title>
         <title lang="ja-JP">アロハシャツ</title>
         <author>Ralf, Psychonauter</author>
         <version>1.0</version>
         <date>Oct 23, 2017</date>
         <description lang="en-US">Always wear shine outfit and sunglasses.</description>
         <description lang="de-CH">Mario trägt immer das Shine Outfit und die Sonnenbrille.</description>
+        <description lang="fr-FR">Toujours porter la chemise Shine et les lunettes de soleil.</description>
         <description lang="ja-JP">アロハシャツとサングラスを着用します。</description>
         <source version="GMSE01">
             04241FD4 60000004
@@ -2306,12 +2394,14 @@
     <code>
         <title lang="en-US">Position/angle/speed display</title>
         <title lang="de-CH">Position/Winkel/Geschw. Display</title>
+        <title lang="fr-FR">Affichage de position/angle/vitesse</title>
         <title lang="ja-JP">位置/角度/速度表示</title>
         <author>Noki Doki</author>
         <version>1.3</version>
         <date>Oct 28, 2019</date>
         <description lang="en-US">Shows Mario's position, angle and speed at any given time.</description>
         <description lang="de-CH">Zeigt Mario's Position, Winkel und Geschwindigkeit jederzeit auf dem Bildschirm an.</description>
+        <description lang="fr-FR">Affiche la position, l'angle et la vitesse de Mario à tout moment.</description>
         <description lang="ja-JP">常に「マリオの位置」「マリオの角度」「マリオの速度」を表示します。</description>
         <source version="GMSE01">
             062A6160 00000010
@@ -2609,6 +2699,7 @@
     <code>
         <title lang="en-US">Intro Skip</title>
         <title lang="de-CH">Überspringbare Intros</title>
+        <title lang="fr-FR">Passer l'intro</title>
         <title lang="ja-JP">イントロスキップ</title>
         <author>Noki Doki</author>
         <version>1.0</version>
@@ -2618,6 +2709,9 @@
         </description>
         <description lang="de-CH">
           Entfernt die Logos und Cutscenes welche beim Laden oder Zurücksetzen des Spiels abgespielt werden.
+        </description>
+        <description lang="fr-FR">
+          Supprime les logos et la cutscene qui apparaissent normalement avant l'écran titre lors du démarrage ou redémarrage du jeu.
         </description>
         <description lang="ja-JP">
           （ゲームをロードした時・またはリセット時）タイトル画面の前に再生されるロゴとアニメーションを削除します。
@@ -2658,12 +2752,14 @@
     <code>
         <title lang="en-US">Respawn One-Time Shines</title>
         <title lang="de-CH">Einmalige Shines Respawnen</title>
+        <title lang="fr-FR">Restaurer les Shines uniques</title>
         <title lang="ja-JP">一度しか出現しないシャインの再出現</title>
         <author>Noki Doki</author>
         <version>1.0</version>
         <date>Aug 19, 2019</date>
         <description lang="en-US">Allows Shines obtained by cleaning graffiti, the Shine Gate or the bells to respawn.</description>
         <description lang="de-CH">Ermöglicht das mehrmalige Einsammeln von Shines welche beispielsweise durch Reinigen von Graffiti oder Glocken freigeschaltet werden.</description>
+        <description lang="fr-FR">Permet la réapparition des Shines obtenus en nettoyant des graffiti, la Porte du Soleil ou les cloches.</description>
         <description lang="ja-JP">落書き・シャインゲート・ベルを掃除した時に出現するシャインを再出現させます。</description>
         <source version="GMSE01">
             041E792C 48000050
@@ -2689,6 +2785,7 @@
     <code>
         <title lang="en-US">Force Plaza Events</title>
         <title lang="de-CH">Erzwungene Plaza Events</title>
+        <title lang="fr-FR">Forcer les événements de la place Delfino</title>
         <title lang="ja-JP">ドルピックタウンイベントの強制再生</title>
         <author>Noki Doki</author>
         <version>1.0</version>
@@ -2700,6 +2797,10 @@
         <description lang="de-CH">
           Erzwingt die Durchführung der Ricco-, Gelato- und Yoshi- Freischaltungen sofern die korrekte Version der Plaza geladen ist. 
           Düsenfreischaltungen haben gegenüber Yoshi's Freischaltung Vorrang.
+        </description>
+        <description lang="fr-FR">
+          Force les événements pour débloquer Ricco, Gelato et Yoshi à se jouer dès que la bonne version de la place est chargée.
+          Le débloquage des buses ont la priorité sur celui de Yoshi si leurs conditions sont remplies.
         </description>
         <description lang="ja-JP">
           強制的に次のイベントを再生します: 「リコの解除イベント」「マンマの解除イベント」「正しいバージョンのドルピックタウンがロードされるたびに出現するヨッシー」
@@ -2737,12 +2838,14 @@
     <code>
         <title lang="en-US">Fix Memory Card Encoding</title>
         <title lang="de-CH">Repariere Speicherkarten-Kodierung</title>
+        <title lang="fr-FR">Corriger l'encodage de la carte mémoire</title>
         <title lang="ja-JP">メモリカードのエンコードの修正</title>
         <author>Noki Doki</author>
         <version>2.0</version>
         <date>Jun 25, 2020</date>
-        <description lang="en-US">Enable this if your Nintendont saves do not work on your other loader (e.g. Gecko OS on a Japanese console).</description>
+        <description lang="en-US">Enable this if your Nintendont saves do not work on your other loader (e.g. Gecko OS when your game and console have different regions).</description>
         <description lang="de-CH">Aktiviere dies, falls deine Nintendont nicht in anderen Loadern funktionieren (beispielsweise Gecko OS auf einer japanischen Konsole).</description>
+        <description lang="fr-FR">Activez ceci si vos sauvegardes de Nintendont ne fonctionnent pas sur votre autre loader (par exemple Gecko OS si votre jeu et console ne sont pas de la même région).</description>
         <description lang="ja-JP">Nintendontのセーブが他のローダー（例. 日本語コンソール上でのGecko OS）で機能しない場合は、このコードを有効にしてください。</description>
         <source version="GMSE01">
             0240CE58 00000001

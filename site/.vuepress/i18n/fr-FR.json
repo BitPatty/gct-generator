@@ -1,0 +1,270 @@
+{
+  "common": {
+    "download": "Télécharger",
+    "yes": "Oui",
+    "no": "Non",
+    "GMSE01": "GMSE01 (NTSC-U)",
+    "GMSJ01": "GMSJ01 (NTSC-J 1.0)",
+    "GMSJ0A": "GMSJ01 (NTSC-J 1.1)",
+    "GMSP01": "GMSP01 (PAL)"
+  },
+  "headers": {
+    "codelist": "Codes disponibles",
+    "help": "Aide",
+    "stageloader": "Chargeur de liste"
+  },
+  "codeinfo": {
+    "author": "Auteur :",
+    "authors": "Auteurs :",
+    "version": "Version :"
+  },
+  "generatorconfig": {
+    "gameversion": {
+      "label": "Version du jeu :",
+      "placeholder": "Choisissez une version…"
+    },
+    "usestageloader": "Utiliser le chargeur de liste",
+    "downloadformat": {
+      "label": "Format de fichier :",
+      "options": {
+        "gct": "GCT",
+        "dolphin": "Dolphin INI",
+        "gcm": "CheatManager TXT"
+      }
+    }
+  },
+  "landingpage": {
+    "title": "Générateur de fichiers de codes d'entraînement pour Super Mario Sunshine",
+    "summary": "Ceci est un générateur de fichiers de codes pour l'entraînement au speedrun de Super Mario Sunshine. Si c'est la première fois que vous utilisez le générateur, nous vous recommandons avant tout de consulter le <a href='/guide.html' target='_blank'>guide</a>. Visitez la <a href='/guide.html#résolution-de-problèmes' target='_blank'>section de résolution</a> si vous rencontrez des problèmes.",
+    "community": "La communauté de speedrun SMS",
+    "links": {
+      "discord": "Discord",
+      "discordlink": "https://discord.gg/9dGJWEc",
+      "twitter": "Twitter : @SMSCommunity",
+      "twitch": "Twitch : SunshineCommunity",
+      "src": "Classements Speedrun.com"
+    }
+  },
+  "stageloader": {
+    "levelorder": {
+      "label": "Ordre des niveaux",
+      "options": {
+        "list": "Comme spécifié",
+        "shuffle": "Aléatoire, sans répétition",
+        "random": "Complètement aléatoire"
+      }
+    },
+    "removedialogue": {
+      "label": "Suppression des dialogues :",
+      "options": {
+        "pv5": "Pas dans Pianta 5",
+        "yes": "Toujours",
+        "no": "Ne pas inclure"
+      }
+    },
+    "skippablefmvs": {
+      "label": "FMV passables :",
+      "options": {
+        "pp": "Pas dans Pinna",
+        "yes": "Toujours",
+        "no": "Ne pas inclure"
+      }
+    },
+    "postgame": {
+      "label": "Fin de partie :",
+      "options": {
+        "0F00": "Retourner à l'écran titre",
+        "0109": "Charger la place inondée",
+        "0102": "Charger la place finale",
+        "3400": "Charger le Mont Corona",
+        "3C00": "Charger le combat contre Bowser"
+      }
+    },
+    "levels": {
+      "delfinoplaza": {
+        "header": "Place Delfino",
+        "current": "Place - Actuelle",
+        "biancounlock": "Place - Débloquage de Bianco",
+        "peachchase": "Place - Course-poursuite de Peach",
+        "riccounlock": "Place - Débloquages de Ricco / Gelato",
+        "peaceful": "Place - Paisible",
+        "pinnaunlock": "Place - Débloquage de Pinna",
+        "yoshiunlock": "Place - Débloquage de Yoshi / des buses",
+        "flooded": "Place - Inondée",
+        "postcorona": "Place - Finale"
+      },
+      "delfinosublevels": {
+        "header": "Niveaux de la Place Delfino",
+        "airstrip": "Aéroport",
+        "airstripreds": "Aéroport (pièces rouges)",
+        "slide": "Toboggan",
+        "pachinko": "Pachinko",
+        "grasspipe": "Hautes herbes",
+        "lilypad": "Voyage en nénuphar",
+        "jail": "Secret de la prison"
+      },
+      "secrets": {
+        "header": "Niveaux secrets",
+        "bianco3": "Secret de Bianco 3",
+        "bianco6": "Secret de Bianco 6",
+        "ricco4": "Secret de Ricco 4",
+        "gelato1": "Secret de Gelato 1",
+        "pinna2": "Secret de Pinna 2",
+        "pinna6": "Secret de Pinna 6",
+        "sirena2": "Secret de Sirena 2",
+        "sirena4": "Secret de Sirena 4",
+        "noki6": "Secret de Noki 6",
+        "pianta5": "Secret de Pianta 5"
+      },
+      "sublevels": {
+        "header": "Zones secondaires",
+        "petey": "Combat contre Flora Piranha (Bianco 2)",
+        "gooperblooper": "Combat contre Méga-Bloups (Ricco 1)",
+        "sewers": "Circuit de surf (Ricco 2)",
+        "sandbird": "Oiseau de sable (Gelato 4)",
+        "mecha": "Combat contre Mecha-Bowser (Pinna 1)",
+        "rollercoaster": "Montagnes russes (Pinna 8)",
+        "casino1": "Casino Delfino (Sirena 4)",
+        "casino2": "Casino Delfino (Sirena 5)",
+        "kingboo": "Combat contre le Roi Boo (Sirena 5)",
+        "bottle": "Bouteille (Noki 3)",
+        "eel": "Fond de l'océan (Noki 4)",
+        "nokireds": "Fond de l'océan (Noki 8)"
+      },
+      "misc": {
+        "header": "Divers",
+        "biancoepisodeselect": "Sélection d'épisode de Bianco",
+        "riccoepisodeselect": "Sélection d'épisode de Ricco",
+        "gelatoepisodeselect": "Sélection d'épisode de Gelato",
+        "pinnaepisodeselect": "Sélection d'épisode de Pinna",
+        "sirenaepisodeselect": "Sélection d'épisode de Sirena",
+        "nokiepisodeselect": "Sélection d'épisode de Noki",
+        "piantaepisodeselect": "Sélection d'épisode de Pianta"
+      },
+      "bianco": {
+        "header": "Collines Bianco",
+        "1": "Bianco 1",
+        "2": "Bianco 2",
+        "3": "Bianco 3",
+        "4": "Bianco 4",
+        "5": "Bianco 5",
+        "6": "Bianco 6",
+        "7": "Bianco 7",
+        "8": "Bianco 8"
+      },
+      "ricco": {
+        "header": "Port Ricco",
+        "1": "Ricco 1",
+        "2": "Ricco 2",
+        "3": "Ricco 3",
+        "4": "Ricco 4",
+        "5": "Ricco 5",
+        "6": "Ricco 6",
+        "7": "Ricco 7",
+        "8": "Ricco 8"
+      },
+      "gelato": {
+        "header": "Gelato-les-Flots",
+        "1": "Gelato 1",
+        "2": "Gelato 2",
+        "3": "Gelato 3",
+        "4": "Gelato 4",
+        "5": "Gelato 5",
+        "6": "Gelato 6",
+        "7": "Gelato 7",
+        "8": "Gelato 8"
+      },
+      "pinna": {
+        "header": "Parc Pinna",
+        "1": "Pinna 1",
+        "2": "Pinna 2",
+        "3": "Pinna 3",
+        "4": "Pinna 4",
+        "5": "Pinna 5",
+        "6": "Pinna 6",
+        "7": "Pinna 7",
+        "8": "Pinna 8"
+      },
+      "sirena": {
+        "header": "Plage Sirena",
+        "1": "Sirena 1",
+        "2": "Sirena 2",
+        "3": "Sirena 3",
+        "4": "Sirena 4",
+        "5": "Sirena 5",
+        "6": "Sirena 6",
+        "7": "Sirena 7",
+        "8": "Sirena 8"
+      },
+      "noki": {
+        "header": "Baie Noki",
+        "1": "Noki 1",
+        "2": "Noki 2",
+        "3": "Noki 3",
+        "4": "Noki 4",
+        "5": "Noki 5",
+        "6": "Noki 6",
+        "7": "Noki 7",
+        "8": "Noki 8"
+      },
+      "pianta": {
+        "header": "Village Pianta",
+        "1": "Pianta 1",
+        "2": "Pianta 2",
+        "3": "Pianta 3",
+        "4": "Pianta 4",
+        "5": "Pianta 5",
+        "6": "Pianta 6",
+        "7": "Pianta 7",
+        "8": "Pianta 8"
+      }
+    },
+    "presets": {
+      "fullgameminimalplaza": {
+        "header": "Catégories jeu complet, sans place Delfino",
+        "fapnormal": "Fast Any% route habituelle",
+        "fapriccolate": "Fast Any% Ricco en dernier",
+        "fap49": "Fast Any% No Major Skips",
+        "fap58": "Fast 58 Shines / Tous les épisodes",
+        "fap79": "Fast 79 Shines / Tous les Shines des niveaux",
+        "fap96": "Fast 96 Shines / Tous les Shines, pas de pièces bleues"
+      },
+      "fullgamecategories": {
+        "header": "Catégories jeu complet",
+        "anyp": "Any% route habituelle",
+        "49": "Any% No Major Skips",
+        "58": "58 Shines / Tous les épisodes",
+        "79": "79 Shines / Tous les Shines des niveaux",
+        "96": "96 Shines / Tous les Shines, pas de pièces bleues",
+        "120": "120 Shines / Tous les Shines, toutes les pièces bleues"
+      },
+      "iw": {
+        "header": "Mondes individuels",
+        "bianco": "Collines Bianco",
+        "ricco": "Port Ricco",
+        "gelato": "Gelato-les-Flots",
+        "pinna": "Parc Pinna",
+        "sirena": "Plage Sirena",
+        "noki": "Baie Noki",
+        "pianta": "Village Pianta"
+      },
+      "iwallshines": {
+        "header": "Mondes individuels (tous les Shines)",
+        "bianco": "Collines Bianco",
+        "ricco": "Port Ricco",
+        "gelato": "Gelato-les-Flots",
+        "pinna": "Parc Pinna",
+        "sirena": "Plage Sirena",
+        "noki": "Baie Noki",
+        "pianta": "Village Pianta"
+      }
+    },
+    "levelselectplaceholder": "Choisir un niveau…",
+    "loadpresetplaceholder": "Charger une liste prédéfinie…",
+    "route": "Route",
+    "clear": "Effacer la liste"
+  },
+  "misc": {
+    "defaulthelpmessage": "Choisissez vos codes dans la liste à gauche."
+  }
+}

@@ -132,13 +132,13 @@
       },
       "misc": {
         "header": "その他",
-        "biancoepisodeselect": "ビアンコのエピソード選択画面",
-        "riccoepisodeselect": "リコのエピソード選択画面",
-        "gelatoepisodeselect": "マンマのエピソード選択画面",
-        "pinnaepisodeselect": "ピンナのエピソード選択画面",
-        "sirenaepisodeselect": "シレナのエピソード選択画面",
-        "nokiepisodeselect": "マーレのエピソード選択画面",
-        "piantaepisodeselect": "モンテのエピソード選択画面"
+        "biancoepisodeselect": "ビアンコのストーリー選択画面",
+        "riccoepisodeselect": "リコのストーリー選択画面",
+        "gelatoepisodeselect": "マンマのストーリー選択画面",
+        "pinnaepisodeselect": "ピンナのストーリー選択画面",
+        "sirenaepisodeselect": "シレナのストーリー選択画面",
+        "nokiepisodeselect": "マーレのストーリー選択画面",
+        "piantaepisodeselect": "モンテのストーリー選択画面"
       },
       "bianco": {
         "header": "ビアンコヒルズ",

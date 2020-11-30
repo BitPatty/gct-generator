@@ -61,6 +61,38 @@
       }
     ]
   },
+  "/fr/": {
+    "lang": "fr-FR",
+    "title": "Générateur GCT",
+    "selectText": "🌐 Langue",
+    "label": "Français",
+    "ariaLabel": "Langue",
+    "editLinkText": "Modifier cette page sur GitHub",
+    "activeHeaderLinks": false,
+    "nav": [
+      {
+        "text": "Cookbook",
+        "link": "/fr/guide.html"
+      },
+      {
+        "text": "Référence des codes",
+        "link": "/fr/code-reference/index.html"
+      },
+
+      {
+        "text": "Installation d'IOS58",
+        "link": "/fr/ios58.html"
+      },
+      {
+        "text": "Discord de Sunshine",
+        "link": "https://discord.gg/9dGJWEc"
+      },
+      {
+        "text": "Changelog",
+        "link": "https://github.com/BitPatty/gctGenerator/blob/master/changelog.md"
+      }
+    ]
+  },
   "/ja/": {
     "lang": "ja-JP",
     "title": "GCT Generator",

@@ -1,10 +1,12 @@
 import enUS from './en-US.json';
 import deCH from './de-CH.json';
+import frFR from './fr-FR.json';
 import jaJP from './ja-JP.json';
 
 const translations = {
   enUS,
   deCH,
+  frFR,
   jaJP,
 };
 
