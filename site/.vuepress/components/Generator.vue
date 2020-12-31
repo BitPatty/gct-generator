@@ -89,7 +89,8 @@
             </p>
           </div>
           <div class="centered">
-            <a href="/">English</a> | <a href="/ja">日本語</a> | <a href="/de">Deutsch</a> | <a href="/fr">Français</a>
+            <a href="/">English</a> | <a href="/ja">日本語</a> | <a href="/de">Deutsch</a> |
+            <a href="/fr">Français</a>
           </div>
         </div>
       </div>

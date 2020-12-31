@@ -2860,4 +2860,29 @@
             024045B8 00000001
         </source>
     </code>
+    <code>
+        <title lang="en-US">Fix Manta Splitting</title>
+        <title lang="de-CH">Fix Manta Splitting</title>
+        <title lang="fr-FR">Corriger la séparation de la raie manta</title>
+        <title lang="ja-JP">Fix Manta Splitting</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <date>Dec 31, 2020</date>
+        <description lang="en-US">Fixes the Nintendont-exclusive bug that changes the manta's behavior upon splitting and may cause it to die early.</description>
+        <description lang="de-CH">Fixes the Nintendont-exclusive bug that changes the manta's behavior upon splitting and may cause it to die early.</description>
+        <description lang="fr-FR">Corrige le bug exclusif à Nintendont qui change le comportement de la raie manta quand elle se sépare et peut la faire mourir instantanément.</description>
+        <description lang="ja-JP">Fixes the Nintendont-exclusive bug that changes the manta's behavior upon splitting and may cause it to die early.</description>
+        <source version="GMSE01">
+            04295AA0 C342FFF8
+        </source>
+        <source version="GMSJ01">
+            040E905C C342FFE4
+        </source>
+        <source version="GMSJ0A">
+            04275748 C342FFEC
+        </source>
+        <source version="GMSP01">
+            0428D938 C342FFF8
+        </source>
+    </code>
 </codes>
