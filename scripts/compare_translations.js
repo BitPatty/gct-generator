@@ -7,7 +7,7 @@ const locales = require(path.join(__dirname, '../site/.vuepress/i18n/locales.jso
  * @param {*} path The already visited path
  */
 const getLeaves = (node, path = null) => {
-  if (typeof node === 'string') return leavePaths.push(path);
+  if (typeof node === 'string') return leafPaths.push(path);
   if (typeof node != 'object') throw new Error(typeof node);
   const currentPath = path ? `${path}.` : '';
   Object.keys(node).forEach((key) => getLeaves(node[key], `${currentPath}${key}`));
@@ -40,15 +40,15 @@ const defaultTranslation = translations.find((t) => t.lang === locales['/'].lang
 console.log(`Default translation set to ${defaultTranslation.lang}`);
 
 // Holds the paths to all leaf nodes of the default translation
-const leavePaths = [];
+const leafPaths = [];
 getLeaves(defaultTranslation.values);
-console.log('Detected translations: ', leavePaths);
+console.log('Detected translations: ', leafPaths);
 
 // Compare all translations to the default translation
 translations.forEach((t) => {
   console.log(`Comparing ${t.lang} to ${defaultTranslation.lang}`);
 
-  leavePaths.forEach((p) => {
+  leafPaths.forEach((p) => {
     const value = getNestedProperty(t.values, p);
     if (value == null || typeof value !== 'string') {
       console.warn(`${t.lang} is missing a translation at '${p}'`);
