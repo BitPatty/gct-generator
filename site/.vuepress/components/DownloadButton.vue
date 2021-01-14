@@ -73,7 +73,7 @@ export default {
     generateGCT(codes, version) {
       let code = '00D0C0DE00D0C0DE';
       codes.forEach((c) => (code += c.source));
-      code += 'FF00000000000000';
+      code += 'F000000000000000';
 
       let rawData = new Uint8Array(code.length / 2);
 
