@@ -2860,6 +2860,21 @@
         </source>
     </code>
     <code>
+        <title lang="en-US">Fix Memory Card Encoding (NTSC-K)</title>
+        <title lang="de-CH">Repariere Speicherkarten-Kodierung (NTSC-K)</title>
+        <title lang="fr-FR">Corriger l'encodage de la carte mémoire (NTSC-K)</title>
+        <title lang="ja-JP">メモリカードのエンコードの修正（NTSC-K）</title>
+        <author>Noki Doki</author>
+        <version>2.0</version>
+        <date>Jun 25, 2020</date>
+        <description lang="en-US">Enable this if your Nintendont saves do not work on your other loader (e.g. Gecko OS when your game and console have different regions).</description>
+        <description lang="de-CH">Aktiviere dies, falls deine Nintendont nicht in anderen Loadern funktionieren (beispielsweise Gecko OS auf einer japanischen Konsole).</description>
+        <description lang="fr-FR">Activez ceci si vos sauvegardes de Nintendont ne fonctionnent pas sur votre autre loader (par exemple Gecko OS si votre jeu et console ne sont pas de la même région).</description>
+        <source version="GMSE01">
+            0240CE58 00000000
+        </source>
+    </code>
+    <code>
         <title lang="en-US">Fix Manta Splitting</title>
         <title lang="de-CH">Fix Manta Splitting</title>
         <title lang="fr-FR">Corriger la séparation de la raie manta</title>
