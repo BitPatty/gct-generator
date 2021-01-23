@@ -1,5 +1,17 @@
 # Changelog
 
+## Jan 23, 2021
+
+### Updated 'Remove Saveboxes'
+
+Enabling this code no longer prevents you from saving through the pause menu.
+
+## Jan 21, 2021
+
+### Added 'Fix Memory Card Encoding (NTSC-K)'
+
+Memory card encoding is one of the very few differences between the US and Korean versions, using the wrong version of this code will have no effect.
+
 ## Jun 25, 2020
 
 ### Updated 'Fix Memory Card Encoding'

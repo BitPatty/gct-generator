@@ -406,28 +406,24 @@
         <title lang="de-CH">Speicher-Schaltfläche entfernen</title>
         <title lang="fr-FR">Supprimer les boîtes de sauvegarde</title>
         <title lang="ja-JP">セーブ画面の削除</title>
-        <author>Psychonauter</author>
-        <version>1.0</version>
-        <date>Oct 02, 2017</date>
+        <author>Psychonauter, Noki Doki</author>
+        <version>2.0</version>
+        <date>Jan 23, 2021</date>
         <description lang="en-US">Removes all saveboxes.</description>
         <description lang="de-CH">Entfernt alle Speicherschaltflächen.</description>
         <description lang="fr-FR">Supprime toutes les boîtes de sauvegarde.</description>
         <description lang="ja-JP">全てのセーブ画面を削除します。</description>
         <source version="GMSE01">
-            0416210C 4E800020
-            04157EF8 48000020
+            02297CA4 00004800
         </source>
         <source version="GMSJ01">
-            042193D8 48000020
-            04223094 4E800020
+            020EB260 00004800
         </source>
         <source version="GMSJ0A">
-            0413934C 48000020
-            04143178 4E800020
+            0227794C 00004800
         </source>
         <source version="GMSP01">
-            0414CF44 48000020
-            04157158 4E800020
+            0228FB3C 00004800
         </source>
     </code>
     <code>
