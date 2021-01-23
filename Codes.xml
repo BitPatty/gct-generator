@@ -407,23 +407,27 @@
         <title lang="fr-FR">Supprimer les boîtes de sauvegarde</title>
         <title lang="ja-JP">セーブ画面の削除</title>
         <author>Psychonauter, Noki Doki</author>
-        <version>2.0</version>
+        <version>2.1</version>
         <date>Jan 23, 2021</date>
         <description lang="en-US">Removes all saveboxes.</description>
         <description lang="de-CH">Entfernt alle Speicherschaltflächen.</description>
         <description lang="fr-FR">Supprime toutes les boîtes de sauvegarde.</description>
         <description lang="ja-JP">全てのセーブ画面を削除します。</description>
         <source version="GMSE01">
-            02297CA4 00004800
+            02297CAC 60000000
+            02297CB8 60000000
         </source>
         <source version="GMSJ01">
-            020EB260 00004800
+            020EB268 60000000
+            020EB274 60000000
         </source>
         <source version="GMSJ0A">
-            0227794C 00004800
+            02277954 60000000
+            02277960 60000000
         </source>
         <source version="GMSP01">
-            0228FB3C 00004800
+            0228FB44 60000000
+            0228FB50 60000000
         </source>
     </code>
     <code>
