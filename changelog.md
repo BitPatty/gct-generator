@@ -1,5 +1,11 @@
 # Changelog
 
+## Feb 15, 2021
+
+### Updated 'Fix Manta Splitting'
+
+For verification purposes, this code now changes the color of the stripe behind the coin count in the HUD when in Sirena 1.
+
 ## Jan 23, 2021
 
 ### Updated 'Remove Saveboxes'
