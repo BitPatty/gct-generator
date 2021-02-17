@@ -1,5 +1,11 @@
 # Changelog
 
+## Feb 17, 2021
+
+### Fixed 'Remove Save Boxes'
+
+The previous version would just crash the game on boot. Good job me.
+
 ## Feb 15, 2021
 
 ### Updated 'Fix Manta Splitting'
@@ -8,7 +14,7 @@ For verification purposes, this code now changes the color of the stripe behind 
 
 ## Jan 23, 2021
 
-### Updated 'Remove Saveboxes'
+### Updated 'Remove Save Boxes'
 
 Enabling this code no longer prevents you from saving through the pause menu.
 
