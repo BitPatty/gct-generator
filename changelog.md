@@ -1,5 +1,11 @@
 # Changelog
 
+## Mar 17, 2021
+
+### Fixed 'Fix Manta Splitting'
+
+When enabling 60Hz mode (PAL) or progressive mode (other versions), the confirmation message would incorrectly reappear on the Dolby logo screen. This is no longer the case.
+
 ## Feb 17, 2021
 
 ### Fixed 'Remove Save Boxes'

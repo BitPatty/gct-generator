@@ -2880,13 +2880,13 @@
         <title lang="fr-FR">Corriger la séparation de la raie manta</title>
         <title lang="ja-JP">Fix Manta Splitting</title>
         <author>Noki Doki</author>
-        <version>1.1</version>
-        <date>Feb 15, 2021</date>
+        <version>1.2</version>
+        <date>Mar 17, 2021</date>
         <description lang="en-US">Fixes the Nintendont-exclusive bug that changes the manta's behavior upon splitting and may cause it to die early.</description>
         <description lang="de-CH">Fixt einen Nintendont Bug, bei welchem der Manta aufgrund von fehlerhafter Aufteilung zu früh stirbt.</description>
         <description lang="fr-FR">Corrige le bug exclusif à Nintendont qui change le comportement de la raie manta quand elle se sépare et peut la faire mourir instantanément.</description>
         <source version="GMSE01">
-            04295AA0 C342FFF8
+            04295A94 C342FFF8
             C214EDAC 00000005
             806D9FB8 A063007C
             28030600 40820014
@@ -2895,7 +2895,7 @@
             931F00C8 00000000
         </source>
         <source version="GMSJ01">
-            040E905C C342FFE4
+            040E9050 C342FFE4
             C22102BC 00000005
             806D97E8 A063007C
             28030600 40820014
@@ -2904,7 +2904,7 @@
             931F00C8 00000000
         </source>
         <source version="GMSJ0A">
-            04275748 C342FFEC
+            0427573C C342FFEC
             C21301BC 00000005
             806D9E78 A063007C
             28030600 40820014
@@ -2913,7 +2913,7 @@
             931F00C8 00000000
         </source>
         <source version="GMSP01">
-            0428D938 C342FFF8
+            0428D92C C342FFF8
             C2143A3C 00000005
             806D9EE0 A063007C
             28030600 40820014
