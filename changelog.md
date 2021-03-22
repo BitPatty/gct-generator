@@ -1,5 +1,11 @@
 # Changelog
 
+## Mar 22, 2021
+
+### Updated 'Shine Get Timer'
+
+The timer now freezes as soon as you touch a loading zone, allowing you to see your entry time.
+
 ## Mar 17, 2021
 
 ### Fixed 'Fix Manta Splitting'

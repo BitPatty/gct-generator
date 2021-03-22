@@ -576,7 +576,7 @@
         <title lang="fr-FR">Chronomètre Shine Get</title>
         <title lang="ja-JP">シャインゲットタイマー</title>
         <author>Psychonauter, Noki Doki</author>
-        <version>2.0</version>
+        <version>2.1</version>
         <description lang="en-US">
         Adds the ingame timer to every level, starting on the last black frame after the loading screen and ending as soon as the 'Shine Get' animation starts (similar to the x-cam timer of SM64).
         
@@ -621,7 +621,7 @@
         このコードを使うには、「Level Select code」か「Fast Any%」か「ステージローダー」を有効にする必要があります。
         :::
         </description>
-        <date>Oct 11, 2019</date>
+        <date>Mar 22, 2021</date>
         <source version="GMSE01">
             C2031F68 0000000F
             3CC0817F 60C60100
@@ -703,6 +703,13 @@
             7C8803A6 4E800021
             7FE803A6 7FC0F378
             83E1001C 00000000
+            C22921EC 00000006
+            3CA08034 60A594D8
+            7CA803A6 4E800021
+            901E0118 80BE0114
+            7C852010 80BE0110
+            7C651910 907E00F0
+            909E00F4 00000000
             04348048 4E800020
             0414A99C 60000000
             0414D2E8 60000000
@@ -814,6 +821,13 @@
             7C8803A6 4E800021
             7FE803A6 7FC0F378
             83E1001C 00000000
+            C22921EC 00000006
+            3CA08009 60A53DF8
+            7CA803A6 4E800021
+            901E0118 80BE0114
+            7C852010 80BE0110
+            7C651910 907E00F0
+            909E00F4 00000000
             04092968 4E800020
             0420BDF8 60000000
             0420E8A4 60000000
@@ -925,6 +939,13 @@
             7C8803A6 4E800021
             7FE803A6 7FC0F378
             83E1001C 00000000
+            C22921EC 00000006
+            3CA08032 60A58DD8
+            7CA803A6 4E800021
+            901E0118 80BE0114
+            7C852010 80BE0110
+            7C651910 907E00F0
+            909E00F4 00000000
             04327948 4E800020
             0412BD90 60000000
             0412E6F8 60000000
@@ -1036,6 +1057,13 @@
             7C8803A6 4E800021
             7FE803A6 7FC0F378
             83E1001C 00000000
+            C22921EC 00000006
+            3CA08034 60A51734
+            7CA803A6 4E800021
+            901E0118 80BE0114
+            7C852010 80BE0110
+            7C651910 907E00F0
+            909E00F4 00000000
             043402A4 4E800020
             0413F62C 60000000
             04141F78 60000000
