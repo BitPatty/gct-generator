@@ -4,8 +4,13 @@
  * ref：https://v1.vuepress.vuejs.org/config/#index-styl
  */
  
- body
+body
     min-height: 120vh;
+
+body.fool
+    transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg); /* IE 9 */
+    -webkit-transform: rotateY(-180deg); /* Safari and Chrome */
 
 div.theme-default-content:not(.custom) 
     max-width: 80%;
