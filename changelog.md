@@ -1,5 +1,17 @@
 # Changelog
 
+## Mar 22, 2021
+
+### Updated 'Shine Get Timer'
+
+The timer now freezes as soon as you touch a loading zone, allowing you to see your entry time.
+
+## Mar 17, 2021
+
+### Fixed 'Fix Manta Splitting'
+
+When enabling 60Hz mode (PAL) or progressive mode (other versions), the confirmation message would incorrectly reappear on the Dolby logo screen. This is no longer the case.
+
 ## Feb 17, 2021
 
 ### Fixed 'Remove Save Boxes'
