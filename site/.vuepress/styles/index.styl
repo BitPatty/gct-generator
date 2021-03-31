@@ -11,6 +11,10 @@ body.fool
     transform: rotateY(-180deg);
     -ms-transform: rotateY(-180deg); /* IE 9 */
     -webkit-transform: rotateY(-180deg); /* Safari and Chrome */
+    &, & *
+        cursor: url('/img/yoshi.png'), auto !important
+    &:hover:active, & *:hover:active
+        cursor: url('/img/yoshi_l.png'), auto !important
 
 div.theme-default-content:not(.custom) 
     max-width: 80%;
