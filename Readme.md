@@ -38,7 +38,7 @@ Note that in the code reference files everything following the `<!-- injectionpo
 
 ### Site Development
 
-If you intend to change site code you need [NodeJS](https://nodejs.org/en/) version 14.X lTS installed on your local.
+If you intend to change site code you need [NodeJS](https://nodejs.org/en/) version 14.X LTS installed on your local.
 
 ```sh
 # Install yarn
