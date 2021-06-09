@@ -16,10 +16,6 @@
             | D-Pad Right     | Load Mario's position                       |
             | D-Pad Up        | Replace all dialog with a single "!!!" line |
             | D-Pad Down      | Restore Dialog Boxes                        |
-            | B + D-Pad Left  | Lock Rocket Nozzle                          |
-            | B + D-Pad Right | Lock Turbo Nozzle                           |
-            | B + D-Pad Up    | Lock Hover Nozzle                           |
-            | B + D-Pad Down  | Release Nozzle Lock                         |
             | X + D-Pad Left  | No FLUDD in secrets                         |
             | X + D-Pad Right | FLUDD in all secrets                        |
             | X + D-Pad Down  | FLUDD in completed secrets (default)        |
@@ -34,10 +30,6 @@
             | D-Pad Right     | Lade Mario's Position                       |
             | D-Pad Up        | Ersetze alle Dialoge mit einer "!!!" Linie  |
             | D-Pad Down      | Stelle alle Dialoge wieder her              |
-            | B + D-Pad Left  | Sperre Raketendüse                          |
-            | B + D-Pad Right | Sperre Turbodüse                            |
-            | B + D-Pad Up    | Sperre Schwebedüse                          |
-            | B + D-Pad Down  | Düsensperre freigeben                       |
             | X + D-Pad Left  | Kein Dreckweg in geheimen Leveln            |
             | X + D-Pad Right | Dreckweg in allen geheimen Leveln           |
             | X + D-Pad Down  | Dreckweg in komplettierten geheimen Leveln  |
@@ -52,10 +44,6 @@
             | D-Pad droite     | Restaurer la position de Mario           |
             | D-Pad haut       | Remplacer tous les dialogues par « !!! » |
             | D-Pad bas        | Rétablir les dialogues                   |
-            | B + D-Pad gauche | Verrouiller la catabuse                  |
-            | B + D-Pad droite | Verrouiller la turbobuse                 |
-            | B + D-Pad haut   | Verrouiller l'aérobuse                   |
-            | B + D-Pad bas    | Annuler le verrouillage de buse          |
             | X + D-Pad gauche | Pas de JET dans les secrets              |
             | X + D-Pad droite | JET dans tous les secrets                |
             | X + D-Pad bas    | JET dans les secrets complétés (défaut)  |
@@ -70,16 +58,12 @@
             | 十字ボタン右     | マリオの位置をロードします                           |
             | 十字ボタン上     | 会話が全て「!!!」に置き換わります                    |
             | 十字ボタン下     | 会話が「!!!」から元に戻ります                        |
-            | B + 十字ボタン左 | ロケットノズルで固定します                           |
-            | B + 十字ボタン右 | ターボノズルで固定します                             |
-            | B + 十字ボタン上 | ホバーノズルで固定します                             |
-            | B + 十字ボタン下 | ノズルが通常の状態に戻ります                         |
             | X + 十字ボタン左 | ヒミツステージの赤スイッチが消えます                 |
             | X + 十字ボタン右 | 全ヒミツステージの赤スイッチが出現します             |
             | X + 十字ボタン下 | ヒミツステージの赤スイッチが通常の状態に戻ります     |
             | X + 十字ボタン上 | 最後に掴んだオブジェクト（フルーツ等)を再掴みします  |
         </description>
-        <date>Apr 3, 2019</date>
+        <date>Jun 10, 2021</date>
         <source version="GMSE01">
             2440E10C 80000000
             82200000 8040E10C
@@ -103,14 +87,6 @@
             04153DA0 38000000
             0415317C 38005000
             04291340 60000000
-            28404455 00000208
-            04269F50 3BE00004
-            28404455 00000204
-            04269F50 8BFE1C85
-            28404455 00000201
-            04269F50 3BE00001
-            28404455 00000202
-            04269F50 3BE00005
             28404455 00000401
             041C0910 60000000
             04298B88 60000000
@@ -150,14 +126,6 @@
             04215290 38000000
             04214610 38005000
             040E4888 60000000
-            28400D51 00000208
-            041494D4 3BE00004
-            28400D51 00000204
-            041494D4 8BFE1C85
-            28400D51 00000201
-            041494D4 3BE00001
-            28400D51 00000202
-            041494D4 3BE00005
             28400D51 00000401
             04198784 60000000
             040EC0F4 60000000
@@ -198,14 +166,6 @@
             041351C4 38000000
             04134524 38005000
             04271090 88030214
-            283F5429 00000208
-            04249CA0 3BE00004
-            283F5429 00000204
-            04249CA0 8BFE1C85
-            283F5429 00000201
-            04249CA0 3BE00001
-            283F5429 00000202
-            04249CA0 3BE00005
             283F5429 00000401
             041A0698 60000000
             04278830 60000000
@@ -246,14 +206,6 @@
             04148D20 38000000
             04147F98 38005000
             042890CC 60000000
-            283FBBF5 00000208
-            04261CDC 3BE00004
-            283FBBF5 00000204
-            04261CDC 8BFE1C85
-            283FBBF5 00000201
-            04261CDC 3BE00001
-            283FBBF5 00000202
-            04261CDC 3BE00005
             283FBBF5 00000401
             041B87C8 60000000
             04290A20 60000000
@@ -279,6 +231,97 @@
             0474EBDC 21210000
             E2000001 00000000
             04237760 60000000
+        </source>
+    </code>
+    <code>
+        <title lang="en-US">Nozzle Lock</title>
+        <title lang="fr-FR">Verrouillage de buses</title>
+        <author>Psychonauter, Dan Salvato, Link Master, James0x57</author>
+        <version>1.0</version>
+        <description lang="en-US">
+            | Combination     | Result                                      |
+            | --------------- | ------------------------------------------- |
+            | B + D-Pad Left  | Lock Rocket Nozzle                          |
+            | B + D-Pad Right | Lock Turbo Nozzle                           |
+            | B + D-Pad Up    | Lock Hover Nozzle                           |
+            | B + D-Pad Down  | Release Nozzle Lock                         |
+
+            ::: warning
+            The underwater sections of Noki Bay (episodes 3, 4 and 8) use a different hover nozzle from the one you get with B + Up. If you find it's not working properly, simply release the nozzle lock.
+            :::
+        </description>
+        <description lang="de-CH">
+            | Kombination     | Effekt                                      |
+            | --------------- | ------------------------------------------- |
+            | B + D-Pad Left  | Sperre Raketendüse                          |
+            | B + D-Pad Right | Sperre Turbodüse                            |
+            | B + D-Pad Up    | Sperre Schwebedüse                          |
+            | B + D-Pad Down  | Düsensperre freigeben                       |
+        </description>
+        <description lang="fr-FR">
+            | Combinaison      | Résultat                                 |
+            | ---------------- | ---------------------------------------- |
+            | B + D-Pad gauche | Verrouiller la catabuse                  |
+            | B + D-Pad droite | Verrouiller la turbobuse                 |
+            | B + D-Pad haut   | Verrouiller l'aérobuse                   |
+            | B + D-Pad bas    | Annuler le verrouillage de buse          |
+
+            ::: warning Attention
+            Les sections sous-marines de la Baie Noki (épisodes 3, 4 et 8) utilisent une autre aérobuse que celle obtenue avec B + Haut. Si elle ne fonctionne pas correctement, annulez le verrouillage.
+            :::
+        </description>
+        <description lang="ja-JP">
+            | 組合せ           | 機能                                                 |
+            | ---------------- | ---------------------------------------------------- |
+            | B + 十字ボタン左 | ロケットノズルで固定します                           |
+            | B + 十字ボタン右 | ターボノズルで固定します                             |
+            | B + 十字ボタン上 | ホバーノズルで固定します                             |
+            | B + 十字ボタン下 | ノズルが通常の状態に戻ります                         |
+        </description>
+        <date>Jun 10, 2021</date>
+        <source version="GMSE01">
+            28404454 00000208
+            04269F50 3BE00004
+            28404455 00000204
+            04269F50 8BFE1C85
+            28404455 00000201
+            04269F50 3BE00001
+            28404455 00000202
+            04269F50 3BE00005
+            E0000000 00000000
+        </source>
+        <source version="GMSJ01">
+            28400D50 00000208
+            041494D4 3BE00004
+            28400D51 00000204
+            041494D4 8BFE1C85
+            28400D51 00000201
+            041494D4 3BE00001
+            28400D51 00000202
+            041494D4 3BE00005
+            E0000000 00000000
+        </source>
+        <source version="GMSJ0A">
+            283F5428 00000208
+            04249CA0 3BE00004
+            283F5429 00000204
+            04249CA0 8BFE1C85
+            283F5429 00000201
+            04249CA0 3BE00001
+            283F5429 00000202
+            04249CA0 3BE00005
+            E0000000 00000000
+        </source>
+        <source version="GMSP01">
+            283FBBF4 00000208
+            04261CDC 3BE00004
+            283FBBF5 00000204
+            04261CDC 8BFE1C85
+            283FBBF5 00000201
+            04261CDC 3BE00001
+            283FBBF5 00000202
+            04261CDC 3BE00005
+            E0000000 00000000
         </source>
     </code>
     <code>

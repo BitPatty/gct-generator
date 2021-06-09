@@ -1,5 +1,11 @@
 # Changelog
 
+## Jun 10, 2021
+
+### Split 'Nozzle Lock' out of 'DPad Functions'
+
+Nozzle Lock is very easy to activate by accident during practice, and its underwater behavior has confused many beginners.
+
 ## Mar 22, 2021
 
 ### Updated 'Shine Get Timer'
