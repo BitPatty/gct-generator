@@ -43,14 +43,14 @@ export default {
       this.showModal = true;
       localStorage.setItem('feedback-modal-displayed', 'y');
       try {
-        window._paq.push(['trackEvent', 'GCT Generator', 'Show Feedback Form Modal', '']);
+        window._paq.push(['trackEvent', 'GCT Generator', 'Feedback', 'Open Modal']);
       } catch {}
     }
   },
   methods: {
     onFormClick() {
       try {
-        window._paq.push(['trackEvent', 'GCT Generator', 'Change Cheat Selection', '']);
+        window._paq.push(['trackEvent', 'GCT Generator', 'Feedback', 'Open Form']);
       } catch {
       } finally {
         return true;
