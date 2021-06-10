@@ -78,7 +78,7 @@ export default {
           break;
       }
 
-      if (!this.showFeedbackModal) {
+      if (!this.showFeedbackModal && this.$lang === 'en-US') {
         this.showFeedbackModal = true;
       }
     },

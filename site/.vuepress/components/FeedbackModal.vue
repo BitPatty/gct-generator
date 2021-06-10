@@ -5,7 +5,7 @@
         <div class="modal-container">
           <div v-if="showModal" class="modal-body">
             <p>
-              If you have 5 minutes please fill in our
+              If you have 5 minutes please fill out our
               <a href="https://forms.gle/WYdGEYARPArd7uYx5" target="_blank">feedback form</a>.
               Thanks!
             </p>
