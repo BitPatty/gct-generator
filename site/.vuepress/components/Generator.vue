@@ -99,15 +99,6 @@
 </template>
 
 <script>
-// Components
-import VersionSelect from './VersionSelect';
-import FormatSelect from './FormatSelect';
-import SelectComponent from './SelectComponent';
-import StageLoader from './StageLoader';
-import CodeInfo from './CodeInfo';
-import CodeList from './CodeList';
-import DownloadButton from './DownloadButton';
-
 // Data
 import gameVersions from '../data/gameVersions.json';
 

@@ -5,7 +5,8 @@
         {{ placeholder }}
       </option>
       <option
-        v-for="option in options"
+        v-for="(option, idx) in options"
+        v-bind:key="idx"
         :value="option.value"
         :selected="selectedValue && option.value === selectedValue"
       >

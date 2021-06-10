@@ -1,14 +1,17 @@
 <template>
-  <ButtonComponent
-    label="Download"
-    :onClick="onClick"
-    :disabled="(!codes || codes.length === 0) && !stageLoaderCode"
-  />
+  <div>
+    <ButtonComponent
+      label="Download"
+      :onClick="onClick"
+      :disabled="(!codes || codes.length === 0) && !stageLoaderCode"
+    ></ButtonComponent>
+    <FeedbackModal v-if="showFeedbackModal" />
+  </div>
 </template>
 
 <script>
 // Components
-import ButtonComponent from './ButtonComponent';
+import FeedbackModal from './FeedbackModal';
 
 // Data
 import gameVersions from '../data/gameVersions.json';
@@ -22,6 +25,11 @@ export default {
     stageLoaderCode: { type: String },
     format: { type: String },
     versionIdentifier: { type: String },
+  },
+  data() {
+    return {
+      showFeedbackModal: false,
+    };
   },
   methods: {
     onClick() {
@@ -55,7 +63,7 @@ export default {
         ]);
       } catch {}
 
-      console.log(`Preparing download for ${this.format}`);
+      console.log(`Preparing jdownload for ${this.format}`);
       const fileName = gameVersions.find((v) => v.identifier === this.versionIdentifier).version;
 
       switch (this.format) {
@@ -68,6 +76,10 @@ export default {
         case 'gcm':
           this.generateCheatManagerTXT(c, fileName);
           break;
+      }
+
+      if (!this.showFeedbackModal) {
+        this.showFeedbackModal = true;
       }
     },
     generateGCT(codes, version) {

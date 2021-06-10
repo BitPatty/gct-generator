@@ -1,6 +1,11 @@
 <template>
   <div class="wrapper">
-    <div v-for="version in gameVersions" class="card" @click="onCardClick(version)">
+    <div
+      v-for="(version, idx) in gameVersions"
+      v-bind:key="idx"
+      class="card"
+      @click="onCardClick(version)"
+    >
       <h3>{{ getLabel(`common.${version.identifier}`) }}</h3>
     </div>
   </div>
@@ -22,8 +27,6 @@ export default {
   },
   methods: {
     onCardClick(v) {
-      const localePaths = Object.keys(locales);
-
       let localePath = '';
 
       Object.keys(locales).forEach((l) => {

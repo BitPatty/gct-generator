@@ -1,7 +1,8 @@
 <template>
   <ul>
     <li
-      v-for="code in availableCodes"
+      v-for="(code, idx) in availableCodes"
+      v-bind:key="idx"
       :class="code.selected ? 'checked' : ''"
       @click="toggle(code)"
       @mouseover="inspect(code)"

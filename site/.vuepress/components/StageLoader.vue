@@ -42,18 +42,16 @@
           ghost-class="ghost"
           @end="onDragEnd"
         >
-          <li v-for="(level, index) in selectedRoute">
+          <li v-for="(level, idx) in selectedRoute" v-bind:key="idx">
             <div class="route-drag">&#8801;</div>
 
             <GroupSelectComponent
               :selectedValue="level.value"
               :optGroups="stageLoaderLevelOptions"
-              :onChange="(e) => onStageLoaderLevelChanged(index, e)"
-              :key="index"
+              :onChange="(e) => onStageLoaderLevelChanged(idx, e)"
+              :key="idx"
             />
-            <button @click="onLevelDeleted(index)" type="button" class="route-remove">
-              &#215;
-            </button>
+            <button @click="onLevelDeleted(idx)" type="button" class="route-remove">&#215;</button>
           </li>
         </draggable>
       </ul>
