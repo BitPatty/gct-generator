@@ -6,8 +6,9 @@
           <div v-if="showModal" class="modal-body">
             <p>
               If you have 5 minutes please fill out our
-              <a href="https://forms.gle/WYdGEYARPArd7uYx5" target="_blank">feedback form</a>.
-              Thanks!
+              <a @click="onFormClick" href="https://forms.gle/WYdGEYARPArd7uYx5" target="_blank"
+                >feedback form</a
+              >. Thanks!
             </p>
             <div>
               <ButtonComponent
@@ -41,7 +42,20 @@ export default {
     if (localStorage.getItem('feedback-modal-displayed') !== 'y') {
       this.showModal = true;
       localStorage.setItem('feedback-modal-displayed', 'y');
+      try {
+        window._paq.push(['trackEvent', 'GCT Generator', 'Show Feedback Form Modal', '']);
+      } catch {}
     }
+  },
+  methods: {
+    onFormClick() {
+      try {
+        window._paq.push(['trackEvent', 'GCT Generator', 'Change Cheat Selection', '']);
+      } catch {
+      } finally {
+        return true;
+      }
+    },
   },
 };
 </script>
