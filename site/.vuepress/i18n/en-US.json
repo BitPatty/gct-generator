@@ -11,7 +11,7 @@
   "headers": {
     "codelist": "Available Codes",
     "help": "Help",
-    "stageloader": "Stage Loader"
+    "stageloader": "Stage List Loader"
   },
   "codeinfo": {
     "author": "Author:",
@@ -23,7 +23,7 @@
       "label": "Game Version:",
       "placeholder": "Choose Version.."
     },
-    "usestageloader": "Use Stage Loader",
+    "usestageloader": "Use Stage List Loader",
     "downloadformat": {
       "label": "Download Format:",
       "options": {
