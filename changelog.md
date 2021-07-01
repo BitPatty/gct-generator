@@ -1,5 +1,11 @@
 # Changelog
 
+## Jul 1, 2021
+
+### Renamed 'Fix Memory Card Encoding'
+
+Nothing really ever was broken, you simply need to select the correct encoding for your memory card.
+
 ## Jun 10, 2021
 
 ### Split 'Nozzle Lock' out of 'DPad Functions'
