@@ -4,9 +4,14 @@
       <option v-if="placeholder != null" value="placeholder" selected disabled>
         {{ placeholder }}
       </option>
-      <optgroup v-for="optGroup in optGroups" :label="getLabel(optGroup.label)">
+      <optgroup
+        v-for="(optGroup, oIdx) in optGroups"
+        v-bind:key="oIdx"
+        :label="getLabel(optGroup.label)"
+      >
         <option
-          v-for="option in optGroup.options"
+          v-for="(option, iIdx) in optGroup.options"
+          v-bind:key="iIdx"
           :value="option.value"
           :selected="selectedValue && option.value === selectedValue"
         >

@@ -9,8 +9,10 @@ export default ({
   options, // the options for the root Vue instance
   router, // the router instance for the app
   siteData, // site metadata
+  isServer,
 }) => {
-  if (typeof document === 'undefined') return;
+  if (isServer) return;
+
   document.onreadystatechange = () => {
     if (document.readyState === 'complete') {
       if (location.hash && location.hash.length > 0) {
