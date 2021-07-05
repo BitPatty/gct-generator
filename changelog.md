@@ -1,5 +1,11 @@
 # Changelog
 
+## Jul 5, 2021
+
+### Updated 'Level Select'
+
+Changed C-down + X from Sirena 5 casino to Sirena 4 casino. This shortcut was originally put in place to work around an old practice codes bug, but it now seems more sensible to repurpose it as a quick access to casino skip.
+
 ## Jul 1, 2021
 
 ### Renamed 'Fix Memory Card Encoding'

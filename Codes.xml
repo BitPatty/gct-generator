@@ -1144,8 +1144,8 @@
         <title lang="fr-FR">Sélecteur de niveau</title>
         <title lang="ja-JP">レベルセレクト</title>
         <author>Psychonauter, Dan Salvato, Noki Doki</author>
-        <version>1.14</version>
-        <date>May 8, 2020</date>
+        <version>1.15</version>
+        <date>Jul 5, 2021</date>
         <description lang="en-US">
             Allows warping to other levels when starting a file or when exiting a level by holding the combination until the screen turns black. 
             
@@ -1240,7 +1240,7 @@
             39080007 480001C0
             2C070400 40820068
             2C060004 4082000C
-            39000E01 480001B0
+            39000E00 480001B0
             2C06000A 4082000C
             39001E00 480001A0
             2C060002 4082000C
@@ -1368,7 +1368,7 @@
             39080007 480001C0
             2C070400 40820068
             2C060004 4082000C
-            39000E01 480001B0
+            39000E00 480001B0
             2C06000A 4082000C
             39001E00 480001A0
             2C060002 4082000C
@@ -1496,7 +1496,7 @@
             39080007 480001C0
             2C070400 40820068
             2C060004 4082000C
-            39000E01 480001B0
+            39000E00 480001B0
             2C06000A 4082000C
             39001E00 480001A0
             2C060002 4082000C
@@ -1624,7 +1624,7 @@
             39080007 480001C0
             2C070400 40820068
             2C060004 4082000C
-            39000E01 480001B0
+            39000E00 480001B0
             2C06000A 4082000C
             39001E00 480001A0
             2C060002 4082000C
