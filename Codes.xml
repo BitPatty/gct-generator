@@ -16,7 +16,7 @@
             | D-Pad Right     | Load Mario's position                       |
             | D-Pad Up        | Replace all dialog with a single "!!!" line |
             | D-Pad Down      | Restore Dialog Boxes                        |
-            | X + D-Pad Left  | No FLUDD in secrets                         |
+            | X + D-Pad Left  | No FLUDD/red coin buttons in secrets        |
             | X + D-Pad Right | FLUDD in all secrets                        |
             | X + D-Pad Down  | FLUDD in completed secrets (default)        |
             | X + D-Pad Up    | Regrab last held object                     |
