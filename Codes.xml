@@ -2430,39 +2430,6 @@
         </source>
     </code>
     <code>
-        <title lang="en-US">Shine Outfit</title>
-        <title lang="de-CH">Shine Outfit</title>
-        <title lang="fr-FR">Tenue Shine</title>
-        <title lang="ja-JP">アロハシャツ</title>
-        <author>Ralf, Psychonauter</author>
-        <version>1.0</version>
-        <date>Oct 23, 2017</date>
-        <description lang="en-US">Always wear shine outfit and sunglasses.</description>
-        <description lang="de-CH">Mario trägt immer das Shine Outfit und die Sonnenbrille.</description>
-        <description lang="fr-FR">Toujours porter la chemise Shine et les lunettes de soleil.</description>
-        <description lang="ja-JP">アロハシャツとサングラスを着用します。</description>
-        <source version="GMSE01">
-            04241FD4 60000004
-            04241FD8 B01D0004
-            0424D4DC 60000000
-        </source>
-        <source version="GMSJ01">
-            04120D1C 60000004
-            04120D20 B01D0004
-            0412C9B0 60000000
-        </source>
-        <source version="GMSJ0A">
-            04221924 60000004
-            04221928 B01D0004
-            0422D22C 60000000
-        </source>
-        <source version="GMSP01">
-            04239C88 60000004
-            04239C8C B01D0004
-            04245268 60000000
-        </source>
-    </code>
-    <code>
         <title lang="en-US">Position/angle/speed display</title>
         <title lang="de-CH">Position/Winkel/Geschw. Display</title>
         <title lang="fr-FR">Affichage de position/angle/vitesse</title>
@@ -2985,6 +2952,39 @@
             80780000 380000FF
             9803013C 98030140
             931F00C8 00000000
+        </source>
+    </code>
+    <code>
+        <title lang="en-US">Shine Outfit</title>
+        <title lang="de-CH">Shine Outfit</title>
+        <title lang="fr-FR">Tenue Shine</title>
+        <title lang="ja-JP">アロハシャツ</title>
+        <author>Ralf, Psychonauter</author>
+        <version>1.0</version>
+        <date>Oct 23, 2017</date>
+        <description lang="en-US">Always wear shine outfit and sunglasses.</description>
+        <description lang="de-CH">Mario trägt immer das Shine Outfit und die Sonnenbrille.</description>
+        <description lang="fr-FR">Toujours porter la chemise Shine et les lunettes de soleil.</description>
+        <description lang="ja-JP">アロハシャツとサングラスを着用します。</description>
+        <source version="GMSE01">
+            04241FD4 60000004
+            04241FD8 B01D0004
+            0424D4DC 60000000
+        </source>
+        <source version="GMSJ01">
+            04120D1C 60000004
+            04120D20 B01D0004
+            0412C9B0 60000000
+        </source>
+        <source version="GMSJ0A">
+            04221924 60000004
+            04221928 B01D0004
+            0422D22C 60000000
+        </source>
+        <source version="GMSP01">
+            04239C88 60000004
+            04239C8C B01D0004
+            04245268 60000000
         </source>
     </code>
 </codes>
