@@ -25,7 +25,7 @@ When adding new codes keep in mind that the English title/description are mandat
 
 #### Reserved Memory
 
-Some codes store some states in the games memory starting from address 0x81F70000. To avoid collisions use a memory range in the unallocated ranges:
+Some codes store some states in the games memory starting from address 0x817F0000. To avoid collisions use a memory range in the unallocated ranges:
 
 ![](./docs/reserved_memory.png)
 
