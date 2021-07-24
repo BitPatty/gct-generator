@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="31">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>24</ID>
+      <Description>"Base Address Lookup"</Description>
+      <Options moHideChildren="1"/>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>// Uncomment the version you're targeting
+
+// GMSE01 (NTSC-U)
+// define(INPUT_OFFSET,404454)
+// define(COIN_COUNT_OFFSET,578A60)
+// define(LIFE_COUNT_OFFSET,578A04)
+// define(POS_PTR_OFFSET, 40E10C)
+
+
+// GMSJ01 (NTSC-J 1.0)
+// define(INPUT_OFFSET, 400D50)
+// define(LIFE_COUNT_OFFSET, 575224)
+// define(COIN_COUNT_OFFSET, 575280)
+// define(POS_PTR_OFFSET, 40A39C)
+
+// GMSJ01 (NTSC-J 1.1)
+// define(INPUT_OFFSET, 3F5428)
+// define(LIFE_COUNT_OFFSET, 569724)
+// define(COIN_COUNT_OFFSET, 569780)
+// define(POS_PTR_OFFSET, 3FEFAC)
+
+// GMSP01 (PAL)
+define(INPUT_OFFSET, 3FBBF4)
+define(LIFE_COUNT_OFFSET, 570964)
+define(COIN_COUNT_OFFSET, 5709C0)
+define(POS_PTR_OFFSET, 4057D4)
+
+registerSymbol(INPUT_OFFSET)
+registerSymbol(COIN_COUNT_OFFSET)
+registerSymbol(LIFE_COUNT_OFFSET)
+registerSymbol(POS_PTR_OFFSET)
+
+
+[ENABLE]
+define(PRACTICE_CODE_MEMORY_OFFSET, 17F0000)
+registerSymbol(PRACTICE_CODE_MEMORY_OFFSET)
+
+label(BASE_ADDRESS)
+registerSymbol(BASE_ADDRESS)
+
+aobScan(aob1,47 4D 53 ?? 30 31 00 ?? 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 C2 33 9F 3D)
+aob1:
+BASE_ADDRESS:
+
+[DISABLE]
+unregisterSymbol(BASE_ADDRESS)
+unregisterSymbol(PRACTICE_CODE_MEMORY_OFFSET)
+unregisterSymbol(POS_PTR_OFFSET)
+unregisterSymbol(LIFE_COUNT_OFFSET)
+unregisterSymbol(COIN_COUNT_OFFSET)
+unregisterSymbol(INPUT_OFFSET)
+
+</AssemblerScript>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Toggle Activation</Action>
+          <Keys>
+            <Key>97</Key>
+          </Keys>
+          <ID>0</ID>
+        </Hotkey>
+      </Hotkeys>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>50</ID>
+          <Description>"Practice Code Values (Start at PRACTICE_CODE_MEMORY_OFFSET / 0x817F0000)"</Description>
+          <Options moHideChildren="1"/>
+          <LastState Value="" Activated="1" RealAddress="00000000"/>
+          <Color>FF0000</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>57</ID>
+              <Description>"0x000 Level Select Stage Data"</Description>
+              <LastState Value="00 00 00 00 00 00 00 00" RealAddress="26EE9590000"/>
+              <ShowAsHex>1</ShowAsHex>
+              <VariableType>Array of byte</VariableType>
+              <ByteLength>8</ByteLength>
+              <Address>BASE_ADDRESS+PRACTICE_CODE_MEMORY_OFFSET</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>53</ID>
+              <Description>"0x008 Stored Position (Mario)"</Description>
+              <LastState Value="00 00 00 00 00 00 00 00 00 00 00 00" RealAddress="26EE9590008"/>
+              <ShowAsHex>1</ShowAsHex>
+              <VariableType>Array of byte</VariableType>
+              <ByteLength>12</ByteLength>
+              <Address>BASE_ADDRESS+PRACTICE_CODE_MEMORY_OFFSET+8</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>54</ID>
+              <Description>"0x014 Stored Angle (Mario)"</Description>
+              <LastState Value="00 00" RealAddress="26EE9590014"/>
+              <ShowAsHex>1</ShowAsHex>
+              <VariableType>Array of byte</VariableType>
+              <ByteLength>2</ByteLength>
+              <Address>BASE_ADDRESS+PRACTICE_CODE_MEMORY_OFFSET+14</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>56</ID>
+              <Description>"0x016 Stored Position (Camera)"</Description>
+              <LastState Value="00 00 00 00 00 00" RealAddress="26EE9590016"/>
+              <ShowAsHex>1</ShowAsHex>
+              <VariableType>Array of byte</VariableType>
+              <ByteLength>6</ByteLength>
+              <Address>BASE_ADDRESS+PRACTICE_CODE_MEMORY_OFFSET+16</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>63</ID>
+              <Description>"0x020 Stored Coins"</Description>
+              <LastState Value="00000002" RealAddress="26EE9590020"/>
+              <ShowAsHex>1</ShowAsHex>
+              <VariableType>Custom</VariableType>
+              <CustomType>4 Byte Big Endian</CustomType>
+              <Address>BASE_ADDRESS+PRACTICE_CODE_MEMORY_OFFSET+20</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>58</ID>
+              <Description>"0x100 Reset Stopwatch In Demo Screen Flag"</Description>
+              <LastState Value="00" RealAddress="26EE9590100"/>
+              <ShowAsHex>1</ShowAsHex>
+              <VariableType>Byte</VariableType>
+              <Address>BASE_ADDRESS+PRACTICE_CODE_MEMORY_OFFSET+100</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>59</ID>
+              <Description>"0x101 Disable Custom IG Timer Flag"</Description>
+              <LastState Value="00" RealAddress="26EE9590101"/>
+              <ShowAsHex>1</ShowAsHex>
+              <VariableType>Byte</VariableType>
+              <Address>BASE_ADDRESS+PRACTICE_CODE_MEMORY_OFFSET+101</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>62</ID>
+              <Description>"0x102 Stopwatch Save State"</Description>
+              <LastState Value="00 00 00 00 00 00 00 00" RealAddress="26EE9590102"/>
+              <ShowAsHex>1</ShowAsHex>
+              <VariableType>Array of byte</VariableType>
+              <ByteLength>8</ByteLength>
+              <Address>BASE_ADDRESS+PRACTICE_CODE_MEMORY_OFFSET+102</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>60</ID>
+              <Description>"0x10C Stop Timer Flag"</Description>
+              <LastState Value="00" RealAddress="26EE959010C"/>
+              <ShowAsHex>1</ShowAsHex>
+              <VariableType>Byte</VariableType>
+              <Address>BASE_ADDRESS+PRACTICE_CODE_MEMORY_OFFSET+10C</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>0</ID>
+          <Description>"Current Base Address"</Description>
+          <LastState Value="50534D47" RealAddress="26EE7DA0000"/>
+          <ShowAsHex>1</ShowAsHex>
+          <Color>C0C0C0</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>BASE_ADDRESS</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>27</ID>
+          <Description>"Coin Count"</Description>
+          <LastState Value="2" RealAddress="26EE83109C0"/>
+          <Color>008000</Color>
+          <VariableType>Custom</VariableType>
+          <CustomType>4 Byte Big Endian</CustomType>
+          <Address>BASE_ADDRESS+COIN_COUNT_OFFSET</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>25</ID>
+          <Description>"Life Count"</Description>
+          <LastState Value="3" RealAddress="26EE8310964"/>
+          <Color>008000</Color>
+          <VariableType>Custom</VariableType>
+          <CustomType>4 Byte Big Endian</CustomType>
+          <Address>BASE_ADDRESS+LIFE_COUNT_OFFSET</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>29</ID>
+          <Description>"Mario's Position"</Description>
+          <Options moHideChildren="1"/>
+          <LastState Activated="1"/>
+          <Color>C08000</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>// Get marios position
+[ENABLE]
+
+// Allocate 4 bytes for the position
+registerSymbol(INT_POS_ADDRESS)
+alloc(INT_POS_ADDRESS, 4)
+
+// Read the address of the controller input
+// into INT_CONTROLLER_INPUT_ADDRESS
+// Since GC uses big endian we have to reverse
+// the 4 bytes of the pointer
+INT_POS_ADDRESS:
+readMem(BASE_ADDRESS + POS_PTR_OFFSET + 3, 1)
+readMem(BASE_ADDRESS + POS_PTR_OFFSET + 2, 1)
+readMem(BASE_ADDRESS + POS_PTR_OFFSET + 1, 1)
+readMem(BASE_ADDRESS + POS_PTR_OFFSET, 1)
+
+// Calculate the final address for use with Dolphin
+define(POS_ADDRESS, BASE_ADDRESS + [INT_POS_ADDRESS] - 80000000)
+registerSymbol(POS_ADDRESS)
+
+[DISABLE]
+dealloc(INT_POS_ADDRESS)
+unregisterSymbol(INT_POS_ADDRESS)
+unregisterSymbol(POS_ADDRESS)
+</AssemblerScript>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Toggle Activation</Action>
+              <Keys>
+                <Key>97</Key>
+              </Keys>
+              <ID>0</ID>
+            </Hotkey>
+          </Hotkeys>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>30</ID>
+              <Description>"Marios Position"</Description>
+              <LastState Value="00 00 00 00 00 00 00 00 00 00 00 00" RealAddress="26EE8FA2ACC"/>
+              <ShowAsHex>1</ShowAsHex>
+              <VariableType>Array of byte</VariableType>
+              <ByteLength>12</ByteLength>
+              <Address>POS_ADDRESS</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>34</ID>
+          <Description>"Controller Inputs"</Description>
+          <Options moHideChildren="1"/>
+          <LastState Value="" Activated="1" RealAddress="00000000"/>
+          <Color>C08000</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>40</ID>
+              <Description>"A"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:-
+1:Pressed
+</DropDownList>
+              <LastState Value="0" RealAddress="26EE819BBF4"/>
+              <VariableType>Binary</VariableType>
+              <BitStart>0</BitStart>
+              <BitLength>1</BitLength>
+              <ShowAsBinary>0</ShowAsBinary>
+              <Address>BASE_ADDRESS+INPUT_OFFSET</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>41</ID>
+              <Description>"B"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:-
+1:Pressed
+</DropDownList>
+              <LastState Value="0" RealAddress="26EE819BBF4"/>
+              <VariableType>Binary</VariableType>
+              <BitStart>1</BitStart>
+              <BitLength>1</BitLength>
+              <ShowAsBinary>0</ShowAsBinary>
+              <Address>BASE_ADDRESS+INPUT_OFFSET</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>38</ID>
+              <Description>"X"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:-
+1:Pressed
+</DropDownList>
+              <LastState Value="0" RealAddress="26EE819BBF4"/>
+              <VariableType>Binary</VariableType>
+              <BitStart>2</BitStart>
+              <BitLength>1</BitLength>
+              <ShowAsBinary>0</ShowAsBinary>
+              <Address>BASE_ADDRESS+INPUT_OFFSET</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>39</ID>
+              <Description>"Y"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:-
+1:Pressed
+</DropDownList>
+              <LastState Value="0" RealAddress="26EE819BBF4"/>
+              <VariableType>Binary</VariableType>
+              <BitStart>3</BitStart>
+              <BitLength>1</BitLength>
+              <ShowAsBinary>0</ShowAsBinary>
+              <Address>BASE_ADDRESS+INPUT_OFFSET</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>49</ID>
+              <Description>"Start"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:-
+1:Pressed
+</DropDownList>
+              <LastState Value="0" RealAddress="26EE819BBF4"/>
+              <VariableType>Binary</VariableType>
+              <BitStart>4</BitStart>
+              <BitLength>1</BitLength>
+              <ShowAsBinary>0</ShowAsBinary>
+              <Address>BASE_ADDRESS+INPUT_OFFSET</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>48</ID>
+              <Description>"Z"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:-
+1:Pressed
+</DropDownList>
+              <LastState Value="0" RealAddress="26EE819BBF5"/>
+              <VariableType>Binary</VariableType>
+              <BitStart>4</BitStart>
+              <BitLength>1</BitLength>
+              <ShowAsBinary>0</ShowAsBinary>
+              <Address>BASE_ADDRESS+INPUT_OFFSET+1</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32</ID>
+              <Description>"DPAD UP"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:-
+1:Pressed
+</DropDownList>
+              <LastState Value="0" RealAddress="26EE819BBF5"/>
+              <ShowAsHex>1</ShowAsHex>
+              <VariableType>Binary</VariableType>
+              <BitStart>3</BitStart>
+              <BitLength>1</BitLength>
+              <ShowAsBinary>0</ShowAsBinary>
+              <Address>BASE_ADDRESS+INPUT_OFFSET + 1</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>35</ID>
+              <Description>"DPAD DOWN"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:-
+1:Pressed
+</DropDownList>
+              <LastState Value="0" RealAddress="26EE819BBF5"/>
+              <VariableType>Binary</VariableType>
+              <BitStart>2</BitStart>
+              <BitLength>1</BitLength>
+              <ShowAsBinary>0</ShowAsBinary>
+              <Address>BASE_ADDRESS+INPUT_OFFSET + 1</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>36</ID>
+              <Description>"DPAD LEFT"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:-
+1:Pressed
+</DropDownList>
+              <LastState Value="0" RealAddress="26EE819BBF5"/>
+              <VariableType>Binary</VariableType>
+              <BitStart>0</BitStart>
+              <BitLength>1</BitLength>
+              <ShowAsBinary>0</ShowAsBinary>
+              <Address>BASE_ADDRESS+INPUT_OFFSET + 1</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>37</ID>
+              <Description>"DPAD RIGHT"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:-
+1:Pressed
+</DropDownList>
+              <LastState Value="0" RealAddress="26EE819BBF5"/>
+              <VariableType>Binary</VariableType>
+              <BitStart>1</BitStart>
+              <BitLength>1</BitLength>
+              <ShowAsBinary>0</ShowAsBinary>
+              <Address>BASE_ADDRESS+INPUT_OFFSET + 1</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>42</ID>
+              <Description>"L"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:-
+1:Pressed
+</DropDownList>
+              <LastState Value="0" RealAddress="26EE819BBF5"/>
+              <VariableType>Binary</VariableType>
+              <BitStart>6</BitStart>
+              <BitLength>1</BitLength>
+              <ShowAsBinary>0</ShowAsBinary>
+              <Address>BASE_ADDRESS+INPUT_OFFSET + 1</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>44</ID>
+              <Description>"L (Analog)"</Description>
+              <LastState Value="0" RealAddress="26EE819BBFA"/>
+              <VariableType>Byte</VariableType>
+              <Address>BASE_ADDRESS+INPUT_OFFSET + 6</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>43</ID>
+              <Description>"R"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:-
+1:Pressed
+</DropDownList>
+              <LastState Value="0" RealAddress="26EE819BBF5"/>
+              <VariableType>Binary</VariableType>
+              <BitStart>5</BitStart>
+              <BitLength>1</BitLength>
+              <ShowAsBinary>0</ShowAsBinary>
+              <Address>BASE_ADDRESS+INPUT_OFFSET + 1</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>45</ID>
+              <Description>"R (Analog)"</Description>
+              <LastState Value="0" RealAddress="26EE819BBFB"/>
+              <VariableType>Byte</VariableType>
+              <Address>BASE_ADDRESS+INPUT_OFFSET + 7</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>46</ID>
+              <Description>"L Stick"</Description>
+              <LastState Value="0" RealAddress="26EE819BBF6"/>
+              <VariableType>Custom</VariableType>
+              <CustomType>2 Byte Big Endian</CustomType>
+              <Address>BASE_ADDRESS+INPUT_OFFSET + 2</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>47</ID>
+              <Description>"R-Stick"</Description>
+              <LastState Value="0" RealAddress="26EE819BBF8"/>
+              <VariableType>Custom</VariableType>
+              <CustomType>2 Byte Big Endian</CustomType>
+              <Address>BASE_ADDRESS+INPUT_OFFSET+4</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <CheatCodes>
+    <CodeEntry Color="80000008" GroupHeader="1">
+      <Description>Group 0</Description>
+    </CodeEntry>
+  </CheatCodes>
+  <UserdefinedSymbols>
+    <SymbolEntry>
+      <Name>label5</Name>
+      <Address>004E3739</Address>
+    </SymbolEntry>
+    <SymbolEntry>
+      <Name>label1</Name>
+      <Address>01733513</Address>
+    </SymbolEntry>
+    <SymbolEntry>
+      <Name>xlivekiller</Name>
+      <Address>59151605</Address>
+    </SymbolEntry>
+  </UserdefinedSymbols>
+  <Comments>Grey -&gt; Informational</Comments>
+</CheatTable>

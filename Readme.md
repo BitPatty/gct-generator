@@ -23,6 +23,12 @@ The codes are stored in the `Codes.xml` file. If you want to add or change codes
 
 When adding new codes keep in mind that the English title/description are mandatory.
 
+#### Reserved Memory
+
+Some codes store some states in the games memory starting from address 0x81F70000. To avoid collisions use a memory range in the unallocated ranges:
+
+![](./docs/reserved_memory.png)
+
 ### Adding translations
 
 1. Create a new file `<lang>.json` in `site/.vuepress/i18n`, where `<lang>` is the language code you want to add. Copy the contents of `en-US.json` into your file and translate each entry in the JSON file.

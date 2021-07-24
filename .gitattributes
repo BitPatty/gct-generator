@@ -10,6 +10,8 @@
 *.vue text eol=crlf
 *.xml text eol=crlf linguist-detectable
 *.yml text eol=crlf
+*.ct text eol=crlf
+*.CEA text eol=crlf
 
 # Special files
 .dockerignore text eol=crlf
@@ -20,3 +22,4 @@ LICENSE text eol=crlf
 *.jpg binary
 *.png binary
 *.zip binary
+*.xslx binary
