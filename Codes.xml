@@ -334,7 +334,7 @@
 
             | Combination     | Result                       |
             | --------------- | ---------------------------- |
-            | D-Pad Left  | Save current coint count         |
+            | D-Pad Left  | Save current coin count         |
             | D-Pad Right | Load saved coin count            |
         </description>
         <description lang="de-CH">
