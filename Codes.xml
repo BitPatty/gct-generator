@@ -325,6 +325,65 @@
         </source>
     </code>
     <code>
+        <title lang="en-US">Coin Count Savestate</title>
+        <title lang="de-CH">Münzenzahl Speicherstand</title>
+        <author>Psychonauter</author>
+        <version>1.0</version>
+        <description lang="en-US">
+            Allows you to save and restore your coin count. Uses the same D-Pad mappings as the position saves of `DPad-Functions`.
+
+            | Combination     | Result                       |
+            | --------------- | ---------------------------- |
+            | D-Pad Left  | Save current coint count         |
+            | D-Pad Right | Load saved coin count            |
+        </description>
+        <description lang="de-CH">
+            Ermöglicht das Speichern und Laden der Münzenanzahl. Verwendet die gleichen D-Pad Mappings wie die Position-Saves von "DPad-Funktionen".
+            
+            | Kombination     | Result                              |
+            | --------------- | ----------------------------------- |
+            | D-Pad Links  | Speichere aktuellen Münzenstand        |
+            | D-Pad Rechts | Lade gespeicherten Müneznstand         |
+        </description>
+        <date>Jul 24, 2021</date>
+        <source version="GMSE01">
+            80000001 80578A60
+            80000002 817F0020
+            28404454 00000001
+            8A000412 00000000
+            28404455 00000002
+            8A000421 00000000
+            E0000000 00000000
+        </source>
+        <source version="GMSJ01">
+            80000001 80575280
+            80000002 817F0020
+            28400D50 00000001
+            8A000412 00000000
+            28400D51 00000002
+            8A000421 00000000
+            E0000000 00000000
+        </source>
+        <source version="GMSJ0A">
+            80000001 80569780
+            80000002 817F0020
+            283F5428 00000001
+            8A000412 00000000
+            283F5429 00000002
+            8A000421 00000000
+            E0000000 00000000
+        </source>
+        <source version="GMSP01">
+            80000001 805709C0
+            80000002 817F0020
+            283FBBF4 00000001
+            8A000412 00000000
+            283FBBF5 00000002
+            8A000421 00000000
+            E0000000 00000000
+        </source>
+    </code>
+    <code>
         <title lang="en-US">Infinite Lives</title>
         <title lang="de-CH">Unendlich Leben</title>
         <title lang="fr-FR">Vies infinies</title>
@@ -339,7 +398,7 @@
         <source version="GMSE01">
             04298814 60000000
         </source>
-         <source version="GMSJ01">
+        <source version="GMSJ01">
             040EBD80 60000000
         </source>
         <source version="GMSJ0A">
