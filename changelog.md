@@ -1,5 +1,11 @@
 # Changelog
 
+## Jul 24, 2021
+
+### Added 'Coin Count Savestate'
+
+Allows you to save and load your coin counts using the DPad. The mapping uses the same combination as the one for position saves/loads to simplify usage.
+
 ## Jul 5, 2021
 
 ### Updated 'Level Select'
