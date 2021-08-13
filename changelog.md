@@ -1,5 +1,11 @@
 # Changelog
 
+## Aug 13, 2021
+
+### Removed 'Stage Randomizer' and 'Remove Save Boxes'
+
+The stage randomizer was outdated by the more powerful stage loader. Removing save boxes has little use for practice and is banned for individual level runs, though it is still possible using 'Fast Any%' or the stage loader.
+
 ## Jul 24, 2021
 
 ### Added 'Coin Count Savestate'

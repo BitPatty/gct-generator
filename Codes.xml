@@ -503,7 +503,7 @@
             04016A90 FC210828
         </source>
     </code>
-    <code>
+    <!--<code>
         <title lang="en-US">Remove Save Boxes</title>
         <title lang="de-CH">Speicher-Schaltfläche entfernen</title>
         <title lang="fr-FR">Supprimer les boîtes de sauvegarde</title>
@@ -531,7 +531,7 @@
             0428FB44 60000000
             0428FB50 60000000
         </source>
-    </code>
+    </code>-->
     <code>
         <title lang="en-US">Unlock Yoshi</title>
         <title lang="de-CH">Yoshi Freischalten</title>
@@ -1209,7 +1209,7 @@
             Allows warping to other levels when starting a file or when exiting a level by holding the combination until the screen turns black. 
             
             ::: warning
-            This code is not compatible with the Fast Any%, Stage Loader or Stage Randomizer code. 
+            This code is not compatible with the Fast Any% or Stage Loader code. 
             :::
 
             Codes:
@@ -1221,7 +1221,7 @@
             Die Tastenkombination muss gedrückt gehalten werden bis der Bildschirm schwarz wird.
 
             ::: warning WARNUNG
-            Dieser Code ist nicht Kompatibel mit dem Fast Any%, Stage Loader oder Stage Randomizer code.
+            Dieser Code ist nicht Kompatibel mit dem Fast Any% oder Stage Loader code.
             :::
 
             Tastenkombinationen:
@@ -1232,7 +1232,7 @@
             Permet de charger d'autres niveaux en démarrant un fichier ou en quittant un niveau en maintenant la combinaison appropriée jusqu'à ce que l'écran devienne noir.
 
             ::: warning Attention
-            Ce code n'est pas compatible avec Fast Any%, Chargeur de liste ou Randomiseur de niveaux.
+            Ce code n'est pas compatible avec Fast Any% ni Chargeur de liste.
             :::
 
             Combinaisons :
@@ -1243,7 +1243,7 @@
             「ファイル開始時」もしくは「ステージ退場時（画面が黒くなるまで）に組合せ入力する」と、他のステージにワープできます。
 
             ::: warning 注意
-            このコードは「Fast Any%」「ステージローダー」「ステージランダマイザーモード」とは互換性がありません。
+            このコードは「Fast Any%」「ステージローダー」とは互換性がありません。
             :::
 
             コード:
@@ -1774,28 +1774,28 @@
         Loads stages in any% order, skips all save boxes, replaces all dialog with "!!!" (except for the Pianta 5 secret) and makes all FMVs skippable (except for the Pinna 1 cutscenes).
         
         ::: warning
-        This code is not compatible with the Level Select, Stage Loader or Stage Randomizer code.
+        This code is not compatible with the Level Select or Stage Loader code.
         :::
         </description>
         <description lang="de-CH">
         Ladet die Level in derselben Reihenfolge wie Any%, überpring alle Speicherschaltflächen, ersetzt alle Dialoge mit "!!!" (Abgesehen von Pianta 5) und ermöglicht das Überspringen aller FMVs (ausser in Pinna 1). 
         
         ::: warning WARNUNG
-        Dieser Code ist nicht kompatibel mit dem Level Select, Stage Loader oder Stage Randomizer Code.
+        Dieser Code ist nicht kompatibel mit dem Level Select oder Stage Loader Code.
         :::
         </description>
         <description lang="fr-FR">
         Charge les niveaux dans l'ordre any%, retire toutes les boîtes de sauvegarde, remplace tous les dialogues par « !!! » (sauf dans Pianta 5) et rend toutes les FMV passables (sauf celles de Pinna 1).
 
         ::: warning Attention
-        Ce code n'est pas compatible avec le Sélecteur de niveau, le Chargeur de liste ou le Randomiseur de niveaux.
+        Ce code n'est pas compatible avec le Sélecteur de niveau ni le Chargeur de liste.
         :::
         </description>
         <description lang="ja-JP">
         次の4つの機能を実現します: 「Any%順でステージを読み込む」「全てのセーブ画面をスキップ」「全ての会話を「!!!」に置き換え（モンテ5のシークレットを除く）」「全てのFMVをスキップ可能にする（ピンナ1のFMVを除く）」
 
         ::: warning 注意
-        このコードは「Fast Any%」「ステージローダー」「ステージランダマイザーモード」とは互換性がありません。
+        このコードは「Fast Any%」「ステージローダー」とは互換性がありません。
         :::
         </description>
         <date>Feb 16, 2018</date>
@@ -2360,7 +2360,7 @@
             0426659C 60000000
         </source>
     </code>
-    <code>
+    <!--<code>
         <title lang="en-US">Stage Randomizer (Experimental)</title>
         <title lang="de-CH">Stage Randomizer (Experimentell)</title>
         <title lang="fr-FR">Randomiseur de niveaux (expérimental)</title>
@@ -2434,7 +2434,7 @@
             4BFFFF68 807F0020
             60000000 00000000
         </source>
-    </code>
+    </code>-->
     <code>
         <title lang="en-US">Replace Episode names with their ID</title>
         <title lang="de-CH">Ersetze Episodennamen mit ihrer ID</title>
@@ -2444,19 +2444,19 @@
         <version>1.1</version>
         <description lang="en-US">
             Replaces the Episode names with the episode number in the demo screen.
-            (Useful for the stage randomizer and the stage loader.)
+            (Useful for the stage loader.)
         </description>
         <description lang="de-CH">
             Ersetzt alle Episodennamen mit ihrer Nummer (in der Vorschauszene).
-            Praktisch für den Stage Randomizer oder Stage Loader.
+            Praktisch für den Stage Loader.
         </description>
         <description lang="fr-FR">
             Remplace les noms des épisodes par leurs numéros dans la séquence de démo.
-            (Utile pour le Randomiseur de niveaux et le Chargeur de liste.)
+            (Utile pour le Chargeur de liste.)
         </description>
         <description lang="ja-JP">
             デモ画面でストーリー名をストーリー番号に置き換えます。 
-            （「ステージランダマイザー」と「ステージローダー」に役立ちます。）
+            （「ステージローダー」に役立ちます。）
         </description>
         <date>Feb 13, 2018</date>
         <source version="GMSE01">
@@ -2802,16 +2802,24 @@
         <version>1.0</version>
         <date>Jun 19, 2019</date>
         <description lang="en-US">
-          Removes the logos and cutscene that normally play before the title screen when loading or resetting the game.
+            Removes the logos and cutscene that normally play before the title screen when loading or resetting the game.
+
+            ::: warning
+            This makes it impossible to toggle progressive or 60Hz mode, make sure to set these the way you want without the code.
+            :::
         </description>
         <description lang="de-CH">
-          Entfernt die Logos und Cutscenes welche beim Laden oder Zurücksetzen des Spiels abgespielt werden.
+            Entfernt die Logos und Cutscenes welche beim Laden oder Zurücksetzen des Spiels abgespielt werden.
         </description>
         <description lang="fr-FR">
-          Supprime les logos et la cutscene qui apparaissent normalement avant l'écran titre lors du démarrage ou redémarrage du jeu.
+            Supprime les logos et la cutscene qui apparaissent normalement avant l'écran titre lors du démarrage ou redémarrage du jeu.
+
+            ::: warning Attention
+            Ce code ne permet pas d'activer ni de désactiver le mode progressif ou 60 Hz, vous devez démarrer le jeu sans ce code pour accéder à cette option.
+            :::
         </description>
         <description lang="ja-JP">
-          （ゲームをロードした時・またはリセット時）タイトル画面の前に再生されるロゴとアニメーションを削除します。
+            （ゲームをロードした時・またはリセット時）タイトル画面の前に再生されるロゴとアニメーションを削除します。
         </description>
         <source version="GMSE01">
             042956AC 480002C4
