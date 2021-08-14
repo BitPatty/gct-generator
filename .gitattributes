@@ -10,7 +10,9 @@
 *.vue text eol=crlf
 *.xml text eol=crlf linguist-detectable
 *.yml text eol=crlf
-*.ct text eol=crlf
+
+# Cheatengine tables
+*.CT text eol=crlf
 *.CEA text eol=crlf
 
 # Special files
