@@ -112,6 +112,11 @@ To use the codes with Dolphin choose "Dolphin INI" as file format instead of "GC
 Dolphin doesn't use the same cheat loader as Nintendont. Its code limit is reached rather quickly and it won't tell you whether the codes you enabled exceed the internal limit. If your game crashes after enabling some codes, this might be the cause. Try to disable non-essential codes if that happens to you.
 :::
 
+::: tip Dolphin Version
+Codes are known to not work properly on Dolphin 5.0. We therefore recommend to use the latest beta version (5.0-XXXXX) which you can download from the [Dolphin Website](https://dolphin-emu.org/download/).
+:::
+
+
 ### Configuration
 
 #### Enabling Cheats
