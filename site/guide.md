@@ -116,7 +116,6 @@ Dolphin doesn't use the same cheat loader as Nintendont. Its code limit is reach
 Codes are known to not work properly on Dolphin 5.0. We therefore recommend to use the latest beta version (5.0-XXXXX) which you can download from the [Dolphin Website](https://dolphin-emu.org/download/).
 :::
 
-
 ### Configuration
 
 #### Enabling Cheats

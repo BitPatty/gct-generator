@@ -1,5 +1,11 @@
 # Changelog
 
+## Sep 29, 2021
+
+### Added 'Quarterframe Timer (Experimental)'
+
+A new timer that aims to circumvent the Shine Get Timer's inconsistencies, and allow timing full levels where SGT would be interrupted by the in-game timer.
+
 ## Aug 13, 2021
 
 ### Removed 'Stage Randomizer' and 'Remove Save Boxes'
