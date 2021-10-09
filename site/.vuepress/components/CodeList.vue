@@ -5,6 +5,7 @@
         :options="getPresetOptions()"
         :onChange="(v) => loadPreset(v)"
         :placeholder="getPresetPlaceholder()"
+        :key="generation"
       />
     </div>
     <div v-for="category in codeCategories" v-bind:key="category.identifier">
@@ -59,6 +60,7 @@ export default {
       codeCategories,
       presetCategories,
       stageLoaderSelected: false,
+      generation: 0,
     };
   },
   methods: {
@@ -70,7 +72,7 @@ export default {
     },
     loadPreset(identifier) {
       if (
-        this.availableCodes.find((c) => c.selected) &&
+        (this.stageLoaderSelected || this.availableCodes.find((c) => c.selected)) &&
         !confirm('This will reset your selection, continue?')
       )
         return;
@@ -79,8 +81,14 @@ export default {
         code.selected = code.presets.includes(identifier);
       }
 
+      if (this.stageLoaderSelected) {
+        this.stageLoaderSelected = false;
+        this.onStageLoaderToggle(false);
+      }
+
       this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
       this.refreshDisabledCodes();
+      this.generation++;
     },
     getPresetPlaceholder() {
       return translate('common.loadpresetplaceholder');
