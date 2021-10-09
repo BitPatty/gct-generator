@@ -9,13 +9,13 @@
   },
   "repository": "https://github.com/BitPatty/gctGenerator/gctGenerator",
   "scripts": {
-    "dev": "yarn codes:inject && yarn translations:compare && vuepress dev site",
-    "build": "node ./scripts/inject_codes.js && yarn translations:compare && vuepress build site",
+    "dev": "npm run codes:inject && npm run translations:compare && vuepress dev site",
+    "build": "node ./scripts/inject_codes.js && npm run translations:compare && vuepress build site",
     "format": "prettier --write ./site/**/*{.md,.js,.json,.vue}",
     "translations:compare": "node ./scripts/compare_translations.js",
-    "codes:inject": "node ./scripts/inject_codes.js && yarn format",
-    "codes:clean": "node ./scripts/clean_codes.js && yarn format",
-    "precommit": "yarn codes:clean && git add ."
+    "codes:inject": "node ./scripts/inject_codes.js && npm run format",
+    "codes:clean": "node ./scripts/clean_codes.js && npm run format",
+    "precommit": "npm run codes:clean && git add ."
   },
   "license": "Apache-2.0",
   "devDependencies": {

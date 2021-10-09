@@ -6,8 +6,8 @@ RUN pwsh -File ./scripts/build_archives.ps1
 FROM node:lts-buster AS build
 WORKDIR /src
 COPY --from=prebuild /src .
-RUN yarn
-RUN yarn build
+RUN npm i
+RUN npm run build
 
 FROM httpd:latest AS final
 WORKDIR /usr/local/apache2/htdocs/
