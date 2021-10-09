@@ -1,5 +1,14 @@
 <template>
   <div>
+    <div class="sub">
+      <GroupSelectComponent
+        :placeholder="getLabel('common.loadpresetplaceholder')"
+        :optGroups="stageLoaderPresetOptions"
+        :onChange="onStageLoaderPresetSelected"
+        selectedValue="placeholder"
+        :key="generation + 1"
+      />
+    </div>
     <div class="config">
       <span>{{ getLabel('stageloader.removedialogue.label') }}</span>
       <SelectComponent
@@ -68,15 +77,6 @@
       </div>
       <div class="sub">
         <ButtonComponent :label="getLabel('stageloader.clear')" :onClick="onClearList" />
-      </div>
-      <div class="sub">
-        <GroupSelectComponent
-          :placeholder="getLabel('stageloader.loadpresetplaceholder')"
-          :optGroups="stageLoaderPresetOptions"
-          :onChange="onStageLoaderPresetSelected"
-          selectedValue="placeholder"
-          :key="generation + 1"
-        />
       </div>
     </div>
   </div>

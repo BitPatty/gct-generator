@@ -1,5 +1,12 @@
 <template>
   <div>
+    <div class="preset-select">
+      <SelectComponent
+        :options="getPresetOptions()"
+        :onChange="(v) => loadPreset(v)"
+        :placeholder="getPresetPlaceholder()"
+      />
+    </div>
     <div v-for="category in codeCategories" v-bind:key="category.identifier">
       <div class="category-title">{{ getCategoryTitle(category) }}</div>
       <ul>
@@ -25,6 +32,8 @@
 </template>
 
 <script>
+import SelectComponent from './SelectComponent';
+
 import { translateCode, translate } from '../i18n/localeHelper';
 import codeCategories from '../data/codeCategories.json';
 import presetCategories from '../data/presetCategories.json';
@@ -53,6 +62,29 @@ export default {
     };
   },
   methods: {
+    getPresetOptions() {
+      return presetCategories.map((c) => ({
+        label: c.i18nKey,
+        value: c.identifier,
+      }));
+    },
+    loadPreset(identifier) {
+      if (
+        this.availableCodes.find((c) => c.selected) &&
+        !confirm('This will reset your selection, continue?')
+      )
+        return;
+
+      for (const code of this.availableCodes) {
+        code.selected = code.presets.includes(identifier);
+      }
+
+      this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
+      this.refreshDisabledCodes();
+    },
+    getPresetPlaceholder() {
+      return translate('common.loadpresetplaceholder');
+    },
     getCodeTitle(code) {
       return translateCode(code, this.$lang).title;
     },
@@ -125,9 +157,18 @@ export default {
   color: white;
   font-weight: 500;
   text-align: center;
-  background: #00522db5;
+  background: #383838b5;
   padding-top: 2px;
   padding-bottom: 2px;
+  margin-bottom: 0;
+}
+
+.category-title ~ ul {
+  margin-top: 0;
+}
+
+.preset-select {
+  margin-bottom: 20px;
 }
 
 ul {

@@ -6,7 +6,8 @@
     "GMSE01": "GMSE01 (NTSC-U)",
     "GMSJ01": "GMSJ01 (NTSC-J 1.0)",
     "GMSJ0A": "GMSJ01 (NTSC-J 1.1)",
-    "GMSP01": "GMSP01 (PAL)"
+    "GMSP01": "GMSP01 (PAL)",
+    "loadpresetplaceholder": "Load a preset.."
   },
   "headers": {
     "codelist": "Available Codes",
@@ -39,6 +40,13 @@
       "misc": "Misc",
       "memcardpatch": "Memory Card Patches",
       "cosmetic": "Cosmetic"
+    },
+    "presets": {
+      "standard": "Standard",
+      "recommended": "Recommended",
+      "il": "IL Runs",
+      "fap": "Fast Any%",
+      "hfsetup": "Hacked File Setup"
     }
   },
   "landingpage": {
@@ -268,7 +276,6 @@
       }
     },
     "levelselectplaceholder": "Choose a level..",
-    "loadpresetplaceholder": "Load a preset..",
     "route": "Route",
     "clear": "Clear List"
   },

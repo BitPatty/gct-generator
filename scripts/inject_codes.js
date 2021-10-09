@@ -208,7 +208,7 @@ const readPresetList = (node, gameVersion) => {
   if (!node) throw new Error('No node provided');
   const presets = node.querySelector('presets');
   if (!presets || !presets.textContent) return [];
-  const targetCode = node.querySelector(`source[version='${gameVersion}]`);
+  const targetCode = node.querySelector(`source[version='${gameVersion}']`);
   if (!targetCode) return [];
   const exclusionAttribute = targetCode.getAttribute('exclude-from-presets');
   if (exclusionAttribute === 'true') return [];
