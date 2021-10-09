@@ -24,6 +24,7 @@
           v-if="category.identifier === 'loader'"
           :class="stageLoaderSelected ? 'checked' : ''"
           @click="toggleStageLoader()"
+          @mouseover="showStageLoaderHelp()"
         >
           {{ getStageLoaderLabel() }}
         </li>
@@ -45,6 +46,7 @@ export default {
     onSelectionChanged: { type: Function },
     onInspect: { type: Function },
     onStageLoaderToggle: { type: Function },
+    onInspectStageLoader: { type: Function },
   },
   mounted() {
     this.populate();
@@ -158,6 +160,9 @@ export default {
     },
     inspect(code) {
       this.onInspect(code);
+    },
+    showStageLoaderHelp() {
+      this.onInspectStageLoader();
     },
   },
 };

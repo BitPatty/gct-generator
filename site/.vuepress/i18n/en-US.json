@@ -62,6 +62,7 @@
     }
   },
   "stageloader": {
+    "help": "Loads levels in a customized order.",
     "levelorder": {
       "label": "Level Order",
       "options": {

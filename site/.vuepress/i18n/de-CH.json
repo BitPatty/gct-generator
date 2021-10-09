@@ -62,6 +62,7 @@
     }
   },
   "stageloader": {
+    "help": "Ladet die Level in einer benutzerdefinierten Reihenfolge.",
     "levelorder": {
       "label": "Level Reihenfolge:",
       "options": {

@@ -3,7 +3,11 @@
     <section class="config">
       <div>
         <span>{{ getLabel('generatorconfig.gameversion.label') }}</span>
-        <VersionSelect :onChange="onVersionChanged" :selectedValue="selectedVersion" />
+        <VersionSelect
+          :onChange="onVersionChanged"
+          :selectedValue="selectedVersion"
+          :key="generation"
+        />
       </div>
       <div>
         <span>{{ getLabel('generatorconfig.downloadformat.label') }}</span>
@@ -29,6 +33,7 @@
           :codes="codes"
           :onSelectionChanged="onCheatSelectionChanged"
           :onInspect="inspect"
+          :onInspectStageLoader="displayStageLoaderHelp"
         />
       </div>
       <div class="prevent-shrink" v-if="codes && codes.length > 0 && useStageLoader">
@@ -39,6 +44,12 @@
       <div v-if="codes && codes.length > 0" class="help">
         <h3>{{ getLabel('headers.help') }}</h3>
         <CodeInfo v-if="!!inspectingCode" :code="inspectingCode" />
+        <div v-else-if="showStageLoaderHelp">
+          <h3>{{ getLabel('headers.stageloader') }}</h3>
+          <div>
+            {{ getLabel('stageloader.help') }}
+          </div>
+        </div>
         <div v-else>{{ getLabel('misc.defaulthelpmessage') }}</div>
       </div>
       <div v-if="selectedVersion == null" class="help">
@@ -109,6 +120,8 @@ export default {
       selectedFormat: 'gct',
       useStageLoader: false,
       stageLoaderCodes: [],
+      showStageLoaderHelp: false,
+      generation: 0,
     };
   },
   methods: {
@@ -116,11 +129,20 @@ export default {
       return translate(key, this.$lang);
     },
     onVersionChanged(e) {
+      if (
+        this.selectedCheats.length > 0 &&
+        !confirm(translate('common.selectionreset', this.$lang))
+      ) {
+        this.generation++;
+        return;
+      }
+
       this.selectedVersion = e;
       this.selectedCheats = [];
       this.codes = gameVersions.find((c) => c.identifier === e).codes;
       this.stageLoaderCodes = gameVersions.find((c) => c.identifier === e).fastCode;
       this.inspectingCode = null;
+      this.showStageLoaderHelp = false;
       try {
         window._paq.push([
           'trackEvent',
@@ -162,7 +184,12 @@ export default {
     onStageLoaderCodeChanged(e) {
       this.selectedStageLoader = e;
     },
+    displayStageLoaderHelp() {
+      this.inspectingCode = null;
+      this.showStageLoaderHelp = true;
+    },
     inspect(code) {
+      this.showStageLoaderHelp = false;
       this.inspectingCode = code;
     },
   },
