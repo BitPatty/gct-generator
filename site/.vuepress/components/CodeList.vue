@@ -52,6 +52,7 @@ export default {
   watch: {
     codes: function () {
       this.populate();
+      this.unselectStageLoader();
     },
   },
   data() {
@@ -81,17 +82,19 @@ export default {
         code.selected = code.presets.includes(identifier);
       }
 
-      if (this.stageLoaderSelected) {
-        this.stageLoaderSelected = false;
-        this.onStageLoaderToggle(false);
-      }
-
+      this.unselectStageLoader();
       this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
       this.refreshDisabledCodes();
       this.generation++;
     },
     getPresetPlaceholder() {
       return translate('common.loadpresetplaceholder', this.$lang);
+    },
+    unselectStageLoader() {
+      if (this.stageLoaderSelected) {
+        this.stageLoaderSelected = false;
+        this.onStageLoaderToggle(false);
+      }
     },
     getCodeTitle(code) {
       return translateCode(code, this.$lang).title;
