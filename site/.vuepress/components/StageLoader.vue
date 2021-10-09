@@ -188,7 +188,7 @@ export default {
 
       if (
         this.selectedRoute?.length > 0 &&
-        !confirm('Loading a preset will erase your current list. Continue?')
+        !confirm(translate('common.selectionreset', this.$lang))
       ) {
         return;
       }

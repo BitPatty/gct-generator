@@ -24,7 +24,6 @@
       "label": "ゲームバージョン",
       "placeholder": "バージョンを選択…"
     },
-    "usestageloader": "ステージローダーの使用",
     "downloadformat": {
       "label": "ダウンロードフォーマット",
       "options": {

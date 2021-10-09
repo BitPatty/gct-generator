@@ -73,7 +73,7 @@ export default {
     loadPreset(identifier) {
       if (
         (this.stageLoaderSelected || this.availableCodes.find((c) => c.selected)) &&
-        !confirm('This will reset your selection, continue?')
+        !confirm(translate('common.selectionreset', this.$lang))
       )
         return;
 
@@ -91,7 +91,7 @@ export default {
       this.generation++;
     },
     getPresetPlaceholder() {
-      return translate('common.loadpresetplaceholder');
+      return translate('common.loadpresetplaceholder', this.$lang);
     },
     getCodeTitle(code) {
       return translateCode(code, this.$lang).title;

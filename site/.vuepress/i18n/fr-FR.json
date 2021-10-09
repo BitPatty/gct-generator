@@ -24,7 +24,6 @@
       "label": "Version du jeu :",
       "placeholder": "Choisissez une version…"
     },
-    "usestageloader": "Utiliser le chargeur de liste",
     "downloadformat": {
       "label": "Format de fichier :",
       "options": {
