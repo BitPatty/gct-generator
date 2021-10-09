@@ -150,7 +150,7 @@ export default {
         this.onStageLoaderToggle(false);
       }
 
-      code.selected = !code.selected;
+      code.selected = code.disabled ? false : !code.selected;
       this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
       this.refreshDisabledCodes();
     },
