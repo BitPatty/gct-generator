@@ -6,7 +6,7 @@
         <li
           v-for="(code, idx) in availableCodes.filter((c) => c.category === category.identifier)"
           v-bind:key="idx"
-          :class="code.selected ? 'checked' : ''"
+          :class="code.selected ? 'checked' : code.disabled ? 'disabled' : ''"
           @click="toggle(code)"
           @mouseover="inspect(code)"
         >
@@ -71,6 +71,25 @@ export default {
       this.stageLoaderSelected = newState;
       this.onStageLoaderToggle(newState);
       this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
+      this.refreshDisabledCodes();
+    },
+    refreshDisabledCodes() {
+      for (const dependentCategory of codeCategories.filter((c) => c.dependsOn.length > 0)) {
+        for (const dependency of dependentCategory.dependsOn) {
+          const enableCodes =
+            (dependency === 'loader' && this.stageLoaderSelected) ||
+            this.availableCodes.find((c) => c.selected && c.category === dependency);
+
+          for (const code of this.availableCodes.filter(
+            (c) => c.category === dependentCategory.identifier && c.disabled !== !enableCodes,
+          )) {
+            code.disabled = !enableCodes;
+            if (code.disabled && code.selected) {
+              this.toggle(code);
+            }
+          }
+        }
+      }
     },
     toggle(code) {
       if (!code.selected && codeCategories.find((c) => c.identifier === code.category).exclusive) {
@@ -88,9 +107,11 @@ export default {
 
       code.selected = !code.selected;
       this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
+      this.refreshDisabledCodes();
     },
     populate() {
       this.availableCodes = this.codes.map((c) => ({ ...c, selected: false }));
+      this.refreshDisabledCodes();
     },
     inspect(code) {
       this.onInspect(code);
@@ -134,7 +155,7 @@ ul li:nth-child(odd) {
   background: #e7e7e7;
 }
 
-ul li:hover {
+ul li:not(.disabled):hover {
   background: #3eaf7c;
   color: #fff;
 }
@@ -147,6 +168,15 @@ ul li.checked:hover {
 ul li.checked {
   background: #434343;
   color: #fff;
+}
+
+ul li.disabled {
+  background: #c7c7c7;
+  color: #767676;
+}
+
+ul li.disabled:hover {
+  cursor: not-allowed;
 }
 
 li {
@@ -167,7 +197,7 @@ li::before {
   width: 10px;
 }
 
-li:hover::before {
+li:not(.disabled):hover::before {
   border-color: #fff;
   background-color: #1fa76e;
 }

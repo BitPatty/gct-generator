@@ -172,6 +172,7 @@ export default {
 section {
   display: flex;
   flex-wrap: nowrap;
+  position: relative;
 }
 
 .prevent-shrink {
@@ -198,7 +199,11 @@ section > div:not(:first-child) {
 }
 
 .help {
+  position: sticky;
+  top: 80px;
   text-align: left;
+  align-self: flex-start;
+  width: 100%;
 }
 
 .centered {
