@@ -547,7 +547,7 @@
     </code>-->
     <code>
         <category>qol</category>
-        <presets>standard,recommended,il</presets>
+        <presets>recommended,il</presets>
         <title lang="en-US">Unlock Yoshi</title>
         <title lang="de-CH">Yoshi Freischalten</title>
         <title lang="fr-FR">Débloquer Yoshi</title>
@@ -578,7 +578,7 @@
     </code>
     <code>
         <category>qol</category>
-        <presets>standard,recommended,il</presets>
+        <presets>recommended,il</presets>
         <title lang="en-US">Unlock Nozzles</title>
         <title lang="de-CH">Düsen freischalten</title>
         <title lang="fr-FR">Débloquer les buses</title>
@@ -2561,7 +2561,7 @@
     </code>
     <code>
         <category>qol</category>
-        <presets>standard,recommended,il</presets>
+        <presets>recommended,il</presets>
         <title lang="en-US">Any Fruit Opens Yoshi Eggs</title>
         <title lang="de-CH">Jede Frucht öffnet Yoshi-Eier</title>
         <title lang="fr-FR">Tous les fruits ouvrent les œufs de Yoshi</title>
@@ -2588,7 +2588,7 @@
     </code>
     <code>
         <category>qol</category>
-        <presets>standard,recommended,il</presets>
+        <presets>recommended,il</presets>
         <title lang="en-US">Infinite Juice</title>
         <title lang="de-CH">Unendlich Saft</title>
         <title lang="fr-FR">Jus infini</title>
