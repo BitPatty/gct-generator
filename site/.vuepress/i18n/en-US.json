@@ -31,6 +31,14 @@
         "dolphin": "Dolphin INI",
         "gcm": "CheatManager TXT"
       }
+    },
+    "categories": {
+      "qol": "Quality of Life",
+      "loader": "Loaders",
+      "timer": "Timers",
+      "misc": "Misc",
+      "memcardpatch": "Memory Card Patches",
+      "cosmetic": "Cosmetic"
     }
   },
   "landingpage": {

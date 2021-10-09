@@ -1,0 +1,38 @@
+[
+  {
+    "identifier": "qol",
+    "i18nKey": "generatorconfig.categories.qol",
+    "exclusive": false,
+    "dependsOn": []
+  },
+  {
+    "identifier": "loader",
+    "i18nKey": "generatorconfig.categories.loader",
+    "exclusive": true,
+    "dependsOn": []
+  },
+  {
+    "identifier": "timer",
+    "i18nKey": "generatorconfig.categories.timer",
+    "exclusive": false,
+    "dependsOn": ["loader"]
+  },
+  {
+    "identifier": "misc",
+    "i18nKey": "generatorconfig.categories.misc",
+    "exclusive": false,
+    "dependsOn": []
+  },
+  {
+    "identifier": "memcardpatch",
+    "i18nKey": "generatorconfig.categories.memcardpatch",
+    "exclusive": true,
+    "dependsOn": []
+  },
+  {
+    "identifier": "cosmetic",
+    "i18nKey": "generatorconfig.categories.cosmetic",
+    "exclusive": false,
+    "dependsOn": []
+  }
+]

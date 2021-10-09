@@ -10,6 +10,11 @@ const md = require('@vuepress/markdown')({
 
 const themePlugins = require(path.join(__dirname, '../site/.vuepress/data/themePlugins.json'));
 const locales = require(path.join(__dirname, '../site/.vuepress/i18n/locales.json'));
+const codeCategories = require(path.join(__dirname, '../site/.vuepress/data/codeCategories.json'));
+const presetCategories = require(path.join(
+  __dirname,
+  '../site/.vuepress/data/presetCategories.json',
+));
 const xml = fs.readFileSync(path.join(__dirname, `../Codes.xml`));
 
 // Constants
@@ -36,6 +41,22 @@ const validateXML = (xmlString) => {
     const codeTitle = codes[i].querySelector("title[lang='en-US']");
     if (!codeTitle || !codeTitle.textContent)
       throw new Error(`Missing Fallback Title (en-US) in code nr ${i}`);
+
+    // Code has a valid category
+    const codeCategory = codes[i].querySelector('category');
+    if (!codeCategory || !codeCategory.textContent)
+      throw new Error(`Missing code category in ${codeTitle.textContent}`);
+
+    if (!codeCategories.map((c) => c.identifier).includes(codeCategory.textContent))
+      throw new Error(`Invalid code category for ${codeTitle.textContent}`);
+
+    const codePresets = codes[i].querySelector('presets');
+    if (codePresets && codePresets.textContent) {
+      for (const preset of codePresets.textContent.split(',')) {
+        if (!presetCategories.map((c) => c.identifier).includes(preset))
+          throw new Error(`Invalid preset ${preset} for ${codeTitle.textContent}`);
+      }
+    }
 
     // All lang attributes on all titles are valid
     const codeTitles = codes[i].querySelectorAll('title');
@@ -178,6 +199,23 @@ const readTextNode = (node, identifier, lang = null, fallbackLang = null) => {
 };
 
 /**
+ * Reads the presets from the specified code
+ * @param {*} node The parent node
+ * @param {*} gameVersion The target game version
+ * @returns The list of presets
+ */
+const readPresetList = (node, gameVersion) => {
+  if (!node) throw new Error('No node provided');
+  const presets = node.querySelector('presets');
+  if (!presets || !presets.textContent) return [];
+  const targetCode = node.querySelector(`source[version='${gameVersion}]`);
+  if (!targetCode) return [];
+  const exclusionAttribute = targetCode.getAttribute('exclude-from-presets');
+  if (exclusionAttribute === 'true') return [];
+  return presets.textContent.split(',');
+};
+
+/**
  * Creates an object of localized child nodes
  * @param {*} node The parent node
  * @param {*} identifier The childs tag name
@@ -247,6 +285,8 @@ const parseXml = (xmlString, gameVersion = null) => {
       version: readTextNode(code, 'version'),
       date: readTextNode(code, 'date'),
       source: readCode(code, 'source', gameVersion),
+      presets: readPresetList(code, gameVersion),
+      category: readTextNode(code, 'category'),
     }))
     .filter((code) => code.source != null);
 };

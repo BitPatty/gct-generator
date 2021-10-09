@@ -10,14 +10,6 @@
         <FormatSelect :onChange="onFormatChanged" :selectedValue="selectedFormat" />
       </div>
       <div>
-        <span>{{ getLabel('generatorconfig.usestageloader') }}</span>
-        <SelectComponent
-          :options="useStageLoaderOptions"
-          :onChange="onStageLoaderChanged"
-          :value="useStageLoader"
-        />
-      </div>
-      <div>
         <span>{{ getLabel('common.download') }}</span>
         <DownloadButton
           :codes="selectedCheats"
@@ -33,6 +25,7 @@
       <div v-if="codes && codes.length > 0">
         <h3>{{ getLabel('headers.codelist') }}</h3>
         <CodeList
+          :onStageLoaderToggle="onStageLoaderToggle"
           :codes="codes"
           :onSelectionChanged="onCheatSelectionChanged"
           :onInspect="inspect"
@@ -116,10 +109,6 @@ export default {
       selectedFormat: 'gct',
       useStageLoader: false,
       stageLoaderCodes: [],
-      useStageLoaderOptions: [
-        { value: false, label: 'common.no' },
-        { value: true, label: 'common.yes' },
-      ],
     };
   },
   methods: {
@@ -152,15 +141,15 @@ export default {
         ]);
       } catch {}
     },
-    onStageLoaderChanged(e) {
-      this.useStageLoader = e === true || e === 'true';
+    onStageLoaderToggle(enabled) {
+      this.useStageLoader = enabled;
       if (!this.useStageLoader) this.selectedStageLoader = null;
       try {
         window._paq.push([
           'trackEvent',
           'GCT Generator',
           'Change StageLoader State',
-          JSON.stringify({ enabled: e }),
+          JSON.stringify({ enabled }),
         ]);
       } catch {}
     },

@@ -1,25 +1,40 @@
 <template>
-  <ul>
-    <li
-      v-for="(code, idx) in availableCodes"
-      v-bind:key="idx"
-      :class="code.selected ? 'checked' : ''"
-      @click="toggle(code)"
-      @mouseover="inspect(code)"
-    >
-      {{ getCodeTitle(code) }}
-    </li>
-  </ul>
+  <div>
+    <div v-for="category in codeCategories" v-bind:key="category.identifier">
+      <div class="category-title">{{ getCategoryTitle(category) }}</div>
+      <ul>
+        <li
+          v-for="(code, idx) in availableCodes.filter((c) => c.category === category.identifier)"
+          v-bind:key="idx"
+          :class="code.selected ? 'checked' : ''"
+          @click="toggle(code)"
+          @mouseover="inspect(code)"
+        >
+          {{ getCodeTitle(code) }}
+        </li>
+        <li
+          v-if="category.identifier === 'loader'"
+          :class="stageLoaderSelected ? 'checked' : ''"
+          @click="toggleStageLoader()"
+        >
+          {{ getStageLoaderLabel() }}
+        </li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <script>
-import { translateCode } from '../i18n/localeHelper';
+import { translateCode, translate } from '../i18n/localeHelper';
+import codeCategories from '../data/codeCategories.json';
+import presetCategories from '../data/presetCategories.json';
 
 export default {
   props: {
     codes: { type: Array },
     onSelectionChanged: { type: Function },
     onInspect: { type: Function },
+    onStageLoaderToggle: { type: Function },
   },
   mounted() {
     this.populate();
@@ -32,13 +47,45 @@ export default {
   data() {
     return {
       availableCodes: [],
+      codeCategories,
+      presetCategories,
+      stageLoaderSelected: false,
     };
   },
   methods: {
     getCodeTitle(code) {
       return translateCode(code, this.$lang).title;
     },
+    getCategoryTitle(category) {
+      return translate(category.i18nKey, this.$lang);
+    },
+    getStageLoaderLabel() {
+      return translate('headers.stageloader', this.$lang);
+    },
+    toggleStageLoader() {
+      for (const c of this.availableCodes.filter((c) => c.category === 'loader' && c.selected)) {
+        c.selected = false;
+      }
+
+      const newState = !this.stageLoaderSelected;
+      this.stageLoaderSelected = newState;
+      this.onStageLoaderToggle(newState);
+      this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
+    },
     toggle(code) {
+      if (!code.selected && codeCategories.find((c) => c.identifier === code.category).exclusive) {
+        for (const availableCode of this.availableCodes.filter(
+          (c) => c.category === code.category && c.selected,
+        )) {
+          availableCode.selected = false;
+        }
+      }
+
+      if (!code.selected && code.category === 'loader' && this.stageLoaderSelected) {
+        this.stageLoaderSelected = false;
+        this.onStageLoaderToggle(false);
+      }
+
       code.selected = !code.selected;
       this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
     },
@@ -53,6 +100,15 @@ export default {
 </script>
 
 <style scoped>
+.category-title {
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  background: #00522db5;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
 ul {
   list-style-type: none;
   padding-left: 0;
