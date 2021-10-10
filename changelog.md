@@ -1,5 +1,11 @@
 # Changelog
 
+## Oct 10, 2021
+
+### Added code categories and presets
+
+-
+
 ## Sep 29, 2021
 
 ### Added 'Quarterframe Timer (Experimental)'
