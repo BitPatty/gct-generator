@@ -77,8 +77,10 @@ export default {
       if (
         (this.stageLoaderSelected || this.availableCodes.find((c) => c.selected)) &&
         !confirm(translate('common.selectionreset', this.$lang))
-      )
+      ) {
+        this.generation++;
         return;
+      }
 
       for (const code of this.availableCodes) {
         code.selected = code.presets.includes(identifier);
