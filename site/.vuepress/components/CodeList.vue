@@ -8,7 +8,7 @@
         :key="generation"
       />
     </div>
-    <div v-for="category in codeCategories" v-bind:key="category.identifier">
+    <div v-for="category in codeCategories" v-bind:key="category.identifier" class="code-group">
       <div class="category-title">{{ getCategoryTitle(category) }}</div>
       <ul>
         <li
@@ -189,6 +189,15 @@ export default {
   margin-bottom: 20px;
 }
 
+.code-group {
+  border: 1px solid #d7d7d7;
+  margin-bottom: 20px;
+}
+
+.code-group ul {
+  margin-bottom: 0;
+}
+
 ul {
   list-style-type: none;
   padding-left: 0;
@@ -208,6 +217,10 @@ ul li {
   white-space: nowrap;
   padding-right: 15px;
   text-align: left;
+}
+
+ul li {
+  background: #f9f9f9;
 }
 
 ul li:nth-child(odd) {
@@ -256,7 +269,7 @@ li::before {
   width: 10px;
 }
 
-li:not(.disabled):hover::before {
+li:not(.disabled):not(.checked):hover::before {
   border-color: #fff;
   background-color: #1fa76e;
 }
