@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <codes>
     <code>
+        <category>qol</category>
+        <presets>standard,recommended,il</presets>
         <title lang="en-US">DPad Functions</title>
         <title lang="de-CH">DPad Funktionen</title>
         <title lang="fr-FR">Fonctions de la croix directionnelle</title>
@@ -234,6 +236,7 @@
         </source>
     </code>
     <code>
+        <category>misc</category>
         <title lang="en-US">Nozzle Lock</title>
         <title lang="fr-FR">Verrouillage de buses</title>
         <author>Psychonauter, Dan Salvato, Link Master, James0x57</author>
@@ -325,6 +328,7 @@
         </source>
     </code>
     <code>
+        <category>misc</category>
         <title lang="en-US">Coin Count Savestate</title>
         <title lang="de-CH">Münzenzahl Speicherstand</title>
         <author>Psychonauter</author>
@@ -384,6 +388,8 @@
         </source>
     </code>
     <code>
+        <category>qol</category>
+        <presets>standard,recommended,il</presets>
         <title lang="en-US">Infinite Lives</title>
         <title lang="de-CH">Unendlich Leben</title>
         <title lang="fr-FR">Vies infinies</title>
@@ -409,6 +415,8 @@
         </source>
     </code>
     <code>
+        <category>qol</category>
+        <presets>standard,recommended,il</presets>
         <title lang="en-US">Disable Blue Coin Flag</title>
         <title lang="de-CH">Deaktiviere Blaue-Münzen-Kennung</title>
         <title lang="fr-FR">Désactiver la sauvegarde des pièces bleues</title>
@@ -450,6 +458,8 @@
         </source>
     </code>
     <code>
+        <category>qol</category>
+        <presets>standard,recommended,il,hfsetup</presets>
         <title lang="en-US">FMV Skips</title>
         <title lang="de-CH">FMV Skips</title>
         <title lang="fr-FR">Passer les FMV</title>
@@ -479,6 +489,7 @@
         </source>
     </code>
     <code>
+        <category>cosmetic</category>
         <title lang="en-US">Mute Background Music</title>
         <title lang="de-CH">Hintergrundmusik stummschalten</title>
         <title lang="fr-FR">Supprimer la musique de fond</title>
@@ -504,6 +515,7 @@
         </source>
     </code>
     <!--<code>
+        <category>misc</category>
         <title lang="en-US">Remove Save Boxes</title>
         <title lang="de-CH">Speicher-Schaltfläche entfernen</title>
         <title lang="fr-FR">Supprimer les boîtes de sauvegarde</title>
@@ -533,6 +545,8 @@
         </source>
     </code>-->
     <code>
+        <category>qol</category>
+        <presets>recommended,il</presets>
         <title lang="en-US">Unlock Yoshi</title>
         <title lang="de-CH">Yoshi Freischalten</title>
         <title lang="fr-FR">Débloquer Yoshi</title>
@@ -562,6 +576,8 @@
         </source>
     </code>
     <code>
+        <category>qol</category>
+        <presets>recommended,il</presets>
         <title lang="en-US">Unlock Nozzles</title>
         <title lang="de-CH">Düsen freischalten</title>
         <title lang="fr-FR">Débloquer les buses</title>
@@ -591,6 +607,8 @@
         </source>
     </code>
     <code>
+        <category>qol</category>
+        <presets>standard,recommended,il</presets>
         <title lang="en-US">Free Pause</title>
         <title lang="de-CH">Freies Pausieren</title>
         <title lang="fr-FR">Pause libre</title>
@@ -648,6 +666,8 @@
         </source>
     </code>
     <code>
+        <category>qol</category>
+        <presets>standard,recommended,il,hfsetup</presets>
         <title lang="en-US">Enable Exit Area Everywhere</title>
         <title lang="de-CH">'Level Verlassen' überall aktivieren</title>
         <title lang="fr-FR">Activer « Sortir de la zone » partout</title>
@@ -673,6 +693,8 @@
         </source>
     </code>
     <code>
+        <category>timer</category>
+        <presets>standard,recommended,il</presets>
         <title lang="en-US">Shine Get Timer</title>
         <title lang="de-CH">Shine Get Timer</title>
         <title lang="fr-FR">Chronomètre Shine Get</title>
@@ -1198,6 +1220,7 @@
         </source>
     </code>
     <code>
+        <category>timer</category>
         <title lang="en-US">Quarterframe Timer (Experimental)</title>
         <author>Noki Doki</author>
         <version>0.1</version>
@@ -1419,6 +1442,8 @@
         </source>
     </code>
     <code>
+        <category>loader</category>
+        <presets>standard,recommended,il</presets>
         <title lang="en-US">Level Select</title>
         <title lang="de-CH">Level Select</title>
         <title lang="fr-FR">Sélecteur de niveau</title>
@@ -1985,6 +2010,8 @@
         </source>
     </code>
     <code>
+        <category>loader</category>
+        <presets>fap</presets>
         <title lang="en-US">Fast Any%</title>
         <title lang="de-CH">Fast Any%</title>
         <title lang="fr-FR">Fast Any%</title>
@@ -2532,6 +2559,8 @@
         </source>
     </code>
     <code>
+        <category>qol</category>
+        <presets>recommended,il</presets>
         <title lang="en-US">Any Fruit Opens Yoshi Eggs</title>
         <title lang="de-CH">Jede Frucht öffnet Yoshi-Eier</title>
         <title lang="fr-FR">Tous les fruits ouvrent les œufs de Yoshi</title>
@@ -2557,6 +2586,8 @@
         </source>
     </code>
     <code>
+        <category>qol</category>
+        <presets>recommended,il</presets>
         <title lang="en-US">Infinite Juice</title>
         <title lang="de-CH">Unendlich Saft</title>
         <title lang="fr-FR">Jus infini</title>
@@ -2582,6 +2613,7 @@
         </source>
     </code>
     <!--<code>
+        <category>loader</category>
         <title lang="en-US">Stage Randomizer (Experimental)</title>
         <title lang="de-CH">Stage Randomizer (Experimentell)</title>
         <title lang="fr-FR">Randomiseur de niveaux (expérimental)</title>
@@ -2657,6 +2689,7 @@
         </source>
     </code>-->
     <code>
+        <category>cosmetic</category>
         <title lang="en-US">Replace Episode names with their ID</title>
         <title lang="de-CH">Ersetze Episodennamen mit ihrer ID</title>
         <title lang="fr-FR">Remplacer les noms d'épisodes par leur numéro</title>
@@ -2710,6 +2743,7 @@
         </source>
     </code>
     <code>
+        <category>misc</category>
         <title lang="en-US">Position/angle/speed display</title>
         <title lang="de-CH">Position/Winkel/Geschw. Display</title>
         <title lang="fr-FR">Affichage de position/angle/vitesse</title>
@@ -3015,6 +3049,8 @@
         </source>
     </code>
     <code>
+        <category>qol</category>
+        <presets>standard,recommended,il</presets>
         <title lang="en-US">Intro Skip</title>
         <title lang="de-CH">Überspringbare Intros</title>
         <title lang="fr-FR">Passer l'intro</title>
@@ -3066,7 +3102,7 @@
             B07F000E B01F0010
             4BFFFEB0 00000000
         </source>
-        <source version="GMSP01">
+        <source version="GMSP01" exclude-from-presets="true">
             0428D4C4 48000264
             0428D9B8 48000014
             0629E51C 00000014
@@ -3076,6 +3112,8 @@
         </source>
     </code>
     <code>
+        <category>qol</category>
+        <presets>standard,recommended,il</presets>
         <title lang="en-US">Respawn One-Time Shines</title>
         <title lang="de-CH">Einmalige Shines Respawnen</title>
         <title lang="fr-FR">Restaurer les Shines uniques</title>
@@ -3109,6 +3147,8 @@
         </source>
     </code>
     <code>
+        <category>misc</category>
+        <presets>standard,recommended,il</presets>
         <title lang="en-US">Force Plaza Events</title>
         <title lang="de-CH">Erzwungene Plaza Events</title>
         <title lang="fr-FR">Forcer les événements de la place Delfino</title>
@@ -3162,6 +3202,7 @@
         </source>
     </code>
     <code>
+        <category>memcardpatch</category>
         <title lang="en-US">Force SJIS Memory Card Encoding</title>
         <title lang="fr-FR">Forcer l'encodage SJIS pour la carte mémoire</title>
         <author>Noki Doki</author>
@@ -3177,6 +3218,7 @@
         </source>
     </code>
     <code>
+        <category>memcardpatch</category>
         <title lang="en-US">Force ANSI Memory Card Encoding</title>
         <title lang="fr-FR">Forcer l'encodage ANSI pour la carte mémoire</title>
         <author>Noki Doki</author>
@@ -3195,6 +3237,8 @@
         </source>
     </code>
     <code>
+        <category>misc</category>
+        <presets>standard,recommended,il,fap</presets>
         <title lang="en-US">Fix Manta Splitting</title>
         <title lang="de-CH">Fix Manta Splitting</title>
         <title lang="fr-FR">Corriger la séparation de la raie manta</title>
@@ -3243,6 +3287,7 @@
         </source>
     </code>
     <code>
+        <category>cosmetic</category>
         <title lang="en-US">Shine Outfit</title>
         <title lang="de-CH">Shine Outfit</title>
         <title lang="fr-FR">Tenue Shine</title>

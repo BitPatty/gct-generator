@@ -1,0 +1,22 @@
+[
+  {
+    "identifier": "standard",
+    "i18nKey": "generatorconfig.presets.standard"
+  },
+  {
+    "identifier": "recommended",
+    "i18nKey": "generatorconfig.presets.recommended"
+  },
+  {
+    "identifier": "il",
+    "i18nKey": "generatorconfig.presets.il"
+  },
+  {
+    "identifier": "fap",
+    "i18nKey": "generatorconfig.presets.fap"
+  },
+  {
+    "identifier": "hfsetup",
+    "i18nKey": "generatorconfig.presets.hfsetup"
+  }
+]

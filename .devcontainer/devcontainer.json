@@ -5,7 +5,7 @@
     "args": { "VARIANT": "14" }
   },
   "settings": {
-    "terminal.integrated.defaultProfile.linux": "/bin/bash"
+    "terminal.integrated.defaultProfile.linux": "bash"
   },
   "extensions": [
     "dbaeumer.vscode-eslint",
@@ -14,6 +14,6 @@
     "wayou.vscode-todo-highlight",
   ],
   "forwardPorts": [8080],
-  "postCreateCommand": "yarn install",
+  "postCreateCommand": "npm install",
   "remoteUser": "node"
 }

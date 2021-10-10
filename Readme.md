@@ -47,28 +47,25 @@ Note that in the code reference files everything following the `<!-- injectionpo
 If you intend to change site code you need [NodeJS](https://nodejs.org/en/) version 14.X LTS installed on your local.
 
 ```sh
-# Install yarn
-npm i -g yarn
-
 # Install dependencies
-yarn
+npm i
 
 # Run project in watch mode
 # This will serve the page in development mode on http://localhost:8080
-yarn dev
+npm run dev
 
 # Build project
-yarn build
+npm run build
 ```
 
 The XML codes will be written automatically to the json file and code reference during the following actions:
 
-- Starting the development server with `yarn dev`
-- Building the site with `yarn build`
+- Starting the development server with `npm run dev`
+- Building the site with `npm run build`
 
-If you want to inject the codes at any given point you can use `yarn codes:inject`.
+If you want to inject the codes at any given point you can use `npm run codes:inject`.
 
-**!!! Note that if yarn was used, `yarn codes:clean` is ran automatically as a pre-commit hook, removing all injected codes and staging ALL changes.** If you want to commit changes without cleaning codes first you have to commit through `git commit --no-verify`.
+**!!! Note that if npm was used, `npm run codes:clean` is ran automatically as a pre-commit hook, removing all injected codes and staging ALL changes.** If you want to commit changes without cleaning codes first you have to commit through `git commit --no-verify`.
 
 ### Build and preview the site (Docker)
 

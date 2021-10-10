@@ -6,7 +6,9 @@
     "GMSE01": "GMSE01 (NTSC-U)",
     "GMSJ01": "GMSJ01 (NTSC-J 1.0)",
     "GMSJ0A": "GMSJ01 (NTSC-J 1.1)",
-    "GMSP01": "GMSP01 (PAL)"
+    "GMSP01": "GMSP01 (PAL)",
+    "loadpresetplaceholder": "Load a preset..",
+    "selectionreset": "This will reset your selection, continue?"
   },
   "headers": {
     "codelist": "Available Codes",
@@ -23,7 +25,6 @@
       "label": "Game Version:",
       "placeholder": "Choose Version.."
     },
-    "usestageloader": "Use Stage List Loader",
     "downloadformat": {
       "label": "Download Format:",
       "options": {
@@ -31,6 +32,21 @@
         "dolphin": "Dolphin INI",
         "gcm": "CheatManager TXT"
       }
+    },
+    "categories": {
+      "qol": "Quality of Life",
+      "loader": "Loaders",
+      "timer": "Timers",
+      "misc": "Misc",
+      "memcardpatch": "Memory Card Patches",
+      "cosmetic": "Cosmetic"
+    },
+    "presets": {
+      "standard": "Standard",
+      "recommended": "Recommended",
+      "il": "IL Runs",
+      "fap": "Fast Any%",
+      "hfsetup": "Hacked File Setup"
     }
   },
   "landingpage": {
@@ -46,6 +62,7 @@
     }
   },
   "stageloader": {
+    "help": "Loads levels in a customized order.",
     "levelorder": {
       "label": "Level Order",
       "options": {
@@ -260,7 +277,6 @@
       }
     },
     "levelselectplaceholder": "Choose a level..",
-    "loadpresetplaceholder": "Load a preset..",
     "route": "Route",
     "clear": "Clear List"
   },

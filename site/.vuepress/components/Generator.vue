@@ -3,19 +3,15 @@
     <section class="config">
       <div>
         <span>{{ getLabel('generatorconfig.gameversion.label') }}</span>
-        <VersionSelect :onChange="onVersionChanged" :selectedValue="selectedVersion" />
+        <VersionSelect
+          :onChange="onVersionChanged"
+          :selectedValue="selectedVersion"
+          :key="generation"
+        />
       </div>
       <div>
         <span>{{ getLabel('generatorconfig.downloadformat.label') }}</span>
         <FormatSelect :onChange="onFormatChanged" :selectedValue="selectedFormat" />
-      </div>
-      <div>
-        <span>{{ getLabel('generatorconfig.usestageloader') }}</span>
-        <SelectComponent
-          :options="useStageLoaderOptions"
-          :onChange="onStageLoaderChanged"
-          :value="useStageLoader"
-        />
       </div>
       <div>
         <span>{{ getLabel('common.download') }}</span>
@@ -33,9 +29,11 @@
       <div v-if="codes && codes.length > 0">
         <h3>{{ getLabel('headers.codelist') }}</h3>
         <CodeList
+          :onStageLoaderToggle="onStageLoaderToggle"
           :codes="codes"
           :onSelectionChanged="onCheatSelectionChanged"
           :onInspect="inspect"
+          :onInspectStageLoader="displayStageLoaderHelp"
         />
       </div>
       <div class="prevent-shrink" v-if="codes && codes.length > 0 && useStageLoader">
@@ -46,6 +44,12 @@
       <div v-if="codes && codes.length > 0" class="help">
         <h3>{{ getLabel('headers.help') }}</h3>
         <CodeInfo v-if="!!inspectingCode" :code="inspectingCode" />
+        <div v-else-if="showStageLoaderHelp">
+          <h3>{{ getLabel('headers.stageloader') }}</h3>
+          <div>
+            {{ getLabel('stageloader.help') }}
+          </div>
+        </div>
         <div v-else>{{ getLabel('misc.defaulthelpmessage') }}</div>
       </div>
       <div v-if="selectedVersion == null" class="help">
@@ -116,10 +120,8 @@ export default {
       selectedFormat: 'gct',
       useStageLoader: false,
       stageLoaderCodes: [],
-      useStageLoaderOptions: [
-        { value: false, label: 'common.no' },
-        { value: true, label: 'common.yes' },
-      ],
+      showStageLoaderHelp: false,
+      generation: 0,
     };
   },
   methods: {
@@ -127,11 +129,20 @@ export default {
       return translate(key, this.$lang);
     },
     onVersionChanged(e) {
+      if (
+        this.selectedCheats.length > 0 &&
+        !confirm(translate('common.selectionreset', this.$lang))
+      ) {
+        this.generation++;
+        return;
+      }
+
       this.selectedVersion = e;
       this.selectedCheats = [];
       this.codes = gameVersions.find((c) => c.identifier === e).codes;
       this.stageLoaderCodes = gameVersions.find((c) => c.identifier === e).fastCode;
       this.inspectingCode = null;
+      this.showStageLoaderHelp = false;
       try {
         window._paq.push([
           'trackEvent',
@@ -152,15 +163,15 @@ export default {
         ]);
       } catch {}
     },
-    onStageLoaderChanged(e) {
-      this.useStageLoader = e === true || e === 'true';
+    onStageLoaderToggle(enabled) {
+      this.useStageLoader = enabled;
       if (!this.useStageLoader) this.selectedStageLoader = null;
       try {
         window._paq.push([
           'trackEvent',
           'GCT Generator',
           'Change StageLoader State',
-          JSON.stringify({ enabled: e }),
+          JSON.stringify({ enabled }),
         ]);
       } catch {}
     },
@@ -173,7 +184,12 @@ export default {
     onStageLoaderCodeChanged(e) {
       this.selectedStageLoader = e;
     },
+    displayStageLoaderHelp() {
+      this.inspectingCode = null;
+      this.showStageLoaderHelp = true;
+    },
     inspect(code) {
+      this.showStageLoaderHelp = false;
       this.inspectingCode = code;
     },
   },
@@ -183,6 +199,7 @@ export default {
 section {
   display: flex;
   flex-wrap: nowrap;
+  position: relative;
 }
 
 .prevent-shrink {
@@ -209,7 +226,11 @@ section > div:not(:first-child) {
 }
 
 .help {
+  position: sticky;
+  top: 80px;
   text-align: left;
+  align-self: flex-start;
+  width: 100%;
 }
 
 .centered {

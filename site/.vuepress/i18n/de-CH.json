@@ -6,12 +6,14 @@
     "GMSE01": "GMSE01 (NTSC-U)",
     "GMSJ01": "GMSJ01 (NTSC-J 1.0)",
     "GMSJ0A": "GMSJ01 (NTSC-J 1.1)",
-    "GMSP01": "GMSP01 (PAL)"
+    "GMSP01": "GMSP01 (PAL)",
+    "loadpresetplaceholder": "Lade eine Vorlage..",
+    "selectionreset": "Deine Auswahl wird zurückgesetzt. Fortfahren?"
   },
   "headers": {
     "help": "Hilfe",
     "codelist": "Verfügbare Codes",
-    "stageloader": "Stage Loader"
+    "stageloader": "Stage List Loader"
   },
   "codeinfo": {
     "author": "Autor:",
@@ -23,7 +25,6 @@
       "label": "Spiel Version:",
       "placeholder": "Wähle Version.."
     },
-    "usestageloader": "Stage Loader verwenden:",
     "downloadformat": {
       "label": "Download Format:",
       "options": {
@@ -31,6 +32,21 @@
         "dolphin": "Dolphin INI",
         "gcm": "CheatManager TXT"
       }
+    },
+    "categories": {
+      "qol": "Allgemein",
+      "loader": "Loader",
+      "timer": "Timer",
+      "misc": "Misc",
+      "memcardpatch": "Memory Card Patches",
+      "cosmetic": "Kosmetisch"
+    },
+    "presets": {
+      "standard": "Standard",
+      "recommended": "Empfohlen",
+      "il": "IL Runs",
+      "fap": "Fast Any%",
+      "hfsetup": "Hacked File Setup"
     }
   },
   "landingpage": {
@@ -46,6 +62,7 @@
     }
   },
   "stageloader": {
+    "help": "Ladet die Level in einer benutzerdefinierten Reihenfolge.",
     "levelorder": {
       "label": "Level Reihenfolge:",
       "options": {
@@ -260,7 +277,6 @@
       }
     },
     "levelselectplaceholder": "Wähle ein Level..",
-    "loadpresetplaceholder": "Lade eine Vorlage..",
     "route": "Route",
     "clear": "Liste leeren"
   },

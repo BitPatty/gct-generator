@@ -6,7 +6,8 @@
     "GMSE01": "GMSE01 (NTSC-U)",
     "GMSJ01": "GMSJ01 (NTSC-J 1.0)",
     "GMSJ0A": "GMSJ01 (NTSC-J 1.1)",
-    "GMSP01": "GMSP01 (PAL)"
+    "GMSP01": "GMSP01 (PAL)",
+    "loadpresetplaceholder": "Charger une liste prédéfinie…"
   },
   "headers": {
     "codelist": "Codes disponibles",
@@ -23,7 +24,6 @@
       "label": "Version du jeu :",
       "placeholder": "Choisissez une version…"
     },
-    "usestageloader": "Utiliser le chargeur de liste",
     "downloadformat": {
       "label": "Format de fichier :",
       "options": {
@@ -260,7 +260,6 @@
       }
     },
     "levelselectplaceholder": "Choisir un niveau…",
-    "loadpresetplaceholder": "Charger une liste prédéfinie…",
     "route": "Route",
     "clear": "Effacer la liste"
   },

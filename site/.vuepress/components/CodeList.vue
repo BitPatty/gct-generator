@@ -1,25 +1,52 @@
 <template>
-  <ul>
-    <li
-      v-for="(code, idx) in availableCodes"
-      v-bind:key="idx"
-      :class="code.selected ? 'checked' : ''"
-      @click="toggle(code)"
-      @mouseover="inspect(code)"
-    >
-      {{ getCodeTitle(code) }}
-    </li>
-  </ul>
+  <div>
+    <div class="preset-select">
+      <SelectComponent
+        :options="getPresetOptions()"
+        :onChange="(v) => loadPreset(v)"
+        :placeholder="getPresetPlaceholder()"
+        :key="generation"
+      />
+    </div>
+    <div v-for="category in codeCategories" v-bind:key="category.identifier" class="code-group">
+      <div class="category-title">{{ getCategoryTitle(category) }}</div>
+      <ul>
+        <li
+          v-for="(code, idx) in availableCodes.filter((c) => c.category === category.identifier)"
+          v-bind:key="idx"
+          :class="code.selected ? 'checked' : code.disabled ? 'disabled' : ''"
+          @click="toggle(code)"
+          @mouseover="inspect(code)"
+        >
+          {{ getCodeTitle(code) }}
+        </li>
+        <li
+          v-if="category.identifier === 'loader'"
+          :class="stageLoaderSelected ? 'checked' : ''"
+          @click="toggleStageLoader()"
+          @mouseover="showStageLoaderHelp()"
+        >
+          {{ getStageLoaderLabel() }}
+        </li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <script>
-import { translateCode } from '../i18n/localeHelper';
+import SelectComponent from './SelectComponent';
+
+import { translateCode, translate } from '../i18n/localeHelper';
+import codeCategories from '../data/codeCategories.json';
+import presetCategories from '../data/presetCategories.json';
 
 export default {
   props: {
     codes: { type: Array },
     onSelectionChanged: { type: Function },
     onInspect: { type: Function },
+    onStageLoaderToggle: { type: Function },
+    onInspectStageLoader: { type: Function },
   },
   mounted() {
     this.populate();
@@ -27,32 +54,150 @@ export default {
   watch: {
     codes: function () {
       this.populate();
+      this.unselectStageLoader();
     },
   },
   data() {
     return {
       availableCodes: [],
+      codeCategories,
+      presetCategories,
+      stageLoaderSelected: false,
+      generation: 0,
     };
   },
   methods: {
+    getPresetOptions() {
+      return presetCategories.map((c) => ({
+        label: c.i18nKey,
+        value: c.identifier,
+      }));
+    },
+    loadPreset(identifier) {
+      if (
+        (this.stageLoaderSelected || this.availableCodes.find((c) => c.selected)) &&
+        !confirm(translate('common.selectionreset', this.$lang))
+      ) {
+        this.generation++;
+        return;
+      }
+
+      for (const code of this.availableCodes) {
+        code.selected = code.presets.includes(identifier);
+      }
+
+      this.unselectStageLoader();
+      this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
+      this.refreshDisabledCodes();
+      this.generation++;
+    },
+    getPresetPlaceholder() {
+      return translate('common.loadpresetplaceholder', this.$lang);
+    },
+    unselectStageLoader() {
+      if (this.stageLoaderSelected) {
+        this.stageLoaderSelected = false;
+        this.onStageLoaderToggle(false);
+      }
+    },
     getCodeTitle(code) {
       return translateCode(code, this.$lang).title;
     },
-    toggle(code) {
-      code.selected = !code.selected;
+    getCategoryTitle(category) {
+      return translate(category.i18nKey, this.$lang);
+    },
+    getStageLoaderLabel() {
+      return translate('headers.stageloader', this.$lang);
+    },
+    toggleStageLoader() {
+      for (const c of this.availableCodes.filter((c) => c.category === 'loader' && c.selected)) {
+        c.selected = false;
+      }
+
+      const newState = !this.stageLoaderSelected;
+      this.stageLoaderSelected = newState;
+      this.onStageLoaderToggle(newState);
       this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
+      this.refreshDisabledCodes();
+    },
+    refreshDisabledCodes() {
+      for (const dependentCategory of codeCategories.filter((c) => c.dependsOn.length > 0)) {
+        for (const dependency of dependentCategory.dependsOn) {
+          const enableCodes =
+            (dependency === 'loader' && this.stageLoaderSelected) ||
+            this.availableCodes.find((c) => c.selected && c.category === dependency);
+
+          for (const code of this.availableCodes.filter(
+            (c) => c.category === dependentCategory.identifier && c.disabled !== !enableCodes,
+          )) {
+            code.disabled = !enableCodes;
+            if (code.disabled && code.selected) {
+              this.toggle(code);
+            }
+          }
+        }
+      }
+    },
+    toggle(code) {
+      if (!code.selected && codeCategories.find((c) => c.identifier === code.category).exclusive) {
+        for (const availableCode of this.availableCodes.filter(
+          (c) => c.category === code.category && c.selected,
+        )) {
+          availableCode.selected = false;
+        }
+      }
+
+      if (!code.selected && code.category === 'loader' && this.stageLoaderSelected) {
+        this.stageLoaderSelected = false;
+        this.onStageLoaderToggle(false);
+      }
+
+      code.selected = code.disabled ? false : !code.selected;
+      this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
+      this.refreshDisabledCodes();
     },
     populate() {
       this.availableCodes = this.codes.map((c) => ({ ...c, selected: false }));
+      this.refreshDisabledCodes();
     },
     inspect(code) {
       this.onInspect(code);
+    },
+    showStageLoaderHelp() {
+      this.onInspectStageLoader();
     },
   },
 };
 </script>
 
 <style scoped>
+.category-title {
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  background: #383838b5;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-bottom: 0;
+}
+
+.category-title ~ ul {
+  margin-top: 0;
+}
+
+.preset-select {
+  margin-bottom: 20px;
+}
+
+.code-group {
+  border: 1px solid #d7d7d7;
+  margin-bottom: 20px;
+}
+
+.code-group ul {
+  margin-bottom: 0;
+}
+
 ul {
   list-style-type: none;
   padding-left: 0;
@@ -74,11 +219,15 @@ ul li {
   text-align: left;
 }
 
+ul li {
+  background: #f9f9f9;
+}
+
 ul li:nth-child(odd) {
   background: #e7e7e7;
 }
 
-ul li:hover {
+ul li:not(.disabled):hover {
   background: #3eaf7c;
   color: #fff;
 }
@@ -91,6 +240,15 @@ ul li.checked:hover {
 ul li.checked {
   background: #434343;
   color: #fff;
+}
+
+ul li.disabled {
+  background: #c7c7c7;
+  color: #767676;
+}
+
+ul li.disabled:hover {
+  cursor: not-allowed;
 }
 
 li {
@@ -111,7 +269,7 @@ li::before {
   width: 10px;
 }
 
-li:hover::before {
+li:not(.disabled):not(.checked):hover::before {
   border-color: #fff;
   background-color: #1fa76e;
 }
