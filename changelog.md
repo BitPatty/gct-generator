@@ -2,6 +2,10 @@
 
 ## Oct 10, 2021
 
+### Added 'Speed Display' and 'Shiny Shines'
+
+Speed Display is a more compact version of Position/angle/speed Display, and Shiny Shines simply makes all Shines yellow whether collected or not.
+
 ### Added code categories and presets
 
 \-

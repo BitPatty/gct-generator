@@ -3049,6 +3049,248 @@
         </source>
     </code>
     <code>
+        <category>misc</category>
+        <title lang="en-US">Speed display</title>
+        <title lang="de-CH">Geschwindigkeit Display</title>
+        <title lang="fr-FR">Affichage de vitesse</title>
+        <title lang="ja-JP">速度表示</title>
+        <author>Noki Doki</author>
+        <version>1.3</version>
+        <date>Oct 10, 2021</date>
+        <description lang="en-US">Shows Mario's speed at any given time.</description>
+        <description lang="de-CH">Zeigt Mario's Geschwindigkeit jederzeit auf dem Bildschirm an.</description>
+        <description lang="fr-FR">Affiche la vitesse de Mario à tout moment.</description>
+        <description lang="ja-JP">常に「マリオの速度」を表示します。</description>
+        <source version="GMSE01">
+            062A6160 00000010
+            49553F19 60000000
+            60000000 60000000
+            042998B8 49560749
+            04143F14 496B61F9
+            077FA000 00000188
+            9421FFE0 7C0802A6
+            90010024 93E1001C
+            4AABD6E5 38E00200
+            38C00320 38A0FFD8
+            3880000A 38610008
+            4AAD01B9 814D9FC8
+            3FE08180 3BFFA214
+            39200000 39000002
+            3CE08180 38E7A154
+            80CA0048 38A10008
+            38800000 7FE3FB78
+            4AAD67F1 39200001
+            913F01B0 80010024
+            7C0803A6 83E1001C
+            38210020 4E800020
+            9421FFE8 7C0802A6
+            9001001C 93C10010
+            93E10014 7C7F1B78
+            81230000 83C90064
+            3D208180 8129A3C4
+            2C090000 40820028
+            7FE3FB78 7FC903A6
+            4E800421 8001001C
+            7C0803A6 83C10010
+            83E10014 38210018
+            4E800020 93A1000C
+            3D208040 6129E0E8
+            83A90000 3C608180
+            3863A214 4AAD6B7D
+            C05D00A8 C03D00B0
+            3CA08180 38A5A154
+            38800030 4CC63242
+            4AB3F6A5 83A1000C
+            4BFFFFA0 9421FFF0
+            7C0802A6 90010014
+            93E1000C 7C7F1B78
+            4AAF159D 38E00081
+            7FE6FB78 38A00000
+            38800000 3C608180
+            3863A214 4AAD5C6D
+            80010014 7C0803A6
+            83E1000C 38210010
+            4E800020 48205370
+            6420252E 32660A56
+            20537064 20252E32
+            66202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202000 00000000
+        </source>
+        <source version="GMSJ01">
+            060F9B64 00000010
+            49700515 60000000
+            60000000 60000000
+            040ECE3C 4970D1C5
+            04206734 495F39D9
+            077FA000 00000188
+            9421FFE0 7C0802A6
+            90010024 93E1001C
+            4A91239D 38E00200
+            38C00320 38A0FFD8
+            3880000A 38610008
+            4A8191F5 814D97F8
+            3FE08180 3BFFA214
+            39200000 39000002
+            3CE08180 38E7A154
+            80CA0048 38A10008
+            38800000 7FE3FB78
+            4A81F8AD 39200001
+            913F01B0 80010024
+            7C0803A6 83E1001C
+            38210020 4E800020
+            9421FFE8 7C0802A6
+            9001001C 93C10010
+            93E10014 7C7F1B78
+            81230000 83C90064
+            3D208180 8129A3C4
+            2C090000 40820028
+            7FE3FB78 7FC903A6
+            4E800421 8001001C
+            7C0803A6 83C10010
+            83E10014 38210018
+            4E800020 93A1000C
+            3D208040 6129A378
+            83A90000 3C608180
+            3863A214 4A81FC39
+            C05D00A8 C03D00B0
+            3CA08180 38A5A154
+            38800030 4CC63242
+            4A889FC5 83A1000C
+            4BFFFFA0 9421FFF0
+            7C0802A6 90010014
+            93E1000C 7C7F1B78
+            4A83B109 38E00081
+            7FE6FB78 38A00000
+            38800000 3C608180
+            3863A214 4A81ED29
+            80010014 7C0803A6
+            83E1000C 38210010
+            4E800020 48205370
+            6420252E 32660A56
+            20537064 20252E32
+            66202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202000 00000000
+        </source>
+        <source version="GMSJ0A">
+            06285FBC 00000010
+            495740BD 60000000
+            60000000 60000000
+            04279568 49580A99
+            041252A0 496D4E6D
+            077FA000 00000188
+            9421FFE0 7C0802A6
+            90010024 93E1001C
+            4AA9CEF5 38E00200
+            38C00320 38A0FFD8
+            3880000A 38610008
+            4AAAF9C9 814D9E88
+            3FE08180 3BFFA214
+            39200000 39000002
+            3CE08180 38E7A154
+            80CA0048 38A10008
+            38800000 7FE3FB78
+            4AAB6001 39200001
+            913F01B0 80010024
+            7C0803A6 83E1001C
+            38210020 4E800020
+            9421FFE8 7C0802A6
+            9001001C 93C10010
+            93E10014 7C7F1B78
+            81230000 83C90064
+            3D208180 8129A3C4
+            2C090000 40820028
+            7FE3FB78 7FC903A6
+            4E800421 8001001C
+            7C0803A6 83C10010
+            83E10014 38210018
+            4E800020 93A1000C
+            3D20803F 6129EF88
+            83A90000 3C608180
+            3863A214 4AAB638D
+            C05D00A8 C03D00B0
+            3CA08180 38A5A154
+            38800030 4CC63242
+            4AB1EFA5 83A1000C
+            4BFFFFA0 9421FFF0
+            7C0802A6 90010014
+            93E1000C 7C7F1B78
+            4AAE0DAD 38E00081
+            7FE6FB78 38A00000
+            38800000 3C608180
+            3863A214 4AAB547D
+            80010014 7C0803A6
+            83E1000C 38210010
+            4E800020 48205370
+            6420252E 32660A56
+            20537064 20252E32
+            66202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202000 00000000
+        </source>
+        <source version="GMSP01">
+            0629E070 00000010
+            4955C009 60000000
+            60000000 60000000
+            04291750 495688B1
+            04138B50 496C15BD
+            077FA000 00000188
+            9421FFE0 7C0802A6
+            90010024 93E1001C
+            4AAB56B5 38E00200
+            38C00320 38A0FFD8
+            3880000A 38610008
+            4AAC824D 814D9EF0
+            3FE08180 3BFFA214
+            39200000 39000002
+            3CE08180 38E7A154
+            80CA0048 38A10008
+            38800000 7FE3FB78
+            4AACE999 39200001
+            913F01B0 80010024
+            7C0803A6 83E1001C
+            38210020 4E800020
+            9421FFE8 7C0802A6
+            9001001C 93C10010
+            93E10014 7C7F1B78
+            81230000 83C90064
+            3D208180 8129A3C4
+            2C090000 40820028
+            7FE3FB78 7FC903A6
+            4E800421 8001001C
+            7C0803A6 83C10010
+            83E10014 38210018
+            4E800020 93A1000C
+            3D208040 612957B0
+            83A90000 3C608180
+            3863A214 4AACED25
+            C05D00A8 C03D00B0
+            3CA08180 38A5A154
+            38800030 4CC63242
+            4AB37825 83A1000C
+            4BFFFFA0 9421FFF0
+            7C0802A6 90010014
+            93E1000C 7C7F1B78
+            4AAE9745 38E00081
+            7FE6FB78 38A00000
+            38800000 3C608180
+            3863A214 4AACDE15
+            80010014 7C0803A6
+            83E1000C 38210010
+            4E800020 48205370
+            6420252E 32660A56
+            20537064 20252E32
+            66202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202000 00000000
+        </source>
+    </code>
+    <code>
         <category>qol</category>
         <presets>standard,recommended,il</presets>
         <title lang="en-US">Intro Skip</title>
@@ -3318,6 +3560,28 @@
             04239C88 60000004
             04239C8C B01D0004
             04245268 60000000
+        </source>
+    </code>
+    <code>
+        <category>cosmetic</category>
+        <title lang="en-US">Shiny Shines</title>
+        <title lang="fr-FR">Soleils Brillants</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <date>Oct 10, 2021</date>
+        <description lang="en-US">Makes all Shines appear yellow, whether they've been collected or not.</description>
+        <description lang="fr-FR">Rend tous les Soleils jaunes, qu'ils aient été obtenus ou non.</description>
+        <source version="GMSE01">
+            041BCE3C 4800004C
+        </source>
+        <source version="GMSJ01">
+            04194E24 4800004C
+        </source>
+        <source version="GMSJ0A">
+            0419CBC4 4800004C
+        </source>
+        <source version="GMSP01">
+            041B4CF4 4800004C
         </source>
     </code>
 </codes>
