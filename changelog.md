@@ -1,5 +1,13 @@
 # Changelog
 
+## Oct 22, 2021
+
+### Updated 'Quarterframe Timer (Experimental)'
+
+* Adjusted speed to match real time on 30fps. The timer will run slightly faster than real time on 25fps PAL, just as the game itself does.
+* Fixed the ability for the timer to eventually roll back to 0:00.000; it will now stop at 99:59.994 (the highest achievable time below 100 minutes).
+* Fixed the ability for the timer to eventually resume while waiting on a Shine textbox; it will now keep displaying the end time forever (well, until the next area transition).
+
 ## Oct 10, 2021
 
 ### Added 'Speed Display' and 'Shiny Shines'
