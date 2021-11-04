@@ -26,16 +26,16 @@
         <description lang="de-CH">
             Erlaubt verschiedene Spiel-Modifikationen über das Drücken einer Tastenkombination:
             
-            | Kombination     | Effekt                                      |
-            | --------------- | ------------------------------------------- |
-            | D-Pad Left      | Speichere Mario's aktuelle Position         |
-            | D-Pad Right     | Lade Mario's Position                       |
-            | D-Pad Up        | Ersetze alle Dialoge mit einer "!!!" Linie  |
-            | D-Pad Down      | Stelle alle Dialoge wieder her              |
-            | X + D-Pad Left  | Kein Dreckweg in geheimen Leveln            |
-            | X + D-Pad Right | Dreckweg in allen geheimen Leveln           |
-            | X + D-Pad Down  | Dreckweg in komplettierten geheimen Leveln  |
-            | X + D-Pad Up    | Hole das zuletzt gefasste Objekt zurück     |
+            | Kombination      | Effekt                                      |
+            | ---------------- | ------------------------------------------- |
+            | D-Pad Links      | Speichere Mario's aktuelle Position         |
+            | D-Pad Rechts     | Lade Mario's Position                       |
+            | D-Pad Rauf       | Ersetze alle Dialoge mit einer "!!!" Linie  |
+            | D-Pad Runter     | Stelle alle Dialoge wieder her              |
+            | X + D-Pad Links  | Kein Dreckweg in geheimen Leveln            |
+            | X + D-Pad Rechts | Dreckweg in allen geheimen Leveln           |
+            | X + D-Pad Rauf   | Dreckweg in komplettierten geheimen Leveln  |
+            | X + D-Pad Runter | Hole das zuletzt gefasste Objekt zurück     |
         </description>
         <description lang="fr-FR">
             Permet diverses modifications du jeu à travers un ensemble de combinaisons de boutons :
@@ -238,10 +238,13 @@
     <code>
         <category>misc</category>
         <title lang="en-US">Nozzle Lock</title>
+        <title lang="de-CH">Düsen-Sperre</title>
         <title lang="fr-FR">Verrouillage de buses</title>
         <author>Psychonauter, Dan Salvato, Link Master, James0x57</author>
         <version>1.0</version>
         <description lang="en-US">
+            Locks the nozzles by pressing a button combination:
+
             | Combination     | Result                                      |
             | --------------- | ------------------------------------------- |
             | B + D-Pad Left  | Lock Rocket Nozzle                          |
@@ -250,16 +253,24 @@
             | B + D-Pad Down  | Release Nozzle Lock                         |
 
             ::: warning
-            The underwater sections of Noki Bay (episodes 3, 4 and 8) use a different hover nozzle from the one you get with B + Up. If you find it's not working properly, simply release the nozzle lock.
+            The underwater sections of Noki Bay (episodes 3, 4 and 8) use a different hover nozzle 
+            from the one you get with B + Up. If you find it's not working properly, simply release the nozzle lock.
             :::
         </description>
         <description lang="de-CH">
-            | Kombination     | Effekt                                      |
-            | --------------- | ------------------------------------------- |
-            | B + D-Pad Left  | Sperre Raketendüse                          |
-            | B + D-Pad Right | Sperre Turbodüse                            |
-            | B + D-Pad Up    | Sperre Schwebedüse                          |
-            | B + D-Pad Down  | Düsensperre freigeben                       |
+            Sperrt die Düsen nach drücken einer Tastenkombination:
+
+            | Kombination       | Effekt                                      |
+            | ----------------- | ------------------------------------------- |
+            | B + D-Pad Links   | Sperre Raketendüse                          |
+            | B + D-Pad Rechts  | Sperre Turbodüse                            |
+            | B + D-Pad Rauf    | Sperre Schwebedüse                          |
+            | B + D-Pad Runter  | Düsensperre freigeben                       |
+
+            ::: warning
+            Die Unterwasser-Sektionen in Noki (Episoden 3, 4 und 8) verwenden eine andere Schwebedüse als die normale (B + D-Pad Rauf).
+            Falls die Schwebedüse nicht korrekt funktioniert löse die Sperre mit B + D-Pad Runter
+            :::
         </description>
         <description lang="fr-FR">
             | Combinaison      | Résultat                                 |
@@ -270,7 +281,8 @@
             | B + D-Pad bas    | Annuler le verrouillage de buse          |
 
             ::: warning Attention
-            Les sections sous-marines de la Baie Noki (épisodes 3, 4 et 8) utilisent une autre aérobuse que celle obtenue avec B + Haut. Si elle ne fonctionne pas correctement, annulez le verrouillage.
+            Les sections sous-marines de la Baie Noki (épisodes 3, 4 et 8) utilisent une autre aérobuse que celle 
+            obtenue avec B + Haut. Si elle ne fonctionne pas correctement, annulez le verrouillage.
             :::
         </description>
         <description lang="ja-JP">
@@ -334,7 +346,8 @@
         <author>Psychonauter</author>
         <version>1.0</version>
         <description lang="en-US">
-            Allows you to save and restore your coin count. Uses the same D-Pad mappings as the position saves of `DPad-Functions`.
+            Allows you to save and restore your coin count. 
+            Uses the same D-Pad mappings as the position saves of `DPad-Functions`.
 
             | Combination     | Result                       |
             | --------------- | ---------------------------- |
@@ -342,7 +355,8 @@
             | D-Pad Right | Load saved coin count            |
         </description>
         <description lang="de-CH">
-            Ermöglicht das Speichern und Laden der Münzenanzahl. Verwendet die gleichen D-Pad Mappings wie die Position-Saves von "DPad-Funktionen".
+            Ermöglicht das Speichern und Laden der Münzenanzahl. 
+            Verwendet die gleichen D-Pad Mappings wie die Position-Saves von "DPad-Funktionen".
             
             | Kombination     | Result                              |
             | --------------- | ----------------------------------- |
@@ -444,10 +458,18 @@
         <author>Psychonauter, Noki Doki</author>
         <version>1.1</version>
         <date>Sep 05, 2018</date>
-        <description lang="en-US">Prevents the game from setting the blue coin flag, which makes them respawn after reentering the level.</description>
-        <description lang="de-CH">Verhindert, dass das Spiel die Blaue-Münzen-Kennung setzt, wodurch sie beim Neueintritt in das Level wieder erscheinen.</description>
-        <description lang="fr-FR">Empêche le jeu d'enregistrer les pièces bleues ramassées, ce qui les fait réapparaître à la prochaine visite du niveau.</description>
-        <description lang="ja-JP">青コインのフラグが立たないようにします。このコードを使うと、ステージ再入場後に青コインが再出現します。</description>
+        <description lang="en-US">
+            Prevents the game from setting the blue coin flag, which makes them respawn after reentering the level.
+        </description>
+        <description lang="de-CH">
+            Verhindert, dass das Spiel die Blaue-Münzen-Kennung setzt, wodurch sie beim Neueintritt in das Level wieder erscheinen.
+        </description>
+        <description lang="fr-FR">
+            Empêche le jeu d'enregistrer les pièces bleues ramassées, ce qui les fait réapparaître à la prochaine visite du niveau.
+        </description>
+        <description lang="ja-JP">
+            青コインのフラグが立たないようにします。このコードを使うと、ステージ再入場後に青コインが再出現します。
+        </description>
         <source version="GMSE01">
             04294564 60000000
             C22A6728 00000003
@@ -636,10 +658,18 @@
         <author>Noki Doki</author>
         <version>1.1</version>
         <date>Nov 12, 2017</date>
-        <description lang="en-US">Allows you to pause mid-air and during cutscenes.</description>
-        <description lang="de-CH">Ermöglicht das Pausieren in der Luft und während Cutscenes.</description>
-        <description lang="fr-FR">Permet de mettre le jeu en pause pendant les cutscenes et quand Mario est dans les airs.</description>
-        <description lang="ja-JP">空中やアニメーション中にポーズすることができるようになります。</description>
+        <description lang="en-US">
+            Allows you to pause mid-air and during cutscenes.
+        </description>
+        <description lang="de-CH">
+            Ermöglicht das Pausieren in der Luft und während Cutscenes.
+        </description>
+        <description lang="fr-FR">
+            Permet de mettre le jeu en pause pendant les cutscenes et quand Mario est dans les airs.
+        </description>
+        <description lang="ja-JP">
+            空中やアニメーション中にポーズすることができるようになります。
+        </description>
         <source version="GMSE01">
             C6297AB0 80297ABC
             C22979D4 00000007
@@ -696,12 +726,12 @@
         <version>1.0</version>
         <date>Oct 30, 2017</date>
         <description lang="en-US">
-          Gives you the "Exit Area" option when entering the pause menu in all levels
-          instead of just the normal stages, such as Delfino Plaza and Airstrip.
+            Gives you the "Exit Area" option when entering the pause menu in all levels
+            instead of just the normal stages, such as Delfino Plaza and Airstrip.
         </description>
         <description lang="de-CH">
-          Aktiviert 'Level Verlassen' option im Pausenmenü in allen Leveln, d.h. auch
-          in Delfino und auf dem Flugplatz.
+            Aktiviert 'Level Verlassen' option im Pausenmenü in allen Leveln, d.h. auch
+            in Delfino und auf dem Flugplatz.
         </description>
         <description lang="fr-FR">Active « Sortir de la zone » sur la place Delfino et à l'aéroport.</description>
         <description lang="ja-JP">ドルピックタウンやエアポートでも「コースから出る」を選択できるようになります。</description>
@@ -769,7 +799,8 @@
         :::
         </description>
         <description lang="ja-JP">
-        全ステージにゲーム内タイマーを追加します。ロード画面の後の最後の黒フレームから動き出し、「シャインゲット」のアニメーションが開始するタイミングで止まります（マリオ64のカメラ×タイマーと同じ）。
+        全ステージにゲーム内タイマーを追加します。ロード画面の後の最後の黒フレームから動き出し、
+        「シャインゲット」のアニメーションが開始するタイミングで止まります（マリオ64のカメラ×タイマーと同じ）。
 
         ::: warning 注意
         ロード時間中はタイマーが一時停止します。 
@@ -1667,7 +1698,9 @@
         <version>0.2</version>
         <date>Oct 22, 2021</date>
         <description lang="en-US">
-        Adds an in-game timer to every level, starting on the last black frame after the loading screen and ending as soon as the 'Shine Get' animation starts (similar to the x-cam timer of SM64).
+        Adds an in-game timer to every level, starting on the last black frame after the 
+        loading screen and ending as soon as the 'Shine Get' animation starts 
+        (similar to the x-cam timer of SM64).
         
         ::: warning
         The timer pauses during loading times and FMVs.
@@ -1922,7 +1955,8 @@
         <version>1.15</version>
         <date>Jul 5, 2021</date>
         <description lang="en-US">
-            Allows warping to other levels when starting a file or when exiting a level by holding the combination until the screen turns black. 
+            Allows warping to other levels when starting a file or when exiting a level 
+            by holding the combination until the screen turns black. 
             
             ::: warning
             This code is not compatible with the Fast Any% or Stage Loader code. 
@@ -1933,7 +1967,8 @@
             ![Level Select Combinations](/img/levelselect.png)
         </description>
         <description lang="de-CH">
-            Erlaubt das Warpen in andere Level mittels einer Tastenkombination beim Starten des Spiels oder beim Verlassen eines Levels.
+            Erlaubt das Warpen in andere Level mittels einer Tastenkombination beim Starten 
+            des Spiels oder beim Verlassen eines Levels.
             Die Tastenkombination muss gedrückt gehalten werden bis der Bildschirm schwarz wird.
 
             ::: warning WARNUNG
@@ -1945,7 +1980,8 @@
             ![Level Select Combinations](/img/levelselect.png)
         </description>
         <description lang="fr-FR">
-            Permet de charger d'autres niveaux en démarrant un fichier ou en quittant un niveau en maintenant la combinaison appropriée jusqu'à ce que l'écran devienne noir.
+            Permet de charger d'autres niveaux en démarrant un fichier ou en quittant un niveau en 
+            maintenant la combinaison appropriée jusqu'à ce que l'écran devienne noir.
 
             ::: warning Attention
             Ce code n'est pas compatible avec Fast Any% ni Chargeur de liste.
@@ -3775,20 +3811,25 @@
         <version>1.0</version>
         <date>Jun 19, 2019</date>
         <description lang="en-US">
-            Removes the logos and cutscene that normally play before the title screen when loading or resetting the game.
+            Removes the logos and cutscene that normally play before the 
+            title screen when loading or resetting the game.
 
             ::: warning
-            This makes it impossible to toggle progressive or 60Hz mode, make sure to set these the way you want without the code.
+            This makes it impossible to toggle progressive or 60Hz mode,
+            make sure to set these the way you want without the code.
             :::
         </description>
         <description lang="de-CH">
-            Entfernt die Logos und Cutscenes welche beim Laden oder Zurücksetzen des Spiels abgespielt werden.
+            Entfernt die Logos und Cutscenes welche beim Laden oder 
+            Zurücksetzen des Spiels abgespielt werden.
         </description>
         <description lang="fr-FR">
-            Supprime les logos et la cutscene qui apparaissent normalement avant l'écran titre lors du démarrage ou redémarrage du jeu.
+            Supprime les logos et la cutscene qui apparaissent normalement 
+            avant l'écran titre lors du démarrage ou redémarrage du jeu.
 
             ::: warning Attention
-            Ce code ne permet pas d'activer ni de désactiver le mode progressif ou 60 Hz, vous devez démarrer le jeu sans ce code pour accéder à cette option.
+            Ce code ne permet pas d'activer ni de désactiver le mode progressif ou 60 Hz, 
+            vous devez démarrer le jeu sans ce code pour accéder à cette option.
             :::
         </description>
         <description lang="ja-JP">
@@ -3837,10 +3878,18 @@
         <author>Noki Doki</author>
         <version>1.0</version>
         <date>Aug 19, 2019</date>
-        <description lang="en-US">Allows Shines obtained by cleaning graffiti, the Shine Gate or the bells to respawn.</description>
-        <description lang="de-CH">Ermöglicht das mehrmalige Einsammeln von Shines welche beispielsweise durch Reinigen von Graffiti oder Glocken freigeschaltet werden.</description>
-        <description lang="fr-FR">Permet la réapparition des Shines obtenus en nettoyant des graffiti, la Porte du Soleil ou les cloches.</description>
-        <description lang="ja-JP">落書き・シャインゲート・ベルを掃除した時に出現するシャインを再出現させます。</description>
+        <description lang="en-US">
+            Allows Shines obtained by cleaning graffiti, the Shine Gate or the bells to respawn.
+        </description>
+        <description lang="de-CH">
+            Ermöglicht das mehrmalige Einsammeln von Shines welche beispielsweise durch Reinigen von Graffiti oder Glocken freigeschaltet werden.
+        </description>
+        <description lang="fr-FR">
+            Permet la réapparition des Shines obtenus en nettoyant des graffiti, la Porte du Soleil ou les cloches.
+        </description>
+        <description lang="ja-JP">
+            落書き・シャインゲート・ベルを掃除した時に出現するシャインを再出現させます。
+        </description>
         <source version="GMSE01">
             041E792C 48000050
             021E7FFC 00004800
@@ -3873,24 +3922,25 @@
         <version>1.0</version>
         <date>Mar 8, 2020</date>
         <description lang="en-US">
-          Forces the unlock events for Ricco, Gelato and Yoshi to happen any time the correct version of the plaza is loaded
-          via the Level Select code.
+            Forces the unlock events for Ricco, Gelato and Yoshi to happen 
+            any time the correct version of the plaza is loaded via the Level Select code.
 
-          Nozzle unlock events take precedence over Yoshi's if their conditions are met.
+            Nozzle unlock events take precedence over Yoshi's if their conditions are met.
         </description>
         <description lang="de-CH">
-          Erzwingt das Laden der korrekten Ricco-, Gelato- und Yoshi- Freischaltungen wenn die entsprechende Plaza über den
-          "Level Select"-Code geladen wird.
+            Erzwingt das Laden der korrekten Ricco-, Gelato- und Yoshi- Freischaltungen 
+            wenn die entsprechende Plaza über den "Level Select"-Code geladen wird.
 
-          Düsenfreischaltungen haben gegenüber Yoshi's Freischaltung Vorrang.
+            Düsenfreischaltungen haben gegenüber Yoshi's Freischaltung Vorrang.
         </description>
         <description lang="fr-FR">
-          Force les événements pour débloquer Ricco, Gelato et Yoshi à se jouer dès que la bonne version de la place est chargée.
-          Le débloquage des buses ont la priorité sur celui de Yoshi si leurs conditions sont remplies.
+            Force les événements pour débloquer Ricco, Gelato et Yoshi à se jouer dès 
+            que la bonne version de la place est chargée. Le débloquage des buses ont 
+            la priorité sur celui de Yoshi si leurs conditions sont remplies.
         </description>
         <description lang="ja-JP">
-          強制的に次のイベントを再生します: 「リコの解除イベント」「マンマの解除イベント」「正しいバージョンのドルピックタウンがロードされるたびに出現するヨッシー」
-          「ノズルロック解除イベント」は、条件が満たされている場合、ヨッシーのイベントよりも優先されます。
+            強制的に次のイベントを再生します: 「リコの解除イベント」「マンマの解除イベント」「正しいバージョンのドルピックタウンがロードされるたびに出現するヨッシー」
+            「ノズルロック解除イベント」は、条件が満たされている場合、ヨッシーのイベントよりも優先されます。
         </description>
         <source version="GMSE01">
             042B7810 48000018
@@ -3929,31 +3979,33 @@
         <version>2.0</version>
         <date>Jun 25, 2020</date>
         <description lang="en-US">
-          Nintendont expects the save files on your memory card to use the same encoding
-          as the game region the console is set to. Other loaders, such as Gecko OS, 
-          instead expect the saves to be in the same encoding as the one used in the game.
+            Nintendont expects the save files on your memory card to use the same encoding
+            as the game region the console is set to. Other loaders, such as Gecko OS, 
+            instead expect the saves to be in the same encoding as the one used in the game.
 
-          This code directs Nintendont to use the encoding used for the NTSC-J region
-          (SJIS) for writing to and reading from the memory card.
+            This code directs Nintendont to use the encoding used for the NTSC-J region
+            (SJIS) for writing to and reading from the memory card.
 
-          If you load a NTSC-U or PAL version of the game in Nintendont and it asks you
-          to format your memory card - or if you use Gecko OS to run a NTSC-U/PAL version
-          of the game on a Japanese console - you can bypass having to format your card by 
-          using this code.
+            If you load a NTSC-U or PAL version of the game in Nintendont and it asks you
+            to format your memory card - or if you use Gecko OS to run a NTSC-U/PAL version
+            of the game on a Japanese console - you can bypass having to format your card by 
+            using this code.
         </description>
         <description lang="de-CH">
-          Nintendont erwartet, dass Speicherdateien dasselbe Encoding verwenden wie
-          die Spielregion, welche in der Konsole konfiguriert ist. Andere Loader, wie Gecko OS,
-          erwarten stattdessen, dass die Speicherdateien dasselbe Encoding wie das Spiel verwenden.
+            Nintendont erwartet, dass Speicherdateien dasselbe Encoding verwenden wie
+            die Spielregion, welche in der Konsole konfiguriert ist. Andere Loader, wie Gecko OS,
+            erwarten stattdessen, dass die Speicherdateien dasselbe Encoding wie das Spiel verwenden.
 
-          Dieser Code weist Nintendont an, das Endcoding für die NTSC-J-Region (SJIS) zu
-          verwenden um Daten von der Memory Card zu lesen und zu schreiben.
+            Dieser Code weist Nintendont an, das Endcoding für die NTSC-J-Region (SJIS) zu
+            verwenden um Daten von der Memory Card zu lesen und zu schreiben.
 
-          Falls du das Spiel in Nintendont lädst und es dich fragt ob du die Memory Card formatieren
-          möchtest oder du Gecko OS für das Laden der NTSC-U/PAL-Version des Spiels auf japanischen
-          Konsolen verwendest kannst du mithilfe dieses Codes die Formatierung umgehen.
+            Falls du das Spiel in Nintendont lädst und es dich fragt ob du die Memory Card formatieren
+            möchtest oder du Gecko OS für das Laden der NTSC-U/PAL-Version des Spiels auf japanischen
+            Konsolen verwendest kannst du mithilfe dieses Codes die Formatierung umgehen.
         </description>
-        <description lang="fr-FR">Permet de sauvegarder et de charger des sauvegardes depuis une carte mémoire formatée pour les jeux japonais.</description>
+        <description lang="fr-FR">
+            Permet de sauvegarder et de charger des sauvegardes depuis une carte mémoire formatée pour les jeux japonais.
+        </description>
         <source version="GMSE01">
             0240CE58 00000001
         </source>
@@ -3969,35 +4021,37 @@
         <version>2.0</version>
         <date>Jun 25, 2020</date>
         <description lang="en-US">
-          Nintendont expects the save files on your memory card to use the same encoding
-          as the game region the console is set to. Other loaders, such as Gecko OS, 
-          instead expect the saves to be in the same encoding as the one used in the game.
+            Nintendont expects the save files on your memory card to use the same encoding
+            as the game region the console is set to. Other loaders, such as Gecko OS, 
+            instead expect the saves to be in the same encoding as the one used in the game.
 
-          This code directs Nintendont to use the encoding used for the NTSC-U/PAL region
-          (ANSI) for writing to and reading from the memory card.
+            This code directs Nintendont to use the encoding used for the NTSC-U/PAL region
+            (ANSI) for writing to and reading from the memory card.
 
-          If you load a NTSC-J or NTSC-K version of the game in Nintendont and it asks you
-          to format your memory card (see image below) - or if you use Gecko OS to run a 
-          NTSC-J/NTSC-K version of the game on a non-Japanese console - you can bypass 
-          having to format your card by using this code.
+            If you load a NTSC-J or NTSC-K version of the game in Nintendont and it asks you
+            to format your memory card (see image below) - or if you use Gecko OS to run a 
+            NTSC-J/NTSC-K version of the game on a non-Japanese console - you can bypass 
+            having to format your card by using this code.
 
-          ![Japanese Formatting Text](/img/japanese_formatting_text.png)
+            ![Japanese Formatting Text](/img/japanese_formatting_text.png)
         </description>
         <description lang="de-CH">
-          Nintendont erwartet, dass Speicherdateien dasselbe Encoding verwenden wie
-          die Spielregion, welche in der Konsole konfiguriert ist. Andere Loader, wie Gecko OS
-          erwarten stattdessen, dass die Speicherdateien dasselbe Encoding wie das Spiel verwenden.
+            Nintendont erwartet, dass Speicherdateien dasselbe Encoding verwenden wie
+            die Spielregion, welche in der Konsole konfiguriert ist. Andere Loader, wie Gecko OS
+            erwarten stattdessen, dass die Speicherdateien dasselbe Encoding wie das Spiel verwenden.
 
-          Dieser Code weist Nintendont an, das Endcoding für die NTSC-J-Region (SJIS) zu
-          verwenden um Daten von der Memory Card zu lesen und zu schreiben.
+            Dieser Code weist Nintendont an, das Endcoding für die NTSC-J-Region (SJIS) zu
+            verwenden um Daten von der Memory Card zu lesen und zu schreiben.
 
-          Falls du das Spiel in Nintendont lädst und es dich fragt ob du die Memory Card formatieren
-          möchtest (siehe Bild unten) oder du Gecko OS für das Laden von japanischen Spielen 
-          auf nicht-japanischen Konsolen verwendest kannst du mithilfe dieses Codes die Formatierung umgehen.
+            Falls du das Spiel in Nintendont lädst und es dich fragt ob du die Memory Card formatieren
+            möchtest (siehe Bild unten) oder du Gecko OS für das Laden von japanischen Spielen 
+            auf nicht-japanischen Konsolen verwendest kannst du mithilfe dieses Codes die Formatierung umgehen.
 
-          ![Japanese Formatting Text](/img/japanese_formatting_text.png)
+            ![Japanese Formatting Text](/img/japanese_formatting_text.png)
         </description>
-        <description lang="fr-FR">Permet de sauvegarder et de charger des sauvegardes depuis une carte mémoire non formatée pour les jeux japonais.</description>
+        <description lang="fr-FR">
+            Permet de sauvegarder et de charger des sauvegardes depuis une carte mémoire non formatée pour les jeux japonais.
+        </description>
         <source version="GMSE01">
             0240CE58 00000000
         </source>
@@ -4018,9 +4072,15 @@
         <author>Noki Doki</author>
         <version>1.2</version>
         <date>Mar 17, 2021</date>
-        <description lang="en-US">Fixes the Nintendont-exclusive bug that changes the manta's behavior upon splitting and may cause it to die early.</description>
-        <description lang="de-CH">Fixt einen Nintendont Bug, bei welchem der Manta aufgrund von fehlerhafter Aufteilung zu früh stirbt.</description>
-        <description lang="fr-FR">Corrige le bug exclusif à Nintendont qui change le comportement de la raie manta quand elle se sépare et peut la faire mourir instantanément.</description>
+        <description lang="en-US">
+            Fixes the Nintendont-exclusive bug that changes the manta's behavior upon splitting and may cause it to die early.
+        </description>
+        <description lang="de-CH">
+            Fixt einen Nintendont Bug, bei welchem der Manta aufgrund von fehlerhafter Aufteilung zu früh stirbt.
+        </description>
+        <description lang="fr-FR">
+            Corrige le bug exclusif à Nintendont qui change le comportement de la raie manta quand elle se sépare et peut la faire mourir instantanément.
+        </description>
         <source version="GMSE01">
             04295A94 C342FFF8
             C214EDAC 00000005
