@@ -397,8 +397,8 @@
         <author>Noki Doki</author>
         <version>2.0</version>
         <date>Feb 28, 2020</date>
-        <description lang="en-US">Prevents the life counter from decreasing.</description>
-        <description lang="de-CH">Verhindert, dass sich die Anzahl Leben verringert</description>
+        <description lang="en-US">Prevents the life counter from decreasing when you die in a level.</description>
+        <description lang="de-CH">Verhindert, dass sich die Anzahl Leben verringert wenn man in einem Level stirbt.</description>
         <description lang="fr-FR">Empêche le compteur de vies de diminuer.</description>
         <description lang="ja-JP">残機カウンターが減らなくなります。</description>
         <source version="GMSE01">
@@ -675,8 +675,14 @@
         <author>Noki Doki</author>
         <version>1.0</version>
         <date>Oct 30, 2017</date>
-        <description lang="en-US">Enables 'Exit Area' on Plaza and Airstrip.</description>
-        <description lang="de-CH">Aktiviert 'Level Verlassen' auf der Plaza und dem Flugplatz.</description>
+        <description lang="en-US">
+          Gives you the "Exit Area" option when entering the pause menu in all levels
+          instead of just the normal stages, such as Delfino Plaza and Airstrip.
+        </description>
+        <description lang="de-CH">
+          Aktiviert 'Level Verlassen' option im Pausenmenü in allen Leveln, d.h. auch
+          in Delfino und auf dem Flugplatz.
+        </description>
         <description lang="fr-FR">Active « Sortir de la zone » sur la place Delfino et à l'aéroport.</description>
         <description lang="ja-JP">ドルピックタウンやエアポートでも「コースから出る」を選択できるようになります。</description>
         <source version="GMSE01">
@@ -702,10 +708,16 @@
         <author>Psychonauter, Noki Doki</author>
         <version>2.1</version>
         <description lang="en-US">
-        Adds the ingame timer to every level, starting on the last black frame after the loading screen and ending as soon as the 'Shine Get' animation starts (similar to the x-cam timer of SM64).
+        Adds the ingame timer to every level, starting on the last black frame after the loading screen and 
+        ending as soon as the 'Shine Get' animation starts (similar to the x-cam timer of SM64).
         
-        ::: warning
-        The timer pauses during loading times. 
+        ::: warning Load Removal
+        The timer removes load times during level transitions.
+        
+        For in-level transitions (such as when entering a secret) it removes the time from the second 
+        black frame of the transition to the second-to-last black frame.
+        
+        The timer visually freezes when entering loading zones, however it still runs in the background.
         :::
         
         ::: danger
@@ -713,7 +725,8 @@
         :::
         </description>
         <description lang="de-CH">
-        Fügt den In-Game-Timer in jedem Level hinzu. Er startet nach dem letzten schwarzen Frame nach dem Ladebildschirm und endet sobald die 'Shine Get' Animation startet (ähnlich dem X-Cam-Tier aus Super Mario 64).
+        Fügt den In-Game-Timer in jedem Level hinzu. Er startet nach dem letzten schwarzen Frame nach dem L
+        adebildschirm und endet sobald die 'Shine Get' Animation startet (ähnlich dem X-Cam-Tier aus Super Mario 64).
         
         ::: warning WARNUNG
         Der Timer pausiert während Ladebildschirmen. 
@@ -724,7 +737,8 @@
         :::
         </description>
         <description lang="fr-FR">
-        Ajoute un chronomètre à chaque niveau, démarrant à la dernière frame noire après le temps de chargement, et s'arrêtant dès que l'animation « Shine Get » commence (comme le chronomètre X-Cam de SM64).
+        Ajoute un chronomètre à chaque niveau, démarrant à la dernière frame noire après le temps de chargement, 
+        et s'arrêtant dès que l'animation « Shine Get » commence (comme le chronomètre X-Cam de SM64).
 
         ::: warning Avertissement
         Le chronomètre se met en pause pendant les temps de chargement.
@@ -1489,7 +1503,7 @@
 
             Codes:
             
-            ![Level Select Combinations](/img/levelselect.png){width=500}
+            ![Level Select Combinations](/img/levelselect.png)
         </description>
         <description lang="de-CH">
             Erlaubt das Warpen in andere Level mittels einer Tastenkombination beim Starten des Spiels oder beim Verlassen eines Levels.
@@ -1501,7 +1515,7 @@
 
             Tastenkombinationen:
             
-            ![Level Select Combinations](/img/levelselect.png){width=500}
+            ![Level Select Combinations](/img/levelselect.png)
         </description>
         <description lang="fr-FR">
             Permet de charger d'autres niveaux en démarrant un fichier ou en quittant un niveau en maintenant la combinaison appropriée jusqu'à ce que l'écran devienne noir.
@@ -1512,7 +1526,7 @@
 
             Combinaisons :
 
-            ![Combinaisons du sélecteur de niveau](/img/levelselect.png){width=500}
+            ![Combinaisons du sélecteur de niveau](/img/levelselect.png)
         </description>
         <description lang="ja-JP">
             「ファイル開始時」もしくは「ステージ退場時（画面が黒くなるまで）に組合せ入力する」と、他のステージにワープできます。
@@ -1523,7 +1537,7 @@
 
             コード:
             
-            ![Level Select Combinations](/img/levelselect.png){width=500}
+            ![Level Select Combinations](/img/levelselect.png)
         </description>
         <source version="GMSE01">
             C22A6710 00000073
@@ -2048,21 +2062,25 @@
         <author>Psychonauter, Noki Doki</author>
         <version>1.4</version>
         <description lang="en-US">
-        Loads stages in any% order, skips all save boxes, replaces all dialog with "!!!" (except for the Pianta 5 secret) and makes all FMVs skippable (except for the Pinna 1 cutscenes).
+        Loads stages in the commonly used any% order, skips all save boxes, replaces all dialog with "!!!" 
+        (except for the Pianta 5 secret) and makes all FMVs skippable (except for the Pinna 1 cutscenes).
         
         ::: warning
         This code is not compatible with the Level Select or Stage Loader code.
         :::
         </description>
         <description lang="de-CH">
-        Ladet die Level in derselben Reihenfolge wie Any%, überpring alle Speicherschaltflächen, ersetzt alle Dialoge mit "!!!" (Abgesehen von Pianta 5) und ermöglicht das Überspringen aller FMVs (ausser in Pinna 1). 
+        Ladet die Level in derselben Reihenfolge wie Any%, überspringt alle Speicherschaltflächen, 
+        ersetzt alle Dialoge mit "!!!" (Abgesehen von Pianta 5) und ermöglicht das Überspringen 
+        aller FMVs (ausser in Pinna 1). 
         
         ::: warning WARNUNG
         Dieser Code ist nicht kompatibel mit dem Level Select oder Stage Loader Code.
         :::
         </description>
         <description lang="fr-FR">
-        Charge les niveaux dans l'ordre any%, retire toutes les boîtes de sauvegarde, remplace tous les dialogues par « !!! » (sauf dans Pianta 5) et rend toutes les FMV passables (sauf celles de Pinna 1).
+        Charge les niveaux dans l'ordre any%, retire toutes les boîtes de sauvegarde, remplace tous 
+        les dialogues par « !!! » (sauf dans Pianta 5) et rend toutes les FMV passables (sauf celles de Pinna 1).
 
         ::: warning Attention
         Ce code n'est pas compatible avec le Sélecteur de niveau ni le Chargeur de liste.
@@ -3428,11 +3446,15 @@
         <version>1.0</version>
         <date>Mar 8, 2020</date>
         <description lang="en-US">
-          Forces the unlock events for Ricco, Gelato and Yoshi to happen any time the correct version of the plaza is loaded.
+          Forces the unlock events for Ricco, Gelato and Yoshi to happen any time the correct version of the plaza is loaded
+          via the Level Select code.
+
           Nozzle unlock events take precedence over Yoshi's if their conditions are met.
         </description>
         <description lang="de-CH">
-          Erzwingt die Durchführung der Ricco-, Gelato- und Yoshi- Freischaltungen sofern die korrekte Version der Plaza geladen ist. 
+          Erzwingt das Laden der korrekten Ricco-, Gelato- und Yoshi- Freischaltungen wenn die entsprechende Plaza über den
+          "Level Select"-Code geladen wird.
+
           Düsenfreischaltungen haben gegenüber Yoshi's Freischaltung Vorrang.
         </description>
         <description lang="fr-FR">
@@ -3479,7 +3501,31 @@
         <author>Noki Doki</author>
         <version>2.0</version>
         <date>Jun 25, 2020</date>
-        <description lang="en-US">Allows saving and loading from a Japanese-formatted memory card.</description>
+        <description lang="en-US">
+          Nintendont expects the save files on your memory card to use the same encoding
+          as the game region the console is set to. Other loaders, such as Gecko OS, 
+          instead expect the saves to be in the same encoding as the one used in the game.
+
+          This code directs Nintendont to use the encoding used for the NTSC-J region
+          (SJIS) for writing to and reading from the memory card.
+
+          If you load a NTSC-U or PAL version of the game in Nintendont and it asks you
+          to format your memory card - or if you use Gecko OS to run a NTSC-U/PAL version
+          of the game on a Japanese console - you can bypass having to format your card by 
+          using this code.
+        </description>
+        <description lang="de-CH">
+          Nintendont erwartet, dass Speicherdateien dasselbe Encoding verwenden wie
+          die Spielregion, welche in der Konsole konfiguriert ist. Andere Loader, wie Gecko OS,
+          erwarten stattdessen, dass die Speicherdateien dasselbe Encoding wie das Spiel verwenden.
+
+          Dieser Code weist Nintendont an, das Endcoding für die NTSC-J-Region (SJIS) zu
+          verwenden um Daten von der Memory Card zu lesen und zu schreiben.
+
+          Falls du das Spiel in Nintendont lädst und es dich fragt ob du die Memory Card formatieren
+          möchtest oder du Gecko OS für das Laden der NTSC-U/PAL-Version des Spiels auf japanischen
+          Konsolen verwendest kannst du mithilfe dieses Codes die Formatierung umgehen.
+        </description>
         <description lang="fr-FR">Permet de sauvegarder et de charger des sauvegardes depuis une carte mémoire formatée pour les jeux japonais.</description>
         <source version="GMSE01">
             0240CE58 00000001
@@ -3495,7 +3541,35 @@
         <author>Noki Doki</author>
         <version>2.0</version>
         <date>Jun 25, 2020</date>
-        <description lang="en-US">Allows saving and loading from a non-Japanese memory card.</description>
+        <description lang="en-US">
+          Nintendont expects the save files on your memory card to use the same encoding
+          as the game region the console is set to. Other loaders, such as Gecko OS, 
+          instead expect the saves to be in the same encoding as the one used in the game.
+
+          This code directs Nintendont to use the encoding used for the NTSC-U/PAL region
+          (ANSI) for writing to and reading from the memory card.
+
+          If you load a NTSC-J or NTSC-K version of the game in Nintendont and it asks you
+          to format your memory card (see image below) - or if you use Gecko OS to run a 
+          NTSC-J/NTSC-K version of the game on a non-Japanese console - you can bypass 
+          having to format your card by using this code.
+
+          ![Japanese Formatting Text](/img/japanese_formatting_text.png)
+        </description>
+        <description lang="de-CH">
+          Nintendont erwartet, dass Speicherdateien dasselbe Encoding verwenden wie
+          die Spielregion, welche in der Konsole konfiguriert ist. Andere Loader, wie Gecko OS
+          erwarten stattdessen, dass die Speicherdateien dasselbe Encoding wie das Spiel verwenden.
+
+          Dieser Code weist Nintendont an, das Endcoding für die NTSC-J-Region (SJIS) zu
+          verwenden um Daten von der Memory Card zu lesen und zu schreiben.
+
+          Falls du das Spiel in Nintendont lädst und es dich fragt ob du die Memory Card formatieren
+          möchtest (siehe Bild unten) oder du Gecko OS für das Laden von japanischen Spielen 
+          auf nicht-japanischen Konsolen verwendest kannst du mithilfe dieses Codes die Formatierung umgehen.
+
+          ![Japanese Formatting Text](/img/japanese_formatting_text.png)
+        </description>
         <description lang="fr-FR">Permet de sauvegarder et de charger des sauvegardes depuis une carte mémoire non formatée pour les jeux japonais.</description>
         <source version="GMSE01">
             0240CE58 00000000
