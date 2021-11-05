@@ -252,7 +252,7 @@
             | B + D-Pad Up    | Lock Hover Nozzle                           |
             | B + D-Pad Down  | Release Nozzle Lock                         |
 
-            ::: warning
+            ::: tip
             The underwater sections of Noki Bay (episodes 3, 4 and 8) use a different hover nozzle 
             from the one you get with B + Up. If you find it's not working properly, simply release the nozzle lock.
             :::
@@ -267,7 +267,7 @@
             | B + D-Pad Rauf    | Sperre Schwebedüse                          |
             | B + D-Pad Runter  | Düsensperre freigeben                       |
 
-            ::: warning
+            ::: tip
             Die Unterwasser-Sektionen in Noki (Episoden 3, 4 und 8) verwenden eine andere Schwebedüse als die normale (B + D-Pad Rauf).
             Falls die Schwebedüse nicht korrekt funktioniert löse die Sperre mit B + D-Pad Runter
             :::
@@ -280,7 +280,7 @@
             | B + D-Pad haut   | Verrouiller l'aérobuse                   |
             | B + D-Pad bas    | Annuler le verrouillage de buse          |
 
-            ::: warning Attention
+            ::: tip Attention
             Les sections sous-marines de la Baie Noki (épisodes 3, 4 et 8) utilisent une autre aérobuse que celle 
             obtenue avec B + Haut. Si elle ne fonctionne pas correctement, annulez le verrouillage.
             :::
