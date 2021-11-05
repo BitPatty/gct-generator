@@ -219,12 +219,8 @@ ul li {
   text-align: left;
 }
 
-ul li {
-  background: #f9f9f9;
-}
-
 ul li:nth-child(odd) {
-  background: #e7e7e7;
+  background: #f3f3f3;
 }
 
 ul li:not(.disabled):hover {
@@ -259,7 +255,7 @@ li {
 li::before {
   content: '';
   position: absolute;
-  border-color: #a6a6a6;
+  border-color: #e7e7e7;
   border-style: solid;
   border-width: 2px;
   border-radius: 50%;
