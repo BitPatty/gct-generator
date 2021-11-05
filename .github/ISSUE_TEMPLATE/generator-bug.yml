@@ -1,0 +1,40 @@
+name: Generator Bug Report
+about: The Generator doesn't work as expected
+title: '[BUG]: '
+labels:
+  - bug
+assignees:
+  - 'BitPatty'
+body:
+  - type: textarea
+    attributes:
+      label: Describe the bug
+      description: A clear and concise description of what the bug is
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Selected Version/Codes
+      description: List the version, codes and download format you selected
+  - type: textarea
+    attributes:
+      label: To Reproduce
+      description: List the steps necessary to reproduce the behavior
+      placeholder: |
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
+  - type: dropdown
+    attributes:
+      label: Browser
+      description: Which browser do you use
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Edge (Chromium)
+        - Other (specify in description above)
+      validations:
+        required: true

@@ -16,8 +16,8 @@
         "link": "/code-reference/index.html"
       },
       {
-        "text": "Installing IOS58",
-        "link": "/ios58.html"
+        "text": "Report an Issue",
+        "link": "https://github.com/BitPatty/gctGenerator/issues"
       },
       {
         "text": "Sunshine Discord",
@@ -46,11 +46,6 @@
         "text": "Code Referenz",
         "link": "/de/code-reference/index.html"
       },
-
-      {
-        "text": "IOS58 Installation",
-        "link": "/de/ios58.html"
-      },
       {
         "text": "Sunshine Discord",
         "link": "https://discord.gg/9dGJWEc"
@@ -78,11 +73,6 @@
         "text": "Référence des codes",
         "link": "/fr/code-reference/index.html"
       },
-
-      {
-        "text": "Installation d'IOS58",
-        "link": "/fr/ios58.html"
-      },
       {
         "text": "Discord de Sunshine",
         "link": "https://discord.gg/9dGJWEc"
@@ -109,11 +99,6 @@
       {
         "text": "チートコード一覧",
         "link": "/ja/code-reference/index.html"
-      },
-
-      {
-        "text": "IOS58のインストール",
-        "link": "/ja/ios58.html"
       },
       {
         "text": "Discord",

@@ -1,0 +1,78 @@
+name: Code Bug Report
+about: Codes doesn't work as expected
+title: '[BUG]: '
+labels:
+  - bug
+  - codes
+assignees:
+  - 'BitPatty'
+body:
+  - type: textarea
+    attributes:
+      label: Describe the bug
+      description: A clear and concise description of what the bug is
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Enabled Codes
+      description: List the codes you have enabled
+  - type: textarea
+    attributes:
+      label: To Reproduce
+      description: List the steps necessary to reproduce the behavior
+  - type: dropdown
+    attributes:
+      label: Loader
+      description: Which loader do you use to play the game
+      options:
+        - Nintendont
+        - Dolphin
+        - Other (specify in description above)
+      validations:
+        required: true
+  - type: input
+    attributes:
+      label: Loader Version
+      description: Which version of the loader do you use
+  - type: dropdown
+    attributes:
+      label: Game Version
+      description: Which version of the game do you use
+      options:
+        - NTSC-U (North America)
+        - NTSC-J (Japan)
+        - PAL (Europe)
+        - NTSC-K (Korea)
+      validations:
+        required: true
+  - type: dropdown
+    attributes:
+      label: Wii Region
+      description: "If you're on Wii: Which region does your Wii have"
+      options:
+        - NTSC-U (North America)
+        - NTSC-J (Japan)
+        - PAL (Europe)
+        - NTSC-K (Korea)
+      validations:
+        required: false
+  - type: dropdown
+    attributes:
+      label: Game Source
+      description: "If you're on Wii: How do you load the game"
+      options:
+        - Disc
+        - SD-Card
+        - HDD
+      validations:
+        required: false
+  - type: dropdown
+    attributes:
+      label: Nintendont Source
+      description: 'If you use Nintendont on Wii: Where is it located'
+      options:
+        - SD-Card
+        - HDD
+      validations:
+        required: false

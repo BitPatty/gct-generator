@@ -82,7 +82,7 @@ This can have multiple reasons:
 
 ### I'm lost :(
 
-You can ask for help on the [Super Mario Sunshine Discord](https://discord.gg/9dGJWEc).
+You can ask for help on the [Super Mario Sunshine Discord](https://discord.gg/9dGJWEc) or open a [new Issue on GitHub](https://github.com/BitPatty/gctGenerator/issues).
 
 ## Appendix: Cheat Manager
 
