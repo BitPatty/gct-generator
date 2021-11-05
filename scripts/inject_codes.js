@@ -312,51 +312,66 @@ for (let i = 0; i < CODE_VERSIONS.length; i++) {
 // Save the codeJSON with the updated codes
 fs.writeFileSync(JSON_FILE_PATH, JSON.stringify(codeJson));
 
+const parseReferenceList = (xmlString) => {
+  const codeCollection = new JSDOM(xmlString, {
+    contentType: 'text/xml',
+  }).window.document.getElementsByTagName('code');
+
+  const codes = [...codeCollection];
+  return codes.map((code) => ({
+    author: readTextNode(code, 'author'),
+    title: localizeNode(code, 'title'),
+    description: localizeMarkdown(code, 'description'),
+    version: readTextNode(code, 'version'),
+    date: readTextNode(code, 'date'),
+    gameVersions: CODE_VERSIONS.filter(
+      (v) => code.querySelector(`source[version='${v}']`)?.textContent != null,
+    ),
+  }));
+};
+
+const REFERENCE_CODE_LIST = parseReferenceList(xml);
+
 Object.keys(locales).forEach((locale) => {
   const localeKey = locales[locale].lang;
   const localeLabels = require(`../site/.vuepress/i18n/${localeKey}.json`);
 
-  // Populate the code reference
-  for (let i = 0; i < CODE_VERSIONS.length; i++) {
-    // Load the target reference file
-    const filePath = path.join(
-      __dirname,
-      `../site/${locale.trim('/')}/code-reference/${CODE_VERSIONS[i].toLowerCase()}.md`,
-    );
+  // Load the target reference file
+  const referenceFile = path.join(__dirname, `../site/${locale.trim('/')}/code-reference/index.md`);
+  const referenceContent = fs.readFileSync(referenceFile).toString();
 
-    // Get the current reference
-    const reference = fs.readFileSync(filePath).toString();
-
-    if (!reference.includes(INJECTION_TAG)) {
-      throw new Error(`No injection tag found in ${CODE_VERSIONS[i].toLowerCase()}.md`);
-    }
-
-    // Everything after the injection tag is deleted from the file
-    let fileContent = reference.split(INJECTION_TAG)[0] + INJECTION_TAG;
-
-    // Order codes by their localized title
-    const codes = codeJson
-      .find((c) => c.identifier === CODE_VERSIONS[i])
-      .codes.sort((a, b) =>
-        a.title.find((t) => t.lang === localeKey).content >
-        b.title.find((t) => t.lang === localeKey).content
-          ? 1
-          : -1,
-      );
-
-    // Create a semi-markdown version for all codes
-    codes.forEach((code) => {
-      const title = `### ${code.title.find((t) => t.lang === localeKey).content}`;
-      const author = `*${
-        code.author.includes(',') ? localeLabels.codeinfo.authors : localeLabels.codeinfo.author
-      } ${code.author}*`;
-      const version = `*${localeLabels.codeinfo.version} ${code.version} (${code.date})*`;
-      const description = code.description.find((d) => d.lang === localeKey).content;
-
-      fileContent += `\n\n${title.trim()}\n\n${version.trim()}  \n${author.trim()}\n\n${description.trim()}\n\n`;
-    });
-
-    // Save the reference file
-    fs.writeFileSync(filePath, fileContent);
+  if (!referenceContent.includes(INJECTION_TAG)) {
+    throw new Error(`No injection tag found in ${locale.trim('/')}/code-reference/index.md`);
   }
+
+  let fileContent = referenceContent.split(INJECTION_TAG)[0] + INJECTION_TAG;
+
+  // Order codes by their localized title
+  const codes = REFERENCE_CODE_LIST.sort((a, b) =>
+    a.title.find((t) => t.lang === localeKey).content >
+    b.title.find((t) => t.lang === localeKey).content
+      ? 1
+      : -1,
+  );
+
+  // Create a semi-markdown version for all codes
+  codes.forEach((code) => {
+    const title = `## ${code.title.find((t) => t.lang === localeKey).content}`;
+    const author = `*${
+      code.author.includes(',') ? localeLabels.codeinfo.authors : localeLabels.codeinfo.author
+    } ${code.author}*`;
+    const version = `*${localeLabels.codeinfo.version} ${code.version} (${code.date})*`;
+    const description = code.description.find((d) => d.lang === localeKey).content;
+    const availableFor = CODE_VERSIONS.filter((v) => code.gameVersions.includes(v))
+      .map((v) => `<VersionTag version="${v}" supported="true" />`)
+      .join(' ');
+    const notAvailableFor = CODE_VERSIONS.filter((v) => !code.gameVersions.includes(v))
+      .map((v) => `<VersionTag version="${v}" supported="false" />`)
+      .join(' ');
+
+    fileContent += `\n\n${title.trim()}\n\n${availableFor} ${notAvailableFor} \n${version.trim()}  \n${author.trim()}\n\n${description.trim()}\n\n`;
+  });
+
+  // Save the reference file
+  fs.writeFileSync(referenceFile, fileContent);
 });

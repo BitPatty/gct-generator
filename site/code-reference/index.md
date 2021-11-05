@@ -1,7 +1,8 @@
 ---
+sidebar: auto
 editLink: false
 ---
 
 # Code Reference
 
-<VersionCards />
+<!-- injectionpoint -->
