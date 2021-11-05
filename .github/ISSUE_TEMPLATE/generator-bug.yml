@@ -1,5 +1,5 @@
 name: Generator Bug Report
-about: The Generator doesn't work as expected
+description: The Generator doesn't work as expected
 title: '[BUG]: '
 labels:
   - bug
@@ -36,5 +36,3 @@ body:
         - Edge
         - Edge (Chromium)
         - Other (specify in description above)
-      validations:
-        required: true

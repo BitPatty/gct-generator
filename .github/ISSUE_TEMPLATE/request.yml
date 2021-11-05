@@ -1,5 +1,5 @@
 name: Code/Feature Request
-about: Suggest an idea for a code or generator feature
+description: Suggest an idea for a code or generator feature
 title: '[FEAT]'
 labels:
   - enhancement

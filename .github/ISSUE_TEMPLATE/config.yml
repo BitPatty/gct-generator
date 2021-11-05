@@ -2,4 +2,4 @@ blank_issues_enabled: true
 contact_links:
   - name: SMS Speedrunning Community Discord
     url: https://discord.gg/9dGJWEc
-    about: You can ask questions here.
+    description: You can ask questions here.

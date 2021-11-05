@@ -1,5 +1,5 @@
 name: Code Bug Report
-about: Codes doesn't work as expected
+description: Codes doesn't work as expected
 title: '[BUG]: '
 labels:
   - bug
@@ -29,8 +29,6 @@ body:
         - Nintendont
         - Dolphin
         - Other (specify in description above)
-      validations:
-        required: true
   - type: input
     attributes:
       label: Loader Version
@@ -44,8 +42,6 @@ body:
         - NTSC-J (Japan)
         - PAL (Europe)
         - NTSC-K (Korea)
-      validations:
-        required: true
   - type: dropdown
     attributes:
       label: Wii Region
@@ -55,8 +51,6 @@ body:
         - NTSC-J (Japan)
         - PAL (Europe)
         - NTSC-K (Korea)
-      validations:
-        required: false
   - type: dropdown
     attributes:
       label: Game Source
@@ -65,8 +59,6 @@ body:
         - Disc
         - SD-Card
         - HDD
-      validations:
-        required: false
   - type: dropdown
     attributes:
       label: Nintendont Source
@@ -74,5 +66,3 @@ body:
       options:
         - SD-Card
         - HDD
-      validations:
-        required: false
