@@ -4051,8 +4051,8 @@
         </description>
         <description lang="de-CH">
             Nintendont erwartet, dass Speicherdateien dasselbe Encoding verwenden wie
-            die Spielregion, welche in der Konsole konfiguriert ist. Andere Loader, wie Gecko OS,
-            erwarten stattdessen, dass die Speicherdateien dasselbe Encoding wie das Spiel verwenden.
+            die Spielregion. Andere Loader, wie Gecko OS, erwarten stattdessen, dass die Speicherdateien 
+	    dasselbe Encoding wie die Konfiguration der Konsole verwenden.
 
             Dieser Code weist Nintendont an, das Endcoding für die NTSC-J-Region (SJIS) zu
             verwenden um Daten von der Memory Card zu lesen und zu schreiben.
@@ -4103,8 +4103,8 @@
         </description>
         <description lang="de-CH">
             Nintendont erwartet, dass Speicherdateien dasselbe Encoding verwenden wie
-            die Spielregion, welche in der Konsole konfiguriert ist. Andere Loader, wie Gecko OS
-            erwarten stattdessen, dass die Speicherdateien dasselbe Encoding wie das Spiel verwenden.
+            die Spielregion. Andere Loader, wie Gecko OS, erwarten stattdessen, dass die Speicherdateien 
+	    dasselbe Encoding wie die Konfiguration der Konsole verwenden.
 
             Dieser Code weist Nintendont an, das Endcoding für die NTSC-J-Region (SJIS) zu
             verwenden um Daten von der Memory Card zu lesen und zu schreiben.
