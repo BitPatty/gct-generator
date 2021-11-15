@@ -4038,16 +4038,15 @@
         <version>2.0</version>
         <date>Jun 25, 2020</date>
         <description lang="en-US">
-            Nintendont expects the save files on your memory card to use the same encoding
-            as the game region the console is set to. Other loaders, such as Gecko OS, 
-            instead expect the saves to be in the same encoding as the one used in the game.
+            Nintendont expects the save files on your memory card to use the encoding used
+            in the game. Other loaders, such as Gecko OS, instead expect the saves to be in
+            the encoding that matches the region of the console.
 
             This code directs Nintendont to use the encoding used for the NTSC-J region
             (SJIS) for writing to and reading from the memory card.
 
             If you load a NTSC-U or PAL version of the game in Nintendont and it asks you
-            to format your memory card - or if you use Gecko OS to run a NTSC-U/PAL version
-            of the game on a Japanese console - you can bypass having to format your card by 
+            to format your memory card, you can bypass having to format your card by 
             using this code.
         </description>
         <description lang="de-CH">
@@ -4063,7 +4062,16 @@
             Konsolen verwendest kannst du mithilfe dieses Codes die Formatierung umgehen.
         </description>
         <description lang="fr-FR">
-            Permet de sauvegarder et de charger des sauvegardes depuis une carte mémoire formatée pour les jeux japonais.
+            Nintendont s'attend à ce que les fichiers de sauvegarde sur votre carte mémoire utilisent
+            le même encodage que le jeu lui-même. D'autres applications comme Gecko OS s'attendent
+            plutôt à l'encodage correspondant à la région de la console.
+
+            Ce code indique à Nintendont d'utiliser l'encodage des régions NTSC-J (SJIS) pour lire
+            et écrire les sauvegardes de la carte mémoire.
+
+            Si vous chargez une version NTSC-U ou PAL du jeu dans Nintendont et qu'il vous demande
+            de formater votre carte mémoire, vous pouvez utiliser ce code pour éviter d'avoir à
+            supprimer vos autres sauvegardes.
         </description>
         <source version="GMSE01">
             0240CE58 00000001
@@ -4080,17 +4088,16 @@
         <version>2.0</version>
         <date>Jun 25, 2020</date>
         <description lang="en-US">
-            Nintendont expects the save files on your memory card to use the same encoding
-            as the game region the console is set to. Other loaders, such as Gecko OS, 
-            instead expect the saves to be in the same encoding as the one used in the game.
+            Nintendont expects the save files on your memory card to use the encoding used
+            in the game. Other loaders, such as Gecko OS, instead expect the saves to be in
+            the encoding that matches the region of the console.
 
             This code directs Nintendont to use the encoding used for the NTSC-U/PAL region
             (ANSI) for writing to and reading from the memory card.
 
             If you load a NTSC-J or NTSC-K version of the game in Nintendont and it asks you
-            to format your memory card (see image below) - or if you use Gecko OS to run a 
-            NTSC-J/NTSC-K version of the game on a non-Japanese console - you can bypass 
-            having to format your card by using this code.
+            to format your memory card (see image below), you can bypass having to format
+            your card by using this code.
 
             ![Japanese Formatting Text](/img/japanese_formatting_text.png)
         </description>
@@ -4109,7 +4116,18 @@
             ![Japanese Formatting Text](/img/japanese_formatting_text.png)
         </description>
         <description lang="fr-FR">
-            Permet de sauvegarder et de charger des sauvegardes depuis une carte mémoire non formatée pour les jeux japonais.
+            Nintendont s'attend à ce que les fichiers de sauvegarde sur votre carte mémoire utilisent
+            le même encodage que le jeu lui-même. D'autres applications comme Gecko OS s'attendent
+            plutôt à l'encodage correspondant à la région de la console.
+
+            Ce code indique à Nintendont d'utiliser l'encodage des régions NTSC-U/PAL (ANSI) pour lire
+            et écrire les sauvegardes de la carte mémoire.
+
+            Si vous chargez une version NTSC-J ou NTSC-K du jeu dans Nintendont et qu'il vous demande
+            de formater votre carte mémoire (cf. image ci-dessous), vous pouvez utiliser ce code pour
+            éviter d'avoir à supprimer vos autres sauvegardes.
+
+            ![Boîte de formatage en japonais](/img/japanese_formatting_text.png)
         </description>
         <source version="GMSE01">
             0240CE58 00000000
