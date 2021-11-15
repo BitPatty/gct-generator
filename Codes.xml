@@ -1695,7 +1695,7 @@
         <category>timer</category>
         <title lang="en-US">Quarterframe Timer (Experimental)</title>
         <author>Noki Doki</author>
-        <version>0.3</version>
+        <version>0.4</version>
         <date>Nov 15, 2021</date>
         <description lang="en-US">
         Adds an in-game timer to every level, starting on the last black frame after the 
@@ -1761,7 +1761,7 @@
             C22257CC 00000002
             2C030001 3C60817F
             98A300B3 00000000
-            C20EBD98 00000002
+            C20EBD78 00000002
             389C0001 3CA0817F
             988500B3 00000000
             C20EC72C 00000004
