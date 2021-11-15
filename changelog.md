@@ -1,5 +1,13 @@
 # Changelog
 
+## Nov 15, 2021
+
+### Updated 'Quarterframe Timer (Experimental)'
+
+* Revamped reset behavior; this code is now fully compatible with Shine Get Timer, and no longer depends on any loader code.
+* The timer now freezes upon hitting a loading zone (similarly to Shine Get Timer) or exiting area.
+* Fixed possible overflows when entering a loading zone after staying in the same area for a very long time.
+
 ## Oct 22, 2021
 
 ### Updated 'Quarterframe Timer (Experimental)'
