@@ -12,11 +12,11 @@ Ein Leitfaden für die Installation und Anwendung von Super Mario Sunshine Pract
 
 ### Homebrew Installation
 
-Zu Beginn musst du Homebrew auf deiner Wii installieren. Stelle sicher, dass deine SD-Karte zu FAT32 formattiert ist und besuche dann [https://wii.guide/de_DE/](https://wii.guide/de_DE/) für einen detaillierten Leitfaden für die installation von Homebrew.
+Zu Beginn musst du Homebrew auf deiner Wii installieren. Stelle sicher, dass deine SD-Karte FAT32 formattiert ist und besuche dann [https://wii.guide/de_DE/](https://wii.guide/de_DE/) für einen detaillierten Leitfaden zur Installation von Homebrew.
 
 ### Installation der Applikationen
 
-Nintendont ist empohlene Weg für die Nutzung der Practice Codes. Du kannst die aktuellste Version über [diesen Link](https://share.zint.ch/nintendont/latest/Nintendont.zip) herunterladen. Entpacke das Archiv und platziere den Nintendont Ordner mit all seinen Inhalten in den 'apps' Ordner auf deiner SD-Karte. Falls es noch keinen 'apps' Ordner gibt, erstelle diesen erst.
+Nintendont ist das empfohlene Tool zur Nutzung der Practice Codes. Du kannst die aktuellste Version über [diesen Link](https://share.zint.ch/nintendont/latest/Nintendont.zip) herunterladen. Entpacke das Archiv und platziere den Nintendont Ordner mit all seinen Inhalten in den 'apps' Ordner auf deiner SD-Karte. Falls es noch keinen 'apps' Ordner gibt, erstelle diesen erst.
 
 ## Installation der Cheat-Datei
 
@@ -80,19 +80,19 @@ Dies kann mehrere Ursachen haben:
 - Falls du ein USB-Laufwerk verwendest und über die Disc spielst, stelle sicher dass du bei Nintendont das Gerät auswählst, welches die Cheat Codes enthält.
 - Falls du eine ISO verwendest, müssen die Codes und die ISO auf demselben Gerät sein (beide auf der SD-Karte oder beide auf dem USB-Laufwerk)
 
-### Ich bin verloren :(
+### Ich weiss nicht weiter :(
 
 Du kannst auch im [Super Mario Sunshine Discord](https://discord.gg/9dGJWEc) unter dem #help Kanal nach Hilfe fragen.
 
 ## Appendix: Cheat Manager
 
-Der Cheat Manager ist eine applikation für Homebrew (wie Nintendont), mit welcher du GCT's auf deiner Wii generieren kannst. Damit musst du nicht jedesmal ein neues Cheatfile herunterladen. Dieser Prozess benötigt allerdings eine Wiimote um die Applikation zu bedienen.
+Der Cheat Manager ist eine Applikation für Homebrew (wie Nintendont), mit welcher du GCT's auf deiner Wii generieren kannst. Für den Prozess brauchst du die Applikation sowie eine Wiimote.
 
 ### Setup
 
-Du kannst den Cheat Manager von [hier herunterladen](/files/Cheat_manager_v0_3.zip). Entpacke das Archive und kopiere den Inhalt in den 'apps'-Ordner auf deiner SD-Karte.
+Du kannst den Cheat Manager von [hier herunterladen](/files/Cheat_manager_v0_3.zip). Entpacke das Archiv und kopiere den Inhalt in den 'apps'-Ordner auf deiner SD-Karte.
 
-Wähle mittels des Generators auf der [Hauptseite](./index.md) alle Codes, auf welche du Zugriff haben möchtest und wähle als Dateiformat 'Cheat Manager TXT' anstelle von 'GCT'. Erstelle anschliessend einen 'txtcodes'-Ordner auf deiner SD-Karte und kopiere die generierte Datei in den eben erstellten Ordner. Der Name der Datei spielt in diesem Fall im Gegensatz zur GCT-Datei keine grosse Rolle.
+Wähle mittels des Generators auf der [Hauptseite](./index.md) alle Codes aus, auf welche du im Cheat Manager Zugriff haben möchtest. Setze zusätzlich das Dateiformat auf 'Cheat Manager TXT' anstelle von 'GCT'. Erstelle anschliessend einen 'txtcodes'-Ordner auf deiner SD-Karte und kopiere die generierte Datei in den eben erstellten Ordner. Der Name der Datei spielt in diesem Fall im Gegensatz zur GCT-Datei keine grosse Rolle.
 
 Alternativ kannst du ein Archiv mit allen verfügbaren Codes direkt von [hier herunterladen](/files/GCMCodes.zip).
 
@@ -109,7 +109,7 @@ Nachdem du alle Codes, die du aktiviert haben möchtest, aktiviert hast, verwend
 Um die Codes mit Dolphin zu verwenden wähle 'Dolphin INI' als Dateiformat anstelle von 'GCT' bevor du die Codes herunterlädst. Alternativ kannst du ein ZIP-Archiv mit allen Codes von [hier herunterladen](/files/DolphinCodes.zip).
 
 ::: tip Code Limits
-Dolphin verwendet nicht dieselbe Technik für das Laden von Cheats wie Nintendont und erreicht das Code-Limit eher rasch. Falls dein Spiel nach dem Start crashed, liegt es vermutlich daran. Versuche alle nicht-essentiellen Codes zu deaktivieren falls das passiert.
+Dolphin verwendet nicht dieselbe Technik für das Laden von Cheats wie Nintendont und erreicht das Code-Limit relativ rasch. Falls dein Spiel nach dem Start abstürzt, liegt es vermutlich an diesem Limit. Versuche alle nicht-essentiellen Codes zu deaktivieren falls das passiert.
 :::
 
 ### Konfiguration
