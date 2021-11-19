@@ -776,8 +776,8 @@
         :::
         </description>
         <description lang="de-CH">
-        Fügt den In-Game-Timer in jedem Level hinzu. Er startet nach dem letzten schwarzen Frame nach dem L
-        adebildschirm und endet sobald die 'Shine Get' Animation startet (ähnlich dem X-Cam-Tier aus Super Mario 64).
+        Fügt den In-Game-Timer in jedem Level hinzu. Er startet nach dem letzten schwarzen Frame nach dem
+        Ladebildschirm und endet sobald die 'Shine Get' Animation startet (ähnlich dem X-Cam-Tier aus Super Mario 64).
         
         ::: warning WARNUNG
         Der Timer pausiert während Ladebildschirmen. 
