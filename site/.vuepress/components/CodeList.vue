@@ -87,8 +87,8 @@ export default {
       }
 
       this.unselectStageLoader();
-      this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
       this.refreshDisabledCodes();
+      this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
       this.generation++;
     },
     getPresetPlaceholder() {
@@ -117,23 +117,21 @@ export default {
       const newState = !this.stageLoaderSelected;
       this.stageLoaderSelected = newState;
       this.onStageLoaderToggle(newState);
-      this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
       this.refreshDisabledCodes();
+      this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
     },
     refreshDisabledCodes() {
-      for (const dependentCategory of codeCategories.filter((c) => c.dependsOn.length > 0)) {
-        for (const dependency of dependentCategory.dependsOn) {
-          const enableCodes =
-            (dependency === 'loader' && this.stageLoaderSelected) ||
-            this.availableCodes.find((c) => c.selected && c.category === dependency);
-
-          for (const code of this.availableCodes.filter(
-            (c) => c.category === dependentCategory.identifier && c.disabled !== !enableCodes,
-          )) {
-            code.disabled = !enableCodes;
-            if (code.disabled && code.selected) {
-              this.toggle(code);
-            }
+      for (const code of this.availableCodes) {
+        if (code.dependsOn) {
+          if (code.dependsOn === 'loader' && this.stageLoaderSelected) {
+            code.disabled = false;
+          } else if (
+            !this.availableCodes.some((c) => c.selected && c.category === code.dependsOn)
+          ) {
+            code.disabled = true;
+            code.selected = false;
+          } else {
+            code.disabled = false;
           }
         }
       }
@@ -153,8 +151,8 @@ export default {
       }
 
       code.selected = code.disabled ? false : !code.selected;
-      this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
       this.refreshDisabledCodes();
+      this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
     },
     populate() {
       this.availableCodes = this.codes.map((c) => ({ ...c, selected: false }));

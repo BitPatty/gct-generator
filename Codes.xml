@@ -751,6 +751,7 @@
     <code>
         <category>timer</category>
         <presets>standard,recommended,il</presets>
+        <depends-on>loader</depends-on>
         <title lang="en-US">Shine Get Timer</title>
         <title lang="de-CH">Shine Get Timer</title>
         <title lang="fr-FR">Chronomètre Shine Get</title>

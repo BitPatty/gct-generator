@@ -287,6 +287,7 @@ const parseXml = (xmlString, gameVersion = null) => {
       source: readCode(code, 'source', gameVersion),
       presets: readPresetList(code, gameVersion),
       category: readTextNode(code, 'category'),
+      dependsOn: code.querySelector('depends-on')?.textContent ?? null,
     }))
     .filter((code) => code.source != null);
 };
