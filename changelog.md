@@ -2,6 +2,10 @@
 
 ## Nov 28, 2021
 
+### Updated 'Speed display'
+
+Fixed a crash when leaving certain levels.
+
 ### Updated 'Quarterframe Timer (Experimental)'
 
 * The timer now freezes upon grabbing blue or red coins.
