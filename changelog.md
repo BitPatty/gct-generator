@@ -1,5 +1,12 @@
 # Changelog
 
+## Nov 28, 2021
+
+### Updated 'Quarterframe Timer (Experimental)'
+
+* The timer now freezes upon grabbing blue or red coins.
+* The timer now rounds to the frame for end times, entry times and blue coin grabs, as more precision in those cases would be meaningless.
+
 ## Nov 15, 2021
 
 ### Updated 'Quarterframe Timer (Experimental)'
