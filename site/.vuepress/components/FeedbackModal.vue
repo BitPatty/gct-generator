@@ -39,12 +39,12 @@ export default {
     };
   },
   mounted() {
-    if (localStorage.getItem('feedback-modal-displayed') !== 'y') {
-      this.showModal = true;
-      localStorage.setItem('feedback-modal-displayed', 'y');
-      try {
-        window._paq.push(['trackEvent', 'GCT Generator', 'Feedback', 'Open Modal']);
-      } catch {}
+    // if (localStorage.getItem('feedback-modal-displayed') !== 'y') {
+    //  this.showModal = true;
+    //  localStorage.setItem('feedback-modal-displayed', 'y');
+    //  try {
+    //    window._paq.push(['trackEvent', 'GCT Generator', 'Feedback', 'Open Modal']);
+    //  } catch {}
     }
   },
   methods: {
