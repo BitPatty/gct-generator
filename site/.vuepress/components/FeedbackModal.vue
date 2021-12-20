@@ -45,7 +45,7 @@ export default {
     //  try {
     //    window._paq.push(['trackEvent', 'GCT Generator', 'Feedback', 'Open Modal']);
     //  } catch {}
-    }
+    // }
   },
   methods: {
     onFormClick() {
