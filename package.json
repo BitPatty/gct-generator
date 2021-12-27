@@ -20,7 +20,7 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "1.8.3",
-    "@vuepress/plugin-medium-zoom": "1.8.3",
+    "@vuepress/plugin-medium-zoom": "1.9.5",
     "jsdom": "19.0.0",
     "markdown-it-attrs": "4.1.1",
     "pre-commit": "1.2.2",
