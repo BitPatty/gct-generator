@@ -2,6 +2,8 @@
 sidebar: auto
 ---
 
+<JPTranslatorNotice />
+
 <!-- prettier-ignore-start -->
 
 # 導入ガイド

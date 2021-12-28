@@ -44,7 +44,7 @@ export default {
   },
   mounted() {
     try {
-      if (localStorage.getItem('notice-dismissed') !== 'y') {
+      if (localStorage.getItem('jp-translator-notice-dismissed') !== 'y') {
         this.dismissed = false;
       }
     } catch {}
@@ -52,7 +52,7 @@ export default {
   methods: {
     onDismiss() {
       try {
-        localStorage.setItem('notice-dismissed', 'y');
+        localStorage.setItem('jp-translator-notice-dismissed', 'y');
         this.dismissed = true;
       } catch {}
     },
