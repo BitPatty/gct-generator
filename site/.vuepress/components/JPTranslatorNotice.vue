@@ -46,6 +46,7 @@ export default {
     try {
       if (localStorage.getItem('jp-translator-notice-dismissed') !== 'y') {
         this.dismissed = false;
+        window._paq.push(['trackEvent', 'GCT Generator', 'Translator Notice', 'Show Notice']);
       }
     } catch {}
   },
@@ -54,6 +55,7 @@ export default {
       try {
         localStorage.setItem('jp-translator-notice-dismissed', 'y');
         this.dismissed = true;
+        window._paq.push(['trackEvent', 'GCT Generator', 'Translator Notice', 'Dismiss Notice']);
       } catch {}
     },
   },
