@@ -4,7 +4,7 @@
       Looking for Japanese translators <a href="#" v-on:click="onDismiss">[dismiss]</a>
     </p>
     <p>
-      If you can help us with updating the translations please message psy#1363 on discord or open
+      If you can help us with updating the translations please message psy#1363 on Discord or open
       an issue/PR on
       <a href="https://github.com/BitPatty/gctGenerator" target="_blank" rel="noopener noreferrer"
         >GitHub<span
