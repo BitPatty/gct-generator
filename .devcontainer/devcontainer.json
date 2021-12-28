@@ -13,7 +13,7 @@
     "ms-vsliveshare.vsliveshare",
     "wayou.vscode-todo-highlight",
   ],
-  "forwardPorts": [8080],
+  "forwardPorts": [8080, 3000],
   "postCreateCommand": "npm install",
   "remoteUser": "node"
 }

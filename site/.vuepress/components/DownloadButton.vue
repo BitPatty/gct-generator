@@ -63,7 +63,6 @@ export default {
         ]);
       } catch {}
 
-      console.log(`Preparing jdownload for ${this.format}`);
       const fileName = gameVersions.find((v) => v.identifier === this.versionIdentifier).version;
 
       switch (this.format) {
