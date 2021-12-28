@@ -27,7 +27,30 @@ When adding new codes keep in mind that the English title/description are mandat
 
 Some codes store some states in the games memory starting from address 0x817F0000. To avoid collisions use a memory range in the unallocated ranges:
 
-![](./docs/reserved_memory.png)
+| Status                      | Start   | End     | Description                                                               |
+| --------------------------- | ------- | ------- | ------------------------------------------------------------------------- |
+| ![](./docs/reserved.svg)    | `0x0`   | `0x7`   | Level Select: Stage Data                                                  |
+| ![](./docs/reserved.svg)    | `0x8`   | `0x13`  | DPad Functions: Stored Position (Mario)                                   |
+| ![](./docs/reserved.svg)    | `0x14`  | `0x15`  | DPad Functions: Stored Angle (Mario)                                      |
+| ![](./docs/reserved.svg)    | `0x16`  | `0x1B`  | DPad Functions: Stored Position (Camera)                                  |
+| ![](./docs/reserved.svg)    | `0x20`  | `0x23`  | Coin Count Savestate: Coin Count                                          |
+| ![](./docs/unallocated.svg) | `0x24`  | `0x93`  | Not Allocated                                                             |
+| ![](./docs/reserved.svg)    | `0x94`  | `0xA3`  | QF Timer: Coordinates of the Text box (LTRB)                              |
+| ![](./docs/reserved.svg)    | `0xA4`  | `0xB0`  | QF Timer: Timer Format String                                             |
+| ![](./docs/reserved.svg)    | `0xB0`  | `0xB0`  | QF Timer: (Unused)                                                        |
+| ![](./docs/reserved.svg)    | `0xB2`  | `0xB2`  | QF Timer: Stop at QFT Offset                                              |
+| ![](./docs/reserved.svg)    | `0xB3`  | `0xB3`  | QF Timer: Restart Flag                                                    |
+| ![](./docs/reserved.svg)    | `0xB4`  | `0xB7`  | QF Timer: Cumulative time of previous areas since last reset (QFT Offset) |
+| ![](./docs/reserved.svg)    | `0xB8`  | `0xBB`  | QF Timer: Time to display if timer freeze > 0                             |
+| ![](./docs/reserved.svg)    | `0xBC`  | `0xBF`  | QF Timer: Duration of timer freeze (in frames)                            |
+| ![](./docs/buffer.svg)      | `0xC0`  | `0xFF`  | Buffer (QF Timer)                                                         |
+| ![](./docs/reserved.svg)    | `0x100` | `0x100` | Ingame Timer: Reset Stopwatch Flag                                        |
+| ![](./docs/reserved.svg)    | `0x101` | `0x101` | Ingame Timer: Disable Custom IG Timer Flag                                |
+| ![](./docs/reserved.svg)    | `0x102` | `0x10B` | Ingame Timer: Stopwatch Backup                                            |
+| ![](./docs/reserved.svg)    | `0x10C` | `0x10C` | Ingame Timer: Stop Stopwatch Flag                                         |
+| ![](./docs/buffer.svg)      | `0x10D` | `0x10F` | Buffer (Ingame Timer)                                                     |
+| ![](./docs/reserved.svg)    | `0x110` | `0xA4F` | QF Timer: Timer Textbox                                                   |
+| ![](./docs/unallocated.svg) | `0xA50` | `0xFFF` | Not Allocated                                                             |
 
 ### Adding translations
 
