@@ -2,4 +2,6 @@
 editLink: false
 ---
 
+<JPTranslatorNotice />
+
 <Generator />
