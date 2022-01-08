@@ -24,12 +24,12 @@ Nintendont est l'application recommandée pour utiliser les codes d'entraînemen
 
 Vous devez d'abord savoir quelle version du jeu vous utilisez. Le tableau suivant indique les versions supportées et leurs identifiants respectifs :
 
-| Version                   | Identifiant |
-| ------------------------- | ----------- |
-| PAL (Europe)              | GMSP01      |
-| NTSC-U (Amérique du Nord) | GMSE01      |
-| NTSC-J (Japon)            | GMSJ01      |
-| NTSC-K (Corée)            | GMSE01      |
+| Version                   | Identifiant | Identifiant (Disque)      |
+| ------------------------- | ----------- | ------------------------- |
+| PAL (Europe)              | GMSP01      | DOL-GMSP-0-00             |
+| NTSC-U (Amérique du Nord) | GMSE01      | DOL-GMSE-0-00             |
+| NTSC-J (Japon)            | GMSJ01      | DOL-GMSJ-0-00 / GMSJ-0-01 |
+| NTSC-K (Corée)            | GMSE01      | DOL-GMSE-0-30             |
 
 ::: tip Note pour les joueurs de NTSC-J
 JP 1.0 et JP 1.1 partagent le même ID (GMSJ01). Pour identifier quelle version est la vôtre, vérifiez l'arrière du disque. Il y sera écrit « DOL-GMSJ-0-00 » pour 1.0, et « DOL-GMSJ-0-01 » pour 1.1.

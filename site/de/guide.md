@@ -24,12 +24,12 @@ Nintendont ist das empfohlene Tool zur Nutzung der Practice Codes. Du kannst die
 
 Zuerst musst du wissen, welche Version des Spiels du verwendest. Die folgende Tabelle zeigt die unterstützten Versionen und den entsprechenden Spiel-Code:
 
-| Version               | Spiel-Code |
-| --------------------- | ---------- |
-| PAL (Europa)          | GMSP01     |
-| NTSC-U (Nord Amerika) | GMSE01     |
-| NTSC-J (Japan)        | GMSJ01     |
-| NTSC-K (Korea)        | GMSE01     |
+| Version               | Spiel-Code | Disc-Code                 |
+| --------------------- | ---------- | ------------------------- |
+| PAL (Europa)          | GMSP01     | DOL-GMSP-0-00             |
+| NTSC-U (Nord-Amerika) | GMSE01     | DOL-GMSE-0-00             |
+| NTSC-J (Japan)        | GMSJ01     | DOL-GMSJ-0-00 / GMSJ-0-01 |
+| NTSC-K (Korea)        | GMSE01     | DOL-GMSE-0-30             |
 
 ::: tip Tip für NTSC-J-Spieler
 JP 1.0 und JP 1.1 verwenden beide dieselbe ID (GMSJ01). Um festzustellen, welche Version du hast, überprüfe die Rückseite deiner Disc. Darauf steht "DOL-GMSJ-0-00" für Version 1.0 und "DOL-GMSJ-0-01" für Version 1.1.

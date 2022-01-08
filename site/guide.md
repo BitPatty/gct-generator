@@ -24,12 +24,12 @@ Using Nintendont is the recommended way to use practice codes. You can download 
 
 First you need to know which version of the game you're using. The following table displays the supported versions as well as the respective game code:
 
-| Version                | Game Code |
-| ---------------------- | --------- |
-| PAL (Europe)           | GMSP01    |
-| NTSC-U (North America) | GMSE01    |
-| NTSC-J (Japanese)      | GMSJ01    |
-| NTSC-K (Korean)        | GMSE01    |
+| Version                | Game Code | Disc Code                 |
+| ---------------------- | --------- | ------------------------- |
+| PAL (Europe)           | GMSP01    | DOL-GMSP-0-00             |
+| NTSC-U (North America) | GMSE01    | DOL-GMSE-0-00             |
+| NTSC-J (Japan)         | GMSJ01    | DOL-GMSJ-0-00 / GMSJ-0-01 |
+| NTSC-K (Korea)         | GMSE01    | DOL-GMSE-0-30             |
 
 ::: tip Note for NTSC-J players
 JP 1.0 and JP 1.1 both use the same ID (GMSJ01). To identify which version you have check the back of your disc. It will read "DOL-GMSJ-0-00" for 1.0 and "DOL-GMSJ-0-01" for 1.1.
