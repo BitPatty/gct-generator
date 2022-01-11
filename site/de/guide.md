@@ -16,7 +16,7 @@ Zu Beginn musst du Homebrew auf deiner Wii installieren. Stelle sicher, dass dei
 
 ### Installation der Applikationen
 
-Nintendont ist das empfohlene Tool zur Nutzung der Practice Codes. Du kannst die aktuellste Version über [diesen Link](https://share.zint.ch/nintendont/latest/Nintendont.zip) herunterladen. Entpacke das Archiv und platziere den Nintendont Ordner mit all seinen Inhalten in den 'apps' Ordner auf deiner SD-Karte. Falls es noch keinen 'apps' Ordner gibt, erstelle diesen erst.
+Nintendont ist das empfohlene Tool zur Nutzung der Practice Codes. Du kannst die aktuellste Version über [diesen Link](https://zint.ch/NintendontPackager/latest/Nintendont.zip) herunterladen. Entpacke das Archiv und platziere den Nintendont Ordner mit all seinen Inhalten in den 'apps' Ordner auf deiner SD-Karte. Falls es noch keinen 'apps' Ordner gibt, erstelle diesen erst.
 
 ## Installation der Cheat-Datei
 

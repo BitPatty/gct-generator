@@ -16,7 +16,7 @@ Pour commencer, vous devez installer la chaîne Homebrew sur votre Wii. Vérifie
 
 ### Installer les applications nécessaires
 
-Nintendont est l'application recommandée pour utiliser les codes d'entraînement. Vous pouvez télécharger la version la plus récente en [cliquant sur ce lien](https://share.zint.ch/nintendont/latest/Nintendont.zip). Extrayez l'archive et placez le dossier `nintendont` avec tout son contenu dans le dossier `apps` de votre carte SD. S'il n'y a pas de dossier `apps`, créez-en un à la racine de votre carte SD.
+Nintendont est l'application recommandée pour utiliser les codes d'entraînement. Vous pouvez télécharger la version la plus récente en [cliquant sur ce lien](https://zint.ch/NintendontPackager/latest/Nintendont.zip). Extrayez l'archive et placez le dossier `nintendont` avec tout son contenu dans le dossier `apps` de votre carte SD. S'il n'y a pas de dossier `apps`, créez-en un à la racine de votre carte SD.
 
 ## Installer le fichier de codes
 

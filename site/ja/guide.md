@@ -20,7 +20,7 @@ sidebar: auto
 
 ### 必要なソフトのインストール
 
-練習用コードを使うために、Nintendontの使用を推奨しています。 [Nintendontの最新バージョン(ビルド)はこちら](https://share.zint.ch/nintendont/latest/Nintendont.zip)。ファイルを解凍し、Nintendontフォルダ（中身も全て）をSDカードの"apps"フォルダへ入れてください。"apps"フォルダが無い場合は、SDカードの最上位層に作成してください。
+練習用コードを使うために、Nintendontの使用を推奨しています。 [Nintendontの最新バージョン(ビルド)はこちら](https://zint.ch/NintendontPackager/latest/Nintendont.zip)。ファイルを解凍し、Nintendontフォルダ（中身も全て）をSDカードの"apps"フォルダへ入れてください。"apps"フォルダが無い場合は、SDカードの最上位層に作成してください。
 
 ## チートファイルのインストール
 

@@ -16,7 +16,7 @@ First of all you're gonna have to install Homebrew on your Wii. Make sure your S
 
 ### Install the necessary applications
 
-Using Nintendont is the recommended way to use practice codes. You can download the latest build by [clicking this link](https://share.zint.ch/nintendont/latest/Nintendont.zip). Unpack the archive and place the Nintendont folder with all of its contents in the "apps" folder of your SD card. If there is no "apps" folder create one in the root of your SD card.
+Using Nintendont is the recommended way to use practice codes. You can download the latest build by [clicking this link](https://zint.ch/NintendontPackager/latest/Nintendont.zip). Unpack the archive and place the Nintendont folder with all of its contents in the "apps" folder of your SD card. If there is no "apps" folder create one in the root of your SD card.
 
 ## Installing the cheat file
 
