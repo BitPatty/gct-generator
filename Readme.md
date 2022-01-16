@@ -57,7 +57,8 @@ Some codes store some states in the games memory starting from address 0x817F000
 1. Create a new file `<lang>.json` in `site/.vuepress/i18n`, where `<lang>` is the language code you want to add. Copy the contents of `en-US.json` into your file and translate each entry in the JSON file.
 2. Create a new folder with your language code in `site` (such as `site/de` for German). Create a new markdown file for each existing page (`guide.md`, `index.md`, `ios58.md`, ...) and translate its contents from the English version.
 3. Create a new entry in `site/.vuepress/i18n/locales.json` with the site metadata and navigation items for your language.
-4. Open `Codes.xml` and add a translation for each code (`<title>` and `<description>`).
+4. Add your locale to the `translations` in `site/.vuepress/i18n/localeHelper.js`.
+5. Open `Codes.xml` and add a translation for each code (`<title>` and `<description>`).
 
 ### Updating Guides
 
@@ -67,18 +68,46 @@ Note that in the code reference files everything following the `<!-- injectionpo
 
 ### Site Development
 
-If you intend to change site code you need [NodeJS](https://nodejs.org/en/) version 14.X LTS installed on your local.
+You can either use dev containers or your own setup to develop new features.
+
+#### Using Dev-Containers
+
+If you have access to codespaces simply open the repository in codespaces. Else you can set it up locally as follows:
+
+1. Install [Docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/install/).
+2. Open the project in VSCode
+3. Click the `Reopen in Container` button or run the command with the same name.
+
+#### Using your own environment
+
+Due to formatting rules you should use VSCode for development with the following features/extensions:
+
+- NodeJS 16.x (LTS)
+- npm 8.x
+- `octref.vetur`
+- `esbenp.prettier-vscode`
+
+#### Development commands
 
 ```sh
 # Install dependencies
 npm i
 
+# Inject codes from the Codes.xml file
+npm run codes:inject
+
 # Run project in watch mode
 # This will serve the page in development mode on http://localhost:8080
 npm run dev
 
-# Build project
+# Remove injected codes
+npm run codes:clean
+
+# Build project for production
 npm run build
+
+# Serve the production build
+npm run serve
 ```
 
 The XML codes will be written automatically to the json file and code reference during the following actions:
@@ -99,4 +128,3 @@ The project root provides a [docker-compose](https://docs.docker.com/compose/) f
 # Press CTRL+C to stop the container
 docker-compose up --build
 ```
-

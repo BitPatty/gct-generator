@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "npm run codes:inject && npm run translations:compare && vuepress dev site",
     "build": "node ./scripts/inject_codes.js && npm run translations:compare && vuepress build site",
-    "format": "prettier --write ./site/**/*{.md,.js,.json,.vue}",
+    "format": "prettier --write ./site/**/*{.md,.js,.json}",
     "translations:compare": "node ./scripts/compare_translations.js",
     "codes:inject": "node ./scripts/inject_codes.js && npm run format",
     "codes:clean": "node ./scripts/clean_codes.js && npm run format",
@@ -32,7 +32,5 @@
   "dependencies": {
     "vuedraggable": "^2.24.3"
   },
-  "pre-commit": [
-    "precommit"
-  ]
+  "pre-commit": ["precommit"]
 }
