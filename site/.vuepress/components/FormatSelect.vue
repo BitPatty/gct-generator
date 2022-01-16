@@ -3,10 +3,6 @@
 </template>
 
 <script>
-// Components
-import SelectComponent from './SelectComponent';
-
-// Data
 import downloadFormats from '../data/downloadFormats.json';
 
 export default {

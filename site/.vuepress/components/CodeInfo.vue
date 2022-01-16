@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import locales from '../i18n/locales.json';
 import { translate, translateCode } from '../i18n/localeHelper';
 
 export default {

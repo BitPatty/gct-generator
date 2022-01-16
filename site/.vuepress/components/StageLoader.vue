@@ -83,11 +83,6 @@
 </template>
 
 <script>
-// Components
-import SelectComponent from './SelectComponent';
-import ButtonComponent from './ButtonComponent';
-import GroupSelectComponent from './GroupSelectComponent';
-
 // Data
 import stageLoaderLevels from '../data/stageLoaderLevels.json';
 import stageLoaderPresets from '../data/stageLoaderPresets.json';

@@ -2,7 +2,6 @@
   "name": "GCT Generator",
   "build": {
     "dockerfile": "Dockerfile",
-    "args": { "VARIANT": "14" }
   },
   "settings": {
     "terminal.integrated.defaultProfile.linux": "bash"
@@ -12,8 +11,9 @@
     "esbenp.prettier-vscode",
     "ms-vsliveshare.vsliveshare",
     "wayou.vscode-todo-highlight",
+    "octref.vetur"
   ],
   "forwardPorts": [8080, 3000],
-  "postCreateCommand": "npm install",
+  "postCreateCommand": "bash -i .devcontainer/post-create.sh",
   "remoteUser": "node"
 }

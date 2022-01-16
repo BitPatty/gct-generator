@@ -15,6 +15,9 @@
     "editor.suggest.insertMode": "replace",
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[vue-html]": {
+    "editor.defaultFormatter": "octref.vetur"
+  },
   "breadcrumbs.symbolSortOrder": "type",
   "editor.codeLens": true,
   "editor.detectIndentation": true,
@@ -43,7 +46,6 @@
     "**/node_modules": true,
     "**/tmp": true
   },
-  "telemetry.enableCrashReporter": false,
   "todohighlight.keywords": [
     "@TODO"
   ],
@@ -52,7 +54,6 @@
   "typescript.referencesCodeLens.showOnAllFunctions": true,
   "typescript.reportStyleChecksAsWarnings": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "window.zoomLevel": 0,
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false
 }

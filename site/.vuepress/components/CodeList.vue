@@ -34,8 +34,6 @@
 </template>
 
 <script>
-import SelectComponent from './SelectComponent';
-
 import { translateCode, translate } from '../i18n/localeHelper';
 import codeCategories from '../data/codeCategories.json';
 import presetCategories from '../data/presetCategories.json';

@@ -4,15 +4,11 @@
       label="Download"
       :onClick="onClick"
       :disabled="(!codes || codes.length === 0) && !stageLoaderCode"
-    ></ButtonComponent>
-    <FeedbackModal v-if="showFeedbackModal" />
+    />
   </div>
 </template>
 
 <script>
-// Components
-import FeedbackModal from './FeedbackModal';
-
 // Data
 import gameVersions from '../data/gameVersions.json';
 
@@ -27,9 +23,7 @@ export default {
     versionIdentifier: { type: String },
   },
   data() {
-    return {
-      showFeedbackModal: false,
-    };
+    return {};
   },
   methods: {
     onClick() {
@@ -75,10 +69,6 @@ export default {
         case 'gcm':
           this.generateCheatManagerTXT(c, fileName);
           break;
-      }
-
-      if (!this.showFeedbackModal && this.$lang === 'en-US') {
-        this.showFeedbackModal = true;
       }
     },
     generateGCT(codes, version) {

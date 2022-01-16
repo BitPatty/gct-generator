@@ -8,9 +8,6 @@
 </template>
 
 <script>
-// Components
-import SelectComponent from './SelectComponent';
-
 // Data
 import gameVersions from '../data/gameVersions.json';
 
