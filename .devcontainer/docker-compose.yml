@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  application:
+    container_name: gct-generator
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VARIANT: 16
+        USER_UID: 1000
+        USER_GID: 1000
+    volumes:
+      - ..:/workspace:cached
+      - ~/.ssh:/home/node/.ssh:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: sleep infinity
+    user: node
+    env_file:
+      - ./workspace.env
+    ports:
+      - 8080:8080
+      - 3000:3000

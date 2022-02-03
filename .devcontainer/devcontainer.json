@@ -1,8 +1,8 @@
 {
   "name": "GCT Generator",
-  "build": {
-    "dockerfile": "Dockerfile",
-  },
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "application",
+  "workspaceFolder": "/workspace",
   "settings": {
     "terminal.integrated.defaultProfile.linux": "bash"
   },
