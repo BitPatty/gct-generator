@@ -5,7 +5,7 @@ const vuepressContainerPlugin = require('vuepress-plugin-container');
 
 // These plugins have to match the ones used as extensions in .vuepress/config.js
 const md = require('@vuepress/markdown')({
-  plugins: ['attrs'],
+  plugins: ['@sup39/markdown-it-attr', '@sup39/markdown-it-inline-tag'],
 });
 
 const themePlugins = require(path.join(__dirname, '../site/.vuepress/data/themePlugins.json'));

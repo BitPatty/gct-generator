@@ -37,7 +37,7 @@ Some codes store some states in the games memory starting from address 0x817F000
 | ![](./docs/unallocated.svg) | `0x24`  | `0x93`  | Not Allocated                                                             |
 | ![](./docs/reserved.svg)    | `0x94`  | `0xA3`  | QF Timer: Coordinates of the Text box (LTRB)                              |
 | ![](./docs/reserved.svg)    | `0xA4`  | `0xB0`  | QF Timer: Timer Format String                                             |
-| ![](./docs/reserved.svg)    | `0xB0`  | `0xB0`  | QF Timer: (Unused)                                                        |
+| ![](./docs/reserved.svg)    | `0xB1`  | `0xB1`  | QF Timer: (Unused)                                                        |
 | ![](./docs/reserved.svg)    | `0xB2`  | `0xB2`  | QF Timer: Stop at QFT Offset                                              |
 | ![](./docs/reserved.svg)    | `0xB3`  | `0xB3`  | QF Timer: Restart Flag                                                    |
 | ![](./docs/reserved.svg)    | `0xB4`  | `0xB7`  | QF Timer: Cumulative time of previous areas since last reset (QFT Offset) |
@@ -49,8 +49,9 @@ Some codes store some states in the games memory starting from address 0x817F000
 | ![](./docs/reserved.svg)    | `0x102` | `0x10B` | Ingame Timer: Stopwatch Backup                                            |
 | ![](./docs/reserved.svg)    | `0x10C` | `0x10C` | Ingame Timer: Stop Stopwatch Flag                                         |
 | ![](./docs/buffer.svg)      | `0x10D` | `0x10F` | Buffer (Ingame Timer)                                                     |
-| ![](./docs/reserved.svg)    | `0x110` | `0xA4F` | QF Timer: Timer Textbox                                                   |
-| ![](./docs/unallocated.svg) | `0xA50` | `0xFFF` | Not Allocated                                                             |
+| ![](./docs/reserved.svg)    | `0x110` | `0x237` | QF Timer: Timer Textbox                                                   |
+| ![](./docs/reserved.svg)    | `0x238` | `0x34B` | General Function (`drawText`)                                             |
+| ![](./docs/unallocated.svg) | `0x34C` | `0xFFF` | Not Allocated                                                             |
 
 ### Adding translations
 

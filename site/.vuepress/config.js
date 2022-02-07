@@ -18,7 +18,8 @@ module.exports = {
    */
   markdown: {
     extendMarkdown: (md) => {
-      md.use(require('markdown-it-attrs'));
+      md.use(require('@sup39/markdown-it-inline-tag'));
+      md.use(require('@sup39/markdown-it-attr'));
     },
   },
 
