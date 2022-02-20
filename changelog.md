@@ -1,5 +1,11 @@
 # Changelog
 
+## Feb 20, 2022
+
+### Added 'Shadow Mario HP Meter'
+
+Displays a health bar above Shadow Mario.
+
 ## Nov 28, 2021
 
 ### Updated 'Speed display'

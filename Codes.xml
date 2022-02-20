@@ -3815,4 +3815,26 @@
             041B4CF4 4800004C
         </source>
     </code>
+    <code>
+        <category>misc</category>
+        <title lang="en-US">Shadow Mario HP Meter</title>
+        <title lang="fr-FR">Barre de vie d'Antimario</title>
+        <author>MasterF0x</author>
+        <version>1.0</version>
+        <date>Feb 20, 2022</date>
+        <description lang="en-US">Shows a health bar above Shadow Mario whenever he gets hit with water.</description>
+        <description lang="fr-FR">Affiche une barre de vie au-dessus d'Antimario quand il est touché par de l'eau.</description>
+        <source version="GMSJ01">
+            04253748 60000000
+        </source>
+        <source version="GMSE01">
+            0403FD94 60000000
+        </source>
+        <source version="GMSP01">
+            0403FBE4 60000000
+        </source>
+        <source version="GMSJ0A">
+            0402BF98 60000000
+        </source>
+    </code>
 </codes>
