@@ -71,6 +71,10 @@ export default {
         value: c.identifier,
       }));
     },
+    emitChangeEvent() {
+      const selectedCodes = this.availableCodes.filter((c) => c.selected);
+      this.onSelectionChanged(selectedCodes);
+    },
     loadPreset(identifier) {
       if (
         (this.stageLoaderSelected || this.availableCodes.find((c) => c.selected)) &&
@@ -86,7 +90,7 @@ export default {
 
       this.unselectStageLoader();
       this.refreshDisabledCodes();
-      this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
+      this.emitChangeEvent();
       this.generation++;
     },
     getPresetPlaceholder() {
@@ -116,7 +120,7 @@ export default {
       this.stageLoaderSelected = newState;
       this.onStageLoaderToggle(newState);
       this.refreshDisabledCodes();
-      this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
+      this.emitChangeEvent();
     },
     refreshDisabledCodes() {
       for (const code of this.availableCodes) {
@@ -150,7 +154,7 @@ export default {
 
       code.selected = code.disabled ? false : !code.selected;
       this.refreshDisabledCodes();
-      this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
+      this.emitChangeEvent();
     },
     populate() {
       this.availableCodes = this.codes.map((c) => ({ ...c, selected: false }));

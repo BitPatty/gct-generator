@@ -225,7 +225,6 @@ export default {
         return;
       }
 
-      console.log('Generating new Stageloader-Code');
       this.onChange(
         generateStageLoaderCode(
           this.fastCodes,

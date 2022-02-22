@@ -23,8 +23,6 @@
         />
       </div>
     </section>
-    <br />
-    <hr />
     <section>
       <div v-if="codes && codes.length > 0">
         <h3>{{ getLabel('headers.codelist') }}</h3>
@@ -216,7 +214,12 @@ section > div:not(:first-child) {
 }
 
 .config {
-  position: relative;
+  position: sticky;
+  top: 58px;
+  z-index: 999;
+  padding: 16px 0px;
+  background: white;
+  border-bottom: 1px solid #dfdfdf;
 }
 
 .config span {
@@ -227,7 +230,7 @@ section > div:not(:first-child) {
 
 .help {
   position: sticky;
-  top: 80px;
+  top: 90px;
   text-align: left;
   align-self: flex-start;
   width: 100%;
