@@ -28,5 +28,10 @@
     "identifier": "cosmetic",
     "i18nKey": "generatorconfig.categories.cosmetic",
     "exclusive": false
+  },
+  {
+    "identifier": "custom",
+    "i18nKey": "generatorconfig.categories.custom",
+    "exclusive": false
   }
 ]

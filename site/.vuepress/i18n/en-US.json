@@ -8,7 +8,21 @@
     "GMSJ0A": "GMSJ01 (NTSC-J 1.1)",
     "GMSP01": "GMSP01 (PAL)",
     "loadpresetplaceholder": "Load a preset..",
-    "selectionreset": "This will reset your selection, continue?"
+    "selectionreset": "This will reset your selection, continue?",
+    "discard": "This will discard all your changes, continue?"
+  },
+  "codeeditor": {
+    "fields": {
+      "title": {
+        "label": "Title",
+        "placeholder": "N/A"
+      },
+      "value": {
+        "label": "Gecko Code",
+        "placeholder": "Your Gecko Code.."
+      }
+    },
+    "save": "Save"
   },
   "headers": {
     "codelist": "Available Codes",
@@ -39,7 +53,8 @@
       "timer": "Timers",
       "misc": "Misc",
       "memcardpatch": "Memory Card Patches",
-      "cosmetic": "Cosmetic"
+      "cosmetic": "Cosmetic",
+      "custom": "Custom"
     },
     "presets": {
       "standard": "Standard",

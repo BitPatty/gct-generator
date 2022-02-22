@@ -27,6 +27,7 @@
       <div v-if="codes && codes.length > 0">
         <h3>{{ getLabel('headers.codelist') }}</h3>
         <CodeList
+          :version="selectedVersion"
           :onStageLoaderToggle="onStageLoaderToggle"
           :codes="codes"
           :onSelectionChanged="onCheatSelectionChanged"
