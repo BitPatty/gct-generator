@@ -76,7 +76,7 @@ export default {
       this.onSave(
         this.identifier,
         this.title ? this.title : 'N/A',
-        this.customCode.replace(/[^a-zA-Z0-9]/g, ''),
+        this.customCode.replace(/[^a-zA-Z0-9]/g, '').toUpperCase(),
       );
     },
     onPaste(e) {
