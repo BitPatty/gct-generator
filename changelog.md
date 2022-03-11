@@ -4,8 +4,6 @@
 
 ### Added Option to define custom Gecko codes
 
--
-
 ## Feb 20, 2022
 
 ### Added 'Shadow Mario HP Meter'
