@@ -2868,8 +2868,20 @@
         <author>Noki Doki</author>
         <version>1.3</version>
         <date>Oct 28, 2019</date>
-        <description lang="en-US">Shows Mario's position, angle and speed at any given time.</description>
-        <description lang="de-CH">Zeigt Mario's Position, Winkel und Geschwindigkeit jederzeit auf dem Bildschirm an.</description>
+        <description lang="en-US">
+        Shows Mario's position, angle and speed at any given time.
+        
+        ::: warning
+        This code is not compatible with the Speed Display code. 
+        :::
+        </description>
+        <description lang="de-CH">
+        Zeigt Mario's Position, Winkel und Geschwindigkeit jederzeit auf dem Bildschirm an.
+
+        ::: warning
+        Dieser Code ist nicht kompatibel mit dem Geschwindigkeits-Display Code
+        :::
+        </description>
         <description lang="fr-FR">Affiche la position, l'angle et la vitesse de Mario à tout moment.</description>
         <description lang="ja-JP">常に「マリオの位置」「マリオの角度」「マリオの速度」を表示します。</description>
         <source version="GMSE01">
@@ -3174,8 +3186,20 @@
         <author>Noki Doki</author>
         <version>1.4</version>
         <date>Nov 28, 2021</date>
-        <description lang="en-US">Shows Mario's speed at any given time.</description>
-        <description lang="de-CH">Zeigt Mario's Geschwindigkeit jederzeit auf dem Bildschirm an.</description>
+        <description lang="en-US">
+        Shows Mario's speed at any given time.
+        
+        ::: warning
+        This code is not compatible with the Position/Angle/Speed Display code. 
+        :::
+        </description>
+        <description lang="de-CH">
+        Zeigt Mario's Geschwindigkeit jederzeit auf dem Bildschirm an.
+
+        ::: warning
+        Dieser Code ist nicht kompatibel mit dem Position/Winkel/Gewschw. Display Code
+        :::
+        </description>
         <description lang="fr-FR">Affiche la vitesse de Mario à tout moment.</description>
         <description lang="ja-JP">常に「マリオの速度」を表示します。</description>
         <source version="GMSE01">
