@@ -1,5 +1,12 @@
 # Changelog
 
+## Mar 13, 2022
+
+### Added 'Metadata Display' category
+
+- Moved speed display codes from misc to metadata display
+- Made codes in the category exclusive
+
 ## Feb 22, 2022
 
 ### Added Option to define custom Gecko codes
