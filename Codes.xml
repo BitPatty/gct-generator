@@ -2860,7 +2860,7 @@
         </source>
     </code>
     <code>
-        <category>misc</category>
+        <category>metadata</category>
         <title lang="en-US">Position/angle/speed display</title>
         <title lang="de-CH">Position/Winkel/Geschw. Display</title>
         <title lang="fr-FR">Affichage de position/angle/vitesse</title>
@@ -3166,7 +3166,7 @@
         </source>
     </code>
     <code>
-        <category>misc</category>
+        <category>metadata</category>
         <title lang="en-US">Speed display</title>
         <title lang="de-CH">Geschwindigkeits-Display</title>
         <title lang="fr-FR">Affichage de vitesse</title>

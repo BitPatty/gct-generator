@@ -54,7 +54,8 @@
       "misc": "Misc",
       "memcardpatch": "Memory Card Patches",
       "cosmetic": "Kosmetisch",
-      "custom": "Benutzerdefiniert"
+      "custom": "Benutzerdefiniert",
+      "metadata": "Metadaten Anzeige"
     },
     "presets": {
       "standard": "Standard",

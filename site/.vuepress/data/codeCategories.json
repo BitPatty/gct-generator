@@ -15,6 +15,11 @@
     "exclusive": false
   },
   {
+    "identifier": "metadata",
+    "i18nKey": "generatorconfig.categories.metadata",
+    "exclusive": true
+  },
+  {
     "identifier": "misc",
     "i18nKey": "generatorconfig.categories.misc",
     "exclusive": false
