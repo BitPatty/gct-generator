@@ -47,7 +47,7 @@ const validateXML = (xmlString) => {
     if (!codeCategory || !codeCategory.textContent)
       throw new Error(`Missing code category in ${codeTitle.textContent}`);
 
-    if (!codeCategories.map((c) => c.identifier).includes(codeCategory.textContent))
+    if (!['lib', ...codeCategories.map((c) => c.identifier)].includes(codeCategory.textContent))
       throw new Error(`Invalid code category for ${codeTitle.textContent}`);
 
     const codePresets = codes[i].querySelector('presets');
@@ -279,6 +279,7 @@ const parseXml = (xmlString, gameVersion = null) => {
 
   return codes
     .map((code) => ({
+      id: code.querySelector('id')?.textContent ?? null,
       author: readTextNode(code, 'author'),
       title: localizeNode(code, 'title'),
       description: localizeMarkdown(code, 'description'),
@@ -288,6 +289,9 @@ const parseXml = (xmlString, gameVersion = null) => {
       presets: readPresetList(code, gameVersion),
       category: readTextNode(code, 'category'),
       dependsOn: code.querySelector('depends-on')?.textContent ?? null,
+      dependencies:
+        code.querySelector('dependencies:not([version])')?.textContent.split(',') ??
+        code.querySelector(`dependencies[version=${gameVersion}]`)?.textContent.split(',') ?? [],
     }))
     .filter((code) => code.source != null);
 };
