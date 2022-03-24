@@ -1,5 +1,13 @@
 <template>
   <div>
+    <CustomCodeModal
+      v-if="customCodeInEditMode"
+      :onCancel="closeCustomClodeModal"
+      :onSave="saveCustomCode"
+      :identifier="customCodeInEditMode.identifier"
+      :initialValue="customCodeInEditMode.value"
+      :initialTitle="customCodeInEditMode.title"
+    />
     <div class="preset-select">
       <SelectComponent
         :options="getPresetOptions()"
@@ -9,16 +17,37 @@
       />
     </div>
     <div v-for="category in codeCategories" v-bind:key="category.identifier" class="code-group">
-      <div class="category-title">{{ getCategoryTitle(category) }}</div>
+      <div class="category-title">
+        <span>{{ getCategoryTitle(category) }}</span>
+        <ButtonComponent
+          :small="true"
+          v-if="category.identifier === 'custom'"
+          className="btn-add-custom-code"
+          label="+"
+          :onClick="initCustomCodeModal"
+        />
+      </div>
       <ul>
         <li
           v-for="(code, idx) in availableCodes.filter((c) => c.category === category.identifier)"
-          v-bind:key="idx"
+          v-bind:key="code.identifier ? code.identifier : idx"
           :class="code.selected ? 'checked' : code.disabled ? 'disabled' : ''"
           @click="toggle(code)"
           @mouseover="inspect(code)"
         >
-          {{ getCodeTitle(code) }}
+          <span>
+            {{ getCodeTitle(code) }}
+          </span>
+          <div class="code-menu">
+            <button
+              v-if="code.identifier != null && code.category === 'custom'"
+              type="button"
+              class="btn-edit-custom-code"
+              @click="(e) => deleteCustomCode(e, code.identifier)"
+            >
+              &#215;
+            </button>
+          </div>
         </li>
         <li
           v-if="category.identifier === 'loader'"
@@ -40,6 +69,7 @@ import presetCategories from '../data/presetCategories.json';
 
 export default {
   props: {
+    version: { type: String },
     codes: { type: Array },
     onSelectionChanged: { type: Function },
     onInspect: { type: Function },
@@ -57,6 +87,8 @@ export default {
   },
   data() {
     return {
+      customCodes: [],
+      customCodeInEditMode: null,
       availableCodes: [],
       codeCategories,
       presetCategories,
@@ -70,6 +102,10 @@ export default {
         label: c.i18nKey,
         value: c.identifier,
       }));
+    },
+    emitChangeEvent() {
+      const selectedCodes = this.availableCodes.filter((c) => c.selected);
+      this.onSelectionChanged(selectedCodes);
     },
     loadPreset(identifier) {
       if (
@@ -86,7 +122,7 @@ export default {
 
       this.unselectStageLoader();
       this.refreshDisabledCodes();
-      this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
+      this.emitChangeEvent();
       this.generation++;
     },
     getPresetPlaceholder() {
@@ -116,7 +152,7 @@ export default {
       this.stageLoaderSelected = newState;
       this.onStageLoaderToggle(newState);
       this.refreshDisabledCodes();
-      this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
+      this.emitChangeEvent();
     },
     refreshDisabledCodes() {
       for (const code of this.availableCodes) {
@@ -134,6 +170,64 @@ export default {
         }
       }
     },
+    initCustomCodeModal() {
+      this.customCodeInEditMode = {
+        identifier: btoa(new Date().toISOString()),
+        title: undefined,
+        value: undefined,
+      };
+    },
+    closeCustomClodeModal() {
+      this.customCodeInEditMode = null;
+    },
+    deleteCustomCode(e, identifier) {
+      e.stopPropagation();
+      this.customCodes = this.customCodes.filter((c) => c.identifier !== identifier);
+      localStorage.setItem('custom-codes', JSON.stringify(this.customCodes));
+      this.availableCodes = this.availableCodes.filter((c) => c.identifier !== identifier);
+      this.emitChangeEvent();
+    },
+    saveCustomCode(identifier, title, value) {
+      const updatedCode = {
+        identifier,
+        author: '-',
+        title: [
+          {
+            lang: 'en-US',
+            content: title,
+          },
+        ],
+        description: [
+          {
+            lang: 'en-US',
+            content: '-',
+            html: '<p>-</p>',
+          },
+        ],
+        version: '-',
+        date: new Date().toLocaleDateString('en-US', {
+          month: 'short',
+          day: '2-digit',
+          year: 'numeric',
+        }),
+        source: value,
+        presets: [],
+        category: 'custom',
+        dependsOn: null,
+        createdOnVersion: this.version,
+      };
+      this.customCodes = [
+        ...this.customCodes.filter((c) => c.identifier !== identifier),
+        updatedCode,
+      ];
+
+      localStorage.setItem('custom-codes', JSON.stringify(this.customCodes));
+      this.availableCodes = [
+        ...this.availableCodes.filter((c) => c.identifier !== identifier),
+        { ...updatedCode, selected: false },
+      ];
+      this.closeCustomClodeModal();
+    },
     toggle(code) {
       if (!code.selected && codeCategories.find((c) => c.identifier === code.category).exclusive) {
         for (const availableCode of this.availableCodes.filter(
@@ -150,10 +244,27 @@ export default {
 
       code.selected = code.disabled ? false : !code.selected;
       this.refreshDisabledCodes();
-      this.onSelectionChanged(this.availableCodes.filter((c) => c.selected));
+      this.emitChangeEvent();
     },
     populate() {
-      this.availableCodes = this.codes.map((c) => ({ ...c, selected: false }));
+      const storedCustomCodes = localStorage.getItem('custom-codes');
+
+      if (storedCustomCodes) {
+        try {
+          const parsedCodes = JSON.parse(storedCustomCodes);
+          this.customCodes = parsedCodes;
+        } catch (err) {
+          this.customCodes = [];
+        }
+      } else {
+        this.customCodes = [];
+      }
+
+      this.availableCodes = [
+        ...this.codes.map((c) => ({ ...c, selected: false })),
+        ...this.customCodes.map((c) => ({ ...c, selected: false })),
+      ];
+
       this.refreshDisabledCodes();
     },
     inspect(code) {
@@ -168,13 +279,29 @@ export default {
 
 <style scoped>
 .category-title {
+  position: relative;
   color: white;
   font-weight: 500;
   text-align: center;
   background: #383838b5;
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding: 2px;
   margin-bottom: 0;
+  display: grid;
+  grid-template-columns: auto min-content;
+}
+
+.btn-add-custom-code {
+  min-width: unset;
+  width: auto;
+}
+
+.btn-edit-custom-code {
+  background: transparent;
+  border: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: red;
+  cursor: pointer;
 }
 
 .category-title ~ ul {
@@ -209,10 +336,20 @@ ul li {
   user-select: none;
   outline: none;
   display: block;
-  min-width: 280px;
-  white-space: nowrap;
-  padding-right: 15px;
+  overflow: hidden;
+  padding-right: 5px;
+  min-width: 260px;
+  max-width: 260px;
   text-align: left;
+  position: relative;
+  display: grid;
+  grid-template-columns: auto min-content min-content;
+}
+
+ul li > span {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 ul li:nth-child(odd) {
@@ -271,9 +408,9 @@ li.checked::before {
   background-color: #d85e55;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 1100px) {
   ul li {
-    min-width: 180px;
+    max-width: 100%;
   }
 }
 </style>

@@ -37,7 +37,7 @@ Some codes store some states in the games memory starting from address 0x817F000
 | ![](./docs/unallocated.svg) | `0x24`  | `0x93`  | Not Allocated                                                             |
 | ![](./docs/reserved.svg)    | `0x94`  | `0xA3`  | QF Timer: Coordinates of the Text box (LTRB)                              |
 | ![](./docs/reserved.svg)    | `0xA4`  | `0xB0`  | QF Timer: Timer Format String                                             |
-| ![](./docs/reserved.svg)    | `0xB1`  | `0xB1`  | QF Timer: (Unused)                                                        |
+| ![](./docs/reserved.svg)    | `0xB0`  | `0xB1`  | QF Timer: (Unused)                                                        |
 | ![](./docs/reserved.svg)    | `0xB2`  | `0xB2`  | QF Timer: Stop at QFT Offset                                              |
 | ![](./docs/reserved.svg)    | `0xB3`  | `0xB3`  | QF Timer: Restart Flag                                                    |
 | ![](./docs/reserved.svg)    | `0xB4`  | `0xB7`  | QF Timer: Cumulative time of previous areas since last reset (QFT Offset) |

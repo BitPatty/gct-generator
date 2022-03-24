@@ -18,6 +18,7 @@
   "[vue-html]": {
     "editor.defaultFormatter": "octref.vetur"
   },
+  "files.autoSave": "off",
   "breadcrumbs.symbolSortOrder": "type",
   "editor.codeLens": true,
   "editor.detectIndentation": true,

@@ -15,6 +15,11 @@
     "exclusive": false
   },
   {
+    "identifier": "metadata",
+    "i18nKey": "generatorconfig.categories.metadata",
+    "exclusive": true
+  },
+  {
     "identifier": "misc",
     "i18nKey": "generatorconfig.categories.misc",
     "exclusive": false
@@ -27,6 +32,11 @@
   {
     "identifier": "cosmetic",
     "i18nKey": "generatorconfig.categories.cosmetic",
+    "exclusive": false
+  },
+  {
+    "identifier": "custom",
+    "i18nKey": "generatorconfig.categories.custom",
     "exclusive": false
   }
 ]

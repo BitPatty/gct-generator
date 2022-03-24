@@ -428,26 +428,6 @@
             042906AC 60000000
         </source>
     </code>
-    <!-- <code>
-        <category>qol</category>
-        <title lang="en-US">Infinite Lives (Deprecated)</title>
-        <author>Psychonauter</author>
-        <version>1.0</version>
-        <date>Jan 20, 2017</date>
-        <description lang="en-US">Locks life count at 99.</description>
-        <source version="GMSE01">
-            04578A04 00000063
-        </source>
-        <source version="GMSJ01">
-            04575227 00000063
-        </source>
-        <source version="GMSJ0A">
-            04569724 00000063
-        </source>
-        <source version="GMSP01">
-            04570967 00000063
-        </source>
-    </code> -->
     <code>
         <category>qol</category>
         <presets>standard,recommended,il</presets>
@@ -556,36 +536,6 @@
             04016A90 FC210828
         </source>
     </code>
-    <!--<code>
-        <category>misc</category>
-        <title lang="en-US">Remove Save Boxes</title>
-        <title lang="de-CH">Speicher-Schaltfläche entfernen</title>
-        <title lang="fr-FR">Supprimer les boîtes de sauvegarde</title>
-        <title lang="ja-JP">セーブ画面の削除</title>
-        <author>Psychonauter, Noki Doki</author>
-        <version>2.2</version>
-        <date>Feb 17, 2021</date>
-        <description lang="en-US">Removes all saveboxes.</description>
-        <description lang="de-CH">Entfernt alle Speicherschaltflächen.</description>
-        <description lang="fr-FR">Supprime toutes les boîtes de sauvegarde.</description>
-        <description lang="ja-JP">全てのセーブ画面を削除します。</description>
-        <source version="GMSE01">
-            04297CAC 60000000
-            04297CB8 60000000
-        </source>
-        <source version="GMSJ01">
-            040EB268 60000000
-            040EB274 60000000
-        </source>
-        <source version="GMSJ0A">
-            04277954 60000000
-            04277960 60000000
-        </source>
-        <source version="GMSP01">
-            0428FB44 60000000
-            0428FB50 60000000
-        </source>
-    </code>-->
     <code>
         <category>qol</category>
         <presets>recommended,il</presets>
@@ -1285,413 +1235,6 @@
             042AF040 49541081
         </source>
     </code>
-    <!-- <code>
-        <category>timer</category>
-        <title lang="en-US">Shine Touch Timer</title>
-        <author>Psychonauter</author>
-        <version>1.6</version>
-        <description lang="en-US">
-        Adds the ingame timer to every level, starting on the last black frame after the loading screen and ending when you touch a Shine.
-        </description>
-        <date>Nov 29, 2017</date>
-        <source version="GMSE01">
-            C2031F68 0000000F
-            3CC0817F 60C60100
-            88860000 2C040001
-            4182002C 88860001
-            2C040001 40A20050
-            3CA0803E 60A59710
-            88850002 2C040007
-            4182003C 2C040009
-            41810034 3C608034
-            606394D8 7C6803A6
-            4E800021 3CA08090
-            60A52B28 90650028
-            90660004 9085002C
-            90860008 38600000
-            98660000 80010024
-            60000000 00000000
-            C21BD3D8 00000007
-            7DE802A6 3C608056
-            6063DD00 7FB0EB78
-            3FA08028 63BDE604
-            7FA803A6 4E800021
-            7DE803A6 7E1D8378
-            39E00000 3A000000
-            4E800020 00000000
-            C234802C 00000007
-            3DE0817F 61EF0100
-            8A0F0000 2C100001
-            4182000C 806F0004
-            808F0008 3A000000
-            9A0F0000 906F0004
-            908F0008 909F002C
-            39E00000 00000000
-            C2149148 00000012
-            7C6F1B78 7FB0EB78
-            3C60817F 60630100
-            88830001 2C040001
-            40A20060 38800000
-            98830001 3C60803E
-            60639710 A0630002
-            2C030805 41820044
-            2C030605 4182003C
-            2C031E00 41820034
-            3C608056 6063DD00
-            3FA08028 63BDE998
-            7FA803A6 4E800021
-            3C608056 6063DD00
-            3FA08028 63BDE82C
-            7FA803A6 4E800021
-            7DE37B78 7E1D8378
-            39E00000 3A000000
-            800100CC 00000000
-            C228E90C 0000000A
-            3CA0803E 60A59710
-            A0A50002 2C051E00
-            41820034 2C050404
-            4182002C 2C050801
-            41820024 2C050904
-            4182001C 2C050605
-            41820014 2C050805
-            4182000C 38800000
-            38600000 909E00CC
-            60000000 00000000
-            C2171B6C 00000003
-            3C60817F 60630100
-            38800101 B0830000
-            807F025C 00000000
-            C2031F6C 0000000A
-            3C60803E 60639710
-            A083FFFE 2C043C00
-            40A20038 A0830002
-            2C040FFF 40A2002C
-            7C1E0378 7FE802A6
-            3C608056 6063DD00
-            3C808028 6084E604
-            7C8803A6 4E800021
-            7FE803A6 7FC0F378
-            83E1001C 00000000
-            04348048 4E800020
-            0414A99C 60000000
-            0414D2E8 60000000
-            0428E9C8 60000000
-            0428E854 60000000
-            0428E624 60000000
-            0456DD00 00000000
-            0456DD04 00000000
-            0456DD18 00000003
-            0456DD1C 00000002
-            0456DD20 8056DD24
-            0456DD24 00000000
-            0456DD28 00000001
-            0456DD2C 00000000
-            0456DD30 000000B4
-        </source>
-        <source version="GMSJ01">
-            C23617C4 0000000F
-            3CC0817F 60C60100
-            88860000 2C040001
-            4182002C 88860001
-            2C040001 40A20050
-            3CA0803E 60A56010
-            88850002 2C040007
-            4182003C 2C040009
-            41810034 3C608009
-            60633DF8 7C6803A6
-            4E800021 3CA08090
-            60A57B08 90650028
-            90660004 9085002C
-            90860008 38600000
-            98660000 80010024
-            60000000 00000000
-            C21953A8 00000007
-            7DE802A6 3C608074
-            60639F00 7FB0EB78
-            3FA0800E 63BD1B4C
-            7FA803A6 4E800021
-            7DE803A6 7E1D8378
-            39E00000 3A000000
-            4E800020 00000000
-            C209294C 00000007
-            3DE0817F 61EF0100
-            8A0F0000 2C100001
-            4182000C 806F0004
-            808F0008 3A000000
-            9A0F0000 906F0004
-            908F0008 909F002C
-            39E00000 00000000
-            C220A5A0 00000012
-            7C6F1B78 7FB0EB78
-            3C60817F 60630100
-            88830001 2C040001
-            40A20060 38800000
-            98830001 3C60803E
-            60636010 A0630002
-            2C030805 41820044
-            2C030605 4182003C
-            2C031E00 41820034
-            3C608074 60639F00
-            3FA0800E 63BD1EE0
-            7FA803A6 4E800021
-            3C608074 60639F00
-            3FA0800E 63BD1D74
-            7FA803A6 4E800021
-            7DE37B78 7E1D8378
-            39E00000 3A000000
-            800100CC 00000000
-            C20E1E54 0000000A
-            3CA0803E 60A56010
-            A0A50002 2C051E00
-            41820034 2C050404
-            4182002C 2C050801
-            41820024 2C050904
-            4182001C 2C050605
-            41820014 2C050805
-            4182000C 38800000
-            38600000 909E00CC
-            60000000 00000000
-            C2232024 00000003
-            3C60817F 60630100
-            38800101 B0830000
-            807F0268 00000000
-            C23617C8 0000000A
-            3C60803E 60636010
-            A083FFFE 2C043C00
-            40A20038 A0830002
-            2C040FFF 40A2002C
-            7C1E0378 7FE802A6
-            3C608056 60639F00
-            3C80800E 60841B4C
-            7C8803A6 4E800021
-            7FE803A6 7FC0F378
-            83E1001C 00000000
-            04092968 4E800020
-            0420BDF8 60000000
-            0420E8A4 60000000
-            040E1F10 60000000
-            040E1D9C 60000000
-            040E1B6C 60000000
-            04749F00 00000000
-            04749F04 00000000
-            04749F18 00000003
-            04749F1C 00000002
-            04749F20 80749F24
-            04749F24 00000000
-            04749F28 00000001
-            04749F2C 00000000
-            04749F30 000000B4
-            0420c074 4800006C
-        </source>
-        <source version="GMSP01">
-            C2032020 0000000F
-            3CC0817F 60C60100
-            88860000 2C040001
-            4182002C 88860001
-            2C040001 40A20050
-            3CA0803E 60A510D0
-            88850002 2C040007
-            4182003C 2C040009
-            41810034 3C608034
-            60631734 7C6803A6
-            4E800021 3CA0808F
-            60A5CCE8 90650028
-            90660004 9085002C
-            90860008 38600000
-            98660000 80010024
-            60000000 00000000
-            C21B5290 00000003
-            3C60817F 60630100
-            38800001 9083000C
-            4E800020 00000000
-            C228F870 0000000C
-            2C000003 40A20050
-            3C60817F 60630100
-            8083000C 2C040000
-            41A2003C 38800000
-            9083000C 7DE802A6
-            3C608056 6063DF00
-            7FB0EB78 3FA08028
-            63BD6390 7FA803A6
-            4E800021 7DE803A6
-            7E1D8378 39E00000
-            3A000000 3C60803A
-            60000000 00000000
-            C2340288 00000007
-            3DE0817F 61EF0100
-            8A0F0000 2C100001
-            4182000C 806F0004
-            808F0008 3A000000
-            9A0F0000 906F0004
-            908F0008 909F002C
-            39E00000 00000000
-            C213DDD8 00000012
-            7C6F1B78 7FB0EB78
-            3C60817F 60630100
-            88830001 2C040001
-            40A20060 38800000
-            98830001 3C60803E
-            606310D0 A0630002
-            2C030805 41820044
-            2C030605 4182003C
-            2C031E00 41820034
-            3C608056 6063DF00
-            3FA08028 63BD6724
-            7FA803A6 4E800021
-            3C608056 6063DF00
-            3FA08028 63BD65B8
-            7FA803A6 4E800021
-            7DE37B78 7E1D8378
-            39E00000 3A000000
-            800100CC 00000000
-            C2286698 0000000A
-            3CA0803E 60A510D0
-            A0A50002 2C051E00
-            41820034 2C050404
-            4182002C 2C050801
-            41820024 2C050904
-            4182001C 2C050605
-            41820014 2C050805
-            4182000C 38800000
-            38600000 909E00CC
-            60000000 00000000
-            C2167984 00000003
-            3C60817F 60630100
-            38800101 B0830000
-            807F084C 00000000
-            C2032024 0000000A
-            3C60803E 606310D0
-            A083FFFE 2C043C00
-            40A20038 A0830002
-            2C040FFF 40A2002C
-            7C1E0378 7FE802A6
-            3C608056 6063DF00
-            3C808028 60846390
-            7C8803A6 4E800021
-            7FE803A6 7FC0F378
-            83E1001C 00000000
-            043402A4 4E800020
-            0413F62C 60000000
-            04141F78 60000000
-            04286754 60000000
-            042865E0 60000000
-            042863B0 60000000
-            0456DF00 00000000
-            0456DF04 00000000
-            0456DF18 00000003
-            0456DF1C 00000002
-            0456DF20 8056DF24
-            0456DF24 00000000
-            0456DF28 00000001
-            0456DF2C 00000000
-            0456DF30 000000B4
-            0413f8a8 4800006C
-        </source>
-        <source version="GMSJ0A">
-            C2363E70 0000000F
-			3CC0817F 60C60100
-			88860000 2C040001
-			4182002C 88860001
-			2C040001 40A20050
-			3CA0803D 60A5A8F0
-			88850002 2C040007
-			4182003C 2C040009
-			41810034 3C608032
-			60638DD8 7C6803A6
-			4E800021 3CA0808F
-			60A5C788 90650028
-			90660004 9085002C
-			90860008 38600000
-			98660000 80010024
-			60000000 00000000
-			C219D160 00000003
-			3C60817F 60630100
-			38800001 9083000C
-			4E800020 00000000
-			C2277680 0000000C
-			2C000003 40A20050
-			3C60817F 60630100
-			8083000C 2C040000
-			41A2003C 38800000
-			9083000C 7DE802A6
-			3C608056 6063DD00
-			7FB0EB78 3FA08026
-			63BDE354 7FA803A6
-			4E800021 7DE803A6
-			7E1D8378 39E00000
-			3A000000 3C608039
-			60000000 00000000
-			C232792C 00000007
-			3DE0817F 61EF0100
-			8A0F0000 2C100001
-			4182000C 806F0004
-			808F0008 3A000000
-			9A0F0000 906F0004
-			908F0008 909F002C
-			39E00000 00000000
-			C212A528 00000012
-			7C6F1B78 7FB0EB78
-			3C60817F 60630100
-			88830001 2C040001
-			40A20060 38800000
-			98830001 3C60803D
-			6063A8F0 A0630002
-			2C030805 41820044
-			2C030605 4182003C
-			2C031E00 41820034
-			3C608056 6063DD00
-			3FA08026 63BDE6E8
-			7FA803A6 4E800021
-			3C608056 6063DD00
-			3FA08026 63BDE57C
-			7FA803A6 4E800021
-			7DE37B78 7E1D8378
-			39E00000 3A000000
-			800100CC 00000000
-			C226E65C 0000000A
-			3CA0803D 60A5A8F0
-			A0A50002 2C051E00
-			41820034 2C050404
-			4182002C 2C050801
-			41820024 2C050904
-			4182001C 2C050605
-			41820014 2C050805
-			4182000C 38800000
-			38600000 909E00CC
-			60000000 00000000
-			C21528FC 00000003
-			3C60817F 60630100
-			38800101 B0830000
-			807F0268 00000000
-			C2363E74 0000000A
-			3C60803D 6063A8F0
-			A083FFFE 2C043C00
-			40A20038 A0830002
-			2C040FFF 40A2002C
-			7C1E0378 7FE802A6
-			3C608056 6063DD00
-			3C808026 6084E354
-			7C8803A6 4E800021
-			7FE803A6 7FC0F378
-			83E1001C 00000000
-			04327948 4E800020
-			0412BD90 60000000
-			0412E6F8 60000000
-			0426E718 60000000
-			0426E5A4 60000000
-			0426E374 60000000
-			0456DD00 00000000
-			0456DD04 00000000
-			0456DD18 00000003
-			0456DD1C 00000002
-			0456DD20 8056DD24
-			0456DD24 00000000
-			0456DD28 00000001
-			0456DD2C 00000000
-			0456DD30 000000B4
-			0412C00C 4800006C
-        </source>
-    </code> -->
     <code>
         <category>timer</category>
         <title lang="en-US">Quarterframe Timer (Experimental)</title>
@@ -3262,82 +2805,6 @@
             0426659C 60000000
         </source>
     </code>
-    <!--<code>
-        <category>loader</category>
-        <title lang="en-US">Stage Randomizer (Experimental)</title>
-        <title lang="de-CH">Stage Randomizer (Experimentell)</title>
-        <title lang="fr-FR">Randomiseur de niveaux (expérimental)</title>
-        <title lang="ja-JP">ステージランダマイザー（実験段階）</title>
-        <author>Noki Doki</author>
-        <version>1.0</version>
-        <description lang="en-US">
-            Loads stages in randomized order.
-            
-            ::: warning
-            This code is not compatible with the Level Select or Fast Any% code.
-            :::
-        </description>
-        <description lang="de-CH">
-            Ladet die Level in einer zufälligen Reihenfolge.
-            
-            ::: warning WARNUNG
-            Dieser Code ist nicht kompatibel mit dem Level Select, Stage Loader oder Fast Any% code.
-            :::
-        </description>
-        <description lang="fr-FR">
-            Charge des niveaux dans un ordre aléatoire.
-
-            ::: warning Attention
-            Ce code n'est pas compatible avec le Sélecteur de niveaux, le Chargeur de liste ou Fast Any%.
-            :::
-        </description>
-        <description lang="ja-JP">
-            ランダムな順番でステージをロードします。
-            
-            ::: warning 注意
-            このコードは「レベルセレクト」「Fast Any%」とは互換性がありません。
-            :::
-        </description>
-        <date>Oct 11, 2017</date>
-        <source version="GMSE01">
-            C22A6710 00000023
-            3C60803E 60639710
-            88830002 2C04000E
-            418200D8 2C04000D
-            41820068 2C040001
-            418100EC 7C6C42E6
-            5464EF7E 70650007
-            38840002 2C040007
-            40A20028 38800014
-            2C050006 40A20008
-            68840003 2C050007
-            40A20008 54A5083C
-            7C842A14 38A00000
-            5484402E 7C842A78
-            48000008 7C884A14
-            3C60803E 60639710
-            90830000 48000090
-            39000D00 8083FFFC
-            2C040500 4082000C
-            39200000 4BFFFFD8
-            2C040502 4082000C
-            39200001 4BFFFFC8
-            2C040504 4082000C
-            39200002 4BFFFFB8
-            2C040505 4082000C
-            39200003 4BFFFFA8
-            2C040506 4082000C
-            39200004 4BFFFF98
-            2C040507 40A20030
-            39200005 4BFFFF88
-            3C60803E 60639710
-            8883FFF4 70850008
-            41A2000C 38800E01
-            4BFFFF70 38800E00
-            4BFFFF68 807F0020
-            60000000 00000000
-        </source>
-    </code>-->
     <code>
         <category>cosmetic</category>
         <title lang="en-US">Replace Episode names with their ID</title>
@@ -3393,7 +2860,7 @@
         </source>
     </code>
     <code>
-        <category>misc</category>
+        <category>metadata</category>
         <title lang="en-US">Position/angle/speed display</title>
         <title lang="de-CH">Position/Winkel/Geschw. Display</title>
         <title lang="fr-FR">Affichage de position/angle/vitesse</title>
@@ -3401,8 +2868,20 @@
         <author>Noki Doki</author>
         <version>1.3</version>
         <date>Oct 28, 2019</date>
-        <description lang="en-US">Shows Mario's position, angle and speed at any given time.</description>
-        <description lang="de-CH">Zeigt Mario's Position, Winkel und Geschwindigkeit jederzeit auf dem Bildschirm an.</description>
+        <description lang="en-US">
+        Shows Mario's position, angle and speed at any given time.
+        
+        ::: warning
+        This code is not compatible with the Speed Display code. 
+        :::
+        </description>
+        <description lang="de-CH">
+        Zeigt Mario's Position, Winkel und Geschwindigkeit jederzeit auf dem Bildschirm an.
+
+        ::: warning
+        Dieser Code ist nicht kompatibel mit dem Geschwindigkeits-Display Code
+        :::
+        </description>
         <description lang="fr-FR">Affiche la position, l'angle et la vitesse de Mario à tout moment.</description>
         <description lang="ja-JP">常に「マリオの位置」「マリオの角度」「マリオの速度」を表示します。</description>
         <source version="GMSE01">
@@ -3699,7 +3178,7 @@
         </source>
     </code>
     <code>
-        <category>misc</category>
+        <category>metadata</category>
         <title lang="en-US">Speed display</title>
         <title lang="de-CH">Geschwindigkeits-Display</title>
         <title lang="fr-FR">Affichage de vitesse</title>
@@ -3707,8 +3186,20 @@
         <author>Noki Doki</author>
         <version>1.4</version>
         <date>Nov 28, 2021</date>
-        <description lang="en-US">Shows Mario's speed at any given time.</description>
-        <description lang="de-CH">Zeigt Mario's Geschwindigkeit jederzeit auf dem Bildschirm an.</description>
+        <description lang="en-US">
+        Shows Mario's speed at any given time.
+        
+        ::: warning
+        This code is not compatible with the Position/Angle/Speed Display code. 
+        :::
+        </description>
+        <description lang="de-CH">
+        Zeigt Mario's Geschwindigkeit jederzeit auf dem Bildschirm an.
+
+        ::: warning
+        Dieser Code ist nicht kompatibel mit dem Position/Winkel/Gewschw. Display Code
+        :::
+        </description>
         <description lang="fr-FR">Affiche la vitesse de Mario à tout moment.</description>
         <description lang="ja-JP">常に「マリオの速度」を表示します。</description>
         <source version="GMSE01">
@@ -4599,6 +4090,28 @@
           25632558 25632558
           00000000 00000000
           0424F324 7FE6FB78
+        </source>
+    </code>
+    <code>
+        <category>misc</category>
+        <title lang="en-US">Shadow Mario HP Meter</title>
+        <title lang="fr-FR">Barre de vie d'Antimario</title>
+        <author>miluaces</author>
+        <version>1.0</version>
+        <date>Feb 20, 2022</date>
+        <description lang="en-US">Shows a health bar above Shadow Mario whenever he gets hit with water.</description>
+        <description lang="fr-FR">Affiche une barre de vie au-dessus d'Antimario quand il est touché par de l'eau.</description>
+        <source version="GMSJ01">
+            04253748 60000000
+        </source>
+        <source version="GMSE01">
+            0403FD94 60000000
+        </source>
+        <source version="GMSP01">
+            0403FBE4 60000000
+        </source>
+        <source version="GMSJ0A">
+            0402BF98 60000000
         </source>
     </code>
 </codes>

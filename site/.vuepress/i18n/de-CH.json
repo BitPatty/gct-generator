@@ -8,7 +8,21 @@
     "GMSJ0A": "GMSJ01 (NTSC-J 1.1)",
     "GMSP01": "GMSP01 (PAL)",
     "loadpresetplaceholder": "Lade eine Vorlage..",
-    "selectionreset": "Deine Auswahl wird zurückgesetzt. Fortfahren?"
+    "selectionreset": "Deine Auswahl wird zurückgesetzt. Fortfahren?",
+    "discard": "Deine Änderungen werden zurückgesetzt, fortfahren?"
+  },
+  "codeeditor": {
+    "fields": {
+      "title": {
+        "label": "Titel",
+        "placeholder": "N/A"
+      },
+      "value": {
+        "label": "Gecko Code",
+        "placeholder": "Dein Gecko Code.."
+      }
+    },
+    "save": "Speichern"
   },
   "headers": {
     "help": "Hilfe",
@@ -39,7 +53,9 @@
       "timer": "Timer",
       "misc": "Misc",
       "memcardpatch": "Memory Card Patches",
-      "cosmetic": "Kosmetisch"
+      "cosmetic": "Kosmetisch",
+      "custom": "Benutzerdefiniert",
+      "metadata": "Metadaten Anzeige"
     },
     "presets": {
       "standard": "Standard",

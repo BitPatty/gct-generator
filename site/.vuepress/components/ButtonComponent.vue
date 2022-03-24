@@ -1,15 +1,31 @@
 <template>
-  <div :class="disabled ? 'button-wrapper disabled' : 'button-wrapper'">
-    <button @click="onClick" :disabled="disabled">{{ label }}</button>
+  <div
+    :class="
+      disabled
+        ? `button-wrapper disabled ${className ? className : ''}`
+        : `button-wrapper ${className ? className : ''}`
+    "
+  >
+    <button :class="small ? 'small' : ''" @click="handleClick" :disabled="disabled">
+      {{ label }}
+    </button>
   </div>
 </template>
 
 <script>
 export default {
   props: {
+    small: { type: Boolean, required: false },
+    className: { type: String, required: false },
     disabled: { type: Boolean },
     onClick: { type: Function },
     label: { type: String },
+  },
+  methods: {
+    handleClick(e) {
+      e.stopPropagation();
+      this.onClick();
+    },
   },
 };
 </script>
@@ -26,6 +42,10 @@ export default {
 .button-wrapper.disabled button {
   background-color: rgb(165, 165, 165);
   cursor: not-allowed;
+}
+
+.small {
+  padding: 3px 7px;
 }
 
 button {
