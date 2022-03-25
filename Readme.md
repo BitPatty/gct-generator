@@ -50,8 +50,8 @@ Some codes store some states in the games memory starting from address 0x817F000
 | ![](./docs/reserved.svg)    | `0x10C` | `0x10C` | Ingame Timer: Stop Stopwatch Flag                                         |
 | ![](./docs/buffer.svg)      | `0x10D` | `0x10F` | Buffer (Ingame Timer)                                                     |
 | ![](./docs/reserved.svg)    | `0x110` | `0x237` | QF Timer: Timer Textbox                                                   |
-| ![](./docs/reserved.svg)    | `0x238` | `0x34B` | General Function (`drawText`)                                             |
-| ![](./docs/unallocated.svg) | `0x34C` | `0xFFF` | Not Allocated                                                             |
+| ![](./docs/reserved.svg)    | `0x238` | `0x347` | General Function (`drawText`)                                             |
+| ![](./docs/unallocated.svg) | `0x348` | `0xFFF` | Not Allocated                                                             |
 
 ### Adding translations
 

@@ -1,4 +1,28 @@
 # Changelog
+## Mar 25, 2022
+### Implemented dependencies system
+Add `<dependencies>` tag in `<code>` (e.g. `<dependencies>dep1,dep2,dep3</dependencies>`)
+to specify dependencies (separated by `,` if multiple).
+The system will find code with id specified with `<id>` tag in `<code>` (e.g. `<id>dep1</id>`)
+
+In addition, to specify dependencies for specific version, add the `version` attribute. e.g.
+`<dependencies version="GMSJ01">dep1,dep4</dependencies>`
+
+To prevent internal library being shown on code list,
+specify the category as `lib` (i.e. `<category>lib</category>`).
+
+### Added 'drawText' internal library
+```c
+void drawText(int x, int y, int fontSize, uint32_t colorTop, uint32_t colorBot, const char *fmt, ...);
+```
+Reserve `817F0238` to `817F0347` (0x110 bytes) for this function.
+
+### Added 'Pattern Selector' (GMSJ01 only)
+Select pattern of Chain Chomp (PV4) and Chain Chomplets (PV1).
+This code use `drawText` as dependencies.
+
+### Update 'Position/angle/speed display' and 'Speed display' (GMSJ01 only)
+Use `drawText` function to simplify the code.
 
 ## Mar 13, 2022
 

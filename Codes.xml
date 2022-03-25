@@ -3768,7 +3768,7 @@
 
           Ⓑ is the cursor to select the pattern,
           and the three digits are the numbers representing the pattern.
-          See [#Pattern](#pattern) for more information.
+          See below for more information.
 
           |  Combination  |  Result  |
           |---------------|-------------------------------------------------|
@@ -3779,7 +3779,6 @@
 
           When the cursor(Ⓑ) is not shown, you can press L+D-Pad Left/Right to make it appear.
 
-          ## Pattern {#pattern}
           ### Chain Chomp (PV4)
 
           Use the [1st digit]{.emph} to select the pattern. The 2nd and 3rd are ignored.
@@ -3808,7 +3807,7 @@
           ![プレビュー](/img/PatternSelector/preview.jpg)
 
           Ⓑはパターンを選択するためのカーソルであり、三つの数字はパターンの番号を表します。
-          各パターンの番号は[#パターン](#pattern)を参照してください。
+          各パターンの番号は下記を参照してください。
 
           |    ボタン    |  動作  |
           |--------------|------------------------------|
@@ -3819,7 +3818,6 @@
 
           カーソル(Ⓑ)が表示されない時、L+十字キー左/右を押せば出てきます。
 
-          ## パターン {#pattern}
           ### ワンワン(PV4)
 
           [1桁目]{.emph}でパターンを選択します。2桁目と3桁目は無視されます。
@@ -3997,15 +3995,15 @@
         <category>lib</category>
         <title lang="en-US">drawText</title>
         <author>sup39(サポミク)</author>
-        <version>0.1.3</version>
-        <date>Mar 04, 2022</date>
+        <version>0.2.0</version>
+        <date>Mar 25, 2022</date>
         <description lang="en-US">
           ```c
           void drawText(int x, int y, int fontSize, uint32_t colorTop, uint32_t colorBot, const char *fmt, ...);
           ```
         </description>
         <source version="GMSJ01">
-          077F0238 00000114
+          077F0238 00000110
           9421FED8 7C0802A6
           BF810118 7C7F1B78
           9001012C 7C9E2378
@@ -4026,21 +4024,20 @@
           4A826AF5 3D204330
           91210108 3D40817F
           93C1010C 6FFF8000
-          C00A0348 38610070
+          C00A0344 38610070
           C9810108 91210110
           3D20817F 93E10114
-          FC4C0028 C0690344
+          FC4C0028 C0690340
           C9810110 93A10064
           FC2C0028 93A10060
           4A8A43E9 38800000
           38610070 4A8BD419
           38C100A0 7F85E378
           388000FF 38610008
-          4A826951 38610008
-          38210128 BB81FFF0
-          80010004 7C0803A6
-          4A826AEC 00000000
-          59800004 00000000
+          4A826951 BB810118
+          38210128 80010004
+          7C0803A6 4E800020
+          00000000 59800004
       </source>
     </code>
 </codes>
