@@ -2,6 +2,222 @@
 <codes>
     <code>
         <category>qol</category>
+        <presets>recommended</presets>
+        <title lang="en-US">Pattern Selector</title>
+        <title lang="ja-JP">パターン選択</title>
+        <author>sup39(サポミク)</author>
+        <version>0.2.0</version>
+        <date>Mar 04, 2022</date>
+        <dependencies>drawText</dependencies>
+        <description lang="en-US">
+          ![Preview](/img/PatternSelector/preview.jpg)
+
+          Ⓑ is the cursor to select the pattern,
+          and the three digits are the numbers representing the pattern.
+          See [#Pattern](#pattern) for more information.
+
+          |  Combination  |  Result  |
+          |---------------|-------------------------------------------------|
+          |L + D-Pad Left |Move cursor(Ⓑ) one digit to the left             |
+          |L + D-Pad Right|Move cursor(Ⓑ) one digit to the right            |
+          |L + D-Pad Up   |Increase the number at the right of the cursor(Ⓑ)|
+          |L + D-Pad Down |Decrease the number at the right of the cursor(Ⓑ)|
+
+          When the cursor(Ⓑ) is not shown, you can press L+D-Pad Left/Right to make it appear.
+
+          ## Pattern {#pattern}
+          ### Chain Chomp (PV4)
+
+          Use the [1st digit]{.emph} to select the pattern. The 2nd and 3rd are ignored.
+
+          |1st digit|Direction at the beginning|
+          |:-------:|:------------------------:|
+          |    1    |           ←              |
+          |    2    |           ↑              |
+          |    3    |           →              |
+          |   o.w.  |         Random           |
+
+          ### Chain Chomplets (PV1)
+          Each digit represents the pattern of each Chain Chomplet.
+          Numbers not on the graph (e.g. 0) mean random.
+
+          #### 1st digit
+          %object[]{data="/img/PatternSelector/PV1-1.svg"}
+
+          #### 2nd digit
+          %object[]{data="/img/PatternSelector/PV1-2.svg"}
+
+          #### 3rd digit
+          %object[]{data="/img/PatternSelector/PV1-3.svg"}
+        </description>
+        <description lang="ja-JP">
+          ![プレビュー](/img/PatternSelector/preview.jpg)
+
+          Ⓑはパターンを選択するためのカーソルであり、三つの数字はパターンの番号を表します。
+          各パターンの番号は[#パターン](#pattern)を参照してください。
+
+          |    ボタン    |  動作  |
+          |--------------|------------------------------|
+          |L + 十字キー左|カーソル(Ⓑ)を左一桁に移動     |
+          |L + 十字キー右|カーソル(Ⓑ)を右一桁に移動     |
+          |L + 十字キー上|カーソル(Ⓑ)の右の数字を1増やす|
+          |L + 十字キー下|カーソル(Ⓑ)の右の数字を1減らす|
+
+          カーソル(Ⓑ)が表示されない時、L+十字キー左/右を押せば出てきます。
+
+          ## パターン {#pattern}
+          ### ワンワン(PV4)
+
+          [1桁目]{.emph}でパターンを選択します。2桁目と3桁目は無視されます。
+
+          |  1桁目  | 最初の向き |
+          |:-------:|:----------:|
+          |    1    |     ←      |
+          |    2    |     ↑      |
+          |    3    |     →      |
+          | その他  |  ランダム  |
+
+          ### キャンキャン(PV1)
+          各桁は各キャンキャンのパターンを表します。図上にない数字(例えば0)はランダムを表します。
+
+          #### 1桁目
+          %object[]{data="/img/PatternSelector/PV1-1.svg"}
+
+          #### 2桁目
+          %object[]{data="/img/PatternSelector/PV1-2.svg"}
+
+          #### 3桁目
+          %object[]{data="/img/PatternSelector/PV1-3.svg"}
+        </description>
+        <source version="GMSJ01">
+          0420675C 495F2A79
+          0424F32C 495A9CED
+          077F9018 000003BA
+          81460000 3D20803E
+          392987C0 7C0A4800
+          40A20124 81260004
+          89290013 28090031
+          418200C4 28090032
+          4182003C 28090030
+          40A2007C 2C040021
+          3D208180 89299001
+          41820094 2C040026
+          4182006C 2C04001D
+          40A2005C 28090003
+          41820144 28090004
+          48000048 2C04001D
+          3D208180 89299000
+          4182002C 2C040021
+          40820034 28090001
+          41820114 3929FFFE
+          5529063E 28090001
+          4181001C 38600020
+          4E800020 28090002
+          418200FC 28090003
+          418200FC 38C0FFFF
+          4AA6715C 28090001
+          418200D4 3929FFFE
+          5529063E 28090002
+          41A1FFE4 38600025
+          4E800020 28090002
+          418200BC 3929FFFD
+          4BFFFFA8 2C040002
+          3D208180 89299002
+          4182002C 2C040008
+          40A2FFB4 28090001
+          418200AC 3929FFFE
+          5529063E 28090001
+          41A1FF9C 38600007
+          4E800020 28090002
+          41820094 28090003
+          40A2FF84 38600001
+          4E800020 3D20803E
+          3929A9C0 7C0A4800
+          4082FF6C 2C05FFFF
+          40A2FF64 3D208180
+          89499000 2C0A0000
+          41A2FF54 39200003
+          3860001E 7D2A4B96
+          1D290003 7D295050
+          28090001 4D820020
+          28090002 38600020
+          4C820020 3860006E
+          4E800020 38600050
+          4E800020 38600045
+          4E800020 38600062
+          4E800020 3860001C
+          4E800020 38600051
+          4E800020 38600036
+          4E800020 9421FFE0
+          7C0802A6 BFC10018
+          7C7E1B78 90010024
+          4A83C041 3D208040
+          A3E90D50 3D208180
+          281F0041 40A2007C
+          3D408180 A14A9010
+          714A0041 2C0A0041
+          41820014 8949900C
+          394A0003 554A07BE
+          9949900C 281F0044
+          8909900C 408200D0
+          3D408180 A14A9010
+          714A0044 2C0A0044
+          418200BC 28080003
+          40A2000C 39400000
+          9949900C 88E9900C
+          3D408180 394A9000
+          38C00004 7D0A38AE
+          2C080000 41820068
+          3908FFFF 4800005C
+          281F0042 8949900C
+          4182005C 281F0048
+          40A2FF9C 3D008180
+          A1089010 71080048
+          2C080048 41820060
+          280A0003 40A2000C
+          39400000 9949900C
+          88E9900C 3D408180
+          394A9000 38C00000
+          7D0A38AE 28080003
+          4181000C 39080001
+          5506063E 7CCA39AE
+          48000024 3D008180
+          A1089010 71080042
+          2C080042 41820010
+          394A0001 554A07BE
+          9949900C 88E9900C
+          39200023 2C070000
+          41820008 39200020
+          28070001 3D008180
+          89489000 38C00023
+          41820008 38C00020
+          28070002 39089000
+          88880001 38A00023
+          41820008 38A00020
+          89080002 38600010
+          90A10010 38E0FFFF
+          91010014 3D008180
+          9081000C 390893BC
+          90C10008 38A00014
+          38C0FFFF 38800140
+          4CC63182 4BFF6EC5
+          80010024 3D208180
+          7FC3F378 B3E99010
+          7C0803A6 83C10018
+          83E1001C 38210020
+          4A83BE90 838BFFF0
+          83ABFFF4 83CBFFF8
+          800B0004 83EBFFFC
+          7C0803A6 7D615B78
+          4E800020 50617474
+          65726E20 25632558
+          25632558 25632558
+          00000000 00000000
+          0424F324 7FE6FB78
+        </source>
+    </code>
+    <code>
+        <category>qol</category>
         <title lang="en-US">Infinite Lives (Deprecated)</title>
         <author>Psychonauter</author>
         <version>1.0</version>
