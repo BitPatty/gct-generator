@@ -3754,6 +3754,7 @@
             041B4CF4 4800004C
         </source>
     </code>
+<!--
     <code>
         <category>qol</category>
         <presets>recommended</presets>
@@ -3970,6 +3971,7 @@
           0424F324 7FE6FB78
         </source>
     </code>
+-->
     <code>
         <category>misc</category>
         <title lang="en-US">Shadow Mario HP Meter</title>
