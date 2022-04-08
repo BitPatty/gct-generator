@@ -1,5 +1,9 @@
 # Changelog
 ## Apr 08, 2022
+### Implemented custom config of QFT
+- Appearance: location, font size, font color, background color (GMSJ01 only)
+- Freezing the timer
+
 ### Implemented customizable code
 - Add code info in `Codes.xml` as other code,
   but you should specify `<id>` and available versions with `<source version="XXX"></source>`
