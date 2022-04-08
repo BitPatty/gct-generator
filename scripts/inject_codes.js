@@ -107,7 +107,8 @@ const validateXML = (xmlString) => {
     // Each source has a valid length
     for (let j = 0; j < codeSources.length; j++) {
       if (
-        codeSources[j].textContent.replace(/[\s\n\r\t]+/gm, '').length % 16 != 0
+        codeSources[j].textContent.replace(/[\s\n\r\t]+/gm, '').length % 16 != 0 ||
+        codeSources[j].textContent.replace(/[\s\n\r\t]+/gm, '').length < 16
       )
         throw new Error(
           `Invalid source length for code '${codeTitle.textContent}' and version ${
