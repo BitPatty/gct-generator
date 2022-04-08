@@ -42,7 +42,7 @@
 
       <div v-if="codes && codes.length > 0" class="help">
         <h3>{{ getLabel('headers.help') }}</h3>
-        <CodeInfo v-if="!!inspectingCode" :code="inspectingCode" />
+        <CodeInfo v-if="!!inspectingCode" :code="inspectingCode" :version="selectedVersion" />
         <div v-else-if="showStageLoaderHelp">
           <h3>{{ getLabel('headers.stageloader') }}</h3>
           <div>

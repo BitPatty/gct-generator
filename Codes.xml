@@ -4040,4 +4040,34 @@
           00000000 59800004
       </source>
     </code>
+    <code>
+        <id>InstantRestart</id>
+        <category>qol</category>
+        <presets>recommended</presets>
+        <title lang="en-US">Instant Restart</title>
+        <title lang="ja-JP">ポーズせずにやり直し</title>
+        <author>sup39(サポミク)</author>
+        <version>0.1.3</version>
+        <date>Jan 07, 2022</date>
+        <description lang="en-US">
+          When you pressed the buttons configured in [#Button Config](#config) simultaneously,
+          you can restart the current area without selecting "Exit Area" in pause menu.
+          Note that the restart function behaves differently than pressing Y or Z with "Level Select".
+          This code only supports restarting 1 area only.
+          For example, you can restart outside a secret stage or inside a secret stage individually,
+          but you can NOT restart a combination of outside+inside a secret stage.
+
+          ::: warning
+          You can NOT restart after destroying the last platform in Bowser fight at the moment.
+          :::
+        </description>
+        <description lang="ja-JP">
+          [#ボタン設定](#config)で設定したボタンを同時に押すと、ポーズメニューから「コースから出る」を選択せずに所在のエリアをやり直すことができます。ただし、Level SelectのYとZのやり直し機能と異なり、エリアごとのやり直ししかできないので注意してください。例えば、ヒミツ外部のみ、ヒミツ内部のみといった一つのエリアのやり直しはできますが、ヒミツ外部+ヒミツ内部といった組み合わせのやり直しはできません。
+
+          ::: warning
+          現時点ではクッパ戦で最後の足場を破壊するとやり直しできません。
+          :::
+        </description>
+        <source version="GMSJ01"></source>
+    </code>
 </codes>

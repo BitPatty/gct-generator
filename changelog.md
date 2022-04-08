@@ -1,4 +1,27 @@
 # Changelog
+## Apr 08, 2022
+### Implemented customizable code
+- Add code info in `Codes.xml` as other code,
+  but you should specify `<id>` and available versions with `<source version="XXX"></source>`
+  (the code in `<source>` will be ignored).
+- Create directory `site/.vuepress/components/codes/YOUR_CODE_NAME`,
+  and create the following two files (file names are arbitrary):
+  + `codegen.js`: **export default** a `codegen(version: string): string` function,
+    where `version` is the game version (e.g. `GMSJ01`),
+    and the return value is the gecko code string.
+    The config of the code can be read from localStorage
+    (with key = `config/YOUR_CODE_ID` as convention) directly.
+  + `config.vue`: The vue component of the config UI,
+    which is shown below the `<description>` given in `Codes.xml`.
+    When the config is changed, store the new config into localStorage
+    (with key = `config/YOUR_CODE_ID` as convention).
+- Register `codegen.js` in `site/.vuepress/components/codes/codegen.js`
+  and `config.vue` in `site/.vuepress/components/codes/ui.js`.
+  Note that the name used in export must match the `<id>` of the code.
+
+### Added 'Instant Restart' (GMSJ01 only)
+Restarts the area without pausing.
+
 ## Mar 25, 2022
 ### Implemented dependencies system
 Add `<dependencies>` tag in `<code>` (e.g. `<dependencies>dep1,dep2,dep3</dependencies>`)

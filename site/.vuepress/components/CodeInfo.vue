@@ -11,20 +11,26 @@
       <span v-else>{{ getLabel('codeinfo.author') }} {{ translatedCode.author }}</span>
     </div>
     <p class="description" v-html="translatedCode.description"></p>
+    <component v-if="configUI" :is="configUI" :version="version"></component>
   </div>
 </template>
 
 <script>
 import { translate, translateCode } from '../i18n/localeHelper';
+import configUIs from './codes/ui.js';
 
 export default {
   props: {
     anchor: { type: Boolean },
     code: { type: Object },
+    version: { type: String },
   },
   computed: {
     translatedCode: function () {
       return translateCode(this.code, this.$lang);
+    },
+    configUI: function () {
+      return configUIs[this.code.id];
     },
   },
   data() {

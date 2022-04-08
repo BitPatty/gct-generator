@@ -1,0 +1,18 @@
+{
+  "h3Config": {
+    "ja-JP": "ボタン設定",
+    "en-US": "Button Config"
+  },
+  "lblDPad": {
+    "ja-JP": "【十字キー】",
+    "en-US": "D-Pad: "
+  },
+  "lblButton": {
+    "ja-JP": "【ボタン】",
+    "en-US": "Button: "
+  },
+  "pCautionZ": {
+    "ja-JP": "Zメニューが無効化されるので注意してください",
+    "en-US": "Note that Z menu will be disabled."
+  }
+}
