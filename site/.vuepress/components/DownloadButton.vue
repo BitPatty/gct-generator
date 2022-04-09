@@ -15,6 +15,9 @@ import gameVersions from '../data/gameVersions.json';
 // Util
 import { translateCode } from '../i18n/localeHelper';
 
+// customizable code
+import codegens from './codes/codegen.js';
+
 export default {
   props: {
     codes: { type: Array },
@@ -59,6 +62,15 @@ export default {
 
       const fileName = gameVersions.find((v) => v.identifier === this.versionIdentifier).version;
 
+      // apply customizable codes
+      for (const code of c) {
+        const codegen = codegens[code.id];
+        if (codegen) {
+          code.source = codegen(this.versionIdentifier);
+        }
+      }
+
+      // generate file
       switch (this.format) {
         case 'gct':
           this.generateGCT(c, fileName);

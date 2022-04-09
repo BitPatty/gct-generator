@@ -1,0 +1,56 @@
+{
+  "ja-JP": {
+    "h3": "見た目",
+    "location": "位置：",
+    "fontSize": "文字サイズ：",
+    "fgColor": "文字色：",
+    "fgColorGrad": "グラデーション",
+    "fgColor1": "文字色(上)：",
+    "fgColor2": "文字色(下)：",
+    "bgColor": "背景色：",
+    "alpha": "不透明度=",
+    "preview": "プレビュー",
+    "previewNote": "※ x座標の範囲は0~600、y座標の範囲は16~464です\n※ ゲーム内のフォントはプレビューのより幅が広いです",
+    "freeze": {
+      "h3": "一時停止",
+      "th": ["タイミング", "停止フレーム数", "停止秒数"],
+      "rows": {
+        "yellowCoin": "黄コインを取った時",
+        "redCoin": "赤コインを取った時",
+        "blueCoin": "青コインを取った時",
+        "item": "アイテム(ノズル等)を取った時",
+        "talk": "会話開始時",
+        "demo": "カットシーン開始時",
+        "cleaned": "NPCを洗った時",
+        "bowser": "クッパ戦の足場を破壊した時"
+      }
+    }
+  },
+  "en-US": {
+    "h3": "Appearance",
+    "location": "Location: ",
+    "fontSize": "Font size: ",
+    "fgColor": "Font color: ",
+    "fgColorGrad": "Gradient",
+    "fgColor1": "Font color(Top): ",
+    "fgColor2": "Font color(Bottom): ",
+    "bgColor": "Background color: ",
+    "alpha": "Alpha=",
+    "preview": "Preview",
+    "previewNote": "※ x ranges from 0 to 600, and y ranges from 16 to 464.\n※ The font is wider in the game compared to the preview.",
+    "freeze": {
+      "h3": "Freezing the timer",
+      "th": ["Timing", "Duration(frame)", "Duration(sec)"],
+      "rows": {
+        "yellowCoin": "When collected a yellow coin",
+        "redCoin": "When collected a red coin",
+        "blueCoin": "When collected a blue coin",
+        "item": "When collected an item (e.g. nozzle)",
+        "talk": "When dialogue started",
+        "demo": "When cutscene started",
+        "cleaned": "When NPC is cleaned",
+        "bowser": "When destroyed platform in Bowser fight"
+      }
+    }
+  }
+}
