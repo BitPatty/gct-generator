@@ -76,7 +76,7 @@ This can have multiple reasons:
 - You're using an obsolete version of Nintendont. Make sure you use version 4.434 or newer.
 - Your cheatfile has the wrong name: Make sure the file is named "GMSE01.gct", "GMSJ01.gct" or "GMSP01.gct". It won't work with names like "GMSE01 (1).gct". Nintendont is very picky!
 - Your cheatfile is at the wrong location: Make sure the file is in the "codes" folder of your SD Card. Again, the folder has to be named "codes" (See sample folder structure in ["Copy the file onto your SD Card section"](#copy-the-file-onto-your-sd-card)). If you have a "games" folder, make sure there's no file with the same name in it or its subfolders.
-- Your cheatfile is too big: Using too many codes at once can cause Nintendont to disable them since the used space in the game is limited. Make sure you don't have two incompatible codes selected when downloading the cheatfile (for example "Level Select", "Fast Any%" and the Stage loader cannot be used simultaneously). If you're using Nintendont 4.434 or newer you don't have to worry about your file size unless it exceeds 8KB.
+- Your cheatfile is too big: Using too many codes at once can cause Nintendont to disable them since the used space in the game is limited. Make sure you don't have two incompatible codes selected when downloading the cheatfile (for example "Level Select", "Fast Any%" and the Stage loader cannot be used simultaneously). If you're using Nintendont 4.434 or newer you don't have to worry about your file size unless it exceeds 5KB.
 - If you have a USB drive connected and use disc, make sure you select the device that contains the cheats for your disc.
 - If you use an ISO your cheat file and ISO must be on the same device (both on the SD card or both on the USB drive).
 
