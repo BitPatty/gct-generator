@@ -3785,7 +3785,6 @@
     </code>
     <code>
         <category>qol</category>
-        <presets>recommended</presets>
         <title lang="en-US">Pattern Selector</title>
         <title lang="ja-JP">パターン選択</title>
         <author>sup39(サポミク)</author>
@@ -4072,7 +4071,6 @@
     <code>
         <id>InstantRestart</id>
         <category>qol</category>
-        <presets>recommended</presets>
         <title lang="en-US">Instant Restart</title>
         <title lang="ja-JP">ポーズせずにやり直し</title>
         <author>sup39(サポミク)</author>
