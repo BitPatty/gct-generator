@@ -1,4 +1,8 @@
 # Changelog
+## Apr 21, 2022
+### Reverted QFT to version 0.5
+Codes are getting too big for Nintendont, reverting to a simpler version while we figure out ways to make everything fit.
+
 ## Apr 08, 2022
 ### Implemented custom config of QFT
 - Appearance: location, font size, font color, background color (GMSJ01 only)
