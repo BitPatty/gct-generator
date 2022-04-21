@@ -99,7 +99,7 @@ export default {
       fgRGB, fgA, fgRGB2, fgA2, bgRGB, bgA,
       freeze,
       // const
-      freezeKeys: Object.keys(codes[this.version]?.freezeCodegen ?? {}),
+      freezeKeys: Object.keys(codes[this.version]?.freezeCodeInfo ?? {}),
     };
   },
   computed: {

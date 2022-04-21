@@ -1236,12 +1236,14 @@
         </source>
     </code>
     <code>
+        <id>qft</id>
         <category>timer</category>
         <title lang="en-US">Quarterframe Timer (Experimental)</title>
         <title lang="ja-JP">QFタイマー</title>
         <author>Noki Doki, sup39(サポミク)</author>
         <version>0.5</version>
         <date>Nov 28, 2021</date>
+        <dependencies version="GMSJ01">drawText</dependencies>
         <description lang="en-US">
         Adds an in-game timer to every level, starting on the last black frame after the 
         loading screen and ending as soon as the 'Shine Get' animation starts 

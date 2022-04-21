@@ -45,17 +45,66 @@ import * as GMSP01 from './code/GMSP01.js';
 import * as GMSJ0A from './code/GMSJ0A.js';
 export const codes = { GMSJ01, GMSE01, GMSP01, GMSJ0A };
 
+/****
+## save freeze frame, load and save QF
+## this function destroys r11(freeze frame), r12
+077F0348:
+  lis r12, 0x817F
+  stw r11, 0xBC(r12)
+  lwz r11, -0x6818(r13)
+  lwz r11, 0x5C(r11)
+  stw r11, 0xB8(r12)
+  blr
+
+## for each code
+  ORIG
+  li r11, xxxx
+  b 817f0348
+
+04xxxxxx:
+  bl 817fxxxx
+****/
+const freezeCodeAddr = 0x817f0348;
+const freezeCode = [0x3d80817f, 0x916c00bc, 0x816d97e8, 0x816b005c, 0x916c00b8, 0x4e800020];
+
 export default function codegen(version) {
   const config = getConfig();
-  const { freezeCodegen, baseCode } = codes[version] ?? {};
+  const { freezeCodeInfo, baseCode } = codes[version] ?? {};
   if (baseCode == null) return '';
 
   let code = baseCode;
 
   // freeze code
-  Object.entries(config.freeze).forEach(
-    ([key, frame]) => (code += frame > 0 ? freezeCodegen[key]?.(int16(frame)) ?? '' : ''),
-  );
+  const code04 = [];
+  const code07 = [...freezeCode];
+  let dst = freezeCodeAddr + 24;
+  for (const [key, frame] of Object.entries(config.freeze)) {
+    const info = freezeCodeInfo[key];
+    if (frame > 0 && info) {
+      const [addr, orig] = info;
+      code07.push(
+        orig, // [dst] original instruction
+        0x39600000 | (frame & 0xffff), // li r11, $frame
+        0x4c000000 + (freezeCodeAddr - dst - 8), // b freezeCode
+      );
+      code04.push(
+        0x04000000 | (addr & 0x1ffffff), // 04xxxxxx
+        0x48000001 | (dst - addr), // bl
+      );
+      dst += 12;
+    }
+  }
+  if (code04.length) {
+    code07.unshift(
+      0x06000000 | (freezeCodeAddr & 0x1ffffff), // 07xxxxxx
+      code07.length * 4,
+    );
+    if (code07.length & 1) {
+      // odd -> add 0
+      code07.push(0);
+    }
+    code += [...code04, ...code07].map(int32).join('');
+  }
 
   // ui (GMSJ01 only)
   if (['GMSJ01'].includes(version)) {

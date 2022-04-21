@@ -1,19 +1,9 @@
-export const freezeCodegen = {
-  redCoin: (s) => `
-C219E1FC 00000004
-80AD9E78 8005005C
-3CA0817F 900500B8
-3800${s} 900500BC
-38A00000 00000000
-`,
-  blueCoin: (s) => `
-C219E010 00000005
-7C030378 80A3005C
-38A50003 54A0003A
-3CA0817F 900500B8
-3800${s} 900500BC
-60000000 00000000
-`,
+/**
+ * @type {{[key: string]: [addr: number, orig: number]}}
+ */
+export const freezeCodeInfo = {
+  redCoin: [0x8019e1fc, 0x38a00000],
+  blueCoin: [0x8019e010, 0x7c030378], // TODO QF+3 &0xfffffffc
 };
 
 export const baseCode = `

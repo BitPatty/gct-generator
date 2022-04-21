@@ -1,5 +1,9 @@
 # Changelog
 ## Apr 21, 2022
+### Shortened QFT
+- Shortened QFT's freeze code by replacing C2 with 04(bl@event) and 07.
+- Reserve `817F0348`~`817F03BF` (120 bytes)
+
 ### Reduced code size of Pattern Selector
 Reduce 240 bytes of PS by replacing switch case with lookup table.
 
