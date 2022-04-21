@@ -1,5 +1,8 @@
 # Changelog
 ## Apr 21, 2022
+### Reduced code size of Pattern Selector
+Reduce 240 bytes of PS by replacing switch case with lookup table.
+
 ### Reverted QFT to version 0.5
 Codes are getting too big for Nintendont, reverting to a simpler version while we figure out ways to make everything fit.
 
