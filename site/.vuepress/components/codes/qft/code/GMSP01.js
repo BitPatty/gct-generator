@@ -1,3 +1,5 @@
+export const r13off = -0x6120;
+
 /**
  * @type {{[key: string]: [addr: number, orig: number]}}
  */
