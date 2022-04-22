@@ -1,11 +1,11 @@
 export const r13off = -0x6048;
 
 /**
- * @type {{[key: string]: [addr: number, orig: number]}}
+ * @type {{[key: string]: {addr: number, orig: number}}}
  */
 export const freezeCodeInfo = {
-  redCoin: [0x801be474, 0x38a00000],
-  blueCoin: [0x801be288, 0x7c030378], // TODO QF+3 &0xfffffffc
+  redCoin: { addr: 0x801be474, orig: 0x38a00000 },
+  blueCoin: { addr: 0x801be288, orig: 0x7c030378 },
 };
 
 export const baseCode = `

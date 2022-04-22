@@ -13,7 +13,9 @@
     "previewNote": "※ x座標の範囲は0~600、y座標の範囲は16~464です\n※ ゲーム内のフォントはプレビューのより幅が広いです",
     "freeze": {
       "h3": "一時停止",
-      "th": ["タイミング", "停止フレーム数", "停止秒数"],
+      "duration": "長さ：",
+      "frame": "(フレーム)",
+      "sec": "(秒)",
       "rows": {
         "yellowCoin": "黄コインを取った時",
         "redCoin": "赤コインを取った時",
@@ -40,7 +42,9 @@
     "previewNote": "※ x ranges from 0 to 600, and y ranges from 16 to 464.\n※ The font is wider in the game compared to the preview.",
     "freeze": {
       "h3": "Freezing the timer",
-      "th": ["Timing", "Duration(frame)", "Duration(sec)"],
+      "duration": "Duration: ",
+      "frame": "(frame)",
+      "sec": "(sec)",
       "rows": {
         "yellowCoin": "When collected a yellow coin",
         "redCoin": "When collected a red coin",

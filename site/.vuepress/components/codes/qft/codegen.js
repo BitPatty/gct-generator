@@ -12,15 +12,16 @@ export const defaultConfig = {
   fgA2: null,
   bgRGB: 0x000000,
   bgA: 0x80,
+  freezeDuration: 30,
   freeze: {
-    yellowCoin: 0,
-    redCoin: 30,
-    blueCoin: 30,
-    item: 30,
-    talk: 30,
-    demo: 30,
-    cleaned: 30,
-    bowser: 30, // onBathhubGripDestroyed
+    yellowCoin: false,
+    redCoin: true,
+    blueCoin: true,
+    item: true,
+    talk: true,
+    demo: true,
+    cleaned: true,
+    bowser: true, // onBathhubGripDestroyed
   },
 };
 
@@ -36,8 +37,10 @@ export function getConfig() {
   };
 }
 
-const int16 = (x) => (x < 0 ? x + 0x10000 : x).toString(16).padStart(4, '0').slice(-4);
-const int32 = (x) => (x < 0 ? x + 0x100000000 : x).toString(16).padStart(8, '0').slice(-8);
+const int16 = (x) =>
+  (x < 0 ? x + 0x10000 : x).toString(16).padStart(4, '0').slice(-4).toUpperCase();
+const int32 = (x) =>
+  (x < 0 ? x + 0x100000000 : x).toString(16).padStart(8, '0').slice(-8).toUpperCase();
 
 import * as GMSJ01 from './code/GMSJ01.js';
 import * as GMSE01 from './code/GMSE01.js';
@@ -71,78 +74,81 @@ export default function codegen(version) {
   if (baseCode == null) return '';
 
   let code = baseCode;
+  const { freezeDuration: frame } = config;
 
   // freezing code
-  const freezeConfigs = [];
-  for (const [key, frame] of Object.entries(config.freeze)) {
-    const info = freezeCodeInfo[key];
-    if (frame > 0 && info) {
-      const [addr, orig] = info;
-      if (key === 'blueCoin') {
-        // special: needs to adjust QF -> use separate C2 instead
-        code += [
-          0xc2000000 + (addr & 0x1ffffff),
-          0x00000005,
-          orig,
-          0x80a3005c,
-          0x38a50003,
-          0x54a0003a,
-          0x3ca0817f,
-          0x900500b8,
-          0x38000000 | (frame & 0xffff),
-          0x900500bc,
-          0x60000000,
-          0x00000000,
-        ]
-          .map(int32)
-          .join('');
-      } else {
-        // handle regular freezing code later
-        freezeConfigs.push({ frame, addr, orig });
+  const freezeEnableds = [];
+  if (frame > 0) {
+    for (const [key, enabled] of Object.entries(config.freeze)) {
+      const info = freezeCodeInfo[key];
+      if (enabled && info) {
+        const { addr, orig } = info;
+        if (key === 'blueCoin') {
+          // special: needs to adjust QF -> use separate C2 instead
+          code += [
+            0xc2000000 + (addr & 0x1ffffff),
+            0x00000005,
+            orig,
+            0x80a3005c,
+            0x38a50003,
+            0x54a0003a,
+            0x3ca0817f,
+            0x900500b8,
+            0x38000000 | (frame & 0xffff),
+            0x900500bc,
+            0x60000000,
+            0x00000000,
+          ]
+            .map(int32)
+            .join('');
+        } else {
+          // handle regular freezing code later
+          freezeEnableds.push(info);
+        }
       }
     }
   }
   // handle regular freezing code
-  if (freezeConfigs.length <= 1) {
+  if (freezeEnableds.length <= 1) {
     // use C2 directly
-    code += freezeConfigs
-      .flatMap(({ frame, addr, orig }) => [
+    code += freezeEnableds
+      .flatMap(({ addr, orig }) => [
         0xc2000000 + (addr & 0x1ffffff),
         0x00000004,
-        0x39600000 | (frame & 0xffff), // li r11, frame
-        0x3d80817f, // lis r12, 0x817F
-        0x916c00bc, // stw r11, 0xBC(r12)
+        orig,
         0x816d0000 | (r13off & 0xffff), // lwz r11, r13off(r13)
+        0x3d80817f, // lis r12, 0x817F
         0x816b005c, // lwz r11, 0x5C(r11)
         0x916c00b8, // stw r11, 0xB8(r12)
-        orig,
+        0x39600000 | (frame & 0xffff), // li r11, frame
+        0x916c00bc, // stw r11, 0xBC(r12)
         0x00000000,
       ])
       .map(int32)
       .join('');
   } else {
-    let dst = freezeCodeAddr + 24;
     const code04 = [];
     const code07 = [
-      0x3d80817f, // lis r12, 0x817F
-      0x916c00bc, // stw r11, 0xBC(r12)
       0x816d0000 | (r13off & 0xffff), // lwz r11, r13off(r13)
+      0x3d80817f, // lis r12, 0x817F
       0x816b005c, // lwz r11, 0x5C(r11)
       0x916c00b8, // stw r11, 0xB8(r12)
+      0x39600000 | (frame & 0xffff), // li r11, frame
+      0x916c00bc, // stw r11, 0xBC(r12)
       0x4e800020, // blr
     ];
+    let dst = freezeCodeAddr + code07.length * 4;
     // put code together
-    for (const { frame, addr, orig } of freezeConfigs) {
+    for (const { addr, orig } of freezeEnableds) {
       code07.push(
         orig, // [dst] original instruction
-        0x39600000 | (frame & 0xffff), // li r11, $frame
-        0x4c000000 + (freezeCodeAddr - dst - 8), // b freezeCode
+        0x4c000000 + (freezeCodeAddr - dst - 4), // b freezeCode
       );
       code04.push(
         0x04000000 | (addr & 0x1ffffff), // 04 addr
         0x48000001 | (dst - addr), // bl dst
       );
-      dst += 12;
+      dst += 8;
     }
     // make 07 code
     code07.unshift(

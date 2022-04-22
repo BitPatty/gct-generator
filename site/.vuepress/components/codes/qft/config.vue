@@ -41,15 +41,15 @@
     </section>
     <section class="freeze">
       <h3>{{l.freeze.h3}}</h3>
+      <div>
+        {{l.freeze.duration}}<input type="number" min="0" max="32767" v-model="freezeDuration"> {{l.freeze.frame}}
+        = {{(freezeDuration*1001/30000).toFixed(2)}} {{l.freeze.sec}}
+      </div>
       <table>
-        <thead>
-          <th v-for="s in l.freeze.th" :key="s">{{s}}</th>
-        </thead>
         <tbody>
           <tr v-for="key in freezeKeys" :key="key">
             <td>{{l.freeze.rows[key]}}</td>
-            <td><input type="number" :value="freeze[key]" @change="onChangeFreeze($event, key)"></td>
-            <td class="right">{{(freeze[key]*1001/30000).toFixed(2)}}</td>
+            <td><input type="checkbox" :checked="freeze[key]" @change="onChangeFreeze($event, key)"></td>
           </tr>
         </tbody>
       </table>
@@ -63,9 +63,9 @@ import labels from './labels.json';
 import {getLabels} from '../codegen.js';
 
 function updateConfig() {
-  const {x, y, fontSize, width, fgRGB, fgA, fgRGB2, fgA2, bgRGB, bgA, freeze} = this;
+  const {x, y, fontSize, width, fgRGB, fgA, fgRGB2, fgA2, bgRGB, bgA, freeze, freezeDuration} = this;
   localStorage.setItem(lskey, JSON.stringify({
-    x, y, fontSize, width, fgRGB, fgA, fgRGB2, fgA2, bgRGB, bgA, freeze,
+    x, y, fontSize, width, fgRGB, fgA, fgRGB2, fgA2, bgRGB, bgA, freeze, freezeDuration
   }));
 }
 
@@ -76,7 +76,7 @@ export default {
   methods: {
     updateConfig,
     onChangeFreeze($event, key) {
-      this.freeze[key] = parseInt($event.target.value);
+      this.freeze[key] = $event.target.checked;
       this.updateConfig();
     },
     toggleGradient($event) {
@@ -93,11 +93,11 @@ export default {
     rgbaI2S: (rgb, a) => '#'+rgb.toString(16).padStart(6, '0')+a.toString(16).padStart(2, '0'),
   },
   data() {
-    const {x, y, fontSize, width, fgRGB, fgA, fgRGB2, fgA2, bgRGB, bgA, freeze} = getConfig();
+    const {x, y, fontSize, width, fgRGB, fgA, fgRGB2, fgA2, bgRGB, bgA, freeze, freezeDuration} = getConfig();
     return {
       x, y, fontSize, width,
       fgRGB, fgA, fgRGB2, fgA2, bgRGB, bgA,
-      freeze,
+      freeze, freezeDuration,
       // const
       freezeKeys: Object.keys(codes[this.version]?.freezeCodeInfo ?? {}),
     };
@@ -118,6 +118,7 @@ export default {
     fgA2: updateConfig,
     bgRGB: updateConfig,
     bgA: updateConfig,
+    freezeDuration: updateConfig,
   },
 }
 </script>
@@ -126,21 +127,12 @@ export default {
 input[type=number], td.right {
   text-align: right;
 }
-.appearance input[type="number"] {
+input[type="number"] {
   width: 3em;
   margin: 0 2px;
 }
 .appearance > div {
   padding: 0 0 4px;
-}
-
-th {
-  text-align: center;
-}
-td > input[type=number] {
-  width: 8em;
-  max-width: 100%;
-  box-sizing: border-box;
 }
 
 input[type=number] {

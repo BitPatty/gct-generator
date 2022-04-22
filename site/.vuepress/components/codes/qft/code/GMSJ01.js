@@ -1,17 +1,17 @@
 export const r13off = -0x6818;
 
 /**
- * @type {{[key: string]: [addr: number, orig: number]}}
+ * @type {{[key: string]: {addr: number, orig: number}}}
  */
 export const freezeCodeInfo = {
-  yellowCoin: [0x80196b54, 0x8805000e],
-  redCoin: [0x80196314, 0x38a00000],
-  blueCoin: [0x80196128, 0x7c030378], // TODO QF+3 &0xfffffffc
-  item: [0x801971f8, 0x8001001c],
-  talk: [0x800eb6e4, 0x807f00b0],
-  demo: [0x800eb74c, 0x806da8b0],
-  cleaned: [0x8017a3c0, 0x80010044],
-  bowser: [0x801d3c78, 0x2c1d0003],
+  yellowCoin: { addr: 0x80196b54, orig: 0x8805000e },
+  redCoin: { addr: 0x80196314, orig: 0x38a00000 },
+  blueCoin: { addr: 0x80196128, orig: 0x7c030378 },
+  item: { addr: 0x801971f8, orig: 0x8001001c },
+  talk: { addr: 0x800eb6e4, orig: 0x807f00b0 },
+  demo: { addr: 0x800eb74c, orig: 0x806da8b0 },
+  cleaned: { addr: 0x8017a3c0, orig: 0x80010044 },
+  bowser: { addr: 0x801d3c78, orig: 0x2c1d0003 },
 };
 
 export const baseCode = `
