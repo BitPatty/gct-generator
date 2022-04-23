@@ -1,4 +1,9 @@
 # Changelog
+## Apr 23, 2022
+### Add code size warning
+- Alert message `generatorconfig.alert.gct` when code size > 5000 bytes and download format is `GCT`
+- Alert message `generatorconfig.alert.dolphin` when code size > 3256 bytes (excluding header(00D0) and footer(F000)) and download format is `Dolphin INI` or `CheatManager TXT`.
+
 ## Apr 22, 2022
 ### Shortened QFT and simplified config
 - Shorten QFT's freeze code by replacing C2 with 04(bl@event) and 07.

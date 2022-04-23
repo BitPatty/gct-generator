@@ -13,7 +13,7 @@
 import gameVersions from '../data/gameVersions.json';
 
 // Util
-import { translateCode } from '../i18n/localeHelper';
+import { translate, translateCode } from '../i18n/localeHelper';
 
 // customizable code
 import codegens from './codes/codegen.js';
@@ -71,16 +71,32 @@ export default {
       }
 
       // generate file
+      const codeSize = c.reduce((a, e) => a+e.source.length, 0)/2 + 16; // 8(00D0)+8(F000)
+      console.log(codeSize, c);
       switch (this.format) {
         case 'gct':
+          this.alertGCTCodeSize(codeSize);
           this.generateGCT(c, fileName);
           break;
         case 'dolphin':
+          this.alertDolphinCodeSize(codeSize);
           this.generateDolphinINI(c, fileName);
           break;
         case 'gcm':
+          this.alertDolphinCodeSize(codeSize);
           this.generateCheatManagerTXT(c, fileName);
           break;
+      }
+    },
+    alertGCTCodeSize(size) {
+      if (size > 5000) {
+        alert(translate('generatorconfig.alert.gct', this.$lang).replaceAll('{size}', size));
+      }
+    },
+    alertDolphinCodeSize(size) {
+      if (size > 3272) { // 0x3000-0x2338
+        // excluding header+footer
+        alert(translate('generatorconfig.alert.dolphin', this.$lang).replaceAll('{size}', size-16));
       }
     },
     generateGCT(codes, version) {

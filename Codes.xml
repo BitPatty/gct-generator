@@ -1241,8 +1241,8 @@
         <title lang="en-US">Quarterframe Timer (Experimental)</title>
         <title lang="ja-JP">QFタイマー</title>
         <author>Noki Doki, sup39(サポミク)</author>
-        <version>0.5</version>
-        <date>Nov 28, 2021</date>
+        <version>1.1</version>
+        <date>Apr 22, 2022</date>
         <dependencies version="GMSJ01">drawText</dependencies>
         <description lang="en-US">
         Adds an in-game timer to every level, starting on the last black frame after the 
