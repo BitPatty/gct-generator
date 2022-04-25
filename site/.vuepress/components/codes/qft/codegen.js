@@ -163,8 +163,8 @@ export default function codegen(version) {
     code += [...code04, ...code07].map(int32).join('');
   }
 
-  // ui (GMSJ01 only)
-  if (['GMSJ01'].includes(version)) {
+  // ui (GMSJ01/GMSJ0A only)
+  if (['GMSJ01', 'GMSJ0A'].includes(version)) {
     /* bounds */
     const { x, y, fontSize, width } = config;
     const scale = fontSize / 20;

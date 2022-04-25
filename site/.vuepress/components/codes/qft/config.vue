@@ -1,6 +1,6 @@
 <template>
   <div id="config">
-    <section v-if="version=='GMSJ01'" class="appearance">
+    <section v-if="['GMSJ01', 'GMSJ0A'].includes(version)" class="appearance">
       <h3>{{l.h3}}</h3>
       <div>
         <span>{{l.location}}(</span><input type="number" min="0" max="600" v-model.number="x"><span>, </span><input type="number" min="16" max="464" v-model.number="y"><span>)</span>

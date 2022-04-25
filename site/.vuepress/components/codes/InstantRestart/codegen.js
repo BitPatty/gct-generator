@@ -15,8 +15,39 @@ export const buttonValues = {
   DL: 0x0001,
 };
 
+const baseCodes = {
+  GMSJ01: (b) => `
+C20EAFA0 00000009
+3C608040 A0A30D50
+2805${b} 40A20030
+3C60817F 38A00001
+98A300B3 98A30100
+3C60803E 84A3600E
+90A30004 3C60800E
+6063B3F8 7C6803A6
+4E800020 2C000002
+60000000 00000000
+`,
+  GMSJ0A: (b) => `
+C227768C 00000009
+3C60803F A0A35428
+2805${b} 40A20030
+3C60817F 38A00001
+98A300B3 98A30100
+3C60803E 84A3A8EE
+90A30004 3C608027
+60637AE4 7C6803A6
+4E800020 2C000002
+60000000 00000000
+`,
+};
+const zCodes = {
+  GMSJ01: '040eb024 60000000',
+  GMSJ0A: '04277710 60000000',
+};
+
 export const defaultConfig = {
-  button: buttonValues.Y | buttonValues.DL,
+  button: buttonValues.Y | buttonValues.DU,
 };
 export function getConfig() {
   return {
@@ -26,27 +57,11 @@ export function getConfig() {
 }
 export default function codegen(version) {
   const { button } = getConfig();
-  let code;
-  switch (version) {
-    case 'GMSJ01':
-      code = `
-c20eafa0 00000009
-3c608040 a0a30d50
-2805${button.toString(16).padStart(4, '0')} 40a20030
-3c60817f 38a00001
-98a300b3 98a30100
-3c60803e 80a3600e
-90a36012 3c60800e
-6063b3f8 7c6803a6
-4e800020 2c000002
-60000000 00000000
-`;
-      if (button & buttonValues.Z) {
-        code += '\n040eb024 60000000';
-      }
-      break;
-    default:
-      return '';
+  const g = baseCodes[version];
+  if (g == null) return '';
+  let code = g(button.toString(16).padStart(4, '0'));
+  if (button & buttonValues.Z) {
+    code += zCodes[version];
   }
   return code.replace(/\s/g, '');
 }

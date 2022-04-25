@@ -1,4 +1,9 @@
 # Changelog
+## Apr 25, 2022
+### Port the following code from GMSJ01 to GMSJ0A
+- Pattern Selector, Instant Restart, drawText
+- QFT, PAS/Speed display with drawText
+
 ## Apr 23, 2022
 ### Add code size warning
 - Alert message `generatorconfig.alert.gct` when code size > 5000 bytes and download format is `GCT`
