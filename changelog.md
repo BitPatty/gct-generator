@@ -1,4 +1,8 @@
 # Changelog
+## Apr 28, 2022
+### Fix InstantRestart to reset coin counter
+Force coin count to be reset to 0 on restart
+
 ## Apr 25, 2022
 ### Port the following code from GMSJ01 to GMSJ0A
 - Pattern Selector, Instant Restart, drawText

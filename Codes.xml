@@ -4065,8 +4065,8 @@
         <title lang="en-US">Instant Restart</title>
         <title lang="ja-JP">ポーズせずにやり直し</title>
         <author>sup39(サポミク)</author>
-        <version>0.1.4</version>
-        <date>Apr 25, 2022</date>
+        <version>0.2.0</version>
+        <date>Apr 28, 2022</date>
         <description lang="en-US">
           When you pressed the buttons configured in [#Button Config](#config) simultaneously,
           you can restart the current area without selecting "Exit Area" in pause menu.
@@ -4087,25 +4087,27 @@
           :::
         </description>
         <source version="GMSJ01">
-          C20EAFA0 00000009
+          C20EAFA0 0000000A
           3C608040 A0A30D50
-          28050808 40A20030
+          28050808 40A20038
           3C60817F 38A00001
           98A300B3 98A30100
           3C60803E 84A3600E
-          90A30004 3C60800E
+          90A30004 38A00040
+          90A30000 3C60800E
           6063B3F8 7C6803A6
           4E800020 2C000002
           60000000 00000000
         </source>
         <source version="GMSJ0A">
-          C227768C 00000009
+          C227768C 0000000A
           3C60803F A0A35428
-          28050808 40A20030
+          28050808 40A20038
           3C60817F 38A00001
           98A300B3 98A30100
           3C60803E 84A3A8EE
-          90A30004 3C608027
+          90A30004 38A00040
+          90A30000 3C608027
           60637AE4 7C6803A6
           4E800020 2C000002
           60000000 00000000
