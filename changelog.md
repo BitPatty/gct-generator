@@ -1,4 +1,8 @@
 # Changelog
+## Jun 8, 2022
+### Fixed 'Shine Get Timer' stopping on any cutscene started after touching a Shine
+Shoutouts to plankton for touching the Pinna 1 Shine before its spawn cutscene started, in which case the timer would stop around 8 seconds early.
+
 ## Apr 28, 2022
 ### Fix InstantRestart to reset coin counter
 Force coin count to be reset to 0 on restart
