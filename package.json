@@ -20,18 +20,18 @@
   },
   "license": "Apache-2.0",
   "devDependencies": {
-    "@sup39/markdown-it-attr": "^1.2.2",
-    "@sup39/markdown-it-inline-tag": "^1.0.1",
+    "@sup39/markdown-it-attr": "1.2.2",
+    "@sup39/markdown-it-inline-tag": "1.0.1",
     "@vuepress/plugin-back-to-top": "1.9.7",
     "@vuepress/plugin-medium-zoom": "1.9.7",
     "jsdom": "20.0.0",
     "pre-commit": "1.2.2",
     "prettier": "2.7.1",
-    "serve": "^14.0.1",
+    "serve": "14.0.1",
     "vuepress": "1.9.7"
   },
   "dependencies": {
-    "vuedraggable": "^2.24.3"
+    "vuedraggable": "2.24.3"
   },
   "pre-commit": [
     "precommit"

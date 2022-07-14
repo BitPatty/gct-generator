@@ -3,7 +3,7 @@ WORKDIR /src
 COPY . .
 RUN pwsh -File ./scripts/build_archives.ps1
 
-FROM node:lts-buster AS build
+FROM node:18-bullseye AS build
 WORKDIR /src
 COPY --from=prebuild /src .
 RUN npm i
