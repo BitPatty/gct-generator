@@ -84,7 +84,7 @@ If you have access to codespaces simply open the repository in codespaces. Else 
 
 Due to formatting rules you should use VSCode for development with the following features/extensions:
 
-- NodeJS 18.x (LTS)
+- NodeJS 16.x (LTS)
 - npm 8.x
 - `octref.vetur`
 - `esbenp.prettier-vscode`
