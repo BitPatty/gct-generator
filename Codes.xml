@@ -1237,10 +1237,8 @@
         <title lang="en-US">Quarterframe Timer (Experimental)</title>
         <title lang="ja-JP">QFタイマー</title>
         <author>Noki Doki, sup39(サポミク)</author>
-        <version>1.1</version>
-        <date>Apr 22, 2022</date>
-        <dependencies version="GMSJ01">drawText</dependencies>
-        <dependencies version="GMSJ0A">drawText</dependencies>
+        <version>1.2</version>
+        <date>Oct 1, 2022</date>
         <description lang="en-US">
         Adds an in-game timer to every level, starting on the last black frame after the 
         loading screen and ending as soon as the 'Shine Get' animation starts 
@@ -1254,10 +1252,10 @@
             C20ECE44 0000000B
             981A0260 3CE0817F
             880700B3 2C000000
-            38000000 900700BC
-            4182000C B00700B2
-            900700B4 60E30110
-            38800000 60E50094
+            38800000 908700BC
+            41820010 B08700B2
+            3800FFFC 900700B4
+            60E30110 60E50094
             80CD97F8 80C60048
             60E700A4 39000002
             39200000 3D808001
@@ -1348,10 +1346,10 @@
             C22998C0 0000000B
             981A0260 3CE0817F
             880700B3 2C000000
-            38000000 900700BC
-            4182000C B00700B2
-            900700B4 60E30110
-            38800000 60E50094
+            38800000 908700BC
+            41820010 B08700B2
+            3800FFFC 900700B4
+            60E30110 60E50094
             80CD9FC8 80C60048
             60E700A4 39000002
             39200000 3D80802D
@@ -1442,10 +1440,10 @@
             C2291758 0000000B
             981A0260 3CE0817F
             880700B3 2C000000
-            38000000 900700BC
-            4182000C B00700B2
-            900700B4 60E30110
-            38800000 60E50094
+            38800000 908700BC
+            41820010 B08700B2
+            3800FFFC 900700B4
+            60E30110 60E50094
             80CD9EF0 80C60048
             60E700A4 39000002
             39200000 3D80802C
@@ -1536,10 +1534,10 @@
             C2279570 0000000B
             981A0260 3CE0817F
             880700B3 2C000000
-            38000000 900700BC
-            4182000C B00700B2
-            900700B4 60E30110
-            38800000 60E50094
+            38800000 908700BC
+            41820010 B08700B2
+            3800FFFC 900700B4
+            60E30110 60E50094
             80CD9E88 80C60048
             60E700A4 39000002
             39200000 3D80802B
