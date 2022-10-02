@@ -1,8 +1,4 @@
 # Changelog
-## Oct 1, 2022
-### Updated 'Quarterframe Timer"
-The timer now starts a frame later to be more in line with SGT.
-
 ## Jun 8, 2022
 ### Fixed 'Shine Get Timer' stopping on any cutscene started after touching a Shine
 Shoutouts to plankton for touching the Pinna 1 Shine before its spawn cutscene started, in which case the timer would stop around 8 seconds early.
