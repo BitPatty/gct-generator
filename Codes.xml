@@ -1239,6 +1239,8 @@
         <author>Noki Doki, sup39(サポミク)</author>
         <version>1.2</version>
         <date>Oct 1, 2022</date>
+        <dependencies version="GMSJ01">drawText</dependencies>
+        <dependencies version="GMSJ0A">drawText</dependencies>
         <description lang="en-US">
         Adds an in-game timer to every level, starting on the last black frame after the 
         loading screen and ending as soon as the 'Shine Get' animation starts 
