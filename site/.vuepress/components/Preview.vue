@@ -28,7 +28,7 @@ export default {
       const {config: {qft}} = this;
       if (qft == null) return;
       const {x, y, fontSize, fgRGB, fgA, fgRGB2, fgA2, bgRGB, bgA, width} = qft;
-      const i2s = (rgb, a) => '#'+rgb.toString(16).padStart('0', 6)+a.toString(16).padStart('0', 2);
+      const i2s = (rgb, a) => '#'+rgb.toString(16).padStart(6, '0')+a.toString(16).padStart(2, '0');
       const bg = i2s(bgRGB, bgA);
       const fg1 = i2s(fgRGB, fgA);
       return {
