@@ -22,21 +22,7 @@
         <span>{{l.alpha}}</span><input type="number" min="0" max="255" v-model.number="bgA"><span>/255={{(bgA/2.55).toFixed(1)}}%</span>
       </div>
       <h4>{{l.preview}}</h4>
-      <svg viewBox="0 16 600 448">
-        <defs>
-          <linearGradient id="fgColor" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" :style="{stopColor: rgbI2S(fgRGB), stopOpacity: fgA/255}" />
-            <stop offset="100%" :style="{
-              stopColor: rgbI2S(fgRGB2 == null ? fgRGB : fgRGB2),
-              stopOpacity: (fgA2 == null ? fgA : fgA2)/255,
-            }" />
-          </linearGradient>
-        </defs>
-        <image href="/img/qft/preview-base.jpg" y="16" width="600" height="448" />
-        <rect :x="x" :y="y-fontSize" :width="width*fontSize/20" :height="fontSize" :fill="rgbaI2S(bgRGB, bgA)" />
-        <text :x="x+fontSize/10" :y="y-fontSize/10" fill="url(#fgColor)"
-          :style="{fontSize: fontSize+'px', fontFamily: 'auto'}">0:00.000</text>
-      </svg>
+      <Preview :config="codeConfigs" />
       <div style="white-space: pre">{{l.previewNote}}</div>
     </section>
     <section class="freeze">
@@ -58,23 +44,25 @@
 </template>
 
 <script>
-import {getConfig, lskey, buttonValues, codes} from './codegen.js';
+// import Preview from '../../PreviewString.vue';
+import {getConfig, lskey, codes} from './codegen.js';
 import labels from './labels.json';
-import {getLabels} from '../codegen.js';
 
 function updateConfig() {
   const {x, y, fontSize, width, fgRGB, fgA, fgRGB2, fgA2, bgRGB, bgA, freeze, freezeDuration} = this;
-  localStorage.setItem(lskey, JSON.stringify({
+  const config = {
     x, y, fontSize, width, fgRGB, fgA, fgRGB2, fgA2, bgRGB, bgA, freeze, freezeDuration
-  }));
+  };
+  localStorage.setItem(lskey, JSON.stringify(config));
+  this.$emit('config', config);
 }
 
 export default {
   props: {
     version: {type: String},
+    codeConfigs: {type: Object},
   },
   methods: {
-    updateConfig,
     onChangeFreeze($event, key) {
       this.freeze[key] = $event.target.checked;
       this.updateConfig();

@@ -1,0 +1,2450 @@
+{
+  " ": {
+    "index": 0,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "!": {
+    "index": 1,
+    "kerning": 3,
+    "width": 7,
+    "code": 33440
+  },
+  ":": {
+    "index": 2,
+    "kerning": 3,
+    "width": 7,
+    "code": 33440
+  },
+  "?": {
+    "index": 3,
+    "kerning": 1,
+    "width": 15,
+    "code": 33440
+  },
+  "[": {
+    "index": 4,
+    "kerning": 3,
+    "width": 14,
+    "code": 33440
+  },
+  "]": {
+    "index": 5,
+    "kerning": 0,
+    "width": 15,
+    "code": 33440
+  },
+  "#": {
+    "index": 6,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  ".": {
+    "index": 7,
+    "kerning": 0,
+    "width": 8,
+    "code": 33440
+  },
+  "-": {
+    "index": 8,
+    "kerning": 1,
+    "width": 13,
+    "code": 33440
+  },
+  ",": {
+    "index": 9,
+    "kerning": 0,
+    "width": 8,
+    "code": 33440
+  },
+  ";": {
+    "index": 10,
+    "kerning": 3,
+    "width": 7,
+    "code": 33440
+  },
+  "'": {
+    "index": 11,
+    "kerning": 0,
+    "width": 7,
+    "code": 33440
+  },
+  "`": {
+    "index": 12,
+    "kerning": 7,
+    "width": 6,
+    "code": 33440
+  },
+  "\"": {
+    "index": 13,
+    "kerning": 0,
+    "width": 10,
+    "code": 33440
+  },
+  "(": {
+    "index": 14,
+    "kerning": 3,
+    "width": 14,
+    "code": 33440
+  },
+  ")": {
+    "index": 15,
+    "kerning": 0,
+    "width": 15,
+    "code": 33440
+  },
+  "\u2026": {
+    "index": 16,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u2605": {
+    "index": 17,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3000": {
+    "index": 18,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3001": {
+    "index": 19,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3002": {
+    "index": 20,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u300c": {
+    "index": 21,
+    "kerning": 3,
+    "width": 14,
+    "code": 33440
+  },
+  "\u300d": {
+    "index": 22,
+    "kerning": 0,
+    "width": 15,
+    "code": 33440
+  },
+  "\u3041": {
+    "index": 23,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u3042": {
+    "index": 24,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3043": {
+    "index": 25,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u3044": {
+    "index": 26,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3045": {
+    "index": 27,
+    "kerning": 1,
+    "width": 17,
+    "code": 33440
+  },
+  "\u3046": {
+    "index": 28,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u3047": {
+    "index": 29,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u3048": {
+    "index": 30,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3049": {
+    "index": 31,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u304a": {
+    "index": 32,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u304b": {
+    "index": 33,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u304c": {
+    "index": 34,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u304d": {
+    "index": 35,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u304e": {
+    "index": 36,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u304f": {
+    "index": 37,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3050": {
+    "index": 38,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3051": {
+    "index": 39,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3052": {
+    "index": 40,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3053": {
+    "index": 41,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3054": {
+    "index": 42,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3055": {
+    "index": 43,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3056": {
+    "index": 44,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3057": {
+    "index": 45,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u3058": {
+    "index": 46,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u3059": {
+    "index": 47,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u305a": {
+    "index": 48,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u305b": {
+    "index": 49,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u305c": {
+    "index": 50,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u305d": {
+    "index": 51,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u305e": {
+    "index": 52,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u305f": {
+    "index": 53,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3060": {
+    "index": 54,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3061": {
+    "index": 55,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3062": {
+    "index": 56,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3063": {
+    "index": 57,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u3064": {
+    "index": 58,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3065": {
+    "index": 59,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3066": {
+    "index": 60,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3067": {
+    "index": 61,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3068": {
+    "index": 62,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u3069": {
+    "index": 63,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u306a": {
+    "index": 64,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u306b": {
+    "index": 65,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u306c": {
+    "index": 66,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u306d": {
+    "index": 67,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u306e": {
+    "index": 68,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u306f": {
+    "index": 69,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3070": {
+    "index": 70,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3071": {
+    "index": 71,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3072": {
+    "index": 72,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3073": {
+    "index": 73,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3074": {
+    "index": 74,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3075": {
+    "index": 75,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3076": {
+    "index": 76,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3077": {
+    "index": 77,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3078": {
+    "index": 78,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3079": {
+    "index": 79,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u307a": {
+    "index": 80,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u307b": {
+    "index": 81,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u307d": {
+    "index": 82,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u307c": {
+    "index": 83,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u307e": {
+    "index": 84,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u307f": {
+    "index": 85,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3080": {
+    "index": 86,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3081": {
+    "index": 87,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3082": {
+    "index": 88,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3083": {
+    "index": 89,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u3084": {
+    "index": 90,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3085": {
+    "index": 91,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u3086": {
+    "index": 92,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3087": {
+    "index": 93,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u3088": {
+    "index": 94,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3089": {
+    "index": 95,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u308a": {
+    "index": 96,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u308b": {
+    "index": 97,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u308c": {
+    "index": 98,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u308d": {
+    "index": 99,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u308f": {
+    "index": 100,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3092": {
+    "index": 101,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u3093": {
+    "index": 102,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u30a1": {
+    "index": 103,
+    "kerning": 1,
+    "width": 17,
+    "code": 33440
+  },
+  "\u30a2": {
+    "index": 104,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30a3": {
+    "index": 105,
+    "kerning": 1,
+    "width": 17,
+    "code": 33440
+  },
+  "\u30a4": {
+    "index": 106,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30a5": {
+    "index": 107,
+    "kerning": 1,
+    "width": 17,
+    "code": 33440
+  },
+  "\u30a6": {
+    "index": 108,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30a7": {
+    "index": 109,
+    "kerning": 1,
+    "width": 17,
+    "code": 33440
+  },
+  "\u30a8": {
+    "index": 110,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30a9": {
+    "index": 111,
+    "kerning": 1,
+    "width": 17,
+    "code": 33440
+  },
+  "\u30aa": {
+    "index": 112,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30ab": {
+    "index": 113,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30ac": {
+    "index": 114,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30ad": {
+    "index": 115,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30ae": {
+    "index": 116,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30af": {
+    "index": 117,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30b0": {
+    "index": 118,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30b1": {
+    "index": 119,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30b2": {
+    "index": 120,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30b3": {
+    "index": 121,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30b4": {
+    "index": 122,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30b5": {
+    "index": 123,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30b6": {
+    "index": 124,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30b7": {
+    "index": 125,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30b8": {
+    "index": 126,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30b9": {
+    "index": 127,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30ba": {
+    "index": 128,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30bb": {
+    "index": 129,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30bc": {
+    "index": 130,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30bd": {
+    "index": 131,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30be": {
+    "index": 132,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30bf": {
+    "index": 133,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30c0": {
+    "index": 134,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30c1": {
+    "index": 135,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30c2": {
+    "index": 136,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30c3": {
+    "index": 137,
+    "kerning": 1,
+    "width": 17,
+    "code": 33440
+  },
+  "\u30c4": {
+    "index": 138,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30c5": {
+    "index": 139,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30c6": {
+    "index": 140,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30c7": {
+    "index": 141,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30c8": {
+    "index": 142,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30c9": {
+    "index": 143,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30ca": {
+    "index": 144,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30cb": {
+    "index": 145,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30cc": {
+    "index": 146,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30cd": {
+    "index": 147,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30ce": {
+    "index": 148,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30cf": {
+    "index": 149,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30d0": {
+    "index": 150,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30d1": {
+    "index": 151,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30d2": {
+    "index": 152,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30d4": {
+    "index": 153,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30d3": {
+    "index": 154,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30d5": {
+    "index": 155,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30d6": {
+    "index": 156,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30d7": {
+    "index": 157,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30d8": {
+    "index": 158,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30d9": {
+    "index": 159,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30da": {
+    "index": 160,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30db": {
+    "index": 161,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30dc": {
+    "index": 162,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30dd": {
+    "index": 163,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30de": {
+    "index": 164,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30df": {
+    "index": 165,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30e0": {
+    "index": 166,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30e1": {
+    "index": 167,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30e2": {
+    "index": 168,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30e3": {
+    "index": 169,
+    "kerning": 1,
+    "width": 17,
+    "code": 33440
+  },
+  "\u30e4": {
+    "index": 170,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30e5": {
+    "index": 171,
+    "kerning": 1,
+    "width": 17,
+    "code": 33440
+  },
+  "\u30e6": {
+    "index": 172,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30e7": {
+    "index": 173,
+    "kerning": 1,
+    "width": 17,
+    "code": 33440
+  },
+  "\u30e8": {
+    "index": 174,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30e9": {
+    "index": 175,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30ea": {
+    "index": 176,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30eb": {
+    "index": 177,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30ec": {
+    "index": 178,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30ed": {
+    "index": 179,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30ef": {
+    "index": 180,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30f2": {
+    "index": 181,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30f3": {
+    "index": 182,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\u30fc": {
+    "index": 183,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u767a": {
+    "index": 184,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u751f": {
+    "index": 185,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u672c": {
+    "index": 186,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u4f53": {
+    "index": 187,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u62bc": {
+    "index": 188,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u96fb": {
+    "index": 189,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u6e90": {
+    "index": 190,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u53d6": {
+    "index": 191,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u6271": {
+    "index": 192,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u8aac": {
+    "index": 193,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u660e": {
+    "index": 194,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u66f8": {
+    "index": 195,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u6307": {
+    "index": 196,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u793a": {
+    "index": 197,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u5f93": {
+    "index": 198,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u8aad": {
+    "index": 199,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u8fbc": {
+    "index": 200,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u9589": {
+    "index": 201,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u6d77": {
+    "index": 202,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u5916": {
+    "index": 203,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u521d": {
+    "index": 204,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u671f": {
+    "index": 205,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u5316": {
+    "index": 206,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u4f5c": {
+    "index": 207,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u6210": {
+    "index": 208,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u4e2d": {
+    "index": 209,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u5185": {
+    "index": 210,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u5bb9": {
+    "index": 211,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u6d88": {
+    "index": 212,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u53bb": {
+    "index": 213,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u5931": {
+    "index": 214,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u6557": {
+    "index": 215,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u53ef": {
+    "index": 216,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u80fd": {
+    "index": 217,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u6027": {
+    "index": 218,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u7a7a": {
+    "index": 219,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u4f7f": {
+    "index": 220,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u7528": {
+    "index": 221,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u5bfe": {
+    "index": 222,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u5fdc": {
+    "index": 223,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u5411": {
+    "index": 224,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u5fc5": {
+    "index": 225,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u8981": {
+    "index": 226,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u91cf": {
+    "index": 227,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u9078": {
+    "index": 228,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u59cb": {
+    "index": 229,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u6587": {
+    "index": 230,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u4e0b": {
+    "index": 231,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u4e0a": {
+    "index": 232,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u958b": {
+    "index": 233,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u7d9a": {
+    "index": 234,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u5834": {
+    "index": 235,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u5408": {
+    "index": 236,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u6570": {
+    "index": 237,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u5236": {
+    "index": 238,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u9650": {
+    "index": 239,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u8d8a": {
+    "index": 240,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u8868": {
+    "index": 241,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u540c": {
+    "index": 242,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u6642": {
+    "index": 243,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u629e": {
+    "index": 244,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u5207": {
+    "index": 245,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u66ff": {
+    "index": 246,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u4ee5": {
+    "index": 247,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u591a": {
+    "index": 248,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u58ca": {
+    "index": 249,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u753b": {
+    "index": 250,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u9762": {
+    "index": 251,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u6b63": {
+    "index": 252,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u5e38": {
+    "index": 253,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u6574": {
+    "index": 254,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u7406": {
+    "index": 255,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u8d85": {
+    "index": 256,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "A": {
+    "index": 257,
+    "kerning": 1,
+    "width": 17,
+    "code": 33440
+  },
+  "B": {
+    "index": 258,
+    "kerning": 1,
+    "width": 16,
+    "code": 33440
+  },
+  "C": {
+    "index": 259,
+    "kerning": 1,
+    "width": 16,
+    "code": 33440
+  },
+  "D": {
+    "index": 260,
+    "kerning": 2,
+    "width": 15,
+    "code": 33440
+  },
+  "E": {
+    "index": 261,
+    "kerning": 2,
+    "width": 14,
+    "code": 33440
+  },
+  "F": {
+    "index": 262,
+    "kerning": 2,
+    "width": 14,
+    "code": 33440
+  },
+  "G": {
+    "index": 263,
+    "kerning": 1,
+    "width": 17,
+    "code": 33440
+  },
+  "H": {
+    "index": 264,
+    "kerning": 1,
+    "width": 16,
+    "code": 33440
+  },
+  "I": {
+    "index": 265,
+    "kerning": 4,
+    "width": 6,
+    "code": 33440
+  },
+  "J": {
+    "index": 266,
+    "kerning": 2,
+    "width": 13,
+    "code": 33440
+  },
+  "K": {
+    "index": 267,
+    "kerning": 2,
+    "width": 14,
+    "code": 33440
+  },
+  "L": {
+    "index": 268,
+    "kerning": 2,
+    "width": 14,
+    "code": 33440
+  },
+  "M": {
+    "index": 269,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "N": {
+    "index": 270,
+    "kerning": 1,
+    "width": 16,
+    "code": 33440
+  },
+  "O": {
+    "index": 271,
+    "kerning": 1,
+    "width": 17,
+    "code": 33440
+  },
+  "P": {
+    "index": 272,
+    "kerning": 1,
+    "width": 16,
+    "code": 33440
+  },
+  "Q": {
+    "index": 273,
+    "kerning": 1,
+    "width": 17,
+    "code": 33440
+  },
+  "R": {
+    "index": 274,
+    "kerning": 1,
+    "width": 16,
+    "code": 33440
+  },
+  "S": {
+    "index": 275,
+    "kerning": 2,
+    "width": 14,
+    "code": 33440
+  },
+  "T": {
+    "index": 276,
+    "kerning": 2,
+    "width": 13,
+    "code": 33440
+  },
+  "U": {
+    "index": 277,
+    "kerning": 1,
+    "width": 16,
+    "code": 33440
+  },
+  "V": {
+    "index": 278,
+    "kerning": 1,
+    "width": 16,
+    "code": 33440
+  },
+  "W": {
+    "index": 279,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "X": {
+    "index": 280,
+    "kerning": 1,
+    "width": 15,
+    "code": 33440
+  },
+  "Y": {
+    "index": 281,
+    "kerning": 1,
+    "width": 15,
+    "code": 33440
+  },
+  "Z": {
+    "index": 282,
+    "kerning": 2,
+    "width": 14,
+    "code": 33440
+  },
+  "a": {
+    "index": 283,
+    "kerning": 2,
+    "width": 12,
+    "code": 33440
+  },
+  "b": {
+    "index": 284,
+    "kerning": 2,
+    "width": 14,
+    "code": 33440
+  },
+  "c": {
+    "index": 285,
+    "kerning": 2,
+    "width": 11,
+    "code": 33440
+  },
+  "d": {
+    "index": 286,
+    "kerning": 1,
+    "width": 14,
+    "code": 33440
+  },
+  "e": {
+    "index": 287,
+    "kerning": 2,
+    "width": 13,
+    "code": 33440
+  },
+  "f": {
+    "index": 288,
+    "kerning": 3,
+    "width": 9,
+    "code": 33440
+  },
+  "g": {
+    "index": 289,
+    "kerning": 2,
+    "width": 13,
+    "code": 33440
+  },
+  "h": {
+    "index": 290,
+    "kerning": 2,
+    "width": 12,
+    "code": 33440
+  },
+  "i": {
+    "index": 291,
+    "kerning": 4,
+    "width": 6,
+    "code": 33440
+  },
+  "j": {
+    "index": 292,
+    "kerning": 3,
+    "width": 8,
+    "code": 33440
+  },
+  "k": {
+    "index": 293,
+    "kerning": 2,
+    "width": 12,
+    "code": 33440
+  },
+  "l": {
+    "index": 294,
+    "kerning": 3,
+    "width": 7,
+    "code": 33440
+  },
+  "m": {
+    "index": 295,
+    "kerning": 1,
+    "width": 17,
+    "code": 33440
+  },
+  "n": {
+    "index": 296,
+    "kerning": 2,
+    "width": 13,
+    "code": 33440
+  },
+  "o": {
+    "index": 297,
+    "kerning": 2,
+    "width": 14,
+    "code": 33440
+  },
+  "p": {
+    "index": 298,
+    "kerning": 2,
+    "width": 14,
+    "code": 33440
+  },
+  "q": {
+    "index": 299,
+    "kerning": 1,
+    "width": 14,
+    "code": 33440
+  },
+  "r": {
+    "index": 300,
+    "kerning": 3,
+    "width": 9,
+    "code": 33440
+  },
+  "s": {
+    "index": 301,
+    "kerning": 2,
+    "width": 13,
+    "code": 33440
+  },
+  "t": {
+    "index": 302,
+    "kerning": 3,
+    "width": 9,
+    "code": 33440
+  },
+  "u": {
+    "index": 303,
+    "kerning": 2,
+    "width": 13,
+    "code": 33440
+  },
+  "v": {
+    "index": 304,
+    "kerning": 2,
+    "width": 13,
+    "code": 33440
+  },
+  "w": {
+    "index": 305,
+    "kerning": 1,
+    "width": 17,
+    "code": 33440
+  },
+  "x": {
+    "index": 306,
+    "kerning": 2,
+    "width": 11,
+    "code": 33440
+  },
+  "y": {
+    "index": 307,
+    "kerning": 2,
+    "width": 12,
+    "code": 33440
+  },
+  "z": {
+    "index": 308,
+    "kerning": 2,
+    "width": 12,
+    "code": 33440
+  },
+  "0": {
+    "index": 309,
+    "kerning": 1,
+    "width": 16,
+    "code": 33440
+  },
+  "1": {
+    "index": 310,
+    "kerning": 2,
+    "width": 12,
+    "code": 33440
+  },
+  "2": {
+    "index": 311,
+    "kerning": 1,
+    "width": 15,
+    "code": 33440
+  },
+  "3": {
+    "index": 312,
+    "kerning": 2,
+    "width": 14,
+    "code": 33440
+  },
+  "4": {
+    "index": 313,
+    "kerning": 1,
+    "width": 16,
+    "code": 33440
+  },
+  "5": {
+    "index": 314,
+    "kerning": 1,
+    "width": 15,
+    "code": 33440
+  },
+  "6": {
+    "index": 315,
+    "kerning": 1,
+    "width": 15,
+    "code": 33440
+  },
+  "7": {
+    "index": 316,
+    "kerning": 1,
+    "width": 15,
+    "code": 33440
+  },
+  "8": {
+    "index": 317,
+    "kerning": 1,
+    "width": 15,
+    "code": 33440
+  },
+  "9": {
+    "index": 318,
+    "kerning": 1,
+    "width": 16,
+    "code": 33440
+  },
+  "\uff01": {
+    "index": 319,
+    "kerning": 3,
+    "width": 7,
+    "code": 33440
+  },
+  "\uff1f": {
+    "index": 320,
+    "kerning": 1,
+    "width": 15,
+    "code": 33440
+  },
+  "\uff03": {
+    "index": 321,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\uff1a": {
+    "index": 322,
+    "kerning": 3,
+    "width": 7,
+    "code": 33440
+  },
+  "\uff1b": {
+    "index": 323,
+    "kerning": 3,
+    "width": 7,
+    "code": 33440
+  },
+  "\uff0b": {
+    "index": 324,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u2212": {
+    "index": 325,
+    "kerning": 1,
+    "width": 13,
+    "code": 33440
+  },
+  "\u30fb": {
+    "index": 326,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\uffe5": {
+    "index": 327,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\uff06": {
+    "index": 328,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u201c": {
+    "index": 329,
+    "kerning": 5,
+    "width": 9,
+    "code": 33440
+  },
+  "\u201d": {
+    "index": 330,
+    "kerning": 0,
+    "width": 10,
+    "code": 33440
+  },
+  "\uff1d": {
+    "index": 331,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\uff08": {
+    "index": 332,
+    "kerning": 3,
+    "width": 14,
+    "code": 33440
+  },
+  "\uff09": {
+    "index": 333,
+    "kerning": 0,
+    "width": 15,
+    "code": 33440
+  },
+  "\u2019": {
+    "index": 334,
+    "kerning": 0,
+    "width": 7,
+    "code": 33440
+  },
+  "\uff20": {
+    "index": 335,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\uff1c": {
+    "index": 336,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\uff1e": {
+    "index": 337,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\uff05": {
+    "index": 338,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\uff04": {
+    "index": 339,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\uff0f": {
+    "index": 340,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u2192": {
+    "index": 341,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u2190": {
+    "index": 342,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u2191": {
+    "index": 343,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\u2193": {
+    "index": 344,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\uff10": {
+    "index": 345,
+    "kerning": 1,
+    "width": 16,
+    "code": 33440
+  },
+  "\uff11": {
+    "index": 346,
+    "kerning": 2,
+    "width": 12,
+    "code": 33440
+  },
+  "\uff12": {
+    "index": 347,
+    "kerning": 1,
+    "width": 15,
+    "code": 33440
+  },
+  "\uff13": {
+    "index": 348,
+    "kerning": 2,
+    "width": 14,
+    "code": 33440
+  },
+  "\uff14": {
+    "index": 349,
+    "kerning": 1,
+    "width": 16,
+    "code": 33440
+  },
+  "\uff15": {
+    "index": 350,
+    "kerning": 1,
+    "width": 15,
+    "code": 33440
+  },
+  "\uff16": {
+    "index": 351,
+    "kerning": 1,
+    "width": 15,
+    "code": 33440
+  },
+  "\uff17": {
+    "index": 352,
+    "kerning": 1,
+    "width": 15,
+    "code": 33440
+  },
+  "\uff18": {
+    "index": 353,
+    "kerning": 1,
+    "width": 15,
+    "code": 33440
+  },
+  "\uff19": {
+    "index": 354,
+    "kerning": 1,
+    "width": 16,
+    "code": 33440
+  },
+  "\uff21": {
+    "index": 355,
+    "kerning": 1,
+    "width": 17,
+    "code": 33440
+  },
+  "\uff22": {
+    "index": 356,
+    "kerning": 1,
+    "width": 16,
+    "code": 33440
+  },
+  "\uff23": {
+    "index": 357,
+    "kerning": 1,
+    "width": 16,
+    "code": 33440
+  },
+  "\uff24": {
+    "index": 358,
+    "kerning": 2,
+    "width": 15,
+    "code": 33440
+  },
+  "\uff25": {
+    "index": 359,
+    "kerning": 2,
+    "width": 14,
+    "code": 33440
+  },
+  "\uff26": {
+    "index": 360,
+    "kerning": 2,
+    "width": 14,
+    "code": 33440
+  },
+  "\uff27": {
+    "index": 361,
+    "kerning": 1,
+    "width": 17,
+    "code": 33440
+  },
+  "\uff28": {
+    "index": 362,
+    "kerning": 1,
+    "width": 16,
+    "code": 33440
+  },
+  "\uff29": {
+    "index": 363,
+    "kerning": 4,
+    "width": 6,
+    "code": 33440
+  },
+  "\uff2a": {
+    "index": 364,
+    "kerning": 2,
+    "width": 13,
+    "code": 33440
+  },
+  "\uff2b": {
+    "index": 365,
+    "kerning": 2,
+    "width": 14,
+    "code": 33440
+  },
+  "\uff2c": {
+    "index": 366,
+    "kerning": 2,
+    "width": 14,
+    "code": 33440
+  },
+  "\uff2d": {
+    "index": 367,
+    "kerning": 0,
+    "width": 19,
+    "code": 33440
+  },
+  "\uff2e": {
+    "index": 368,
+    "kerning": 1,
+    "width": 16,
+    "code": 33440
+  },
+  "\uff2f": {
+    "index": 369,
+    "kerning": 1,
+    "width": 17,
+    "code": 33440
+  },
+  "\uff30": {
+    "index": 370,
+    "kerning": 1,
+    "width": 16,
+    "code": 33440
+  },
+  "\uff31": {
+    "index": 371,
+    "kerning": 1,
+    "width": 17,
+    "code": 33440
+  },
+  "\uff32": {
+    "index": 372,
+    "kerning": 1,
+    "width": 16,
+    "code": 33440
+  },
+  "\uff33": {
+    "index": 373,
+    "kerning": 2,
+    "width": 14,
+    "code": 33440
+  },
+  "\uff34": {
+    "index": 374,
+    "kerning": 2,
+    "width": 13,
+    "code": 33440
+  },
+  "\uff35": {
+    "index": 375,
+    "kerning": 1,
+    "width": 16,
+    "code": 33440
+  },
+  "\uff36": {
+    "index": 376,
+    "kerning": 1,
+    "width": 16,
+    "code": 33440
+  },
+  "\uff37": {
+    "index": 377,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  },
+  "\uff38": {
+    "index": 378,
+    "kerning": 1,
+    "width": 15,
+    "code": 33440
+  },
+  "\uff39": {
+    "index": 379,
+    "kerning": 1,
+    "width": 15,
+    "code": 33440
+  },
+  "\uff3a": {
+    "index": 380,
+    "kerning": 2,
+    "width": 14,
+    "code": 33440
+  },
+  "\uff41": {
+    "index": 381,
+    "kerning": 2,
+    "width": 12,
+    "code": 33440
+  },
+  "\uff42": {
+    "index": 382,
+    "kerning": 2,
+    "width": 14,
+    "code": 33440
+  },
+  "\uff43": {
+    "index": 383,
+    "kerning": 2,
+    "width": 11,
+    "code": 33440
+  },
+  "\uff44": {
+    "index": 384,
+    "kerning": 1,
+    "width": 14,
+    "code": 33440
+  },
+  "\uff45": {
+    "index": 385,
+    "kerning": 2,
+    "width": 13,
+    "code": 33440
+  },
+  "\uff46": {
+    "index": 386,
+    "kerning": 3,
+    "width": 9,
+    "code": 33440
+  },
+  "\uff47": {
+    "index": 387,
+    "kerning": 2,
+    "width": 13,
+    "code": 33440
+  },
+  "\uff48": {
+    "index": 388,
+    "kerning": 2,
+    "width": 12,
+    "code": 33440
+  },
+  "\uff49": {
+    "index": 389,
+    "kerning": 4,
+    "width": 6,
+    "code": 33440
+  },
+  "\uff4a": {
+    "index": 390,
+    "kerning": 3,
+    "width": 8,
+    "code": 33440
+  },
+  "\uff4b": {
+    "index": 391,
+    "kerning": 2,
+    "width": 12,
+    "code": 33440
+  },
+  "\uff4c": {
+    "index": 392,
+    "kerning": 3,
+    "width": 7,
+    "code": 33440
+  },
+  "\uff4d": {
+    "index": 393,
+    "kerning": 1,
+    "width": 17,
+    "code": 33440
+  },
+  "\uff4e": {
+    "index": 394,
+    "kerning": 2,
+    "width": 13,
+    "code": 33440
+  },
+  "\uff4f": {
+    "index": 395,
+    "kerning": 2,
+    "width": 14,
+    "code": 33440
+  },
+  "\uff50": {
+    "index": 396,
+    "kerning": 2,
+    "width": 14,
+    "code": 33440
+  },
+  "\uff51": {
+    "index": 397,
+    "kerning": 1,
+    "width": 14,
+    "code": 33440
+  },
+  "\uff52": {
+    "index": 398,
+    "kerning": 3,
+    "width": 9,
+    "code": 33440
+  },
+  "\uff53": {
+    "index": 399,
+    "kerning": 2,
+    "width": 13,
+    "code": 33440
+  },
+  "\uff54": {
+    "index": 400,
+    "kerning": 3,
+    "width": 9,
+    "code": 33440
+  },
+  "\uff55": {
+    "index": 401,
+    "kerning": 2,
+    "width": 13,
+    "code": 33440
+  },
+  "\uff56": {
+    "index": 402,
+    "kerning": 2,
+    "width": 13,
+    "code": 33440
+  },
+  "\uff57": {
+    "index": 403,
+    "kerning": 1,
+    "width": 17,
+    "code": 33440
+  },
+  "\uff58": {
+    "index": 404,
+    "kerning": 2,
+    "width": 11,
+    "code": 33440
+  },
+  "\uff59": {
+    "index": 405,
+    "kerning": 2,
+    "width": 12,
+    "code": 33440
+  },
+  "\uff5a": {
+    "index": 406,
+    "kerning": 2,
+    "width": 12,
+    "code": 33440
+  },
+  "\u301c": {
+    "index": 407,
+    "kerning": 0,
+    "width": 20,
+    "code": 33440
+  }
+}

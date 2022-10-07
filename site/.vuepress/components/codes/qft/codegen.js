@@ -26,7 +26,8 @@ export const defaultConfig = {
 };
 
 export function getConfig() {
-  const config = parseJSON(localStorage.getItem(lskey)) ?? {};
+  const config =
+    (typeof localStorage !== 'undefined' && parseJSON(localStorage.getItem(lskey))) || {};
   return {
     ...defaultConfig,
     ...config,

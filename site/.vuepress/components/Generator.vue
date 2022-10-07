@@ -42,7 +42,8 @@
 
       <div v-if="codes && codes.length > 0" class="help">
         <h3>{{ getLabel('headers.help') }}</h3>
-        <CodeInfo v-if="!!inspectingCode" :code="inspectingCode" :version="selectedVersion" />
+        <CodeInfo v-if="!!inspectingCode" :code="inspectingCode" :version="selectedVersion"
+          :codeConfigs="codeConfigs" @config="onCodeConfigChanged" />
         <div v-else-if="showStageLoaderHelp">
           <h3>{{ getLabel('headers.stageloader') }}</h3>
           <div>
@@ -109,6 +110,9 @@ import gameVersions from '../data/gameVersions.json';
 // Util
 import { translate } from '../i18n/localeHelper';
 
+// Code Configs
+import {getConfig as qftGetConfig} from './codes/qft/codegen';
+
 export default {
   data() {
     return {
@@ -122,6 +126,12 @@ export default {
       stageLoaderCodes: [],
       showStageLoaderHelp: false,
       generation: 0,
+      codeConfigs: {},
+    };
+  },
+  created() {
+    this.codeConfigs = {
+      qft: qftGetConfig(),
     };
   },
   methods: {
@@ -191,6 +201,10 @@ export default {
     inspect(code) {
       this.showStageLoaderHelp = false;
       this.inspectingCode = code;
+    },
+
+    onCodeConfigChanged(e) {
+      this.codeConfigs = {...this.codeConfigs, ...e};
     },
   },
 };

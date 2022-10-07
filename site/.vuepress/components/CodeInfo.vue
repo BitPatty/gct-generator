@@ -11,7 +11,8 @@
       <span v-else>{{ getLabel('codeinfo.author') }} {{ translatedCode.author }}</span>
     </div>
     <p class="description" v-html="translatedCode.description"></p>
-    <component v-if="configUI" :is="configUI" :version="version"></component>
+    <component v-if="configUI" :is="configUI" :version="version"
+      :codeConfigs="codeConfigs" @config="$emit('config', {[code.id]: $event})" />
   </div>
 </template>
 
@@ -24,6 +25,7 @@ export default {
     anchor: { type: Boolean },
     code: { type: Object },
     version: { type: String },
+    codeConfigs: { type: Object },
   },
   computed: {
     translatedCode: function () {
