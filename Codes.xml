@@ -3285,7 +3285,7 @@
         <title lang="en-US">Customized display</title>
         <title lang="ja-JP">カスタマイズ表示</title>
         <author>sup39(サポミク)</author>
-        <version>0.1</version>
+        <version>0.2</version>
         <date>Oct 15, 2022</date>
         <dependencies>drawText</dependencies>
         <description lang="en-US">

@@ -407,6 +407,10 @@ export default function codegen(version) {
   }
   // addi r1, r1, spOff
   if (spOff) program.push(ASM.addi(1, 1, spOff));
+  // addi r3, r1, 0xE90
+  program.push(ASM.addi(3, 1, 0xe90));
+  // bl setup
+  program.bl(addrSetup2D);
   // b orig+4
   program.b(addrOrig + 4);
 
