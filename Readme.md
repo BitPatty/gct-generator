@@ -23,6 +23,19 @@ The codes are stored in the `Codes.xml` file. If you want to add or change codes
 
 When adding new codes keep in mind that the English title/description are mandatory.
 
+#### Codes with configuration
+Codes with configuration are usually defined as vue components,
+which is defined in [site/.vuepress/components/codes/](site/.vuepress/components/codes/).
+When creating/updating those codes,
+in addition to editing the `Codes.xml` file,
+you may also need to check the following files:
+- [site/.vuepress/components/codes/codegen.js](site/.vuepress/components/codes/codegen.js):
+  Specify the Gecko code generator function of the code.
+  The version string will be passed as the first argument.
+- [site/.vuepress/components/codes/ui.js](site/.vuepress/components/codes/ui.js):
+  Specify the vue component for the configuration of the code.
+  The version string will be passed as a property.
+
 #### Reserved Memory
 
 Some codes store some states in the games memory starting from address 0x817F0000. To avoid collisions use a memory range in the unallocated ranges:

@@ -10,7 +10,7 @@
     "bgColor": "背景色：",
     "alpha": "不透明度=",
     "preview": "プレビュー",
-    "previewNote": "※ x座標の範囲は0~600、y座標の範囲は16~464です\n※ ゲーム内のフォントはプレビューのより幅が広いです",
+    "previewNote": "※ x座標の範囲は0~600、y座標の範囲は16~464です",
     "freeze": {
       "h3": "一時停止",
       "duration": "長さ：",
@@ -39,7 +39,7 @@
     "bgColor": "Background color: ",
     "alpha": "Alpha=",
     "preview": "Preview",
-    "previewNote": "※ x ranges from 0 to 600, and y ranges from 16 to 464.\n※ The font is wider in the game compared to the preview.",
+    "previewNote": "※ x ranges from 0 to 600, and y ranges from 16 to 464.",
     "freeze": {
       "h3": "Freezing the timer",
       "duration": "Duration: ",

@@ -1,9 +1,11 @@
 import InstantRestart from './InstantRestart/codegen.js';
 import qft from './qft/codegen.js';
+import CustomizedDisplay from './CustomizedDisplay/codegen.js';
 
 export default {
   InstantRestart,
   qft,
+  CustomizedDisplay,
 };
 
 /**

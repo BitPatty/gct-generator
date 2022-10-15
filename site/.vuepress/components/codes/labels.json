@@ -1,0 +1,20 @@
+{
+  "ja-JP": {
+    "location": "位置：",
+    "fontSize": "文字サイズ：",
+    "fgColor": "文字色：",
+    "fgColorGrad": "グラデーション",
+    "fgColor1": "文字色(上)：",
+    "fgColor2": "文字色(下)：",
+    "alpha": "不透明度="
+  },
+  "en-US": {
+    "location": "Location: ",
+    "fontSize": "Font size: ",
+    "fgColor": "Font color: ",
+    "fgColorGrad": "Gradient",
+    "fgColor1": "Font color(Top): ",
+    "fgColor2": "Font color(Bottom): ",
+    "alpha": "Alpha="
+  }
+}

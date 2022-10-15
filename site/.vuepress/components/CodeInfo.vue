@@ -10,9 +10,10 @@
       >
       <span v-else>{{ getLabel('codeinfo.author') }} {{ translatedCode.author }}</span>
     </div>
+    <Preview v-if="showPreview" :config="previewConfig" />
     <p class="description" v-html="translatedCode.description"></p>
     <component v-if="configUI" :is="configUI" :version="version"
-      :codeConfigs="codeConfigs" @config="$emit('config', {[code.id]: $event})" />
+      :previewConfig="previewConfig" @config="$emit('config', {[code.id]: $event})" />
   </div>
 </template>
 
@@ -25,7 +26,7 @@ export default {
     anchor: { type: Boolean },
     code: { type: Object },
     version: { type: String },
-    codeConfigs: { type: Object },
+    previewConfig: { type: Object },
   },
   computed: {
     translatedCode: function () {
@@ -33,6 +34,15 @@ export default {
     },
     configUI: function () {
       return configUIs[this.code.id];
+    },
+    showPreview() {
+      return [
+        'PatternSelector',
+        'PASDisplay',
+        'SpeedDisplay',
+        'CustomizedDisplay',
+        'qft',
+      ].includes(this.code.id); // TODO
     },
   },
   data() {

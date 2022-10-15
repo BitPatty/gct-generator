@@ -2,6 +2,11 @@
 ## Oct 16, 2022
 \[QFT v1.2] Fix QFT background when 112\*fontSize is not an integer
 
+## Oct 15, 2022
+- Add preview for selected codes (for NTSC-J)
+- Add CustomizedDisplay
+- Add instructions to create/update codes with configuration in Readme.md
+
 ## Jun 8, 2022
 ### Fixed 'Shine Get Timer' stopping on any cutscene started after touching a Shine
 Shoutouts to plankton for touching the Pinna 1 Shine before its spawn cutscene started, in which case the timer would stop around 8 seconds early.

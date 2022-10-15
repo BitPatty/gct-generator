@@ -1,5 +1,5 @@
 <template>
-  <div class="preview-str" :style="styles.root" >
+  <div v-if="text" class="preview-str" :style="styles.root" >
     <div v-for="style, i in styles.chars" :key="i" class="char-ctn" :style="style.ctn">
       <div class="char-bg" :style="style.bg" />
       <div class="char-mask" :style="style.mask" />

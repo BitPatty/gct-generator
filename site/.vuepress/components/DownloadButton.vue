@@ -72,7 +72,7 @@ export default {
 
       // generate file
       const codeSize = c.reduce((a, e) => a+e.source.length, 0)/2 + 16; // 8(00D0)+8(F000)
-      console.log(codeSize, c);
+      // console.log(codeSize, c);
       switch (this.format) {
         case 'gct':
           this.alertGCTCodeSize(codeSize);

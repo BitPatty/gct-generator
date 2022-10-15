@@ -43,7 +43,7 @@
       <div v-if="codes && codes.length > 0" class="help">
         <h3>{{ getLabel('headers.help') }}</h3>
         <CodeInfo v-if="!!inspectingCode" :code="inspectingCode" :version="selectedVersion"
-          :codeConfigs="codeConfigs" @config="onCodeConfigChanged" />
+          :previewConfig="previewConfig" @config="onCodeConfigChanged" />
         <div v-else-if="showStageLoaderHelp">
           <h3>{{ getLabel('headers.stageloader') }}</h3>
           <div>
@@ -106,12 +106,14 @@
 <script>
 // Data
 import gameVersions from '../data/gameVersions.json';
+import codeCategories from '../data/codeCategories.json';
 
 // Util
 import { translate } from '../i18n/localeHelper';
 
 // Code Configs
-import {getConfig as qftGetConfig} from './codes/qft/codegen';
+import {getConfig as getConfigQFT} from './codes/qft/codegen';
+import {getConfig as getConfigCD} from './codes/CustomizedDisplay/codegen';
 
 export default {
   data() {
@@ -131,7 +133,11 @@ export default {
   },
   created() {
     this.codeConfigs = {
-      qft: qftGetConfig(),
+      qft: getConfigQFT(),
+      PatternSelector: {},
+      SpeedDisplay: {},
+      PASDisplay: {},
+      CustomizedDisplay: getConfigCD(this.version),
     };
   },
   methods: {
@@ -205,6 +211,17 @@ export default {
 
     onCodeConfigChanged(e) {
       this.codeConfigs = {...this.codeConfigs, ...e};
+    },
+  },
+  computed: {
+    previewConfig() {
+      const {id, category} = this.inspectingCode ?? {};
+      const {exclusive} = codeCategories.find((c) => c.identifier === category) ?? {};
+      const ids = new Set(this.selectedCheats
+        .filter(code => !(code.category === category && exclusive))
+        .map(code => code.id));
+      ids.add(id);
+      return Object.fromEntries(Object.entries(this.codeConfigs).filter(([id]) => ids.has(id)));
     },
   },
 };

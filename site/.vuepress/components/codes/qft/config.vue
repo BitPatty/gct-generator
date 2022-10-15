@@ -3,27 +3,12 @@
     <section v-if="['GMSJ01', 'GMSJ0A'].includes(version)" class="appearance">
       <h3>{{l.h3}}</h3>
       <div>
-        <span>{{l.location}}(</span><input type="number" min="0" max="600" v-model.number="x"><span>, </span><input type="number" min="16" max="464" v-model.number="y"><span>)</span>
-      </div>
-      <div>
-        <span>{{l.fontSize}}</span><input type="number" min="0" v-model.number="fontSize">
-      </div>
-      <div>
-        <span>{{fgRGB2==null ? l.fgColor : l.fgColor1}}</span><input type="color" :value="rgbI2S(fgRGB)" @change="fgRGB = rgbS2I($event.target.value)">
-        <span>{{l.alpha}}</span><input type="number" min="0" max="255" v-model.number="fgA"><span>/255={{(fgA/2.55).toFixed(1)}}%</span>
-        <input type="checkbox" :checked="fgRGB2!=null" @change="toggleGradient"><span>{{l.fgColorGrad}}</span>
-      </div>
-      <div v-if="fgRGB2 != null">
-        <span>{{l.fgColor2}}</span><input type="color" :value="rgbI2S(fgRGB2)" @change="fgRGB2 = rgbS2I($event.target.value)">
-        <span>{{l.alpha}}</span><input type="number" min="0" max="255" v-model.number="fgA2"><span>/255={{(fgA2/2.55).toFixed(1)}}%</span>
+        <TextConfig v-model="textConfig" />
       </div>
       <div>
         <span>{{l.bgColor}}</span><input type="color" :value="rgbI2S(bgRGB)" @change="bgRGB = rgbS2I($event.target.value)">
         <span>{{l.alpha}}</span><input type="number" min="0" max="255" v-model.number="bgA"><span>/255={{(bgA/2.55).toFixed(1)}}%</span>
       </div>
-      <h4>{{l.preview}}</h4>
-      <Preview :config="codeConfigs" />
-      <div style="white-space: pre">{{l.previewNote}}</div>
     </section>
     <section class="freeze">
       <h3>{{l.freeze.h3}}</h3>
@@ -44,9 +29,10 @@
 </template>
 
 <script>
-// import Preview from '../../PreviewString.vue';
 import {getConfig, lskey, codes} from './codegen.js';
+import {rgbI2S, rgbS2I, rgbaI2S} from '../utils';
 import labels from './labels.json';
+import TextConfig from '../TextConfig.vue';
 
 function updateConfig() {
   const {x, y, fontSize, width, fgRGB, fgA, fgRGB2, fgA2, bgRGB, bgA, freeze, freezeDuration} = this;
@@ -58,9 +44,11 @@ function updateConfig() {
 }
 
 export default {
+  components: {
+    TextConfig,
+  },
   props: {
     version: {type: String},
-    codeConfigs: {type: Object},
   },
   methods: {
     onChangeFreeze($event, key) {
@@ -76,15 +64,17 @@ export default {
         this.fgA2 = null;
       }
     },
-    rgbI2S: (x) => '#'+x.toString(16).padStart(6, '0'),
-    rgbS2I: (s) => parseInt(s.slice(1), 16),
-    rgbaI2S: (rgb, a) => '#'+rgb.toString(16).padStart(6, '0')+a.toString(16).padStart(2, '0'),
+    updateConfig,
+    rgbI2S,
+    rgbS2I,
+    rgbaI2S,
   },
   data() {
     const {x, y, fontSize, width, fgRGB, fgA, fgRGB2, fgA2, bgRGB, bgA, freeze, freezeDuration} = getConfig();
     return {
-      x, y, fontSize, width,
-      fgRGB, fgA, fgRGB2, fgA2, bgRGB, bgA,
+      x, y, fontSize,
+      fgRGB, fgA, fgRGB2, fgA2,
+      width, bgRGB, bgA,
       freeze, freezeDuration,
       // const
       freezeKeys: Object.keys(codes[this.version]?.freezeCodeInfo ?? {}),
@@ -94,16 +84,19 @@ export default {
     l() {
       return labels[this.$lang] ?? labels['en-US'];
     },
+    textConfig: {
+      get() {
+        const {x, y, fontSize, fgRGB, fgA, fgRGB2, fgA2} = this;
+        return {x, y, fontSize, fgRGB, fgA, fgRGB2, fgA2};
+      },
+      set(value) {
+        Object.assign(this, value);
+        this.updateConfig();
+      },
+    },
   },
   watch: {
-    x: updateConfig,
-    y: updateConfig,
-    fontSize: updateConfig,
     width: updateConfig,
-    fgRGB: updateConfig,
-    fgA: updateConfig,
-    fgRGB2: updateConfig,
-    fgA2: updateConfig,
     bgRGB: updateConfig,
     bgA: updateConfig,
     freezeDuration: updateConfig,
