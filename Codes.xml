@@ -4339,4 +4339,344 @@
           60000000 00000000
         </source>
     </code>
+    <code>
+        <category>misc</category>
+        <title lang="en-US">Stage Intro Skip</title>
+        <title lang="ja-JP">デモムービースキップ</title>
+        <author>sup39(サポミク)</author>
+        <version>0.1</version>
+        <date>Jul 27, 2022</date>
+        <description lang="en-US">
+            Fast forward the stage intro movie.
+
+            ::: warning
+            SGT will be inaccurate with this code.  
+            :::
+
+            - Press `R + D-Pad Up` to enable
+            - Press `R + D-Pad Down` to disable
+        </description>
+        <description lang="ja-JP">
+            ステージに入った時のデモムービーを早送りします。
+
+            ::: warning
+            このコードを有効にするとシャインゲットタイマーのタイムがずれます。
+            :::
+
+            - `R + 十字キー上`でコードを有効にします
+            - `R + 十字キー下`でコードを無効にします
+        </description>
+        <source version="GMSJ01">
+            28400D50 00000028
+            C20ECF14 0000000A
+            899A0064 2C0C0001
+            40A20040 819A0074
+            818C0094 816C02BC
+            2C0B0003 41A1002C
+            41A00018 3D80803E
+            818C6034 39600000
+            916C0018 48000014
+            3863000F 907A0054
+            3B800000 48000008
+            B01A004C 00000000
+            C20EC5D0 00000004
+            807F0074 80630094
+            806302BC 2C830000
+            70000061 4C423102
+            60000000 00000000
+            28400D51 00000024
+            040ECF14 b01a004c
+            040ec5d0 70000061
+            E0000000 00000000
+        </source>
+        <source version="GMSJ0A">
+            283F5428 00000028
+            C2279640 00000005
+            899A0064 2C0C0001
+            4182000C B01A004C
+            48000010 3863000F
+            907A0054 3B800000
+            60000000 00000000
+            04278D00 60000000
+            283F5429 00000024
+            04279640 B01A004C
+            04278D00 418204EC
+            E0000000 00000000
+        </source>
+    </code>
+    <code>
+        <category>misc</category>
+        <title lang="en-US">Spawn Yoshi</title>
+        <title lang="ja-JP">どこでもヨッシー</title>
+        <author>sup39(サポミク)</author>
+        <version>0.1</version>
+        <date>Oct 14, 2022</date>
+        <description lang="en-US">
+            Spawn and ride on Yoshi
+            |  Combination  |  Yoshi's Color  |
+            |---------------|------|
+            |Y + D-Pad Left |Orange|
+            |Y + D-Pad Right|Purple|
+            |Y + D-Pad Down |Pink  |
+            |Y + D-Pad Up   |Green |
+        </description>
+        <description lang="ja-JP">
+            次のボタンでどこでもヨッシーに乗れます。
+            |  ボタン  |  ヨッシーの色 |
+            |--------------|------|
+            |Y + 十字キー左|オレンジ|
+            |Y + 十字キー右|紫|
+            |Y + 十字キー下|ピンク|
+            |Y + 十字キー上|緑|
+        </description>
+        <source version="GMSJ01">
+            C21604C4 0000000A
+            807F03F0 3C808040
+            A0840D50 54800436
+            2C000800 40820034
+            54840EFD 4182002C
+            3C006300 5C0027BE
+            980300D0 80030008
+            9003000C 807F03F0
+            3D808016 618C0640
+            7D8803A6 4E800020
+            60000000 00000000
+            C21945AC 00000009
+            3C808040 A0840D50
+            54800436 2C000800
+            4082002C 54840EFD
+            41820024 806D98B8
+            806303F0 93E300F0
+            7FE3FB78 81830000
+            818C0104 7D8803A6
+            4E800021 A01F00FC
+            60000000 00000000
+        </source>
+    </code>
+    <code>
+        <category>misc</category>
+        <title lang="en-US">Fast Forward</title>
+        <title lang="ja-JP">早送り</title>
+        <author>sup39(サポミク)</author>
+        <version>0.1</version>
+        <date>Apr 25, 2022</date>
+        <description lang="en-US">
+            Fast forward the game when the following button combination is pressed.
+
+            |  Combination  |  Result |
+            |---------------|------|
+            |B + D-Pad Left | Fast forward 4x |
+            |B + D-Pad Right| Fast forward 8x (may cause lag) |
+
+            ::: warning
+            SGT will be inaccurate with this code.
+            :::
+        </description>
+        <description lang="ja-JP">
+            次のボタンを押している間にゲームを早送りします。
+
+            |  ボタン  |  効果 |
+            |--------------|------|
+            |B + 十字キー左|4倍速|
+            |B + 十字キー右|8倍速(ラグが発生する可能性がある)|
+
+            ::: warning
+            このコードを使うとシャインゲットタイマーのタイムがずれます。  
+            :::
+        </description>
+        <source version="GMSJ01">
+            020ecde2 00000258
+            28400D50 00000204
+            020ecde2 00000960
+            28400D51 00000208
+            020ecde2 000012C0
+            E0000000 00000000
+        </source>
+        <source version="GMSJ0A">
+            0227950E 00000258
+            283F5428 00000204
+            0227950E 00000960
+            283F5429 00000208
+            0227950E 000012C0
+            E0000000 00000000
+        </source>
+    </code>
+    <code>
+        <category>misc</category>
+        <title lang="en-US">Instant Level Select</title>
+        <title lang="ja-JP">レベル選択DX</title>
+        <author>sup39(サポミク)</author>
+        <version>0.1</version>
+        <date>Oct 16, 2022</date>
+        <description lang="en-US">
+            ::: warning
+            Shine Get Timer does not restart with this code.
+            :::
+            ::: warning
+            Z menu will be disabled
+            :::
+
+            #### Instant Restart
+            - Press `B + D-Pad Up` to **restart the current area**
+                - The **respawn position** will be the same. It can be used to practice Honey Skip or stage movement in Delfino Plaza
+
+            #### Level Select
+            Press `{the following button combination} + B + D-Pad Up` to warp to other area instantly.
+            ![Level Select Combinations](/img/levelselect.png)
+
+            - For `Z + B + D-Pad Up`, the current area will be restarted, but the **respawn position will be reset**. It is like B+Up, but the respawn position will be the default position instead of the previous one
+            - For `Y + B + D-Pad Up`, it will restart from the **previous selected area**. For example, if you select SB4 with this code, and enter hotel/casino then press Y+B+Up, it will restart from SB4 beach (instead of hotel/casino if you use B+Up or Z+B+Up)
+
+            #### Area Lock
+            - Press `R + D-Pad Left/Right` to enable/disable **Area Lock**
+                - With Area Lock, warps will restart the current area instead of sending Mario to other areas, which can be used to practice specific area (e.g. outside of BH2 wildmill, secret stage entering)
+                - Restarting acts like B+Up, and therefore can be used to practice Honey Skip, etc.
+
+            #### Example of Usage: Practising Honey Skip
+            1. Press `R + D-Pad Left` to enable Area Lock
+            2. Press `C-Stick LeftDown + B + D-Pad Up` to go to Pianta Village
+            3. Press `C-Stick RightDown + Y + B + D-Pad Up` to go to Pinna unlock plaza
+            4. Practice Honey Skip as much as you want! It will restart automatically when you are going to leave the area so you don't need to reset manually. You can also restart with `B + D-Pad Up` if you want.
+        </description>
+        <description lang="ja-JP">
+            ::: warning
+            シャインゲットタイマーには未対応です。
+            :::
+            ::: warning
+            Zメニューは無効化されます。
+            :::
+
+            #### ポーズせずにやり直し
+            - `B+十字キー上`で**現在のエリアをやり直す**
+                - ドルピックタウンでは同じ開始位置からやり直すので、ハニスキといったステージ移動の練習も可能
+            #### レベル選択
+            `{次のボタン}+B+十字キー上`でレベル選択
+
+            ![レベル選択](/img/levelselect.png)
+
+            - `Z+B+上`は**現在のエリアをやり直す**が、ドルピックタウンでの**開始位置がリセット**され、デフォルトの開始位置からとなる(B+上の場合はリセットされない)
+            - `Y+B+上`は**前回選択したレベル**からやり直す(例えばSB4を選択し、ホテル・カジノに入ってY+B+上を押すと、ホテル外からやり直すことになる)
+            #### エリアロック
+            `R+十字キー左/右`でエリアロック/ロック解除
+            - エリアロックするとステージ移動がやり直しに置き換え、ヒミツINといった特定のエリアの練習が可能
+            - やり直しの動作はB+上と同じなので、ハニスキなどの練習にも使える
+            #### 使用例：ハニスキの練習
+            1. `R + 十字キー左`でエリアロック
+            2. `Cスティック左下 + B + 十字キー上`でモンテの村に移動
+            3. `Cスティック右下 + Y + B + 十字キー上`でピンナ解放のドルピックタウンに移動
+            4. これで好きなだけハニスキを練習できます。他のエリアに入ろうとする時に自動的にやり直すので、手動でやり直す必要がありません。必要であれば`B + 十字キー上`でやり直すこともできます。
+        </description>
+        <source version="GMSJ01">
+            040ED64C 4970C435
+            0410B100 496EE990
+            040EC420 4970D600
+            04236600 495C34C4
+            0410B3CC 496EE6DC
+            040FBAD8 496FDF30
+            040F9D68 496FFD78
+            040EAB80 4970EEC0
+            077F9800 000002F4
+            3CA08040 80A50D80
+            70A00208 28800208
+            3C60817F 88030004
+            7C000379 4CC61202
+            4CA60020 7D8802A6
+            4800003D 00141516
+            0017181D 34000090
+            2F2E3020 32293328
+            2A1FBA3C 371E213A
+            0E2C3900 00010507
+            08090200 123457D0
+            24567000 12234070
+            23467001 7D2802A6
+            7D8803A6 3D40803E
+            394A6000 816D97D0
+            54A6CF38 50A6F77A
+            50A6E7BC 50A6D7FE
+            54A0C738 50A0B77C
+            7CC60378 54A4873F
+            41820054 2C040009
+            41820098 3C00C84A
+            6000C004 1C840003
+            5C04277E 5485103A
+            2C06000C 408000BC
+            2C06000A 408000D4
+            2C060008 40800090
+            3C005689 60000234
+            548C103A 5C0C652E
+            7CC76378 54C8077E
+            480000C4 A0EA000E
+            2C060000 41820028
+            2C060004 41820028
+            2C06000A 41820028
+            7C0930AE 540744AE
+            5408CFFE 1D080007
+            48000094 A00A000A
+            B00A000E 890B00DF
+            4800008C A0E30000
+            89030002 48000078
+            3989000C 7C0C30AE
+            540744AE 5007CFFE
+            3C00AC1A 60005CA2
+            1D860003 5C08677E
+            48000054 39890018
+            7C0C20AE 540744AE
+            3C001373 60002301
+            5C082F7E 48000038
+            3989FFF8 54C016B8
+            7C0C006E 5C072F7E
+            5007252E 800C0004
+            5C082F7E 48000018
+            3C001578 60009200
+            5C072F3E 60E70100
+            39000000 B0E30000
+            99030002 38000001
+            980300B3 98030004
+            990B00DF 38000000
+            900B00D8 A00B00CC
+            60004000 54000524
+            B00B00CC B0EA0012
+            54E0C63E 818A0020
+            3880003B 2C000007
+            41820010 2C00000E
+            41820008 38800000
+            B08C00E4 4E800020
+            3D80817F 880C0004
+            7C000379 4C820020
+            3800003C 4A9020C0
+            4BFFFDE1 40A60014
+            7FE3FB78 4A8F1115
+            3B800009 4A8F30F4
+            881F0064 4A8F29E8
+            3C60817F A0030004
+            2C000001 40820028
+            A01F004C 5400062C
+            B01F004C 816D97D0
+            7F8AE378 A0EA000E
+            4BFFFEB5 A0FC000A
+            B0FC000E 380000FF
+            38810054 4A8F1108
+            3D80817F 888C0005
+            68840001 4A8EE414
+            4BFFFD71 40A6000C
+            38600002 9061012C
+            807F0020 4A911660
+            3C60817F 88030004
+            2C000001 40820008
+            4A911A7C 2805000E
+            4A911910 4BFFFD3D
+            40A60008 4AA3CB54
+            807E0020 38BFFFCC
+            8803013B 4AA3CB28
+            3C60817F 38000000
+            98030004 7FA3EB78
+            4A90027C 00000000
+            28400D50 00000021
+            017F0005 00000001
+            28400D51 00000022
+            017F0005 00000000
+            E0000000 00000000
+            040eb024 60000000
+        </source>
+    </code>
 </codes>

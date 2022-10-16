@@ -1,6 +1,7 @@
 # Changelog
 ## Oct 16, 2022
-\[QFT v1.2] Fix QFT background when 112\*fontSize is not an integer
+- \[QFT v1.2] Fix QFT background when 112\*fontSize is not an integer
+- Add StageIntroSkip, SpawnYoshi, FastForward, InstantLevelSelect
 
 ## Oct 15, 2022
 - Add preview for selected codes (for NTSC-J)
