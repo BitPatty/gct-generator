@@ -37,10 +37,8 @@ export function getConfig() {
   };
 }
 
-const int16 = (x) =>
-  (x < 0 ? x + 0x10000 : x).toString(16).padStart(4, '0').slice(-4).toUpperCase();
-const int32 = (x) =>
-  (x < 0 ? x + 0x100000000 : x).toString(16).padStart(8, '0').slice(-8).toUpperCase();
+/** @param {number} x */
+const inst2gecko = (x) => (x >>> 0).toString(16).toUpperCase().padStart(8, '0');
 
 import * as GMSJ01 from './code/GMSJ01.js';
 import * as GMSE01 from './code/GMSE01.js';
@@ -68,6 +66,7 @@ export const codes = { GMSJ01, GMSE01, GMSP01, GMSJ0A };
   bl 817fxxxx
 ****/
 const freezeCodeAddr = 0x817f0348;
+/** @param {keyof typeof codes} version */
 export default function codegen(version) {
   const config = getConfig();
   const { freezeCodeInfo, baseCode, r13off } = codes[version] ?? {};
@@ -99,7 +98,7 @@ export default function codegen(version) {
             0x60000000,
             0x00000000,
           ]
-            .map(int32)
+            .map(inst2gecko)
             .join('');
         } else {
           // handle regular freezing code later
@@ -124,7 +123,7 @@ export default function codegen(version) {
         0x916c00bc, // stw r11, 0xBC(r12)
         0x00000000,
       ])
-      .map(int32)
+      .map(inst2gecko)
       .join('');
   } else {
     const code04 = [];
@@ -160,7 +159,7 @@ export default function codegen(version) {
       code07.push(0);
     }
     // apply code
-    code += [...code04, ...code07].map(int32).join('');
+    code += [...code04, ...code07].map(inst2gecko).join('');
   }
 
   // ui (GMSJ01/GMSJ0A only)
@@ -175,7 +174,7 @@ export default function codegen(version) {
       x + width * scale, // x2
       y, // y2
     ]
-      .map(int32)
+      .map(inst2gecko)
       .join('');
     code += '25753a253032752e2530337500000000'; // fmt
     /* fontSize, fgColor, bgColor */
@@ -184,7 +183,7 @@ export default function codegen(version) {
     const fgColor = (config.fgRGB & 0xffffff) * 256 + (config.fgA & 0xff);
     const fgColor2 =
       ((config.fgRGB2 ?? config.fgRGB) & 0xffffff) * 256 + ((config.fgA2 ?? config.fgA) & 0xff);
-    code += [fontSize, fgColor, fgColor2, bgColor].map(int32).join('');
+    code += [fontSize, fgColor, fgColor2, bgColor].map(inst2gecko).join('');
   }
 
   return code.replace(/\s/g, '');
