@@ -1,4 +1,7 @@
 # Changelog
+## Oct 17, 2022
+- Fix FastForward code (wrong button value)
+
 ## Oct 16, 2022
 - \[QFT v1.2] Fix QFT background when 112\*fontSize is not an integer
 - Add StageIntroSkip, SpawnYoshi, FastForward, InstantLevelSelect
