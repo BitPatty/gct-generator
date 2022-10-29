@@ -1,4 +1,8 @@
 # Changelog
+## Oct 30, 2022
+- Make PatternSelector shorter and make its appearance customizable (v0.3)
+- Render CustomizedDisplay later than water/juice (v0.3)
+
 ## Oct 17, 2022
 - Fix FastForward code (wrong button value)
 

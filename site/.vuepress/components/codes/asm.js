@@ -174,6 +174,12 @@ export function liDX(rT, D) {
 }
 
 /** @param {string} s */
+export function strlen(s) {
+  const fmtbuf = Encoding.convert(Encoding.stringToCode(s), 'SJIS');
+  return fmtbuf.length; // not NUL terminated
+}
+
+/** @param {string} s */
 export function str2inst(s) {
   const fmtbuf = Encoding.convert(Encoding.stringToCode(s), 'SJIS');
   fmtbuf.push(0); // NUL terminated

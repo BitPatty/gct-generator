@@ -114,6 +114,7 @@ import { translate } from '../i18n/localeHelper';
 // Code Configs
 import {getConfig as getConfigQFT} from './codes/qft/codegen';
 import {getConfig as getConfigCD} from './codes/CustomizedDisplay/codegen';
+import {getConfig as getConfigPS} from './codes/PatternSelector/codegen';
 
 export default {
   data() {
@@ -134,7 +135,7 @@ export default {
   created() {
     this.codeConfigs = {
       qft: getConfigQFT(),
-      PatternSelector: {},
+      PatternSelector: getConfigPS(),
       SpeedDisplay: {},
       PASDisplay: {},
       CustomizedDisplay: getConfigCD(this.version),

@@ -9,7 +9,7 @@
         <PreviewString v-for="mdp,i in mdps" :key="i"
           :x="mdp.x" :y="mdp.y" :size="mdp.fontSize" :color="mdp.color" :text="mdp.text" />
       </div>
-      <PreviewString v-if="config.PatternSelector" :x="16" :y="320" :size="20" :color="'#fff'" text="Pattern #0 0 0" />
+      <PreviewString v-if="ps" :x="ps.x" :y="ps.y" :size="ps.fontSize" :color="ps.color" :text="ps.text" />
     </div>
   </div>
 </template>
@@ -59,6 +59,16 @@ export default {
           height: fontSize+'px',
           background: bg,
         },
+      };
+    },
+    ps() {
+      const {config: {PatternSelector: ps}} = this;
+      if (ps == null) return;
+      const {x, y, fontSize, fgRGB, fgA, fgRGB2, fgA2, label} = ps;
+      return {
+        x, y, fontSize,
+        color: fg2Style(fgRGB, fgA, fgRGB2, fgA2),
+        text: label+'#0 0 0',
       };
     },
   },

@@ -1,11 +1,11 @@
 import { parseJSON } from '../codegen.js';
-import { ASM, makeInst, liDX, str2inst, makeProgram, inst2gecko } from './asm.js';
+import { ASM, makeInst, liDX, str2inst, makeProgram, inst2gecko } from '../asm.js';
 export const lskey = 'config/CustomizedDisplay';
 
 export const defaultConfig = [
   {
     x: 16,
-    y: 200,
+    y: 192,
     fontSize: 18,
     fgRGB: 0xffffff,
     fgA: 0xff,
@@ -355,10 +355,10 @@ export function format2previewText(input, version, f = null) {
 }
 
 const addrsOrig = {
-  GMSJ01: 0x80206734,
-  GMSJ0A: 0x801252a0,
-  GMSE01: 0x80143f14,
-  GMSP01: 0x80138b50,
+  GMSJ01: 0x80206a00 - 0x2c,
+  GMSJ0A: 0x8012556c - 0x2c,
+  GMSE01: 0x801441e0 - 0x2c,
+  GMSP01: 0x80138e1c - 0x2c,
 };
 const addrsSetup2D = {
   GMSJ01: 0x80035228,
@@ -396,6 +396,8 @@ export default function codegen(version) {
 
   // program
   const program = makeProgram(addrDst);
+  // addi r3, r1, 0xE90
+  program.push(ASM.addi(3, 1, 0xe90));
   // addi r1, r1, -spOff
   if (spOff) program.push(ASM.addi(1, 1, -spOff));
   // bl setup
@@ -407,10 +409,6 @@ export default function codegen(version) {
   }
   // addi r1, r1, spOff
   if (spOff) program.push(ASM.addi(1, 1, spOff));
-  // addi r3, r1, 0xE90
-  program.push(ASM.addi(3, 1, 0xe90));
-  // bl setup
-  program.bl(addrSetup2D);
   // b orig+4
   program.b(addrOrig + 4);
 
