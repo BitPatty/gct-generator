@@ -1,4 +1,7 @@
 # Changelog
+## Nov 02, 2022
+Add NTSC-U version of Instant Restart
+
 ## Oct 30, 2022
 - Make PatternSelector shorter and make its appearance customizable (v0.3)
 - Render CustomizedDisplay later than water/juice (v0.3)
