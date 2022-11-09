@@ -1,5 +1,9 @@
 # Changelog
-## Nov 02, 2022
+## Nov 9, 2022
+### Added 'Fast Piantissimo'
+To make Piantissimo go as fast as he will in a level, you need to beat him with an in-game time under 25 seconds and grab his Shine. Or you could just use this code.
+
+## Nov 2, 2022
 Add NTSC-U version of Instant Restart
 
 ## Oct 30, 2022

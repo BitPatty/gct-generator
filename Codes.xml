@@ -4285,6 +4285,40 @@
         </source>
     </code>
     <code>
+        <category>qol</category>
+        <title lang="en-US">Fast Piantissimo</title>
+        <title lang="fr-FR">Piantissimo rapide</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <date>Nov 9, 2022</date>
+        <description lang="en-US">
+            Forces Il Piantissimo to take his fastest route.
+        </description>
+        <description lang="fr-FR">
+            Force Il Piantissimo à prendre son chemin le plus rapide.
+        </description>
+        <source version="GMSJ01">
+            C2256A14 00000002
+            8BFA007C 23FF000C
+            57FFFFBE 00000000
+        </source>
+        <source version="GMSE01">
+            C2043064 00000002
+            8BFA007C 23FF000C
+            57FFFFBE 00000000
+        </source>
+        <source version="GMSP01">
+            C2042EDC 00000002
+            8BFA007C 23FF000C
+            57FFFFBE 00000000
+        </source>
+        <source version="GMSJ0A">
+            C202F268 00000002
+            8BFA007C 23FF000C
+            57FFFFBE 00000000
+        </source>
+    </code>
+    <code>
         <category>misc</category>
         <title lang="en-US">Stage Intro Skip</title>
         <title lang="ja-JP">デモムービースキップ</title>
