@@ -1,4 +1,8 @@
 # Changelog
+## Nov 11, 2022
+- Add GCI Loader (NTSC-J 1.0 only)
+- Support GCI as download format (NTSC-J 1.0 only)
+
 ## Nov 9, 2022
 ### Added 'Fast Piantissimo'
 To make Piantissimo go as fast as he will in a level, you need to beat him with an in-game time under 25 seconds and grab his Shine. Or you could just use this code.

@@ -4658,4 +4658,61 @@
             040eb024 60000000
         </source>
     </code>
+    <code>
+        <category>misc</category>
+        <title lang="en-US">GCI Loader</title>
+        <author>sup39(サポミク)</author>
+        <version>0.1</version>
+        <date>Nov 11, 2022</date>
+        <description lang="en-US">
+          Execute Gecko code loaded from GCI file.
+          ::: warning
+          You will need to reset the game if you hotplug your memory card
+          :::
+        </description>
+        <source version="GMSJ01">
+            C21069F4 0000001C
+            9421FFF0 7C0802A6
+            BFC10008 7C9F2378
+            38800001 90010014
+            7C7E1B78 3D808010
+            618C7B50 7D8803A6
+            4E800021 2C030000
+            40820084 807E0000
+            48000009 67637400
+            7C8802A6 7FE5FB78
+            3D80800A 618C3CAC
+            7D8803A6 4E800021
+            2C030000 40820058
+            38A00000 38C00000
+            60A5E000 3C80817F
+            7FE3FB78 3D80800A
+            618C4640 7D8803A6
+            4E800021 2C030000
+            40820018 3D20817F
+            3D40534D 6129DFFC
+            614A53FF 91490000
+            7FE3FB78 3D80800A
+            618C3E24 7D8803A6
+            4E800021 80010014
+            7FE4FB78 7FC3F378
+            83E1000C 83C10008
+            38210010 3D808010
+            618C72F4 7D8803A6
+            4E800021 00000000
+            C0000000 0000000C
+            3CA0803E 88A56008
+            28050004 4D800020
+            3CA0534D 60A553FF
+            3C608180 8003DFFC
+            7C002840 4C820020
+            3CA000D0 60A5C0DE
+            3C608180 8403B000
+            7C002840 4C820020
+            80030004 7C002840
+            4C820020 7C0F2214
+            9003FFFC 39E30008
+            7DE47850 4E800020
+        </source>
+    </code>
 </codes>

@@ -10,5 +10,9 @@
   {
     "target": "gcm",
     "i18nKey": "generatorconfig.downloadformat.options.gcm"
+  },
+  {
+    "target": "gci",
+    "i18nKey": "generatorconfig.downloadformat.options.gci"
   }
 ]

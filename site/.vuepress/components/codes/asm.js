@@ -114,7 +114,10 @@ const makeInstXS = (op, op2) => (rA, rS, rB, Rc) => InstX(op, rA, rS, rB, op2, +
 /** @type {(op: number) => InstM} */
 const makeInstM = (op) => (rA, rS, SH, MB, ME, Rc) => InstM(op, rA, rS, SH, MB, ME, +Rc);
 /** @type {(op: number) => InstI} */
-const makeInstI = (op) => (LL, LK, AA = 0) => InstI(op, LL >> 2, +AA, +LK);
+const makeInstI =
+  (op) =>
+  (LL, LK, AA = 0) =>
+    InstI(op, LL >> 2, +AA, +LK);
 
 export const ASM = {
   // store rT, rA, D
