@@ -4659,60 +4659,60 @@
         </source>
     </code>
     <code>
-        <category>misc</category>
+        <category>lib</category>
+        <id>GCILoader</id>
         <title lang="en-US">GCI Loader</title>
         <author>sup39(サポミク)</author>
-        <version>0.1</version>
-        <date>Nov 11, 2022</date>
+        <version>0.2</version>
+        <date>Nov 16, 2022</date>
         <description lang="en-US">
-          Execute Gecko code loaded from GCI file.
-          ::: warning
-          You will need to reset the game if you hotplug your memory card
-          :::
+            Execute Gecko code loaded from GCI file.
+            ::: warning
+            You will need to reset the game if you hotplug your memory card
+            :::
         </description>
         <source version="GMSJ01">
-            C21069F4 0000001C
-            9421FFF0 7C0802A6
-            BFC10008 7C9F2378
-            38800001 90010014
-            7C7E1B78 3D808010
-            618C7B50 7D8803A6
-            4E800021 2C030000
-            40820084 807E0000
+            C21069F4 00000021
+            9421FFE0 BF61000C
+            3FA0817F 63BDE800
+            3F80ABCD 813D0000
+            639C1234 7C7E1B78
+            7C09E000 7C9F2378
+            418200B8 3D208010
+            38800001 39297B50
+            7D2903A6 4E800421
+            2C030000 4082009C
+            3D20800A 39293CAC
+            807E0000 7FE5FB78
             48000009 67637400
-            7C8802A6 7FE5FB78
-            3D80800A 618C3CAC
-            7D8803A6 4E800021
-            2C030000 40820058
-            38A00000 38C00000
-            60A5E000 3C80817F
-            7FE3FB78 3D80800A
-            618C4640 7D8803A6
-            4E800021 2C030000
-            40820018 3D20817F
-            3D40534D 6129DFFC
-            614A53FF 91490000
-            7FE3FB78 3D80800A
-            618C3E24 7D8803A6
-            4E800021 80010014
-            7FE4FB78 7FC3F378
-            83E1000C 83C10008
-            38210010 3D808010
-            618C72F4 7D8803A6
-            4E800021 00000000
-            C0000000 0000000C
-            3CA0803E 88A56008
-            28050004 4D800020
-            3CA0534D 60A553FF
-            3C608180 8003DFFC
-            7C002840 4C820020
-            3CA000D0 60A5C0DE
-            3C608180 8403B000
-            7C002840 4C820020
-            80030004 7C002840
-            4C820020 7C0F2214
-            9003FFFC 39E30008
+            7C8802A6 7D2903A6
+            4E800421 2C030000
+            40820070 3F60817F
+            3D20800A 39294640
+            637BA800 38C00000
+            38A04000 7F64DB78
+            7FE3FB78 7D2903A6
+            4E800421 2C030000
+            4082002C 813B0000
+            6D2AFF2F 2C0AC0DE
+            4082001C 3D40817F
+            614AA804 814A0000
+            7C0A4800 40A20008
+            939D0000 3D20800A
+            7FE3FB78 39293E24
+            7D2903A6 4E800421
+            3D208010 7FE4FB78
+            392972F4 7FC3F378
+            7D2903A6 4E800421
+            BB61000C 38210020
+            60000000 00000000
+            2C3E6008 00FF0300
+            217FE800 ABCD1234
+            C0000000 00000003
+            7C0F2214 3C608180
+            9403A7FC 39E3000C
             7DE47850 4E800020
+            E0000000 00000000
         </source>
     </code>
 </codes>

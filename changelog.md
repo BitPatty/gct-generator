@@ -1,4 +1,9 @@
 # Changelog
+## Nov 16, 2022
+- Add GCI+XXX as download format
+- Add return code for GCI Loader
+- Smaller GCI file (0xE000 bytes to 0x4000 bytes)
+
 ## Nov 11, 2022
 - Add GCI Loader (NTSC-J 1.0 only)
 - Support GCI as download format (NTSC-J 1.0 only)

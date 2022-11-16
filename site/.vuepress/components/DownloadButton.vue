@@ -86,6 +86,18 @@ export default {
           this.alertDolphinCodeSize(codeSize);
           this.generateCheatManagerTXT(c, fileName);
           break;
+        case 'gci+gct':
+          this.generateGCI(c, fileName) &&
+            this.generateGCT(this.getGCILoader(), fileName);
+          break;
+        case 'gci+dolphin':
+          this.generateGCI(c, fileName) &&
+            this.generateDolphinINI(this.getGCILoader(), fileName);
+          break;
+        case 'gci+gcm':
+          this.generateGCI(c, fileName) &&
+            this.generateCheatManagerTXT(this.getGCILoader(), fileName);
+          break;
         case 'gci':
           this.generateGCI(c, fileName);
           break;
@@ -101,6 +113,11 @@ export default {
         // excluding header+footer
         alert(translate('generatorconfig.alert.dolphin', this.$lang).replaceAll('{size}', size-16));
       }
+    },
+    getGCILoader() {
+      const {codes} = gameVersions.find((v) => v.identifier === this.versionIdentifier);
+      const code = codes.find(code => code.id === 'GCILoader');
+      return [code];
     },
     generateGCT(codes, version) {
       let code = '00D0C0DE00D0C0DE';
@@ -150,15 +167,15 @@ export default {
     generateGCI(codes, version) {
       if (!['GMSJ01'].includes(version)) {
         alert('GCI format is not yet supported for versions other than GMSJ01');
-        return;
+        return false; // error
       }
       let code = '00D0C0DE00D0C0DE';
       codes.forEach((c) => (code += c.source));
-      code += 'F000000000000000';
+      code += 'C0000000000000023C60818081E3A7FC7DE478504E800020'; // return
 
-      const blockCount = 7; // TODO
+      const blockCount = 2; // TODO
       const gciSize = 0x40+0x2000*blockCount;
-      const padSize = 0xB040; // TODO
+      const padSize = 0x40; // TODO
       let rawData = new Uint8Array(gciSize);
 
       for (let iD=padSize, iC=0; iD<rawData.length; iD++, iC+=2) {
@@ -175,6 +192,7 @@ export default {
       for (let i=0x3A; i<0x40; i++) rawData[i] = 0xff;
 
       this.downloadFile(rawData, `01-${version.slice(0, 4)}-gct.gci`);
+      return true; // good
     },
     downloadFile(data, filename) {
       var file = new Blob([data], {
