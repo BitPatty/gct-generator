@@ -3313,6 +3313,7 @@
           |`HSpd`|Horizontal speed of Mario|float|
           |`VSpd`|Vertical speed of Mario|float|
           |`QF`|QF offset|\{0,1,2,3}|
+          |`CAngle`|Camera Angle|uint16|
 
           For float data, you can set the *format* to `.{digit}` to specify how many digits to show.
 
@@ -3339,6 +3340,7 @@
           |`HSpd`|マリオの水平速度|float|
           |`VSpd`|マリオのY速度|float|
           |`QF`|ずれたQFの数|\{0,1,2,3}|
+          |`CAngle`|カメラの角度|uint16|
 
           float(小数)型に対して、「表示のフォーマット」を`.{桁数}`に設定して何桁まで表示するか指定できます。
 

@@ -70,6 +70,12 @@ const bases = {
     GMSP01: (rT) => ASM.lwz(rT, 13, -0x6120),
     GMSJ0A: (rT) => ASM.lwz(rT, 13, -0x6188),
   }),
+  gpCamera: /**@type{VBase}*/ ({
+    GMSJ01: (rT) => ASM.lwz(rT, 13, -0x5750),
+    GMSE01: (rT) => ASM.lwz(rT, 13, -0x7118),
+    GMSP01: (rT) => ASM.lwz(rT, 13, -0x7158),
+    GMSJ0A: (rT) => ASM.lwz(rT, 13, -0x5768),
+  }),
 };
 /** @typedef {keyof typeof bases} BaseId */
 
@@ -103,6 +109,15 @@ const fields = [
     fmt: '%u',
     preview: 0,
     post: (rT) => ASM.rlwinm(rT, rT, 0, 30, 31, false),
+  },
+  {
+    id: 'CAngle',
+    base: 'gpCamera',
+    dtype: 16,
+    offset: 0xa6,
+    fmt: '%hu',
+    preview: 9,
+    post: (rT) => ASM.addi(rT, rT, -0x8000), // offset by 0x8000
   },
 ];
 const fieldDB = Object.fromEntries(
