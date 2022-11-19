@@ -1,4 +1,7 @@
 # Changelog
+## Nov 19, 2022
+Added `CAngle` for 'Customized Display' to show camera angle
+
 ## Nov 16, 2022
 - Add GCI+XXX as download format
 - Add return code for GCI Loader
