@@ -34,8 +34,8 @@
     "fontSize": "Font size: ",
     "fgColor": "Font color: ",
     "fgColorGrad": "Gradient",
-    "fgColor1": "Font color(Top): ",
-    "fgColor2": "Font color(Bottom): ",
+    "fgColor1": "Font color (top): ",
+    "fgColor2": "Font color (bottom): ",
     "bgColor": "Background color: ",
     "alpha": "Alpha=",
     "preview": "Preview",
@@ -43,17 +43,17 @@
     "freeze": {
       "h3": "Freezing the timer",
       "duration": "Duration: ",
-      "frame": "(frame)",
+      "frame": "(frames)",
       "sec": "(sec)",
       "rows": {
-        "yellowCoin": "When collected a yellow coin",
-        "redCoin": "When collected a red coin",
-        "blueCoin": "When collected a blue coin",
-        "item": "When collected an item (e.g. nozzle)",
-        "talk": "When dialogue started",
-        "demo": "When cutscene started",
-        "cleaned": "When NPC is cleaned",
-        "bowser": "When destroyed platform in Bowser fight"
+        "yellowCoin": "When a yellow coin is collected",
+        "redCoin": "When a red coin is collected",
+        "blueCoin": "When a blue coin is collected",
+        "item": "When an item (e.g. nozzle) is collected",
+        "talk": "When dialogue starts",
+        "demo": "When a cutscene starts",
+        "cleaned": "When an NPC is cleaned",
+        "bowser": "When a platform is destroyed in the Bowser fight"
       }
     }
   }

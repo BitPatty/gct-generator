@@ -66,12 +66,12 @@ export default {
       for (const code of c) {
         const codegen = codegens[code.id];
         if (codegen) {
-          code.source = codegen(this.versionIdentifier);
+          code.source = codegen(this.versionIdentifier, code.source);
         }
       }
 
       // generate file
-      const codeSize = c.reduce((a, e) => a+e.source.length, 0)/2 + 16; // 8(00D0)+8(F000)
+      const codeSize = c.reduce((a, e) => a + e.source.length, 0) / 2 + 16; // 8(00D0)+8(F000)
       // console.log(codeSize, c);
       switch (this.format) {
         case 'gct':
@@ -94,9 +94,12 @@ export default {
       }
     },
     alertDolphinCodeSize(size) {
-      if (size > 3272) { // 0x3000-0x2338
+      if (size > 3272) {
+        // 0x3000-0x2338
         // excluding header+footer
-        alert(translate('generatorconfig.alert.dolphin', this.$lang).replaceAll('{size}', size-16));
+        alert(
+          translate('generatorconfig.alert.dolphin', this.$lang).replaceAll('{size}', size - 16),
+        );
       }
     },
     generateGCT(codes, version) {

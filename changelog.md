@@ -1,4 +1,10 @@
 # Changelog
+
+## Dec 16, 2022
+### Updated 'Quarterframe Timer'
+- Gave the timer a 1 frame headstart to make it more accurate to SGT and IL retiming rules
+- Ported the customizable visuals and freeze conditions to the US and PAL versions
+
 ## Nov 19, 2022
 Added `CAngle` for 'Customized Display' to show camera angle
 

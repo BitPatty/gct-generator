@@ -67,11 +67,15 @@ export const codes = { GMSJ01, GMSE01, GMSP01, GMSJ0A };
   bl 817fxxxx
 ****/
 const freezeCodeAddr = 0x817f0348;
-/** @param {keyof typeof codes} version */
-export default function codegen(version) {
+/**
+ * @param {keyof typeof codes} version
+ * @param {string=} baseCode
+ */
+export default function codegen(version, baseCode) {
+  if (!baseCode) return '';
+
   const config = getConfig();
-  const { freezeCodeInfo, baseCode, r13off } = codes[version] ?? {};
-  if (baseCode == null) return '';
+  const { freezeCodeInfo, r13off } = codes[version] ?? {};
 
   let code = baseCode;
   const { freezeDuration: frame } = config;
@@ -163,29 +167,27 @@ export default function codegen(version) {
     code += [...code04, ...code07].map(inst2gecko).join('');
   }
 
-  // ui (GMSJ01/GMSJ0A only)
-  if (['GMSJ01', 'GMSJ0A'].includes(version)) {
-    /* bounds */
-    const { x, y, fontSize, width } = config;
-    const scale = fontSize / 20;
-    code += '077F0094 0000001D';
-    code += [
-      x, // x1
-      y - fontSize - 2, // y1
-      x + width * scale, // x2
-      y, // y2
-    ]
-      .map(inst2gecko)
-      .join('');
-    code += '25753a253032752e2530337500000000'; // fmt
-    /* fontSize, fgColor, bgColor */
-    code += '077F0110 00000010';
-    const bgColor = (config.bgRGB & 0xffffff) * 256 + (config.bgA & 0xff);
-    const fgColor = (config.fgRGB & 0xffffff) * 256 + (config.fgA & 0xff);
-    const fgColor2 =
-      ((config.fgRGB2 ?? config.fgRGB) & 0xffffff) * 256 + ((config.fgA2 ?? config.fgA) & 0xff);
-    code += [fontSize, fgColor, fgColor2, bgColor].map(inst2gecko).join('');
-  }
+  // ui
+  /* bounds */
+  const { x, y, fontSize, width } = config;
+  const scale = fontSize / 20;
+  code += '077F0094 0000001D';
+  code += [
+    x, // x1
+    y - fontSize - 2, // y1
+    x + width * scale, // x2
+    y, // y2
+  ]
+    .map(inst2gecko)
+    .join('');
+  code += '25753a253032752e2530337500000000'; // fmt
+  /* fontSize, fgColor, bgColor */
+  code += '077F0110 00000010';
+  const bgColor = (config.bgRGB & 0xffffff) * 256 + (config.bgA & 0xff);
+  const fgColor = (config.fgRGB & 0xffffff) * 256 + (config.fgA & 0xff);
+  const fgColor2 =
+    ((config.fgRGB2 ?? config.fgRGB) & 0xffffff) * 256 + ((config.fgA2 ?? config.fgA) & 0xff);
+  code += [fontSize, fgColor, fgColor2, bgColor].map(inst2gecko).join('');
 
   return code.replace(/\s/g, '');
 }
