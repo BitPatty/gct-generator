@@ -30,13 +30,13 @@ export default {
   },
   methods: {
     onClick() {
-      if (!(this.codes || this.codes.length === 0) && !this.stageLoaderCode) {
+      if ((!this.codes || !this.codes.length) && !this.stageLoaderCode) {
         return;
       }
-      const c = [...(this.codes ?? [])];
+      const codeList = this.codes.map((c) => ({ ...c }));
 
       if (this.stageLoaderCode)
-        c.push({
+        codes.push({
           title: 'Stage List Loader',
           author: 'Noki Doki',
           date: '-',
@@ -52,7 +52,7 @@ export default {
           JSON.stringify({
             gameVersion: this.versionIdentifier,
             format: this.format,
-            codes: c.map((code) => ({
+            codes: codeList.map((code) => ({
               title: code.title,
               version: code.version,
             })),
@@ -63,7 +63,7 @@ export default {
       const fileName = gameVersions.find((v) => v.identifier === this.versionIdentifier).version;
 
       // apply customizable codes
-      for (const code of c) {
+      for (const code of codeList) {
         const codegen = codegens[code.id];
         if (codegen) {
           code.source = codegen(this.versionIdentifier, code.source);
@@ -71,20 +71,20 @@ export default {
       }
 
       // generate file
-      const codeSize = c.reduce((a, e) => a + e.source.length, 0) / 2 + 16; // 8(00D0)+8(F000)
-      // console.log(codeSize, c);
+      const codeSize = codeList.reduce((a, e) => a + e.source.length, 0) / 2 + 16; // 8(00D0)+8(F000)
+      // console.log(codeSize, codeList);
       switch (this.format) {
         case 'gct':
           this.alertGCTCodeSize(codeSize);
-          this.generateGCT(c, fileName);
+          this.generateGCT(codeList, fileName);
           break;
         case 'dolphin':
           this.alertDolphinCodeSize(codeSize);
-          this.generateDolphinINI(c, fileName);
+          this.generateDolphinINI(codeList, fileName);
           break;
         case 'gcm':
           this.alertDolphinCodeSize(codeSize);
-          this.generateCheatManagerTXT(c, fileName);
+          this.generateCheatManagerTXT(codeList, fileName);
           break;
       }
     },
