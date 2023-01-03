@@ -36,7 +36,7 @@ export default {
       const codeList = this.codes.map((c) => ({ ...c }));
 
       if (this.stageLoaderCode)
-        codes.push({
+        codeList.push({
           title: 'Stage List Loader',
           author: 'Noki Doki',
           date: '-',
