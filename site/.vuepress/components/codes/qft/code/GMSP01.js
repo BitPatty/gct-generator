@@ -6,7 +6,7 @@ export const r13off = -0x6120;
 export const freezeCodeHooks = {
   yellowCoin: 0x801b6cc8,
   redCoin: 0x801b63dc,
-  blueCoin: 0x801b61e4,
+  blueCoin: 0x801b6140,
   item: 0x801b727c,
   talk: 0x801489b4,
   demo: 0x802921b0,

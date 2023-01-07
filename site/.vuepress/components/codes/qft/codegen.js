@@ -86,6 +86,7 @@ export default function codegen(version, baseCode) {
           code += [
             0xc2000000 + (addr & 0x1ffffff),
             0x00000004,
+            0x7c030378,
             0x80a3005c,
             0x38a50003,
             0x54a0003a,
