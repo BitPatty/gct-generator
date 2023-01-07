@@ -9,7 +9,7 @@ export const freezeCodeHooks = {
   blueCoin: 0x801961cc,
   item: 0x80197208,
   talk: 0x80214f00,
-  demo: 0x80362434,
+  demo: 0x800ed89c,
   cleaned: 0x8017a3d4,
   bowser: 0x801d3380,
   yoshi: 0x8014f830,
