@@ -22,6 +22,7 @@ export const defaultConfig = {
     demo: true,
     cleaned: true,
     bowser: true, // onBathhubGripDestroyed
+    yoshi: true,
   },
 };
 
