@@ -95,6 +95,7 @@ export default function codegen(version, baseCode) {
             0x900500b8,
             0x38000000 | (frame & 0xffff),
             0x900500bc,
+            0x60000000,
             0x00000000,
           ]
             .map(int2gecko)
