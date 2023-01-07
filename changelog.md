@@ -1,4 +1,7 @@
 # Changelog
+## Jan 7, 2023
+### Updated 'Quarterframe Timer'
+Reworked the existing freezes and added the option to freeze when mounting Yoshi
 
 ## Dec 16, 2022
 ### Updated 'Quarterframe Timer'

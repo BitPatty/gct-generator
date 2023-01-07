@@ -24,7 +24,8 @@
         "talk": "会話開始時",
         "demo": "カットシーン開始時",
         "cleaned": "NPCを洗った時",
-        "bowser": "クッパ戦の足場を破壊した時"
+        "bowser": "クッパ戦の足場を破壊した時",
+        "yoshi": "ヨッシーに乗った時"
       }
     }
   },
@@ -53,7 +54,38 @@
         "talk": "When dialogue starts",
         "demo": "When a cutscene starts",
         "cleaned": "When an NPC is cleaned",
-        "bowser": "When a platform is destroyed in the Bowser fight"
+        "bowser": "When a platform is destroyed in the Bowser fight",
+        "yoshi": "When Yoshi is mounted"
+      }
+    }
+  },
+  "fr-FR": {
+    "h3": "Apparence",
+    "location": "Position : ",
+    "fontSize": "Taille de police : ",
+    "fgColor": "Couleur du texte : ",
+    "fgColorGrad": "Dégradé",
+    "fgColor1": "Couleur du texte (haut) : ",
+    "fgColor2": "Couleur du texte (bas) : ",
+    "bgColor": "Couleur de fond : ",
+    "alpha": "Alpha = ",
+    "preview": "Aperçu",
+    "previewNote": "※ x doit être entre 0 et 600, et y entre 16 et 464.",
+    "freeze": {
+      "h3": "Temps intermédiaires",
+      "duration": "Durée d'affichage : ",
+      "frame": "(frames)",
+      "sec": "(sec)",
+      "rows": {
+        "yellowCoin": "Quand une pièce jaune est ramassée",
+        "redCoin": "Quand une pièce rouge est ramassée",
+        "blueCoin": "Quand une pièce bleue est ramassée",
+        "item": "Quand un power-up (buse, etc.) est ramassé",
+        "talk": "Quand un dialogue commence",
+        "demo": "Quand une cutscene commence",
+        "cleaned": "Quand un PNJ est nettoyé",
+        "bowser": "Quand une plate-forme est détruite dans le combat de Bowser",
+        "yoshi": "Quand Yoshi est monté"
       }
     }
   }

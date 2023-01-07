@@ -104,7 +104,7 @@ export default {
       freeze,
       freezeDuration,
       // const
-      freezeKeys: Object.keys(codes[this.version]?.freezeCodeInfo ?? {}),
+      freezeKeys: Object.keys(codes[this.version]?.freezeCodeHooks ?? {}),
     };
   },
   computed: {

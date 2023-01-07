@@ -1234,10 +1234,10 @@
     <code>
         <id>qft</id>
         <category>timer</category>
-        <title lang="en-US">Quarterframe Timer (Experimental)</title>
+        <title lang="en-US">Quarterframe Timer</title>
         <title lang="ja-JP">QFタイマー</title>
         <author>Noki Doki, sup39(サポミク)</author>
-        <version>1.3</version>
+        <version>1.4</version>
         <date>Dec 16, 2022</date>
         <dependencies version="GMSJ01">drawText</dependencies>
         <dependencies version="GMSE01">drawText</dependencies>
