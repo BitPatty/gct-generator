@@ -1,7 +1,8 @@
 export const r13off = -0x6048;
+export const onChangeStatusAddr = 0x802541c8;
 
 /**
- * @type {{[key: string]: number}}
+ * @type {{[key: string]: number|{addr: number, orig: number}}}
  */
 export const freezeCodeHooks = {
   yellowCoin: 0x801bee10,
@@ -13,4 +14,6 @@ export const freezeCodeHooks = {
   cleaned: 0x80215c6c,
   bowser: 0x801fb7ac,
   yoshi: 0x802704d4,
+  take: { addr: 0x8023f9a8, orig: 0x801f0384 },
+  drop: { addr: 0x802437d4, orig: 0x38000000 },
 };

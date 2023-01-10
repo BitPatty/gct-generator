@@ -35,14 +35,13 @@
 </template>
 
 <script>
-import { getConfig, lskey, codes } from './codegen.js';
+import { getConfig, lskey, codes, statusKeys } from './codegen.js';
 import { rgbI2S, rgbS2I, rgbaI2S } from '../utils';
 import labels from './labels.json';
 import TextConfig from '../TextConfig.vue';
 
 function updateConfig() {
-  const { x, y, fontSize, width, fgRGB, fgA, fgRGB2, fgA2, bgRGB, bgA, freeze, freezeDuration } =
-    this;
+  const { x, y, fontSize, width, fgRGB, fgA, fgRGB2, fgA2, bgRGB, bgA, freeze, freezeDuration } = this;
   const config = {
     x,
     y,
@@ -104,7 +103,10 @@ export default {
       freeze,
       freezeDuration,
       // const
-      freezeKeys: Object.keys(codes[this.version]?.freezeCodeHooks ?? {}),
+      freezeKeys: [
+        ...Object.keys(codes[this.version]?.freezeCodeHooks ?? {}),
+        ...statusKeys,
+      ],
     };
   },
   computed: {

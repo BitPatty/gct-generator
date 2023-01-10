@@ -1,4 +1,10 @@
 # Changelog
+## Jan 10, 2023
+### Updated 'Quarterframe Timer'
+Added the following options to freeze QFT:
+- When Mario holds, throws, puts down an object
+- When Mario triple jumps, spin jumps, ledge grabs, wall kicks, bounces, rope jumps
+
 ## Jan 7, 2023
 ### Updated 'Quarterframe Timer'
 Reworked the existing freezes and added the option to freeze when mounting Yoshi

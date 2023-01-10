@@ -25,7 +25,16 @@
         "demo": "カットシーン開始時",
         "cleaned": "NPCを洗った時",
         "bowser": "クッパ戦の足場を破壊した時",
-        "yoshi": "ヨッシーに乗った時"
+        "yoshi": "ヨッシーに乗った時",
+        "take": "オブジェクトを持った時",
+        "drop": "オブジェクトを投げた時",
+        "put": "オブジェクトを置いた時",
+        "tripleJump": "三段ジャンプした時",
+        "spinJump": "スピンジャンプした時",
+        "ledgeGrab": "崖掴まりした時",
+        "wallKick": "壁キックした時",
+        "ropeJump": "ロープ、大車輪でジャンプした時",
+        "bounce": "アメンボやジャンプ台で跳ねた時"
       }
     }
   },
@@ -55,7 +64,16 @@
         "demo": "When a cutscene starts",
         "cleaned": "When an NPC is cleaned",
         "bowser": "When a platform is destroyed in the Bowser fight",
-        "yoshi": "When Yoshi is mounted"
+        "yoshi": "When Yoshi is mounted",
+        "take": "When Mario holds an object",
+        "drop": "When Mario throws an object",
+        "put": "When Mario puts down an object",
+        "tripleJump": "When Mario triple jumps",
+        "spinJump": "When Mario spin jumps",
+        "ledgeGrab": "When Mario ledge grabs",
+        "wallKick": "When Mario wall kicks",
+        "ropeJump": "When Mario jumps from a rope",
+        "bounce": "When Mario bounces (e.g. on a roof)"
       }
     }
   },

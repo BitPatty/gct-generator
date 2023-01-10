@@ -23,6 +23,15 @@ export const defaultConfig = {
     cleaned: true,
     bowser: true, // onBathhubGripDestroyed
     yoshi: true,
+    take: true,
+    drop: true,
+    put: true,
+    tripleJump: true,
+    spinJump: true,
+    ledgeGrab: true,
+    wallKick: true,
+    ropeJump: true,
+    bounce: true,
   },
 };
 
@@ -48,6 +57,9 @@ import * as GMSP01 from './code/GMSP01.js';
 import * as GMSJ0A from './code/GMSJ0A.js';
 export const codes = { GMSJ01, GMSE01, GMSP01, GMSJ0A };
 
+import statusDB from './code/status.js';
+export const statusKeys = Object.keys(statusDB);
+
 /****
 ## save freeze frame, load and save QF
 ## this function destroys r11 and r12
@@ -71,18 +83,24 @@ export default function codegen(version, baseCode) {
   if (!baseCode) return '';
 
   const config = getConfig();
-  const { freezeCodeHooks, r13off } = codes[version] ?? {};
+  const { freezeCodeHooks, r13off, onChangeStatusAddr } = codes[version] ?? {};
 
   let code = baseCode;
   const { freezeDuration: frame } = config;
 
   // freezing code
   const enabledFreezes = [];
+  const statuses = [];
   if (frame > 0) {
     for (const [key, enabled] of Object.entries(config.freeze)) {
-      const addr = freezeCodeHooks[key];
-      if (enabled && addr) {
+      if (!enabled) continue;
+      // add status
+      statuses.push(...(statusDB[key] ?? []));
+      // add hook
+      const hook = freezeCodeHooks[key];
+      if (hook) {
         if (key === 'blueCoin') {
+          const addr = hook;
           // special: needs to adjust QF -> use separate C2 instead
           code += [
             0xc2000000 + (addr & 0x1ffffff),
@@ -100,15 +118,32 @@ export default function codegen(version, baseCode) {
           ]
             .map(int2gecko)
             .join('');
-        } else {
+        } else if (typeof hook === 'number') {
           // handle regular freezing code later
+          const addr = hook;
           enabledFreezes.push(addr);
+        } else {
+          // {addr: number, orig: number}
+          // separate C2 code to handle orig
+          const { addr, orig } = hook;
+          code += [
+            0xc2000000 + (addr & 0x1ffffff),
+            0x00000003,
+            0x3d800000 + (freezeCodeAddr >>> 16), // lis r12, freezeCodeAddr@h
+            0x618c0000 + (freezeCodeAddr & 0xffff), // ori r12, r12, freezeCodeAddr@l
+            0x7d8803a6, // mtlr r12
+            0x4e800021, // blrl
+            orig,
+            0x00000000,
+          ]
+            .map(int2gecko)
+            .join('');
         }
       }
     }
   }
   // handle regular freezing code
-  if (enabledFreezes.length <= 1) {
+  if (enabledFreezes.length <= 1 && statuses.length === 0) {
     // use C2 directly
     code += enabledFreezes
       .flatMap((addr) => [
@@ -147,6 +182,54 @@ export default function codegen(version, baseCode) {
 
     // apply code
     code += [...hooks, ...freezer].map(int2gecko).join('');
+  }
+
+  // onChangeStatus hook
+  if (statuses.length) {
+    const c = [
+      // check each status
+      ...statuses.flatMap((x, i) => {
+        const cr = i > 0 ? 0x800000 : 0; // i>0 ? cr1 : cr0
+        const c =
+          x < 0x10000
+            ? [
+                0x281d0000 + cr + x, // cmplwi crX, r29, $x
+              ]
+            : [
+                0x3c000000 + (x >>> 16), // lis r0, $x@h
+                0x60000000 + (x & 0xffff), // ori r0, r0, $x@l
+                0x7c1d0040 + cr, // cmplw crX, r29, r0
+              ];
+        if (i > 0) {
+          // cror 4*cr0+eq, 4*cr0+eq, 4*cr1+eq
+          c.push(0x4c423382);
+        }
+        return c;
+      }),
+      // freeze
+      0x3d800000 + (freezeCodeAddr >>> 16), // lis r12, freezeCodeAddr@h
+      0x618c0000 + (freezeCodeAddr & 0xffff), // ori r12, r12, freezeCodeAddr@l
+      0x7d8803a6, // mtlr r12
+      0x4d820021, // beqlrl
+      // orig
+      0x38000000, // li r0, 0
+    ];
+
+    // pad nop
+    if (c.length % 2 === 0) {
+      c.push(0x60000000);
+    }
+    // end of C2
+    c.push(0x00000000);
+
+    // apply code
+    code += [
+      0xc2000000 + (onChangeStatusAddr & 0x1ffffff),
+      c.length >> 1, // line count
+      ...c,
+    ]
+      .map(int2gecko)
+      .join('');
   }
 
   // ui
