@@ -29,7 +29,7 @@
     "jsdom": "20.0.2",
     "pre-commit": "1.2.2",
     "prettier": "2.7.1",
-    "serve": "14.1.1",
+    "serve": "14.2.0",
     "vuepress": "1.9.7"
   },
   "dependencies": {
