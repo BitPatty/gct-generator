@@ -1,14 +1,6 @@
 {
   "ja-JP": {
     "h3": "見た目",
-    "location": "位置：",
-    "fontSize": "文字サイズ：",
-    "fgColor": "文字色：",
-    "fgColorGrad": "グラデーション",
-    "fgColor1": "文字色(上)：",
-    "fgColor2": "文字色(下)：",
-    "bgColor": "背景色：",
-    "alpha": "不透明度=",
     "preview": "プレビュー",
     "previewNote": "※ x座標の範囲は0~600、y座標の範囲は16~464です",
     "freeze": {
@@ -40,14 +32,6 @@
   },
   "en-US": {
     "h3": "Appearance",
-    "location": "Location: ",
-    "fontSize": "Font size: ",
-    "fgColor": "Font color: ",
-    "fgColorGrad": "Gradient",
-    "fgColor1": "Font color (top): ",
-    "fgColor2": "Font color (bottom): ",
-    "bgColor": "Background color: ",
-    "alpha": "Alpha=",
     "preview": "Preview",
     "previewNote": "※ x ranges from 0 to 600, and y ranges from 16 to 464.",
     "freeze": {
@@ -79,14 +63,6 @@
   },
   "fr-FR": {
     "h3": "Apparence",
-    "location": "Position : ",
-    "fontSize": "Taille de police : ",
-    "fgColor": "Couleur du texte : ",
-    "fgColorGrad": "Dégradé",
-    "fgColor1": "Couleur du texte (haut) : ",
-    "fgColor2": "Couleur du texte (bas) : ",
-    "bgColor": "Couleur de fond : ",
-    "alpha": "Alpha = ",
     "preview": "Aperçu",
     "previewNote": "※ x doit être entre 0 et 600, et y entre 16 et 464.",
     "freeze": {

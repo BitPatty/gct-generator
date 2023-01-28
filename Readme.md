@@ -47,7 +47,9 @@ Some codes store some states in the games memory starting from address 0x817F000
 | ![](./docs/reserved.svg)    | `0x14`  | `0x15`  | DPad Functions: Stored Angle (Mario)                                      |
 | ![](./docs/reserved.svg)    | `0x16`  | `0x1B`  | DPad Functions: Stored Position (Camera)                                  |
 | ![](./docs/reserved.svg)    | `0x20`  | `0x23`  | Coin Count Savestate: Coin Count                                          |
-| ![](./docs/unallocated.svg) | `0x24`  | `0x93`  | Not Allocated                                                             |
+| ![](./docs/reserved.svg)    | `0x24`  | `0x26`  | Pattern Selector: Selected Pattern Numbers                                |
+| ![](./docs/reserved.svg)    | `0x27`  | `0x27`  | Pattern Selector: Cursor Position                                         |
+| ![](./docs/unallocated.svg) | `0x28`  | `0x93`  | Not Allocated                                                             |
 | ![](./docs/reserved.svg)    | `0x94`  | `0xA3`  | QF Timer: Coordinates of the Text box (LTRB)                              |
 | ![](./docs/reserved.svg)    | `0xA4`  | `0xB0`  | QF Timer: Timer Format String                                             |
 | ![](./docs/reserved.svg)    | `0xB0`  | `0xB1`  | QF Timer: (Unused)                                                        |

@@ -173,16 +173,39 @@ export function liDX(rT, D) {
   }
 }
 
-/** @param {string} s */
-export function strlen(s) {
-  const fmtbuf = Encoding.convert(Encoding.stringToCode(s), 'SJIS');
-  return fmtbuf.length; // not NUL terminated
+/**
+ * @param {string} s
+ * @param {string} version
+ */
+export function str2bytes(s, version) {
+  const enc = version.startsWith('GMSJ') ? 'SJIS' : '';
+  const fmtbuf = version.startsWith('GMSJ')
+    ? Encoding.convert(Encoding.stringToCode(s), 'SJIS') // Shift-JIS
+    : Array.from(s, (c) => {
+        // latin1
+        const x = c.charCodeAt(0);
+        // replace the char with space if it is multi-byte
+        return x >= 0x100 ? 0x20 : x;
+      });
+  fmtbuf.push(0); // NUL terminated
+  return fmtbuf;
 }
 
-/** @param {string} s */
-export function str2inst(s) {
-  const fmtbuf = Encoding.convert(Encoding.stringToCode(s), 'SJIS');
-  fmtbuf.push(0); // NUL terminated
+/**
+ * @param {string} s
+ * @param {string} version
+ */
+export const str2hex = (s, version) =>
+  str2bytes(s, version)
+    .map((x) => x.toString(16).toUpperCase().padStart(2, '0'))
+    .join('');
+
+/**
+ * @param {string} s
+ * @param {string} version
+ */
+export function str2inst(s, version) {
+  const fmtbuf = str2bytes(s, version);
   const fmtlen = fmtbuf.length;
   const fmtlen3 = fmtlen & 3;
   const pad = fmtlen3 ? 4 - fmtlen3 : 0;
@@ -223,3 +246,30 @@ export function makeProgram(pc) {
 
 /** @param {number} x */
 export const inst2gecko = (x) => (x >>> 0).toString(16).toUpperCase().padStart(8, '0');
+
+/**
+ * @param {{
+ *   x: number,
+ *   y: number,
+ *   fontSize: number,
+ *   bgRGB: number,
+ *   bgA: number,
+ *   bgLeft: number,
+ *   bgRight: number,
+ *   bgTop: number,
+ *   bgBot: number
+ * }} opt
+ * @param {{width: number, height: number}} size
+ **/
+export const getFillRectParams = (
+  { x, y, fontSize, bgRGB, bgA, bgLeft, bgRight, bgTop, bgBot },
+  { width, height },
+) => [
+  // rect
+  x - bgLeft, // x0
+  y - fontSize - bgTop, // y0
+  x + Math.ceil((width * fontSize) / 20) + bgRight, // x1
+  y - fontSize + Math.ceil((height * fontSize) / 20) + bgBot, // y1
+  // color
+  (bgRGB << 8) | bgA,
+];

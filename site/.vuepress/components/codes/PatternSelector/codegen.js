@@ -1,12 +1,15 @@
 import { parseJSON } from '../codegen.js';
-import { ASM, liDX, strlen, str2inst, inst2gecko } from '../asm.js';
+import { ASM, liDX, str2hex, inst2gecko, getFillRectParams } from '../asm.js';
+import { measureText } from '../text.js';
+import { int2hex } from '../utils.js';
+import addrs from '../addrs.js';
 export const lskey = 'config/PatternSelector';
 
 import * as GMSJ01 from './code/GMSJ01.js';
 import * as GMSJ0A from './code/GMSJ0A.js';
 // import * as GMSE01 from './code/GMSE01.js';
-// import * as GMSP01 from './code/GMSP01.js';
-const codes = { GMSJ01, GMSJ0A };
+import * as GMSP01 from './code/GMSP01.js';
+const codes = { GMSJ01, GMSJ0A, GMSP01 };
 
 export const defaultConfig = {
   x: 16,
@@ -16,94 +19,91 @@ export const defaultConfig = {
   fgA: 0xff,
   fgRGB2: null,
   fgA2: null,
+  bgRGB: 0,
+  bgA: 0,
+  bgLeft: 0,
+  bgRight: 0,
+  bgTop: 0,
+  bgBot: 0,
   label: 'Pattern ',
 };
+
 /** @returns {typeof defaultConfig} */
 export function getConfig() {
   const config =
     (typeof localStorage !== 'undefined' && parseJSON(localStorage.getItem(lskey))) || {};
-  return { ...defaultConfig, ...config };
+  const o = { ...defaultConfig, ...config };
+  return { ...o, text: getPreviewText(o) };
 }
 
-const addrDrawText = 0x817f0238;
-const addrCodeBase = 0x817f9000;
-const addrPV1Data1 = 0x817f9167;
-const addrFmt0 = 0x817f919d;
+/** @param {typeof defaultConfig} config */
+export const getPreviewText = ({ label }) => label + '#0 0 0';
+
+const codePattern = `
+452020FF 213200FF
+621CFF1D 32005025
+25252630 01FF4520
+20213001 FFFF621C
+1D300151 0707FF08
+3102FF36 01FF0231
+021E6E20 FF
+`;
 
 /** @param {keyof typeof codes} version */
 export default function codegen(version) {
-  const { x, y, fontSize, fgRGB, fgA, fgRGB2, fgA2, label } = getConfig();
+  const config = getConfig();
+  const { x, y, fontSize, fgRGB, fgA, fgRGB2, fgA2, bgA, label } = config;
   const colorTop = (fgRGB << 8) | fgA;
   const colorBot = fgRGB2 == null || fgA2 == null ? colorTop : (fgRGB2 << 8) | fgA;
-  const text = label + '>%X>%X>%X';
-  const fmtCS0 = strlen(label);
-  const fmtCSD = 3;
+  const text = label + '%c%X%c%X%c%X';
 
-  const { code04, addrDraw2D, codes: cs0 } = codes[version];
-  const cs = cs0.map((e) => e.replace(/\s+/g, ''));
-  const params = [
-    liDX(3, x),
-    liDX(4, y),
-    liDX(5, fontSize),
-    liDX(6, colorTop),
-    colorTop === colorBot ? ASM.mr(7, 6) : liDX(7, colorBot),
-  ].flatMap((e) => e);
-  const extraOffset = (params.length - 5) << 2; // default: 5 inst
-  let pc;
-  // 07
-  let code07 = '801F0000';
-  /* li32 rEntry, .data.patterns.PV1-1 */
-  code07 += liDX(8, addrPV1Data1 + extraOffset)
-    .map(inst2gecko)
-    .join('');
-  code07 += cs[0];
-  /* li r8 */
-  code07 += liDX(8, addrFmt0 + extraOffset)
-    .map(inst2gecko)
-    .join('');
-  code07 += cs[1];
-  /* stb r0/12/12, fmtCS0+fmtCSD*i(r8) */
-  code07 += [
-    ASM.stb(0, 8, fmtCS0),
-    0x540cc63e,
-    ASM.stb(12, 8, fmtCS0 + fmtCSD),
-    0x540c863e,
-    ASM.stb(12, 8, fmtCS0 + fmtCSD * 2),
+  const { code04, codeBase } = codes[version];
+  const code07 = [
+    codeBase,
+    // drawTextOpt
+    int2hex(x, 2),
+    int2hex(y, 2),
+    int2hex(fontSize, 4),
+    int2hex(colorTop, 4),
+    int2hex(colorBot, 4),
+    // pattern.s
+    codePattern,
+    // fmt
+    str2hex(text, version),
   ]
-    .flatMap((e) => e)
-    .map(inst2gecko)
+    .map((s) => s.replace(/\s+/g, ''))
     .join('');
-  /* (code) */
-  code07 += cs[2];
-  /* r3~r7 */
-  code07 += params.map(inst2gecko).join('');
-  code07 += '4CC63182'; // crclr 6
-  /* bl drawText */
-  pc = addrCodeBase + (code07.length >> 1);
-  code07 += ASM.b(addrDrawText - pc, true)
-    .map(inst2gecko)
-    .join('');
-  /* addi */
-  code07 += '38210010';
-  /* b 4+$b$.draw2d */
-  pc = addrCodeBase + (code07.length >> 1);
-  code07 += ASM.b(4 + addrDraw2D - pc, false)
-    .map(inst2gecko)
-    .join('');
-  /* (code) */
-  code07 += cs[3];
-  /* fmt */
-  // prepend 1 dummy char as 'FF' in code
-  code07 += str2inst('.' + text)
-    .map(inst2gecko)
-    .join('')
-    .slice(2);
 
-  const head07 = [0x06000000 | (addrCodeBase & 0x1ffffff), code07.length >> 1]
-    .map(inst2gecko)
-    .join('');
-  // align code 07 (8 digit = 4 byte)
-  if (code07.length & 8) code07 += '00000000';
+  const head07 = [
+    '077F9000',
+    // byte count = hex length >> 1
+    int2hex(code07.length >> 1, 4),
+  ].join('');
 
-  return (code04 + head07 + code07).replace(/\s+/g, '');
+  // align code 07 (1 line = 16 hex digits)
+  const tail07 = ''.padEnd(code07.length % 16 ? 16 - (code07.length % 16) : 0, '0');
+
+  // background
+  const addrFillRect = addrs.fillRect[version];
+  const codeBg = bgA
+    ? [
+        0xc2000000 + ((addrs.drawWater[version] - 0x28) & 0x01ffffff),
+        0x00000007,
+        0x48000019, // bl trick
+        // rect, color
+        ...getFillRectParams(config, measureText(label + '#0 0 0', version)),
+        0x7c6802a6, // mtlr r3
+        0x38830010, // addi r4, r3, 0x10
+        0x3d800000 | (addrFillRect >>> 16), // lis r12, fill_rect@h
+        0x618c0000 | (addrFillRect & 0xffff), // ori r12, r12, fill_rect@l
+        0x7d8803a6, // mtlr r12
+        0x4e800021, // blrl
+        0x60000000, // nop
+        0x00000000, // End of C2
+      ]
+        .map(inst2gecko)
+        .join('')
+    : '';
+
+  return (code04 + head07 + code07 + tail07 + codeBg).replace(/\s+/g, '');
 }

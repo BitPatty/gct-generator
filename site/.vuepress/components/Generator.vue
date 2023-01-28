@@ -136,8 +136,6 @@ export default {
     this.codeConfigs = {
       qft: getConfigQFT(),
       PatternSelector: getConfigPS(),
-      SpeedDisplay: {},
-      PASDisplay: {},
       CustomizedDisplay: getConfigCD(this.version),
     };
   },
@@ -222,7 +220,10 @@ export default {
         .filter(code => !(code.category === category && exclusive))
         .map(code => code.id));
       ids.add(id);
-      return Object.fromEntries(Object.entries(this.codeConfigs).filter(([id]) => ids.has(id)));
+      return {
+        ...Object.fromEntries(Object.entries(this.codeConfigs).filter(([id]) => ids.has(id))),
+        _version: this.selectedVersion,
+      };
     },
   },
 };

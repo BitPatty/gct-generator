@@ -15,6 +15,23 @@
       <span>{{l.fgColor2}}</span><input type="color" :value="rgbI2S(fgRGB2)" @change="fgRGB2 = rgbS2I($event.target.value)">
       <span>{{l.alpha}}</span><input type="number" min="0" max="255" v-model.number="fgA2"><span>/255={{(fgA2/2.55).toFixed(1)}}%</span>
     </div>
+    <div>
+      <div>
+        <span>{{ l.bgColor }}</span
+        ><input type="color" :value="rgbI2S(bgRGB)" @change="bgRGB = rgbS2I($event.target.value)" />
+        <span>{{ l.alpha }}</span
+        ><input type="number" min="0" max="254" v-model.number="bgA" /><span
+          >/255={{ (bgA / 2.55).toFixed(1) }}%</span
+        >
+      </div>
+      <div>
+        <span>{{ l.bgOffset }}</span>
+        <span>{{ l.left }}</span><input type="number" v-model.number="bgLeft" />
+        <span>{{ l.right }}</span><input type="number" v-model.number="bgRight" />
+        <span>{{ l.top }}</span><input type="number" v-model.number="bgTop" />
+        <span>{{ l.bottom }}</span><input type="number" v-model.number="bgBot" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -41,6 +58,7 @@ export default {
     },
     ...Object.fromEntries([
       'x', 'y', 'fontSize', 'fgRGB', 'fgA', 'fgRGB2', 'fgA2',
+      'bgRGB', 'bgA', 'bgLeft', 'bgRight', 'bgTop', 'bgBot',
     ].map(k => [k, makeField(k)])),
   },
   methods: {
@@ -72,7 +90,7 @@ input[type=number], td.right {
   text-align: right;
 }
 input[type="number"] {
-  width: 3em;
+  width: 2em;
   margin: 0 2px;
 }
 .appearance > div {

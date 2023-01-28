@@ -1,4 +1,13 @@
 # Changelog
+## Jan 28, 2023
+### Rewrote 'drawText'
+- Reduced parameters to struct pointer + format string + varargs
+- Rewrote QFT, Pattern Selector, Customized Display with the new drawText function
+### Improved Preview
+- Added PAL font (TODO: NTSC-U)
+- Merged P/A/S Display and Speed Display to Customized Display
+- Provided background options to Pattern Selector and Customized Display
+
 ## Jan 10, 2023
 ### Updated 'Quarterframe Timer'
 Added the following options to freeze QFT:

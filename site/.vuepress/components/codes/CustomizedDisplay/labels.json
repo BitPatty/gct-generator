@@ -1,8 +1,22 @@
 {
   "ja-JP": {
-    "format": "フォーマット："
+    "format": "フォーマット：",
+    "deletionConfirm": "本当に削除しますか？",
+    "add": {
+      "PAS": "+ 位置/角度/速度表示",
+      "speed": "+ 速度表示",
+      "detailed": "+ 欲張りセット",
+      "rect": "+ 長方形"
+    }
   },
   "en-US": {
-    "format": "Format:"
+    "format": "Format:",
+    "deletionConfirm": "Are you sure to delete?",
+    "add": {
+      "PAS": "+ Position/Angle/Speed Display",
+      "speed": "+ Speed Display",
+      "detailed": "+ Detailed Display",
+      "rect": "+ Rectangle"
+    }
   }
 }

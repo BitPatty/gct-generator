@@ -2,17 +2,7 @@
   <div id="config">
     <section class="appearance">
       <h3>{{ l.h3 }}</h3>
-      <div>
-        <TextConfig v-model="textConfig" />
-      </div>
-      <div>
-        <span>{{ l.bgColor }}</span
-        ><input type="color" :value="rgbI2S(bgRGB)" @change="bgRGB = rgbS2I($event.target.value)" />
-        <span>{{ l.alpha }}</span
-        ><input type="number" min="0" max="255" v-model.number="bgA" /><span
-          >/255={{ (bgA / 2.55).toFixed(1) }}%</span
-        >
-      </div>
+      <TextConfig v-model="textConfig" />
     </section>
     <section class="freeze">
       <h3>{{ l.freeze.h3 }}</h3>
@@ -35,31 +25,12 @@
 </template>
 
 <script>
-import { getConfig, lskey, codes, statusKeys } from './codegen.js';
-import { rgbI2S, rgbS2I, rgbaI2S } from '../utils';
+import { defaultConfig, lskey, getConfig, getPreviewText, codes, statusKeys } from './codegen.js';
+import { makeUpdateConfig, rgbI2S, rgbS2I, rgbaI2S } from '../utils';
 import labels from './labels.json';
 import TextConfig from '../TextConfig.vue';
 
-function updateConfig() {
-  const { x, y, fontSize, width, fgRGB, fgA, fgRGB2, fgA2, bgRGB, bgA, freeze, freezeDuration } = this;
-  const config = {
-    x,
-    y,
-    fontSize,
-    width,
-    fgRGB,
-    fgA,
-    fgRGB2,
-    fgA2,
-    bgRGB,
-    bgA,
-    freeze,
-    freezeDuration,
-  };
-  localStorage.setItem(lskey, JSON.stringify(config));
-  this.$emit('config', config);
-}
-
+const updateConfig = makeUpdateConfig(lskey, defaultConfig, getPreviewText);
 export default {
   components: {
     TextConfig,
@@ -87,21 +58,9 @@ export default {
     rgbaI2S,
   },
   data() {
-    const { x, y, fontSize, width, fgRGB, fgA, fgRGB2, fgA2, bgRGB, bgA, freeze, freezeDuration } =
-      getConfig();
+    const config = getConfig();
     return {
-      x,
-      y,
-      fontSize,
-      fgRGB,
-      fgA,
-      fgRGB2,
-      fgA2,
-      width,
-      bgRGB,
-      bgA,
-      freeze,
-      freezeDuration,
+      ...config,
       // const
       freezeKeys: [
         ...Object.keys(codes[this.version]?.freezeCodeHooks ?? {}),
@@ -115,8 +74,7 @@ export default {
     },
     textConfig: {
       get() {
-        const { x, y, fontSize, fgRGB, fgA, fgRGB2, fgA2 } = this;
-        return { x, y, fontSize, fgRGB, fgA, fgRGB2, fgA2 };
+        return this;
       },
       set(value) {
         Object.assign(this, value);
@@ -126,8 +84,6 @@ export default {
   },
   watch: {
     width: updateConfig,
-    bgRGB: updateConfig,
-    bgA: updateConfig,
     freezeDuration: updateConfig,
   },
 };

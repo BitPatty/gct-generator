@@ -1,31 +1,25 @@
 import { parseJSON } from '../codegen.js';
-import { ASM, makeInst, liDX, str2inst, makeProgram, inst2gecko } from '../asm.js';
+import {
+  ASM,
+  makeInst,
+  liDX,
+  str2inst,
+  makeProgram,
+  inst2gecko,
+  getFillRectParams,
+} from '../asm.js';
+import { measureText } from '../text.js';
 export const lskey = 'config/CustomizedDisplay';
 
-export const defaultConfig = [
-  {
-    x: 16,
-    y: 192,
-    fontSize: 18,
-    fgRGB: 0xffffff,
-    fgA: 0xff,
-    fgRGB2: null,
-    fgA2: null,
-    fmt: `X <x|.0|39.39>
-Y <y|.0|1207.39>
-Z <z|.0|-4193.6>
-A <angle||65535>
-H <HSpd|.2|15.15>
-V <VSpd|.2|-31.17>
-QF <QF||0>`,
-  },
-];
+import configDB from './configDB.js';
+export const defaultConfig = [configDB.PAS];
 
 /** @param {GameVersion} version */
 export function getConfig(version) {
   /** @type {typeof defaultConfig} */
   const config = typeof localStorage !== 'undefined' && parseJSON(localStorage.getItem(lskey));
   return (config instanceof Array ? config : defaultConfig).map(({ fmt, ...o }) => ({
+    ...defaultConfig[0],
     ...o,
     fmt,
     text: format2previewText(fmt, version),
@@ -142,14 +136,22 @@ const load = {
 };
 
 /**
- * @param {number} x
- * @param {number} y
- * @param {number} fontSize
- * @param {number} colorTop
- * @param {number} colorBot
+ * @param {string} version
+ * @param {{
+ *   x: number
+ *   y: number
+ *   fontSize: number
+ *   fgRGB: number
+ *   fgA: number
+ *   fgRGB2: number | null
+ *   fgA2: number | null
+ * }} drawTextOpt
  */
-export function prepareDrawText(x, y, fontSize, colorTop, colorBot) {
-  let gpr = 9;
+export function prepareDrawText(version, { x, y, fontSize, fgRGB, fgA, fgRGB2, fgA2 }) {
+  const colorTop = (fgRGB << 8) | fgA;
+  const colorBot = fgRGB2 == null || fgA2 == null ? colorTop : (fgRGB2 << 8) | fgA;
+
+  let gpr = 5;
   let fpr = 1;
   let sp = 8;
   let fmt = '';
@@ -219,8 +221,8 @@ export function prepareDrawText(x, y, fontSize, colorTop, colorBot) {
         const rBase = 3;
         insts.push(pre(rBase));
         // load all params
-        const rField = 5;
-        const fField = 9;
+        const rField = 11; // tmp GPR
+        const fField = 9; // tmp FPR
         for (const {
           info: { offset: srcoff, dtype, post },
           dst,
@@ -258,32 +260,21 @@ export function prepareDrawText(x, y, fontSize, colorTop, colorBot) {
           }
         }
       }
-      // r8 = fmt
-      const fmtbuf = str2inst(fmt);
+      // r3 = opt // sizeof(opt) = 0x10
+      // r4 = fmt
+      const fmtbuf = str2inst(fmt, version);
       insts.push(
-        // bl 4+len4(fmt)
-        ASM.b(4 + (fmtbuf.length << 2), true),
+        // bl 4+sizeof(opt)+len4(fmt)
+        ASM.b(0x14 + (fmtbuf.length << 2), true),
+        // opt
+        [((x & 0xffff) << 16) | (y & 0xffff), fontSize, colorTop, colorBot],
         // .string fmt
         fmtbuf,
-        // mflr r8
-        ASM.mflr(8),
+        // mflr r3
+        ASM.mflr(3),
+        // addi r4, r3, sizeof(opt)
+        ASM.addi(4, 3, 0x10),
       );
-      /*
-       * r3 = x
-       * r4 = y
-       * r5 = fontSize
-       * r6 = colorTop
-       * r7 = colorBot
-       */
-      insts.push(
-        liDX(3, x),
-        liDX(4, y),
-        liDX(5, fontSize),
-        liDX(6, colorTop),
-        colorTop === colorBot ? ASM.mr(7, 6) : liDX(7, colorBot),
-      );
-      // cr{set|clr} 6
-      insts.push((hasFloat ? ASM.crset : ASM.crclr)(6));
       // DONE
       return { code: insts.flatMap((e) => e), spNeed: spAdd };
     },
@@ -369,58 +360,72 @@ export function format2previewText(input, version, f = null) {
   return preview;
 }
 
-const addrsOrig = {
-  GMSJ01: 0x80206a00 - 0x2c,
-  GMSJ0A: 0x8012556c - 0x2c,
-  GMSE01: 0x801441e0 - 0x2c,
-  GMSP01: 0x80138e1c - 0x2c,
-};
-const addrsSetup2D = {
-  GMSJ01: 0x80035228,
-  GMSJ0A: 0x802caecc,
-  GMSE01: 0x802eb6bc,
-  GMSP01: 0x802e3864,
-};
-const addrDrawText = 0x817f0238;
+import addrs from '../addrs.js';
+const addrOrigOff = -0x2c; // drawWater - [-0x30, -0x18]
 const addrDst = 0x817fa000;
 
 /**
  * @param {GameVersion} version
  */
 export default function codegen(version) {
-  const config = getConfig(version);
+  const configs = getConfig(version);
 
   let spOff = 0;
   const fcodes = /** @type {Inst[]} */ ([]);
+  const bcodes = /** @type {Inst[]} */ ([]);
 
-  for (const { x, y, fontSize, fgRGB, fgA, fgRGB2, fgA2, fmt } of config) {
-    // color
-    const colorTop = (fgRGB << 8) | fgA;
-    const colorBot = fgRGB2 == null || fgA2 == null ? colorTop : (fgRGB2 << 8) | fgA;
+  for (const config of configs) {
+    const { fontSize, fmt, bgA } = config;
     // prepare drawText
-    const f = prepareDrawText(x, y, fontSize, colorTop, colorBot);
-    format2previewText(fmt, version, f);
-    // update code and sp
-    const { code, spNeed } = f.makeCode();
-    spOff = Math.max(spOff, spNeed);
-    fcodes.push(code);
+    const f = prepareDrawText(version, config);
+    const text = format2previewText(fmt, version, f);
+    // text code
+    if (fmt.trim()) {
+      // update code and sp
+      const { code, spNeed } = f.makeCode();
+      spOff = Math.max(spOff, spNeed);
+      fcodes.push(code);
+    }
+    // background code
+    if (bgA) {
+      const { width, height } = measureText(text, version);
+      const w = Math.ceil((width * fontSize) / 20);
+      const h = Math.ceil((height * fontSize) / 20);
+      bcodes.push(
+        [
+          // bl 4+sizeof(rect)+sizeof(color)
+          ASM.b(0x18, true),
+          // fill_rect params
+          ...getFillRectParams(config, measureText(text, version)),
+          // mflr r3
+          ASM.mflr(3),
+          // addi r4, r3, sizeof(rect)
+          ASM.addi(4, 3, 0x10),
+        ].flatMap((e) => e),
+      );
+    }
   }
 
-  const addrOrig = addrsOrig[version];
-  const addrSetup2D = addrsSetup2D[version];
+  const addrOrig = addrs.drawWater[version] + addrOrigOff;
+  const addrFillRect = addrs.fillRect[version];
 
   // program
   const program = makeProgram(addrDst);
-  // addi r3, r1, 0xE90
-  program.push(ASM.addi(3, 1, 0xe90));
+  // la r3, ctx(r1)
+  // program.push(ASM.addi(3, 1, addrs.ctxSpOff[version]));
   // addi r1, r1, -spOff
   if (spOff) program.push(ASM.addi(1, 1, -spOff));
-  // bl setup
-  program.bl(addrSetup2D);
+  // bl J2DGrafContext::setup2D
+  // program.bl(addrs.setup2D[version]);
+  // (fill_rect)
+  for (const code of bcodes) {
+    program.push(code);
+    program.bl(addrFillRect);
+  }
   // (drawText)
   for (const code of fcodes) {
     program.push(code);
-    program.bl(addrDrawText);
+    program.bl(addrs.drawText);
   }
   // addi r1, r1, spOff
   if (spOff) program.push(ASM.addi(1, 1, spOff));
