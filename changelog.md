@@ -1,5 +1,8 @@
 # Changelog
 ## Jan 31, 2023
+### Created 'Quarterframe Section Timer'
+Calculate and display section times whenever Quarterframe Timer freezes
+
 ### Updated 'Pattern Selector'
 - Rewrote with C2 + separated config 06
 - Remove label option

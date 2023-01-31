@@ -26,7 +26,7 @@
 
 <script>
 import { defaultConfig, lskey, getConfig, getPreviewText, codes, statusKeys } from './codegen.js';
-import { makeUpdateConfig, rgbI2S, rgbS2I, rgbaI2S } from '../utils';
+import { makeUpdateConfig } from '../utils';
 import labels from './labels.json';
 import TextConfig from '../TextConfig.vue';
 
@@ -43,19 +43,7 @@ export default {
       this.freeze[key] = $event.target.checked;
       this.updateConfig();
     },
-    toggleGradient($event) {
-      if ($event.target.checked) {
-        this.fgRGB2 = this.fgRGB;
-        this.fgA2 = this.fgA;
-      } else {
-        this.fgRGB2 = null;
-        this.fgA2 = null;
-      }
-    },
     updateConfig,
-    rgbI2S,
-    rgbS2I,
-    rgbaI2S,
   },
   data() {
     const config = getConfig();
@@ -83,7 +71,6 @@ export default {
     },
   },
   watch: {
-    width: updateConfig,
     freezeDuration: updateConfig,
   },
 };

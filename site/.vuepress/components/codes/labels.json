@@ -1,5 +1,8 @@
 {
   "ja-JP": {
+    "h3": {
+      "appearance": "見た目"
+    },
     "location": "位置：",
     "fontSize": "文字サイズ：",
     "fgColor": "文字色：",
@@ -15,6 +18,9 @@
     "bottom": "下"
   },
   "en-US": {
+    "h3": {
+      "appearance": "Appearance"
+    },
     "location": "Location: ",
     "fontSize": "Font size: ",
     "fgColor": "Font color: ",

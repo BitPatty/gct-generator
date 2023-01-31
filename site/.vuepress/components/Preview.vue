@@ -1,10 +1,11 @@
 <template>
   <div class="preview-root">
     <div class="preview-ctn">
-      <PreviewString :config="config.qft" :version="_version" />
       <PreviewString v-for="mdp,i in (config.CustomizedDisplay || [])"
         :key="'mdp'+i" :config="mdp" :version="_version" />
       <PreviewString :config="config.PatternSelector" :version="_version" />
+      <PreviewString :config="config.qft" :version="_version" />
+      <PreviewString :config="config.qfst" :version="_version" />
     </div>
   </div>
 </template>

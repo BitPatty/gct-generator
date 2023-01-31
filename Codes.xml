@@ -4221,4 +4221,156 @@
             040eb024 60000000
         </source>
     </code>
+    <code>
+        <id>qfst</id>
+        <category>misc</category>
+        <title lang="en-US">Quarterframe Section Timer</title>
+        <title lang="ja-JP">QFセクションタイマー</title>
+        <author>sup39(サポミク)</author>
+        <version>0.1</version>
+        <date>Jan 31, 2023</date>
+        <dependencies>drawText</dependencies>
+        <description lang="en-US">
+            Calculate and display section times whenever Quarterframe Timer freezes.
+        </description>
+        <description lang="ja-JP">
+            QFタイマーが一時停止する度にセクションタイムを計算して表示します。
+        </description>
+        <source version="GMSJ01">
+            C20F9DD0 00000003
+            3C60817F 3BA00004
+            93A303CC 3BA00000
+            B3A303CA 00000000
+            C22069E4 0000001B
+            3821FFD0 BF210008
+            3F20817F AB9903B2
+            3BF903D0 A3D903CA
+            7F9DE378 835903B4
+            80D900BC 28060000
+            41A2002C 809900B8
+            80B903CC 7C042800
+            40A1001C 7C052050
+            57CC16BA 7C1F612E
+            909903CC 3BDE0001
+            B3D903CA 3879039C
+            389903AC 3D808020
+            398C1EA8 7D8803A6
+            4E800021 57DBE13F
+            41820008 3B7EFFF0
+            7C1BF040 4080004C
+            576316BA 7C1F182E
+            1D6003E9 38000078
+            7D6B0396 380003E8
+            7CAB0396 1C0503E8
+            7CC05850 387903B0
+            389903C0 39990238
+            7D8803A6 4E800021
+            7FBDD214 3B7B0001
+            B3B903B2 4BFFFFB4
+            B39903B2 BB210008
+            38210030 00000000
+        </source>
+        <source version="GMSJ0A">
+            C2286228 00000003
+            3C60817F 3BA00004
+            93A303CC 3BA00000
+            B3A303CA 00000000
+            C2125550 0000001B
+            3821FFD0 BF210008
+            3F20817F AB9903B2
+            3BF903D0 A3D903CA
+            7F9DE378 835903B4
+            80D900BC 28060000
+            41A2002C 809900B8
+            80B903CC 7C042800
+            40A1001C 7C052050
+            57CC16BA 7C1F612E
+            909903CC 3BDE0001
+            B3D903CA 3879039C
+            389903AC 3D808012
+            398C1660 7D8803A6
+            4E800021 57DBE13F
+            41820008 3B7EFFF0
+            7C1BF040 4080004C
+            576316BA 7C1F182E
+            1D6003E9 38000078
+            7D6B0396 380003E8
+            7CAB0396 1C0503E8
+            7CC05850 387903B0
+            389903C0 39990238
+            7D8803A6 4E800021
+            7FBDD214 3B7B0001
+            B3B903B2 4BFFFFB4
+            B39903B2 BB210008
+            38210030 00000000
+        </source>
+        <source version="GMSP01">
+            C229E2DC 00000003
+            3C60817F 3BA00004
+            93A303CC 3BA00000
+            B3A303CA 00000000
+            C2138E00 0000001B
+            3821FFD0 BF210008
+            3F20817F AB9903B2
+            3BF903D0 A3D903CA
+            7F9DE378 835903B4
+            80D900BC 28060000
+            41A2002C 809900B8
+            80B903CC 7C042800
+            40A1001C 7C052050
+            57CC16BA 7C1F612E
+            909903CC 3BDE0001
+            B3D903CA 3879039C
+            389903AC 3D808013
+            398C4F0C 7D8803A6
+            4E800021 57DBE13F
+            41820008 3B7EFFF0
+            7C1BF040 4080004C
+            576316BA 7C1F182E
+            1D6003E9 38000078
+            7D6B0396 380003E8
+            7CAB0396 1C0503E8
+            7CC05850 387903B0
+            389903C0 39990238
+            7D8803A6 4E800021
+            7FBDD214 3B7B0001
+            B3B903B2 4BFFFFB4
+            B39903B2 BB210008
+            38210030 00000000
+        </source>
+        <source version="GMSE01">
+            C22A63CC 00000003
+            3C60817F 3BA00004
+            93A303CC 3BA00000
+            B3A303CA 00000000
+            C21441C4 0000001B
+            3821FFD0 BF210008
+            3F20817F AB9903B2
+            3BF903D0 A3D903CA
+            7F9DE378 835903B4
+            80D900BC 28060000
+            41A2002C 809900B8
+            80B903CC 7C042800
+            40A1001C 7C052050
+            57CC16BA 7C1F612E
+            909903CC 3BDE0001
+            B3D903CA 3879039C
+            389903AC 3D808014
+            398C0390 7D8803A6
+            4E800021 57DBE13F
+            41820008 3B7EFFF0
+            7C1BF040 4080004C
+            576316BA 7C1F182E
+            1D6003E9 38000078
+            7D6B0396 380003E8
+            7CAB0396 1C0503E8
+            7CC05850 387903B0
+            389903C0 39990238
+            7D8803A6 4E800021
+            7FBDD214 3B7B0001
+            B3B903B2 4BFFFFB4
+            B39903B2 BB210008
+            38210030 00000000
+        </source>
+    </code>
 </codes>

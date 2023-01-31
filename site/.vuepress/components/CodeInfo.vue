@@ -38,10 +38,9 @@ export default {
     showPreview() {
       return [
         'PatternSelector',
-        'PASDisplay',
-        'SpeedDisplay',
         'CustomizedDisplay',
         'qft',
+        'qfst',
       ].includes(this.code.id); // TODO
     },
   },

@@ -113,6 +113,7 @@ import { translate } from '../i18n/localeHelper';
 
 // Code Configs
 import {getConfig as getConfigQFT} from './codes/qft/codegen';
+import {getConfig as getConfigQFST} from './codes/qfst/codegen';
 import {getConfig as getConfigCD} from './codes/CustomizedDisplay/codegen';
 import {getConfig as getConfigPS} from './codes/PatternSelector/codegen';
 
@@ -163,6 +164,7 @@ export default {
       // update config for preview
       this.codeConfigs = {
         qft: getConfigQFT(),
+        qfst: getConfigQFST(),
         PatternSelector: getConfigPS(),
         CustomizedDisplay: getConfigCD(e),
       };
