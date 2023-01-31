@@ -4,9 +4,6 @@
     <Preview :config="previewConfig" />
     <div class="config-spacer" />
     <TextConfig v-model="textConfig" />
-    <div>
-      {{l.label}} <input v-model="label">
-    </div>
   </section>
 </template>
 
@@ -45,9 +42,6 @@ export default {
         this.updateConfig();
       },
     },
-  },
-  watch: {
-    label: updateConfig,
   },
 };
 </script>

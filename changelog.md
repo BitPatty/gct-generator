@@ -1,5 +1,8 @@
 # Changelog
 ## Jan 31, 2023
+### Updated 'Pattern Selector'
+- Rewrote with C2 + separated config 06
+- Remove label option
 ### Updated 'Customized Display'
 - Rewrote with C2
 - Implemented a more complex assembler/compiler to support function call
