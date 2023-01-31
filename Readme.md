@@ -67,7 +67,13 @@ Some codes store some states in the games memory starting from address 0x817F000
 | ![](./docs/reserved.svg)    | `0x110` | `0x237` | QF Timer: Timer Textbox                                                   |
 | ![](./docs/reserved.svg)    | `0x238` | `0x347` | General Function (`drawText`)                                             |
 | ![](./docs/buffer.svg)      | `0x348` | `0x39B` | Buffer (QF Timer)                                                         |
-| ![](./docs/unallocated.svg) | `0x39C` | `0x40F` | Not Allocated                                                             |
+| ![](./docs/reserved.svg)    | `0x39C` | `0x3AF` | QF Section Timer: Background Options                                      |
+| ![](./docs/reserved.svg)    | `0x3B0` | `0x3BF` | QF Section Timer: Text Options                                            |
+| ![](./docs/reserved.svg)    | `0x3C0` | `0x3C8` | QF Section Timer: Format String                                           |
+| ![](./docs/reserved.svg)    | `0x3C9` | `0x3C9` | QF Section Timer: (Unused)                                                |
+| ![](./docs/reserved.svg)    | `0x3CA` | `0x3CB` | QF Section Timer: Section Count                                           |
+| ![](./docs/reserved.svg)    | `0x3CC` | `0x3CF` | QF Section Timer: Last Freezed Time                                       |
+| ![](./docs/reserved.svg)    | `0x3D0` | `0x40F` | QF Section Timer: Section Time Array                                      |
 | ![](./docs/reserved.svg)    | `0x410` | `0x41F` | Pattern Selector: Background Options                                      |
 | ![](./docs/reserved.svg)    | `0x424` | `0x433` | Pattern Selector: Text Options                                            |
 | ![](./docs/reserved.svg)    | `0x434` | `0x440` | Pattern Selector: Format String                                           |
