@@ -1,4 +1,13 @@
 # Changelog
+## Jan 31, 2023
+### Updated 'Customized Display'
+- Rewrote with C2
+- Implemented a more complex assembler/compiler to support function call
+- Add options
+  - Invincibility Timer
+  - Pollution Degree
+  - Spin Jump Condition Check
+
 ## Jan 28, 2023
 ### Rewrote 'drawText'
 - Reduced parameters to struct pointer + format string + varargs

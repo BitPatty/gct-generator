@@ -132,13 +132,6 @@ export default {
       codeConfigs: {},
     };
   },
-  created() {
-    this.codeConfigs = {
-      qft: getConfigQFT(),
-      PatternSelector: getConfigPS(),
-      CustomizedDisplay: getConfigCD(this.version),
-    };
-  },
   methods: {
     getLabel(key) {
       return translate(key, this.$lang);
@@ -166,6 +159,13 @@ export default {
           JSON.stringify({ version: e }),
         ]);
       } catch {}
+
+      // update config for preview
+      this.codeConfigs = {
+        qft: getConfigQFT(),
+        PatternSelector: getConfigPS(),
+        CustomizedDisplay: getConfigCD(e),
+      };
     },
     onFormatChanged(e) {
       this.selectedFormat = e;

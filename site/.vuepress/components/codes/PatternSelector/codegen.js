@@ -2,7 +2,7 @@ import { parseJSON } from '../codegen.js';
 import { ASM, liDX, str2hex, inst2gecko, getFillRectParams } from '../asm.js';
 import { measureText } from '../text.js';
 import { int2hex } from '../utils.js';
-import addrs from '../addrs.js';
+import { addrs } from '../addrs.js';
 export const lskey = 'config/PatternSelector';
 
 import * as GMSJ01 from './code/GMSJ01.js';

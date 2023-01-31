@@ -35,7 +35,7 @@ V Spd <VSpd|.2|-31.17>`,
     ...base,
     x: 16,
     y: 192,
-    fontSize: 18,
+    fontSize: 16,
     fmt: `X <x|.0|39.39>
 Y <y|.0|1207.39>
 Z <z|.0|-4193.6>
@@ -43,7 +43,10 @@ A <angle||65535>
 C <CAngle||9>
 H <HSpd|.2|15.15>
 V <VSpd|.2|-31.17>
-QF <QF||0>`,
+QF <QF||0>
+I <invinc||30>
+G <goop||36368>
+Spin <spin||>`,
   },
   rect: {
     ...base,

@@ -11,13 +11,11 @@ const getFontInfo = (version) =>
         // JP
         charInfo: /**@type{Record<string, CharInfo>}*/ (charInfoJP),
         rowSize: 24, // how many char in a row of the img
-        multibyte: true,
       }
     : {
         // EU (TODO US)
         charInfo: /**@type{Record<string, CharInfo>}*/ (charInfoEU),
         rowSize: 16, // how many char in a row of the img
-        multibyte: false,
       };
 
 /**
@@ -25,7 +23,7 @@ const getFontInfo = (version) =>
  * @param {string} version
  */
 export function measureText(text, version) {
-  const { charInfo, rowSize, multibyte } = getFontInfo(version);
+  const { charInfo, rowSize } = getFontInfo(version);
 
   /** @type {{x: number, y: number, u: number, v: number}[]} */
   const chars = [];
@@ -34,8 +32,7 @@ export function measureText(text, version) {
   let w = 0;
   let useKerning = false;
   text.split('').forEach((c) => {
-    const { index, kerning, width } =
-      charInfo[c] ?? (multibyte && c.charCodeAt(0) >= 0x80 ? charInfo['?'] : charInfo[' ']);
+    const { index, kerning, width } = charInfo[c] ?? charInfo['?'];
     if (c === '\n') {
       useKerning = false;
       x = 0;

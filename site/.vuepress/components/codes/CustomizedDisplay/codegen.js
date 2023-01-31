@@ -1,19 +1,19 @@
 import { parseJSON } from '../codegen.js';
-import {
-  ASM,
-  makeInst,
-  liDX,
-  str2inst,
-  makeProgram,
-  inst2gecko,
-  getFillRectParams,
-} from '../asm.js';
+import { ASM, liDX, str2inst, makeProgram, inst2gecko, getFillRectParams } from '../asm.js';
 import { measureText } from '../text.js';
+import { addrs } from '../addrs.js';
+import { parseFormat } from './format.js';
+import { assemble } from './assembler.js';
+import { drawText, fillRect } from './functions.js';
 export const lskey = 'config/CustomizedDisplay';
 
 import configDB from './configDB.js';
 export const defaultConfig = [configDB.PAS];
 
+/** @type {(...args: Parameters<typeof parseFormat>) => string} */
+export const format2previewText = (input, version) => parseFormat(input, version).preview;
+
+/** @typedef {'GMSJ01'|'GMSJ0A'|'GMSE01'|'GMSP01'} GameVersion */
 /** @param {GameVersion} version */
 export function getConfig(version) {
   /** @type {typeof defaultConfig} */
@@ -27,423 +27,47 @@ export function getConfig(version) {
 }
 
 /**
- * @typedef {number[]} Inst
- * @typedef {8|16|32|'float'} DataType
- * @typedef {(gpr: number)=>Inst} GPRHandler -- (src=gpr, dst=gpr)
- * @typedef {{type: 'gpr'|'fpr'|'sp', index: number}} Dst
- * @typedef {'GMSJ01'|'GMSJ0A'|'GMSE01'|'GMSP01'} GameVersion
- *
- * @typedef {{
- *   offset: number
- *   dtype: DataType
- *   post?: GPRHandler
- * }} FieldInfo
- *
- * @typedef {{
- *   id: string
- *   pre: GPRHandler
- * }} Base
- *
- * @typedef {{
- *   pre: GPRHandler
- *   fields: {info: FieldInfo, dst: Dst}[]
- * }} Entry
- */
-
-/** @typedef {{[ver in GameVersion]: GPRHandler}} VBase */
-const bases = {
-  gpMarioOriginal: /**@type{VBase}*/ ({
-    GMSJ01: (rT) => ASM.lwz(rT, 13, -0x6748),
-    GMSE01: (rT) => ASM.lwz(rT, 13, -0x60d8),
-    GMSP01: (rT) => ASM.lwz(rT, 13, -0x61b0),
-    GMSJ0A: (rT) => ASM.lwz(rT, 13, -0x6218),
-  }),
-  gpMarDirector: /**@type{VBase}*/ ({
-    GMSJ01: (rT) => ASM.lwz(rT, 13, -0x6818),
-    GMSE01: (rT) => ASM.lwz(rT, 13, -0x6048),
-    GMSP01: (rT) => ASM.lwz(rT, 13, -0x6120),
-    GMSJ0A: (rT) => ASM.lwz(rT, 13, -0x6188),
-  }),
-  gpCamera: /**@type{VBase}*/ ({
-    GMSJ01: (rT) => ASM.lwz(rT, 13, -0x5750),
-    GMSE01: (rT) => ASM.lwz(rT, 13, -0x7118),
-    GMSP01: (rT) => ASM.lwz(rT, 13, -0x7158),
-    GMSJ0A: (rT) => ASM.lwz(rT, 13, -0x5768),
-  }),
-};
-/** @typedef {keyof typeof bases} BaseId */
-
-/** @type {({id: string, base: BaseId, fmt: string, preview: number} & FieldInfo)[]} */
-const fields = [
-  { id: 'x', base: 'gpMarioOriginal', dtype: 'float', offset: 0x10, fmt: '%.0f', preview: 426.39 },
-  { id: 'y', base: 'gpMarioOriginal', dtype: 'float', offset: 0x14, fmt: '%.0f', preview: -427.39 },
-  { id: 'z', base: 'gpMarioOriginal', dtype: 'float', offset: 0x18, fmt: '%.0f', preview: 428.39 },
-  { id: 'angle', base: 'gpMarioOriginal', dtype: 16, offset: 0x96, fmt: '%hu', preview: 1207 },
-  {
-    id: 'HSpd',
-    base: 'gpMarioOriginal',
-    dtype: 'float',
-    offset: 0xb0,
-    fmt: '%.2f',
-    preview: 15.15,
-  },
-  {
-    id: 'VSpd',
-    base: 'gpMarioOriginal',
-    dtype: 'float',
-    offset: 0xa8,
-    fmt: '%.2f',
-    preview: -31.17,
-  },
-  {
-    id: 'QF',
-    base: 'gpMarDirector',
-    dtype: 32,
-    offset: 0x58,
-    fmt: '%u',
-    preview: 0,
-    post: (rT) => ASM.rlwinm(rT, rT, 0, 30, 31, false),
-  },
-  {
-    id: 'CAngle',
-    base: 'gpCamera',
-    dtype: 16,
-    offset: 0xa6,
-    fmt: '%hu',
-    preview: 9,
-    post: (rT) => ASM.addi(rT, rT, -0x8000), // offset by 0x8000
-  },
-];
-const fieldDB = Object.fromEntries(
-  fields.map(({ id, base, fmt, preview, ...info }) => [
-    id.toLowerCase(),
-    { base, info, fmt, preview },
-  ]),
-);
-
-const store = {
-  8: ASM.stb,
-  16: ASM.sth,
-  32: ASM.stw,
-  float: ASM.stfs,
-  double: ASM.stfd,
-};
-const load = {
-  8: ASM.lbz,
-  16: ASM.lhz,
-  32: ASM.lwz,
-  float: ASM.lfs,
-};
-
-/**
- * @param {string} version
- * @param {{
- *   x: number
- *   y: number
- *   fontSize: number
- *   fgRGB: number
- *   fgA: number
- *   fgRGB2: number | null
- *   fgA2: number | null
- * }} drawTextOpt
- */
-export function prepareDrawText(version, { x, y, fontSize, fgRGB, fgA, fgRGB2, fgA2 }) {
-  const colorTop = (fgRGB << 8) | fgA;
-  const colorBot = fgRGB2 == null || fgA2 == null ? colorTop : (fgRGB2 << 8) | fgA;
-
-  let gpr = 5;
-  let fpr = 1;
-  let sp = 8;
-  let fmt = '';
-  let hasFloat = false;
-  /** @type {{[id: string]: Entry}} */
-  const entries = {};
-
-  /** @returns {Dst} */
-  function allocInt() {
-    if (gpr <= 10) {
-      return { type: 'gpr', index: gpr++ };
-    } else {
-      /** @type {Dst} */
-      const dst = { type: 'sp', index: sp };
-      sp += 4;
-      return dst;
-    }
-  }
-  /** @returns {Dst} */
-  function allocFloat() {
-    hasFloat = true;
-    if (fpr <= 8) {
-      return { type: 'fpr', index: fpr++ };
-    } else {
-      sp += sp & 4; // align 8
-      /** @type {Dst} */
-      const dst = { type: 'sp', index: sp };
-      sp += 8;
-      return dst;
-    }
-  }
-  /** @param {Base} base */
-  const getEntry = (base) =>
-    entries[base.id] ??
-    (entries[base.id] = {
-      pre: base.pre,
-      fields: [],
-    });
-
-  return {
-    /**
-     * @param {string} format
-     * @param {Base} base
-     * @param {FieldInfo} field
-     */
-    pushValue(format, base, field) {
-      fmt += format;
-      getEntry(base).fields.push({
-        info: field,
-        dst: (field.dtype === 'float' ? allocFloat : allocInt)(),
-      });
-    },
-    /**
-     * @param {string} text
-     */
-    pushText(text) {
-      fmt += text.replace(/%/g, '%%');
-    },
-    makeCode() {
-      /** @type {Inst[]} */
-      const insts = [];
-      // sp
-      const spAdd = sp === 8 ? 0 : ((sp >> 4) + (sp & 0xf ? 1 : 0)) << 4;
-      // params
-      for (const { pre, fields: params } of Object.values(entries)) {
-        // load base to gpr
-        const rBase = 3;
-        insts.push(pre(rBase));
-        // load all params
-        const rField = 11; // tmp GPR
-        const fField = 9; // tmp FPR
-        for (const {
-          info: { offset: srcoff, dtype, post },
-          dst,
-        } of params) {
-          if (dst.type === 'sp') {
-            const dstoff = dst.index;
-            if (dtype === 'float') {
-              insts.push(
-                // lfs fField, offset(rBase)
-                load.float(fField, rBase, srcoff),
-                // post
-                post?.(fField) ?? [],
-                // stfd fField, dst.index(r1)
-                store.double(fField, 1, dstoff),
-              );
-            } else {
-              insts.push(
-                // load rField, offset(rBase)
-                load[dtype](rField, rBase, srcoff),
-                // post
-                post?.(rField) ?? [],
-                // stw rField, dst.index(r1)
-                store[32](rField, 1, dstoff),
-              );
-            }
-          } else {
-            // load to register
-            const { index: rDst } = dst;
-            insts.push(
-              // load rDst
-              load[dtype](rDst, rBase, srcoff),
-              // post
-              post?.(rDst) ?? [],
-            );
-          }
-        }
-      }
-      // r3 = opt // sizeof(opt) = 0x10
-      // r4 = fmt
-      const fmtbuf = str2inst(fmt, version);
-      insts.push(
-        // bl 4+sizeof(opt)+len4(fmt)
-        ASM.b(0x14 + (fmtbuf.length << 2), true),
-        // opt
-        [((x & 0xffff) << 16) | (y & 0xffff), fontSize, colorTop, colorBot],
-        // .string fmt
-        fmtbuf,
-        // mflr r3
-        ASM.mflr(3),
-        // addi r4, r3, sizeof(opt)
-        ASM.addi(4, 3, 0x10),
-      );
-      // DONE
-      return { code: insts.flatMap((e) => e), spNeed: spAdd };
-    },
-  };
-}
-
-const dtype2fmtinfo = {
-  8: { prefix: 'hh', mask: 0xff },
-  16: { prefix: 'h', mask: 0xffff },
-  32: { prefix: '', mask: 0xffffffff },
-};
-
-/**
- * @param {string} input
- * @param {GameVersion} version
- * @param {ReturnType<typeof prepareDrawText>|null} f
- */
-export function format2previewText(input, version, f = null) {
-  const regex = /<(.*?)>/g;
-  let preview = '';
-  /** @type {RegExpExecArray|null} */
-  let m = null;
-  let i0 = 0;
-  while ((m = regex.exec(input))) {
-    const { index: i } = m;
-    // text
-    const text = input.slice(i0, i);
-    f?.pushText(text);
-    preview += text;
-    // arg
-    const [fieldId, fmt0, pvw0] = m[1].split('|');
-    const field = fieldDB[fieldId.toLowerCase()];
-    if (field) {
-      const { base: baseId, info, fmt: fmt1, preview: pvw1 } = field;
-      const { dtype } = info;
-      const fmt2 = fmt0 || fmt1;
-      let ipvw = +pvw0;
-      if (!pvw0 || !isFinite(ipvw)) ipvw = pvw1;
-      let fmt;
-      let pvw;
-      let padfmt = '';
-      if (dtype === 'float') {
-        const m = fmt2.trim().match(/^(?:%?(\d*)\.)?(\d+)([eEf]?)$/);
-        padfmt = m?.[1] || '';
-        const digit = +(m?.[2] || 0);
-        const suffix = m?.[3] || 'f';
-        fmt = `%${padfmt}.${digit}${suffix}`;
-        pvw = ipvw[suffix === 'f' ? 'toFixed' : 'toExponential'](digit);
-        if (suffix === 'E') pvw = pvw.toUpperCase();
-      } else {
-        const { prefix, mask } = dtype2fmtinfo[dtype];
-        ipvw &= mask;
-        const m = fmt2.trim().match(/^%?(\d*)h{,2}([dioxXu])$/);
-        padfmt = m?.[1] || '';
-        const t = m?.[2] || 'u';
-        fmt = `%${padfmt}${prefix}${t}`;
-        if ('di'.includes(t)) {
-          if (ipvw > mask >>> 1) ipvw -= mask;
-          pvw = ipvw.toString(10);
-        } else if (t === 'o') {
-          pvw = (ipvw >>> 0).toString(8);
-        } else if ('xX'.includes(t)) {
-          pvw = (ipvw >>> 0).toString(16);
-        } else {
-          pvw = (ipvw >>> 0).toString(10);
-        }
-      }
-      pvw = pvw.padStart(+padfmt, padfmt[0] === '0' ? '0' : ' ');
-      f?.pushValue(fmt, { id: baseId, pre: bases[baseId][version] }, info);
-      preview += pvw;
-    } else {
-      // fail to parse
-      f?.pushText(m[0]);
-      preview += m[0];
-    }
-    // next
-    i0 = i + m[0].length;
-  }
-  const text = input.slice(i0);
-  f?.pushText(text);
-  preview += text;
-  // DONE
-  return preview;
-}
-
-import addrs from '../addrs.js';
-const addrOrigOff = -0x2c; // drawWater - [-0x30, -0x18]
-const addrDst = 0x817fa000;
-
-/**
+ * @typedef {Parameters<assemble>[0][number]} ASMInst
  * @param {GameVersion} version
  */
 export default function codegen(version) {
   const configs = getConfig(version);
 
-  let spOff = 0;
-  const fcodes = /** @type {Inst[]} */ ([]);
-  const bcodes = /** @type {Inst[]} */ ([]);
+  let stackFrameSize = 0;
+
+  /** @type {ASMInst[]} */
+  const asm = [];
 
   for (const config of configs) {
-    const { fontSize, fmt, bgA } = config;
-    // prepare drawText
-    const f = prepareDrawText(version, config);
-    const text = format2previewText(fmt, version, f);
-    // text code
-    if (fmt.trim()) {
-      // update code and sp
-      const { code, spNeed } = f.makeCode();
-      spOff = Math.max(spOff, spNeed);
-      fcodes.push(code);
-    }
-    // background code
+    const { fmt, bgA } = config;
+    const { preview, format, fields } = parseFormat(fmt, version);
+
+    // fill_rect
     if (bgA) {
-      const { width, height } = measureText(text, version);
-      const w = Math.ceil((width * fontSize) / 20);
-      const h = Math.ceil((height * fontSize) / 20);
-      bcodes.push(
-        [
-          // bl 4+sizeof(rect)+sizeof(color)
-          ASM.b(0x18, true),
-          // fill_rect params
-          ...getFillRectParams(config, measureText(text, version)),
-          // mflr r3
-          ASM.mflr(3),
-          // addi r4, r3, sizeof(rect)
-          ASM.addi(4, 3, 0x10),
-        ].flatMap((e) => e),
-      );
+      asm.push(...fillRect(version, config, measureText(preview, version)));
+    }
+
+    // drawText
+    if (fmt.trim()) {
+      const { insts, sp } = drawText(version, config, format, fields);
+      stackFrameSize = Math.max(stackFrameSize, sp);
+      asm.push(...insts);
     }
   }
 
-  const addrOrig = addrs.drawWater[version] + addrOrigOff;
-  const addrFillRect = addrs.fillRect[version];
+  let body = assemble(asm, stackFrameSize);
+  // align code
+  if (body.length % 16 === 0) body += '60000000';
+  body += '00000000';
 
-  // program
-  const program = makeProgram(addrDst);
-  // la r3, ctx(r1)
-  // program.push(ASM.addi(3, 1, addrs.ctxSpOff[version]));
-  // addi r1, r1, -spOff
-  if (spOff) program.push(ASM.addi(1, 1, -spOff));
-  // bl J2DGrafContext::setup2D
-  // program.bl(addrs.setup2D[version]);
-  // (fill_rect)
-  for (const code of bcodes) {
-    program.push(code);
-    program.bl(addrFillRect);
-  }
-  // (drawText)
-  for (const code of fcodes) {
-    program.push(code);
-    program.bl(addrs.drawText);
-  }
-  // addi r1, r1, spOff
-  if (spOff) program.push(ASM.addi(1, 1, spOff));
-  // b orig+4
-  program.b(addrOrig + 4);
-
-  // dump code
-  const pcode = program.dump();
-  const psize = pcode.length;
-  return [
-    makeInst((0xc6 << 24) | (addrOrig & 0x1ffffff)),
-    makeInst(addrDst),
-    makeInst((0x06 << 24) | (addrDst & 0x1fffffff)),
-    makeInst(psize << 2),
-    pcode,
-    psize & 1 ? [0] : [],
-  ]
-    .flatMap((e) => e)
-    .map(inst2gecko)
-    .join('');
+  const addrDst = addrs.drawWater[version] - 0x2c; // [-0x30, -0x18]
+  return (
+    [
+      0xc2000000 | (addrDst & 0x1fffffff),
+      body.length >>> 4, // 16 hex-digits per line
+    ]
+      .flatMap((e) => e)
+      .map(inst2gecko)
+      .join('') + body
+  );
 }

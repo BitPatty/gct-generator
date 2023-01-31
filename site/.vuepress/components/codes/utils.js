@@ -59,3 +59,20 @@ export const makeGetLabel =
     }
     return null;
   };
+
+/**
+ * @template T
+ * @param {Iterable<T>} arr
+ * @param {(val: T) => boolean} tester
+ * @returns {[positive: T[], negative: T[]]}
+ */
+export function splitArray(arr, tester) {
+  /** @type {T[]} */
+  const positive = [];
+  /** @type {T[]} */
+  const negative = [];
+  for (const val of arr) {
+    (tester(val) ? positive : negative).push(val);
+  }
+  return [positive, negative];
+}
