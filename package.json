@@ -28,7 +28,7 @@
     "encoding-japanese": "^2.0.0",
     "jsdom": "20.0.2",
     "pre-commit": "1.2.2",
-    "prettier": "2.7.1",
+    "prettier": "2.8.3",
     "serve": "14.2.0",
     "vuepress": "1.9.7"
   },
