@@ -1,5 +1,7 @@
 # Changelog
 ## Feb 05, 2023
+### Created 'Controller Input Display'
+Display controller input
 ### Created 'Attempt Counter'
 Display attempt count and success count of current area
 ### Updated 'Instant Level Select'

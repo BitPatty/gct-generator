@@ -4,6 +4,7 @@ import PatternSelector from './PatternSelector/config.vue';
 import qft from './qft/config.vue';
 import qfst from './qfst/config.vue';
 import AttemptCounter from './AttemptCounter/config.vue';
+import controller from './controller/config.vue';
 
 export default {
   InstantRestart,
@@ -12,4 +13,5 @@ export default {
   qft,
   qfst,
   AttemptCounter,
+  controller,
 };

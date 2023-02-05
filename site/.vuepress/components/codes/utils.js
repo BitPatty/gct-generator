@@ -2,9 +2,10 @@
  * @template T extends {Record<string, any>|Record<string, any>[]}
  * @param {string} lskey
  * @param {T} defaultConfig
- * @param {(config: T)=>string} [makeText]
+ * @param {((config: T)=>string)|null} [makeText]
+ * @param {any} [hiddenConfig]
  */
-export function makeUpdateConfig(lskey, defaultConfig, makeText) {
+export function makeUpdateConfig(lskey, defaultConfig, makeText, hiddenConfig = {}) {
   const configKeys = Object.keys(defaultConfig);
   /** @type {(o: any)=>T} */
   const makeConfig =
@@ -18,7 +19,8 @@ export function makeUpdateConfig(lskey, defaultConfig, makeText) {
     const config = makeConfig(this);
     localStorage.setItem(lskey, JSON.stringify(config));
     // emit `config` event to parent
-    this.$emit('config', makeText ? { ...config, text: makeText(config) } : config);
+    const configEmit = { ...hiddenConfig, ...config };
+    this.$emit('config', makeText ? { ...configEmit, text: makeText(config) } : configEmit);
   };
 }
 
@@ -33,6 +35,15 @@ export const int2hex = (x, size) =>
     .padStart(size << 1, '0')
     .slice(-(size << 1));
 
+/**
+ * @param {number} x -- number to convert
+ */
+export function float2hex(x) {
+  const dv = new DataView(new ArrayBuffer(4));
+  dv.setFloat32(0, x);
+  return int2hex(dv.getUint32(0), 4);
+}
+
 /** @param {number} rgb */
 export const rgbI2S = (rgb) => '#' + rgb.toString(16).padStart(6, '0');
 /** @param {string} s */
@@ -43,6 +54,8 @@ export const rgbS2I = (s) => parseInt(s.slice(1), 16);
  */
 export const rgbaI2S = (rgb, a) =>
   '#' + rgb.toString(16).padStart(6, '0') + a.toString(16).padStart(2, '0');
+/** @param {number} rgba */
+export const cI2S = (rgba) => '#' + (rgba >>> 0).toString(16).padStart(8, '0');
 
 /** @type {(labels: Record<string, any>, locale: string, fallbackLocale?: string) => (key: string) => string} */
 export const makeGetLabel =
