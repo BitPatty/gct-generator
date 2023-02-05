@@ -19,6 +19,7 @@
 
 <script>
 import { translate, translateCode } from '../i18n/localeHelper';
+import { previewIds } from './codes/preview.js';
 import configUIs from './codes/ui.js';
 
 export default {
@@ -36,12 +37,7 @@ export default {
       return configUIs[this.code.id];
     },
     showPreview() {
-      return [
-        'PatternSelector',
-        'CustomizedDisplay',
-        'qft',
-        'qfst',
-      ].includes(this.code.id); // TODO
+      return previewIds.includes(this.code.id);
     },
   },
   data() {

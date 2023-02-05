@@ -15,7 +15,12 @@
     "left": "左",
     "right": "右",
     "top": "上",
-    "bottom": "下"
+    "bottom": "下",
+    "display": {
+      "duration": "表示時間：",
+      "frame": "(フレーム)",
+      "sec": "(秒)"
+    }
   },
   "en-US": {
     "h3": {
@@ -33,7 +38,12 @@
     "left": "Left",
     "right": "Right",
     "top": "Top",
-    "bottom": "Bottom"
+    "bottom": "Bottom",
+    "display": {
+      "duration": "Display duration: ",
+      "frame": "(frame)",
+      "sec": "(sec)"
+    }
   },
   "fr-FR": {
     "location": "Position : ",

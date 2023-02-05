@@ -1,4 +1,11 @@
 # Changelog
+## Feb 05, 2023
+### Created 'Attempt Counter'
+Display attempt count and success count of current area
+### Updated 'Instant Level Select'
+- Rewrote with C2
+- Go to level instantly without transition
+
 ## Jan 31, 2023
 ### Created 'Quarterframe Section Timer'
 Calculate and display section times whenever Quarterframe Timer freezes

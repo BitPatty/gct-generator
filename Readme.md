@@ -35,6 +35,8 @@ you may also need to check the following files:
 - [site/.vuepress/components/codes/ui.js](site/.vuepress/components/codes/ui.js):
   Specify the vue component for the configuration of the code.
   The version string will be passed as a property.
+- [site/.vuepress/components/codes/preview.js](site/.vuepress/components/codes/preview.js):
+  Specify the `id` and the `getConfig(version)` function of the code to make it shown in preview.
 
 #### Reserved Memory
 
@@ -67,18 +69,28 @@ Some codes store some states in the games memory starting from address 0x817F000
 | ![](./docs/reserved.svg)    | `0x110` | `0x237` | QF Timer: Timer Textbox                                                   |
 | ![](./docs/reserved.svg)    | `0x238` | `0x347` | General Function (`drawText`)                                             |
 | ![](./docs/buffer.svg)      | `0x348` | `0x39B` | Buffer (QF Timer)                                                         |
-| ![](./docs/reserved.svg)    | `0x39C` | `0x3AF` | QF Section Timer: Background Options                                      |
-| ![](./docs/reserved.svg)    | `0x3B0` | `0x3BF` | QF Section Timer: Text Options                                            |
+| ![](./docs/reserved.svg)    | `0x39C` | `0x3AF` | QF Section Timer: Background Config                                       |
+| ![](./docs/reserved.svg)    | `0x3B0` | `0x3BF` | QF Section Timer: Text Config                                             |
 | ![](./docs/reserved.svg)    | `0x3C0` | `0x3C8` | QF Section Timer: Format String                                           |
 | ![](./docs/reserved.svg)    | `0x3C9` | `0x3C9` | QF Section Timer: (Unused)                                                |
 | ![](./docs/reserved.svg)    | `0x3CA` | `0x3CB` | QF Section Timer: Section Count                                           |
 | ![](./docs/reserved.svg)    | `0x3CC` | `0x3CF` | QF Section Timer: Last Freezed Time                                       |
 | ![](./docs/reserved.svg)    | `0x3D0` | `0x40F` | QF Section Timer: Section Time Array                                      |
-| ![](./docs/reserved.svg)    | `0x410` | `0x41F` | Pattern Selector: Background Options                                      |
-| ![](./docs/reserved.svg)    | `0x424` | `0x433` | Pattern Selector: Text Options                                            |
+| ![](./docs/reserved.svg)    | `0x410` | `0x41F` | Pattern Selector: Background Config                                       |
+| ![](./docs/reserved.svg)    | `0x424` | `0x433` | Pattern Selector: Text Config                                             |
 | ![](./docs/reserved.svg)    | `0x434` | `0x440` | Pattern Selector: Format String                                           |
 | ![](./docs/reserved.svg)    | `0x441` | `0x475` | Pattern Selector: Pattern Data                                            |
-| ![](./docs/unallocated.svg) | `0x476` | `0xFFF` | Not Allocated                                                             |
+| ![](./docs/reserved.svg)    | `0x476` | `0x477` | Attempt Counter: Previous Area                                            |
+| ![](./docs/reserved.svg)    | `0x478` | `0x478` | Attempt Counter: Display Timer                                            |
+| ![](./docs/reserved.svg)    | `0x479` | `0x479` | Attempt Counter: Display Duration                                         |
+| ![](./docs/reserved.svg)    | `0x47A` | `0x47F` | Attempt Counter: Format String                                            |
+| ![](./docs/reserved.svg)    | `0x480` | `0x48F` | Attempt Counter: Text Config                                              |
+| ![](./docs/reserved.svg)    | `0x490` | `0x4A3` | Attempt Counter: Background Config                                        |
+| ![](./docs/reserved.svg)    | `0x4A4` | `0x4A5` | Attempt Counter: Success Count                                            |
+| ![](./docs/reserved.svg)    | `0x4A6` | `0x4A7` | Attempt Counter: Attempt Count                                            |
+| ![](./docs/reserved.svg)    | `0x4A8` | `0x4A8` | Attempt Counter: Got Shine Flag                                           |
+| ![](./docs/buffer.svg)      | `0x4A9` | `0x4AF` | Buffer (Attempt Counter)                                                  |
+| ![](./docs/unallocated.svg) | `0x4B0` | `0xFFF` | Not Allocated                                                             |
 
 ### Adding translations
 

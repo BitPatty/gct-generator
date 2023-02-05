@@ -1,24 +1,33 @@
 <template>
   <div class="preview-root">
     <div class="preview-ctn">
-      <PreviewString v-for="mdp,i in (config.CustomizedDisplay || [])"
-        :key="'mdp'+i" :config="mdp" :version="_version" />
-      <PreviewString :config="config.PatternSelector" :version="_version" />
-      <PreviewString :config="config.qft" :version="_version" />
-      <PreviewString :config="config.qfst" :version="_version" />
+      <PreviewString v-for="c in previews"
+        :key="c.key" :config="c" :version="_version" />
     </div>
   </div>
 </template>
 
 <script>
+import {previewIds} from './codes/preview.js';
 export default {
   props: {
     config: {type: Object},
   },
   computed: {
     _version() {
-      const {_version} = this.config
+      const {_version} = this.config;
       return _version;
+    },
+    previews() {
+      return previewIds.flatMap(id => {
+        const config = /**@type{any}*/(this.config)[id];
+        if (config == null) return [];
+        if (config instanceof Array) {
+          return config.map((c, i) => ({...c, key: `${id}-${i}`}));
+        } else {
+          return {...config, key: id};
+        }
+      });
     },
   },
 }

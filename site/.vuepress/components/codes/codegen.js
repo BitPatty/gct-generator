@@ -3,6 +3,7 @@ import qft from './qft/codegen.js';
 import qfst from './qfst/codegen.js';
 import CustomizedDisplay from './CustomizedDisplay/codegen.js';
 import PatternSelector from './PatternSelector/codegen.js';
+import AttemptCounter from './AttemptCounter/codegen.js';
 
 export default {
   InstantRestart,
@@ -10,6 +11,7 @@ export default {
   qfst,
   CustomizedDisplay,
   PatternSelector,
+  AttemptCounter,
 };
 
 /**

@@ -1,15 +1,15 @@
 <template>
   <div>
     <Preview :config="previewConfig" />
-    <div v-for="c,i in config" :key="i" class="textcell">
+    <div v-for="c,i in config" :key="c.key" class="textcell">
       <button class="textcell-remove" @click="deletionConfirm(i)">&#215;</button>
-      <Cell :value="c" @input="$event => config.splice(i, 1, $event)" :version="version" />
+      <Cell :value="c" @input="$event => config.splice(i, 1, {...$event, key: c.key})" :version="version" />
     </div>
     <div class="btn-ctn">
-      <button @click="config.push(db.PAS)">{{l('add.PAS')}}</button>
-      <button @click="config.push(db.speed)">{{l('add.speed')}}</button>
-      <button @click="config.push(db.detailed)">{{l('add.detailed')}}</button>
-      <button @click="config.push(db.rect)">{{l('add.rect')}}</button>
+      <button @click="append(db.PAS)">{{l('add.PAS')}}</button>
+      <button @click="append(db.speed)">{{l('add.speed')}}</button>
+      <button @click="append(db.detailed)">{{l('add.detailed')}}</button>
+      <button @click="append(db.rect)">{{l('add.rect')}}</button>
     </div>
   </div>
 </template>
@@ -49,7 +49,8 @@ export default {
       text: format2previewText(defaultConfig[0].fmt, version),
       ...defaultConfig[0],
     };
-    return {config, defaultConfigCell};
+    const keys = config.map((e, i) => i);
+    return {config, defaultConfigCell, keys, nextKey: keys.length};
   },
   watch: {
     config: makeUpdateConfig(lskey, defaultConfig),
@@ -59,6 +60,10 @@ export default {
     deletionConfirm(i) {
       // if (window.confirm(this.l('deletionConfirm'))) {
       this.config.splice(i, 1);
+    },
+    /** @param {any} c */
+    append(c) {
+      this.config.push({...c, key: this.nextKey++});
     },
   },
 }
