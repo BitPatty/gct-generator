@@ -90,7 +90,14 @@ Some codes store some states in the games memory starting from address 0x817F000
 | ![](./docs/reserved.svg)    | `0x4A6` | `0x4A7` | Attempt Counter: Attempt Count                                            |
 | ![](./docs/reserved.svg)    | `0x4A8` | `0x4A8` | Attempt Counter: Got Shine Flag                                           |
 | ![](./docs/buffer.svg)      | `0x4A9` | `0x4AF` | Buffer (Attempt Counter)                                                  |
-| ![](./docs/unallocated.svg) | `0x4B0` | `0xFFF` | Not Allocated                                                             |
+| ![](./docs/unallocated.svg) | `0x4B0` | `0x4BF` | Not Allocated                                                             |
+| ![](./docs/buffer.svg)      | `0x4C0` | `0x4C2` | Buffer (Controller Input Display)                                         |
+| ![](./docs/reserved.svg)    | `0x4C3` | `0x4C3` | Controller Input Display: Line Width                                      |
+| ![](./docs/reserved.svg)    | `0x4C4` | `0x4C7` | Controller Input Display: Scale                                           |
+| ![](./docs/reserved.svg)    | `0x4C8` | `0x4CB` | Controller Input Display: (X, Y) Coordinate                               |
+| ![](./docs/reserved.svg)    | `0x4CC` | `0x4CF` | Controller Input Display: Background Color                                |
+| ![](./docs/reserved.svg)    | `0x4D0` | `0x53F` | Controller Input Display: Components Config                               |
+| ![](./docs/unallocated.svg) | `0x540` | `0xFFF` | Not Allocated                                                             |
 
 ### Adding translations
 
