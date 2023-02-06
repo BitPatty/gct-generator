@@ -39,8 +39,8 @@ export default function codegen(version) {
   const asm = [];
 
   for (const config of configs) {
-    const { fmt, bgA } = config;
-    const { preview, format, fields } = parseFormat(fmt, version);
+    const { fmt: fmtRaw, bgA } = config;
+    const { preview, format, fields } = parseFormat(fmtRaw, version);
 
     // fill_rect
     if (bgA) {
@@ -48,7 +48,7 @@ export default function codegen(version) {
     }
 
     // drawText
-    if (fmt.trim()) {
+    if (format.trim()) {
       const { insts, sp } = drawText(version, config, format, fields);
       stackFrameSize = Math.max(stackFrameSize, sp);
       asm.push(...insts);

@@ -195,8 +195,8 @@ export function str2bytes(s, version) {
   /** @type {Record<string, (typeof charInfoJP)[' ']>} */
   const charInfo = version.startsWith('GMSJ') ? charInfoJP : charInfoEU; // TODO US
   const fmtbuf = Array.from(s).flatMap((c) => {
-    const code = charInfo[c]?.code ?? c.charCodeAt(0);
-    return code >= 0x100 ? [code >> 16, code & 0xff] : [code];
+    const code = charInfo[c]?.code ?? c.charCodeAt(0); // TODO multi-byte invalid char
+    return code >= 0x100 ? [code >> 8, code & 0xff] : [code];
   });
   fmtbuf.push(0); // NUL terminated
   return fmtbuf;

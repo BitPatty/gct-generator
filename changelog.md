@@ -1,4 +1,8 @@
 # Changelog
+## Feb 06, 2023
+### Fixed 'Customized Display'
+Fixed the hex value of multi-byte char in format string
+
 ## Feb 05, 2023
 ### Created 'Controller Input Display'
 Display controller input
