@@ -4054,9 +4054,6 @@
             ::: warning
             Shine Get Timer does not restart with this code.
             :::
-            ::: warning
-            Z menu will be disabled
-            :::
 
             #### Instant Restart
             - Press `B + D-Pad Up` to **restart the current area**
@@ -4083,9 +4080,6 @@
         <description lang="ja-JP">
             ::: warning
             シャインゲットタイマーには未対応です。
-            :::
-            ::: warning
-            Zメニューは無効化されます。
             :::
 
             #### ポーズせずにやり直し

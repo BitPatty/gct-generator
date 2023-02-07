@@ -1,4 +1,8 @@
 # Changelog
+## Feb 07, 2023
+### Updated 'Customized Display'
+Support signed int32 and int16 for fields
+
 ## Feb 06, 2023
 ### Fixed 'Customized Display'
 Fixed the hex value of multi-byte char in format string

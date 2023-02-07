@@ -86,7 +86,7 @@ export const fields = [
     id: 'goop',
     fmt: '%d',
     preview: 600,
-    ...makeFunctionLoader(32, (ver) => [
+    ...makeFunctionLoader(-32, (ver) => [
       {
         type: 'call',
         addr: addrs.getPollutionDegree[ver],

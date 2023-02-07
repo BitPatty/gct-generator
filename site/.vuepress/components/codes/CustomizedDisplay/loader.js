@@ -12,7 +12,7 @@ export const fTmp = 12;
  * @typedef {LoadDstReg|LoadDstStack} LoadDst
  * @typedef {{
  *   asm(version: GameVersion, dst: LoadDst): ASMInst[]
- *   dtype: 8|16|32|'float'
+ *   dtype: 8|16|-16|32|-32|'float'
  *   calling: boolean
  * }} Loader
  */

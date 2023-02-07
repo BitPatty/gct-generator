@@ -123,6 +123,7 @@ export const ASM = {
   // load rS, rA, D
   lbz: makeInstD(34),
   lhz: makeInstD(40),
+  lha: makeInstD(42),
   lwz: makeInstD(32),
   lfs: makeInstD(48),
   lfd: makeInstD(50),
@@ -161,12 +162,16 @@ export const $load = {
   8: ASM.lbz,
   16: ASM.lhz,
   32: ASM.lwz,
+  [-16]: ASM.lha,
+  [-32]: ASM.lwz,
   float: ASM.lfs,
 };
 export const $store = {
   8: ASM.stb,
   16: ASM.sth,
   32: ASM.stw,
+  [-16]: ASM.sth,
+  [-32]: ASM.stw,
   float: ASM.stfs,
   double: ASM.stfd,
 };

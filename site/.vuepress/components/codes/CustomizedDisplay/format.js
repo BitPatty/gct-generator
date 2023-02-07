@@ -8,6 +8,8 @@ const dtype2fmtinfo = {
   8: { prefix: 'hh', mask: 0xff },
   16: { prefix: 'h', mask: 0xffff },
   32: { prefix: '', mask: 0xffffffff },
+  [-16]: { prefix: 'h', mask: 0xffff },
+  [-32]: { prefix: '', mask: 0xffffffff },
 };
 
 /**
@@ -58,7 +60,7 @@ export function parseFormat(input, version) {
           ipvw &= mask;
           const m = fmt2.trim().match(/^%?(\d*)h{,2}([dioxXu])$/);
           padfmt = m?.[1] || '';
-          const t = m?.[2] || 'u';
+          const t = m?.[2] || (dtype > 0 ? 'u' : 'd');
           fmt = `%${padfmt}${prefix}${t}`;
           if ('di'.includes(t)) {
             if (ipvw > mask >>> 1) ipvw -= mask;
