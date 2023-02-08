@@ -35,6 +35,8 @@ you may also need to check the following files:
 - [site/.vuepress/components/codes/ui.js](site/.vuepress/components/codes/ui.js):
   Specify the vue component for the configuration of the code.
   The version string will be passed as a property.
+- [site/.vuepress/components/codes/preview.js](site/.vuepress/components/codes/preview.js):
+  Specify the `id` and the `getConfig(version)` function of the code to make it shown in preview.
 
 #### Reserved Memory
 
@@ -49,7 +51,10 @@ Some codes store some states in the games memory starting from address 0x817F000
 | ![](./docs/reserved.svg)    | `0x20`  | `0x23`  | Coin Count Savestate: Coin Count                                          |
 | ![](./docs/reserved.svg)    | `0x24`  | `0x26`  | Pattern Selector: Selected Pattern Numbers                                |
 | ![](./docs/reserved.svg)    | `0x27`  | `0x27`  | Pattern Selector: Cursor Position                                         |
-| ![](./docs/unallocated.svg) | `0x28`  | `0x93`  | Not Allocated                                                             |
+| ![](./docs/reserved.svg)    | `0x28`  | `0x29`  | Instant Level Select: Last Selected Area ID                               |
+| ![](./docs/reserved.svg)    | `0x2A`  | `0x2A`  | Instant Level Select: Last Selected Episode Number                        |
+| ![](./docs/reserved.svg)    | `0x2B`  | `0x2B`  | Instant Level Select: Area Lock Flag                                      |
+| ![](./docs/unallocated.svg) | `0x2C`  | `0x93`  | Not Allocated                                                             |
 | ![](./docs/reserved.svg)    | `0x94`  | `0xA3`  | QF Timer: Coordinates of the Text box (LTRB)                              |
 | ![](./docs/reserved.svg)    | `0xA4`  | `0xB0`  | QF Timer: Timer Format String                                             |
 | ![](./docs/reserved.svg)    | `0xB0`  | `0xB1`  | QF Timer: (Unused)                                                        |
@@ -67,12 +72,35 @@ Some codes store some states in the games memory starting from address 0x817F000
 | ![](./docs/reserved.svg)    | `0x110` | `0x237` | QF Timer: Timer Textbox                                                   |
 | ![](./docs/reserved.svg)    | `0x238` | `0x347` | General Function (`drawText`)                                             |
 | ![](./docs/buffer.svg)      | `0x348` | `0x39B` | Buffer (QF Timer)                                                         |
-| ![](./docs/unallocated.svg) | `0x39C` | `0x40F` | Not Allocated                                                             |
-| ![](./docs/reserved.svg)    | `0x410` | `0x41F` | Pattern Selector: Background Options                                      |
-| ![](./docs/reserved.svg)    | `0x424` | `0x433` | Pattern Selector: Text Options                                            |
+| ![](./docs/reserved.svg)    | `0x39C` | `0x3AF` | QF Section Timer: Background Config                                       |
+| ![](./docs/reserved.svg)    | `0x3B0` | `0x3BF` | QF Section Timer: Text Config                                             |
+| ![](./docs/reserved.svg)    | `0x3C0` | `0x3C8` | QF Section Timer: Format String                                           |
+| ![](./docs/reserved.svg)    | `0x3C9` | `0x3C9` | QF Section Timer: (Unused)                                                |
+| ![](./docs/reserved.svg)    | `0x3CA` | `0x3CB` | QF Section Timer: Section Count                                           |
+| ![](./docs/reserved.svg)    | `0x3CC` | `0x3CF` | QF Section Timer: Last Freezed Time                                       |
+| ![](./docs/reserved.svg)    | `0x3D0` | `0x40F` | QF Section Timer: Section Time Array                                      |
+| ![](./docs/reserved.svg)    | `0x410` | `0x41F` | Pattern Selector: Background Config                                       |
+| ![](./docs/reserved.svg)    | `0x424` | `0x433` | Pattern Selector: Text Config                                             |
 | ![](./docs/reserved.svg)    | `0x434` | `0x440` | Pattern Selector: Format String                                           |
 | ![](./docs/reserved.svg)    | `0x441` | `0x475` | Pattern Selector: Pattern Data                                            |
-| ![](./docs/unallocated.svg) | `0x476` | `0xFFF` | Not Allocated                                                             |
+| ![](./docs/reserved.svg)    | `0x476` | `0x477` | Attempt Counter: Previous Area                                            |
+| ![](./docs/reserved.svg)    | `0x478` | `0x478` | Attempt Counter: Display Timer                                            |
+| ![](./docs/reserved.svg)    | `0x479` | `0x479` | Attempt Counter: Display Duration                                         |
+| ![](./docs/reserved.svg)    | `0x47A` | `0x47F` | Attempt Counter: Format String                                            |
+| ![](./docs/reserved.svg)    | `0x480` | `0x48F` | Attempt Counter: Text Config                                              |
+| ![](./docs/reserved.svg)    | `0x490` | `0x4A3` | Attempt Counter: Background Config                                        |
+| ![](./docs/reserved.svg)    | `0x4A4` | `0x4A5` | Attempt Counter: Success Count                                            |
+| ![](./docs/reserved.svg)    | `0x4A6` | `0x4A7` | Attempt Counter: Attempt Count                                            |
+| ![](./docs/reserved.svg)    | `0x4A8` | `0x4A8` | Attempt Counter: Got Shine Flag                                           |
+| ![](./docs/buffer.svg)      | `0x4A9` | `0x4AF` | Buffer (Attempt Counter)                                                  |
+| ![](./docs/unallocated.svg) | `0x4B0` | `0x4BF` | Not Allocated                                                             |
+| ![](./docs/buffer.svg)      | `0x4C0` | `0x4C2` | Buffer (Controller Input Display)                                         |
+| ![](./docs/reserved.svg)    | `0x4C3` | `0x4C3` | Controller Input Display: Line Width                                      |
+| ![](./docs/reserved.svg)    | `0x4C4` | `0x4C7` | Controller Input Display: Scale                                           |
+| ![](./docs/reserved.svg)    | `0x4C8` | `0x4CB` | Controller Input Display: (X, Y) Coordinate                               |
+| ![](./docs/reserved.svg)    | `0x4CC` | `0x4CF` | Controller Input Display: Background Color                                |
+| ![](./docs/reserved.svg)    | `0x4D0` | `0x53F` | Controller Input Display: Components Config                               |
+| ![](./docs/unallocated.svg) | `0x540` | `0xFFF` | Not Allocated                                                             |
 
 ### Adding translations
 

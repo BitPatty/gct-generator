@@ -1,4 +1,8 @@
 # Changelog
+## Feb 08, 2023
+### Updated 'Instant Level Select'
+Overwrite button input value to prevent Level Select being activated when AreaLock is enabled
+
 ## Jan 31, 2023
 ### Updated 'Pattern Selector'
 - Rewrote with C2 + separated config 06
