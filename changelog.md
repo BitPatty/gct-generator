@@ -1,4 +1,8 @@
 # Changelog
+## Feb 08, 2023
+### Updated 'Instant Level Select'
+Overwrite button input value to prevent Level Select being activated when AreaLock is enabled
+
 ## Feb 07, 2023
 ### Updated 'Customized Display'
 Support signed int32 and int16 for fields
