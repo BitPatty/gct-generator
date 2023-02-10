@@ -1,4 +1,23 @@
 # Changelog
+## Feb 08, 2023
+### Updated 'Instant Level Select'
+Overwrite button input value to prevent Level Select being activated when AreaLock is enabled
+
+## Jan 10, 2023
+### Updated 'Quarterframe Timer'
+Added the following options to freeze QFT:
+- When Mario holds, throws, puts down an object
+- When Mario triple jumps, spin jumps, ledge grabs, wall kicks, bounces, rope jumps
+
+## Jan 7, 2023
+### Updated 'Quarterframe Timer'
+Reworked the existing freezes and added the option to freeze when mounting Yoshi
+
+## Dec 16, 2022
+### Updated 'Quarterframe Timer'
+- Gave the timer a 1 frame headstart to make it more accurate to SGT and IL retiming rules
+- Ported the customizable visuals and freeze conditions to the US and PAL versions
+
 ## Nov 19, 2022
 Added `CAngle` for 'Customized Display' to show camera angle
 

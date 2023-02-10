@@ -24,7 +24,17 @@
         "talk": "会話開始時",
         "demo": "カットシーン開始時",
         "cleaned": "NPCを洗った時",
-        "bowser": "クッパ戦の足場を破壊した時"
+        "bowser": "クッパ戦の足場を破壊した時",
+        "yoshi": "ヨッシーに乗った時",
+        "take": "オブジェクトを持った時",
+        "drop": "オブジェクトを投げた時",
+        "put": "オブジェクトを置いた時",
+        "tripleJump": "三段ジャンプした時",
+        "spinJump": "スピンジャンプした時",
+        "ledgeGrab": "崖掴まりした時",
+        "wallKick": "壁キックした時",
+        "ropeJump": "ロープ、大車輪でジャンプした時",
+        "bounce": "アメンボやジャンプ台で跳ねた時"
       }
     }
   },
@@ -34,8 +44,8 @@
     "fontSize": "Font size: ",
     "fgColor": "Font color: ",
     "fgColorGrad": "Gradient",
-    "fgColor1": "Font color(Top): ",
-    "fgColor2": "Font color(Bottom): ",
+    "fgColor1": "Font color (top): ",
+    "fgColor2": "Font color (bottom): ",
     "bgColor": "Background color: ",
     "alpha": "Alpha=",
     "preview": "Preview",
@@ -43,17 +53,57 @@
     "freeze": {
       "h3": "Freezing the timer",
       "duration": "Duration: ",
-      "frame": "(frame)",
+      "frame": "(frames)",
       "sec": "(sec)",
       "rows": {
-        "yellowCoin": "When collected a yellow coin",
-        "redCoin": "When collected a red coin",
-        "blueCoin": "When collected a blue coin",
-        "item": "When collected an item (e.g. nozzle)",
-        "talk": "When dialogue started",
-        "demo": "When cutscene started",
-        "cleaned": "When NPC is cleaned",
-        "bowser": "When destroyed platform in Bowser fight"
+        "yellowCoin": "When a yellow coin is collected",
+        "redCoin": "When a red coin is collected",
+        "blueCoin": "When a blue coin is collected",
+        "item": "When an item (e.g. nozzle) is collected",
+        "talk": "When dialogue starts",
+        "demo": "When a cutscene starts",
+        "cleaned": "When an NPC is cleaned",
+        "bowser": "When a platform is destroyed in the Bowser fight",
+        "yoshi": "When Yoshi is mounted",
+        "take": "When Mario holds an object",
+        "drop": "When Mario throws an object",
+        "put": "When Mario puts down an object",
+        "tripleJump": "When Mario triple jumps",
+        "spinJump": "When Mario spin jumps",
+        "ledgeGrab": "When Mario ledge grabs",
+        "wallKick": "When Mario wall kicks",
+        "ropeJump": "When Mario jumps from a rope",
+        "bounce": "When Mario bounces (e.g. on a roof)"
+      }
+    }
+  },
+  "fr-FR": {
+    "h3": "Apparence",
+    "location": "Position : ",
+    "fontSize": "Taille de police : ",
+    "fgColor": "Couleur du texte : ",
+    "fgColorGrad": "Dégradé",
+    "fgColor1": "Couleur du texte (haut) : ",
+    "fgColor2": "Couleur du texte (bas) : ",
+    "bgColor": "Couleur de fond : ",
+    "alpha": "Alpha = ",
+    "preview": "Aperçu",
+    "previewNote": "※ x doit être entre 0 et 600, et y entre 16 et 464.",
+    "freeze": {
+      "h3": "Temps intermédiaires",
+      "duration": "Durée d'affichage : ",
+      "frame": "(frames)",
+      "sec": "(sec)",
+      "rows": {
+        "yellowCoin": "Quand une pièce jaune est ramassée",
+        "redCoin": "Quand une pièce rouge est ramassée",
+        "blueCoin": "Quand une pièce bleue est ramassée",
+        "item": "Quand un power-up (buse, etc.) est ramassé",
+        "talk": "Quand un dialogue commence",
+        "demo": "Quand une cutscene commence",
+        "cleaned": "Quand un PNJ est nettoyé",
+        "bowser": "Quand une plate-forme est détruite dans le combat de Bowser",
+        "yoshi": "Quand Yoshi est monté"
       }
     }
   }
