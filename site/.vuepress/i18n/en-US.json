@@ -53,7 +53,8 @@
     },
     "alert": {
       "gct": "The generated GCT file size exceeds 5000 bytes ({size} bytes). All of the codes may not work when using this file on Nintendont.",
-      "dolphin": "The total code size exceeds 3256 bytes ({size} bytes). All of the codes may not work when all of them are enabled on Dolphin. Try to disable some codes in that case."
+      "dolphin": "The total code size exceeds 3256 bytes ({size} bytes). All of the codes may not work when all of them are enabled on Dolphin. Try to disable some codes in that case.",
+      "gci-compatibility": "The following code is not included in the GCI file due to incompatibility: "
     },
     "categories": {
       "qol": "Quality of Life",

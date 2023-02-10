@@ -70,10 +70,41 @@ export default {
         }
       }
 
+      let format;
+      const formats = this.format.split('+');
+      if (formats[0] === 'gci') {
+        format = formats[1];
+        const codeListGCT = [];
+        const codeListGCI = codeList.splice(0).flatMap(c => {
+          if (c.id === 'IntroSkip') { // TODO
+            codeListGCT.push(c);
+            return [];
+          }
+          return c;
+        });
+        // download GCI Loader + GCT only code as remaining format
+        const {codes} = gameVersions.find((v) => v.identifier === this.versionIdentifier);
+        const gciLoader = codes.find(code => code.id === 'GCILoader');
+        codeList.push(gciLoader, ...codeListGCT);
+        if (!format && codeListGCT.length) {
+          const list = codeListGCT.map(c => (
+            c.title.find(o => o.lang === this.$lang) ??
+            c.title.find(o => o.lang === 'en-US')
+          ).content).join(', ');
+          alert(translate('generatorconfig.alert.gci-compatibility', this.$lang)+list);
+        }
+        // download GCI file
+        if (codeListGCI.length) {
+          this.generateGCI(codeListGCI, version);
+        }
+      } else {
+        format = formats[0];
+      }
+
+      // 16 = 8(00D0C0DE 00D0C0DE) + 8(F0000000 00000000)
+      const codeSize = codeList.reduce((a, e) => a + e.source.length, 0) / 2 + 16;
       // generate file
-      const codeSize = codeList.reduce((a, e) => a + e.source.length, 0) / 2 + 16; // 8(00D0)+8(F000)
-      // console.log(codeSize, codeList);
-      switch (this.format) {
+      switch (format) {
         case 'gct':
           this.alertGCTCodeSize(codeSize);
           this.generateGCT(codeList, version);
@@ -85,21 +116,6 @@ export default {
         case 'gcm':
           this.alertDolphinCodeSize(codeSize);
           this.generateCheatManagerTXT(codeList, version);
-          break;
-        case 'gci+gct':
-          this.generateGCI(codeList, version) &&
-            this.generateGCT(this.getGCILoader(), version);
-          break;
-        case 'gci+dolphin':
-          this.generateGCI(codeList, version) &&
-            this.generateDolphinINI(this.getGCILoader(), version);
-          break;
-        case 'gci+gcm':
-          this.generateGCI(codeList, version) &&
-            this.generateCheatManagerTXT(this.getGCILoader(), version);
-          break;
-        case 'gci':
-          this.generateGCI(codeList, version);
           break;
       }
     },
@@ -174,7 +190,7 @@ export default {
       const codeSize = code.length>>1;
 
       const fileName = `GCT_${version}`;
-      const blockCount = 6; // Math.ceil(codeSize/0x2000);
+      const blockCount = 6; // Math.ceil(codeSize/0x2000); // TODO
       const headSize = 0x40;
       const gciSize = headSize+0x2000*blockCount;
       const rawData = new Uint8Array(gciSize);
@@ -193,7 +209,6 @@ export default {
       for (let i=0x3A; i<0x40; i++) rawData[i] = 0xff;
 
       this.downloadFile(rawData, `01-${version.slice(0, 4)}-${fileName}.gci`);
-      return true; // good
     },
     downloadFile(data, filename) {
       var file = new Blob([data], {

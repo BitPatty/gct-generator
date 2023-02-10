@@ -3375,6 +3375,7 @@
     <code>
         <category>qol</category>
         <presets>standard,recommended,il</presets>
+        <id>IntroSkip</id>
         <title lang="en-US">Intro Skip</title>
         <title lang="de-CH">Überspringbare Intros</title>
         <title lang="fr-FR">Passer l'intro</title>
