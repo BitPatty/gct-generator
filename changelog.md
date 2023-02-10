@@ -1,4 +1,7 @@
 # Changelog
+## Feb 10, 2023
+Ported GCI Loader to all versions
+
 ## Feb 08, 2023
 ### Updated 'Instant Level Select'
 Overwrite button input value to prevent Level Select being activated when AreaLock is enabled

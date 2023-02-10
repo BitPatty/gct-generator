@@ -60,7 +60,7 @@ export default {
         ]);
       } catch {}
 
-      const fileName = gameVersions.find((v) => v.identifier === this.versionIdentifier).version;
+      const version = gameVersions.find((v) => v.identifier === this.versionIdentifier).version;
 
       // apply customizable codes
       for (const code of codeList) {
@@ -76,30 +76,30 @@ export default {
       switch (this.format) {
         case 'gct':
           this.alertGCTCodeSize(codeSize);
-          this.generateGCT(codeList, fileName);
+          this.generateGCT(codeList, version);
           break;
         case 'dolphin':
           this.alertDolphinCodeSize(codeSize);
-          this.generateDolphinINI(codeList, fileName);
+          this.generateDolphinINI(codeList, version);
           break;
         case 'gcm':
           this.alertDolphinCodeSize(codeSize);
-          this.generateCheatManagerTXT(codeList, fileName);
+          this.generateCheatManagerTXT(codeList, version);
           break;
         case 'gci+gct':
-          this.generateGCI(c, fileName) &&
-            this.generateGCT(this.getGCILoader(), fileName);
+          this.generateGCI(codeList, version) &&
+            this.generateGCT(this.getGCILoader(), version);
           break;
         case 'gci+dolphin':
-          this.generateGCI(c, fileName) &&
-            this.generateDolphinINI(this.getGCILoader(), fileName);
+          this.generateGCI(codeList, version) &&
+            this.generateDolphinINI(this.getGCILoader(), version);
           break;
         case 'gci+gcm':
-          this.generateGCI(c, fileName) &&
-            this.generateCheatManagerTXT(this.getGCILoader(), fileName);
+          this.generateGCI(codeList, version) &&
+            this.generateCheatManagerTXT(this.getGCILoader(), version);
           break;
         case 'gci':
-          this.generateGCI(c, fileName);
+          this.generateGCI(codeList, version);
           break;
       }
     },
@@ -168,33 +168,31 @@ export default {
       this.downloadFile(data, `${version}.txt`);
     },
     generateGCI(codes, version) {
-      if (!['GMSJ01'].includes(version)) {
-        alert('GCI format is not yet supported for versions other than GMSJ01');
-        return false; // error
-      }
-      let code = '00D0C0DE00D0C0DE';
+      let code = '';
       codes.forEach((c) => (code += c.source));
-      code += 'C0000000000000023C60818081E3A7FC7DE478504E800020'; // return
+      code += 'C0000000000000023C60817F81E317FC7DE478504E800020'; // return
+      const codeSize = code.length>>1;
 
-      const blockCount = 2; // TODO
-      const gciSize = 0x40+0x2000*blockCount;
-      const padSize = 0x40; // TODO
-      let rawData = new Uint8Array(gciSize);
+      const fileName = `GCT_${version}`;
+      const blockCount = 6; // Math.ceil(codeSize/0x2000);
+      const headSize = 0x40;
+      const gciSize = headSize+0x2000*blockCount;
+      const rawData = new Uint8Array(gciSize);
 
-      for (let iD=padSize, iC=0; iD<rawData.length; iD++, iC+=2) {
+      for (let iD=headSize, iC=0; iC<code.length; iD++, iC+=2) {
         rawData[iD] = parseInt(code.slice(iC, iC+2), 16);
       }
 
       // game id
       [...new TextEncoder().encode(version), 0xff, 0x00].forEach((e, i) => rawData[i] = e);
       // file name
-      [...new TextEncoder().encode('gct')].forEach((e, i) => rawData[0x8+i] = e);
+      [...new TextEncoder().encode(fileName)].forEach((e, i) => rawData[0x8+i] = e);
       // block count
       rawData[0x39] = blockCount;
       // ff*6
       for (let i=0x3A; i<0x40; i++) rawData[i] = 0xff;
 
-      this.downloadFile(rawData, `01-${version.slice(0, 4)}-gct.gci`);
+      this.downloadFile(rawData, `01-${version.slice(0, 4)}-${fileName}.gci`);
       return true; // good
     },
     downloadFile(data, filename) {
