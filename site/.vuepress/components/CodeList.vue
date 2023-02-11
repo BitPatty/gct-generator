@@ -66,6 +66,7 @@
 import { translateCode, translate } from '../i18n/localeHelper';
 import codeCategories from '../data/codeCategories.json';
 import presetCategories from '../data/presetCategories.json';
+import {lskeyLDC} from './DownloadButton.vue';
 
 export default {
   props: {
@@ -98,10 +99,16 @@ export default {
   },
   methods: {
     getPresetOptions() {
-      return presetCategories.map((c) => ({
-        label: c.i18nKey,
-        value: c.identifier,
-      }));
+      return [
+        ...presetCategories.map((c) => ({
+          label: c.i18nKey,
+          value: c.identifier,
+        })),
+        {
+          label: 'generatorconfig.presets.@lastDLCodes',
+          value: lskeyLDC,
+        },
+      ];
     },
     emitChangeEvent() {
       const selectedCodes = this.availableCodes.filter((c) => c.selected);
@@ -120,8 +127,23 @@ export default {
         return;
       }
 
-      for (const code of this.availableCodes) {
-        code.selected = code.presets.includes(identifier);
+      if (identifier === lskeyLDC) {
+        // previous downloaded code
+        let titles = new Set();
+        try {
+          const o = JSON.parse(localStorage.getItem(lskeyLDC));
+          if (o instanceof Array) {
+            titles = new Set(o);
+          }
+        } catch {}
+        for (const code of this.availableCodes) {
+          code.selected = titles.has(code.title.find(o => o.lang === 'en-US').content);
+        }
+      } else {
+        // regular preset
+        for (const code of this.availableCodes) {
+          code.selected = code.presets.includes(identifier);
+        }
       }
 
       this.unselectStageLoader();

@@ -1,4 +1,7 @@
 # Changelog
+## Feb 11, 2023
+Added 'Previous Downloaded Codes' as a preset
+
 ## Feb 08, 2023
 ### Updated 'Instant Level Select'
 Overwrite button input value to prevent Level Select being activated when AreaLock is enabled
