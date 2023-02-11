@@ -1,6 +1,10 @@
 # Changelog
 ## Feb 11, 2023
-Added 'Previous Downloaded Codes' as a preset
+- Added 'Deathless Blooper Surfing'
+- Added 'In-Game Time Savestate'
+- Added 'QF Time Savestate'
+- Added 'Red Coin Savestate'
+- Added 'Previous Downloaded Codes' as a preset
 
 ## Feb 08, 2023
 ### Updated 'Instant Level Select'
