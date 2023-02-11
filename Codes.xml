@@ -340,9 +340,10 @@
         </source>
     </code>
     <code>
-        <category>misc</category>
+        <category>savestate</category>
         <title lang="en-US">Coin Count Savestate</title>
         <title lang="de-CH">Münzenzahl Speicherstand</title>
+        <title lang="ja-JP">コイン数状態保存</title>
         <author>Psychonauter</author>
         <version>1.0</version>
         <description lang="en-US">
@@ -362,6 +363,12 @@
             | --------------- | ----------------------------------- |
             | D-Pad Links  | Speichere aktuellen Münzenstand        |
             | D-Pad Rechts | Lade gespeicherten Müneznstand         |
+        </description>
+        <description lang="ja-JP">
+            | ボタン     | 機能                       |
+            | ---------- | -------------------------- |
+            | 十字キー左 | コイン数をセーブ           |
+            | 十字キー右 | コイン数をロード           |
         </description>
         <date>Jul 24, 2021</date>
         <source version="GMSE01">
@@ -5081,6 +5088,381 @@
             7C0F2214 90030004
             39E30008 7DE47850
             4E800020 4E800020
+        </source>
+    </code>
+    <code>
+        <category>savestate</category>
+        <title lang="en-US">Red Coin Savestate</title>
+        <title lang="ja-JP">赤コイン状態保存</title>
+        <author>sup39(サポミク)</author>
+        <version>1.0</version>
+        <date>Feb 11, 2023</date>
+        <description lang="en-US">
+            | Combination | Result                       |
+            | ------------| ---------------------------- |
+            | D-Pad Left  | Save current red coin state  |
+            | D-Pad Right | Load saved red coin state    |
+        </description>
+        <description lang="ja-JP">
+            | ボタン     | 機能                       |
+            | ---------- | -------------------------- |
+            | 十字キー左 | 赤コインの状態をセーブ     |
+            | 十字キー右 | 赤コインの状態をロード     |
+        </description>
+        <source version="GMSJ01">
+            C0000000 00000017
+            3D808040 A18C0D50
+            2B8C0001 419E000C
+            280C0002 4CA20020
+            818D9A18 7D8C6379
+            4D820020 812C0018
+            814C0014 554A103A
+            7D495214 3C60817F
+            816D97D0 A003002C
+            5405800E 419E0020
+            5400063F 900B00F4
+            40820014 880B00E5
+            70000002 41820008
+            38A00000 7C0A4840
+            40810038 858AFFFC
+            800C0000 6C00803C
+            280015AC 40A20020
+            800C00F0 54A5083E
+            419E0010 50A007FE
+            50A01F38 900C00F0
+            500507FE 4BFFFFC8
+            4C9E0020 98A3002C
+            800B00F4 9803002D
+            4E800020 4E800020
+        </source>
+        <source version="GMSJ0A">
+            C0000000 00000017
+            3D80803F A18C5428
+            2B8C0001 419E000C
+            280C0002 4CA20020
+            818D9C10 7D8C6379
+            4D820020 812C0018
+            814C0014 554A103A
+            7D495214 3C60817F
+            816D9E60 A003002C
+            5405800E 419E0020
+            5400063F 900B00F4
+            40820014 880B00E5
+            70000002 41820008
+            38A00000 7C0A4840
+            40810038 858AFFFC
+            800C0000 6C00803B
+            2800A0C4 40A20020
+            800C00F0 54A5083E
+            419E0010 50A007FE
+            50A01F38 900C00F0
+            500507FE 4BFFFFC8
+            4C9E0020 98A3002C
+            800B00F4 9803002D
+            4E800020 4E800020
+        </source>
+        <source version="GMSP01">
+            C0000000 00000017
+            3D808040 A18CBBF4
+            2B8C0001 419E000C
+            280C0002 4CA20020
+            818D9C78 7D8C6379
+            4D820020 812C0018
+            814C0014 554A103A
+            7D495214 3C60817F
+            816D9EC8 A003002C
+            5405800E 419E0020
+            5400063F 900B00F4
+            40820014 880B00E5
+            70000002 41820008
+            38A00000 7C0A4840
+            40810038 858AFFFC
+            800C0000 6C00803C
+            280013A4 40A20020
+            800C00F0 54A5083E
+            419E0010 50A007FE
+            50A01F38 900C00F0
+            500507FE 4BFFFFC8
+            4C9E0020 98A3002C
+            800B00F4 9803002D
+            4E800020 4E800020
+        </source>
+        <source version="GMSE01">
+            C0000000 00000017
+            3D808040 A18C4454
+            2B8C0001 419E000C
+            280C0002 4CA20020
+            818D9D50 7D8C6379
+            4D820020 812C0018
+            814C0014 554A103A
+            7D495214 3C60817F
+            816D9FA0 A003002C
+            5405800E 419E0020
+            5400063F 900B00F4
+            40820014 880B00E5
+            70000002 41820008
+            38A00000 7C0A4840
+            40810038 858AFFFC
+            800C0000 6C00803C
+            28009BB4 40A20020
+            800C00F0 54A5083E
+            419E0010 50A007FE
+            50A01F38 900C00F0
+            500507FE 4BFFFFC8
+            4C9E0020 98A3002C
+            800B00F4 9803002D
+            4E800020 4E800020
+        </source>
+    </code>
+    <code>
+        <category>savestate</category>
+        <title lang="en-US">QF Time Savestate</title>
+        <title lang="ja-JP">QFタイム状態保存</title>
+        <author>sup39(サポミク)</author>
+        <version>1.0</version>
+        <date>Feb 11, 2023</date>
+        <description lang="en-US">
+            | Combination | Result                       |
+            | ------------| ---------------------------- |
+            | D-Pad Left  | Save current QF Time         |
+            | D-Pad Right | Load saved QF Time           |
+        </description>
+        <description lang="ja-JP">
+            | ボタン     | 機能                       |
+            | ---------- | -------------------------- |
+            | 十字キー左 | 現在のQFタイムをセーブ     |
+            | 十字キー右 | セーブしたQFタイムをロード |
+        </description>
+        <source version="GMSJ01">
+            C0000000 00000009
+            80AD97E8 7CA52B79
+            4D820020 3C60817F
+            3D808040 A18C0D50
+            2B8C0001 419E0020
+            280C0002 4CA20020
+            80030030 9005005C
+            900303CC 38000000
+            900300BC 8005005C
+            90030030 4E800020
+        </source>
+        <source version="GMSJ0A">
+            C0000000 00000009
+            80AD9E78 7CA52B79
+            4D820020 3C60817F
+            3D80803F A18C5428
+            2B8C0001 419E0020
+            280C0002 4CA20020
+            80030030 9005005C
+            900303CC 38000000
+            900300BC 8005005C
+            90030030 4E800020
+        </source>
+        <source version="GMSP01">
+            C0000000 00000009
+            80AD9EE0 7CA52B79
+            4D820020 3C60817F
+            3D808040 A18CBBF4
+            2B8C0001 419E0020
+            280C0002 4CA20020
+            80030030 9005005C
+            900303CC 38000000
+            900300BC 8005005C
+            90030030 4E800020
+        </source>
+        <source version="GMSE01">
+            C0000000 00000009
+            80AD9FB8 7CA52B79
+            4D820020 3C60817F
+            3D808040 A18C4454
+            2B8C0001 419E0020
+            280C0002 4CA20020
+            80030030 9005005C
+            900303CC 38000000
+            900300BC 8005005C
+            90030030 4E800020
+        </source>
+    </code>
+    <code>
+        <category>savestate</category>
+        <title lang="en-US">In-Game Time Savestate</title>
+        <title lang="ja-JP">ゲーム内タイム状態保存</title>
+        <author>sup39(サポミク)</author>
+        <version>1.0</version>
+        <date>Feb 11, 2023</date>
+        <description lang="en-US">
+            | Combination | Result                       |
+            | ------------| ---------------------------- |
+            | D-Pad Left  | Save current In-Game Time    |
+            | D-Pad Right | Load saved In-Game Time      |
+        </description>
+        <description lang="ja-JP">
+            | ボタン     | 機能                             |
+            | ---------- | -------------------------------- |
+            | 十字キー左 | 現在のゲーム内タイムをセーブ     |
+            | 十字キー右 | セーブしたゲーム内タイムをロード |
+        </description>
+        <source version="GMSJ01">
+            C220C428 00000003
+            3D80817F 39600000
+            916C0034 916C0038
+            7C0802A6 00000000
+            C0000000 00000013
+            3D808040 A18C0D50
+            2B8C0001 419E000C
+            280C0002 4CA20020
+            816D97E8 7D6B5B79
+            4D820020 3D80817F
+            7D2D42E6 7D4C42E6
+            7C0D42E6 7C090000
+            4082FFF0 806B0110
+            80AB0114 7D455010
+            7D234910 806B00F0
+            80AB00F4 7D455014
+            7D234914 409E0020
+            806B00C8 80AB00CC
+            7CA55010 7C634910
+            906C0034 90AC0038
+            4E800020 806C0034
+            80AC0038 7CA55010
+            7C634910 906B00C8
+            90AB00CC 4E800020
+        </source>
+        <source version="GMSJ0A">
+            C212C3C0 00000003
+            3D80817F 39600000
+            916C0034 916C0038
+            7C0802A6 00000000
+            C0000000 00000013
+            3D80803F A18C5428
+            2B8C0001 419E000C
+            280C0002 4CA20020
+            816D9E78 7D6B5B79
+            4D820020 3D80817F
+            7D2D42E6 7D4C42E6
+            7C0D42E6 7C090000
+            4082FFF0 806B0110
+            80AB0114 7D455010
+            7D234910 806B00F0
+            80AB00F4 7D455014
+            7D234914 409E0020
+            806B00C8 80AB00CC
+            7CA55010 7C634910
+            906C0034 90AC0038
+            4E800020 806C0034
+            80AC0038 7CA55010
+            7C634910 906B00C8
+            90AB00CC 4E800020
+        </source>
+        <source version="GMSP01">
+            C213FC5C 00000003
+            3D80817F 39600000
+            916C0034 916C0038
+            7C0802A6 00000000
+            C0000000 00000013
+            3D808040 A18CBBF4
+            2B8C0001 419E000C
+            280C0002 4CA20020
+            816D9EE0 7D6B5B79
+            4D820020 3D80817F
+            7D2D42E6 7D4C42E6
+            7C0D42E6 7C090000
+            4082FFF0 806B0110
+            80AB0114 7D455010
+            7D234910 806B00F0
+            80AB00F4 7D455014
+            7D234914 409E0020
+            806B00C8 80AB00CC
+            7CA55010 7C634910
+            906C0034 90AC0038
+            4E800020 806C0034
+            80AC0038 7CA55010
+            7C634910 906B00C8
+            90AB00CC 4E800020
+        </source>
+        <source version="GMSE01">
+            C214AFCC 00000003
+            3D80817F 39600000
+            916C0034 916C0038
+            7C0802A6 00000000
+            C0000000 00000013
+            3D808040 A18C4454
+            2B8C0001 419E000C
+            280C0002 4CA20020
+            816D9FB8 7D6B5B79
+            4D820020 3D80817F
+            7D2D42E6 7D4C42E6
+            7C0D42E6 7C090000
+            4082FFF0 806B0110
+            80AB0114 7D455010
+            7D234910 806B00F0
+            80AB00F4 7D455014
+            7D234914 409E0020
+            806B00C8 80AB00CC
+            7CA55010 7C634910
+            906C0034 90AC0038
+            4E800020 806C0034
+            80AC0038 7CA55010
+            7C634910 906B00C8
+            90AB00CC 4E800020
+        </source>
+    </code>
+    <code>
+        <category>misc</category>
+        <title lang="en-US">Deathless Blooper Surfing</title>
+        <title lang="ja-JP">死なないイカサーフィン</title>
+        <author>sup39(サポミク)</author>
+        <version>1.0</version>
+        <date>Feb 11, 2023</date>
+        <description lang="en-US">
+            Prevent Mario from dying when he crashes into a wall
+            while Blooper Surfing.
+        </description>
+        <description lang="ja-JP">
+            イカサーフィン中に壁にぶつかっても死なないようにします。
+        </description>
+        <source version="GMSJ01">
+            C21397D0 00000008
+            818D9A10 812C0018
+            814C0014 554A103A
+            7D495214 858AFFFC
+            800C0000 6C00803C
+            280060C0 40A20010
+            A00C00F2 7000FFF6
+            B00C00F2 7C0A4840
+            4181FFDC 00000000
+        </source>
+        <source version="GMSJ0A">
+            C223A090 00000008
+            818D9C08 812C0018
+            814C0014 554A103A
+            7D495214 858AFFFC
+            800C0000 6C00803B
+            2800EBD8 40A20010
+            A00C00F2 7000FFF6
+            B00C00F2 7C0A4840
+            4181FFDC 00000000
+        </source>
+        <source version="GMSP01">
+            C22520CC 00000008
+            818D9C70 812C0018
+            814C0014 554A103A
+            7D495214 858AFFFC
+            800C0000 6C00803C
+            28005EB8 40A20010
+            A00C00F2 7000FFF6
+            B00C00F2 7C0A4840
+            4181FFDC 00000000
+        </source>
+        <source version="GMSE01">
+            C225A340 00000008
+            818D9D48 812C0018
+            814C0014 554A103A
+            7D495214 858AFFFC
+            800C0000 6C00803C
+            2800E6C8 40A20010
+            A00C00F2 7000FFF6
+            B00C00F2 7C0A4840
+            4181FFDC 00000000
         </source>
     </code>
 </codes>

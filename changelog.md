@@ -1,4 +1,11 @@
 # Changelog
+## Feb 11, 2023
+- Added 'Deathless Blooper Surfing'
+- Added 'In-Game Time Savestate'
+- Added 'QF Time Savestate'
+- Added 'Red Coin Savestate'
+- Added 'Previous Downloaded Codes' as a preset
+
 ## Feb 10, 2023
 Ported GCI Loader to all versions
 

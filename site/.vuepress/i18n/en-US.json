@@ -60,6 +60,7 @@
       "qol": "Quality of Life",
       "loader": "Loaders",
       "timer": "Timers",
+      "savestate": "Savestate",
       "misc": "Misc",
       "memcardpatch": "Memory Card Patches",
       "cosmetic": "Cosmetic",
@@ -71,7 +72,8 @@
       "recommended": "Recommended",
       "il": "IL Runs",
       "fap": "Fast Any%",
-      "hfsetup": "Hacked File Setup"
+      "hfsetup": "Hacked File Setup",
+      "@lastDLCodes": "(Previous Downloaded Codes)"
     }
   },
   "landingpage": {
