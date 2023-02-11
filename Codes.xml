@@ -5091,4 +5091,63 @@
             90AB00CC 4E800020
         </source>
     </code>
+    <code>
+        <category>misc</category>
+        <title lang="en-US">Deathless Blooper Surfing</title>
+        <title lang="ja-JP">死なないイカサーフィン</title>
+        <author>sup39(サポミク)</author>
+        <version>1.0</version>
+        <date>Feb 11, 2023</date>
+        <description lang="en-US">
+            Prevent Mario from dying when he crashes into a wall
+            while Blooper Surfing.
+        </description>
+        <description lang="ja-JP">
+            イカサーフィン中に壁にぶつかっても死なないようにします。
+        </description>
+        <source version="GMSJ01">
+            C21397D0 00000008
+            818D9A10 812C0018
+            814C0014 554A103A
+            7D495214 858AFFFC
+            800C0000 6C00803C
+            280060C0 40A20010
+            A00C00F2 7000FFF6
+            B00C00F2 7C0A4840
+            4181FFDC 00000000
+        </source>
+        <source version="GMSJ0A">
+            C223A090 00000008
+            818D9C08 812C0018
+            814C0014 554A103A
+            7D495214 858AFFFC
+            800C0000 6C00803B
+            2800EBD8 40A20010
+            A00C00F2 7000FFF6
+            B00C00F2 7C0A4840
+            4181FFDC 00000000
+        </source>
+        <source version="GMSP01">
+            C22520CC 00000008
+            818D9C70 812C0018
+            814C0014 554A103A
+            7D495214 858AFFFC
+            800C0000 6C00803C
+            28005EB8 40A20010
+            A00C00F2 7000FFF6
+            B00C00F2 7C0A4840
+            4181FFDC 00000000
+        </source>
+        <source version="GMSE01">
+            C225A340 00000008
+            818D9D48 812C0018
+            814C0014 554A103A
+            7D495214 858AFFFC
+            800C0000 6C00803C
+            2800E6C8 40A20010
+            A00C00F2 7000FFF6
+            B00C00F2 7C0A4840
+            4181FFDC 00000000
+        </source>
+    </code>
 </codes>

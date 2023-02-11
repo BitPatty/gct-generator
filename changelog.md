@@ -1,5 +1,6 @@
 # Changelog
 ## Feb 11, 2023
+- Added 'Deathless Blooper Surfing'
 - Added 'In-Game Time Savestate'
 - Added 'QF Time Savestate'
 - Added 'Red Coin Savestate'
