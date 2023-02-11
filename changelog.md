@@ -1,5 +1,6 @@
 # Changelog
 ## Feb 11, 2023
+- Added 'QF Time Savestate'
 - Added 'Red Coin Savestate'
 - Added 'Previous Downloaded Codes' as a preset
 
