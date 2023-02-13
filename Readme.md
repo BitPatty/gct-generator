@@ -59,7 +59,14 @@ Some codes store some states in the games memory starting from address 0x817F000
 | ![](./docs/unallocated.svg) | `0x2E`  | `0x2F`  | Not Allocated                                                             |
 | ![](./docs/reserved.svg)    | `0x30`  | `0x33`  | QF Time Savestate: Stored QF Time                                         |
 | ![](./docs/reserved.svg)    | `0x34`  | `0x3B`  | In-Game Time Savestate: Stored Elapsed Time                               |
-| ![](./docs/unallocated.svg) | `0x3C`  | `0x93`  | Not Allocated                                                             |
+| ![](./docs/reserved.svg)    | `0x3C`  | `0x3F`  | Open World Shine Get: Last Touched Shine Game QF                          |
+| ![](./docs/reserved.svg)    | `0x40`  | `0x4F`  | Mario Savestate: Stored State (0x7C-0x8B)                                 |
+| ![](./docs/reserved.svg)    | `0x50`  | `0x57`  | Mario Savestate: Stored Flag (0x118-0x123)                                |
+| ![](./docs/reserved.svg)    | `0x58`  | `0x5B`  | Mario Savestate: Stored Horizontal Speed                                  |
+| ![](./docs/reserved.svg)    | `0x5C`  | `0x5F`  | Mario Savestate: Stored Vertical Speed                                    |
+| ![](./docs/reserved.svg)    | `0x60`  | `0x63`  | Mario Savestate: Stored Last Grab Target                                  |
+| ![](./docs/reserved.svg)    | `0x64`  | `0x67`  | Mario Savestate: Stored Water Amount                                      |
+| ![](./docs/unallocated.svg) | `0x68`  | `0x93`  | Not Allocated                                                             |
 | ![](./docs/reserved.svg)    | `0x94`  | `0xA3`  | QF Timer: Coordinates of the Text box (LTRB)                              |
 | ![](./docs/reserved.svg)    | `0xA4`  | `0xB0`  | QF Timer: Timer Format String                                             |
 | ![](./docs/reserved.svg)    | `0xB0`  | `0xB1`  | QF Timer: (Unused)                                                        |
