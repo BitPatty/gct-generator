@@ -1,4 +1,9 @@
 # Changelog
+## Feb 13, 2023
+- Added 'Mario State Savestate'
+- Added 'No Shine Get Animation'
+- Added 'Fruit Never Time Out'
+
 ## Feb 11, 2023
 - Added 'Deathless Blooper Surfing'
 - Added 'In-Game Time Savestate'
