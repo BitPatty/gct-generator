@@ -4722,6 +4722,166 @@
         </source>
     </code>
     <code>
+        <category>misc</category>
+        <title lang="en-US">In-Stage Attempt Counter</title>
+        <title lang="ja-JP">ステージ内Attempt Counter</title>
+        <author>sup39(サポミク)</author>
+        <version>1.0</version>
+        <date>Feb 13, 2023</date>
+        <description lang="en-US">
+            | Combination | Result                      |
+            | ----------- | --------------------------- |
+            | D-Pad Left  | Display the attempt counter |
+            | D-Pad Right | Increase attempt count by 1 |
+        </description>
+        <description lang="ja-JP">
+            | ボタン     | 機能                  |
+            | ---------- | --------------------- |
+            | 十字キー左 | Attempt Counterを表示 |
+            | 十字キー右 | 試行回数を1増やす     |
+        </description>
+        <source version="GMSJ01">
+            C20ECE5C 0000000A
+            3D608040 A40B0D82
+            2B800001 419E000C
+            28000002 40A20030
+            3D40817F 880A0479
+            980A0478 419E0020
+            A00B0004 A18B0008
+            7C006279 41820010
+            A18A04A6 398C0001
+            B18A04A6 38E00000
+            60000000 00000000
+        </source>
+        <source version="GMSJ0A">
+            C2279588 0000000A
+            3D60803F A40B545A
+            2B800001 419E000C
+            28000002 40A20030
+            3D40817F 880A0479
+            980A0478 419E0020
+            A00B0004 A18B0008
+            7C006279 41820010
+            A18A04A6 398C0001
+            B18A04A6 38E00000
+            60000000 00000000
+        </source>
+        <source version="GMSP01">
+            C2291770 0000000A
+            3D608040 A40BBC26
+            2B800001 419E000C
+            28000002 40A20030
+            3D40817F 880A0479
+            980A0478 419E0020
+            A00B0004 A18B0008
+            7C006279 41820010
+            A18A04A6 398C0001
+            B18A04A6 38E00000
+            60000000 00000000
+        </source>
+        <source version="GMSE01">
+            C22998D8 0000000A
+            3D608040 A40B4486
+            2B800001 419E000C
+            28000002 40A20030
+            3D40817F 880A0479
+            980A0478 419E0020
+            A00B0004 A18B0008
+            7C006279 41820010
+            A18A04A6 398C0001
+            B18A04A6 38E00000
+            60000000 00000000
+        </source>
+    </code>
+    <code>
+        <category>misc</category>
+        <title lang="en-US">Manual Attempt Counter</title>
+        <title lang="ja-JP">手動Attempt Counter</title>
+        <author>sup39(サポミク)</author>
+        <version>1.0</version>
+        <date>Feb 13, 2023</date>
+        <description lang="en-US">
+            Allows you to modify the attempt count and success count manually.
+
+            | Combination         | Result                      |
+            | ------------------- | --------------------------- |
+            | R + X + D-Pad Left  | Decrease attempt count by 1 |
+            | R + X + D-Pad Right | Increase attempt count by 1 |
+            | R + X + D-Pad Down  | Decrease success count by 1 |
+            | R + X + D-Pad Up    | Increase success count by 1 |
+        </description>
+        <description lang="ja-JP">
+            Attempt Counterを手動で操作できるようになります。
+
+            | ボタン             | 機能              |
+            | ------------------ | ----------------- |
+            | R + X + 十字キー左 | 試行回数を1減らす |
+            | R + X + 十字キー右 | 試行回数を1増やす |
+            | R + X + 十字キー下 | 成功回数を1減らす |
+            | R + X + 十字キー上 | 成功回数を1増やす |
+        </description>
+        <source version="GMSJ01">
+            C20ECE58 0000000C
+            3D208040 A4090D82
+            7000FFF0 28000420
+            40A20044 89290019
+            3D40817F 880A0479
+            980A0478 A18A04A4
+            5520F7FE 7D806050
+            5520EFFE 7D8C0214
+            B18A04A4 A18A04A6
+            552007FE 7D806050
+            5520FFFE 7D8C0214
+            B18A04A6 38C00000
+            60000000 00000000
+        </source>
+        <source version="GMSJ0A">
+            C2279584 0000000C
+            3D20803F A409545A
+            7000FFF0 28000420
+            40A20044 89290019
+            3D40817F 880A0479
+            980A0478 A18A04A4
+            5520F7FE 7D806050
+            5520EFFE 7D8C0214
+            B18A04A4 A18A04A6
+            552007FE 7D806050
+            5520FFFE 7D8C0214
+            B18A04A6 38C00000
+            60000000 00000000
+        </source>
+        <source version="GMSP01">
+            C229176C 0000000C
+            3D208040 A409BC26
+            7000FFF0 28000420
+            40A20044 89290019
+            3D40817F 880A0479
+            980A0478 A18A04A4
+            5520F7FE 7D806050
+            5520EFFE 7D8C0214
+            B18A04A4 A18A04A6
+            552007FE 7D806050
+            5520FFFE 7D8C0214
+            B18A04A6 38C00000
+            60000000 00000000
+        </source>
+        <source version="GMSE01">
+            C22998D4 0000000C
+            3D208040 A4094486
+            7000FFF0 28000420
+            40A20044 89290019
+            3D40817F 880A0479
+            980A0478 A18A04A4
+            5520F7FE 7D806050
+            5520EFFE 7D8C0214
+            B18A04A4 A18A04A6
+            552007FE 7D806050
+            5520FFFE 7D8C0214
+            B18A04A6 38C00000
+            60000000 00000000
+        </source>
+    </code>
+    <code>
         <id>controller</id>
         <category>metadata</category>
         <title lang="en-US">Controller Input Display</title>

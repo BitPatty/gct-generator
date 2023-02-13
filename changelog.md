@@ -3,6 +3,8 @@
 - Added 'Mario State Savestate'
 - Added 'No Shine Get Animation'
 - Added 'Fruit Never Time Out'
+- Added 'In-Stage Attempt Counter'
+- Added 'Manual Attempt Counter'
 
 ## Feb 11, 2023
 - Added 'Deathless Blooper Surfing'
