@@ -1,4 +1,7 @@
 # Changelog
+## Feb 20, 2023
+Put Memory Card Patch codes in GCT instead of GCI
+
 ## Feb 13, 2023
 - Added 'Mario State Savestate'
 - Added 'No Shine Get Animation'

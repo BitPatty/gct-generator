@@ -83,7 +83,8 @@ export default {
         format = formats[1];
         const codeListGCT = [];
         const codeListGCI = codeList.splice(0).flatMap(c => {
-          if (c.id === 'IntroSkip') { // TODO
+          // TODO
+          if (c.id === 'IntroSkip' || c.category === 'memcardpatch') {
             codeListGCT.push(c);
             return [];
           }
