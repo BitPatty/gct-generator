@@ -197,7 +197,7 @@ export default {
       code += 'C0000000000000023C60817F81E317FC7DE478504E800020'; // return
       const codeSize = code.length>>1;
 
-      const fileName = `GCT_${version}`;
+      const fileName = `GCT_${this.versionIdentifier}`; // GMSJ0A
       const blockCount = 6; // Math.ceil(codeSize/0x2000); // TODO
       const headSize = 0x40;
       const gciSize = headSize+0x2000*blockCount;

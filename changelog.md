@@ -1,6 +1,7 @@
 # Changelog
 ## Feb 20, 2023
-Put Memory Card Patch codes in GCT instead of GCI
+- Put Memory Card Patch codes in GCT instead of GCI
+- Fix GCI file name for GMSJ0A
 
 ## Feb 13, 2023
 - Added 'Mario State Savestate'
