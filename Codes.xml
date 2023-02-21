@@ -4428,11 +4428,14 @@
         <title lang="en-US">Instant Level Select</title>
         <title lang="ja-JP">レベル選択DX</title>
         <author>sup39(サポミク)</author>
-        <version>0.3</version>
-        <date>Feb 08, 2023</date>
+        <version>0.4</version>
+        <date>Feb 21, 2023</date>
         <description lang="en-US">
             ::: warning
             Shine Get Timer does not restart with this code.
+            :::
+            ::: warning
+            Z menu will be disabled
             :::
 
             #### Instant Restart
@@ -4461,6 +4464,9 @@
             ::: warning
             シャインゲットタイマーには未対応です。
             :::
+            ::: warning
+            Zメニューは無効化されます。
+            :::
 
             #### ポーズせずにやり直し
             - `B+十字キー上`で**現在のエリアをやり直す**
@@ -4483,6 +4489,7 @@
             4. これで好きなだけハニスキを練習できます。他のエリアに入ろうとする時に自動的にやり直すので、手動でやり直す必要がありません。必要であれば`B + 十字キー上`でやり直すこともできます。
         </description>
         <source version="GMSJ01">
+            C60EB020 800EB02C
             C20F9B74 00000046
             3C80817F 816D97D0
             3D808040 80AC0D80
@@ -4556,6 +4563,7 @@
             3BBD0005 00000000
         </source>
         <source version="GMSJ0A">
+            C627770C 80277718
             C2285FCC 00000046
             3C80817F 816D9E60
             3D80803F 80AC5458
@@ -4629,6 +4637,7 @@
             3BBD0005 00000000
         </source>
         <source version="GMSP01">
+            C628F8FC 8028F908
             C229E080 00000046
             3C80817F 816D9EC8
             3D808040 80ACBC24
@@ -4702,6 +4711,7 @@
             3BBD0005 00000000
         </source>
         <source version="GMSE01">
+            C6297A64 80297A70
             C22A6170 00000046
             3C80817F 816D9FA0
             3D808040 80AC4484
