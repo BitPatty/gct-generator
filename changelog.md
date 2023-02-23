@@ -1,4 +1,11 @@
 # Changelog
+## Feb 23, 2023
+### Updated 'Force Plaza Events'
+Set the correct BH/RH/GB unlock flag
+
+## Feb 21, 2023
+Disable Z menu for Instant Level Select to prevent broken texture
+
 ## Feb 13, 2023
 - Added 'Mario State Savestate'
 - Added 'No Shine Get Animation'
