@@ -36,7 +36,7 @@ export default {
   computed: {
     transform() {
       const {x, y, height} = this.config;
-      return `translate(${x||0}, ${y||0}) scale(${(height||0)/120})`;
+      return `scale(0.9375,1) translate(${x||0}, ${y||0}) scale(${(height||0)/120})`;
     },
     lw() {
       const {lw} = this.config;

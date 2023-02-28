@@ -1,4 +1,7 @@
 # Changelog
+## Feb 28, 2023
+Fix preview of Controller Input Display
+
 ## Feb 23, 2023
 ### Updated 'Force Plaza Events'
 Set the correct BH/RH/GB unlock flag
