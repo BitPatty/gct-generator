@@ -26,7 +26,7 @@
     "@vuepress/plugin-back-to-top": "1.9.8",
     "@vuepress/plugin-medium-zoom": "1.9.8",
     "encoding-japanese": "^2.0.0",
-    "jsdom": "21.1.0",
+    "jsdom": "22.0.0",
     "pre-commit": "1.2.2",
     "prettier": "2.8.3",
     "serve": "14.2.0",
