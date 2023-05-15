@@ -3498,9 +3498,9 @@
         <title lang="de-CH">Erzwungene Plaza Events</title>
         <title lang="fr-FR">Forcer les événements de la place Delfino</title>
         <title lang="ja-JP">ドルピックタウンイベントの強制再生</title>
-        <author>Noki Doki</author>
-        <version>1.0</version>
-        <date>Mar 8, 2020</date>
+        <author>Noki Doki, sup39(サポミク)</author>
+        <version>1.1</version>
+        <date>Feb 23, 2023</date>
         <description lang="en-US">
             Forces the unlock events for Ricco, Gelato and Yoshi to happen 
             any time the correct version of the plaza is loaded via the Level Select code.
@@ -3519,7 +3519,7 @@
             la priorité sur celui de Yoshi si leurs conditions sont remplies.
         </description>
         <description lang="ja-JP">
-            強制的に次のイベントを再生します: 「リコの解除イベント」「マンマの解除イベント」「正しいバージョンのドルピックタウンがロードされるたびに出現するヨッシー」
+            強制的に次のイベントを再生します: 「リコの解除イベント」「マンマの解除イベント」「正しいバージョンのドルピックタウンがロードされるたびに出現するヨッシー」。
             「ノズルロック解除イベント」は、条件が満たされている場合、ヨッシーのイベントよりも優先されます。
         </description>
         <source version="GMSE01">
@@ -3528,6 +3528,12 @@
             042B78C4 48000018
             042B78F0 60000000
             042B7940 60000000
+            C22B7764 00000005
+            806D9FA0 899D0001
+            558BF7BC 7D8C5B78
+            558C16FA 3D60FFF3
+            616BFF01 5D6B6636
+            99630070 00000000
         </source>
         <source version="GMSJ01">
             0410C4C8 48000018
@@ -3535,6 +3541,12 @@
             0410C57C 48000018
             0410C5A8 60000000
             0410C5F8 60000000
+            C210C41C 00000005
+            806D97D0 899D0001
+            558BF7BC 7D8C5B78
+            558C16FA 3D60FFF3
+            616BFF01 5D6B6636
+            99630070 00000000
         </source>
         <source version="GMSJ0A">
             04297020 48000018
@@ -3542,6 +3554,12 @@
             042970D4 48000018
             04297100 60000000
             04297150 60000000
+            C2296F74 00000005
+            806D9E60 899D0001
+            558BF7BC 7D8C5B78
+            558C16FA 3D60FFF3
+            616BFF01 5D6B6636
+            99630070 00000000
         </source>
         <source version="GMSP01">
             042AF7E0 48000018
@@ -3549,6 +3567,12 @@
             042AF894 48000018
             042AF8C0 60000000
             042AF910 60000000
+            C22AF734 00000005
+            806D9EC8 899D0001
+            558BF7BC 7D8C5B78
+            558C16FA 3D60FFF3
+            616BFF01 5D6B6636
+            99630070 00000000
         </source>
     </code>
     <code>

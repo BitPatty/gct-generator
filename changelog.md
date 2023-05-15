@@ -3,6 +3,11 @@
 ### GCI Loader 0.4
 Fixed hook address of GMSE01 code
 
+## Feb 23, 2023
+### Updated 'Force Plaza Events'
+Set the correct BH/RH/GB unlock flag
+>>>>>>> gct/master
+
 ## Feb 21, 2023
 Disable Z menu for Instant Level Select to prevent broken texture
 

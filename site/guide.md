@@ -140,14 +140,15 @@ Right click the game in Dolphin and click on "Properties". In the "Game Config" 
 
 Select the "Gecko-Codes" tab in the game properties and check all the codes you want to be active. Most (but not all codes) will work with Dolphin.
 
-
 ## Appendix: Using large cheat file with Nintendont
+
 There is a file size limit of 5000 bytes in Nintendont.
 To use cheat file with size larger than 5000 bytes,
 you need to store the cheat file in your Gamecube memory card
 and load it on runtime.
 
 ### Preparation: Installing GCMM
+
 You need GCMM to store the cheat file to your Gamecube memory card.
 [Download the latest GCMM release](https://github.com/suloku/gcmm/releases/download/1.4f/gcmm_1.4f.zip) and unzip it.
 Copy the `apps/gcmm` folder to `/apps/` folder in your SD card.
@@ -155,6 +156,7 @@ Copy the `apps/gcmm` folder to `/apps/` folder in your SD card.
 ![File list after GCMM is installed](/img/gci/0-gcmm-files.jpg)
 
 ### [Step 1/3] Generating cheat file
+
 Select the game version and the functions you want in [GCT Generator](/).
 Choose `GCI + GCT` as Download Format and press the download button.
 
@@ -166,6 +168,7 @@ Create the folders if they do not exist.
 ![File list after downloading the cheat files](/img/gci/1-cheat-files.jpg)
 
 ### [Step 2/3] Write the GCI file to Gamecube memory card with GCMM
+
 Open your Homebrew channel and run GCMM.
 
 ![Run GCMM in Homebrew channel](/img/gci/2-0-open-gcmm.png)
@@ -195,6 +198,7 @@ and then press Start to return to Homebrew.
 ![Restore Complete](/img/gci/2-5-complete.png)
 
 #### For the second time and onwards
+
 There will be a message to confirm
 whether you want to overwrite the file since the second time.
 Press B and then Z to overwrite.
@@ -203,6 +207,7 @@ Press B and then Z to overwrite.
 ![Overwrite confirm 2](/img/gci/2-6-overwrite-2.png)
 
 ### [Step 3/3] Run the game with Nintendont
+
 Run the game with Nintendont with your Gamecube memory card plugged in.
 The GCI file stored in your memory card will be loaded automatically.
 You can remove your memory card
