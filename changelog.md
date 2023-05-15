@@ -1,5 +1,7 @@
 # Changelog
 ## May 16, 2023
+### GCI Loader 0.5
+Added error messages
 ### GCI Loader 0.4
 Fixed hook address of GMSE01 code
 
