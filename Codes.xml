@@ -4791,8 +4791,8 @@
         <id>GCILoader</id>
         <title lang="en-US">GCI Loader</title>
         <author>sup39(サポミク), Psychonauter</author>
-        <version>0.3</version>
-        <date>Feb 10, 2023</date>
+        <version>0.4</version>
+        <date>May 15, 2023</date>
         <description lang="en-US">
             Execute Gecko code loaded from GCI file.
             ::: warning
@@ -4866,7 +4866,7 @@
             907D17F8 7C0803A6
             4BFFFFD4 4743545F
             474D5345 30310000
-            042A96E0 49555271
+            042B17D0 4954D181
             C0000000 00000005
             3C60817F 840317F8
             2C000002 4C820020

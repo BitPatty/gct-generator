@@ -1,4 +1,8 @@
 # Changelog
+## May 16, 2023
+### GCI Loader 0.4
+Fixed hook address of GMSE01 code
+
 ## Feb 21, 2023
 Disable Z menu for Instant Level Select to prevent broken texture
 
