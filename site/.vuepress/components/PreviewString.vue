@@ -21,8 +21,7 @@ export default {
   },
   computed: {
     previewCssClass() {
-      // TODO US
-      return `preview-str preview-${['GMSJ01', 'GMSJ0A'].includes(this.version) ? 'JP' : 'EU'}`;
+      return `preview-str preview-${this.version.startsWith('GMSJ') ? 'JP' : this.version === 'GMSE01' ? 'US' : 'EU'}`;
     },
     styles() {
       const {config, version} = this;
@@ -95,6 +94,13 @@ export default {
 .preview-JP .char-mask {
   mask-image: url(/img/preview/font-JP.png);
   -webkit-mask-image: url(/img/preview/font-JP.png);
+}
+.preview-US .char-bg {
+  background: url(/img/preview/font-US.png);
+}
+.preview-US .char-mask {
+  mask-image: url(/img/preview/font-US.png);
+  -webkit-mask-image: url(/img/preview/font-US.png);
 }
 .preview-EU .char-bg {
   background: url(/img/preview/font-EU.png);

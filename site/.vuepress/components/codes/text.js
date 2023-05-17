@@ -1,20 +1,23 @@
 /** @typedef {{index: number, kerning: number, width: number, code: number}} CharInfo */
 import charInfoJP from '../../data/charInfo-JP.json';
 import charInfoEU from '../../data/charInfo-EU.json';
+import charInfoUS from '../../data/charInfo-US.json';
 
 /**
  * @param {string} version
  */
 const getFontInfo = (version) =>
-  ['GMSJ01', 'GMSJ0A'].includes(version)
+  version.startsWith('GMSJ')
     ? {
         // JP
         charInfo: /**@type{Record<string, CharInfo>}*/ (charInfoJP),
         rowSize: 24, // how many char in a row of the img
       }
     : {
-        // EU (TODO US)
-        charInfo: /**@type{Record<string, CharInfo>}*/ (charInfoEU),
+        // US, EU
+        charInfo: /**@type{Record<string, CharInfo>}*/ (
+          version === 'GMSE01' ? charInfoUS : charInfoEU
+        ),
         rowSize: 16, // how many char in a row of the img
       };
 

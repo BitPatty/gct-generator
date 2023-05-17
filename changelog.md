@@ -1,4 +1,8 @@
 # Changelog
+## May 17, 2023
+- Added font for NTSC-U
+- Fixed the encoding of NTSC-U and PAL (should be Windows-1252 instead of latin1)
+
 ## Feb 28, 2023
 Fix preview of Controller Input Display
 
