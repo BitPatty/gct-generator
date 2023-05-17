@@ -2814,12 +2814,16 @@
           For float data, you can set the *format* to `.{digit}` to specify how many digits to show.
 
           %details[
-            %summary[All printable characters (in NTSC-J)]
-            ![Printable charaters](/img/preview/font-JP.png){style="background:black"}
+            %summary[All printable characters (NTSC-J)]
+            ![Printable charaters](/img/preview/font-JP.png){style="background:black;padding:8px"}
           ]
           %details[
-            %summary[All printable characters (in PAL)]
-            ![Printable charaters](/img/preview/font-EU.png){style="background:black"}
+            %summary[All printable characters (NTSC-U)]
+            ![Printable charaters](/img/preview/font-US.png){style="background:black;padding:8px"}
+          ]
+          %details[
+            %summary[All printable characters (PAL)]
+            ![Printable charaters](/img/preview/font-EU.png){style="background:black;padding:8px"}
           ]
 
           #### Preview
@@ -2852,6 +2856,10 @@
           %details[
             %summary[表示可能な文字一覧(初期版・後期版)]
             ![表示可能な文字一覧(初期版・後期版)](/img/preview/font-JP.png){style="background:black;padding:8px"}
+          ]
+          %details[
+            %summary[表示可能な文字一覧(北米版・韓国版)]
+            ![表示可能な文字一覧(北米版・韓国版)](/img/preview/font-US.png){style="background:black;padding:8px"}
           ]
           %details[
             %summary[表示可能な文字一覧(欧州版)]
