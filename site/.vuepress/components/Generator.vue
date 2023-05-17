@@ -88,7 +88,7 @@
                 >Psychonauter</a
               >,
               <a href="https://twitter.com/Qbe_Root" target="_blank" rel="noopener">Noki Doki</a>,
-              <a href="https://twitter.com/sup39x1207" target="_blank" rel="noopener">sup39</a>
+              <a href="https://github.com/sup39" target="_blank" rel="noopener">sup39</a>
               &amp;
               <a href="https://twitter.com/srlMilk" target="_blank" rel="noopener">Milk</a>.
             </p>
