@@ -1557,8 +1557,8 @@
         <title lang="fr-FR">Sélecteur de niveau</title>
         <title lang="ja-JP">レベルセレクト</title>
         <author>Psychonauter, Dan Salvato, Noki Doki</author>
-        <version>1.15</version>
-        <date>Jul 5, 2021</date>
+        <version>1.16</version>
+        <date>Jul 9, 2023</date>
         <description lang="en-US">
             Allows warping to other levels when starting a file or when exiting a level 
             by holding the combination until the screen turns black. 
@@ -1675,12 +1675,12 @@
             48000134 2C060002
             4082000C 39000105
             48000124 2C060006
-            4082000C 39000107
+            4082000C 39000106
             48000114 2C060004
-            4082000C 39000108
+            4082000C 39000107
             48000104 2C060005
-            4082000C 39000109
-            480000F4 39000102
+            4082000C 39000108
+            480000F4 39000109
             480000EC 2C070040
             40820010 39001400
             39202E00 480000C4
@@ -1803,12 +1803,12 @@
             48000134 2C060002
             4082000C 39000105
             48000124 2C060006
-            4082000C 39000107
+            4082000C 39000106
             48000114 2C060004
-            4082000C 39000108
+            4082000C 39000107
             48000104 2C060005
-            4082000C 39000109
-            480000F4 39000102
+            4082000C 39000108
+            480000F4 39000109
             480000EC 2C070040
             40820010 39001400
             39202E00 480000C4
@@ -1931,12 +1931,12 @@
             48000134 2C060002
             4082000C 39000105
             48000124 2C060006
-            4082000C 39000107
+            4082000C 39000106
             48000114 2C060004
-            4082000C 39000108
+            4082000C 39000107
             48000104 2C060005
-            4082000C 39000109
-            480000F4 39000102
+            4082000C 39000108
+            480000F4 39000109
             480000EC 2C070040
             40820010 39001400
             39202E00 480000C4
@@ -2059,12 +2059,12 @@
             48000134 2C060002
             4082000C 39000105
             48000124 2C060006
-            4082000C 39000107
+            4082000C 39000106
             48000114 2C060004
-            4082000C 39000108
+            4082000C 39000107
             48000104 2C060005
-            4082000C 39000109
-            480000F4 39000102
+            4082000C 39000108
+            480000F4 39000109
             480000EC 2C070040
             40820010 39001400
             39202E00 480000C4
@@ -3828,62 +3828,75 @@
         <version>0.2.0</version>
         <date>Apr 28, 2022</date>
         <description lang="en-US">
-          When you pressed the buttons configured in [#Button Config](#config) simultaneously,
-          you can restart the current area without selecting "Exit Area" in pause menu.
-          Note that the restart function behaves differently than pressing Y or Z with "Level Select".
-          This code only supports restarting 1 area only.
-          For example, you can restart outside a secret stage or inside a secret stage individually,
-          but you can NOT restart a combination of outside+inside a secret stage.
+            When you pressed the buttons configured in [#Button Config](#config) simultaneously,
+            you can restart the current area without selecting "Exit Area" in pause menu.
+            Note that the restart function behaves differently than pressing Y or Z with "Level Select".
+            This code only supports restarting 1 area only.
+            For example, you can restart outside a secret stage or inside a secret stage individually,
+            but you can NOT restart a combination of outside+inside a secret stage.
 
-          ::: warning
-          You can NOT restart after destroying the last platform in Bowser fight at the moment.
-          :::
+            ::: warning
+            You can NOT restart after destroying the last platform in Bowser fight at the moment.
+            :::
         </description>
         <description lang="ja-JP">
-          [#ボタン設定](#config)で設定したボタンを同時に押すと、ポーズメニューから「コースから出る」を選択せずに所在のエリアをやり直すことができます。ただし、Level SelectのYとZのやり直し機能と異なり、エリアごとのやり直ししかできないので注意してください。例えば、ヒミツ外部のみ、ヒミツ内部のみといった一つのエリアのやり直しはできますが、ヒミツ外部+ヒミツ内部といった組み合わせのやり直しはできません。
+            [#ボタン設定](#config)で設定したボタンを同時に押すと、ポーズメニューから「コースから出る」を選択せずに所在のエリアをやり直すことができます。ただし、Level SelectのYとZのやり直し機能と異なり、エリアごとのやり直ししかできないので注意してください。例えば、ヒミツ外部のみ、ヒミツ内部のみといった一つのエリアのやり直しはできますが、ヒミツ外部+ヒミツ内部といった組み合わせのやり直しはできません。
 
-          ::: warning
-          現時点ではクッパ戦で最後の足場を破壊するとやり直しできません。
-          :::
+            ::: warning
+            現時点ではクッパ戦で最後の足場を破壊するとやり直しできません。
+            :::
         </description>
         <source version="GMSJ01">
-          C20EAFA0 0000000A
-          3C608040 A0A30D50
-          28050808 40A20038
-          3C60817F 38A00001
-          98A300B3 98A30100
-          3C60803E 84A3600E
-          90A30004 38A00040
-          90A30000 3C60800E
-          6063B3F8 7C6803A6
-          4E800020 2C000002
-          60000000 00000000
-        </source>
-        <source version="GMSJ0A">
-          C227768C 0000000A
-          3C60803F A0A35428
-          28050808 40A20038
-          3C60817F 38A00001
-          98A300B3 98A30100
-          3C60803E 84A3A8EE
-          90A30004 38A00040
-          90A30000 3C608027
-          60637AE4 7C6803A6
-          4E800020 2C000002
-          60000000 00000000
+            C20EAFA0 0000000A
+            3C608040 A0A30D50
+            28050208 40A20038
+            3C60817F 38A00001
+            98A300B3 98A30100
+            3C60803E 84A3600E
+            90A30004 38A00040
+            90A30000 3C60800E
+            6063B3F8 7C6803A6
+            4E800020 2C000002
+            60000000 00000000
         </source>
         <source version="GMSE01">
-          C22979E4 0000000A
-          3C608040 A0A34454
-          28050808 40A20038
-          3C60817F 38A00001
-          98A300B3 98A30100
-          3C60803F 84A3970E
-          90A30004 38A00040
-          90A30000 3C608029
-          60637E3C 7C6803A6
-          4E800020 2C000002
-          60000000 00000000
+            C22979E4 0000000A
+            3C608040 A0A34454
+            28050208 40A20038
+            3C60817F 38A00001
+            98A300B3 98A30100
+            3C60803F 84A3970E
+            90A30004 38A00040
+            90A30000 3C608029
+            60637E3C 7C6803A6
+            4E800020 2C000002
+            60000000 00000000
+        </source>
+        <source version="GMSP01">
+            C228F87C 0000000A
+            3C608040 A0A3BBF4
+            28050208 40A20038
+            3C60817F 38A00001
+            98A300B3 98A30100
+            3C60803E 84A310CE
+            90A30004 38A00040
+            90A30000 3C608028
+            6063FCD4 7C6803A6
+            4E800020 2C000002
+            60000000 00000000
+        </source>
+        <source version="GMSJ0A">
+            C227768C 0000000A
+            3C60803F A0A35428
+            28050208 40A20038
+            3C60817F 38A00001
+            98A300B3 98A30100
+            3C60803E 84A3A8EE
+            90A30004 38A00040
+            90A30000 3C608027
+            60637AE4 7C6803A6
+            4E800020 2C000002
+            60000000 00000000
         </source>
     </code>
     <code>
@@ -3966,22 +3979,77 @@
             70000061 4C423102
             60000000 00000000
             28400D51 00000024
-            040ECF14 b01a004c
-            040ec5d0 70000061
+            040ECF14 B01A004C
+            040EC5D0 70000061
+            E0000000 00000000
+        </source>
+        <source version="GMSE01">
+            28404454 00000028
+            C2299990 0000000A
+            899A0064 2C0C0001
+            40A20040 819A0074
+            818C0094 816C02B8
+            2C0B0003 41A1002C
+            41A00018 3D80803F
+            818C9734 39600000
+            916C0018 48000014
+            3863000F 907A0054
+            3B800000 48000008
+            B01A004C 00000000
+            C229904C 00000004
+            807F0074 80630094
+            806302B8 2C830000
+            70000061 4C423102
+            60000000 00000000
+            28404455 00000024
+            04299990 B01A004C
+            0429904C 70000061
+            E0000000 00000000
+        </source>
+        <source version="GMSP01">
+            283FBBF4 00000028
+            C2291828 0000000A
+            899A0064 2C0C0001
+            40A20040 819A0074
+            818C0094 816C08DC
+            2C0B0003 41A1002C
+            41A00018 3D80803E
+            818C10F4 39600000
+            916C0018 48000014
+            3863000F 907A0054
+            3B800000 48000008
+            B01A004C 00000000
+            C2290EE4 00000004
+            807F0074 80630094
+            806308DC 2C830000
+            70000061 4C423102
+            60000000 00000000
+            283FBBF5 00000024
+            04291828 B01A004C
+            04290EE4 70000061
             E0000000 00000000
         </source>
         <source version="GMSJ0A">
             283F5428 00000028
-            C2279640 00000005
+            C2279640 0000000A
             899A0064 2C0C0001
-            4182000C B01A004C
-            48000010 3863000F
-            907A0054 3B800000
+            40A20040 819A0074
+            818C0094 816C02BC
+            2C0B0003 41A1002C
+            41A00018 3D80803E
+            818CA914 39600000
+            916C0018 48000014
+            3863000F 907A0054
+            3B800000 48000008
+            B01A004C 00000000
+            C2278CFC 00000004
+            807F0074 80630094
+            806302BC 2C830000
+            70000061 4C423102
             60000000 00000000
-            04278D00 60000000
             283F5429 00000024
             04279640 B01A004C
-            04278D00 418204EC
+            04278CFC 70000061
             E0000000 00000000
         </source>
     </code>
@@ -4033,6 +4101,75 @@
             4E800021 A01F00FC
             60000000 00000000
         </source>
+        <source version="GMSE01">
+            C228102C 0000000A
+            807F03F0 3C808040
+            A0844454 54800436
+            2C000800 40820034
+            54840EFD 4182002C
+            3C006300 5C0027BE
+            980300D0 80030008
+            9003000C 807F03F0
+            3D808028 618C11A8
+            7D8803A6 4E800020
+            60000000 00000000
+            C21BC5C4 00000009
+            3C808040 A0844454
+            54800436 2C000800
+            4082002C 54840EFD
+            41820024 806D9F28
+            806303F0 93E300F0
+            7FE3FB78 81830000
+            818C0104 7D8803A6
+            4E800021 A01F00FC
+            60000000 00000000
+        </source>
+        <source version="GMSP01">
+            C2278DB8 0000000A
+            807F03F0 3C808040
+            A084BBF4 54800436
+            2C000800 40820034
+            54840EFD 4182002C
+            3C006300 5C0027BE
+            980300D0 80030008
+            9003000C 807F03F0
+            3D808027 618C8F34
+            7D8803A6 4E800020
+            60000000 00000000
+            C21B447C 00000009
+            3C808040 A084BBF4
+            54800436 2C000800
+            4082002C 54840EFD
+            41820024 806D9E50
+            806303F0 93E300F0
+            7FE3FB78 81830000
+            818C0104 7D8803A6
+            4E800021 A01F00FC
+            60000000 00000000
+        </source>
+        <source version="GMSJ0A">
+            C2260D7C 0000000A
+            807F03F0 3C80803F
+            A0845428 54800436
+            2C000800 40820034
+            54840EFD 4182002C
+            3C006300 5C0027BE
+            980300D0 80030008
+            9003000C 807F03F0
+            3D808026 618C0EF8
+            7D8803A6 4E800020
+            60000000 00000000
+            C219C34C 00000009
+            3C80803F A0845428
+            54800436 2C000800
+            4082002C 54840EFD
+            41820024 806D9DE8
+            806303F0 93E300F0
+            7FE3FB78 81830000
+            818C0104 7D8803A6
+            4E800021 A01F00FC
+            60000000 00000000
+        </source>
     </code>
     <code>
         <category>misc</category>
@@ -4047,7 +4184,7 @@
             |  Combination  |  Result |
             |---------------|------|
             |B + D-Pad Left | Fast forward 4x |
-            |B + D-Pad Right| Fast forward 8x (may cause lag) |
+            |B + D-Pad Right| Fast forward 8x (lag may occur) |
 
             ::: warning
             SGT will be inaccurate with this code.
@@ -4059,18 +4196,34 @@
             |  ボタン  |  効果 |
             |--------------|------|
             |B + 十字キー左|4倍速|
-            |B + 十字キー右|8倍速(ラグが発生する可能性がある)|
+            |B + 十字キー右|8倍速(ラグが発生する可能性があります)|
 
             ::: warning
             このコードを使うとシャインゲットタイマーのタイムがずれます。  
             :::
         </description>
         <source version="GMSJ01">
-            020ecde2 00000258
+            020ECDE2 00000258
             28400D50 00000201
-            020ecde2 00000960
+            020ECDE2 00000960
             28400D51 00000202
-            020ecde2 000012C0
+            020ECDE2 000012C0
+            E0000000 00000000
+        </source>
+        <source version="GMSE01">
+            0229985E 00000258
+            28404454 00000201
+            0229985E 00000960
+            28404455 00000202
+            0229985E 000012C0
+            E0000000 00000000
+        </source>
+        <source version="GMSP01">
+            022916F6 00000258
+            283FBBF4 00000201
+            022916F6 00000960
+            283FBBF5 00000202
+            022916F6 000012C0
             E0000000 00000000
         </source>
         <source version="GMSJ0A">

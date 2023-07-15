@@ -1,4 +1,11 @@
 # Changelog
+## Jul 15, 2023
+### Ported 'FastForward', 'InstantRestart', 'SpawnYoshi', 'StageIntroSkip' to all versions
+
+## Jul 9, 2023
+### Updated 'Level Select'
+The peaceful plaza (after unlocking Ricco and Gelato) is now available as C↘ + Y, later plazas have their shortcuts moved clockwise, and the post-Corona plaza no longer has a dedicated shortcut. To access it, simply load Corona (X with neutral C stick) or Bowser (C↖ + Y + L) then exit to the plaza.
+
 ## May 17, 2023
 - Added font for NTSC-U
 - Fixed the encoding of NTSC-U and PAL (should be Windows-1252 instead of latin1)
@@ -51,7 +58,6 @@ Display attempt count and success count of current area
 ## Jan 31, 2023
 ### Created 'Quarterframe Section Timer'
 Calculate and display section times whenever Quarterframe Timer freezes
-
 ### Updated 'Pattern Selector'
 - Rewrote with C2 + separated config 06
 - Remove label option
