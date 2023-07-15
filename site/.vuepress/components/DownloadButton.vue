@@ -18,6 +18,8 @@ import { translate, translateCode } from '../i18n/localeHelper';
 // customizable code
 import codegens from './codes/codegen.js';
 
+export const lskeyLDC = '@/lastDLCodes';
+
 export default {
   props: {
     codes: { type: Array },
@@ -58,6 +60,12 @@ export default {
             })),
           }),
         ]);
+      } catch {}
+
+      // save download code list
+      try {
+        const codeTitles = codeList.map(c => c.title.find(o => o.lang === 'en-US').content);
+        localStorage.setItem(lskeyLDC, JSON.stringify(codeTitles));
       } catch {}
 
       const fileName = gameVersions.find((v) => v.identifier === this.versionIdentifier).version;

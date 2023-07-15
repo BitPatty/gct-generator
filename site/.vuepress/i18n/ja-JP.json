@@ -32,6 +32,14 @@
         "gcm": "CheatManager TXT"
       }
     },
+    "presets": {
+      "standard": "標準",
+      "recommended": "おすすめ",
+      "il": "IL Runs",
+      "fap": "Fast Any%",
+      "hfsetup": "Hacked Fileセットアップ",
+      "@lastDLCodes": "(前回ダウンロードしたコード)"
+    },
     "alert": {
       "gct": "生成されたGCTファイルのサイズが5000バイトを超えました({size}バイト)。NintendontでこのGCTファイルを使う時、全ての機能が動作しなくなることがあるため、5000バイトを超えないようにいくつかの機能を減らすことをおすすめします。",
       "dolphin": "コードの合計サイズが3256バイトを超えました({size}バイト)。Dolphinで全てのコードをONにすると、全ての機能が動作しなくなることがあります。その場合はいくつかのコードをOFFにしてください。"

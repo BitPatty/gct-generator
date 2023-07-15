@@ -20,6 +20,11 @@
     "exclusive": true
   },
   {
+    "identifier": "savestate",
+    "i18nKey": "generatorconfig.categories.savestate",
+    "exclusive": false
+  },
+  {
     "identifier": "misc",
     "i18nKey": "generatorconfig.categories.misc",
     "exclusive": false

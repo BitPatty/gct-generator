@@ -1,4 +1,30 @@
 # Changelog
+## Jul 15, 2023
+### Ported 'FastForward', 'InstantRestart', 'SpawnYoshi', 'StageIntroSkip' to all versions
+
+## Jul 9, 2023
+### Updated 'Level Select'
+The peaceful plaza (after unlocking Ricco and Gelato) is now available as C↘ + Y, later plazas have their shortcuts moved clockwise, and the post-Corona plaza no longer has a dedicated shortcut. To access it, simply load Corona (X with neutral C stick) or Bowser (C↖ + Y + L) then exit to the plaza.
+
+## Feb 23, 2023
+### Updated 'Force Plaza Events'
+Set the correct BH/RH/GB unlock flag
+
+## Feb 21, 2023
+Disable Z menu for Instant Level Select to prevent broken texture
+
+## Feb 13, 2023
+- Added 'Mario State Savestate'
+- Added 'No Shine Get Animation'
+- Added 'Fruit Never Time Out'
+
+## Feb 11, 2023
+- Added 'Deathless Blooper Surfing'
+- Added 'In-Game Time Savestate'
+- Added 'QF Time Savestate'
+- Added 'Red Coin Savestate'
+- Added 'Previous Downloaded Codes' as a preset
+
 ## Feb 08, 2023
 ### Updated 'Instant Level Select'
 Overwrite button input value to prevent Level Select being activated when AreaLock is enabled
