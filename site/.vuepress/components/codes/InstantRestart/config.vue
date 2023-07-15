@@ -22,15 +22,13 @@
 </template>
 
 <script>
-import {getConfig, lskey, buttonValues} from './codegen.js';
+import { makeUpdateConfig } from '../utils.js';
+import {getConfig, defaultConfig, lskey, buttonValues} from './codegen.js';
 import labels from './labels.json';
-import {getLabels} from '../codegen.js';
 
 export default {
   methods: {
-    updateConfig() {
-      localStorage.setItem(lskey, JSON.stringify({button: this.button}));
-    },
+    updateConfig: makeUpdateConfig(lskey, defaultConfig),
     toggleButton(event, value) {
       this.button = event.target.checked ?
         this.button | value : // ON

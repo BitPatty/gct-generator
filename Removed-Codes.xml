@@ -533,4 +533,424 @@
             60000000 00000000
         </source>
     </code>
+    <code>
+        <category>metadata</category>
+        <id>PASDisplay</id>
+        <title lang="en-US">Position/angle/speed display</title>
+        <title lang="de-CH">Position/Winkel/Geschw. Display</title>
+        <title lang="fr-FR">Affichage de position/angle/vitesse</title>
+        <title lang="ja-JP">位置/角度/速度表示</title>
+        <author>Noki Doki, sup39(サポミク)</author>
+        <version>1.4</version>
+        <date>Mar 24, 2022</date>
+        <dependencies version="GMSJ01">drawText</dependencies>
+        <dependencies version="GMSJ0A">drawText</dependencies>
+        <description lang="en-US">
+        Shows Mario's position, angle and speed at any given time.
+        
+        ::: warning
+        This code is not compatible with the Speed Display code. 
+        :::
+        </description>
+        <description lang="de-CH">
+        Zeigt Mario's Position, Winkel und Geschwindigkeit jederzeit auf dem Bildschirm an.
+
+        ::: warning
+        Dieser Code ist nicht kompatibel mit dem Geschwindigkeits-Display Code
+        :::
+        </description>
+        <description lang="fr-FR">Affiche la position, l'angle et la vitesse de Mario à tout moment.</description>
+        <description lang="ja-JP">常に「マリオの位置」「マリオの角度」「マリオの速度」を表示します。</description>
+        <source version="GMSE01">
+            062A6160 00000010
+            49553F19 60000000
+            60000000 60000000
+            042998B8 49560749
+            04143F14 496B6209
+            077FA000 000001E8
+            9421FFE0 7C0802A6
+            90010024 93E1001C
+            4AABD6E5 38E00200
+            38C00320 38A0FFD8
+            3880000A 38610008
+            4AAD01B9 814D9FC8
+            3FE08180 3BFFA1EC
+            39200000 39000002
+            3CE08180 38E7A164
+            80CA0048 38A10008
+            38800000 7FE3FB78
+            4AAD67F1 39200001
+            913F01B0 80010024
+            7C0803A6 83E1001C
+            38210020 4E800020
+            9421FFE8 7C0802A6
+            9001001C 93A1000C
+            93C10010 93E10014
+            7C7F1B78 81230000
+            83A90064 3D208180
+            8129A39C 2F890000
+            409E002C 7FE3FB78
+            7FA903A6 4E800421
+            8001001C 7C0803A6
+            83A1000C 83C10010
+            83E10014 38210018
+            4E800020 3D208040
+            6129E0E8 83C90000
+            3C608180 3863A1EC
+            4AAD6B79 C0BE00A8
+            C09E00B0 A0DE0096
+            C07E0018 C05E0014
+            C03E0010 3CA08180
+            38A5A164 38800080
+            4CC63242 4AB3F691
+            4BFFFF94 9421FFF0
+            7C0802A6 90010014
+            93E1000C 7C7F1B78
+            4AAF158D 38E00081
+            7FE6FB78 38A00000
+            38800000 3C608180
+            3863A1EC 4AAD5C5D
+            80010014 7C0803A6
+            83E1000C 38210010
+            4E800020 5820506F
+            7320252E 30660A59
+            20506F73 20252E30
+            660A5A20 506F7320
+            252E3066 0A416E67
+            6C652025 68750A48
+            20537064 20252E32
+            660A5620 53706420
+            252E3266 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202000 00000000
+            C22A66F4 00000003
+            38600000 3D808180
+            906CA39C 807F0040
+            60000000 00000000
+        </source>
+        <source version="GMSJ01">
+            04206734 495F38CD
+            077FA000 000000B5
+            9421FFF0 7C0802A6
+            90010014 93E1000C
+            7C7F1B78 4A83B215
+            3D208041 8149A378
+            3D008180 38600010
+            3908A074 C0AA00A8
+            38E0FFFF C08A00B0
+            38C0FFFF A12A0096
+            38A00014 C06A0018
+            388000C8 C04A0014
+            C02A0010 4CC63242
+            4BFF61E1 80010014
+            7FE3FB78 83E1000C
+            7C0803A6 38210010
+            4A83B1B8 5820506F
+            7320252E 30660A59
+            20506F73 20252E30
+            660A5A20 506F7320
+            252E3066 0A416E67
+            6C652025 68750A48
+            20537064 20252E32
+            660A5620 53706420
+            252E3266 00000000
+        </source>
+        <source version="GMSJ0A">
+            041252A0 496D4D61
+            077FA000 000000B5
+            9421FFF0 7C0802A6
+            90010014 93E1000C
+            7C7F1B78 4AAD0EB9
+            3D208040 8149EF88
+            3D008180 38600010
+            3908A074 C0AA00A8
+            38E0FFFF C08A00B0
+            38C0FFFF A12A0096
+            38A00014 C06A0018
+            388000C8 C04A0014
+            C02A0010 4CC63242
+            4BFF61E1 80010014
+            7FE3FB78 83E1000C
+            7C0803A6 38210010
+            4AAD0E5C 5820506F
+            7320252E 30660A59
+            20506F73 20252E30
+            660A5A20 506F7320
+            252E3066 0A416E67
+            6C652025 68750A48
+            20537064 20252E32
+            660A5620 53706420
+            252E326600000000
+        </source>
+        <source version="GMSP01">
+            0629E070 00000010
+            4955C009 60000000
+            60000000 60000000
+            04291750 495688B1
+            04138B50 496C15CD
+            077FA000 000001E8
+            9421FFE0 7C0802A6
+            90010024 93E1001C
+            4AAB56B5 38E00200
+            38C00320 38A0FFD8
+            3880000A 38610008
+            4AAC824D 814D9EF0
+            3FE08180 3BFFA1EC
+            39200000 39000002
+            3CE08180 38E7A164
+            80CA0048 38A10008
+            38800000 7FE3FB78
+            4AACE999 39200001
+            913F01B0 80010024
+            7C0803A6 83E1001C
+            38210020 4E800020
+            9421FFE8 7C0802A6
+            9001001C 93A1000C
+            93C10010 93E10014
+            7C7F1B78 81230000
+            83A90064 3D208180
+            8129A39C 2F890000
+            409E002C 7FE3FB78
+            7FA903A6 4E800421
+            8001001C 7C0803A6
+            83A1000C 83C10010
+            83E10014 38210018
+            4E800020 3D208040
+            612957B0 83C90000
+            3C608180 3863A1EC
+            4AACED21 C0BE00A8
+            C09E00B0 A0DE0096
+            C07E0018 C05E0014
+            C03E0010 3CA08180
+            38A5A164 38800080
+            4CC63242 4AB37811
+            4BFFFF94 9421FFF0
+            7C0802A6 90010014
+            93E1000C 7C7F1B78
+            4AAE9735 38E00081
+            7FE6FB78 38A00000
+            38800000 3C608180
+            3863A1EC 4AACDE05
+            80010014 7C0803A6
+            83E1000C 38210010
+            4E800020 5820506F
+            7320252E 30660A59
+            20506F73 20252E30
+            660A5A20 506F7320
+            252E3066 0A416E67
+            6C652025 68750A48
+            20537064 20252E32
+            660A5620 53706420
+            252E3266 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202000 00000000
+            C229E64C 00000003
+            38600000 3D808180
+            906CA39C 807F0040
+            60000000 00000000
+        </source>
+    </code>
+    <code>
+        <category>metadata</category>
+        <id>SpeedDisplay</id>
+        <title lang="en-US">Speed display</title>
+        <title lang="de-CH">Geschwindigkeits-Display</title>
+        <title lang="fr-FR">Affichage de vitesse</title>
+        <title lang="ja-JP">速度表示</title>
+        <author>Noki Doki, sup39(サポミク)</author>
+        <version>1.5</version>
+        <date>Mar 24, 2022</date>
+        <dependencies version="GMSJ01">drawText</dependencies>
+        <dependencies version="GMSJ0A">drawText</dependencies>
+        <description lang="en-US">
+        Shows Mario's speed at any given time.
+        
+        ::: warning
+        This code is not compatible with the Position/Angle/Speed Display code. 
+        :::
+        </description>
+        <description lang="de-CH">
+        Zeigt Mario's Geschwindigkeit jederzeit auf dem Bildschirm an.
+
+        ::: warning
+        Dieser Code ist nicht kompatibel mit dem Position/Winkel/Gewschw. Display Code
+        :::
+        </description>
+        <description lang="fr-FR">Affiche la vitesse de Mario à tout moment.</description>
+        <description lang="ja-JP">常に「マリオの速度」を表示します。</description>
+        <source version="GMSE01">
+            062A6160 00000010
+            49553F19 60000000
+            60000000 60000000
+            042998B8 49560749
+            04143F14 496B61F9
+            077FA000 00000188
+            9421FFE0 7C0802A6
+            90010024 93E1001C
+            4AABD6E5 38E00200
+            38C00320 38A0FFD8
+            3880000A 38610008
+            4AAD01B9 814D9FC8
+            3FE08180 3BFFA214
+            39200000 39000002
+            3CE08180 38E7A154
+            80CA0048 38A10008
+            38800000 7FE3FB78
+            4AAD67F1 39200001
+            913F01B0 80010024
+            7C0803A6 83E1001C
+            38210020 4E800020
+            9421FFE8 7C0802A6
+            9001001C 93C10010
+            93E10014 7C7F1B78
+            81230000 83C90064
+            3D208180 8129A3C4
+            2C090000 40820028
+            7FE3FB78 7FC903A6
+            4E800421 8001001C
+            7C0803A6 83C10010
+            83E10014 38210018
+            4E800020 93A1000C
+            3D208040 6129E0E8
+            83A90000 3C608180
+            3863A214 4AAD6B7D
+            C05D00A8 C03D00B0
+            3CA08180 38A5A154
+            38800030 4CC63242
+            4AB3F6A5 83A1000C
+            4BFFFFA0 9421FFF0
+            7C0802A6 90010014
+            93E1000C 7C7F1B78
+            4AAF159D 38E00081
+            7FE6FB78 38A00000
+            38800000 3C608180
+            3863A214 4AAD5C6D
+            80010014 7C0803A6
+            83E1000C 38210010
+            4E800020 48205370
+            6420252E 32660A56
+            20537064 20252E32
+            66202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202000 00000000
+            C22A66F4 00000003
+            38600000 3D808180
+            906CA3C4 807F0040
+            60000000 00000000
+        </source>
+        <source version="GMSJ01">
+            04206734 495F38CD
+            077FA000 0000007A
+            9421FFF0 7C0802A6
+            90010014 93E1000C
+            7C7F1B78 4A83B215
+            3D208041 8129A378
+            3D008180 38600010
+            3908A064 C04900A8
+            38E0FFFF C02900B0
+            38C0FFFF 38A00014
+            388000F0 4CC63242
+            4BFF61F1 80010014
+            7FE3FB78 83E1000C
+            7C0803A6 38210010
+            4A83B1C8 48205370
+            6420252E 32660A56
+            20537064 20252E32
+            66000000 00000000
+        </source>
+        <source version="GMSJ0A">
+            041252A0 496D4D61
+            077FA000 0000007A
+            9421FFF0 7C0802A6
+            90010014 93E1000C
+            7C7F1B78 4AAD0EB9
+            3D208040 8129EF88
+            3D008180 38600010
+            3908A064 C04900A8
+            38E0FFFF C02900B0
+            38C0FFFF 38A00014
+            388000F0 4CC63242
+            4BFF61F1 80010014
+            7FE3FB78 83E1000C
+            7C0803A6 38210010
+            4AAD0E6C 48205370
+            6420252E 32660A56
+            20537064 20252E32
+            66000000 00000000
+        </source>
+        <source version="GMSP01">
+            0629E070 00000010
+            4955C009 60000000
+            60000000 60000000
+            04291750 495688B1
+            04138B50 496C15BD
+            077FA000 00000188
+            9421FFE0 7C0802A6
+            90010024 93E1001C
+            4AAB56B5 38E00200
+            38C00320 38A0FFD8
+            3880000A 38610008
+            4AAC824D 814D9EF0
+            3FE08180 3BFFA214
+            39200000 39000002
+            3CE08180 38E7A154
+            80CA0048 38A10008
+            38800000 7FE3FB78
+            4AACE999 39200001
+            913F01B0 80010024
+            7C0803A6 83E1001C
+            38210020 4E800020
+            9421FFE8 7C0802A6
+            9001001C 93C10010
+            93E10014 7C7F1B78
+            81230000 83C90064
+            3D208180 8129A3C4
+            2C090000 40820028
+            7FE3FB78 7FC903A6
+            4E800421 8001001C
+            7C0803A6 83C10010
+            83E10014 38210018
+            4E800020 93A1000C
+            3D208040 612957B0
+            83A90000 3C608180
+            3863A214 4AACED25
+            C05D00A8 C03D00B0
+            3CA08180 38A5A154
+            38800030 4CC63242
+            4AB37825 83A1000C
+            4BFFFFA0 9421FFF0
+            7C0802A6 90010014
+            93E1000C 7C7F1B78
+            4AAE9745 38E00081
+            7FE6FB78 38A00000
+            38800000 3C608180
+            3863A214 4AACDE15
+            80010014 7C0803A6
+            83E1000C 38210010
+            4E800020 48205370
+            6420252E 32660A56
+            20537064 20252E32
+            66202020 20202020
+            20202020 20202020
+            20202020 20202020
+            20202000 00000000
+            C229E64C 00000003
+            38600000 3D808180
+            906CA3C4 807F0040
+            60000000 00000000
+        </source>
+    </code>
 </codes>

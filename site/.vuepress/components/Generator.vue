@@ -132,15 +132,6 @@ export default {
       codeConfigs: {},
     };
   },
-  created() {
-    this.codeConfigs = {
-      qft: getConfigQFT(),
-      PatternSelector: getConfigPS(),
-      SpeedDisplay: {},
-      PASDisplay: {},
-      CustomizedDisplay: getConfigCD(this.version),
-    };
-  },
   methods: {
     getLabel(key) {
       return translate(key, this.$lang);
@@ -168,6 +159,13 @@ export default {
           JSON.stringify({ version: e }),
         ]);
       } catch {}
+
+      // update config for preview
+      this.codeConfigs = {
+        qft: getConfigQFT(),
+        PatternSelector: getConfigPS(),
+        CustomizedDisplay: getConfigCD(e),
+      };
     },
     onFormatChanged(e) {
       this.selectedFormat = e;
@@ -222,7 +220,10 @@ export default {
         .filter(code => !(code.category === category && exclusive))
         .map(code => code.id));
       ids.add(id);
-      return Object.fromEntries(Object.entries(this.codeConfigs).filter(([id]) => ids.has(id)));
+      return {
+        ...Object.fromEntries(Object.entries(this.codeConfigs).filter(([id]) => ids.has(id))),
+        _version: this.selectedVersion,
+      };
     },
   },
 };

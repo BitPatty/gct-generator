@@ -1,10 +1,13 @@
 import { parseJSON } from '../codegen.js';
+import { getFillRectParams } from '../asm';
+import { int2hex } from '../utils';
 export const lskey = 'config/qft';
+
+export const getPreviewText = () => '0:00.000';
 
 export const defaultConfig = {
   x: 16,
   y: 456,
-  width: 112,
   fontSize: 20,
   fgRGB: 0xffffff,
   fgA: 0xff,
@@ -12,6 +15,10 @@ export const defaultConfig = {
   fgA2: null,
   bgRGB: 0x000000,
   bgA: 0x80,
+  bgLeft: 0,
+  bgRight: 2,
+  bgTop: 2,
+  bgBot: 0,
   freezeDuration: 30,
   freeze: {
     yellowCoin: false,
@@ -35,6 +42,7 @@ export const defaultConfig = {
   },
 };
 
+/** @returns {typeof defaultConfig} */
 export function getConfig() {
   const config =
     (typeof localStorage !== 'undefined' && parseJSON(localStorage.getItem(lskey))) || {};
@@ -45,6 +53,7 @@ export function getConfig() {
       ...defaultConfig.freeze,
       ...config.freeze,
     },
+    text: getPreviewText(),
   };
 }
 
@@ -57,8 +66,10 @@ import * as GMSP01 from './code/GMSP01.js';
 import * as GMSJ0A from './code/GMSJ0A.js';
 export const codes = { GMSJ01, GMSE01, GMSP01, GMSJ0A };
 
-import statusDB from './code/status.js';
-export const statusKeys = Object.keys(statusDB);
+import { measureText } from '../text.js';
+import statusDB0 from './code/status.js';
+const statusDB = /**@type{Record<string,number[]>}*/ (statusDB0);
+export const statusKeys = Object.keys(statusDB0);
 
 /****
 ## save freeze frame, load and save QF
@@ -100,7 +111,7 @@ export default function codegen(version, baseCode) {
       const hook = freezeCodeHooks[key];
       if (hook) {
         if (key === 'blueCoin') {
-          const addr = hook;
+          const addr = /**@type{number}*/ (hook);
           // special: needs to adjust QF -> use separate C2 instead
           code += [
             0xc2000000 + (addr & 0x1ffffff),
@@ -234,25 +245,24 @@ export default function codegen(version, baseCode) {
 
   // ui
   /* bounds */
-  const { x, y, fontSize, width } = config;
+  const { x, y, fontSize, bgLeft, bgRight, bgTop, bgBot } = config;
+  const rect = getFillRectParams(config, measureText(getPreviewText(), version));
+  const [bgColor] = rect.splice(-1);
   const scale = fontSize / 20;
   code += '077F0094 0000001D';
-  code += [
-    x, // x1
-    y - fontSize - 2, // y1
-    x + width * scale, // x2
-    y, // y2
-  ]
-    .map(int2gecko)
-    .join('');
+  code += rect.map(int2gecko).join('');
   code += '25753a253032752e2530337500000000'; // fmt
-  /* fontSize, fgColor, bgColor */
-  code += '077F0110 00000010';
-  const bgColor = (config.bgRGB & 0xffffff) * 256 + (config.bgA & 0xff);
+  /**
+   * 817F0110 drawTextOpt: {x, y, fontSize, colorTop, colorBot}
+   * 817F0120 bgColor
+   */
+  code += '077F0110 00000014';
   const fgColor = (config.fgRGB & 0xffffff) * 256 + (config.fgA & 0xff);
   const fgColor2 =
     ((config.fgRGB2 ?? config.fgRGB) & 0xffffff) * 256 + ((config.fgA2 ?? config.fgA) & 0xff);
+  code += [x, y].map((x) => int2hex(x, 2)).join('');
   code += [fontSize, fgColor, fgColor2, bgColor].map(int2gecko).join('');
+  code += '00000000';
 
   return code.replace(/\s/g, '');
 }

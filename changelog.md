@@ -29,6 +29,27 @@ Disable Z menu for Instant Level Select to prevent broken texture
 ### Updated 'Instant Level Select'
 Overwrite button input value to prevent Level Select being activated when AreaLock is enabled
 
+## Jan 31, 2023
+### Updated 'Pattern Selector'
+- Rewrote with C2 + separated config 06
+- Remove label option
+### Updated 'Customized Display'
+- Rewrote with C2
+- Implemented a more complex assembler/compiler to support function call
+- Add options
+  - Invincibility Timer
+  - Pollution Degree
+  - Spin Jump Condition Check
+
+## Jan 28, 2023
+### Rewrote 'drawText'
+- Reduced parameters to struct pointer + format string + varargs
+- Rewrote QFT, Pattern Selector, Customized Display with the new drawText function
+### Improved Preview
+- Added PAL font (TODO: NTSC-U)
+- Merged P/A/S Display and Speed Display to Customized Display
+- Provided background options to Pattern Selector and Customized Display
+
 ## Jan 10, 2023
 ### Updated 'Quarterframe Timer'
 Added the following options to freeze QFT:

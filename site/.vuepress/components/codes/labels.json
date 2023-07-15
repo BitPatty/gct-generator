@@ -6,7 +6,13 @@
     "fgColorGrad": "グラデーション",
     "fgColor1": "文字色(上)：",
     "fgColor2": "文字色(下)：",
-    "alpha": "不透明度="
+    "alpha": "不透明度=",
+    "bgColor": "背景色：",
+    "bgOffset": "背景位置：",
+    "left": "左",
+    "right": "右",
+    "top": "上",
+    "bottom": "下"
   },
   "en-US": {
     "location": "Location: ",
@@ -15,6 +21,22 @@
     "fgColorGrad": "Gradient",
     "fgColor1": "Font color(Top): ",
     "fgColor2": "Font color(Bottom): ",
-    "alpha": "Alpha="
+    "alpha": "Alpha=",
+    "bgColor": "Background color: ",
+    "bgOffset": "Background offset: ",
+    "left": "Left",
+    "right": "Right",
+    "top": "Top",
+    "bottom": "Bottom"
+  },
+  "fr-FR": {
+    "location": "Position : ",
+    "fontSize": "Taille de police : ",
+    "fgColor": "Couleur du texte : ",
+    "fgColorGrad": "Dégradé",
+    "fgColor1": "Couleur du texte (haut) : ",
+    "fgColor2": "Couleur du texte (bas) : ",
+    "bgColor": "Couleur de fond : ",
+    "alpha": "Alpha = "
   }
 }
