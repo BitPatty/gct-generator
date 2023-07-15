@@ -17,7 +17,7 @@
   {
     "identifier": "metadata",
     "i18nKey": "generatorconfig.categories.metadata",
-    "exclusive": true
+    "exclusive": false
   },
   {
     "identifier": "savestate",

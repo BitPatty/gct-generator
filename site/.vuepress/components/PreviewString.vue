@@ -1,47 +1,33 @@
 <template>
-  <div v-if="text" class="preview-str" :style="styles.root" >
-    <div v-for="style, i in styles.chars" :key="i" class="char-ctn" :style="style.ctn">
-      <div class="char-bg" :style="style.bg" />
-      <div class="char-mask" :style="style.mask" />
+  <div v-if="config">
+    <div :style="styles.bg" />
+    <div :class="previewCssClass" :style="styles.root" >
+      <div v-for="style, i in styles.chars" :key="i" class="char-ctn" :style="style.ctn">
+        <div class="char-bg" :style="style.bg" />
+        <div class="char-mask" :style="style.mask" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import charInfo from '../data/font-jp.json';
+import {rgbaI2S} from './codes/utils.js';
+import {measureText} from './codes/text.js';
+
 export default {
   props: {
-    x: {type: Number},
-    y: {type: Number},
-    size: {type: Number},
-    color: {type: String},
-    text: {type: String},
+    config: {type: Object},
+    version: {type: String},
   },
   computed: {
+    previewCssClass() {
+      return `preview-str preview-${this.version.startsWith('GMSJ') ? 'JP' : this.version === 'GMSE01' ? 'US' : 'EU'}`;
+    },
     styles() {
-      const {x: x0, y: y0, size: fontSize, color, text} = this;
-
-      /** @type {{x: number, y: number, u: number, v: number}[]} */
-      const chars = [];
-      let x = 0;
-      let y = 0;
-      let useKerning = false;
-      text.split('').forEach(c => {
-        const {index, kerning, width} = charInfo[c] ?? charInfo[' '];
-        if (c === '\n') {
-          useKerning = false;
-          x = 0;
-          y += 20;
-          return;
-        }
-        if (useKerning) x -= kerning;
-        useKerning = true;
-        // uv
-        const [u, v] = [index%25*20, (index/25|0)*20];
-        chars.push({x, y, u, v});
-        // next
-        x += width + kerning;
-      });
+      const {config, version} = this;
+      const {x: x0, y: y0, fontSize, fgRGB, fgA, fgRGB2, fgA2, bgRGB, bgA, bgLeft, bgRight, bgTop, bgBot, text} = config;
+      const fgColor = rgbaI2S(fgRGB, fgA);
+      const {width, height, chars} = measureText(text, version);
 
       return {
         root: {
@@ -60,10 +46,18 @@ export default {
             mask: {
               'mask-position': offset,
               '-webkit-mask-position': offset,
-              background: color,
+              background: fgRGB2 == null || fgA2 == null ? fgColor :
+                `linear-gradient(180deg, ${fgColor}, ${rgbaI2S(fgRGB2, fgA2)})`,
             },
           };
         }),
+        bg: {
+          left: x0 - bgLeft + 'px',
+          top: y0 - fontSize - bgTop + 'px',
+          width: (width * fontSize) / 20 + bgLeft + bgRight + 'px',
+          height: (height * fontSize) / 20 + bgTop + bgBot + 'px',
+          background: rgbaI2S(bgRGB, bgA),
+        },
       };
     },
   },
@@ -71,27 +65,49 @@ export default {
 </script>
 
 <style scoped>
+* {
+  position: absolute;
+}
+
 .preview-str {
   position: relative;
 }
 .preview-str * {
   position: absolute;
 }
-div.char-ctn {
+.char-ctn {
   isolation: isolate;
 }
-div.char-ctn > div {
+.char-ctn > div {
   width: 20px;
   height: 20px;
 }
-div.char-bg {
-  background: url(/img/preview/font-jp.png);
-}
-div.char-mask {
-  mask-image: url(/img/preview/font-jp.png);
-  -webkit-mask-image: url(/img/preview/font-jp.png);
+.char-mask {
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
   mix-blend-mode: multiply;
 }
+
+.preview-JP .char-bg {
+  background: url(/img/preview/font-JP.png);
+}
+.preview-JP .char-mask {
+  mask-image: url(/img/preview/font-JP.png);
+  -webkit-mask-image: url(/img/preview/font-JP.png);
+}
+.preview-US .char-bg {
+  background: url(/img/preview/font-US.png);
+}
+.preview-US .char-mask {
+  mask-image: url(/img/preview/font-US.png);
+  -webkit-mask-image: url(/img/preview/font-US.png);
+}
+.preview-EU .char-bg {
+  background: url(/img/preview/font-EU.png);
+}
+.preview-EU .char-mask {
+  mask-image: url(/img/preview/font-EU.png);
+  -webkit-mask-image: url(/img/preview/font-EU.png);
+}
+/* TODO US */
 </style>

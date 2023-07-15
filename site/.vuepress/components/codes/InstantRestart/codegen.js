@@ -14,56 +14,15 @@ export const buttonValues = {
   DR: 0x0002,
   DL: 0x0001,
 };
-
-const baseCodes = {
-  GMSJ01: (b) => `
-C20EAFA0 0000000A
-3C608040 A0A30D50
-2805${b} 40A20038
-3C60817F 38A00001
-98A300B3 98A30100
-3C60803E 84A3600E
-90A30004 38A00040
-90A30000 3C60800E
-6063B3F8 7C6803A6
-4E800020 2C000002
-60000000 00000000
-`,
-  GMSJ0A: (b) => `
-C227768C 0000000A
-3C60803F A0A35428
-2805${b} 40A20038
-3C60817F 38A00001
-98A300B3 98A30100
-3C60803E 84A3A8EE
-90A30004 38A00040
-90A30000 3C608027
-60637AE4 7C6803A6
-4E800020 2C000002
-60000000 00000000
-`,
-  GMSE01: (b) => `
-C22979E4 0000000A
-3C608040 A0A34454
-2805${b} 40A20038
-3C60817F 38A00001
-98A300B3 98A30100
-3C60803F 84A3970E
-90A30004 38A00040
-90A30000 3C608029
-60637E3C 7C6803A6
-4E800020 2C000002
-60000000 00000000
-`,
-};
 const zCodes = {
-  GMSJ01: '040eb024 60000000',
-  GMSJ0A: '04277710 60000000',
-  GMSE01: '04297A68 60000000',
+  GMSJ01: '040EB02460000000',
+  GMSE01: '04297A6860000000',
+  GMSP01: '0428F90060000000',
+  GMSJ0A: '0427771060000000',
 };
 
 export const defaultConfig = {
-  button: buttonValues.Y | buttonValues.DU,
+  button: buttonValues.B | buttonValues.DU,
 };
 export function getConfig() {
   return {
@@ -71,13 +30,11 @@ export function getConfig() {
     ...(parseJSON(localStorage.getItem(lskey)) ?? {}),
   };
 }
-export default function codegen(version) {
+export default function codegen(version, src) {
   const { button } = getConfig();
-  const g = baseCodes[version];
-  if (g == null) return '';
-  let code = g(button.toString(16).padStart(4, '0'));
+  let code = src.slice(0, 36) + button.toString(16).padStart(4, '0') + src.slice(40);
   if (button & buttonValues.Z) {
     code += zCodes[version];
   }
-  return code.replace(/\s/g, '');
+  return code;
 }

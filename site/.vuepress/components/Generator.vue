@@ -88,7 +88,7 @@
                 >Psychonauter</a
               >,
               <a href="https://twitter.com/Qbe_Root" target="_blank" rel="noopener">Noki Doki</a>,
-              <a href="https://twitter.com/sup39x1207" target="_blank" rel="noopener">sup39</a>
+              <a href="https://github.com/sup39" target="_blank" rel="noopener">sup39</a>
               &amp;
               <a href="https://twitter.com/srlMilk" target="_blank" rel="noopener">Milk</a>.
             </p>
@@ -112,9 +112,7 @@ import codeCategories from '../data/codeCategories.json';
 import { translate } from '../i18n/localeHelper';
 
 // Code Configs
-import {getConfig as getConfigQFT} from './codes/qft/codegen';
-import {getConfig as getConfigCD} from './codes/CustomizedDisplay/codegen';
-import {getConfig as getConfigPS} from './codes/PatternSelector/codegen';
+import {getConfigs} from './codes/preview.js';
 
 export default {
   data() {
@@ -130,15 +128,6 @@ export default {
       showStageLoaderHelp: false,
       generation: 0,
       codeConfigs: {},
-    };
-  },
-  created() {
-    this.codeConfigs = {
-      qft: getConfigQFT(),
-      PatternSelector: getConfigPS(),
-      SpeedDisplay: {},
-      PASDisplay: {},
-      CustomizedDisplay: getConfigCD(this.version),
     };
   },
   methods: {
@@ -168,6 +157,9 @@ export default {
           JSON.stringify({ version: e }),
         ]);
       } catch {}
+
+      // update config for preview
+      this.codeConfigs = getConfigs(e);
     },
     onFormatChanged(e) {
       this.selectedFormat = e;
@@ -222,7 +214,10 @@ export default {
         .filter(code => !(code.category === category && exclusive))
         .map(code => code.id));
       ids.add(id);
-      return Object.fromEntries(Object.entries(this.codeConfigs).filter(([id]) => ids.has(id)));
+      return {
+        ...Object.fromEntries(Object.entries(this.codeConfigs).filter(([id]) => ids.has(id))),
+        _version: this.selectedVersion,
+      };
     },
   },
 };

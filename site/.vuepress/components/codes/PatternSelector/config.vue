@@ -4,26 +4,16 @@
     <Preview :config="previewConfig" />
     <div class="config-spacer" />
     <TextConfig v-model="textConfig" />
-    <div>
-      {{l.label}} <input v-model="label">
-    </div>
   </section>
 </template>
 
 <script>
-import {getConfig, lskey} from './codegen.js';
+import {getConfig, defaultConfig, lskey, getPreviewText} from './codegen.js';
 import labels from './labels.json';
 import TextConfig from '../TextConfig.vue';
+import { makeUpdateConfig } from '../utils.js';
 
-function updateConfig() {
-  const {x, y, fontSize, fgRGB, fgA, fgRGB2, fgA2, label} = this;
-  const config = {
-    x, y, fontSize, fgRGB, fgA, fgRGB2, fgA2, label,
-  };
-  localStorage.setItem(lskey, JSON.stringify(config));
-  this.$emit('config', config);
-}
-
+const updateConfig = makeUpdateConfig(lskey, defaultConfig, getPreviewText);
 export default {
   components: {
     TextConfig,
@@ -52,9 +42,6 @@ export default {
         this.updateConfig();
       },
     },
-  },
-  watch: {
-    label: updateConfig,
   },
 };
 </script>

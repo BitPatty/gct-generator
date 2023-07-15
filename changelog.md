@@ -1,9 +1,24 @@
 # Changelog
+## Jul 15, 2023
+### Fixed the bug that background color cannot be changed in 'Controller Input Display'
+### Ported 'FastForward', 'InstantRestart', 'SpawnYoshi', 'StageIntroSkip' to all versions
+
+## Jul 9, 2023
+### Updated 'Level Select'
+The peaceful plaza (after unlocking Ricco and Gelato) is now available as C↘ + Y, later plazas have their shortcuts moved clockwise, and the post-Corona plaza no longer has a dedicated shortcut. To access it, simply load Corona (X with neutral C stick) or Bowser (C↖ + Y + L) then exit to the plaza.
+
+## May 17, 2023
+- Added font for NTSC-U
+- Fixed the encoding of NTSC-U and PAL (should be Windows-1252 instead of latin1)
+
 ## May 16, 2023
 ### GCI Loader 0.5
 Added error messages
 ### GCI Loader 0.4
 Fixed hook address of GMSE01 code
+
+## Feb 28, 2023
+Fix preview of Controller Input Display
 
 ## Feb 23, 2023
 ### Updated 'Force Plaza Events'
@@ -21,6 +36,8 @@ Disable Z menu for Instant Level Select to prevent broken texture
 - Added 'Mario State Savestate'
 - Added 'No Shine Get Animation'
 - Added 'Fruit Never Time Out'
+- Added 'In-Stage Attempt Counter'
+- Added 'Manual Attempt Counter'
 
 ## Feb 11, 2023
 - Added 'Deathless Blooper Surfing'
@@ -35,6 +52,46 @@ Ported GCI Loader to all versions
 ## Feb 08, 2023
 ### Updated 'Instant Level Select'
 Overwrite button input value to prevent Level Select being activated when AreaLock is enabled
+
+## Feb 07, 2023
+### Updated 'Customized Display'
+Support signed int32 and int16 for fields
+
+## Feb 06, 2023
+### Fixed 'Customized Display'
+Fixed the hex value of multi-byte char in format string
+
+## Feb 05, 2023
+### Created 'Controller Input Display'
+Display controller input
+### Created 'Attempt Counter'
+Display attempt count and success count of current area
+### Updated 'Instant Level Select'
+- Rewrote with C2
+- Go to level instantly without transition
+
+## Jan 31, 2023
+### Created 'Quarterframe Section Timer'
+Calculate and display section times whenever Quarterframe Timer freezes
+### Updated 'Pattern Selector'
+- Rewrote with C2 + separated config 06
+- Remove label option
+### Updated 'Customized Display'
+- Rewrote with C2
+- Implemented a more complex assembler/compiler to support function call
+- Add options
+  - Invincibility Timer
+  - Pollution Degree
+  - Spin Jump Condition Check
+
+## Jan 28, 2023
+### Rewrote 'drawText'
+- Reduced parameters to struct pointer + format string + varargs
+- Rewrote QFT, Pattern Selector, Customized Display with the new drawText function
+### Improved Preview
+- Added PAL font (TODO: NTSC-U)
+- Merged P/A/S Display and Speed Display to Customized Display
+- Provided background options to Pattern Selector and Customized Display
 
 ## Jan 10, 2023
 ### Updated 'Quarterframe Timer'
