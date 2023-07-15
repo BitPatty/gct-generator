@@ -25,7 +25,7 @@
 <script>
 import { defaultConfig, lskey, getConfig } from './codegen.js';
 import hiddenConfig from './hidden.js';
-import { makeUpdateConfig, makeGetLabel, rgbI2S } from '../utils';
+import { makeUpdateConfig, makeGetLabel, rgbI2S, rgbS2I } from '../utils';
 import labels from '../labels.json';
 
 const updateConfig = makeUpdateConfig(lskey, defaultConfig, null, hiddenConfig);
@@ -36,6 +36,7 @@ export default {
   methods: {
     updateConfig,
     rgbI2S,
+    rgbS2I,
   },
   data() {
     const config = getConfig();

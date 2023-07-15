@@ -64,7 +64,7 @@ export default function codegen(version, baseCode) {
     // mtx.y
     int2hex(y - 16, 2),
     // .conf.bg.color
-    int2hex((bgRGB << 24) | bgA, 4),
+    int2hex((bgRGB << 8) | bgA, 4),
     // .conf.trigger.fill
     int2hex(cTF, 4),
     // .conf.trigger.stroke

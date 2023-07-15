@@ -1,5 +1,6 @@
 # Changelog
 ## Jul 15, 2023
+### Fixed the bug that background color cannot be changed in 'Controller Input Display'
 ### Ported 'FastForward', 'InstantRestart', 'SpawnYoshi', 'StageIntroSkip' to all versions
 
 ## Jul 9, 2023
