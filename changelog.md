@@ -1,4 +1,7 @@
 # Changelog
+## Jul 15, 2023
+### Ported 'FastForward', 'InstantRestart', 'SpawnYoshi', 'StageIntroSkip' to all versions
+
 ## Jul 9, 2023
 ### Updated 'Level Select'
 The peaceful plaza (after unlocking Ricco and Gelato) is now available as C↘ + Y, later plazas have their shortcuts moved clockwise, and the post-Corona plaza no longer has a dedicated shortcut. To access it, simply load Corona (X with neutral C stick) or Bowser (C↖ + Y + L) then exit to the plaza.
