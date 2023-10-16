@@ -35,7 +35,39 @@ export default {
       if ((!this.codes || !this.codes.length) && !this.stageLoaderCode) {
         return;
       }
-      const codeList = this.codes.map((c) => ({ ...c }));
+
+      const codeList = this.codes.map((c) => ({
+        ...c,
+        // for recording previous downloaded code
+        titleEN: c.title.find(o => o.lang === 'en-US').content,
+        // for generated txt, ini
+        title: translateCode(c, this.$lang).title,
+      }));
+
+      // add dependencies information to title
+      const id2code = Object.fromEntries(codeList.map(c => [c.id, c]));
+      const depBys = {};
+      /* depends on */
+      for (const c of codeList) {
+        if (c.dependencies.length) {
+          c.dependencies.forEach(id => {
+            depBys[id] ??= [];
+            depBys[id].push(c.title);
+          });
+          const depList = c.dependencies.map(id => id2code[id].title).join(', ');
+          c.title += ` **(REQUIRES: ${depList})**`;
+        }
+      }
+      /* used by */
+      for (const [id, depBy] of Object.entries(depBys)) {
+        id2code[id].title += ` (Used by: ${depBy.join(', ')})`;
+      }
+
+      // save downloaded code list
+      try {
+        const codeTitles = codeList.map(c => c.titleEN);
+        localStorage.setItem(lskeyLDC, JSON.stringify(codeTitles));
+      } catch {}
 
       if (this.stageLoaderCode)
         codeList.push({
@@ -60,12 +92,6 @@ export default {
             })),
           }),
         ]);
-      } catch {}
-
-      // save download code list
-      try {
-        const codeTitles = codeList.map(c => c.title.find(o => o.lang === 'en-US').content);
-        localStorage.setItem(lskeyLDC, JSON.stringify(codeTitles));
       } catch {}
 
       const fileName = gameVersions.find((v) => v.identifier === this.versionIdentifier).version;
@@ -127,10 +153,7 @@ export default {
       let data = 'Paste the following on top of your games .ini file:\r\n[Gecko]';
 
       codes.forEach((code) => {
-        const codeTitle =
-          typeof code.title === 'string' ? code.title : translateCode(code, this.$lang).title;
-
-        data += `\r\n$${codeTitle} (${code.date}) [${code.author}]\r\n`;
+        data += `\r\n$${code.title} (${code.date}) [${code.author}]\r\n`;
         data += code.source
           .match(/.{8}/g)
           .join(' ')
@@ -146,7 +169,7 @@ export default {
         const codeTitle =
           typeof code.title === 'string' ? code.title : translateCode(code, this.$lang).title;
 
-        data += `\r\n\r\n${codeTitle} (${code.date}) [${code.author}]\r\n`;
+        data += `\r\n\r\n${code.title} (${code.date}) [${code.author}]\r\n`;
         data += code.source
           .match(/.{8}/g)
           .join(' ')
