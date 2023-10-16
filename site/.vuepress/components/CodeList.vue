@@ -114,7 +114,7 @@ export default {
       const selectedCodes = this.availableCodes.filter((c) => c.selected);
       // add dependencies
       const deps = new Set(selectedCodes.flatMap(c => c.dependencies));
-      selectedCodes.push(...this.codes.filter(c => deps.has(c.id)));
+      selectedCodes.push(...this.availableCodes.filter(c => !c.selected && deps.has(c.id)));
       // emit
       this.onSelectionChanged(selectedCodes);
     },

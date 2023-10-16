@@ -1,4 +1,7 @@
 # Changelog
+## Oct 16, 2023
+Added dependencies information to generated ini/txt
+
 ## Jul 15, 2023
 ### Fixed the bug that background color cannot be changed in 'Controller Input Display'
 ### Ported 'FastForward', 'InstantRestart', 'SpawnYoshi', 'StageIntroSkip' to all versions
