@@ -39,22 +39,22 @@ export default {
       const codeList = this.codes.map((c) => ({
         ...c,
         // for recording previous downloaded code
-        titleEN: c.title.find(o => o.lang === 'en-US').content,
+        titleEN: c.title.find((o) => o.lang === 'en-US').content,
         // for generated txt, ini
         title: translateCode(c, this.$lang).title,
       }));
 
       // add dependencies information to title
-      const id2code = Object.fromEntries(codeList.map(c => [c.id, c]));
+      const id2code = Object.fromEntries(codeList.map((c) => [c.id, c]));
       const depBys = {};
       /* depends on */
       for (const c of codeList) {
-        if (c.dependencies.length) {
-          c.dependencies.forEach(id => {
+        if (c.dependencies && c.dependencies.length) {
+          c.dependencies.forEach((id) => {
             depBys[id] ??= [];
             depBys[id].push(c.title);
           });
-          const depList = c.dependencies.map(id => id2code[id].title).join(', ');
+          const depList = c.dependencies.map((id) => id2code[id].title).join(', ');
           c.title += ` **(REQUIRES: ${depList})**`;
         }
       }
@@ -65,7 +65,7 @@ export default {
 
       // save downloaded code list
       try {
-        const codeTitles = codeList.map(c => c.titleEN);
+        const codeTitles = codeList.map((c) => c.titleEN);
         localStorage.setItem(lskeyLDC, JSON.stringify(codeTitles));
       } catch {}
 

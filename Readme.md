@@ -81,7 +81,10 @@ Some codes store some states in the games memory starting from address 0x817F000
 | ![](./docs/reserved.svg)    | `0x102` | `0x10B` | Ingame Timer: Stopwatch Backup                                            |
 | ![](./docs/reserved.svg)    | `0x10C` | `0x10C` | Ingame Timer: Stop Stopwatch Flag                                         |
 | ![](./docs/buffer.svg)      | `0x10D` | `0x10F` | Buffer (Ingame Timer)                                                     |
-| ![](./docs/reserved.svg)    | `0x110` | `0x237` | QF Timer: Timer Textbox                                                   |
+| ![](./docs/reserved.svg)    | `0x110` | `0x11F` | QF Timer: Text Config                                                     |
+| ![](./docs/reserved.svg)    | `0x120` | `0x123` | QF Timer: Background Config                                               |
+| ![](./docs/reserved.svg)    | `0x124` | `0x133` | Streak Tracker: Text Config                                               |
+| ![](./docs/unallocated.svg) | `0x134` | `0x237` | Not Allocated                                                             |
 | ![](./docs/reserved.svg)    | `0x238` | `0x347` | General Function (`drawText`)                                             |
 | ![](./docs/buffer.svg)      | `0x348` | `0x39B` | Buffer (QF Timer)                                                         |
 | ![](./docs/reserved.svg)    | `0x39C` | `0x3AF` | QF Section Timer: Background Config                                       |
