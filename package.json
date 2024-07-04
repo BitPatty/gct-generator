@@ -24,7 +24,7 @@
     "@sup39/markdown-it-inline-tag": "1.0.1",
     "@vuepress/plugin-back-to-top": "1.9.9",
     "@vuepress/plugin-medium-zoom": "1.9.9",
-    "jsdom": "22.0.0",
+    "jsdom": "24.1.0",
     "pre-commit": "1.2.2",
     "prettier": "2.8.8",
     "serve": "14.2.0",
