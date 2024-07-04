@@ -149,46 +149,19 @@ export default {
       this.stageLoaderCodes = gameVersions.find((c) => c.identifier === e).fastCode;
       this.inspectingCode = null;
       this.showStageLoaderHelp = false;
-      try {
-        window._paq.push([
-          'trackEvent',
-          'GCT Generator',
-          'Change Version',
-          JSON.stringify({ version: e }),
-        ]);
-      } catch {}
 
       // update config for preview
       this.codeConfigs = getConfigs(e);
     },
     onFormatChanged(e) {
       this.selectedFormat = e;
-      try {
-        window._paq.push([
-          'trackEvent',
-          'GCT Generator',
-          'Change Format',
-          JSON.stringify({ format: e }),
-        ]);
-      } catch {}
     },
     onStageLoaderToggle(enabled) {
       this.useStageLoader = enabled;
       if (!this.useStageLoader) this.selectedStageLoader = null;
-      try {
-        window._paq.push([
-          'trackEvent',
-          'GCT Generator',
-          'Change StageLoader State',
-          JSON.stringify({ enabled }),
-        ]);
-      } catch {}
     },
     onCheatSelectionChanged(e) {
       this.selectedCheats = e;
-      try {
-        window._paq.push(['trackEvent', 'GCT Generator', 'Change Cheat Selection', '']);
-      } catch {}
     },
     onStageLoaderCodeChanged(e) {
       this.selectedStageLoader = e;

@@ -78,22 +78,6 @@ export default {
           source: this.stageLoaderCode,
         });
 
-      try {
-        window._paq.push([
-          'trackEvent',
-          'GCT Generator',
-          'Code Download',
-          JSON.stringify({
-            gameVersion: this.versionIdentifier,
-            format: this.format,
-            codes: codeList.map((code) => ({
-              title: code.title,
-              version: code.version,
-            })),
-          }),
-        ]);
-      } catch {}
-
       const fileName = gameVersions.find((v) => v.identifier === this.versionIdentifier).version;
 
       // apply customizable codes
