@@ -2,7 +2,7 @@
 
 ## Jul 31, 2024
 
-Added GCT & GCI Download
+Added GCT & GCI Download (Experimental).
 
 ## Oct 16, 2023
 Added dependencies information to generated ini/txt
@@ -18,12 +18,6 @@ The peaceful plaza (after unlocking Ricco and Gelato) is now available as C↘ +
 ## May 17, 2023
 - Added font for NTSC-U
 - Fixed the encoding of NTSC-U and PAL (should be Windows-1252 instead of latin1)
-
-## May 16, 2023
-### GCI Loader 0.5
-Added error messages
-### GCI Loader 0.4
-Fixed hook address of GMSE01 code
 
 ## Feb 28, 2023
 Fix preview of Controller Input Display
@@ -53,9 +47,6 @@ Disable Z menu for Instant Level Select to prevent broken texture
 - Added 'QF Time Savestate'
 - Added 'Red Coin Savestate'
 - Added 'Previous Downloaded Codes' as a preset
-
-## Feb 10, 2023
-Ported GCI Loader to all versions
 
 ## Feb 08, 2023
 ### Updated 'Instant Level Select'
@@ -118,15 +109,6 @@ Reworked the existing freezes and added the option to freeze when mounting Yoshi
 
 ## Nov 19, 2022
 Added `CAngle` for 'Customized Display' to show camera angle
-
-## Nov 16, 2022
-- Add GCI+XXX as download format
-- Add return code for GCI Loader
-- Smaller GCI file (0xE000 bytes to 0x4000 bytes)
-
-## Nov 11, 2022
-- Add GCI Loader (NTSC-J 1.0 only)
-- Support GCI as download format (NTSC-J 1.0 only)
 
 ## Nov 9, 2022
 ### Added 'Fast Piantissimo'
