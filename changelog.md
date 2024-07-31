@@ -29,10 +29,6 @@ Set the correct BH/RH/GB unlock flag
 ## Feb 21, 2023
 Disable Z menu for Instant Level Select to prevent broken texture
 
-## Feb 20, 2023
-- Put Memory Card Patch codes in GCT instead of GCI
-- Fix GCI file name for GMSJ0A
-
 ## Feb 13, 2023
 - Added 'Mario State Savestate'
 - Added 'No Shine Get Animation'
