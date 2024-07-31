@@ -45,6 +45,12 @@ Create a "codes" folder in the root of your SD card if there is none and copy th
 
 ![Sample Folder Structure](/img/folderstructure.png)
 
+::: tip Windows file extensions
+Windows hides file extensions by default. To avoid accidentally naming your file something like "GMSE01.gct.gct" ensure that you can see the file extension:
+
+![](https://github.com/user-attachments/assets/527b372b-914b-4a2d-af6f-c07fa59b7e4b)
+:::
+
 ### Enable the codes
 
 Open your Homebrew channel and from there launch Nintendont. Select SD and then press B on your Gamecube controller to see the settings. In your settings, make sure that "Cheats" are "On". You can switch it on/off by pressing A on your controller. (See image below)
@@ -52,6 +58,19 @@ Open your Homebrew channel and from there launch Nintendont. Select SD and then 
 ![Enabling Cheats in Nintendont](/img/nintendont_cheats.jpg)
 
 Press B again to return to the game list and launch your game. And with that you're done already.
+
+## Updating codes
+
+You can generate a new GCT file and replace the old one on your SD card.
+
+If you periodically need to switch between two or more sets of codes you could create a structure such as the one below in your codes directory and replace GMSE01.gct with the target code file (assuming you use GMSE01):
+
+- GMSE01.gct
+- GMSE01_FastAny.gct
+- GMSE01_Practice.gct
+- ... etc.
+
+Only the GCT with the game code will be read, in the sample above "GMSE01.gct", meaning only the codes in "GMSE01.gct" will be active during gameplay.
 
 ## Troubleshooting
 
@@ -79,6 +98,10 @@ This can have multiple reasons:
 - Your cheatfile is too big: Using too many codes at once can cause Nintendont to disable them since the used space in the game is limited. Make sure you don't have two incompatible codes selected when downloading the cheatfile (for example "Level Select", "Fast Any%" and the Stage loader cannot be used simultaneously). If you're using Nintendont 4.434 or newer you don't have to worry about your file size unless it exceeds 5KB.
 - If you have a USB drive connected and use disc, make sure you select the device that contains the cheats for your disc.
 - If you use an ISO your cheat file and ISO must be on the same device (both on the SD card or both on the USB drive).
+
+### The controller behaves differently in Nintendont
+
+Ensure that you turn on "Native controls" in the Nintendont settings. The setting only needs to be turned off for non-Gamecube controllers (i.e. controllers not plugged into the Gamecube controller ports, such as Xbox controllers and the like).
 
 ### I'm lost :(
 
