@@ -59,7 +59,7 @@ Open your Homebrew channel and from there launch Nintendont. Select SD and then 
 
 Press B again to return to the game list and launch your game. And with that you're done already.
 
-## Updating codes
+## Updating the cheat file
 
 You can generate a new GCT file and replace the old one on your SD card.
 
