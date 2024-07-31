@@ -44,7 +44,11 @@
       "options": {
         "gct": "GCT",
         "dolphin": "Dolphin INI",
-        "gcm": "CheatManager TXT"
+        "gcm": "CheatManager TXT",
+        "gci+gct": "GCI + GCT (Experimental)",
+        "gci+dolphin": "GCI + Dolphin INI",
+        "gci+gcm": "GCI + CheatManager TXT",
+        "gci": "GCI"
       }
     },
     "categories": {

@@ -10,5 +10,21 @@
   {
     "target": "gcm",
     "i18nKey": "generatorconfig.downloadformat.options.gcm"
+  },
+  {
+    "target": "gci+gct",
+    "i18nKey": "generatorconfig.downloadformat.options.gci+gct"
+  },
+  {
+    "target": "gci+dolphin",
+    "i18nKey": "generatorconfig.downloadformat.options.gci+dolphin"
+  },
+  {
+    "target": "gci+gcm",
+    "i18nKey": "generatorconfig.downloadformat.options.gci+gcm"
+  },
+  {
+    "target": "gci",
+    "i18nKey": "generatorconfig.downloadformat.options.gci"
   }
 ]

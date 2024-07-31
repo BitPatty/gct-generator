@@ -78,7 +78,14 @@ export default {
           source: this.stageLoaderCode,
         });
 
-      const fileName = gameVersions.find((v) => v.identifier === this.versionIdentifier).version;
+      const version = gameVersions.find((v) => v.identifier === this.versionIdentifier).version;
+
+      // save download code list to local storage for retrieval (last downloaded)
+      try {
+        const codeTitles = codeList.map(c => c.title.find(o => o.lang === 'en-US').content);
+        localStorage.setItem(lskeyLDC, JSON.stringify(codeTitles));
+      } catch {}
+
 
       // apply customizable codes
       for (const code of codeList) {
@@ -88,21 +95,58 @@ export default {
         }
       }
 
+      let format;
+      const formats = this.format.split('+');
+
+      if (formats[0] === 'gci') {
+        format = formats[1];
+        const codeListGCT = [];
+        const codeListGCI = codeList.splice(0).flatMap(c => {
+          // TODO
+          if (c.id === 'IntroSkip' || c.category === 'memcardpatch') {
+            codeListGCT.push(c);
+            return [];
+          }
+          return c;
+        });
+
+        // download GCI Loader + GCT only code as remaining format
+        const {codes} = gameVersions.find((v) => v.identifier === this.versionIdentifier);
+        const gciLoader = codes.find(code => code.id === 'GCILoader');
+        codeList.push({
+          ...gciLoader,
+          title: translateCode(gciLoader, this.$lang).title,
+        }, ...codeListGCT);
+        if (!format && codeListGCT.length) {
+          const list = codeListGCT.map(c => (
+            c.title.find(o => o.lang === this.$lang) ??
+            c.title.find(o => o.lang === 'en-US')
+          ).content).join(', ');
+          alert(translate('generatorconfig.alert.gci-compatibility', this.$lang)+list);
+        }
+        // download GCI file
+        if (codeListGCI.length) {
+          this.generateGCI(codeListGCI, version);
+        }
+      } else {
+        format = formats[0];
+      }
+
+      // 16 = 8(00D0C0DE 00D0C0DE) + 8(F0000000 00000000)
+      const codeSize = codeList.reduce((a, e) => a + e.source.length, 0) / 2 + 16;
       // generate file
-      const codeSize = codeList.reduce((a, e) => a + e.source.length, 0) / 2 + 16; // 8(00D0)+8(F000)
-      // console.log(codeSize, codeList);
-      switch (this.format) {
+      switch (format) {
         case 'gct':
           this.alertGCTCodeSize(codeSize);
-          this.generateGCT(codeList, fileName);
+          this.generateGCT(codeList, version);
           break;
         case 'dolphin':
           this.alertDolphinCodeSize(codeSize);
-          this.generateDolphinINI(codeList, fileName);
+          this.generateDolphinINI(codeList, version);
           break;
         case 'gcm':
           this.alertDolphinCodeSize(codeSize);
-          this.generateCheatManagerTXT(codeList, fileName);
+          this.generateCheatManagerTXT(codeList, version);
           break;
       }
     },
@@ -119,6 +163,11 @@ export default {
           translate('generatorconfig.alert.dolphin', this.$lang).replaceAll('{size}', size - 16),
         );
       }
+    },
+    getGCILoader() {
+      const {codes} = gameVersions.find((v) => v.identifier === this.versionIdentifier);
+      const code = codes.find(code => code.id === 'GCILoader');
+      return [code];
     },
     generateGCT(codes, version) {
       let code = '00D0C0DE00D0C0DE';
@@ -161,6 +210,34 @@ export default {
       });
 
       this.downloadFile(data, `${version}.txt`);
+    },
+    generateGCI(codes, version) {
+      let code = '';
+      codes.forEach((c) => (code += c.source));
+      code += 'C0000000000000023C60817F81E317FC7DE478504E800020'; // return
+      
+      // const codeSize = code.length>>1;
+
+      const fileName = `GCT_${this.versionIdentifier}`; // GMSJ0A
+      const blockCount = 6; // Math.ceil(codeSize/0x2000); // TODO
+      const headSize = 0x40;
+      const gciSize = headSize+0x2000*blockCount;
+      const rawData = new Uint8Array(gciSize);
+
+      for (let iD=headSize, iC=0; iC<code.length; iD++, iC+=2) {
+        rawData[iD] = parseInt(code.slice(iC, iC+2), 16);
+      }
+
+      // game id
+      [...new TextEncoder().encode(version), 0xff, 0x00].forEach((e, i) => rawData[i] = e);
+      // file name
+      [...new TextEncoder().encode(fileName)].forEach((e, i) => rawData[0x8+i] = e);
+      // block count
+      rawData[0x39] = blockCount;
+      // ff*6
+      for (let i=0x3A; i<0x40; i++) rawData[i] = 0xff;
+
+      this.downloadFile(rawData, `01-${version.slice(0, 4)}-${fileName}.gci`);
     },
     downloadFile(data, filename) {
       var file = new Blob([data], {
