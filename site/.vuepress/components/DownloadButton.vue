@@ -39,22 +39,22 @@ export default {
       const codeList = this.codes.map((c) => ({
         ...c,
         // for recording previous downloaded code
-        titleEN: c.title.find(o => o.lang === 'en-US').content,
+        titleEN: c.title.find((o) => o.lang === 'en-US').content,
         // for generated txt, ini
         title: translateCode(c, this.$lang).title,
       }));
 
       // add dependencies information to title
-      const id2code = Object.fromEntries(codeList.map(c => [c.id, c]));
+      const id2code = Object.fromEntries(codeList.map((c) => [c.id, c]));
       const depBys = {};
       /* depends on */
       for (const c of codeList) {
-        if (c.dependencies.length) {
-          c.dependencies.forEach(id => {
+        if (c.dependencies && c.dependencies.length) {
+          c.dependencies.forEach((id) => {
             depBys[id] ??= [];
             depBys[id].push(c.title);
           });
-          const depList = c.dependencies.map(id => id2code[id].title).join(', ');
+          const depList = c.dependencies.map((id) => id2code[id].title).join(', ');
           c.title += ` **(REQUIRES: ${depList})**`;
         }
       }
@@ -65,7 +65,7 @@ export default {
 
       // save downloaded code list
       try {
-        const codeTitles = codeList.map(c => c.titleEN);
+        const codeTitles = codeList.map((c) => c.titleEN);
         localStorage.setItem(lskeyLDC, JSON.stringify(codeTitles));
       } catch {}
 
@@ -78,28 +78,14 @@ export default {
           source: this.stageLoaderCode,
         });
 
-      try {
-        window._paq.push([
-          'trackEvent',
-          'GCT Generator',
-          'Code Download',
-          JSON.stringify({
-            gameVersion: this.versionIdentifier,
-            format: this.format,
-            codes: codeList.map((code) => ({
-              title: code.title,
-              version: code.version,
-            })),
-          }),
-        ]);
-      } catch {}
-
       const version = gameVersions.find((v) => v.identifier === this.versionIdentifier).version;
-      // save download code list
+
+      // save download code list to local storage for retrieval (last downloaded)
       try {
         const codeTitles = codeList.map(c => c.title.find(o => o.lang === 'en-US').content);
         localStorage.setItem(lskeyLDC, JSON.stringify(codeTitles));
       } catch {}
+
 
       // apply customizable codes
       for (const code of codeList) {
@@ -111,6 +97,7 @@ export default {
 
       let format;
       const formats = this.format.split('+');
+
       if (formats[0] === 'gci') {
         format = formats[1];
         const codeListGCT = [];
@@ -122,6 +109,7 @@ export default {
           }
           return c;
         });
+
         // download GCI Loader + GCT only code as remaining format
         const {codes} = gameVersions.find((v) => v.identifier === this.versionIdentifier);
         const gciLoader = codes.find(code => code.id === 'GCILoader');
@@ -227,7 +215,8 @@ export default {
       let code = '';
       codes.forEach((c) => (code += c.source));
       code += 'C0000000000000023C60817F81E317FC7DE478504E800020'; // return
-      const codeSize = code.length>>1;
+      
+      // const codeSize = code.length>>1;
 
       const fileName = `GCT_${this.versionIdentifier}`; // GMSJ0A
       const blockCount = 6; // Math.ceil(codeSize/0x2000); // TODO

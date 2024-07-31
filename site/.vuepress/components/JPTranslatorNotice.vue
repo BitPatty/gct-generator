@@ -4,7 +4,7 @@
       Looking for Japanese translators <a href="#" v-on:click="onDismiss">[dismiss]</a>
     </p>
     <p>
-      If you can help us with updating the translations please message psy#1363 on Discord or open
+      If you can help us with updating the translations please message psychonauter on Discord or open
       an issue/PR on
       <a href="https://github.com/BitPatty/gctGenerator" target="_blank" rel="noopener noreferrer"
         >GitHub<span
@@ -43,20 +43,14 @@ export default {
     };
   },
   mounted() {
-    try {
-      if (localStorage.getItem('jp-translator-notice-dismissed') !== 'y') {
-        this.dismissed = false;
-        window._paq.push(['trackEvent', 'GCT Generator', 'Translator Notice', 'Show Notice']);
-      }
-    } catch {}
+    if (localStorage.getItem('jp-translator-notice-dismissed') !== 'y') {
+      this.dismissed = false;
+    }
   },
   methods: {
     onDismiss() {
-      try {
-        localStorage.setItem('jp-translator-notice-dismissed', 'y');
-        this.dismissed = true;
-        window._paq.push(['trackEvent', 'GCT Generator', 'Translator Notice', 'Dismiss Notice']);
-      } catch {}
+      localStorage.setItem('jp-translator-notice-dismissed', 'y');
+      this.dismissed = true;
     },
   },
 };
