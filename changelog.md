@@ -1,15 +1,21 @@
 # Changelog
 
+## Aug 01, 2024
+
+Updated the GCI codes with the latest build and fix an misconfigured value in regards to the code limit.
+
 ## Jul 31, 2024
 
-Added GCT & GCI Download (Experimental).
+Added GCI (+ xxx) Download (Experimental).
 
 ## Oct 16, 2023
+
 Added dependencies information to generated ini/txt
 
 ## Jul 15, 2023
-### Fixed the bug that background color cannot be changed in 'Controller Input Display'
-### Ported 'FastForward', 'InstantRestart', 'SpawnYoshi', 'StageIntroSkip' to all versions
+
+- Fixed the bug that background color cannot be changed in 'Controller Input Display'
+- Ported 'FastForward', 'InstantRestart', 'SpawnYoshi', 'StageIntroSkip' to all versions
 
 ## Jul 9, 2023
 ### Updated 'Level Select'
