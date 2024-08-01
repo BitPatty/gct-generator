@@ -166,9 +166,7 @@ Select the "Gecko-Codes" tab in the game properties and check all the codes you 
 ## Appendix: Using large cheat file with Nintendont
 
 There is a file size limit of 5000 bytes in Nintendont.
-To use cheat file with size larger than 5000 bytes,
-you need to store the cheat file in your Gamecube memory card
-and load it on runtime.
+To use cheat file with size larger than 5000 bytes, you need to store the cheat file in your Gamecube memory card and load it on runtime. Note that this still limits the file size to around 6000 bytes.
 
 ### Preparation: Installing GCMM
 
