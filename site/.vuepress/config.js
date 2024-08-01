@@ -31,7 +31,7 @@ module.exports = {
    * Theme Configuration
    */
   themeConfig: {
-    repo: 'BitPatty/gctGenerator',
+    repo: 'BitPatty/gct-generator',
     editLinks: true,
     docsDir: 'site',
     docsBranch: 'master',

@@ -1,5 +1,5 @@
 {
-  "name": "gctgenerator",
+  "name": "gct-generator",
   "version": "3.0.1",
   "description": "Super Mario Sunshine Practice File Generator",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "name": "Matteias Collet",
     "email": "matteias.collet@protonmail.ch"
   },
-  "repository": "https://github.com/BitPatty/gctGenerator/gctGenerator",
+  "repository": "https://github.com/BitPatty/gct-generator/gct-generator",
   "scripts": {
     "dev": "npm run codes:inject && npm run translations:compare && vuepress dev site",
     "build": "node ./scripts/inject_codes.js && npm run translations:compare && vuepress build site",

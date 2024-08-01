@@ -6,7 +6,7 @@
     <p>
       If you can help us with updating the translations please message psychonauter on Discord or open
       an issue/PR on
-      <a href="https://github.com/BitPatty/gctGenerator" target="_blank" rel="noopener noreferrer"
+      <a href="https://github.com/BitPatty/gct-generator" target="_blank" rel="noopener noreferrer"
         >GitHub<span
           ><svg
             xmlns="http://www.w3.org/2000/svg"

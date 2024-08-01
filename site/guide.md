@@ -105,7 +105,7 @@ Ensure that you turn on "Native controls" in the Nintendont settings. The settin
 
 ### I'm lost :(
 
-You can ask for help on the [Super Mario Sunshine Discord](https://discord.gg/9dGJWEc) or open a [new Issue on GitHub](https://github.com/BitPatty/gctGenerator/issues).
+You can ask for help on the [Super Mario Sunshine Discord](https://discord.gg/9dGJWEc) or open a [new Issue on GitHub](https://github.com/BitPatty/gct-generator/issues).
 
 ## Appendix: Cheat Manager
 

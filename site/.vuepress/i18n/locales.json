@@ -17,7 +17,7 @@
       },
       {
         "text": "Report an issue",
-        "link": "https://github.com/BitPatty/gctGenerator/issues"
+        "link": "https://github.com/BitPatty/gct-generator/issues"
       },
       {
         "text": "Sunshine Discord",
@@ -25,7 +25,7 @@
       },
       {
         "text": "Changelog",
-        "link": "https://github.com/BitPatty/gctGenerator/blob/master/changelog.md"
+        "link": "https://github.com/BitPatty/gct-generator/blob/master/changelog.md"
       }
     ]
   },
@@ -52,7 +52,7 @@
       },
       {
         "text": "Changelog",
-        "link": "https://github.com/BitPatty/gctGenerator/blob/master/changelog.md"
+        "link": "https://github.com/BitPatty/gct-generator/blob/master/changelog.md"
       }
     ]
   },
@@ -79,7 +79,7 @@
       },
       {
         "text": "Changelog",
-        "link": "https://github.com/BitPatty/gctGenerator/blob/master/changelog.md"
+        "link": "https://github.com/BitPatty/gct-generator/blob/master/changelog.md"
       }
     ]
   },
@@ -106,7 +106,7 @@
       },
       {
         "text": "変更ログ",
-        "link": "https://github.com/BitPatty/gctGenerator/blob/master/changelog.md"
+        "link": "https://github.com/BitPatty/gct-generator/blob/master/changelog.md"
       }
     ]
   }

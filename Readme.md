@@ -1,7 +1,7 @@
 # GCT Generator
 
-[![GitHub license](https://img.shields.io/github/license/bitpatty/gctGenerator?color=blue&label=License&style=plastic)](https://github.com/BitPatty/gctGenerator/blob/master/LICENSE)
-[![CD Pipeline](https://github.com/BitPatty/gctGenerator/workflows/CD%20Pipeline/badge.svg)](https://github.com/BitPatty/gctGenerator/actions?query=workflow%3A%22CD+Pipeline%22)
+[![GitHub license](https://img.shields.io/github/license/bitpatty/gct-generator?color=blue&label=License&style=plastic)](https://github.com/BitPatty/gct-generator/blob/master/LICENSE)
+[![CD Pipeline](https://github.com/BitPatty/gct-generator/workflows/CD%20Pipeline/badge.svg)](https://github.com/BitPatty/gct-generator/actions?query=workflow%3A%22CD+Pipeline%22)
 
 This repository contains the code behind the Super Mario Sunshine Cheatfile Generator at https://gct.zint.ch/
 
@@ -133,7 +133,7 @@ Some codes store some states in the games memory starting from address 0x817F000
 
 ### Updating Guides
 
-You can find the guides in the [site](https://github.com/BitPatty/gctGenerator/tree/master/site) folder. Simply edit the corresponding markdown file (.md).
+You can find the guides in the [site](https://github.com/BitPatty/gct-generator/tree/master/site) folder. Simply edit the corresponding markdown file (.md).
 
 Note that in the code reference files everything following the `<!-- injectionpoint -->` tag will be removed during the next build.
 
