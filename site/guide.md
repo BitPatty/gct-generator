@@ -45,6 +45,12 @@ Create a "codes" folder in the root of your SD card if there is none and copy th
 
 ![Sample Folder Structure](/img/folderstructure.png)
 
+::: tip Windows file extensions
+Windows hides file extensions by default. To avoid accidentally naming your file something like "GMSE01.gct.gct" ensure that you can see the file extension:
+
+![](https://github.com/user-attachments/assets/527b372b-914b-4a2d-af6f-c07fa59b7e4b)
+:::
+
 ### Enable the codes
 
 Open your Homebrew channel and from there launch Nintendont. Select SD and then press B on your Gamecube controller to see the settings. In your settings, make sure that "Cheats" are "On". You can switch it on/off by pressing A on your controller. (See image below)
@@ -52,6 +58,19 @@ Open your Homebrew channel and from there launch Nintendont. Select SD and then 
 ![Enabling Cheats in Nintendont](/img/nintendont_cheats.jpg)
 
 Press B again to return to the game list and launch your game. And with that you're done already.
+
+## Updating the cheat file
+
+You can generate a new GCT file and replace the old one on your SD card.
+
+If you periodically need to switch between two or more sets of codes you could create a structure such as the one below in your codes directory and replace GMSE01.gct with the target code file (assuming you use GMSE01):
+
+- GMSE01.gct
+- GMSE01_FastAny.gct
+- GMSE01_Practice.gct
+- ... etc.
+
+Only the GCT with the game code will be read, in the sample above "GMSE01.gct", meaning only the codes in "GMSE01.gct" will be active during gameplay.
 
 ## Troubleshooting
 
@@ -79,6 +98,10 @@ This can have multiple reasons:
 - Your cheatfile is too big: Using too many codes at once can cause Nintendont to disable them since the used space in the game is limited. Make sure you don't have two incompatible codes selected when downloading the cheatfile (for example "Level Select", "Fast Any%" and the Stage loader cannot be used simultaneously). If you're using Nintendont 4.434 or newer you don't have to worry about your file size unless it exceeds 5KB.
 - If you have a USB drive connected and use disc, make sure you select the device that contains the cheats for your disc.
 - If you use an ISO your cheat file and ISO must be on the same device (both on the SD card or both on the USB drive).
+
+### The controller behaves differently in Nintendont
+
+Ensure that you turn on "Native controls" in the Nintendont settings. The setting only needs to be turned off for non-Gamecube controllers (i.e. controllers not plugged into the Gamecube controller ports, such as Xbox controllers and the like).
 
 ### I'm lost :(
 
@@ -139,3 +162,74 @@ Right click the game in Dolphin and click on "Properties". In the "Game Config" 
 ### Using the codes
 
 Select the "Gecko-Codes" tab in the game properties and check all the codes you want to be active. Most (but not all codes) will work with Dolphin.
+
+## Appendix: Using large cheat file with Nintendont
+
+There is a file size limit of 5000 bytes in Nintendont.
+To use cheat file with size larger than 5000 bytes, you need to store the cheat file in your Gamecube memory card and load it on runtime. Note that this still limits the file size to around 6000 bytes.
+
+### Preparation: Installing GCMM
+
+You need GCMM to store the cheat file to your Gamecube memory card.
+[Download the latest GCMM release](https://github.com/suloku/gcmm/releases/download/1.4f/gcmm_1.4f.zip) and unzip it.
+Copy the `apps/gcmm` folder to `/apps/` folder in your SD card.
+
+![File list after GCMM is installed](/img/gci/0-gcmm-files.jpg)
+
+### [Step 1/3] Generating cheat file
+
+Select the game version and the functions you want in [GCT Generator](/).
+Choose `GCI + GCT` as Download Format and press the download button.
+
+There will be 2 files being downloaded.
+Put the first file (GCI) in `/MCBACKUP/` folder
+and the second file (GCT) in `/codes/` folder in your SD card.
+Create the folders if they do not exist.
+
+![File list after downloading the cheat files](/img/gci/1-cheat-files.jpg)
+
+### [Step 2/3] Write the GCI file to Gamecube memory card with GCMM
+
+Open your Homebrew channel and run GCMM.
+
+![Run GCMM in Homebrew channel](/img/gci/2-0-open-gcmm.png)
+
+Press A if you are using SD card, or B if you are using USB.
+
+![Choose device](/img/gci/2-1-choose-device.png)
+
+Press X (Restore) in mode selection.
+
+![Choose mode](/img/gci/2-2-choose-mode.png)
+
+Put your Gamecube memory card in slot A and press A.
+Press B instead if you put it in slot B.
+
+![Choose slot](/img/gci/2-3-choose-slot.png)
+
+Use D-Pad to select the downloaded GCI file,
+and then press A to restore the file to your Gamecube memory card.
+
+![Choose file](/img/gci/2-4-choose-file.png)
+
+After the message "Restore Complete" appears,
+press A to return to the main menu,
+and then press Start to return to Homebrew.
+
+![Restore Complete](/img/gci/2-5-complete.png)
+
+#### For the second time and onwards
+
+There will be a message to confirm
+whether you want to overwrite the file since the second time.
+Press B and then Z to overwrite.
+
+![Overwrite confirm 1](/img/gci/2-6-overwrite-1.png)
+![Overwrite confirm 2](/img/gci/2-6-overwrite-2.png)
+
+### [Step 3/3] Run the game with Nintendont
+
+Run the game with Nintendont with your Gamecube memory card plugged in.
+The GCI file stored in your memory card will be loaded automatically.
+You can remove your memory card
+after confirming the functions you selected work.

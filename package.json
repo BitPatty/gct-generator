@@ -5,7 +5,7 @@
   "main": "index.js",
   "authors": {
     "name": "Matteias Collet",
-    "email": "matteias.collet@bluewin.ch"
+    "email": "matteias.collet@protonmail.ch"
   },
   "repository": "https://github.com/BitPatty/gctGenerator/gctGenerator",
   "scripts": {

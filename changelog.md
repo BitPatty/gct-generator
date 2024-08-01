@@ -1,4 +1,9 @@
 # Changelog
+
+## Jul 31, 2024
+
+Added GCT & GCI Download (Experimental).
+
 ## Oct 16, 2023
 Added dependencies information to generated ini/txt
 

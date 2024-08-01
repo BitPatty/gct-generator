@@ -40,7 +40,8 @@ you may also need to check the following files:
 
 #### Reserved Memory
 
-Some codes store some states in the games memory starting from address 0x817F0000. To avoid collisions use a memory range in the unallocated ranges:
+Some codes store some states in the games memory starting from address 0x817F0000 (up to 0x817FFFFF). To avoid collisions use a memory range in the unallocated ranges.
+
 
 | Status                      | Start   | End     | Description                                                               |
 | --------------------------- | ------- | ------- | ------------------------------------------------------------------------- |
@@ -115,7 +116,12 @@ Some codes store some states in the games memory starting from address 0x817F000
 | ![](./docs/reserved.svg)    | `0x4C8` | `0x4CB` | Controller Input Display: (X, Y) Coordinate                               |
 | ![](./docs/reserved.svg)    | `0x4CC` | `0x4CF` | Controller Input Display: Background Color                                |
 | ![](./docs/reserved.svg)    | `0x4D0` | `0x53F` | Controller Input Display: Components Config                               |
-| ![](./docs/unallocated.svg) | `0x540` | `0xFFF` | Not Allocated                                                             |
+| ![](./docs/unallocated.svg) | `0x540` | `0x17F8` | Not Allocated                                                            |
+| ![](./docs/reserved.svg)   | `0x17F8` | `0xD800` | GCI Loader Codes (0x81780000 - 8)*                                       |
+| ![](./docs/reserved.svg)   | `0xD800` | `0xFFFF` | GCI Loader                                                               |
+
+\* Additional gecko codes from the memory card are loaded into this space by the GCI loader.
+
 
 ### Adding translations
 
