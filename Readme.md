@@ -120,7 +120,7 @@ Some codes store some states in the games memory starting from address 0x817F000
 | ![](./docs/reserved.svg)   | `0x17F8` | `0xD800` | GCI Loader Codes (0x81780000 - 8)*                                       |
 | ![](./docs/reserved.svg)   | `0xD800` | `0xFFFF` | GCI Loader                                                               |
 
-\* Additional gecko codes from the memory card are loaded into this space by the GCI loader.
+\* Additional gecko codes from the memory card are loaded into this space by the GCI loader. The loader is currently maintained on the fork at https://github.com/BitPatty/sms-gci-gecko-loader, original (archived) repo: https://github.com/sup39/SMS-GCI-Loader.
 
 
 ### Adding translations
