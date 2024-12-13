@@ -118,10 +118,7 @@ export default {
           title: translateCode(gciLoader, this.$lang).title,
         }, ...codeListGCT);
         if (!format && codeListGCT.length) {
-          const list = codeListGCT.map(c => (
-            c.title.find(o => o.lang === this.$lang) ??
-            c.title.find(o => o.lang === 'en-US')
-          ).content).join(', ');
+          const list = codeListGCT.map(c => c.title).join(', ');
           alert(translate('generatorconfig.alert.gci-compatibility', this.$lang)+list);
         }
         // download GCI file

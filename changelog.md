@@ -4,6 +4,7 @@
 
 - Added 'Never Pause IGT' to help transition the IL sheet to QFT without breaking IGT ILs
 - Changed the code size alert to a confirm box to let the user choose whether to proceed anyway
+- Fixed the warning when trying to download Intro Skip or memory card patches as GCI only
 
 ## Aug 01, 2024
 
