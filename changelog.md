@@ -1,5 +1,10 @@
 # Changelog
 
+## Dec 13, 2024
+
+- Added 'Never Pause IGT' to help transition the IL sheet to QFT without breaking IGT ILs
+- Changed the code size alert to a confirm box to let the user choose whether to proceed anyway
+
 ## Aug 01, 2024
 
 Updated the GCI codes with the latest build and fix an misconfigured value in regards to the code limit.

@@ -22,7 +22,7 @@
   "breadcrumbs.symbolSortOrder": "type",
   "editor.codeLens": true,
   "editor.detectIndentation": true,
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.minimap.maxColumn": 150,
   "editor.tabSize": 2,
   "explorer.confirmDragAndDrop": false,

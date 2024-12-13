@@ -3323,6 +3323,57 @@
         </source>
     </code>
     <code>
+        <category>misc</category>
+        <presets>standard,recommended,il</presets>
+        <title lang="en-US">Never Pause IGT</title>
+        <title lang="de-CH">Never Pause IGT</title>
+        <title lang="fr-FR">Ne jamais arrêter le chronomètre</title>
+        <title lang="ja-JP">Never Pause IGT</title>
+        <author>Noki Doki</author>
+        <version>1.0</version>
+        <date>Dec 13, 2024</date>
+        <description lang="en-US">
+            Prevents the in-game timer from pausing when a textbox or the pause menu is open, or from disappearing during cutscenes.
+            This behavior is already present in Shine Get Timer.
+        </description>
+        <description lang="fr-FR">
+            Empêche le chronomètre du jeu de se mettre en pause lorsqu'une boîte de texte ou le menu pause est ouvert, ou de disparaître
+            pendant les cinématiques. Ce comportement est déjà inclus avec le Chronomètre Shine Get.
+        </description>
+        <source version="GMSE01">
+            C234800C 00000003
+            80030030 2C000000
+            4C820020 7C0802A6
+            60000000 00000000
+            04348048 4E800020
+            0414B628 4E800020
+        </source>
+        <source version="GMSJ01">
+            C209292C 00000003
+            80030030 2C000000
+            4C820020 7C0802A6
+            60000000 00000000
+            04092968 4E800020
+            0420CA84 4E800020
+        </source>
+        <source version="GMSJ0A">
+            C232790C 00000003
+            80030030 2C000000
+            4C820020 7C0802A6
+            60000000 00000000
+            04327948 4E800020
+            0412CA1C 4E800020
+        </source>
+        <source version="GMSP01">
+            C2340268 00000003
+            80030030 2C000000
+            4C820020 7C0802A6
+            60000000 00000000
+            043402A4 4E800020
+            041402B8 4E800020
+        </source>
+    </code>
+    <code>
         <category>cosmetic</category>
         <title lang="en-US">Shine Outfit</title>
         <title lang="de-CH">Shine Outfit</title>

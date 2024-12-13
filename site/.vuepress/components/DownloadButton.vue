@@ -137,31 +137,31 @@ export default {
       // generate file
       switch (format) {
         case 'gct':
-          this.alertGCTCodeSize(codeSize);
-          this.generateGCT(codeList, version);
+          if (this.confirmGCTCodeSize(codeSize)) this.generateGCT(codeList, version);
           break;
         case 'dolphin':
-          this.alertDolphinCodeSize(codeSize);
-          this.generateDolphinINI(codeList, version);
+          if (this.confirmDolphinCodeSize(codeSize)) this.generateDolphinINI(codeList, version);
           break;
         case 'gcm':
-          this.alertDolphinCodeSize(codeSize);
-          this.generateCheatManagerTXT(codeList, version);
+          if (this.confirmDolphinCodeSize(codeSize))
+            this.generateCheatManagerTXT(codeList, version);
           break;
       }
     },
-    alertGCTCodeSize(size) {
+    confirmGCTCodeSize(size) {
       if (size > 5000) {
-        alert(translate('generatorconfig.alert.gct', this.$lang).replaceAll('{size}', size));
+        return confirm(translate('generatorconfig.alert.gct', this.$lang).replaceAll('{size}', size));
+      } else {
+        return true;
       }
     },
-    alertDolphinCodeSize(size) {
+    confirmDolphinCodeSize(size) {
       if (size > 3272) {
         // 0x3000-0x2338
         // excluding header+footer
-        alert(
-          translate('generatorconfig.alert.dolphin', this.$lang).replaceAll('{size}', size - 16),
-        );
+        return confirm(translate('generatorconfig.alert.dolphin', this.$lang).replaceAll('{size}', size - 16));
+      } else {
+        return true;
       }
     },
     getGCILoader() {

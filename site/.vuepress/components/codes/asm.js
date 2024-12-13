@@ -202,8 +202,8 @@ export function str2bytes(s, version) {
   const charInfo = version.startsWith('GMSJ')
     ? charInfoJP
     : version === 'GMSE01'
-      ? charInfoUS
-      : charInfoEU;
+    ? charInfoUS
+    : charInfoEU;
   const fmtbuf = Array.from(s).flatMap((c) => {
     const code = charInfo[c]?.code ?? c.charCodeAt(0); // TODO multi-byte invalid char
     return code >= 0x100 ? [code >> 8, code & 0xff] : [code];
