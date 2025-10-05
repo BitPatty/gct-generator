@@ -133,6 +133,8 @@ To use the codes with Dolphin choose "Dolphin INI" as file format instead of "GC
 
 ::: tip Code limits
 Dolphin doesn't use the same cheat loader as Nintendont. Its code limit is reached rather quickly and it won't tell you whether the codes you enabled exceed the internal limit. If your game crashes after enabling some codes, this might be the cause. Try to disable non-essential codes if that happens to you.
+
+An alternative method of patching the iso directly can be [found here](https://docs.google.com/document/d/1tPTS7Vl3yLyQSewXj_m5lz2Xpd23UVuQG9r7-JPq3R0/edit?tab=t.0).
 :::
 
 ::: tip Dolphin Version
