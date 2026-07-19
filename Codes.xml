@@ -707,7 +707,6 @@
     </code>
     <code>
         <category>timer</category>
-        <presets>standard,recommended,il</presets>
         <depends-on>loader</depends-on>
         <title lang="en-US">Shine Get Timer</title>
         <title lang="de-CH">Shine Get Timer</title>
@@ -718,7 +717,10 @@
         <description lang="en-US">
         Adds the ingame timer to every level, starting on the last black frame after the loading screen and 
         ending as soon as the 'Shine Get' animation starts (similar to the x-cam timer of SM64).
-        
+
+        ::: danger Legacy Timer
+		This code is no longer used for ILs and is inaccurate compared to Quarterframe timer.
+			
         ::: warning Load Removal
         The timer removes load times during level transitions.
         
@@ -1241,6 +1243,7 @@
     <code>
         <id>qft</id>
         <category>timer</category>
+		<presets>standard,recommended, il</presets>
         <title lang="en-US">Quarterframe Timer</title>
         <title lang="ja-JP">QFタイマー</title>
         <author>Noki Doki, sup39(サポミク)</author>
@@ -1248,7 +1251,7 @@
         <date>Jan 28, 2023</date>
         <dependencies>drawText</dependencies>
         <description lang="en-US">
-        Adds an in-game timer to every level, starting on the last black frame of the 
+        Adds a customizable in-game timer to every level, starting on the last black frame of the 
         loading screen and ending as soon as the 'Shine Get' animation starts 
         (similar to the x-cam timer of SM64).
         
