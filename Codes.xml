@@ -1243,7 +1243,7 @@
     <code>
         <id>qft</id>
         <category>timer</category>
-		<presets>standard,recommended, il</presets>
+        <presets>standard,recommended, il</presets>
         <title lang="en-US">Quarterframe Timer</title>
         <title lang="ja-JP">QFタイマー</title>
         <author>Noki Doki, sup39(サポミク)</author>
