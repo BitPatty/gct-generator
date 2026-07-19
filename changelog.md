@@ -1,5 +1,9 @@
 # Changelog
 
+## Jul 19, 2025
+
+- Replaced 'Shine Get Timer' with 'Quarterframe Timer' in Standard, Recommended and IL presets
+
 ## Dec 13, 2024
 
 - Added 'Never Pause IGT' to help transition the IL sheet to QFT without breaking IGT ILs
