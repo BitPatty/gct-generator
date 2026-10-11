@@ -13,7 +13,6 @@ services:
     volumes:
       - ..:/workspace:cached
       - ~/.ssh:/home/node/.ssh:ro
-      - /var/run/docker.sock:/var/run/docker.sock
     command: sleep infinity
     user: node
     env_file:
