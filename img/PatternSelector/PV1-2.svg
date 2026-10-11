@@ -1,0 +1,25 @@
+<svg viewBox="2500 1600 10500 10500" class="pattern" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <style>@import url('./PV1.css')</style>
+  <image xlink:href="PV1-base.jpg" width="15000"/>
+  <g class="arrow" transform="translate(7150, 6200) scale(0.695)">
+    <g transform="translate(-2650, 7510) scale(8) translate(0, -100)">
+      <g transform="translate(5, 0) rotate(180)"><path d="M0 0 h25 v200 h25 l-50 50 l-50 -50 h25 v-200 L0 0" /></g>
+      <text y="-350">1</text>
+    </g>
+    <g transform="translate(955, 6615) scale(8) translate(0, -50)">
+      <g transform="translate(-1, 0) rotate(181)"><path d="M0 0 h25 v200 h25 l-50 50 l-50 -50 h25 v-200 L0 0" /></g>
+      <text y="-350">2</text>
+    </g>
+    <g transform="translate(4445, 6580) scale(8) translate(-8, -80)">
+      <g transform="translate(0, 0) rotate(172)"><path d="M0 0 h25 v200 h25 l-50 50 l-50 -50 h25 v-200 L0 0" /></g>
+      <text x="-40" y="-350">3</text>
+    </g>
+    <g transform="translate(6330, 5105) scale(8) translate(0, 100)">
+      <g transform="translate(0, 0) rotate(195)"><path d="M0 0 h25 v200 h25 l-50 50 l-50 -50 h25 v-200 L0 0" /></g>
+      <text x="80" y="-330">4</text>
+    </g>
+    <g class="start">
+      <circle id="c-42" cx="-4970.0" cy="3295.0" />
+    </g>
+  </g>
+</svg>
