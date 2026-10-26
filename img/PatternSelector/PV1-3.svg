@@ -1,0 +1,21 @@
+<svg viewBox="2500 1600 10500 10500" class="pattern" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <style>@import url('./PV1.css')</style>
+  <image xlink:href="PV1-base.jpg" width="15000"/>
+  <g class="arrow" transform="translate(7150, 6200) scale(0.695)">
+    <g transform="translate(4510, -5935) scale(8)">
+      <g transform="rotate(0)"><path d="M0 0 h25 v200 h25 l-50 50 l-50 -50 h25 v-200 L0 0" /></g>
+      <text x="0" y="380">1</text>
+    </g>
+    <g transform="translate(1330, -3750) scale(8)">
+      <g transform="translate(5, 0) rotate(15)"><path d="M0 0 h25 v200 h25 l-50 50 l-50 -50 h25 v-200 L0 0" /></g>
+      <text x="-130" y="300">2</text>
+    </g>
+    <g transform="translate(1330, -3750) scale(8)">
+      <g transform="translate(-30, -20) rotate(88)"><path d="M0 0 h25 v200 h25 l-50 50 l-50 -50 h25 v-200 L0 0" /></g>
+      <text x="-350" y="-5">3</text>
+    </g>
+    <g class="start">
+      <circle id="c-13" cx="6790.0" cy="-2530.0" />
+    </g>
+  </g>
+</svg>
