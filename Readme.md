@@ -67,7 +67,12 @@ Some codes store some states in the games memory starting from address 0x817F000
 | ![](./docs/reserved.svg)    | `0x5C`  | `0x5F`  | Mario Savestate: Stored Vertical Speed                                    |
 | ![](./docs/reserved.svg)    | `0x60`  | `0x63`  | Mario Savestate: Stored Last Grab Target                                  |
 | ![](./docs/reserved.svg)    | `0x64`  | `0x67`  | Mario Savestate: Stored Water Amount                                      |
-| ![](./docs/unallocated.svg) | `0x68`  | `0x93`  | Not Allocated                                                             |
+| ![](./docs/reserved.svg)    | `0x68`  | `0x84`  | Streak Tracker: Output Format String                                      |
+| ![](./docs/reserved.svg)    | `0x85`  | `0x85`  | Streak Tracker: Last Collected Shine                                      |
+| ![](./docs/reserved.svg)    | `0x86`  | `0x87`  | Streak Tracker: Last Loaded Stage                                         |
+| ![](./docs/reserved.svg)    | `0x88`  | `0x8B`  | Streak Tracker: Successful Attempt Count                                  |
+| ![](./docs/reserved.svg)    | `0x8C`  | `0x8F`  | Streak Tracker: Total Time                                                |
+| ![](./docs/unallocated.svg) | `0x90`  | `0x93`  | Not Allocated                                                             |
 | ![](./docs/reserved.svg)    | `0x94`  | `0xA3`  | QF Timer: Coordinates of the Text box (LTRB)                              |
 | ![](./docs/reserved.svg)    | `0xA4`  | `0xB0`  | QF Timer: Timer Format String                                             |
 | ![](./docs/reserved.svg)    | `0xB0`  | `0xB1`  | QF Timer: (Unused)                                                        |

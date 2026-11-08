@@ -4,6 +4,7 @@ import PatternSelector from './PatternSelector/config.vue';
 import qft from './qft/config.vue';
 import qfst from './qfst/config.vue';
 import AttemptCounter from './AttemptCounter/config.vue';
+import StreakTracker from './StreakTracker/config.vue';
 import controller from './controller/config.vue';
 
 export default {
@@ -13,5 +14,6 @@ export default {
   qft,
   qfst,
   AttemptCounter,
+  StreakTracker,
   controller,
 };

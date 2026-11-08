@@ -3,11 +3,13 @@ import * as qfst from './qfst/codegen.js';
 import * as CustomizedDisplay from './CustomizedDisplay/codegen.js';
 import * as PatternSelector from './PatternSelector/codegen.js';
 import * as AttemptCounter from './AttemptCounter/codegen.js';
+import * as StreakTracker from './StreakTracker/codegen.js';
 import * as controller from './controller/codegen.js';
 
 export const previewIds = [
   'CustomizedDisplay',
   'AttemptCounter',
+  'StreakTracker',
   'PatternSelector',
   'qft',
   'qfst',
@@ -26,6 +28,7 @@ export const getConfigs = (version) =>
       CustomizedDisplay,
       PatternSelector,
       AttemptCounter,
+      StreakTracker,
       controller,
     }).map(([k, v]) => [k, v.getConfig(version)]),
   );

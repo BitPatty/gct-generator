@@ -4,6 +4,7 @@ import qfst from './qfst/codegen.js';
 import CustomizedDisplay from './CustomizedDisplay/codegen.js';
 import PatternSelector from './PatternSelector/codegen.js';
 import AttemptCounter from './AttemptCounter/codegen.js';
+import StreakTracker from './StreakTracker/codegen.js';
 import controller from './controller/codegen.js';
 
 export default {
@@ -13,6 +14,7 @@ export default {
   CustomizedDisplay,
   PatternSelector,
   AttemptCounter,
+  StreakTracker,
   controller,
 };
 

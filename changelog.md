@@ -1,5 +1,9 @@
 # Changelog
 
+## Nov 9, 2026
+
+- Added 'Streak Tracker'
+
 ## Jul 19, 2025
 
 - Replaced 'Shine Get Timer' with 'Quarterframe Timer' in Standard, Recommended and IL presets
