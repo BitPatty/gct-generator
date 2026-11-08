@@ -3,10 +3,6 @@
     <section class="appearance">
       <h3>{{ l('h3.appearance') }}</h3>
       <TextConfig v-model="textConfig" />
-      <div>
-        <span>{{ l('display.duration') }}</span><input type="number" min="0" max="255" v-model="duration" />
-        {{ l('display.frame') }} = {{ ((duration * 1001) / 30000).toFixed(2) }} {{ l('display.sec') }}
-      </div>
     </section>
   </div>
 </template>
@@ -51,26 +47,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-input[type='number'],
-td.right {
-  text-align: right;
-}
-input[type='number'] {
-  width: 3em;
-  margin: 0 2px;
-}
-.appearance > div {
-  padding: 0 0 4px;
-}
-
-input[type='number'] {
-  -moz-appearance: textfield;
-}
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-</style>
