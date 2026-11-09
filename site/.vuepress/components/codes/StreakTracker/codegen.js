@@ -8,8 +8,15 @@ export const defaultConfig = {
   fontSize: 25,
   fgRGB: 0xff0000,
   fgA: 0xff,
-  fgRGB2: 0xffe000,
-  fgA2: 0xff,
+  fgRGB2: null,
+  fgA2: null,
+  bgRGB: 0x000000,
+  bgA: 0x40,
+  bgLeft: 4,
+  bgRight: 6,
+  bgTop: 4,
+  bgBot: 3,
+  duration: 60,
 };
 
 export const getPreviewText = () => 'Avg: 1:23.456\nStreak: 4';
