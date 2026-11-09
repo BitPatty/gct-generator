@@ -25,9 +25,8 @@
 
 <script>
 import { defaultConfig, lskey, getConfig, getPreviewText } from './codegen.js';
-import { makeUpdateConfig, makeGetLabel } from '../utils';
+import { makeUpdateConfig, makeGetLabel, rgbI2S, rgbS2I, rgbaI2S } from '../utils';
 import labels from '../labels.json';
-import {rgbI2S, rgbS2I, rgbaI2S} from './utils';
 
 const updateConfig = makeUpdateConfig(lskey, defaultConfig, getPreviewText);
 export default {
