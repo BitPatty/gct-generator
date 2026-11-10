@@ -1,0 +1,13 @@
+text {
+  text-anchor: middle;
+  dominant-baseline: central;
+  font-size: 200px;
+  fill: #f00;
+}
+.arrow {
+  fill: #f009;
+}
+.start circle {
+  r: 400;
+  fill: #f009;
+}
